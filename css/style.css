@@ -326,7 +326,7 @@
   src: url("//at.alicdn.com/t/font_236002_600u3zzht94.eot?#iefix") format('embedded-opentype'), url("//at.alicdn.com/t/font_236002_600u3zzht94.woff2") format('woff2'), url("//at.alicdn.com/t/font_236002_600u3zzht94.woff") format('woff'), url("//at.alicdn.com/t/font_236002_600u3zzht94.ttf") format('truetype'), url("//at.alicdn.com/t/font_236002_600u3zzht94.svg#iconfont") format('svg');
 }
 .iconfont {
-  font-family: "iconfont" !important;
+  font-family: "iconfont", "custom-iconfont" !important;
   font-size: 16px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
@@ -552,42 +552,6 @@
 .nav-left .icon a:hover {
   color: #309e85;
 }
-.nav-left .icon a.rss:before {
-  content: "\ea9b";
-}
-.nav-left .icon a.github:before {
-  content: "\eab0";
-}
-.nav-left .icon a.twitter:before {
-  content: "\ea96";
-}
-.nav-left .icon a.weibo:before {
-  content: "\ea9a";
-}
-.nav-left .icon a.linkedin:before {
-  content: "\eac9";
-}
-.nav-left .icon a.instagram:before {
-  content: "\ea92";
-}
-.nav-left .icon a.email:before {
-  content: "\e945";
-}
-.nav-left .icon a.facebook:before {
-  content: "\ea91";
-}
-.nav-left .icon a.reddit:before {
-  content: "\eac6";
-}
-.nav-left .icon a.qq:before {
-  content: "\e626";
-}
-.nav-left .icon a.neteasemusic:before {
-  content: "\e607";
-}
-.nav-left .icon a.kugou:before {
-  content: "\e6ce";
-}
 .nav-left ul {
   margin: 0;
   padding: 0;
@@ -626,6 +590,8 @@
   color: rgba(255,255,255,0.7);
   transition: all 0.15s linear;
   position: relative;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .nav-left ul li>div:hover {
   color: #f7f7f7;
@@ -650,10 +616,11 @@
   border-collapse: collapse;
   bottom: 0;
   width: 100%;
-  font-size: 17px;
+  font-size: 0;
   color: rgba(255,255,255,0.7);
 }
 .nav-left .left-bottom a {
+  font-size: 17px;
   display: table-cell;
   height: 30px;
   text-align: center;
@@ -667,7 +634,7 @@
 }
 .nav-left .left-bottom a.about.hasFriend {
   border-right: 1px solid #fff;
-  width: 49%;
+  width: calc(49% - 1px);
 }
 .nav-left .left-bottom a.friends {
   display: inline-block;
@@ -1027,6 +994,11 @@
   color: #55606f;
   overflow: hidden;
   outline: none;
+}
+.nav-right .title-list nav a .post-title .search-keyword,
+.nav-right .title-list #local-search-result a .post-title .search-keyword {
+  color: #f00;
+  font-style: normal;
 }
 .nav-right .title-list nav a .post-date,
 .nav-right .title-list #local-search-result a .post-date {
@@ -1513,6 +1485,20 @@
 #post .pjax article pre.mermaid {
   border: none;
   text-align: center;
+}
+#post .pjax article pre {
+  position: relative;
+}
+#post .pjax article pre .code-embed {
+  position: absolute;
+  font-size: 12px;
+  top: 3px;
+  right: 15px;
+  color: rgba(140,140,140,0.8);
+}
+#post .pjax article pre .code-embed-copy {
+  cursor: pointer;
+  padding-left: 10px;
 }
 #post .pjax article pre > code {
   font-size: 14px;

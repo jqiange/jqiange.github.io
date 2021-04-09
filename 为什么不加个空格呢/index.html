@@ -51,14 +51,19 @@
   <input class="theme_preload_comment" value="">
   <input class="theme_blog_path" value="">
   <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
 </div>
+
 
 
 <body>
 <aside class="nav">
     <div class="nav-left">
-        <a href="/" class="avatar_target">
-    <img class="avatar" src="/img/jqiange.png" />
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/jqiange.png"/>
 </a>
 <div class="author">
     <span>姜小强</span>
@@ -67,23 +72,27 @@
 <div class="icon">
     
         
-        <a title="rss" href="/atom.xml" target="_blank">
-            
-                <svg class="iconfont-svg" aria-hidden="true">
-                    <use xlink:href="#icon-rss"></use>
-                </svg>
-            
-        </a>
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
         
     
         
-        <a title="github" href="https://github.com/jqiange" target="_blank">
-            
-                <svg class="iconfont-svg" aria-hidden="true">
-                    <use xlink:href="#icon-github"></use>
-                </svg>
-            
-        </a>
+            <a title="github"
+               href="https://github.com/jqiange"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
         
     
         
@@ -122,81 +131,145 @@
 
 
 <ul>
-    <li><div class="all active" data-rel="全部文章">全部文章<small>(47)</small></div></li>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(47)</small>
+            
+        </div>
+    </li>
     
         
             
-            <li><div data-rel="工具">工具<small>(4)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
-            <li><div data-rel="数据库">数据库<small>(5)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
-            <li><div data-rel="爬虫">爬虫<small>(10)</small></div>
-                
-            </li>
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
             
         
     
         
             
-            <li><div data-rel="前端">前端<small>(1)</small></div>
-                
-            </li>
+                <li>
+                    <div data-rel="数据库">
+                        
+                        数据库
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
             
         
     
         
             
-            <li><div data-rel="深度学习">深度学习<small>(3)</small></div>
-                
-            </li>
+                <li>
+                    <div data-rel="爬虫">
+                        
+                        爬虫
+                        <small>(10)</small>
+                        
+                    </div>
+                    
+                </li>
             
         
     
         
             
-            <li><div data-rel="数据分析">数据分析<small>(5)</small></div>
-                
-            </li>
+                <li>
+                    <div data-rel="前端">
+                        
+                        前端
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
             
         
     
         
             
-            <li><div data-rel="Linux">Linux<small>(1)</small></div>
-                
-            </li>
+                <li>
+                    <div data-rel="深度学习">
+                        
+                        深度学习
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
             
         
     
         
             
-            <li><div data-rel="python">python<small>(18)</small></div>
-                
-            </li>
+                <li>
+                    <div data-rel="数据分析">
+                        
+                        数据分析
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Linux">
+                        
+                        Linux
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="python">
+                        
+                        python
+                        <small>(18)</small>
+                        
+                    </div>
+                    
+                </li>
             
         
     
 </ul>
 <div class="left-bottom">
     <div class="menus">
-    
-    
-    
-    
+        
+            
+            
+            
     </div>
-    <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="47">
 <input type="hidden" id="yelog_site_word_count" value="162.3k">
@@ -229,7 +302,7 @@
         </div>
         <div id="search-panel">
             <i class="iconfont icon-left" data-title="返回"></i>
-            <input id="local-search-input" />
+            <input id="local-search-input" autocomplete="off"/>
             <label class="border-line" for="input"></label>
             <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
             <i class="iconfont icon-tag" data-title="标签"></i>
@@ -316,10 +389,6 @@
 
 </div>
 
-    
-    <div id="local-search-result">
-
-    </div>
     
     <nav id="title-list-nav">
         
@@ -706,6 +775,7 @@
     <div id="outline-list">
     </div>
 </div>
+
     </div>
     <div class="hide-list">
         <div class="semicircle" data-title="切换全屏 快捷键 s">
@@ -813,7 +883,7 @@ pangu.spacingElementByTagName(&#39;p&#39;);/* 在标签 p 里面进行自动加�
     </div>
     <div class="copyright">
         <p class="footer-entry">
-    ©2016-2020 Jqiange
+    ©2016-2021 Jqiange
 </p>
 <p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
 

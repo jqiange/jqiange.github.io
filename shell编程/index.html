@@ -272,7 +272,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="47">
-<input type="hidden" id="yelog_site_word_count" value="171k">
+<input type="hidden" id="yelog_site_word_count" value="171.1k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -806,7 +806,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2022-03-08 10:45:08'>2022-03-07 20:24</time>
+            发布时间 : <time class="date" title='最后更新: 2022-04-13 17:26:04'>2022-03-07 20:24</time>
         
     </div>
     <div class="article-meta">
@@ -849,9 +849,10 @@
         <h1 id="一、shell 编程概述"><a href="# 一、shell 编程概述" class="headerlink" title="一、shell 编程概述"></a>一、shell 编程概述 </h1><p> 在 Linux 下有一门脚本语言叫做：<strong>Shell 脚本</strong>，这个脚本语言可以帮助我们简化很多工作，例如编写自定义命令等，所以还是很有必要学习它的基本用法的。</p>
 <p>本质上讲，shell 是 linux 命令集的概称，是属于命令行的人机界面。shell 里语句可以直接是 linux 命令的执行。</p>
 <p>一个简单的 <code>hello.sh</code> 脚本像下面这样：</p>
-<pre><code>#!/bin/bash                     # 标识该 Shell 脚本由哪个 Shell 解释
+<pre><code class="shell">#!/bin/bash                     # 标识该 Shell 脚本由哪个 Shell 解释
 
-echo &quot;Hello World!&quot;             # 打印输出字符 Hello World!</code></pre><p><strong>运行 shell 脚本</strong>：在 CMD 命令行下，<code>sh hello.sh</code> 即可，也可 <code>./hello.sh</code> 运行</p>
+echo &quot;Hello World!&quot;             # 打印输出字符 Hello World!</code></pre>
+<p><strong>运行 shell 脚本</strong>：在 CMD 命令行下，<code>sh hello.sh</code> 即可，也可 <code>./hello.sh</code> 运行</p>
 <p><strong>后台运行</strong>：<code>sh hello.sh &amp;</code>  ，若退出终端的运行就会挂掉。</p>
 <p><strong>后台挂起运行</strong>：<code>nohup sh hello.sh &amp;</code>，hohup 的作用是：用于在系统后台不挂断地运行命令，退出终端不会影响程序的运行。</p>
 <p>Shell 的编写流程：</p>

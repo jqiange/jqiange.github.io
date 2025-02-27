@@ -867,12 +867,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-06-19 20:40:29'>2020-02-12 23:03</time>
+            发布时间 : <time class="date" title='最后更新: 2025-02-28 01:55:17'>2020-02-12 23:03</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:525</span>
+        <span>字数:514</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -913,7 +913,11 @@
 <p>#github hosts<br>192.30.253.112 github.com<br>199.232.5.194 github.global.ssl.fastly.net</p>
 <p>按照上述方案，基本可以解决此问题。</p>
 <h1 id="二 - 创建文章时出现报错"><a href="# 二 - 创建文章时出现报错" class="headerlink" title="二. 创建文章时出现报错"></a>二. 创建文章时出现报错 </h1><p> 输入<code>hexo new &quot;title&quot;</code>，返回如下结果：</p>
-<p>![](<a target="_blank" rel="noopener" href="https://image--1.oss-cn-shenzhen.aliyuncs.com/hexo">https://image--1.oss-cn-shenzhen.aliyuncs.com/hexo</a> error.jpg)<br>经查，已经使用 <code>npm install hexo-generator-topindex --save</code> 安装所需的插件，仍然报错。<br>原因：修改了 scaffolds/post.md 文件，我往里面添加了新参数，top:/tags:/categories:<br>其中把英文冒号打成了中文冒号，故导致无法通过 post.md 模板创建文章。</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20250228015408395.png" style="zoom:33%;" />
+经查，已经使用 `npm install hexo-generator-topindex --save` 安装所需的插件，仍然报错。
+原因：修改了 scaffolds/post.md 文件，我往里面添加了新参数，top:/tags:/categories:
+其中把英文冒号打成了中文冒号，故导致无法通过 post.md 模板创建文章。
+
 <h1 id="三 -Hexo 文章上传本地图片在网页上无法显示的解决办法"><a href="# 三 -Hexo 文章上传本地图片在网页上无法显示的解决办法" class="headerlink" title="三.  Hexo 文章上传本地图片在网页上无法显示的解决办法"></a>三.  Hexo 文章上传本地图片在网页上无法显示的解决办法</h1><h2 id="3-1- 使用坚果云编辑 -md 文件时"><a href="#3-1- 使用坚果云编辑 -md 文件时" class="headerlink" title="3.1 使用坚果云编辑.md 文件时"></a>3.1 使用坚果云编辑.md 文件时</h2><ol>
 <li>找到 <code>Hexo</code> 下的 <code>_config.yml</code> 里的 <code>post_asset_folder</code>，把这个选项从<code>false</code> 改成<code>true</code>。</li>
 <li>git bash 安装插件：npm install <a target="_blank" rel="noopener" href="https://github.com/7ym0n/hexo-asset-image">https://github.com/7ym0n/hexo-asset-image</a> –save（这是个修改过的插件，经测试无问题），使用这个插件来引入图片。</li>
@@ -923,13 +927,12 @@
 <li><p>首先，在项目根目录下 <code>source</code> 文件下新建一个 <code>assets</code> 文件夹</p>
 </li>
 <li><p>设置 Typora：Typora 文件 -&gt; 偏好设置，图片插入的地方选择“复制到指定路径”，如图所示：</p>
-<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-13_23-06-16.png" alt=""></p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-13_23-06-16.png" style="zoom: 50%;" />
 </li>
 <li><p>设置 <code>格式—图像—设置图片根目录</code>，把目录设置到 source    （每次插入图片前记得检查此项）</p>
 </li>
 <li><p>最后就可以愉快的插入图片了，格式如图：</p>
-<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-13_22-41-42.png" alt=""></p>
-</li>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-13_22-41-42.png" style="zoom:50%;" /></li>
 </ul>
 
       

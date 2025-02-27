@@ -860,7 +860,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2025-02-28 01:36:06'>2022-03-05 01:26</time>
+            发布时间 : <time class="date" title='最后更新: 2025-02-28 01:48:15'>2022-03-05 01:26</time>
         
     </div>
     <div class="article-meta">
@@ -1000,16 +1000,17 @@ IdentityFile ~/.ssh/id_rsa_mee</code></pre><ul>
 </li>
 </ul>
 <p>配置完保存即可。</p>
-<h1 id="三、再回顾 -Hexo"><a href="# 三、再回顾 -Hexo" class="headerlink" title="三、再回顾 Hexo"></a>三、再回顾 Hexo</h1><h2 id="3-1- 目录回顾"><a href="#3-1- 目录回顾" class="headerlink" title="3.1 目录回顾"></a>3.1 目录回顾 </h2><p>hexo/source：放的是我写的全部 md 文章和素材，其中里面<code>_post</code> 是全部的文章 md 格式的，<code>about</code>是主页文章，<code>asset</code>是图片</p>
+<h1 id="三、再回顾 -Hexo"><a href="# 三、再回顾 -Hexo" class="headerlink" title="三、再回顾 Hexo"></a>三、再回顾 Hexo</h1><h2 id="3-1- 目录回顾"><a href="#3-1- 目录回顾" class="headerlink" title="3.1 目录回顾"></a>3.1 目录回顾 </h2><p><code>hexo/source</code>：放的是我写的全部 md 文章和素材，其中里面<code>_post</code> 是全部的文章 md 格式的，<code>about</code>是主页文章，<code>asset</code>是图片</p>
 <blockquote>
 <p>这个里面的东西超级重要！！！</p>
 </blockquote>
-<p>hexo/scaffolds：放的是文章模板，<code>hexo n &#39; 文章标题 &#39;</code>生成的文章就是基于这里面的模板生成的，可以自定义修改</p>
-<p>其他的目录都是些基础配置。</p>
+<p><code>hexo/scaffolds</code>：放的是文章模板，<code>hexo n &#39; 文章标题 &#39;</code>生成的文章就是基于这里面的模板生成的，可以自定义修改</p>
+<p><code>hexo/public</code>：存放的是通过 <code>hexo/source/_post</code> 里面的文章生成的 html 页面 , 这些文件将来是要提交到 github 去的，部署完后可以清理</p>
+<p>其他的目录都是些基础配置。参考本站【使用 Hexo+Github 搭建个人免费博客 1.1 节】</p>
 <h2 id="3-2- 命令回顾"><a href="#3-2- 命令回顾" class="headerlink" title="3.2 命令回顾"></a>3.2 命令回顾</h2><pre><code>hexo n &quot; 创建文章 &quot;
 hexo s -g  # 本地生成静态网页预览，检查用
 hexo d -g  # 部署上传到 github
-hexo clean  #清除本地的 public 文件夹和</code></pre>
+hexo clean  #清除本地的 public 文件夹和缓存 db.json</code></pre>
       
        <hr><span style="font-style: italic;color: gray;"> 欢迎各位看官及技术大佬前来交流指导呀，可以邮件至 jqiange@yeah.net </span>
     </div>

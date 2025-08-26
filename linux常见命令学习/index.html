@@ -890,7 +890,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2025-02-28 10:21:44'>2020-06-17 22:33</time>
+            发布时间 : <time class="date" title='最后更新: 2025-08-26 22:53:07'>2020-06-17 22:33</time>
         
     </div>
     <div class="article-meta">
@@ -992,7 +992,8 @@ mkdir A/B/C -p         #在当前目录下创建 A 文件夹, 再建 B, 再建 C
 </li>
 <li><p><code>rm 文件名</code> 删除文件 / 文件夹</p>
 <pre><code>rm *.txt   #删除所有 txt 文件（空文件）
-rm A -r    #强制删除 A 文件 即使里面有内容</code></pre></li>
+rm A -r    #强制删除 A 文件 即使里面有内容
+find /dir/path/* -type f -mtime +2 -exec rm &#123;&#125; \;  #-type f 表示只删文件, -mtime +2 筛选修改日期是 2 天前的</code></pre></li>
 <li><p><code>cat 文件名</code> 查看文件里的所有内容，可同时显示多个文件内容</p>
 <p><code>cat &gt; 文件名</code> 新建文件，并在换行后继续输入，将输入内容写进文件中，ctrl + d 结束输入</p>
 </li>
@@ -1056,7 +1057,8 @@ find ./temp -size +2M        #查找大于 2M 的文件
 find ./temp -size +2M -size -4M        #查找大于 2M，小于 4M 的文件
 
 find ./ -not -name &#39;plot*&#39;  #取反，不包含 </code></pre><p> 遇到权限问题，一律在最前面加<code>sudo</code>。</p>
-<pre><code>sudo find / -name *redis* -exec rm -rf &#123;&#125; \;  #查找根目录下所有包含 redis 的文件并删除</code></pre><h2 id="1-10- 移动与拷贝"><a href="#1-10- 移动与拷贝" class="headerlink" title="1.10 移动与拷贝"></a>1.10 移动与拷贝</h2><pre><code>mv 1.txt 1_1.txt  #重命名 1.txt 为 1_1.txt
+<pre><code>sudo find / -name *redis* -exec rm -rf &#123;&#125; \;  #查找根目录下所有包含 redis 的文件并删除
+find /dir/path/* -type f -mtime +2 -exec rm &#123;&#125; \;  #-type f 表示只删文件, -mtime +2 筛选修改日期是 2 天前的</code></pre><h2 id="1-10- 移动与拷贝"><a href="#1-10- 移动与拷贝" class="headerlink" title="1.10 移动与拷贝"></a>1.10 移动与拷贝</h2><pre><code>mv 1.txt 1_1.txt  #重命名 1.txt 为 1_1.txt
 
 mv 1.txt /laowang  #移动文件 1.txt 到 laowang 文件夹里
 

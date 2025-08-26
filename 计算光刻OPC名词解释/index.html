@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Pandas 数据分析处理实操 | jqiange</title>
-  <meta name="keywords" content=" Pandas ">
-  <meta name="description" content="Pandas 数据分析处理实操 | jqiange">
+  <title>计算光刻 OPC 名词解释 | jqiange</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="计算光刻 OPC 名词解释 | jqiange">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="世人笑我太疯癫，我笑世人看不穿。">
 <meta property="og:type" content="website">
@@ -870,9 +870,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-数据分析处理实操" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-计算光刻OPC名词解释" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Pandas 数据分析处理实操</h1>
+        <h1 class="article-title">计算光刻 OPC 名词解释</h1>
     
     <div class="article-meta">
         
@@ -882,27 +882,20 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="数据分析">数据分析</a>
+            <a  data-rel="chip">chip</a>
             
         </span>
         
         
-        <span class="tag">
-            <i class="iconfont icon-tag"></i>
-            
-            <a class="color2">Pandas</a>
-            
-        </span>
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2025-08-26 22:46:54'>2025-08-26 21:44</time>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-06-19 20:40:29'>2020-02-20 10:51</time>
-        
-    </div>
-    <div class="article-meta">
-        
-        <span>字数:1.1k</span>
+        <span>字数:549</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -921,7 +914,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%20%E6%A1%88%E4%BE%8B%E4%B8%80"><span class="toc-text">1. 案例一</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%20%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%8F%96"><span class="toc-text">1.1 数据读取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%20%E9%A2%84%E5%88%86%E6%9E%90"><span class="toc-text">1.2 预分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-%20%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97"><span class="toc-text">1.3 数据清洗 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-%20%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90"><span class="toc-text">1.4 数据分析 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-%20%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="toc-text">1.5 可视化</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A"><span class="toc-text"> 名词解释 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#EL-Energy-Latitude"><span class="toc-text">EL(Energy Latitude)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%84%A6%E8%B7%9D%E8%83%BD%E9%87%8F%E7%9F%A9%E9%98%B5%EF%BC%88Focus-Energy-Matrix%EF%BC%8C-FEM%EF%BC%89"><span class="toc-text"> 焦距能量矩阵（Focus Energy Matrix， FEM）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Fab%20%E4%BA%A7%E5%93%81%E5%90%8D%E8%AF%8D"><span class="toc-text">Fab 产品名词 </span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -937,124 +930,30 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>@<div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%20%E6%A1%88%E4%BE%8B%E4%B8%80"><span class="toc-text">1. 案例一</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%20%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%8F%96"><span class="toc-text">1.1 数据读取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%20%E9%A2%84%E5%88%86%E6%9E%90"><span class="toc-text">1.2 预分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-%20%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97"><span class="toc-text">1.3 数据清洗 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-%20%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90"><span class="toc-text">1.4 数据分析 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-%20%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="toc-text">1.5 可视化</span></a></li></ol></li></ol></div></p>
-<h1 id="1- 案例一"><a href="#1- 案例一" class="headerlink" title="1. 案例一"></a>1. 案例一</h1><h2 id="1-1- 数据读取"><a href="#1-1- 数据读取" class="headerlink" title="1.1 数据读取"></a>1.1 数据读取</h2><pre><code class="python">&gt;&gt;&gt; df=pd.read_csv(&#39;D:\ 数据分析素材 \DataAnalyst.csv&#39;,encoding=&#39;gb2312&#39;)
-&gt;&gt;&gt; df</code></pre>
-<p>前几列：</p>
-<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-20_11-03-16.jpg" alt=""></p>
-<p>后几列：</p>
-<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-20_11-17-10.jpg" alt=""></p>
-<p><strong>上述呈现形式只能看个大概，需要对这些数据进一步进行粗略统计分析观察</strong></p>
-<h2 id="1-2- 预分析"><a href="#1-2- 预分析" class="headerlink" title="1.2 预分析"></a>1.2 预分析</h2><pre><code class="python">&gt;&gt;&gt; df.info()</code></pre>
-<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-20_11-07-21.jpg" style="zoom:80%;" />
+        <h1 id="名词解释"><a href="# 名词解释" class="headerlink" title="名词解释"></a> 名词解释 </h1><h2 id="EL-Energy-Latitude"><a href="#EL-Energy-Latitude" class="headerlink" title="EL(Energy Latitude)"></a>EL(Energy Latitude)</h2><ul>
+<li> 表征了图形 CD 在一定 tolerance 范围内 dose 能够变化的比例 </li>
+<li>EL 意为曝光容忍度，也称为曝光裕度，是工艺窗口的重要参数之一，光学曝光系统可以形成符合设计版图要求的曝光能量范围 </li>
+<li> 通常使用曝光结果检测的 CD 值在 10% 变化范围内的曝光能量选择范围来定义。即如果抗蚀剂在偏离最佳曝光能量的情况下，图形线宽变化较小的，说明该抗蚀剂有较大的曝光宽容度。</li>
+<li>EL 越大越好，EL 越大，意味着 Process Window 越大 </li>
+</ul>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20250826220054000.png" alt="image-20250826220054000" style="zoom:50%;" />
 
-<p>由此可以看到，每一列应该包含 6876 个数据，但是 index=3,6……等数据有空，其数据是不完整的。</p>
-<p>表格数据中’positionId’这一列代表的招聘公司及职位的 ID，具有唯一性，有多少 ID，就有多少招聘岗位。其他为重复值。</p>
-<pre><code class="python">&gt;&gt;&gt; len(df.positionId.unique())
-5031</code></pre>
-<p>由此可以看到有效数据量为 5031 条。</p>
-<h2 id="1-3- 数据清洗"><a href="#1-3- 数据清洗" class="headerlink" title="1.3 数据清洗"></a>1.3 数据清洗 </h2><p><strong> 删除重复值</strong></p>
-<pre><code class="python">&gt;&gt;&gt; df1=df.drop_duplicates([&#39;positionId&#39;])     // 按 positionID 列删除重复值
-&gt;&gt;&gt; df1.info()</code></pre>
-<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-20_11-49-26.jpg" style="zoom:80%;" />
+<blockquote>
+<p> 在计算 EL 时，需要用到 best Energy，这个值是从 cd-energy 折线图中计算而得，知道了 target cd，此时需要的 energy 就可得 </p>
+</blockquote>
+<h2 id="焦距能量矩阵（Focus-Energy-Matrix，-FEM）"><a href="# 焦距能量矩阵（Focus-Energy-Matrix，-FEM）" class="headerlink" title="焦距能量矩阵（Focus Energy Matrix， FEM）"></a> 焦距能量矩阵（Focus Energy Matrix， FEM）</h2><ul>
+<li> 在进行曝光时，从一个方向以固定的步长改变聚焦值（focus），另一个方向以固定的步长改变曝光能量（Energy），所得的图形线宽的二维数据表格 </li>
+<li> 用来检查光刻工艺窗口和确定最佳曝光条件的测试方法，通过在一个硅片上不同的区域使用不同的曝光能量和焦距，可以产生不同工艺条件的组合 </li>
+<li> 通过此方法可以在硅片上进行实验确定聚焦深度，曝光量所允许的范围和最佳焦距（best focus）、最佳曝光能量（best Energy），以确定最佳光刻工艺窗口（Process Window）。</li>
+</ul>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20250826222319164.png" alt="image-20250826222319164" style="zoom:50%;" />
 
-<p><strong>数据规整</strong></p>
-<p>我们最为关心的数据之一就是薪水，它给出的是一个范围，我们要提取其中最大和最小值。</p>
-<pre><code class="python">// 定义一个切词函数
-def cut_word(word,method):
-    position=word.find(&#39;-&#39;)   // 在 word 里找 &#39;-&#39;，找到了返回其索引位置，找不到返回 -1
-    length=len(word)
-    if position != -1:         
-        bottom_salary=word[:position-1]        // 如 word 为 &#39;6k-9k&#39;, 则返回 6
-        top_salary=word[position+1:length-1]
-    else:
-        bottom_salary=word[:word.upper().find(&#39;K&#39;)] // 有的 word 里是 &#39;10K 以上 &#39;，没有 &#39;-&#39;，则只取数字部分
-        top_salary=bottom_salary
-    if method == &#39;bottom&#39;:
-        return bottom_salary
-    else:
-        return top_salary
-
-&gt;&gt;&gt; df1[&#39;bottom_salary&#39;]=df1.salary.apply(cut_word,method=&#39;bottom&#39;) // 注意这里传参方式
-&gt;&gt;&gt; df1[&#39;top_salary&#39;]=df1.salary.apply(cut_word,method=&#39;top&#39;)
-&gt;&gt;&gt; df1.head() </code></pre>
-<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-20_12-20-02.jpg" style="zoom:80%;" />
-
-<p>这里的’bottom_salary’和’top_salary’都是字符类型数据，需要转换成整型数据。</p>
-<pre><code class="python">&gt;&gt;&gt; df1.bottom_salary = df1.bottom_salary.astype(&#39;int&#39;)  // 数据类型转换
-&gt;&gt;&gt; df1.top_salary = df1.top_salary.astype(&#39;int&#39;)
-&gt;&gt;&gt; df1[&#39;avg_salary&#39;] = df1.apply(lambda x:(x.bottom_salary+x.top_salary)/2,axis=1)
-&gt;&gt;&gt; df1.head()</code></pre>
-<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-20_12-36-05.jpg" style="zoom:80%;" />
-
-<p><strong>最后只提取我们的需要的核心数据</strong></p>
-<pre><code class="python">&gt;&gt;&gt; df2 = df1[[&#39;city&#39;,&#39;companyShortName&#39;,&#39;companySize&#39;,&#39;education&#39;,
-            &#39;positionName&#39;,&#39;positionLables&#39;,&#39;workYear&#39;,&#39;avg_salary&#39;]] // 注意这里两个括号
-&gt;&gt;&gt; df2</code></pre>
-<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-20_12-43-46.jpg" style="zoom:80%;" />
-
-<pre><code class="python">&gt;&gt;&gt; df2=df2.reset_index()   // 可以将数据行索引变成 0-5030</code></pre>
-<h2 id="1-4- 数据分析"><a href="#1-4- 数据分析" class="headerlink" title="1.4 数据分析"></a>1.4 数据分析 </h2><p><strong> 描述性统计</strong></p>
-<pre><code>&gt;&gt;&gt; df2.city.value_counts()   // 统计城市职位需求
-北京    2347
-上海     979
-深圳     527
-杭州     406
-广州     335
-成都     135
-南京      83
-武汉      69
-西安      38
-苏州      37
-厦门      30
-长沙      25
-天津      20
-Name: city, dtype: int64</code></pre><pre><code class="python">&gt;&gt;&gt; df2.describe()    // 只有 avg_salary 数据列为整型数据，故只统计 avg_salary
-　　　　　avg_salary
-count     5031.000000
-mean     17.111409
-std     8.996242
-min     1.500000
-25%     11.500000
-50%     15.000000
-75%     22.500000
-max     75.000000</code></pre>
-<h2 id="1-5- 可视化"><a href="#1-5- 可视化" class="headerlink" title="1.5 可视化"></a>1.5 可视化</h2><p><strong>Pandas 其实内置了简单的可视化工具</strong></p>
-<p><strong>城市工资情况统计：</strong></p>
-<pre><code class="python">&gt;&gt;&gt; df2.avg_salary.hist()   // 直方图</code></pre>
-<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-20_13-43-03.jpg" alt=""></p>
-<pre><code class="python">&gt;&gt;&gt; df2.boxplot(column=&#39;avg_salary&#39;,by=&#39;city&#39;,figsize=(9,7))  // 箱线图</code></pre>
-<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/4324vvfdxf.png" style="zoom:80%;" />
-
-<p>上述箱线图横坐标城市本来为框，显示异常，可填入如下代码使之显示正常。</p>
-<pre><code class="python">// 导入相关工具包
-&gt;&gt;&gt; import matplotlib.pyplot as plt
-&gt;&gt;&gt; %matplotlib inline    // 为了可以直接在 jupyter notebook 中直接输出图表, 其实可以省略
-&gt;&gt;&gt; plt.style.use(&#39;ggplot&#39;)
-&gt;&gt;&gt; plt.rcParams[&#39;font.sans-serif&#39;] = [&#39;SimHei&#39;] // 指定默认字体
-&gt;&gt;&gt; plt.rcParams[&#39;axes.unicode_minus&#39;] = False  // 解决保存图像是负号 &#39;-&#39; 显示为方块的问题</code></pre>
-<p><strong>职位关键词统计：</strong></p>
-<pre><code class="python">&gt;&gt;&gt; df2.positionLables              // 观察 positionLables 列的内容格式
-&gt;&gt;&gt; word = df2.positionLables.str[1:-1].replace(&#39; &#39;,&#39;&#39;)  // 去掉中括号, 去掉空格</code></pre>
-<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-20_14-05-07.jpg" alt=""></p>
-<pre><code>&gt;&gt;&gt; df_word=word.dropna().str.split(&#39;,&#39;).apply(pd.value_counts)  // 统计每个关键词在每行出现的次数</code></pre><p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-20_14-22-08.jpg" alt=""></p>
-<pre><code class="python">&gt;&gt;&gt; df_word_counts = df_word.unstack().dropna().reset_index().groupby(&#39;level_0&#39;).count()
-// 将 DataFrame 变成 Series，再按照 level_0 统计每个词出现的个数</code></pre>
-<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-20_14-27-35.jpg" style="zoom:80%;" />
-
-<p><strong>生成词云图：</strong></p>
-<pre><code class="python">&gt;&gt;&gt; from wordcloud import WordCloud
-&gt;&gt;&gt; df_word_counts.index = df_word_counts.index.str.replace(&quot;&#39;&quot;,&quot;&quot;)
-&gt;&gt;&gt; wordcloud = WordCloud(font_path=&#39;C:\Windows\Fonts\simsun.ttc&#39;,
-                          width=900,height=400,
-                          background_color=&#39;white&#39;)
-
-&gt;&gt;&gt; f,axs = plt.subplots(figsize=(15,15))
-&gt;&gt;&gt; wordcloud.fit_words(df_word_counts.level_1)
-&gt;&gt;&gt; axs = plt.imshow(wordcloud)
-&gt;&gt;&gt; plt.axis(&#39;off&#39;)
-&gt;&gt;&gt; plt.show()</code></pre>
-<p>![](<a target="_blank" rel="noopener" href="https://image--1.oss-cn-shenzhen.aliyuncs.com/dhasiudhasud">https://image--1.oss-cn-shenzhen.aliyuncs.com/dhasiudhasud</a> hae34.png)</p>
+<h2 id="Fab 产品名词"><a href="#Fab 产品名词" class="headerlink" title="Fab 产品名词"></a>Fab 产品名词 </h2><ul>
+<li>NTO：首次全掩模工程产品流片（NTO）是指当制造流程和技术参数都已经确定后，首次进行的全掩模制造。这意味着整个晶圆上生产的都是同一种芯片设计 </li>
+<li>TQV：内部用于工艺测试验证的图形，Technology Qualification Vehicle，早期工艺开发抓手。</li>
+<li>MPW：多项目晶圆流片，由不同小客户出 chips，出一张 mask，搭便车，节省成本，在一片晶圆上同时生产不同的芯片。</li>
+<li>TestKey：一些重复周期性图形，fab 内部如 PIE 部门测试用。</li>
+</ul>
 
       
        <hr><span style="font-style: italic;color: gray;"> 欢迎各位看官及技术大佬前来交流指导呀，可以邮件至 jqiange@yeah.net </span>
@@ -1067,6 +966,46 @@ max     75.000000</code></pre>
 
 
 
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
     
 
 

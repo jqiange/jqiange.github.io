@@ -314,7 +314,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="55">
-<input type="hidden" id="yelog_site_word_count" value="242.5k">
+<input type="hidden" id="yelog_site_word_count" value="242.6k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -912,7 +912,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2025-08-15 23:22:24'>2022-03-07 20:24</time>
+            发布时间 : <time class="date" title='最后更新: 2025-09-09 23:43:50'>2022-03-07 20:24</time>
         
     </div>
     <div class="article-meta">
@@ -1053,6 +1053,8 @@ exit</code></pre>
 </li>
 <li><p>[[]]：双方括号为字符串比较提供高级功能，模式匹配。常见用法见 2.4.2</p>
 <p>[[是 bash 程序语言的关键字。</p>
+</li>
+<li><p>；分号或换行，一个 / 一句命令的结束</p>
 </li>
 </ul>
 <hr>
@@ -1369,7 +1371,7 @@ do
     echo $VAR
 done</code></pre>
 <h3 id="2-6-7-continue"><a href="#2-6-7-continue" class="headerlink" title="2.6.7 continue"></a>2.6.7 continue</h3><p><code>continue</code> 用来 <strong> 跳过本次循环</strong>，进入下一次循环</p>
-<pre><code class="sh">for VAR in 1 2 3
+<pre><code class="shell">for VAR in 1 2 3
 do
     if [$VAR -eq 2]
     then
@@ -1380,7 +1382,7 @@ do
 done</code></pre>
 <h2 id="2-7-shell 数组"><a href="#2-7-shell 数组" class="headerlink" title="2.7 shell 数组"></a>2.7 shell 数组</h2><p>shell 就两种数据类型，字符型和数组。字符串之前已经介绍了，这里介绍数组。</p>
 <p>数组中可以存放多个值。Bash Shell 只支持一维数组（不支持多维数组），初始化时不需要定义数组大小。</p>
-<h3 id="2-7-1- 数组定义"><a href="#2-7-1- 数组定义" class="headerlink" title="2.7.1 数组定义"></a>2.7.1 数组定义</h3><pre><code class="sh"># 第一种
+<h3 id="2-7-1- 数组定义"><a href="#2-7-1- 数组定义" class="headerlink" title="2.7.1 数组定义"></a>2.7.1 数组定义</h3><pre><code class="shell"># 第一种
 arr=(v1 v2 v3 v4 v5)    #v 可以是字符串或者数字，不必类型相同
 
 #第二种
@@ -1390,17 +1392,30 @@ yyy
 zzz
 )
 
-#第三种
+#数组的遍历
+for case in $&#123;arr1[*]&#125;
+do
+  echo $case
+done
+
+#单独赋值
+arr[1]=10
+
+#第三种: 用字符串实现同样的功能
 arr2=&quot;
 xxx
 yyy
 zzz
 &quot;
-
-#单独赋值
-arr[1]=10</code></pre>
+#字符串的遍历
+for item in $arr2
+do
+    echo $item
+done
+</code></pre>
 <blockquote>
-<p>一对括号表示的是数组，数组元素用空格符号分隔开</p>
+<p>一对括号 (…) 表示的是数组，数组元素用空格符号分隔开</p>
+<p>数组和字符串循环取值的方式不同，注意区分</p>
 </blockquote>
 <h3 id="2-7-2- 读取与赋值"><a href="#2-7-2- 读取与赋值" class="headerlink" title="2.7.2 读取与赋值"></a>2.7.2 读取与赋值</h3><ul>
 <li>读取数组：<ul>

@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>python 查看任何第三方库的用法的方法 | jqiange</title>
+  <title>hexo 文章加密方法 | jqiange</title>
   <meta name="keywords" content="">
-  <meta name="description" content="python 查看任何第三方库的用法的方法 | jqiange">
+  <meta name="description" content="hexo 文章加密方法 | jqiange">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="世人笑我太疯癫，我笑世人看不穿。">
 <meta property="og:type" content="website">
@@ -908,9 +908,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-python查看任何第三方库的用法的方法" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-hexo文章加密方法" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">python 查看任何第三方库的用法的方法</h1>
+        <h1 class="article-title">hexo 文章加密方法</h1>
     
     <div class="article-meta">
         
@@ -928,12 +928,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-06-19 20:40:29'>2020-02-13 22:57</time>
+            发布时间 : <time class="date" title='最后更新: 2025-09-21 22:40:36'>2025-09-21 22:33</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:44</span>
+        <span>字数:279</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -968,10 +968,37 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong> 在 CMD 终端 </strong></p>
-<p><strong> 输入 </strong> </p>
-<pre><code>python -m pydoc -p 0</code></pre><p><strong> 此时它会返回 <code>pydoc server ready at 本地网址 </code></strong></p>
-<p><strong> 浏览器打开本地网址，就会看到很多第三方库 </strong></p>
+        <p>在 Hexo 博客中实现文章加密，可以通过使用 <code>hexo-blog-encrypt</code> 插件来实现。这个插件可以让你为特定的文章设置密码，只有输入正确的密码才能查看文章内容。</p>
+<p><strong>插件安装</strong>：</p>
+<ol>
+<li><p>使用 npm 安装</p>
+<pre><code>npm install --save hexo-blog-encrypt</code></pre></li>
+<li><p>使用 Yarn 安装</p>
+<pre><code>yarn add hexo-blog-encrypt</code></pre></li>
+</ol>
+<p><strong>config 配置：</strong></p>
+<p>在 hexo 的配置文件 <em>_config.yml</em> 里添加如下内容：</p>
+<pre><code># 文章启用加密
+encrypt:
+ enable: true
+ abstract: Welcome to my blog, enter password to read
+ message: Enter password to view
+ wrong_pass_message: 抱歉, 这个密码看着不太对, 请再试试
+ wrong_hash_message: 抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容 </code></pre><p><strong> 文章配置：</strong></p>
+<p>在需要加密的文章头部添加以下字段：</p>
+<pre><code>---
+title: Hexo 加密功能
+date: 2019-09-04 23:20:00
+tags: [学习笔记, Hexo]
+categories: Hexo
+password: smile
+abstract: Welcome to my blog, enter password to read
+message: 密码输入框上描述性内容
+---</code></pre><ul>
+<li><em>password</em>：设置文章的密码。</li>
+<li><em>abstract*：文章摘要。可以仅在</em>_config.yml* 里全局设置</li>
+<li><em>message*：密码框上的描述性文字。可以仅在</em>_config.yml* 里全局设置</li>
+</ul>
 
       
        <hr><span style="font-style: italic;color: gray;"> 欢迎各位看官及技术大佬前来交流指导呀，可以邮件至 jqiange@yeah.net </span>
@@ -984,6 +1011,46 @@
 
 
 
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
     
 
 

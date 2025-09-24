@@ -983,39 +983,6 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <!-- 添加文章容器，便于样式控制 -->
-        <div class="article-container">
-        
-            <h1 id="一 - 用 hexo 进行初始化，文件加载不动，卡慢"><a href="# 一 - 用 hexo 进行初始化，文件加载不动，卡慢" class="headerlink" title="一. 用 hexo 进行初始化，文件加载不动，卡慢"></a>一. 用 hexo 进行初始化，文件加载不动，卡慢 </h1><p> 在对文件执行 git bash 并且在 git bash 中输入<code>hexo init</code>，代码如下：</p>
-<pre><code> $ cd /f/Workspaces/hexo/
- $ hexo init</code></pre><p>出现如下问题：其中部分文件下载不动 <br> 原因：github 上不去，可以打开 cmd 窗口，输入 <code>ping github.com</code>，出现<code> 请求超时 </code>。<br> 参考解决方案：<br>在 hosts(“C:\Windows\System32\drivers\etc\hosts”)文件末尾添加：</p>
-<p>#github hosts<br>192.30.253.112 github.com<br>199.232.5.194 github.global.ssl.fastly.net</p>
-<p>按照上述方案，基本可以解决此问题。</p>
-<h1 id="二 - 创建文章时出现报错"><a href="# 二 - 创建文章时出现报错" class="headerlink" title="二. 创建文章时出现报错"></a>二. 创建文章时出现报错 </h1><p> 输入<code>hexo new &quot;title&quot;</code>，返回如下结果：</p>
-<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20250228015408395.png" style="zoom:33%;" />
-经查，已经使用 `npm install hexo-generator-topindex --save` 安装所需的插件，仍然报错。
-原因：修改了 scaffolds/post.md 文件，我往里面添加了新参数，top:/tags:/categories:
-其中把英文冒号打成了中文冒号，故导致无法通过 post.md 模板创建文章。
-
-<h1 id="三 -Hexo 文章上传本地图片在网页上无法显示的解决办法"><a href="# 三 -Hexo 文章上传本地图片在网页上无法显示的解决办法" class="headerlink" title="三.  Hexo 文章上传本地图片在网页上无法显示的解决办法"></a>三.  Hexo 文章上传本地图片在网页上无法显示的解决办法</h1><h2 id="3-1- 使用坚果云编辑 -md 文件时"><a href="#3-1- 使用坚果云编辑 -md 文件时" class="headerlink" title="3.1 使用坚果云编辑.md 文件时"></a>3.1 使用坚果云编辑.md 文件时</h2><ol>
-<li>找到 <code>Hexo</code> 下的 <code>_config.yml</code> 里的 <code>post_asset_folder</code>，把这个选项从<code>false</code> 改成<code>true</code>。</li>
-<li>git bash 安装插件：npm install <a target="_blank" rel="noopener" href="https://github.com/7ym0n/hexo-asset-image">https://github.com/7ym0n/hexo-asset-image</a> –save（这是个修改过的插件，经测试无问题），使用这个插件来引入图片。</li>
-<li>在 git bash 里运行 <code>hexo n &quot;title&quot;</code>在 /Hexo/source/_posts 文件夹创建 md 文章，与此同时，此文件夹里会同时出现同名文件夹，如下图，将 title 里需要插入的图片先放入 title 文件夹，再进行插入文章，即可显示。<br><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-13_12-42-03.png" alt="">))</li>
-</ol>
-<h2 id="3-2- 使用 Typora 编辑器时"><a href="#3-2- 使用 Typora 编辑器时" class="headerlink" title="3.2 使用 Typora 编辑器时"></a>3.2 使用 Typora 编辑器时</h2><ul>
-<li><p>首先，在项目根目录下 <code>source</code> 文件下新建一个 <code>assets</code> 文件夹</p>
-</li>
-<li><p>设置 Typora：Typora 文件 -&gt; 偏好设置，图片插入的地方选择“复制到指定路径”，如图所示：</p>
-<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-13_23-06-16.png" style="zoom: 50%;" />
-</li>
-<li><p>设置 <code>格式—图像—设置图片根目录</code>，把目录设置到 source    （每次插入图片前记得检查此项）</p>
-</li>
-<li><p>最后就可以愉快的插入图片了，格式如图：</p>
-<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-13_22-41-42.png" style="zoom:50%;" /></li>
-</ul>
-
-        
-        </div>
         <h1 id="一 - 用 hexo 进行初始化，文件加载不动，卡慢"><a href="# 一 - 用 hexo 进行初始化，文件加载不动，卡慢" class="headerlink" title="一. 用 hexo 进行初始化，文件加载不动，卡慢"></a>一. 用 hexo 进行初始化，文件加载不动，卡慢 </h1><p> 在对文件执行 git bash 并且在 git bash 中输入<code>hexo init</code>，代码如下：</p>
 <pre><code> $ cd /f/Workspaces/hexo/
  $ hexo init</code></pre><p>出现如下问题：其中部分文件下载不动 <br> 原因：github 上不去，可以打开 cmd 窗口，输入 <code>ping github.com</code>，出现<code> 请求超时 </code>。<br> 参考解决方案：<br>在 hosts(“C:\Windows\System32\drivers\etc\hosts”)文件末尾添加：</p>

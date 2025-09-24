@@ -983,68 +983,6 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <!-- 添加文章容器，便于样式控制 -->
-        <div class="article-container">
-        
-            <p><strong>Markdown</strong>是一种可以使用普通文本编辑器编写的标记语言，通过类似 HTML 的标记语法，它可以使普通文本内容具有一定的格式。但是它本身是不支持众多富文本功能的。</p>
-<ul>
-<li><strong>此文章的主要目的是：给 markdown 文本提供更多的编辑表现可能。</strong></li>
-</ul>
-<h1 id="1- 开始前"><a href="#1- 开始前" class="headerlink" title="1. 开始前"></a>1. 开始前 </h1><h2 id="认识网页结构"><a href="# 认识网页结构" class="headerlink" title="认识网页结构"></a><strong> 认识网页结构 </strong></h2><p> 网页一般由三部分组成：分别是：</p>
-<ul>
-<li><p><strong>HTML 超文本标记语言</strong>，是整个网页的结构，相当于整个网页的框架</p>
-<p>常见的标签如下：</p>
-<pre><code>&lt;html&gt;...&lt;/html&gt;          表示标记中间的元素是网页
-&lt;head&gt;...&lt;/head&gt;          用来申明使用的脚本语言，以及网页传输时使用的方式
-&lt;body&gt;...&lt;/body&gt;          表示用户可见的内容
-&lt;div&gt;...&lt;/div&gt;            表示框架
-&lt;p&gt;...&lt;/p&gt;                表示段落
-&lt;h1&gt;...&lt;/h1&gt;              表示标题
-&lt;li&gt;...&lt;/li&gt;              表示列表
-&lt;ul&gt;...&lt;/ul&gt;              表示无序列表
-&lt;ol&gt;...&lt;/ol&gt;              表示有序列表
-&lt;img&gt;...&lt;/img&gt;            表示图片
-&lt;a href=&quot;   &quot;&gt;...&lt;/a&gt;     表示超链接 </code></pre></li>
-<li><p><strong>CSS 层叠样式表</strong>，用来定义外观</p>
-</li>
-<li><p><strong>JScript</strong>，表示功能，交互的内容和各种特效都在里面。</p>
-</li>
-</ul>
-<p><strong>可以这样理解：如果用人体来比喻，HTML 是人体的骨架，并且定义了嘴巴，眼睛，耳朵要长在那里，这是人的基本要素。CSS 是人的外观细节，如嘴巴长什么样子，眼睛是单还是双眼皮，皮肤是黑还是白等。JScript 表示人的技能，如会不会跳舞，唱歌，演奏乐器等。</strong></p>
-<h1 id="2- 字体，字号和颜色"><a href="#2- 字体，字号和颜色" class="headerlink" title="2. 字体，字号和颜色"></a>2. 字体，字号和颜色 </h1><pre><code>&lt;font color=#0099ff size=7 face=&quot; 黑体 &quot;&gt; 这是我的显示效果 &lt;/font&gt;</code></pre><p><font color=#0099ff size=7 face="黑体"> 这是我的显示效果</font></p>
-<p>颜色对照表<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_37998647/article/details/79428290">https://blog.csdn.net/weixin_37998647/article/details/79428290</a></p>
-<h1 id="3- 背景色设置"><a href="#3- 背景色设置" class="headerlink" title="3. 背景色设置"></a>3. 背景色设置 </h1><pre><code>&lt;table&gt;&lt;tr&gt;&lt;td bgcolor=#D1EEEE&gt; 这是我的背景色 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</code></pre><table><tr><td bgcolor=#D1EEEE> 这是我的背景色</td></tr></table>
-
-<h1 id="4- 居中，左右对齐"><a href="#4- 居中，左右对齐" class="headerlink" title="4. 居中，左右对齐"></a>4. 居中，左右对齐</h1><pre><code>&lt;center&gt;&lt;font size=5 face=&quot; 黑体 &quot;&gt; 这是我的显示效果 &lt;/font&gt;&lt;/center&gt;                    居中
-&lt;p align=&#39;left&#39;&gt;&lt;font size=5 face=&quot; 黑体 &quot;&gt; 这是我的显示效果 &lt;/font&gt;&lt;/p align=&#39;left&#39;&gt;    左对齐
-&lt;p align=&#39;right&#39;&gt;&lt;font size=5 face=&quot; 黑体 &quot;&gt; 这是我的显示效果 &lt;/font&gt;&lt;/p align=&#39;right&#39;&gt;  有对齐 </code></pre><center><font size=5 face="黑体"> 这是我的显示效果</font></center>
-<p align='left'><font size=5 face="黑体">这是我的显示效果</font></p align='left'>
-
-<p align='right'><font size=5 face="黑体">这是我的显示效果</font></p align='right'>
-
-<h1 id="5- 矩阵形式输入"><a href="#5- 矩阵形式输入" class="headerlink" title="5. 矩阵形式输入"></a>5. 矩阵形式输入 </h1><p><strong> 首先通过编辑器插入公式块，再添加内容</strong>。</p>
-<p><strong>不带括号</strong></p>
-<pre><code>$$
-\begin&#123;matrix&#125;
-1&amp;2\\3&amp;4\\5&amp;6
-\end&#123;matrix&#125;</code></pre><p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/%E4%B8%8D%E5%B8%A6%E6%8B%AC%E5%8F%B7.jpg" alt="不带括号"></p>
-<p><strong>带中括号</strong></p>
-<pre><code>$$
-\left[\begin&#123;matrix&#125;
-1&amp;2\\3&amp;4\\5&amp;6
-\end&#123;matrix&#125;\right]
-$$
-</code></pre><p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/%E5%B8%A6%E4%B8%AD%E6%8B%AC%E5%8F%B7.jpg" alt="带中括号"></p>
-<p><strong>带大括号</strong></p>
-<pre><code>$$
-\left\&#123;\begin&#123;matrix&#125;
-1&amp;2\\3&amp;4\\5&amp;6
-\end&#123;matrix&#125;\right\&#125;
-$$</code></pre><p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/%E5%B8%A6%E5%A4%A7%E6%8B%AC%E5%8F%B7.jpg" alt="带大括号"></p>
-<h1 id="6- 更多"><a href="#6- 更多" class="headerlink" title="6. 更多"></a>6. 更多 </h1><p> 参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/silver1225/article/details/89036250?utm_source=distribute.pc_relevant.none-task">https://blog.csdn.net/silver1225/article/details/89036250?utm_source=distribute.pc_relevant.none-task</a></p>
-
-        
-        </div>
         <p><strong>Markdown</strong>是一种可以使用普通文本编辑器编写的标记语言，通过类似 HTML 的标记语法，它可以使普通文本内容具有一定的格式。但是它本身是不支持众多富文本功能的。</p>
 <ul>
 <li><strong>此文章的主要目的是：给 markdown 文本提供更多的编辑表现可能。</strong></li>

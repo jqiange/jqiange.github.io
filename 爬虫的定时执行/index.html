@@ -976,54 +976,6 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <!-- 添加文章容器，便于样式控制 -->
-        <div class="article-container">
-        
-            <h1 id="爬虫的定时及自动执行"><a href="# 爬虫的定时及自动执行" class="headerlink" title="爬虫的定时及自动执行"></a>爬虫的定时及自动执行 </h1><p> 这里主要介绍使用 Linux 中自带的「crontab」命令完成定时任务。</p>
-<p>这里常使用的命令是：</p>
-<ul>
-<li><code>crontab -e</code>：进入编辑模式，里面写入定时任务。</li>
-<li><code>crontab -l</code>：进入阅览模式，查看里面的内容。</li>
-</ul>
-<h2 id="定时任务的书写格式"><a href="# 定时任务的书写格式" class="headerlink" title="定时任务的书写格式"></a>定时任务的书写格式</h2><h2 id="1、普通爬虫"><a href="#1、普通爬虫" class="headerlink" title="1、普通爬虫"></a>1、普通爬虫</h2><pre><code class="python"># 爬虫程序 spider.py
-def main()：
-    #爬虫程序体
-    pass
-
-if __name__==&#39;__main__&#39;:
-    main()</code></pre>
-<p>此时，<code>crontab -e</code>进入编辑模式，书写格式为：</p>
-<blockquote>
-<p>[分] [时] [日] [月] [周] 命令 </p>
-</blockquote>
-<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20200706180702430.png" style="zoom:80%;" />
-
-<p>例如写入：<code>00 21 * * * python3 /home/ubuntu/python_works/spider.py &gt;&gt; /home/ubuntu/python_works/run.log</code></p>
-<p>上面的意思是每天 21 点 00 分使用 python3 命令执行指定路径下的 spider.py 文件，并输出日志到指定文件。</p>
-<h3 id="解释："><a href="# 解释：" class="headerlink" title="解释："></a>解释：</h3><p>（1）上面的 <code>*</code> 是通配符。代表任意值，类似的还有：</p>
-<p>逗号(<code>,</code>)：指定一个列表范围，例如，「00 12,21,00 * * *」代表每 12,21,00 点执行一次。</p>
-<p>中杠(<code>-</code>)：指定整数之间的范围，例如，「00 12-19 * * *」代表 12-19 点之间每隔一小时执行一次。</p>
-<p>斜杠(<code>/</code>)：指定时间的间隔频率，例如，「00 12-22/2 * * *」代表 12-22 点之间每隔 2 小时执行一次。</p>
-<p>（2）<code>&gt;&gt;</code>意思是将 py 文件中 print 输出内容保存在指定文件里，以追加的方式；</p>
-<p><code>&gt;</code>是以覆盖重写入的方式。</p>
-<h2 id="2、框架爬虫"><a href="#2、框架爬虫" class="headerlink" title="2、框架爬虫"></a>2、框架爬虫 </h2><p> 如已写好一个爬虫项目，爬虫主文件路径为 /lagou/lagou/spiders/lg.py。</p>
-<p>在 <code>crontab -e</code> 编辑模式中</p>
-<ol>
-<li><p>先写好时间</p>
-</li>
-<li><p>cd 到爬虫主文件里</p>
-</li>
-<li><p>scrapy 命令所在路径下，执行<code>scrapy crawl lg</code></p>
-</li>
-<li><p>最后可输出日志到指定文件</p>
-</li>
-</ol>
-<p>如：</p>
-<p><code>00 19 * * * cd /home/ubuntu/python_works/lagou/lagou/spiders &amp;&amp; /usr/local/anaconda/bin/scrapy crawl lg &gt;&gt; /home/ubuntu/python_works/lagou/lg_run.log</code></p>
-<p>若不知道 scrapy 命令的路径，可用 which scrapy 查找。</p>
-
-        
-        </div>
         <h1 id="爬虫的定时及自动执行"><a href="# 爬虫的定时及自动执行" class="headerlink" title="爬虫的定时及自动执行"></a>爬虫的定时及自动执行 </h1><p> 这里主要介绍使用 Linux 中自带的「crontab」命令完成定时任务。</p>
 <p>这里常使用的命令是：</p>
 <ul>

@@ -25,6 +25,8 @@
 
 <link href="/css/style.css?v=1.1.0" rel="stylesheet">
 
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
 <link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
 
 <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
@@ -49,7 +51,7 @@
   <input class="theme_preload_comment" value="">
   <input class="theme_blog_path" value="">
   <input id="theme_shortcut" value="true" />
-  <input id="theme_highlight_on" value="false" />
+  <input id="theme_highlight_on" value="true" />
   <input id="theme_code_copy" value="true" />
 </div>
 
@@ -938,7 +940,6 @@
             
         </span>
         
-        
     </div>
     <div class="article-meta">
         
@@ -982,6 +983,130 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+        <!-- 添加文章容器，便于样式控制 -->
+        <div class="article-container">
+        
+            <p>@<div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%20%E6%A1%88%E4%BE%8B%E4%B8%80"><span class="toc-text">1. 案例一</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%20%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%8F%96"><span class="toc-text">1.1 数据读取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%20%E9%A2%84%E5%88%86%E6%9E%90"><span class="toc-text">1.2 预分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-%20%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97"><span class="toc-text">1.3 数据清洗 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-%20%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90"><span class="toc-text">1.4 数据分析 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-%20%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="toc-text">1.5 可视化</span></a></li></ol></li></ol></div></p>
+<h1 id="1- 案例一"><a href="#1- 案例一" class="headerlink" title="1. 案例一"></a>1. 案例一</h1><h2 id="1-1- 数据读取"><a href="#1-1- 数据读取" class="headerlink" title="1.1 数据读取"></a>1.1 数据读取</h2><pre><code class="python">&gt;&gt;&gt; df=pd.read_csv(&#39;D:\ 数据分析素材 \DataAnalyst.csv&#39;,encoding=&#39;gb2312&#39;)
+&gt;&gt;&gt; df</code></pre>
+<p>前几列：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-20_11-03-16.jpg" alt=""></p>
+<p>后几列：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-20_11-17-10.jpg" alt=""></p>
+<p><strong>上述呈现形式只能看个大概，需要对这些数据进一步进行粗略统计分析观察</strong></p>
+<h2 id="1-2- 预分析"><a href="#1-2- 预分析" class="headerlink" title="1.2 预分析"></a>1.2 预分析</h2><pre><code class="python">&gt;&gt;&gt; df.info()</code></pre>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-20_11-07-21.jpg" style="zoom:80%;" />
+
+<p>由此可以看到，每一列应该包含 6876 个数据，但是 index=3,6……等数据有空，其数据是不完整的。</p>
+<p>表格数据中’positionId’这一列代表的招聘公司及职位的 ID，具有唯一性，有多少 ID，就有多少招聘岗位。其他为重复值。</p>
+<pre><code class="python">&gt;&gt;&gt; len(df.positionId.unique())
+5031</code></pre>
+<p>由此可以看到有效数据量为 5031 条。</p>
+<h2 id="1-3- 数据清洗"><a href="#1-3- 数据清洗" class="headerlink" title="1.3 数据清洗"></a>1.3 数据清洗 </h2><p><strong> 删除重复值</strong></p>
+<pre><code class="python">&gt;&gt;&gt; df1=df.drop_duplicates([&#39;positionId&#39;])     // 按 positionID 列删除重复值
+&gt;&gt;&gt; df1.info()</code></pre>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-20_11-49-26.jpg" style="zoom:80%;" />
+
+<p><strong>数据规整</strong></p>
+<p>我们最为关心的数据之一就是薪水，它给出的是一个范围，我们要提取其中最大和最小值。</p>
+<pre><code class="python">// 定义一个切词函数
+def cut_word(word,method):
+    position=word.find(&#39;-&#39;)   // 在 word 里找 &#39;-&#39;，找到了返回其索引位置，找不到返回 -1
+    length=len(word)
+    if position != -1:         
+        bottom_salary=word[:position-1]        // 如 word 为 &#39;6k-9k&#39;, 则返回 6
+        top_salary=word[position+1:length-1]
+    else:
+        bottom_salary=word[:word.upper().find(&#39;K&#39;)] // 有的 word 里是 &#39;10K 以上 &#39;，没有 &#39;-&#39;，则只取数字部分
+        top_salary=bottom_salary
+    if method == &#39;bottom&#39;:
+        return bottom_salary
+    else:
+        return top_salary
+
+&gt;&gt;&gt; df1[&#39;bottom_salary&#39;]=df1.salary.apply(cut_word,method=&#39;bottom&#39;) // 注意这里传参方式
+&gt;&gt;&gt; df1[&#39;top_salary&#39;]=df1.salary.apply(cut_word,method=&#39;top&#39;)
+&gt;&gt;&gt; df1.head() </code></pre>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-20_12-20-02.jpg" style="zoom:80%;" />
+
+<p>这里的’bottom_salary’和’top_salary’都是字符类型数据，需要转换成整型数据。</p>
+<pre><code class="python">&gt;&gt;&gt; df1.bottom_salary = df1.bottom_salary.astype(&#39;int&#39;)  // 数据类型转换
+&gt;&gt;&gt; df1.top_salary = df1.top_salary.astype(&#39;int&#39;)
+&gt;&gt;&gt; df1[&#39;avg_salary&#39;] = df1.apply(lambda x:(x.bottom_salary+x.top_salary)/2,axis=1)
+&gt;&gt;&gt; df1.head()</code></pre>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-20_12-36-05.jpg" style="zoom:80%;" />
+
+<p><strong>最后只提取我们的需要的核心数据</strong></p>
+<pre><code class="python">&gt;&gt;&gt; df2 = df1[[&#39;city&#39;,&#39;companyShortName&#39;,&#39;companySize&#39;,&#39;education&#39;,
+            &#39;positionName&#39;,&#39;positionLables&#39;,&#39;workYear&#39;,&#39;avg_salary&#39;]] // 注意这里两个括号
+&gt;&gt;&gt; df2</code></pre>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-20_12-43-46.jpg" style="zoom:80%;" />
+
+<pre><code class="python">&gt;&gt;&gt; df2=df2.reset_index()   // 可以将数据行索引变成 0-5030</code></pre>
+<h2 id="1-4- 数据分析"><a href="#1-4- 数据分析" class="headerlink" title="1.4 数据分析"></a>1.4 数据分析 </h2><p><strong> 描述性统计</strong></p>
+<pre><code>&gt;&gt;&gt; df2.city.value_counts()   // 统计城市职位需求
+北京    2347
+上海     979
+深圳     527
+杭州     406
+广州     335
+成都     135
+南京      83
+武汉      69
+西安      38
+苏州      37
+厦门      30
+长沙      25
+天津      20
+Name: city, dtype: int64</code></pre><pre><code class="python">&gt;&gt;&gt; df2.describe()    // 只有 avg_salary 数据列为整型数据，故只统计 avg_salary
+　　　　　avg_salary
+count     5031.000000
+mean     17.111409
+std     8.996242
+min     1.500000
+25%     11.500000
+50%     15.000000
+75%     22.500000
+max     75.000000</code></pre>
+<h2 id="1-5- 可视化"><a href="#1-5- 可视化" class="headerlink" title="1.5 可视化"></a>1.5 可视化</h2><p><strong>Pandas 其实内置了简单的可视化工具</strong></p>
+<p><strong>城市工资情况统计：</strong></p>
+<pre><code class="python">&gt;&gt;&gt; df2.avg_salary.hist()   // 直方图</code></pre>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-20_13-43-03.jpg" alt=""></p>
+<pre><code class="python">&gt;&gt;&gt; df2.boxplot(column=&#39;avg_salary&#39;,by=&#39;city&#39;,figsize=(9,7))  // 箱线图</code></pre>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/4324vvfdxf.png" style="zoom:80%;" />
+
+<p>上述箱线图横坐标城市本来为框，显示异常，可填入如下代码使之显示正常。</p>
+<pre><code class="python">// 导入相关工具包
+&gt;&gt;&gt; import matplotlib.pyplot as plt
+&gt;&gt;&gt; %matplotlib inline    // 为了可以直接在 jupyter notebook 中直接输出图表, 其实可以省略
+&gt;&gt;&gt; plt.style.use(&#39;ggplot&#39;)
+&gt;&gt;&gt; plt.rcParams[&#39;font.sans-serif&#39;] = [&#39;SimHei&#39;] // 指定默认字体
+&gt;&gt;&gt; plt.rcParams[&#39;axes.unicode_minus&#39;] = False  // 解决保存图像是负号 &#39;-&#39; 显示为方块的问题</code></pre>
+<p><strong>职位关键词统计：</strong></p>
+<pre><code class="python">&gt;&gt;&gt; df2.positionLables              // 观察 positionLables 列的内容格式
+&gt;&gt;&gt; word = df2.positionLables.str[1:-1].replace(&#39; &#39;,&#39;&#39;)  // 去掉中括号, 去掉空格</code></pre>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-20_14-05-07.jpg" alt=""></p>
+<pre><code>&gt;&gt;&gt; df_word=word.dropna().str.split(&#39;,&#39;).apply(pd.value_counts)  // 统计每个关键词在每行出现的次数</code></pre><p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-20_14-22-08.jpg" alt=""></p>
+<pre><code class="python">&gt;&gt;&gt; df_word_counts = df_word.unstack().dropna().reset_index().groupby(&#39;level_0&#39;).count()
+// 将 DataFrame 变成 Series，再按照 level_0 统计每个词出现的个数</code></pre>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-20_14-27-35.jpg" style="zoom:80%;" />
+
+<p><strong>生成词云图：</strong></p>
+<pre><code class="python">&gt;&gt;&gt; from wordcloud import WordCloud
+&gt;&gt;&gt; df_word_counts.index = df_word_counts.index.str.replace(&quot;&#39;&quot;,&quot;&quot;)
+&gt;&gt;&gt; wordcloud = WordCloud(font_path=&#39;C:\Windows\Fonts\simsun.ttc&#39;,
+                          width=900,height=400,
+                          background_color=&#39;white&#39;)
+
+&gt;&gt;&gt; f,axs = plt.subplots(figsize=(15,15))
+&gt;&gt;&gt; wordcloud.fit_words(df_word_counts.level_1)
+&gt;&gt;&gt; axs = plt.imshow(wordcloud)
+&gt;&gt;&gt; plt.axis(&#39;off&#39;)
+&gt;&gt;&gt; plt.show()</code></pre>
+<p>![](<a target="_blank" rel="noopener" href="https://image--1.oss-cn-shenzhen.aliyuncs.com/dhasiudhasud">https://image--1.oss-cn-shenzhen.aliyuncs.com/dhasiudhasud</a> hae34.png)</p>
+
+        
+        </div>
         <p>@<div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%20%E6%A1%88%E4%BE%8B%E4%B8%80"><span class="toc-text">1. 案例一</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%20%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%8F%96"><span class="toc-text">1.1 数据读取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%20%E9%A2%84%E5%88%86%E6%9E%90"><span class="toc-text">1.2 预分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-%20%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97"><span class="toc-text">1.3 数据清洗 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-%20%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90"><span class="toc-text">1.4 数据分析 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-%20%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="toc-text">1.5 可视化</span></a></li></ol></li></ol></div></p>
 <h1 id="1- 案例一"><a href="#1- 案例一" class="headerlink" title="1. 案例一"></a>1. 案例一</h1><h2 id="1-1- 数据读取"><a href="#1-1- 数据读取" class="headerlink" title="1.1 数据读取"></a>1.1 数据读取</h2><pre><code class="python">&gt;&gt;&gt; df=pd.read_csv(&#39;D:\ 数据分析素材 \DataAnalyst.csv&#39;,encoding=&#39;gb2312&#39;)
 &gt;&gt;&gt; df</code></pre>

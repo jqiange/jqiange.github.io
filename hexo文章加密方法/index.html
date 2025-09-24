@@ -25,6 +25,8 @@
 
 <link href="/css/style.css?v=1.1.0" rel="stylesheet">
 
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
 <link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
 
 <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
@@ -49,7 +51,7 @@
   <input class="theme_preload_comment" value="">
   <input class="theme_blog_path" value="">
   <input id="theme_shortcut" value="true" />
-  <input id="theme_highlight_on" value="false" />
+  <input id="theme_highlight_on" value="true" />
   <input id="theme_code_copy" value="true" />
 </div>
 
@@ -931,7 +933,6 @@
         </span>
         
         
-        
     </div>
     <div class="article-meta">
         
@@ -975,6 +976,44 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+        <!-- 添加文章容器，便于样式控制 -->
+        <div class="article-container">
+        
+            <p>在 Hexo 博客中实现文章加密，可以通过使用 <code>hexo-blog-encrypt</code> 插件来实现。这个插件可以让你为特定的文章设置密码，只有输入正确的密码才能查看文章内容。</p>
+<p>其核心的技术点就是在 hexo 渲染时将原文进行 AES 加密, 然后在展示的时候使用密码进行解密。</p>
+<p><strong>插件安装</strong>：</p>
+<ol>
+<li><p>使用 npm 安装</p>
+<pre><code>npm install --save hexo-blog-encrypt</code></pre></li>
+<li><p>使用 Yarn 安装</p>
+<pre><code>yarn add hexo-blog-encrypt</code></pre></li>
+</ol>
+<p><strong>config 配置：</strong></p>
+<p>在 hexo 的配置文件 <em>_config.yml</em> 里添加如下内容：</p>
+<pre><code># 文章启用加密
+encrypt:
+ enable: true
+ abstract: Welcome to my blog, enter password to read
+ message: Enter password to view
+ wrong_pass_message: 抱歉, 这个密码看着不太对, 请再试试
+ wrong_hash_message: 抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容 </code></pre><p><strong> 文章配置：</strong></p>
+<p>在需要加密的文章头部添加以下字段：</p>
+<pre><code>---
+title: Hexo 加密功能
+date: 2019-09-04 23:20:00
+tags: [学习笔记, Hexo]
+categories: Hexo
+password: smile
+abstract: Welcome to my blog, enter password to read
+message: 密码输入框上描述性内容
+---</code></pre><ul>
+<li>password：设置文章的密码。</li>
+<li>abstract：文章摘要。可以仅在_config.yml 里全局设置</li>
+<li>message：密码框上的描述性文字。可以仅在_config.yml 里全局设置</li>
+</ul>
+
+        
+        </div>
         <p>在 Hexo 博客中实现文章加密，可以通过使用 <code>hexo-blog-encrypt</code> 插件来实现。这个插件可以让你为特定的文章设置密码，只有输入正确的密码才能查看文章内容。</p>
 <p>其核心的技术点就是在 hexo 渲染时将原文进行 AES 加密, 然后在展示的时候使用密码进行解密。</p>
 <p><strong>插件安装</strong>：</p>

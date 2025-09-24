@@ -25,6 +25,8 @@
 
 <link href="/css/style.css?v=1.1.0" rel="stylesheet">
 
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
 <link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
 
 <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
@@ -49,7 +51,7 @@
   <input class="theme_preload_comment" value="">
   <input class="theme_blog_path" value="">
   <input id="theme_shortcut" value="true" />
-  <input id="theme_highlight_on" value="false" />
+  <input id="theme_highlight_on" value="true" />
   <input id="theme_code_copy" value="true" />
 </div>
 
@@ -931,7 +933,6 @@
         </span>
         
         
-        
     </div>
     <div class="article-meta">
         
@@ -975,6 +976,191 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+        <!-- 添加文章容器，便于样式控制 -->
+        <div class="article-container">
+        
+            <h1 id="一、安装 Anaconda"><a href="# 一、安装 Anaconda" class="headerlink" title="一、安装 Anaconda"></a>一、安装 Anaconda</h1><p>安装 Anaconda3 环境，安装路径：<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/">Index of /anaconda/archive/ | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror</a></p>
+<p>版本可以选择 <a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2023.03-Linux-x86_64.sh">Anaconda3-2023.03-Linux-x86_64.sh</a></p>
+<p><strong>安装</strong>：下载完成后，直接在 Linux 里运行<code>./Anaconda3-2023.03-Linux-x86_64.sh</code> 安装即可</p>
+<p><strong>配置环境变量</strong>：./anaconda3/bin 到 PATH 里面</p>
+<h2 id="1-1- 常见命令"><a href="#1-1- 常见命令" class="headerlink" title="1.1 常见命令"></a>1.1 常见命令 </h2><p> 使用 <code>conda</code> 创建虚拟环境是一个非常直接的过程，以下是具体步骤：</p>
+<pre><code class="shell">conda create --name myenv   # 使用 anaconda 创建虚拟环境
+conda activate myenv        # 激活环境
+
+#安装第三方的包
+conda install numpy
+pip install numpy
+
+#列出所有已有的 conda 环境
+conda env list
+
+#列出当前环境中所有已安装的包
+conda list
+
+#退出当前环境
+conda deactivate</code></pre>
+<h2 id="1-2- 特点"><a href="#1-2- 特点" class="headerlink" title="1.2 特点"></a>1.2 特点</h2><ol>
+<li><p><strong>环境的独立性</strong>：每个 Conda 虚拟环境都是相互独立的。这意味着在一个环境中安装的包不会自动出现在其他环境中。因此，如果你希望在新的虚拟环境中使用某些包，则确实需要在该环境中重新安装这些包。</p>
+</li>
+<li><p><strong>环境导出和导入</strong>：当你使用 Anaconda 创建一个新的虚拟环境时，默认情况下，这个新环境并不会自动包含 Anaconda 安装时自带的所有包。新创建的 Conda 环境通常只包含一些最基本、最核心的包，比如 <code>python</code> 和 <code>pip</code>，以及其他少量基础工具。</p>
+<ul>
+<li>但是如果你想拷贝一些包到新的虚拟环境，可以：</li>
+</ul>
+<pre><code class="shell">conda create --name myenv python=3.10 numpy pandas matplotlib</code></pre>
+<ul>
+<li>如果你已经有一个包含所需包的环境，并且想要在另一个环境中复制相同的配置（包括所有已安装的包及其版本），你可以使用 <code>conda env export</code> 命令来导出当前环境的配置为 YAML 文件，然后在新环境中使用 <code>conda env create</code> 根据这个 YAML 文件创建一个完全相同的环境。例如：</li>
+</ul>
+<pre><code class="shell">conda env export --name existing_env &gt; environment.yml
+conda env create --file environment.yml</code></pre>
+<ul>
+<li>如果你希望新创建的环境包含与基础 Anaconda 环境相同的包集合，可以这样做：</li>
+</ul>
+<pre><code class="shell">conda activate base                            #先激活基础环境
+conda env export --no-builds &gt; environment.yml #再导出基础环境的包
+
+#基于 yml 文件生成新的环境，新环境的名字将取决于 environment.yml 文件中的定义
+conda env create -f environment.yml</code></pre>
+</li>
+<li><p><strong>共享包存储库</strong>：虽然每个 Conda 环境是独立的，但它们可以共享同一个 Conda 存储库中的包。也就是说，如果多个环境都需要某个特定版本的包，Conda 只需下载一次该包并将其存储在其包缓存中，然后在不同的环境中链接到这个包。这样可以节省磁盘空间和下载时间。</p>
+</li>
+<li><p><strong>跨环境移动包</strong>：严格来说，你不能直接“移动”包从一个 Conda 环境到另一个。但是，通过上述的环境导出 / 导入功能，你可以高效地在不同环境中复制包配置。</p>
+</li>
+</ol>
+<h1 id="二、Pyinstaller- 使用"><a href="# 二、Pyinstaller- 使用" class="headerlink" title="二、Pyinstaller 使用"></a>二、Pyinstaller 使用</h1><blockquote>
+<p><strong>作用：</strong>PyInstaller 是一个非常流行的开源工具，用于将 Python 应用程序打包成独立的可执行文件，适用于 Windows、macOS 和 Linux 等多个平台。它能够帮助开发者将复杂的项目及其所有依赖项整合到一起，从而简化分发流程。</p>
+</blockquote>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/0.png" style="zoom:50%;" />
+
+<p><strong>主要特点</strong></p>
+<ul>
+<li><strong>跨平台支持</strong>：可以在不同操作系统上运行，生成对应平台的可执行文件。</li>
+<li><strong>包含所有依赖</strong>：自动分析你的 Python 脚本，并收集所有的依赖库和资源文件，确保在目标机器上无需额外安装即可运行。</li>
+<li><strong>多种输出格式</strong>：根据不同的需求，可以生成单个可执行文件或包含多个文件的目录。</li>
+<li><strong>兼容性广</strong>：支持多种 Python 版本及大量的第三方库。</li>
+</ul>
+<h2 id="2-1- 安装与介绍"><a href="#2-1- 安装与介绍" class="headerlink" title="2.1 安装与介绍"></a>2.1 安装与介绍 </h2><p><strong> 安装 pyinstaller</strong>，检查是否有 pyinstaller，如无，安装 <code>pip install pyinstaller</code></p>
+<p><strong>Pyinstaller 常用选项</strong></p>
+<ul>
+<li><code>-F</code> 或 <code>--onefile</code>：打包成单个可执行文件。</li>
+<li><code>-w</code> 或 <code>--windowed</code>（仅适用于 macOS 和 Windows 上的 GUI 应用）：避免打开控制台窗口。</li>
+<li><code>-n</code> 或 <code>--name</code>：指定输出的可执行文件名称。</li>
+<li><code>-i</code> 或 <code>--icon</code>：为生成的可执行文件添加图标。</li>
+</ul>
+<p>PyInstaller 还允许通过编写 <code>.spec</code> 文件来进一步定制打包过程，比如处理动态导入模块、添加数据文件等复杂场景。</p>
+<ol>
+<li><p><strong>生成 .spec 文件</strong>： 在首次运行 PyInstaller 时不直接生成可执行文件，而是只生成 <code>.spec</code> 文件，可以使用 <code>-y</code> 参数：</p>
+<pre><code class="shell">pyinstaller --onefile -n myapp -y myscript.py</code></pre>
+<p>这将生成一个名为 <code>myscript.spec</code> 的文件。</p>
+</li>
+<li><p><strong>编辑 .spec 文件</strong>： 打开生成的 <code>.spec</code> 文件进行编辑。以下是一些常见的高级用法示例。</p>
+<pre><code class="shell"># -*- mode: python ; coding: utf-8 -*-
+
+#指定是否使用加密算法
+block_cipher = None
+
+#打包流程的核心部分之一。它负责分析你的脚本及其依赖关系，并准备所有必要的信息以便后续步骤使用。
+a = Analysis([&#39;myscript.py&#39;],  #要打包的主脚本列表
+    pathex=[&#39;/path/to/my/project&#39;],  #包含额外的路径以搜索模块
+    binaries=[],  #需要包含的二进制文件（如动态链接库）
+    datas=[(&#39;resources/*&#39;, &#39;.&#39;)], # 添加数据文件
+    hiddenimports=[&#39;module_name&#39;], # 显式声明隐藏导入，那些不会被自动检测到的隐式导入模块
+    hookspath=[&#39;./hooks&#39;], # 自定义钩子路径
+    runtime_hooks=None,
+    excludes=None,
+    win_no_prefer_redirects=False,
+    win_private_assemblies=False,
+    cipher=block_cipher,
+)
+
+#Python ZIP 应用程序档案，包含了所有经过压缩的纯 Python 模块
+pyz = PYZ(a.pure, a.zipped_data,
+          cipher=block_cipher,
+          )
+
+#定义了最终生成的可执行文件的详细信息。包括名称、图标、是否启用控制台窗口等。
+exe = EXE(pyz,
+          a.scripts,
+          [],
+          exclude_binaries=True,
+          name=&#39;myapp&#39;,
+          debug=False,
+          strip=False,
+          upx=True,
+          console=True,
+          icon=&#39;myicon.ico&#39;, # 应用图标
+          key=&#39;my_secret_key&#39;) # 加密密钥
+
+#用于收集所有需要的资源，包括二进制文件、ZIP 文件和数据文件，并将它们与 exe 组合在一起形成最终的输出目录结构。
+coll = COLLECT(exe,
+               a.binaries,
+               a.zipfiles,
+               a.datas,
+               strip=False,
+               upx=True,
+               upx_exclude=[],
+               name=&#39;myapp&#39;)</code></pre>
+</li>
+</ol>
+<h2 id="2-2- 开始打包"><a href="#2-2- 开始打包" class="headerlink" title="2.2 开始打包"></a>2.2 开始打包 </h2><p> 切换到你的工作目录，就是你的 python 程序所在的路径，创建虚拟环境：</p>
+<p><strong>方法一</strong>：<code>python -m venv v_env</code></p>
+<pre><code class="shell">python -m venv v_env   # 使用 Python 的 venv 模块来创建一个新的虚拟环境 v_env
+
+source v_env/bin/activate.csh   #如果当前是 csh 环境
+source v_env/bin/activate       #如果当前是 bash 环境
+
+pip install pyqt5 pyinstaller   #在虚拟环境 v_env 安装需要用到的包
+
+pyinstaller --onfile --windowed --hidden-import PyQt5.sip xxx.py</code></pre>
+<p><strong>方法二</strong>：<code>conda create --name myenv</code>  </p>
+<pre><code class="shell">conda create --name myenv python=3.10 pyqt5 pyinstaller  # 使用 anaconda 创建虚拟环境，并夹带一些指定的包
+conda activate myenv        # 激活环境
+
+pyinstaller --onfile --windowed --hidden-import PyQt5.sip xxx.py</code></pre>
+<blockquote>
+<p>当你使用 Anaconda 创建一个新的虚拟环境时，默认情况下，这个新环境并不会自动包含 Anaconda 安装时自带的所有包。新创建的 Conda 环境通常只包含一些最基本、最核心的包，比如 <code>python</code> 和 <code>pip</code>，以及其他少量基础工具。</p>
+</blockquote>
+<p><strong>更建议的做法是将这个过程写成一个 shell 脚本，省事</strong></p>
+<p>以 <code>python -m venv v_env</code> 创建的虚拟环境为例</p>
+<pre><code class="shell">#!/bin/csh
+
+source v_env/bin/activate.csh       #先激活虚拟环境
+
+pyinstaller --onfile --windowed \
+            --add_data &quot;assets:assets&quot;        #静态资源目录
+            --hidden-import PyQt5.sip         #声明隐藏依赖
+            --icon=app.ico                    #程序图标
+            xxx.py  </code></pre>
+<h2 id="2-3- 其他相关知识点"><a href="#2-3- 其他相关知识点" class="headerlink" title="2.3 其他相关知识点"></a>2.3 其他相关知识点</h2><p><code>python -m venv</code> 和 Anaconda（或更具体地说是 <code>conda</code> 命令用于创建虚拟环境）都是用于创建独立的 Python 环境，但它们之间存在一些关键差异：</p>
+<ol>
+<li>包管理</li>
+</ol>
+<ul>
+<li><strong><code>venv</code></strong>: 使用标准的 Python 包管理工具 <code>pip</code> 来安装和管理包。这意味着你需要手动解决依赖关系，并确保所有需要的包都可以通过 PyPI 获得。</li>
+<li><strong>Anaconda (<code>conda</code>)</strong>: 提供了自己的包管理和环境管理系统，叫做 <code>conda</code>。它不仅能够管理 Python 包，还能处理非 Python 依赖项，例如编译器、系统库等。此外，<code>conda</code> 可以从 Anaconda 的仓库中获取包，这些仓库通常包含比 PyPI 更新的版本或者直接提供预编译的二进制文件，这在某些情况下可以简化安装过程。</li>
+</ul>
+<ol start="2">
+<li>跨平台兼容性与易用性</li>
+</ol>
+<ul>
+<li><strong><code>venv</code></strong>: 主要专注于 Python 开发者的使用场景，对于简单的项目和纯 Python 依赖非常有效。但是，在处理跨平台兼容性问题时可能需要额外的工作，特别是在处理不同操作系统之间的差异时。</li>
+<li><strong>Anaconda (<code>conda</code>)</strong>: 设计时考虑到了数据科学领域的需求，因此在处理跨平台兼容性和复杂的依赖关系方面表现出色。<code>conda</code> 创建的环境更容易在不同的操作系统之间迁移，且支持多种语言的包管理，不仅仅限于 Python。</li>
+</ul>
+<ol start="3">
+<li>环境隔离</li>
+</ol>
+<ul>
+<li><strong><code>venv</code></strong> 和 <strong><code>conda</code></strong> 都能有效地创建隔离的环境，使得不同的项目可以拥有独立的库版本和依赖关系。然而，由于 <code>conda</code> 还可以管理非 Python 依赖，所以在某些情况下它可以提供更强的隔离能力。</li>
+</ul>
+<ol start="4">
+<li>性能与大小</li>
+</ol>
+<ul>
+<li><strong><code>venv</code></strong>: 生成的虚拟环境相对较小，因为它们只包含必要的 Python 文件和激活脚本。</li>
+<li><strong>Anaconda (<code>conda</code>)</strong>: 创建的环境可能会更大，因为它包含了更多的默认包（尤其是数据科学相关的库），以及为了支持多语言和复杂依赖而增加的功能。</li>
+</ul>
+
+        
+        </div>
         <h1 id="一、安装 Anaconda"><a href="# 一、安装 Anaconda" class="headerlink" title="一、安装 Anaconda"></a>一、安装 Anaconda</h1><p>安装 Anaconda3 环境，安装路径：<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/">Index of /anaconda/archive/ | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror</a></p>
 <p>版本可以选择 <a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2023.03-Linux-x86_64.sh">Anaconda3-2023.03-Linux-x86_64.sh</a></p>
 <p><strong>安装</strong>：下载完成后，直接在 Linux 里运行<code>./Anaconda3-2023.03-Linux-x86_64.sh</code> 安装即可</p>

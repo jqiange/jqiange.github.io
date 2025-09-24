@@ -25,6 +25,8 @@
 
 <link href="/css/style.css?v=1.1.0" rel="stylesheet">
 
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
 <link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
 
 <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
@@ -49,7 +51,7 @@
   <input class="theme_preload_comment" value="">
   <input class="theme_blog_path" value="">
   <input id="theme_shortcut" value="true" />
-  <input id="theme_highlight_on" value="false" />
+  <input id="theme_highlight_on" value="true" />
   <input id="theme_code_copy" value="true" />
 </div>
 
@@ -931,7 +933,6 @@
         </span>
         
         
-        
     </div>
     <div class="article-meta">
         
@@ -975,6 +976,36 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+        <!-- 添加文章容器，便于样式控制 -->
+        <div class="article-container">
+        
+            <h1 id="名词解释"><a href="# 名词解释" class="headerlink" title="名词解释"></a> 名词解释 </h1><h2 id="EL-Energy-Latitude"><a href="#EL-Energy-Latitude" class="headerlink" title="EL(Energy Latitude)"></a>EL(Energy Latitude)</h2><ul>
+<li> 表征了图形 CD 在一定 tolerance 范围内 dose 能够变化的比例 </li>
+<li>EL 意为曝光容忍度，也称为曝光裕度，是工艺窗口的重要参数之一，光学曝光系统可以形成符合设计版图要求的曝光能量范围 </li>
+<li> 通常使用曝光结果检测的 CD 值在 10% 变化范围内的曝光能量选择范围来定义。即如果抗蚀剂在偏离最佳曝光能量的情况下，图形线宽变化较小的，说明该抗蚀剂有较大的曝光宽容度。</li>
+<li>EL 越大越好，EL 越大，意味着 Process Window 越大 </li>
+</ul>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20250826220054000.png" alt="EL 计算公式" style="zoom:50%;" />
+
+<blockquote>
+<p> 在计算 EL 时，需要用到 best Energy，这个值是从 cd-energy 折线图中计算而得，知道了 target cd，此时需要的 energy 就可得 </p>
+</blockquote>
+<h2 id="焦距能量矩阵（Focus-Energy-Matrix，-FEM）"><a href="# 焦距能量矩阵（Focus-Energy-Matrix，-FEM）" class="headerlink" title="焦距能量矩阵（Focus Energy Matrix， FEM）"></a> 焦距能量矩阵（Focus Energy Matrix， FEM）</h2><ul>
+<li> 在进行曝光时，从一个方向以固定的步长改变聚焦值（focus），另一个方向以固定的步长改变曝光能量（Energy），所得的图形线宽的二维数据表格 </li>
+<li> 用来检查光刻工艺窗口和确定最佳曝光条件的测试方法，通过在一个硅片上不同的区域使用不同的曝光能量和焦距，可以产生不同工艺条件的组合 </li>
+<li> 通过此方法可以在硅片上进行实验确定聚焦深度，曝光量所允许的范围和最佳焦距（best focus）、最佳曝光能量（best Energy），以确定最佳光刻工艺窗口（Process Window）。</li>
+</ul>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20250826222319164.png" alt="FEM 示意" style="zoom:50%;" />
+
+<h2 id="Fab 产品名词"><a href="#Fab 产品名词" class="headerlink" title="Fab 产品名词"></a>Fab 产品名词 </h2><ul>
+<li>NTO：首次全掩模工程产品流片（NTO）是指当制造流程和技术参数都已经确定后，首次进行的全掩模制造。这意味着整个晶圆上生产的都是同一种芯片设计 </li>
+<li>TQV：内部用于工艺测试验证的图形，Technology Qualification Vehicle，早期工艺开发抓手。</li>
+<li>MPW：多项目晶圆流片，由不同小客户出 chips，出一张 mask，搭便车，节省成本，在一片晶圆上同时生产不同的芯片。</li>
+<li>TestKey：一些重复周期性图形，fab 内部如 PIE 部门测试用。</li>
+</ul>
+
+        
+        </div>
         <h1 id="名词解释"><a href="# 名词解释" class="headerlink" title="名词解释"></a> 名词解释 </h1><h2 id="EL-Energy-Latitude"><a href="#EL-Energy-Latitude" class="headerlink" title="EL(Energy Latitude)"></a>EL(Energy Latitude)</h2><ul>
 <li> 表征了图形 CD 在一定 tolerance 范围内 dose 能够变化的比例 </li>
 <li>EL 意为曝光容忍度，也称为曝光裕度，是工艺窗口的重要参数之一，光学曝光系统可以形成符合设计版图要求的曝光能量范围 </li>

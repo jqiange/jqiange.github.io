@@ -25,6 +25,8 @@
 
 <link href="/css/style.css?v=1.1.0" rel="stylesheet">
 
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
 <link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
 
 <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
@@ -49,7 +51,7 @@
   <input class="theme_preload_comment" value="">
   <input class="theme_blog_path" value="">
   <input id="theme_shortcut" value="true" />
-  <input id="theme_highlight_on" value="false" />
+  <input id="theme_highlight_on" value="true" />
   <input id="theme_code_copy" value="true" />
 </div>
 
@@ -931,7 +933,6 @@
         </span>
         
         
-        
     </div>
     <div class="article-meta">
         
@@ -975,6 +976,109 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+        <!-- 添加文章容器，便于样式控制 -->
+        <div class="article-container">
+        
+            <h1 id="一、ffmpeg 组件"><a href="# 一、ffmpeg 组件" class="headerlink" title="一、ffmpeg 组件"></a>一、ffmpeg 组件</h1><p>ffmpeg 是一套可以用来记录、转换数字音频、视频，并能将其转化为流的开源计算机程序。采用 LGPL 或 GPL 许可证。它提供了录制、转换以及流化音视频的完整解决方案。</p>
+<p><strong>本次介绍 ffmpeg 的目的是：合并视频，合并音频，合并视频和音频。</strong></p>
+<p>它可以直接在命令行下直接调用；也可以通过 python 程序调用。</p>
+<h2 id="1-1- 下载及配置环境变量"><a href="#1-1- 下载及配置环境变量" class="headerlink" title="1.1 下载及配置环境变量"></a>1.1 下载及配置环境变量 </h2><p> 下载地址：<a target="_blank" rel="noopener" href="https://ffmpeg.zeranoe.com/builds/">https://ffmpeg.zeranoe.com/builds/</a></p>
+<p>下载完直接解压即可，将文件放到合适位置。</p>
+<p>然后在 path 中配置环境变量。</p>
+<p>配置完需要重启电脑才能生效。</p>
+<p>如在 CMD 下输入以下命令，若有反应，则说明环境变量配置成功。</p>
+<pre><code>C:\Users\Aloha&gt;ffmpeg -version</code></pre><h2 id="1-2- 在 python 中使用"><a href="#1-2- 在 python 中使用" class="headerlink" title="1.2 在 python 中使用"></a>1.2 在 python 中使用</h2><h3 id="1-2-1- 视频音频合并"><a href="#1-2-1- 视频音频合并" class="headerlink" title="1.2.1 视频音频合并"></a>1.2.1 视频音频合并</h3><pre><code class="python">import subprocess  // 这个不用 pip 安装，自带的
+
+def video_add_audio(video_file, audio_file):
+    &quot;&quot;&quot;
+     视频添加音频
+    :param file_name: 传入视频文件的路径
+    :param mp3_file: 传入音频文件的路径
+    :return:
+    &quot;&quot;&quot;
+    outfile_name = file_name + &#39;-txt.mp4&#39;
+    subprocess.call(&#39;ffmpeg -i &#39; + video_file
+                    + &#39; -i &#39; + audio_file + &#39; -strict -2 -f mp4 &#39;
+                    + outfile_name, shell=True)</code></pre>
+<h3 id="1-2-2- 视频合并"><a href="#1-2-2- 视频合并" class="headerlink" title="1.2.2 视频合并"></a>1.2.2 视频合并 </h3><h4 id="方法一：FFmpeg-concat- 协议"><a href="# 方法一：FFmpeg-concat- 协议" class="headerlink" title="方法一：FFmpeg concat 协议"></a><strong> 方法一：FFmpeg concat 协议 </strong></h4><p> 对于 MPEG 格式的视频，可以直接连接：</p>
+<blockquote>
+<pre><code>ffmpeg -i &quot;concat:input1.mpg|input2.mpg|input3.mpg&quot; -c copy output.mpg</code></pre></blockquote>
+<p>对于非 MPEG 格式容器，但是是 MPEG 编码器（H.264、DivX、XviD、MPEG4、MPEG2、AAC、MP2、MP3 等），可以包装进 TS 格式的容器再合并。在新浪视频，有很多视频使用 H.264 编码器，可以采用这个方法</p>
+<blockquote>
+<pre><code>ffmpeg -i input1.flv -c copy -bsf:v h264_mp4toannexb -f mpegts input1.ts
+ffmpeg -i input2.flv -c copy -bsf:v h264_mp4toannexb -f mpegts input2.ts
+ffmpeg -i input3.flv -c copy -bsf:v h264_mp4toannexb -f mpegts input3.ts
+ffmpeg -i &quot;concat:input1.ts|input2.ts|input3.ts&quot; -c copy -bsf:a aac_adtstoasc -movflags +faststart output.mp4</code></pre></blockquote>
+<p>保存 QuickTime/MP4 格式容器的时候，建议加上 <code>-movflags +faststart</code>。这样分享文件给别人的时候可以边下边看。</p>
+<h4 id="方法二：FFmpeg-concat- 分离器"><a href="# 方法二：FFmpeg-concat- 分离器" class="headerlink" title="方法二：FFmpeg concat 分离器"></a><strong>方法二：FFmpeg concat 分离器 </strong></h4><p> 这种方法成功率很高，也是最好的，但是需要 FFmpeg 1.1 以上版本。先创建一个文本文件<code>filelist.txt</code>：</p>
+<blockquote>
+<pre><code>file &#39;input1.mkv&#39;
+file &#39;input2.mkv&#39;
+file &#39;input3.mkv&#39;</code></pre></blockquote>
+<p>然后：</p>
+<blockquote>
+<pre><code>ffmpeg -f concat -i filelist.txt -c copy output.mkv</code></pre></blockquote>
+<p>注意：使用 FFmpeg concat 分离器时，如果文件名有奇怪的字符，要在 <code>filelist.txt</code> 中转义。</p>
+<h2 id="1-3- 用法总结"><a href="#1-3- 用法总结" class="headerlink" title="1.3 用法总结"></a>1.3 用法总结 </h2><h3 id="1-3-1-ffmpeg 命令"><a href="#1-3-1-ffmpeg 命令" class="headerlink" title="1.3.1 ffmpeg 命令"></a>1.3.1 ffmpeg 命令</h3><p> 命令格式：</p>
+<pre><code>ffmpeg -i [输入文件名] [参数选项] -f [格式] [输出文件]
+ffmpeg [[options][`-i&#39; input_file]]... &#123;[options] output_file&#125;...</code></pre><ul>
+<li>参数选项：<br> (1) -an: 去掉音频<br> (2) -acodec: 音频选项， 一般后面加 copy 表示拷贝<br> (3) -vcodec: 视频选项，一般后面加 copy 表示拷贝</li>
+<li>格式：<br>  (1) h264: 表示输出的是 h264 的视频裸流<br>  (2) mp4: 表示输出的是 mp4 的视频<br>  (3) mpegts: 表示 ts 视频流</li>
+<li>注意：如果没有输入文件，那么视音频捕捉（只在 Linux 下有效，因为 Linux 下把音视频设备当作文件句柄来处理）就会起作用。作为通用的规则，选项一般用于下一个特定的文件。如果你给 –b 64 选项，改选会设置下一个视频速率。对于原始输入文件，格式选项可能是需要的。缺省情况下，ffmpeg 试图尽可能的无损转换，采用与输入同样的音频视频参数来输出。</li>
+</ul>
+<p><strong>视频格式转换示例：</strong></p>
+<pre><code>//H264 视频转 ts 视频流
+ffmpeg -i test.h264 -vcodec copy -f mpegts test.ts
+
+//ts 视频转 mp4
+ffmpeg -i test.ts -acodec copy -vcodec copy -f mp4 test.mp4
+
+//mp4 视频转 flv
+ffmpeg -i test.mp4 -acodec copy -vcodec copy -f flv test.flv </code></pre><p> <strong>将视频转为音频：</strong></p>
+<pre><code>def video2mp3(file_name):
+    &quot;&quot;&quot;
+    将视频转为音频
+    :param file_name: 传入视频文件的路径
+    :return:
+    &quot;&quot;&quot;
+    outfile_name = file_name.split(&#39;.&#39;)[0] + &#39;.mp3&#39;
+    subprocess.call(&#39;ffmpeg -i &#39; + file_name
+                    + &#39; -f mp3 &#39; + outfile_name, shell=True)</code></pre><ul>
+<li>分离视频：<code>ffmpeg -i 1.mp4  1.avi</code></li>
+<li>分离音频：<code>ffmpeg -i 1.mp4 1.mp3</code></li>
+</ul>
+<h1 id="二、流媒体 ts 与 m3u8"><a href="# 二、流媒体 ts 与 m3u8" class="headerlink" title="二、流媒体 ts 与 m3u8"></a>二、流媒体 ts 与 m3u8</h1><p>现在大部分视频网站为了反扒，会将视频切割成很多小段，形成后缀为.ts 的视频文件。用户在网站上播放视频时，会一步步从服务器加载.ts 视频进行播放。</p>
+<p><strong>Ts 文件视频编码主要格式 h264/mpeg4，音频位 aac/mp3</strong></p>
+<p>与此同时，还会存在一个.m3u8 文件，它是记录了一个索引纯文本文件，视频播放时，会根据 m3u8 的索引找到对应的音视频文件的网络地址进行在线播放。</p>
+<p><strong>原视频数据分割为很多个 TS 流，每个 TS 流的地址记录在 m3u8 文件列表中。</strong></p>
+<p>以下是 m3u8 文件的通常格式：</p>
+<pre><code class="python">#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-TARGETDURATION:13
+#EXT-X-MEDIA-SEQUENCE:0
+#EXT-X-KEY:METHOD=AES-128,URI=&quot;.20180125/key.key&quot;  &lt;-- 有这一行说明 ts 被加密了。
+#EXTINF:12.5,
+http://www.example.com/20180125/GBDYO3576000.ts   #&lt;-- 这就是 ts 流视频的真实 url
+#EXTINF:12.5,
+http://www.example.com/20180125/GBDYO3576001.ts
+#EXTINF:12.5,
+http://www.example.com/20180125/GBDYO3576002.ts
+……………………
+#EXT-X-ENDLIST</code></pre>
+<h2 id="2-1- 无加密"><a href="#2-1- 无加密" class="headerlink" title="2.1 无加密"></a>2.1 无加密 </h2><p> 在.m3u8 文件中，若无 #EXT-X-KEY……一行字样，说明没有加密。</p>
+<h3 id="2-1-1-m3u8 下载合并"><a href="#2-1-1-m3u8 下载合并" class="headerlink" title="2.1.1 m3u8 下载合并"></a>2.1.1 m3u8 下载合并 </h3><p><strong> 有了 m3u8 文件，可以直接使用 ffmpeg 进行下载，合并。</strong></p>
+<p>注意这里的 m3u8 文件地址可以是网络 url，也可以是本地 ts 文件路径。</p>
+<pre><code>ffmpeg -i file.m3u8 -c copy new.mp4</code></pre><p>若报错： Protocol ‘http’ not on whitelist ‘file,crypto,data’!</p>
+<p>则执行下面这个：</p>
+<pre><code>ffmpeg -allowed_extensions ALL -protocol_whitelist &quot;file,http,crypto,tcp&quot; -i index.m3u8 -c copy out.mp4</code></pre><h3 id="2-1-2-ts 合并"><a href="#2-1-2-ts 合并" class="headerlink" title="2.1.2 ts 合并"></a>2.1.2 ts 合并 </h3><p> 当我们已经直接把 <code>.ts</code> 文件下载到本地了，可以按照以下方法合并。</p>
+<p>CMD 下执行一下命令：</p>
+<pre><code class="cmd">copy/b D:\temp\*.ts D:\temp\output.ts</code></pre>
+<p><code>D:\temp\*.ts</code> 意思是 <code>D:\temp</code> 目录下所有的 <code>.ts</code> 文件。</p>
+<h2 id="2-2- 有加密"><a href="#2-2- 有加密" class="headerlink" title="2.2 有加密"></a>2.2 有加密 </h2><p> 在.m3u8 文件中，若存在 #EXT-X-KEY……一行字样，说明.ts 有加密。</p>
+<pre><code>#EXT-X-KEY:METHOD=AES-128,URI=&quot;key 的地址 &quot;   </code></pre><p>只要这一行有说明 key 的地址（不论本地，还是网络 url），就可以直接执行：</p>
+<pre><code>ffmpeg -i file.m3u8 -c copy new.mp4</code></pre>
+        
+        </div>
         <h1 id="一、ffmpeg 组件"><a href="# 一、ffmpeg 组件" class="headerlink" title="一、ffmpeg 组件"></a>一、ffmpeg 组件</h1><p>ffmpeg 是一套可以用来记录、转换数字音频、视频，并能将其转化为流的开源计算机程序。采用 LGPL 或 GPL 许可证。它提供了录制、转换以及流化音视频的完整解决方案。</p>
 <p><strong>本次介绍 ffmpeg 的目的是：合并视频，合并音频，合并视频和音频。</strong></p>
 <p>它可以直接在命令行下直接调用；也可以通过 python 程序调用。</p>

@@ -25,6 +25,8 @@
 
 <link href="/css/style.css?v=1.1.0" rel="stylesheet">
 
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
 <link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
 
 <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
@@ -49,7 +51,7 @@
   <input class="theme_preload_comment" value="">
   <input class="theme_blog_path" value="">
   <input id="theme_shortcut" value="true" />
-  <input id="theme_highlight_on" value="false" />
+  <input id="theme_highlight_on" value="true" />
   <input id="theme_code_copy" value="true" />
 </div>
 
@@ -931,7 +933,6 @@
         </span>
         
         
-        
     </div>
     <div class="article-meta">
         
@@ -975,6 +976,341 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+        <!-- 添加文章容器，便于样式控制 -->
+        <div class="article-container">
+        
+            <p>对传输的数据进行 JS 加密是网站常用的加密方式，以防止爬虫的爬取，以下对有道翻译进行破解示例。</p>
+<h1 id="一、手动破解"><a href="# 一、手动破解" class="headerlink" title="一、手动破解"></a>一、手动破解 </h1><p> 打开有道翻译：<a target="_blank" rel="noopener" href="http://fanyi.youdao.com/">http://fanyi.youdao.com/</a></p>
+<p>输入翻译内容：你好，世界</p>
+<p>打开开发者调试工具：</p>
+<p>【Network】—刷新—重新输入需要翻译的内容</p>
+<p>在【XHR】过滤后，可看到【Js】传来的数据：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_10-20-51.png" alt=""></p>
+<p>在【Headers】里可以看到请求的【url，请求方式】：<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_10-23-37.png" alt=""></p>
+<p>再往下翻，可以看到发送的表单数据：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_10-25-34.png" alt=""></p>
+<p>这里面是重点！</p>
+<p>重新输入翻译内容，再对比看看两份表单数据：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_10-28-53.png" alt=""></p>
+<p>以上红框里四个参数是关键，需要搞清楚它是怎么产生的。</p>
+<p>【ctrl+f】打开搜索框，搜索【salt】参数</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_10-37-46.png" alt=""></p>
+<p>搜到了【fanyi.min.js】，这就说明【salt】【sign】【ts】【bv】可能是在这里面产生的。</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_10-43-48.png" alt=""></p>
+<p>显示内容：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_10-45-38.png" alt=""></p>
+<p>为了便于分析查找，将【fanyi.min.js】数据复制到 pycharm 里。</p>
+<p>在 pycharm 里新建【JavaScript file】，命名为【fanyi.min.js】，把数据复制进去。</p>
+<p>【ctrl+f】打开搜索框，搜索【translate_o】关键词</p>
+<p>因为这是数据传输的 url：【Request URL: ==<a target="_blank" rel="noopener" href="http://fanyi.youdao.com/translate_o?smartresult=dict&amp;smartresult=rule==】">http://fanyi.youdao.com/translate_o?smartresult=dict&amp;smartresult=rule==】</a></p>
+<p>找到：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_10-55-15.png" alt=""></p>
+<p>这里面的（data: e）中的 e 是指查询或者说翻译参数，用户需要翻译的值。这个数据在函数 c(e,t)里处理，故先 ctrl+ 鼠标左键，点击函数名 c 进入：</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_11-08-55.png" style="zoom:80%;" />
+
+<p>可以看到我们需要的参数【salt】【sign】【ts】【bv】这些参数都跟 r 有关，ctrl+ 鼠标左键，点击 r 进入：</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_11-11-39.png" style="zoom:80%;" />
+
+<p>可以看到，r 是由 v.generateSaltSign(n)产生的，ctrl+ 鼠标左键，点击进入：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_11-14-25.png" alt=""></p>
+<p>可以看到，generateSaltSign 是由 r 产生的，ctrl+ 鼠标左键，点击 r 进入：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_11-16-45.png" alt=""></p>
+<p>由此终于可以看到【ts】【bv】【sign】【salt】是怎么来的了。</p>
+<p>【ts】与时间有关，再结合 ts 在表单数据里的值【ts: 1585016297455】，很容易知道它就是个时间戳，只不过是个 13 位数的时间戳。python 里面可以得到：</p>
+<pre><code class="python">ts=str(int(time.time()*1000))</code></pre>
+<p>【bv】是由(navigator.appVersion）进行 md5 加密而来，(navigator.appVersion）其实就是 User-Agent。</p>
+<p>【sign】是由 (“fanyideskweb” + e + i + “Nw(nmmbP%A-r6U3EUn]Aj”) 进行 md5 加密而来，这里的 e 是翻译的查询参数，比如这里翻译的内容是”你好，世界”，e 就是”你好，世界”；i 就是 salt。</p>
+<p>【salt】是 i，与 r(即时间戳有关)，再结合 salt 在表单数据里的值【salt: 15850162974555】，很明显就知道 salt 是在 ts 时间戳后面再加了一位随机数。</p>
+<pre><code class="python">salt=ts+str(random.randint(0,9))  // 字符串拼接</code></pre>
+<p>剩下的就是在 python 里面实现 md5 加密。</p>
+<pre><code class="python">import hashlib
+def make_md5(string):
+    string=string.encode(&#39;utf-8&#39;)
+    md5=hashlib.md5(string).hexdigest()
+    return md5
+
+bv=make_md5(&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36&quot;)
+sign=make_md5(&quot;fanyideskweb&quot; + &quot; 你好，世界 &quot; + str(salt) + &quot;Nw(nmmbP%A-r6U3EUn]Aj&quot;)</code></pre>
+<p>整个程序：</p>
+<pre><code class="python">import requests
+import time
+import random
+import hashlib
+
+def make_md5(string):
+    string=string.encode(&#39;utf-8&#39;)
+    md5=hashlib.md5(string).hexdigest()
+    return md5
+
+def translate(e):
+    #特征值破解
+    ts=str(int(time.time()*1000))
+    salt=ts+str(random.randint(0,9))
+    bv=make_md5(&#39;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36&#39;)
+    sign=make_md5(&quot;fanyideskweb&quot; + e + salt + &quot;n%A-rKaT5fb[Gy?;N5@Tj&quot;)
+
+    formdata=&#123;
+        &quot;i&quot;: str(e),
+        &quot;from&quot;: &#39;AUTO&#39;,
+         &quot;to&quot;: &quot;AUTO&quot;,
+        &quot;smartresult&quot;: &quot;dict&quot;,
+        &quot;client&quot;: &quot;fanyideskweb&quot;,
+        &quot;salt&quot;: salt,
+        &quot;sign&quot;: sign,
+        &quot;ts&quot;: ts,
+        &quot;bv&quot;: bv,
+        &quot;doctype&quot;: &quot;json&quot;,
+        &quot;version&quot;: &quot;2.1&quot;,
+        &quot;keyfrom&quot;: &quot;fanyi.web&quot;,
+        &quot;action&quot;: &quot;FY_BY_REALTlME&quot;
+    &#125;
+    headers=&#123;
+        &#39;Accept&#39;: &#39;application/json, text/javascript, */*; q=0.01&#39;,
+        &#39;Accept-Encoding&#39;: &#39;gzip, deflate&#39;,
+        &#39;Accept-Language&#39;: &#39;zh-CN,zh;q=0.9&#39;,
+        &#39;Connection&#39;: &#39;keep-alive&#39;,
+        &#39;Content-Length&#39;: &#39;251&#39;,
+        &#39;Content-Type&#39;: &#39;application/x-www-form-urlencoded; charset=UTF-8&#39;,
+        &#39;Cookie&#39;: &#39;OUTFOX_SEARCH_USER_ID=289052185@10.108.160.18; OUTFOX_SEARCH_USER_ID_NCOO=469089922.02312773; DICT_UGC=be3af0da19b5c5e6aa4e17bd8d90b28a|; JSESSIONID=abczzcxuVriBO6I1nFq0w; ___rl__test__cookies=1567939951177&#39;,
+        &#39;Host&#39;: &#39;fanyi.youdao.com&#39;,
+        &#39;Origin&#39;: &#39;http://fanyi.youdao.com&#39;,
+        &#39;Referer&#39;: &#39;http://fanyi.youdao.com/&#39;,
+        &#39;User-Agent&#39;: &#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36&#39;,
+        &#39;X-Requested-With&#39;:&#39;XMLHttpRequest&#39;,
+    &#125;
+    res=requests.post(&quot;http://fanyi.youdao.com/translate_o?smartresult=dict&amp;smartresult=rule&quot;,data=formdata,headers=headers).json()
+    text=res[&#39;translateResult&#39;][0][0][&#39;tgt&#39;]
+    return text
+
+if __name__==&#39;__main__&#39;:
+    e=input(&#39; 请输入需要翻译的词或句子：&#39;)
+    result=translate(e)
+    print(result)</code></pre>
+<h1 id="二、JavaScript 破解"><a href="# 二、JavaScript 破解" class="headerlink" title="二、JavaScript 破解"></a>二、JavaScript 破解 </h1><p> 原理：直接在网页调试工具中将实现 JS 加密的 JavaScript 代码整个赋值下来，在 python 中执行，这样就无需人为去破解。</p>
+<h2 id="2-1- 搭建环境"><a href="#2-1- 搭建环境" class="headerlink" title="2.1 搭建环境"></a>2.1 搭建环境 </h2><p> 如果想用 python 代码直接调用 js 的代码，则需要搭建 js 环境，并安装相关的库直接调用 JS 代码。</p>
+<p><a target="_blank" rel="noopener" href="https://pypi.org/project/PyExecJS/">PyExecJS</a> ，就是其中一个比较好的库。可以使用 python 运行 JavaScript 代码。</p>
+<p>需要注意的是：这个库已经不再维护了，如果因为版本更新所导致的一些错误是无法修复的。</p>
+<p><code>PyExecJS</code> 的优点是不需要关心 JavaScript 环境。 特别是它可以在 Windows 环境下工作，而不需要安装额外的库。</p>
+<p>缺点之一是性能。 通过文本传递 JavaScript 运行时，速度很慢。 另一个缺点是它不完全支持运行时特定的特性。</p>
+<p>首先下载安装 Node.js：<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/">https://nodejs.org/zh-cn/</a></p>
+<p>然后安装 python 库：</p>
+<pre><code>pip install PyExecJS</code></pre><h2 id="2-2- 配置 Pycharm"><a href="#2-2- 配置 Pycharm" class="headerlink" title="2.2 配置 Pycharm"></a>2.2 配置 Pycharm</h2><p>目的：在 pycharm 中运行 js 代码。</p>
+<p>在 pycharm 中安装插件 Node.js：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_13-29-37.png" alt=""></p>
+<p>尝试运行：</p>
+<pre><code>// 新建文件 youdao.js，并输入以下代码
+console.log(&#39;hello&#39;)
+// 运行输出
+hello</code></pre><p>如果提示没有编译器，则按下面配置：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_13-37-20.png" alt=""></p>
+<h2 id="2-3- 复制 JS 代码"><a href="#2-3- 复制 JS 代码" class="headerlink" title="2.3 复制 JS 代码"></a>2.3 复制 JS 代码 </h2><p> 上面已经找到了关键数据的加密方式，直接复制过来：</p>
+<p>在 pycharm 里新建【JavaScript file】，命名为【fanyi.js】，把数据复制进去。</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_13-46-28.png" alt=""></p>
+<p>这里面用到了 n.md5 函数，ctrl+ 鼠标左键，点击函数名找到位置：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_13-56-54.png" alt=""></p>
+<p>找到 md5 之后，发现里面的还有 h(e),f(e)等函数，不可直接复制 md5 函数里的内容，应该向上找，找到包含 md5 的完整函数。</p>
+<p>按缩进判断函数体：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_14-00-27.png" alt=""></p>
+<p>然后将断点之间的代码都复制到【fanyi.js】：</p>
+<p>并删掉引用：e(“./jquery-1.7”).extend({</p>
+<pre><code class="javascript">var n = function (e, t) &#123;
+        return e &lt;&lt; t | e &gt;&gt;&gt; 32 - t
+    &#125;, r = function (e, t) &#123;
+        var n, r, i, a, o;
+        return i = 2147483648 &amp; e, a = 2147483648 &amp; t, n = 1073741824 &amp; e, r = 1073741824 &amp; t, o = (1073741823 &amp; e) + (1073741823 &amp; t), n &amp; r ? 2147483648 ^ o ^ i ^ a : n | r ? 1073741824 &amp; o ? 3221225472 ^ o ^ i ^ a : 1073741824 ^ o ^ i ^ a : o ^ i ^ a
+    &#125;, i = function (e, t, n) &#123;
+        return e &amp; t | ~e &amp; n
+    &#125;, a = function (e, t, n) &#123;
+        return e &amp; n | t &amp; ~n
+    &#125;, o = function (e, t, n) &#123;
+        return e ^ t ^ n
+    &#125;, s = function (e, t, n) &#123;
+        return t ^ (e | ~n)
+    &#125;, l = function (e, t, a, o, s, l, c) &#123;
+        return e = r(e, r(r(i(t, a, o), s), c)), r(n(e, l), t)
+    &#125;, c = function (e, t, i, o, s, l, c) &#123;
+        return e = r(e, r(r(a(t, i, o), s), c)), r(n(e, l), t)
+    &#125;, u = function (e, t, i, a, s, l, c) &#123;
+        return e = r(e, r(r(o(t, i, a), s), c)), r(n(e, l), t)
+    &#125;, d = function (e, t, i, a, o, l, c) &#123;
+        return e = r(e, r(r(s(t, i, a), o), c)), r(n(e, l), t)
+    &#125;, f = function (e) &#123;
+        for (var t, n = e.length, r = n + 8, i = 16 * ((r - r % 64) / 64 + 1), a = Array(i - 1), o = 0, s = 0; s &lt; n;) o = s % 4 * 8, a[t = (s - s % 4) / 4] = a[t] | e.charCodeAt(s) &lt;&lt; o, s++;
+        return t = (s - s % 4) / 4, o = s % 4 * 8, a[t] = a[t] | 128 &lt;&lt; o, a[i - 2] = n &lt;&lt; 3, a[i - 1] = n &gt;&gt;&gt; 29, a
+    &#125;, p = function (e) &#123;
+        var t, n = &quot;&quot;, r = &quot;&quot;;
+        for (t = 0; t &lt;= 3; t++) n += (r = &quot;0&quot; + (e &gt;&gt;&gt; 8 * t &amp; 255).toString(16)).substr(r.length - 2, 2);
+        return n
+    &#125;, h = function (e) &#123;
+        e = e.replace(/\x0d\x0a/g, &quot;\n&quot;);
+        for (var t = &quot;&quot;, n = 0; n &lt; e.length; n++) &#123;
+            var r = e.charCodeAt(n);
+            if (r &lt; 128) t += String.fromCharCode(r); else if (r &gt; 127 &amp;&amp; r &lt; 2048) t += String.fromCharCode(r &gt;&gt; 6 | 192), t += String.fromCharCode(63 &amp; r | 128); else if (r &gt;= 55296 &amp;&amp; r &lt;= 56319) &#123;
+                if (n + 1 &lt; e.length) &#123;
+                    var i = e.charCodeAt(n + 1);
+                    if (i &gt;= 56320 &amp;&amp; i &lt;= 57343) &#123;
+                        var a = 1024 * (r - 55296) + (i - 56320) + 65536;
+                        t += String.fromCharCode(240 | a &gt;&gt; 18 &amp; 7), t += String.fromCharCode(128 | a &gt;&gt; 12 &amp; 63), t += String.fromCharCode(128 | a &gt;&gt; 6 &amp; 63), t += String.fromCharCode(128 | 63 &amp; a), n++
+                    &#125;
+                &#125;
+            &#125; else t += String.fromCharCode(r &gt;&gt; 12 | 224), t += String.fromCharCode(r &gt;&gt; 6 &amp; 63 | 128), t += String.fromCharCode(63 &amp; r | 128)
+        &#125;
+        return t
+    &#125;;
+      md5=function (e) &#123;
+            var t, n, i, a, o, s, m, g, v, y = Array();
+            for (e = h(e), y = f(e), s = 1732584193, m = 4023233417, g = 2562383102, v = 271733878, t = 0; t &lt; y.length; t += 16) n = s, i = m, a = g, o = v, s = l(s, m, g, v, y[t + 0], 7, 3614090360), v = l(v, s, m, g, y[t + 1], 12, 3905402710), g = l(g, v, s, m, y[t + 2], 17, 606105819), m = l(m, g, v, s, y[t + 3], 22, 3250441966), s = l(s, m, g, v, y[t + 4], 7, 4118548399), v = l(v, s, m, g, y[t + 5], 12, 1200080426), g = l(g, v, s, m, y[t + 6], 17, 2821735955), m = l(m, g, v, s, y[t + 7], 22, 4249261313), s = l(s, m, g, v, y[t + 8], 7, 1770035416), v = l(v, s, m, g, y[t + 9], 12, 2336552879), g = l(g, v, s, m, y[t + 10], 17, 4294925233), m = l(m, g, v, s, y[t + 11], 22, 2304563134), s = l(s, m, g, v, y[t + 12], 7, 1804603682), v = l(v, s, m, g, y[t + 13], 12, 4254626195), g = l(g, v, s, m, y[t + 14], 17, 2792965006), m = l(m, g, v, s, y[t + 15], 22, 1236535329), s = c(s, m, g, v, y[t + 1], 5, 4129170786), v = c(v, s, m, g, y[t + 6], 9, 3225465664), g = c(g, v, s, m, y[t + 11], 14, 643717713), m = c(m, g, v, s, y[t + 0], 20, 3921069994), s = c(s, m, g, v, y[t + 5], 5, 3593408605), v = c(v, s, m, g, y[t + 10], 9, 38016083), g = c(g, v, s, m, y[t + 15], 14, 3634488961), m = c(m, g, v, s, y[t + 4], 20, 3889429448), s = c(s, m, g, v, y[t + 9], 5, 568446438), v = c(v, s, m, g, y[t + 14], 9, 3275163606), g = c(g, v, s, m, y[t + 3], 14, 4107603335), m = c(m, g, v, s, y[t + 8], 20, 1163531501), s = c(s, m, g, v, y[t + 13], 5, 2850285829), v = c(v, s, m, g, y[t + 2], 9, 4243563512), g = c(g, v, s, m, y[t + 7], 14, 1735328473), m = c(m, g, v, s, y[t + 12], 20, 2368359562), s = u(s, m, g, v, y[t + 5], 4, 4294588738), v = u(v, s, m, g, y[t + 8], 11, 2272392833), g = u(g, v, s, m, y[t + 11], 16, 1839030562), m = u(m, g, v, s, y[t + 14], 23, 4259657740), s = u(s, m, g, v, y[t + 1], 4, 2763975236), v = u(v, s, m, g, y[t + 4], 11, 1272893353), g = u(g, v, s, m, y[t + 7], 16, 4139469664), m = u(m, g, v, s, y[t + 10], 23, 3200236656), s = u(s, m, g, v, y[t + 13], 4, 681279174), v = u(v, s, m, g, y[t + 0], 11, 3936430074), g = u(g, v, s, m, y[t + 3], 16, 3572445317), m = u(m, g, v, s, y[t + 6], 23, 76029189), s = u(s, m, g, v, y[t + 9], 4, 3654602809), v = u(v, s, m, g, y[t + 12], 11, 3873151461), g = u(g, v, s, m, y[t + 15], 16, 530742520), m = u(m, g, v, s, y[t + 2], 23, 3299628645), s = d(s, m, g, v, y[t + 0], 6, 4096336452), v = d(v, s, m, g, y[t + 7], 10, 1126891415), g = d(g, v, s, m, y[t + 14], 15, 2878612391), m = d(m, g, v, s, y[t + 5], 21, 4237533241), s = d(s, m, g, v, y[t + 12], 6, 1700485571), v = d(v, s, m, g, y[t + 3], 10, 2399980690), g = d(g, v, s, m, y[t + 10], 15, 4293915773), m = d(m, g, v, s, y[t + 1], 21, 2240044497), s = d(s, m, g, v, y[t + 8], 6, 1873313359), v = d(v, s, m, g, y[t + 15], 10, 4264355552), g = d(g, v, s, m, y[t + 6], 15, 2734768916), m = d(m, g, v, s, y[t + 13], 21, 1309151649), s = d(s, m, g, v, y[t + 4], 6, 4149444226), v = d(v, s, m, g, y[t + 11], 10, 3174756917), g = d(g, v, s, m, y[t + 2], 15, 718787259), m = d(m, g, v, s, y[t + 9], 21, 3951481745), s = r(s, n), m = r(m, i), g = r(g, a), v = r(v, o);
+            return (p(s) + p(m) + p(g) + p(v)).toLowerCase()
+        &#125;
+
+var r = function (e) &#123;
+        var t = md5(navigator.appVersion), r = &quot;&quot; + (new Date).getTime(), i = r + parseInt(10 * Math.random(), 10);
+        return &#123;ts: r, bv: t, salt: i, sign: md5(&quot;fanyideskweb&quot; + e + i + &quot;Nw(nmmbP%A-r6U3EUn]Aj&quot;)&#125;
+    &#125;;
+
+console.log(r(&#39; 你好世界 &#39;))
+// 输出如下：
+var t = md5(navigator.appVersion), r = &quot;&quot; + (new Date).getTime(), i = r + parseInt(10 * Math.random(), 10);
+                    ^
+
+ReferenceError: navigator is not defined</code></pre>
+<p>说明这里还有    navigator    这个参数还未定义。</p>
+<p>在 console 中输入 navigator，可得到数据：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_14-25-13.png" alt=""></p>
+<p>将 navigator 的参数以字典的形式添加到到代码中（其实只是需要键名为 appVersion 的值，即浏览器的 UA）再运行：</p>
+<p>提示以下错误：</p>
+<pre><code> e = e.replace(/\x0d\x0a/g, &quot;\n&quot;);
+              ^
+RangeError: Maximum call stack size exceeded
+at String.replace (&lt;anonymous&gt;)</code></pre><p>这是因为：</p>
+<pre><code class="javascript">var r = function (e) &#123;……&#125;;</code></pre>
+<p>变量名 r 与之前的重复了，改掉就好。</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_14-32-47.png" alt=""></p>
+<pre><code>&#123;
+  ts: &#39;1585031532017&#39;,
+  bv: &#39;901200199a98c590144a961dac532964&#39;,
+  salt: &#39;15850315320171&#39;,
+  sign: &#39;e04455ff433514e20647a2a96c759bd0&#39;
+&#125;
+</code></pre><p>终于得到了想要的数据！</p>
+<h2 id="2-4- 在 python 调用 Js 代码"><a href="#2-4- 在 python 调用 Js 代码" class="headerlink" title="2.4 在 python 调用 Js 代码"></a>2.4 在 python 调用 Js 代码</h2><pre><code class="python">import execjs
+
+with open(&#39;fanyi.min.js&#39;,&#39;r&#39;,encoding=&#39;utf-8&#39;) as f:
+    js_code=f.read()
+
+// 使用 compile 加载 JavaScript 代码
+ctx=execjs.compile(js_code)
+// 使用 call 调用对象
+result=ctx.call(&#39;youdao&#39;,&#39; 你好世界 &#39;)
+print(result)
+// 输出结果如下
+&#123;&#39;ts&#39;: &#39;1585032669319&#39;, &#39;bv&#39;: &#39;901200199a98c590144a961dac532964&#39;, &#39;salt&#39;: &#39;15850326693199&#39;, &#39;sign&#39;: &#39;7b5bd55eb8c7c5f3c9ea99f9632109e4&#39;&#125;</code></pre>
+<h1 id="三、JS 混淆"><a href="# 三、JS 混淆" class="headerlink" title="三、JS 混淆"></a>三、JS 混淆 </h1><h2 id="3-1- 利与弊"><a href="#3-1- 利与弊" class="headerlink" title="3.1 利与弊"></a>3.1 利与弊</h2><p><strong> 站在网站开发者的角度</strong></p>
+<p>1、是为了保护我们的前端代码逻辑<br>2、精简代码、加快传输</p>
+<p><strong>站在爬虫者的角度</strong></p>
+<p>1、增加了获取数据的难度<br>2、增加了获取数据的难度</p>
+<h2 id="3-2- 混淆与反混淆"><a href="#3-2- 混淆与反混淆" class="headerlink" title="3.2 混淆与反混淆"></a>3.2 混淆与反混淆</h2><h3 id="3-2-1-JS 压缩"><a href="#3-2-1-JS 压缩" class="headerlink" title="3.2.1 JS 压缩"></a>3.2.1 JS 压缩</h3><p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20191225190455160.png" alt=""></p>
+<p>特点：把 JS 代码写在一起。让你难以阅读，难以破解</p>
+<p>削减是一个从源代码中删除不必要的字符的技术使它看起来简单而整洁。这种技术也被称为代码压缩和最小化。</p>
+<p>常用压缩工具：<br><a target="_blank" rel="noopener" href="https://javascript-minifier.com/">https://javascript-minifier.com/</a></p>
+<p>破解方法 - 代码格式化：<br><a target="_blank" rel="noopener" href="http://tool.oschina.net/codeformat/js/">http://tool.oschina.net/codeformat/js/</a></p>
+<h3 id="3-2-2-eval 加密"><a href="#3-2-2-eval 加密" class="headerlink" title="3.2.2 eval 加密"></a>3.2.2 eval 加密</h3><p>js 中的 eval() 方法就是一个 js 语言的执行器，它能把其中的参数按照 JavaScript 语法进行解析并执行，简单来说就是把原本的 js 代码变成了 eval 的参数，变成参数后代码就成了字符串，其中的一些字符就会被按照特定格式“编码”。</p>
+<p><strong>特征：</strong></p>
+<p>最明显的特征是生成的代码以 <code>eval(function(p,a,c,k,e,r))</code> 开头。</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20191225190543248.png" style="zoom:100%;" />
+
+<p><strong>原理：</strong></p>
+<p>这类混淆的关键思想在于将需要执行的代码进行一次编码，在执行的时候还原出浏览器可执行的合法 的脚本</p>
+<p>破解方法 - 浏览器 <br> 打开 谷歌 或者 火狐 浏览器 <br> 按 F12 打开控制台 <br> 把代码复制进去 <br> 删除开头 eval 这 4 个字母 <br> 按回车键</p>
+<p>常用混淆工具：<br><a target="_blank" rel="noopener" href="http://dean.edwards.name/packer/">http://dean.edwards.name/packer/</a></p>
+<h3 id="3-2-3- 公钥加密关键字段"><a href="#3-2-3- 公钥加密关键字段" class="headerlink" title="3.2.3 公钥加密关键字段"></a>3.2.3 公钥加密关键字段 </h3><p><strong> 特征：</strong></p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20191225190622791.png" alt=""></p>
+<p><strong>原理：</strong><br>用户访问客户端，客户端向服务器请求获取一个 RSA 公钥以及键值 key，存储在本地 <br> 用户在本地公钥失效前发起登录请求，则使用已有公钥对用户密码进行加密；若已过期则执行 1 后 再加密 <br> 客户端将密文与 key 一起传回后台 <br> 后台通过 key 找到缓存里面的私钥，对密文进行解密</p>
+<p>常用混淆工具：<br><a target="_blank" rel="noopener" href="http://travistidwell.com/jsencrypt/">http://travistidwell.com/jsencrypt/</a></p>
+<h3 id="3-2-4- 变量名混淆"><a href="#3-2-4- 变量名混淆" class="headerlink" title="3.2.4 变量名混淆"></a>3.2.4 变量名混淆 </h3><p><strong> 特征：</strong></p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20191225190656223.png" alt=""></p>
+<p><strong>原理</strong></p>
+<p>字符串字面量混淆：首先提取全部的字符串，在全局作用域创建一个字符串数组，同时转义字符增大 阅读难度，然后将字符串出现的地方替换成为数组元素的引用 <br> 变量名混淆：不同于压缩器的缩短命名，此处使用了下划线加数字的格式，变量之间区分度很低，相 比单个字母更难以阅读 <br> 成员运算符混淆：将点运算符替换为字符串下标形式，然后对字符串进行混淆 删除多余的空白字符：减小文件体积，这是所有压缩器都会做的事。</p>
+<p>常用混淆工具：<br><a target="_blank" rel="noopener" href="http://javascriptobfuscator.com/Javascript-Obfuscator.aspx">http://javascriptobfuscator.com/Javascript-Obfuscator.aspx</a><br><a target="_blank" rel="noopener" href="http://js.51tools.info/">http://js.51tools.info/</a><br>破解方法 -IDE、解密工具、浏览器：  <a target="_blank" rel="noopener" href="http://jsnice.org/">http://jsnice.org/</a>  <a target="_blank" rel="noopener" href="http://js.51tools.info/">http://js.51tools.info/</a></p>
+<p>（1）把变量名、函数名、参数名等，替换成没有语义，看着又很像的名字。</p>
+<pre><code>_0x21dd83、_0x21dd84、_0x21dd85</code></pre><p>（2）用十六进制文本去表示一个字符串</p>
+<pre><code>\x56\x49\x12\x23</code></pre><p>（3）利用 JS 能识别的编码来做混淆。JS 是 Unicode 编码，本身就能识别这种编码。类似的一些变量名，函数名都可以用这个表示，并且调用。</p>
+<p>  类似： <code>\u6210\u529f</code> 表示中文字符(成功)。</p>
+<p>  类似：<code>\u0053\u0074\u0072\u0069\u006e\u0067.\u0066\u0072\u006f\u006d\u0043\u0068\u0061\u0072\u0043\u006f\u0064\u0065</code>  </p>
+<p>代表 String.fromCharCode</p>
+<p>  类似：</p>
+<p>  <code>(&#39;&#39;)[&#39;\x63\x6f\x6e\x73\x74\x72\x75\x63\x74\x6f\x72&#39;][&#39;\x66\x72\x6f\x6d\x43\x68\x61\x72\x43\x6f\x64\x65&#39;];</code> </p>
+<p>效果等同于 String.fromCharCode</p>
+<p>（4）把一大堆方法名、字符串等存到数组中，这个数组可以是上千个成员。然后调用的时候，取数组成员去用</p>
+<pre><code class="javascript">var arr = [&quot;Date&quot;,&quot;getTime&quot;];
+var time = new window[arr[0]]()[arr[1]]();
+console.log(time);</code></pre>
+<p>（5）字符串加密后发送到前端，然后前端调用对应的函数去解密，得到明文</p>
+<pre><code class="javascript">var arr = [&#39;xxxx&#39;]
+
+// 定义的解密函数
+function dec(str)&#123;
+  return &#39;push&#39;
+&#125;
+test[dec(arr[0])](200);</code></pre>
+<h3 id="3-2-5- 控制流平坦化"><a href="#3-2-5- 控制流平坦化" class="headerlink" title="3.2.5 控制流平坦化"></a>3.2.5 控制流平坦化 </h3><p> 将顺序执行的代码混淆成乱序执行, 并加以混淆</p>
+<p>以下两段代码的执行结果是相同的:</p>
+<pre><code class="javascript">// 正常形态
+function test(a)&#123;
+    var b = a;
+    b += 1;
+    b += 2;
+    b += 3;
+    b += 4;
+    return a + b
+&#125;
+
+// 乱序形态
+//（这里比较简单, 在很多加密网站上 case 后面往往不是数字或字符串, 而是类似 YFp[15][45][4]这样的对象，相当恶心）
+function test1(a)&#123;
+  var arr = [1,2,3,4,5,6]
+  for(var i = 0, i &lt; arr.lenght, i++)&#123;
+    switch (arr[i]) &#123;
+      case 4:
+        b += 3;
+        break;
+      case 2:
+        b += 1;
+      break;
+      case 1:
+        var b = a;
+      break;
+      case 3:
+        b += 2;
+      break;
+      case 6:
+        return a + b
+      case 5:
+        b += 4;
+      break;
+    &#125;
+  &#125;
+&#125;
+// 结果都是 30 但是 test1 看着费劲
+console.log(test1(10));
+console.log(test(10));</code></pre>
+<h3 id="3-2-6- 使用特定符号编写 js 脚本"><a href="#3-2-6- 使用特定符号编写 js 脚本" class="headerlink" title="3.2.6 使用特定符号编写 js 脚本"></a>3.2.6 使用特定符号编写 js 脚本 </h3><p><strong> 特征：</strong></p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20191225190724159.png" alt=""></p>
+<p><strong>原理：</strong><br>jsfuck 源于一门编程语言 brainfuck，其主要的思想就是只使用 8 种特定的符号来编写代码。而 jsfuck<br>也是沿用了这个思想，它仅仅使用 6 种符号来编写代码。它们分别是(、)、+、[、]、!。</p>
+<p>常用混淆工具：<br><a target="_blank" rel="noopener" href="http://www.jsfuck.com/">http://www.jsfuck.com/</a><br>破解方法： 超级难</p>
+<h3 id="3-2-7- 特殊转化规则"><a href="#3-2-7- 特殊转化规则" class="headerlink" title="3.2.7 特殊转化规则"></a>3.2.7 特殊转化规则 </h3><p> 利用一些只能在浏览器中运行的特殊语句进行反扒，这种只能将语法重新进行改写。</p>
+<p>在浏览器中 base64 编码转换使用的是</p>
+<p><code>_0x1c0cdf = _0xcbc80b[&#39;atob&#39;](_0x1c0cdf)</code>,</p>
+<p>但是在 nodejs 调试的时候使用的是</p>
+<pre><code>Buffer.from(_0x1c0cdf,&quot;base64&quot;).toString()</code></pre><h1 id="四、练手项目"><a href="# 四、练手项目" class="headerlink" title="四、练手项目"></a>四、练手项目</h1><p>（1）获取一品威客登录页面，找到密码的加密方式</p>
+<p><a target="_blank" rel="noopener" href="https://www.epwk.com/login.html">https://www.epwk.com/login.html</a></p>
+<p>（2）获取电信官网登录页面，找到密码的加密方式</p>
+<p><a target="_blank" rel="noopener" href="https://login.189.cn/web/login">https://login.189.cn/web/login</a></p>
+<p>（3）梦幻西游装备属性数据的加密方式</p>
+<p>[<a target="_blank" rel="noopener" href="https://xyq.cbg.163.com/equip?s=40&amp;eid=202002011900113-40-NXOJDHZ8TKFX9&amp;o&amp;equip_refer=27&amp;view_loc=reco_sim|%7B%22tag%22%3A%20%22RL_sim2%22%7D]">https://xyq.cbg.163.com/equip?s=40&amp;eid=202002011900113-40-NXOJDHZ8TKFX9&amp;o&amp;equip_refer=27&amp;view_loc=reco_sim|%7B%22tag%22%3A%20%22RL_sim2%22%7D]</a>(<a target="_blank" rel="noopener" href="https://xyq.cbg.163.com/equip?s=40&amp;eid=202002011900113-40-NXOJDHZ8TKFX9&amp;o&amp;equip_refer=27&amp;view_loc=reco_sim|{&quot;tag&quot;%3A">https://xyq.cbg.163.com/equip?s=40&amp;eid=202002011900113-40-NXOJDHZ8TKFX9&amp;o&amp;equip_refer=27&amp;view_loc=reco_sim|{&quot;tag&quot;%3A</a> “RL_sim2”})</p>
+
+        
+        </div>
         <p>对传输的数据进行 JS 加密是网站常用的加密方式，以防止爬虫的爬取，以下对有道翻译进行破解示例。</p>
 <h1 id="一、手动破解"><a href="# 一、手动破解" class="headerlink" title="一、手动破解"></a>一、手动破解 </h1><p> 打开有道翻译：<a target="_blank" rel="noopener" href="http://fanyi.youdao.com/">http://fanyi.youdao.com/</a></p>
 <p>输入翻译内容：你好，世界</p>

@@ -25,6 +25,8 @@
 
 <link href="/css/style.css?v=1.1.0" rel="stylesheet">
 
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
 <link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
 
 <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
@@ -49,7 +51,7 @@
   <input class="theme_preload_comment" value="">
   <input class="theme_blog_path" value="">
   <input id="theme_shortcut" value="true" />
-  <input id="theme_highlight_on" value="false" />
+  <input id="theme_highlight_on" value="true" />
   <input id="theme_code_copy" value="true" />
 </div>
 
@@ -931,7 +933,6 @@
         </span>
         
         
-        
     </div>
     <div class="article-meta">
         
@@ -975,6 +976,58 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+        <!-- 添加文章容器，便于样式控制 -->
+        <div class="article-container">
+        
+            <h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a><strong>Cookie</strong></h2><p>cookie 是一个非常具体的东西，指的就是浏览器里面能永久存储的一种数据，仅仅是浏览器实现的一种数据存储功能。</p>
+<p>cookie 由服务器生成，发送给浏览器，浏览器把 cookie 以 kv 形式保存到某个目录下的文本文件内，下一次请求同一网站时会把该 cookie 发送给服务器。由于 cookie 是存在客户端上的，所以浏览器加入了一些限制确保 cookie 不会被恶意使用，同时不会占据太多磁盘空间，所以每个域的 cookie 数量是有限的。</p>
+<p>cookie 相当于服务器给浏览器的一个临时的编号，这个编号与身份绑定，服务器通过编号再去确定你的身份。</p>
+<h2 id="Session"><a href="#Session" class="headerlink" title="Session"></a><strong>Session</strong></h2><p>session 从字面上讲，就是会话。这个就类似于你和一个人交谈，你怎么知道当前和你交谈的是张三而不是李四呢？对方肯定有某种特征（长相等）表明他就是张三。</p>
+<p>session 也是类似的道理，服务器要知道当前发请求给自己的是谁。为了做这种区分，服务器就要给每个客户端分配不同的“身份标识”，然后客户端每次向服务器发请求的时候，都带上这个“身份标识”，服务器就知道这个请求来自于谁了。至于客户端怎么保存这个“身份标识”，可以有很多种方式，对于浏览器客户端，大家都默认采用 cookie 的方式。</p>
+<p>服务器使用 session 把用户的信息临时保存在了服务器上，用户离开网站后 session 会被销毁。这种用户信息存储方式相对 cookie 来说更安全，可是 session 有一个缺陷：如果 web 服务器做了负载均衡，那么下一个操作请求到了另一台服务器的时候 session 会丢失。</p>
+<h2 id="Token"><a href="#Token" class="headerlink" title="Token"></a><strong>Token</strong></h2><p>Token 的引入：Token 是在客户端频繁向服务端请求数据，服务端频繁的去数据库查询用户名和密码并进行对比，判断用户名和密码正确与否，并作出相应提示，在这样的背景下，Token 便应运而生。</p>
+<p>Token 的定义：Token 是服务端生成的一串字符串，以作客户端进行请求的一个令牌，当第一次登录后，服务器生成一个 Token 便将此 Token 返回给客户端，以后客户端只需带上这个 Token 前来请求数据即可，无需再次带上用户名和密码。最简单的 token 组成:uid(用户唯一的身份标识)、time(当前时间的时间戳)、sign(签名，由 token 的前几位 + 盐以哈希算法压缩成一定长的十六进制字符串，可以防止恶意第三方拼接 token 请求服务器)。</p>
+<p>使用 Token 的目的：Token 的目的是为了减轻服务器的压力，减少频繁的查询数据库，使服务器更加健壮。</p>
+<p> Token，直接就相当于一个身份证，给 Token 就能确定你的身份。</p>
+<h2 id="传统身份验证"><a href="# 传统身份验证" class="headerlink" title="传统身份验证"></a><strong>传统身份验证</strong></h2><p>HTTP 是一种没有状态的协议，也就是它并不知道是谁是访问应用。这里我们把用户看成是客户端，客户端使用用户名还有密码通过了身份验证，不过下回这个客户端再发送请求时候，还得再验证一下。</p>
+<p>解决的方法就是，当用户请求登录的时候，如果没有问题，我们在服务端生成一条记录，这个记录里可以说明一下登录的用户是谁，然后把这条记录的 ID 号发送给客户端，客户端收到以后把这个 ID 号存储在 Cookie 里，下次这个用户再向服务端发送请求的时候，可以带着这个 Cookie  ，这样服务端会验证一个这个 Cookie  里的信息，看看能不能在服务端这里找到对应的记录，如果可以，说明用户已经通过了身份验证，就把用户请求的数据返回给客户端。</p>
+<p>上面说的就是 Session，我们需要在服务端存储为登录的用户生成的 Session ，这些 Session 可能会存储在内存，磁盘，或者数据库里。我们可能需要在服务端定期的去清理过期的 Session 。</p>
+<h2 id="基于 -Token- 的身份验证"><a href="# 基于 -Token- 的身份验证" class="headerlink" title="基于 Token 的身份验证"></a><strong>基于 Token 的身份验证 </strong></h2><p> 使用基于 Token 的身份验证方法，在服务端不需要存储用户的登录记录。大概的流程是这样的：</p>
+<ul>
+<li>客户端使用用户名跟密码请求登录</li>
+<li>服务端收到请求，去验证用户名与密码</li>
+<li>验证成功后，服务端会签发一个 Token，再把这个 Token 发送给客户端</li>
+<li>客户端收到 Token 以后可以把它存储起来，比如放在 Cookie 里或者 Local Storage 里</li>
+<li>客户端每次向服务端请求资源的时候需要带着服务端签发的 Token</li>
+<li>服务端收到请求，然后去验证客户端请求里面带着的 Token，如果验证成功，就向客户端返回请求的数据</li>
+</ul>
+<p>APP 登录的时候发送加密的用户名和密码到服务器，服务器验证用户名和密码，如果成功，以某种方式比如随机生成 32 位的字符串作为 token，存储到服务器中，并返回 token 到 APP，以后 APP 请求时，凡是需要验证的地方都要带上该 token，然后服务器端验证 token，成功返回所需要的结果，失败返回错误信息，让他重新登录。其中服务器上 token 设置一个有效期，每次 APP 请求的时候都验证 token 和有效期。</p>
+<p>那么我的问题来了： 1. 服务器上的 token 存储到数据库中，每次查询会不会很费时。如果不存储到数据库，应该存储到哪里呢。 2. 客户端得到的 token 肯定要加密存储的，发送 token 的时候再解密。存储到数据库还是配置文件呢？</p>
+<p>token 是个易失数据，丢了无非让用户重新登录一下，新浪微博动不动就让我重新登录，反正这事儿我是无所谓啦。<br> 所以如果你觉得普通的数据库表撑不住了，可以放到 MSSQL/MySQL 的内存表里（不过据说 mysql 的内存表性能提升有限），可以放到  Memcache 里（讲真，这个是挺常见的策略），可以放到 redis 里（我做过这样的实现），甚至可以放到 OpenResty  的变量字典里（只要你有信心不爆内存）。</p>
+<p>token 是个凭条，不过它比门票温柔多了，门票丢了重新花钱买，token 丢了重新操作下认证一个就可以了，因此 token 丢失的代价是可以忍受的——前提是你别丢太频繁，要是让用户隔三差五就认证一次那就损失用户体验了。</p>
+<p>基于这个出发点，如果你认为用数据库来保持 token 查询时间太长，会成为你系统的瓶颈或者隐患，可以放在内存当中。<br> 比如 memcached、redis，KV 方式很适合你对 token 查询的需求。<br> 这个不会太占内存，比如你的 token 是 32 位字符串，要是你的用户量在百万级或者千万级，那才多少内存。<br> 要是数据量真的大到单机内存扛不住，或者觉得一宕机全丢风险大，只要这个 token 生成是足够均匀的，高低位切一下分到不同机器上就行，内存绝对不会是问题。</p>
+<p>客户端方面这个除非你有一个非常安全的办法，比如操作系统提供的隐私数据存储，那 token 肯定会存在泄露的问题。比如我拿到你的手机，把你的 token 拷出来，在过期之前就都可以以你的身份在别的地方登录。<br> 解决这个问题的一个简单办法<br> 1、在存储的时候把 token 进行对称加密存储，用时解开。<br> 2、将请求 URL、时间戳、token 三者进行合并加盐签名，服务端校验有效性。<br> 这两种办法的出发点都是：窃取你存储的数据较为容易，而反汇编你的程序 hack 你的加密解密和签名算法是比较难的。然而其实说难也不难，所以终究是防君子不防小人的做法。话说加密存储一个你要是被人扒开客户端看也不会被喷明文存储……<br> 方法 1 它拿到存储的密文解不开、方法 2 它不知道你的签名算法和盐，两者可以结合食用。<br> 但是如果 token 被人拷走，他自然也能植入到自己的手机里面，那到时候他的手机也可以以你的身份来用着，这你就瞎了。<br> 于是可以提供一个让用户可以主动 expire 一个过去的 token 类似的机制，在被盗的时候能远程止损。</p>
+<p>在网络层面上 token 明文传输的话会非常的危险，所以建议一定要使用 HTTPS，并且把 token 放在 post body 里。</p>
+<p>补充：</p>
+<p>cookie 与 session 的区别</p>
+<p>1、cookie 数据存放在客户端上，session 数据放在服务器上。</p>
+<p>2、cookie 不是很安全，别人可以分析存放在本地的 COOKIE 并进行 COOKIE 欺骗<br>  考虑到安全应当使用 session。</p>
+<p>3、session 会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能<br>  考虑到减轻服务器性能方面，应当使用 COOKIE。</p>
+<p>4、单个 cookie 保存的数据不能超过 4K，很多浏览器都限制一个站点最多保存 20 个 cookie。</p>
+<p>5、所以个人建议：<br>  将登陆信息等重要信息存放为 SESSION<br>  其他信息如果需要保留，可以放在 COOKIE 中</p>
+<p>session 与 token 的区别</p>
+<p>　　session 和 oauth token 并不矛盾，作为身份认证  token 安全性比 session 好，因为每个请求都有签名还能防止监听以及重放攻击，而 session 就必须靠链路层来保障通讯安全了。如上所说，如果你需要实现有状态的会话，仍然可以增加 session 来在服务器端保存一些状态</p>
+<p>　　App 通常用 restful  api 跟 server 打交道。Rest 是 stateless 的，也就是 app 不需要像 browser 那样用 cookie 来保存 session, 因此用 session token 来标示自己就够了，session/state 由 api server 的逻辑处理。 如果你的后端不是 stateless 的 rest  api, 那么你可能需要在 app 里保存 session. 可以在 app 里嵌入 webkit, 用一个隐藏的 browser 来管理 cookie  session.</p>
+<p>　　Session 是一种 HTTP 存储机制，目的是为无状态的 HTTP 提供的持久机制。所谓 Session 认证只是简单的把 User  信息存储到 Session 里，因为 SID 的不可预测性，暂且认为是安全的。这是一种认证手段。 而 Token ，如果指的是 OAuth Token  或类似的机制的话，提供的是 认证 和 授权 ，认证是针对用户，授权是针对 App 。其目的是让 某 App 有权利访问 某用户 的信息。这里的  Token 是唯一的。不可以转移到其它 App 上，也不可以转到其它 用户 上。 转过来说 Session  。Session 只提供一种简单的认证，即有此 SID，即认为有此  User 的全部权利。是需要严格保密的，这个数据应该只保存在站方，不应该共享给其它网站或者第三方 App。 所以简单来说，如果你的用户数据可能需要和第三方共享，或者允许第三方调用 API 接口，用 Token 。如果永远只是自己的网站，自己的 App，用什么就无所谓了。</p>
+<p>打破误解：</p>
+<p>“只要关闭浏览器 ，session 就消失了？”</p>
+<p>不对。对 session 来说，除非程序通知服务器删除一个 session，否则服务器会一直保留，程序一般都是在用户做 log off 的时候发个指令去删除 session。</p>
+<p>然而浏览器从来不会主动在关闭之前通知服务器它将要关闭，因此服务器根本不会有机会知道浏览器已经关闭，之所以会有这种错觉，是大部分 session 机制都使用会话 cookie 来保存 session id，而关闭浏览器后这个 session  id 就消失了，再次连接服务器时也就无法找到原来的 session。如果服务器设置的 cookie 被保存在硬盘上，或者使用某种手段改写浏览器发出的 HTTP 请求头，把原来的 session id 发送给服务器，则再次打开浏览器仍然能够打开原来的 session.</p>
+<p>恰恰是由于关闭浏览器不会导致 session 被删除，迫使服务器为 session 设置了一个失效时间，当距离客户端上一次使用 session 的时间超过这个失效时间时，服务器就可以以为客户端已经停止了活动，才会把 session 删除以节省存储空间。</p>
+<p>本文转自：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/JamesWang1993/articles/8593494.html">https://www.cnblogs.com/JamesWang1993/articles/8593494.html</a></p>
+
+        
+        </div>
         <h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a><strong>Cookie</strong></h2><p>cookie 是一个非常具体的东西，指的就是浏览器里面能永久存储的一种数据，仅仅是浏览器实现的一种数据存储功能。</p>
 <p>cookie 由服务器生成，发送给浏览器，浏览器把 cookie 以 kv 形式保存到某个目录下的文本文件内，下一次请求同一网站时会把该 cookie 发送给服务器。由于 cookie 是存在客户端上的，所以浏览器加入了一些限制确保 cookie 不会被恶意使用，同时不会占据太多磁盘空间，所以每个域的 cookie 数量是有限的。</p>
 <p>cookie 相当于服务器给浏览器的一个临时的编号，这个编号与身份绑定，服务器通过编号再去确定你的身份。</p>

@@ -25,6 +25,8 @@
 
 <link href="/css/style.css?v=1.1.0" rel="stylesheet">
 
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
 <link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
 
 <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
@@ -49,7 +51,7 @@
   <input class="theme_preload_comment" value="">
   <input class="theme_blog_path" value="">
   <input id="theme_shortcut" value="true" />
-  <input id="theme_highlight_on" value="false" />
+  <input id="theme_highlight_on" value="true" />
   <input id="theme_code_copy" value="true" />
 </div>
 
@@ -938,7 +940,6 @@
             
         </span>
         
-        
     </div>
     <div class="article-meta">
         
@@ -982,6 +983,323 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+        <!-- 添加文章容器，便于样式控制 -->
+        <div class="article-container">
+        
+            <p>官方中文文档：<a target="_blank" rel="noopener" href="https://www.numpy.org.cn/user/">https://www.numpy.org.cn/user/</a></p>
+<p>这里使用 jupyter notebook 进行演示。</p>
+<p>安装：<code>pip install jupyter</code></p>
+<p>启动：<code>jupyter notebook</code></p>
+<h1 id="1- 数组的创建"><a href="#1- 数组的创建" class="headerlink" title="1. 数组的创建"></a>1. 数组的创建 </h1><h2 id="1-1- 类型转变"><a href="#1-1- 类型转变" class="headerlink" title="1.1 类型转变"></a>1.1 类型转变</h2><p> 从列表：<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-14_17-39-46.png" alt=""></p>
+<p>从元祖：<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-14_17-41-58.png" alt=""></p>
+<p>从字符串：<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-14_17-44-32.png" alt=""></p>
+<h2 id="1-2- 从头创建"><a href="#1-2- 从头创建" class="headerlink" title="1.2 从头创建"></a>1.2 从头创建 </h2><h3 id="1-2-1- 一维数组"><a href="#1-2-1- 一维数组" class="headerlink" title="1.2.1 一维数组"></a>1.2.1 一维数组</h3><p> 按顺序生成：<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-14_17-55-39.png" style="zoom: 80%;" /></p>
+<blockquote>
+<p>使用 np.random 模块可随机生成</p>
+</blockquote>
+<p>按等间距生成：<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-15_01-12-07.png" style="zoom:80%;" /></p>
+<p>生成全为“1”数组：<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-14_17-58-56.png" style="zoom:80%;" /></p>
+<p>生成全为“0”数组：<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-14_18-02-02.png" style="zoom:80%;" /></p>
+<p>对角线全为“1”数组：<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-14_18-05-21.png" style="zoom:80%;" /></p>
+<p>注意：默认生成浮点型数值，可在括号里加参数<code>dtype=int</code>，使得生成整型数值。</p>
+<p>归纳为以下：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-14_18-08-33.png" alt=""></p>
+<h3 id="1-2-2- 多维数组"><a href="#1-2-2- 多维数组" class="headerlink" title="1.2.2 多维数组"></a>1.2.2 多维数组</h3><ul>
+<li><code>.reshape()</code>的使用：</li>
+</ul>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-14_19-40-35.png" style="zoom:80%;" />
+
+<p>使用 <code>.reshape()</code> 方法可将 n 维数组变成任意指定形状的数组，但是元素个数要对的上。</p>
+<p><strong>将 n 维数组变成一维：</strong></p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-14_20-14-20.png" style="zoom:80%;" />
+
+<p><strong>将一维行数据数据变成列数据：</strong></p>
+<pre><code class="python">&gt;&gt;&gt; s=np.arange(5)
+array([0, 1, 2, 3, 4])
+&gt;&gt;&gt; s.reshape(5,1)
+array([[0],
+       [1],
+       [2],
+       [3],
+       [4]])</code></pre>
+<p><code>.reshape()</code>和 <code>.resize()</code> 区别：前者不改变原形状，后者改变。</p>
+<p><code>.flatten()</code>和 <code>.ravel()</code> 区别：执行命令后再进行赋值操作，前者不改变元素，后者改变（此用法不多）。</p>
+<ul>
+<li><code>size()</code>的使用：</li>
+</ul>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-14_21-04-13.png" style="zoom:80%;" />
+
+<h3 id="1-2-3-np-random 模块"><a href="#1-2-3-np-random 模块" class="headerlink" title="1.2.3 np.random 模块"></a>1.2.3 np.random 模块</h3><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>使用说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>np.random.random((m,n))</code></td>
+<td>随机生成 (0,1) 之间的数组，m 行 n 列</td>
+</tr>
+<tr>
+<td><code>np.random.rand(m,n)</code></td>
+<td>随机生成 [0,1)之间的数组，m 行 n 列</td>
+</tr>
+<tr>
+<td><code>np.random.randint(x,y,size=(m,n))</code></td>
+<td>随机生成整型数组，数字 (x,y) 之间，m 行 n 列</td>
+</tr>
+<tr>
+<td><code>np.random.uniform(x,y,size=(m,n))</code></td>
+<td>随机生成浮点数组，数字 [x,y) 之间，m 行 n 列</td>
+</tr>
+<tr>
+<td><code>np.random.choice(data)</code></td>
+<td>随机采样生成数组，从 data 中</td>
+</tr>
+<tr>
+<td><code>np.random.shuffle(data)</code></td>
+<td>随机按行打乱数组，从 data 中，改变原数组</td>
+</tr>
+<tr>
+<td><code>np.random.permutation(data)</code></td>
+<td>随机按行打乱数组，从 data 中，不改原数组</td>
+</tr>
+<tr>
+<td><code>np.random.seed()</code></td>
+<td>调控随机数的生成，根据种子值</td>
+</tr>
+<tr>
+<td><code>np.random.randn(m,n)</code></td>
+<td>随机生成标准正态分布数组，符合 N(0,1)</td>
+</tr>
+<tr>
+<td><code>np.random.normal(μ,σ,size=(m,n))</code></td>
+<td>随机生成正态分布数组，符合 N(μ,σ)</td>
+</tr>
+<tr>
+<td><code>np.random.poisson(lam,size=(m,n))</code></td>
+<td>随机生成泊松分布数组，事件发生率 lam</td>
+</tr>
+</tbody></table>
+<p>以上均可很据括号里传入维度的不同，可以创建 1~N 维数组。</p>
+<h2 id="1-3- 数组属性"><a href="#1-3- 数组属性" class="headerlink" title="1.3 数组属性"></a>1.3 数组属性</h2><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>使用说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>.ndim</code></td>
+<td>秩，即数据轴的个数</td>
+</tr>
+<tr>
+<td><code>.shape</code></td>
+<td>数组的维度</td>
+</tr>
+<tr>
+<td><code>.size</code></td>
+<td>元素的总个数</td>
+</tr>
+<tr>
+<td><code>.dtype</code></td>
+<td>数据类型</td>
+</tr>
+<tr>
+<td><code>.itemsize</code></td>
+<td>数组中每个元素的字节大小</td>
+</tr>
+<tr>
+<td><code>.T</code></td>
+<td>数组的转置，即行列进行交换 / <code>.transpose</code>作用一样，但它会改变原数组</td>
+</tr>
+</tbody></table>
+<p>使用以上方法不需要加括号。</p>
+<p>举一个例子：<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-14_19-59-50.png" style="zoom:80%;" /></p>
+<h1 id="2- 数组的操作"><a href="#2- 数组的操作" class="headerlink" title="2. 数组的操作"></a>2. 数组的操作 </h1><h2 id="2-1- 索引"><a href="#2-1- 索引" class="headerlink" title="2.1 索引"></a>2.1 索引</h2><h3 id="2-1-1- 普通索引"><a href="#2-1-1- 普通索引" class="headerlink" title="2.1.1 普通索引"></a>2.1.1 普通索引</h3><p> 位置索引：</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-14_20-28-10.png" style="zoom:80%;" />
+
+<p>布尔索引：</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-14_20-49-58.png" style="zoom:80%;" />
+
+
+
+<h3 id="2-1-2- 花哨索引"><a href="#2-1-2- 花哨索引" class="headerlink" title="2.1.2 花哨索引"></a>2.1.2 花哨索引 </h3><p> 选取数据：</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-15_00-25-31.png" style="zoom:80%;" />
+
+<p>选择块：</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-15_00-40-09.png" style="zoom:80%;" />
+
+
+
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-15_12-07-29.png" style="zoom:80%;" />
+
+<p>调换行：</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-15_00-31-45.png" style="zoom:80%;" />
+
+<h2 id="2-2- 切片"><a href="#2-2- 切片" class="headerlink" title="2.2 切片"></a>2.2 切片 </h2><p> 连续的切片：</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-14_20-41-33.png" style="zoom:80%;" />
+
+<p>不连续的切片：</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-14_20-46-01.png"  style="zoom:80%;" />
+
+<h2 id="2-3- 值的替换"><a href="#2-3- 值的替换" class="headerlink" title="2.3 值的替换"></a>2.3 值的替换 </h2><p> 根据索引赋值</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-14_21-01-18.png" style="zoom:80%;" />
+
+<h2 id="2-4- 数组拼接"><a href="#2-4- 数组拼接" class="headerlink" title="2.4 数组拼接"></a>2.4 数组拼接</h2><p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-14_21-36-03.png" alt=""></p>
+<h2 id="2-5- 数组切割"><a href="#2-5- 数组切割" class="headerlink" title="2.5 数组切割"></a>2.5 数组切割</h2><h3 id="2-5-1- 普通切割"><a href="#2-5-1- 普通切割" class="headerlink" title="2.5.1 普通切割"></a>2.5.1 普通切割</h3><p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-14_22-03-42.png" alt=""></p>
+<h3 id="2-5-2- 复杂切割"><a href="#2-5-2- 复杂切割" class="headerlink" title="2.5.2 复杂切割"></a>2.5.2 复杂切割</h3><p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-14_22-06-11.png" alt=""></p>
+<h2 id="2-6- 数组运算"><a href="#2-6- 数组运算" class="headerlink" title="2.6 数组运算"></a>2.6 数组运算</h2><h3 id="2-6-1- 通用函数"><a href="#2-6-1- 通用函数" class="headerlink" title="2.6.1 通用函数"></a>2.6.1 通用函数</h3><p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-15_00-44-07.png" alt=""></p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-15_00-44-29.png" alt=""></p>
+<p><strong>注意：这里的逻辑运算如逻辑与 np.logical_and()是进行多元运算的。括号里传入的数组必须形状相同。</strong></p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-15_00-45-07.png" alt=""></p>
+<p>NAN 安全版本：为了应对数组里的缺失值 <code>np.nan</code> 的。如下：</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-15_12-26-15.png" style="zoom:80%;" />
+
+<h3 id="2-6-2- 布尔数组函数"><a href="#2-6-2- 布尔数组函数" class="headerlink" title="2.6.2 布尔数组函数"></a>2.6.2 布尔数组函数</h3><p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-15_00-55-07.png" alt=""></p>
+<p>对传入的数组进行是否有空值判断。传入的数组也可以为布尔数组。只能进行一元判断。</p>
+<h2 id="2-7- 数组排序"><a href="#2-7- 数组排序" class="headerlink" title="2.7 数组排序"></a>2.7 数组排序</h2><h3 id="2-7-1- 普通排序"><a href="#2-7-1- 普通排序" class="headerlink" title="2.7.1 普通排序"></a>2.7.1 普通排序</h3><p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-15_01-03-47.png" alt=""></p>
+<p>如要 降序 排列，只需传入负号即可：<code>np.sort(-arr)</code>。</p>
+<h3 id="2-7-2- 排序并返回唯一值"><a href="#2-7-2- 排序并返回唯一值" class="headerlink" title="2.7.2 排序并返回唯一值"></a>2.7.2 排序并返回唯一值</h3><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-15_01-23-06.png" style="zoom:80%;" />
+
+<p>对传入的数组中的元素排序，并返回对应元素出现的个数。</p>
+<h2 id="2-8- 数组广播机制"><a href="#2-8- 数组广播机制" class="headerlink" title="2.8 数组广播机制"></a>2.8 数组广播机制 </h2><p><strong> 如果两个数组的后缘维度（trailing dimension，即从末尾开始算起的维度）的轴长度相符或其中一方的长度为 1，则认为他们是广播兼容的。广播会在缺失和（或）长度为 1 的维度上进行。</strong></p>
+<p>举例说明：</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-15_01-29-58.png" style="zoom:80%;" />
+
+<h1 id="3- 文件操作"><a href="#3- 文件操作" class="headerlink" title="3. 文件操作"></a>3. 文件操作</h1><h2 id="3-1- 文件保存"><a href="#3-1- 文件保存" class="headerlink" title="3.1 文件保存"></a>3.1 文件保存</h2><pre><code>np.savetxt(frame, array, fmt=&#39;%.18e&#39;, delimiter=None)</code></pre><ul>
+<li><strong>frame</strong> : 文件、字符串或产生器，可以是.gz 或.bz2 的压缩文件    如 “example.csv”</li>
+<li><strong>array</strong> : 存入文件的数组</li>
+<li>fmt : 写入文件的格式，例如：%d  %.2f   %.18e                             可以省略</li>
+<li>delimiter : 分割字符串，默认是任何空格                                     根据需要是否要指定</li>
+</ul>
+<h2 id="3-2- 读取文件"><a href="#3-2- 读取文件" class="headerlink" title="3.2 读取文件"></a>3.2 读取文件</h2><pre><code>np.loadtxt(frame, dtype=np.float, delimiter=None, unpack=False)</code></pre><ul>
+<li><strong>frame</strong>：文件、字符串或产生器，可以是.gz 或.bz2 的压缩文件。</li>
+<li>dtype：数据类型，可选。</li>
+<li>delimiter：分割字符串，默认是任何空格。</li>
+<li>skiprows：跳过前面 x 行。</li>
+<li>usecols：读取指定的列，用元组组合。</li>
+<li>unpack：如果 True，读取出来的数组是转置后的。</li>
+</ul>
+<p><strong>保存和读取文件举例：</strong></p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-15_16-26-28.png" alt=""></p>
+<p>注意这里的 <code>skiprows=1</code> 的意思是忽略第一行数据。</p>
+<h2 id="3-3-numpy 独有存储格式"><a href="#3-3-numpy 独有存储格式" class="headerlink" title="3.3 numpy 独有存储格式"></a>3.3 numpy 独有存储格式</h2><ol>
+<li>存储：<code>np.save(&#39;fname.np&#39;,array)</code>或 <code>np.savez(&#39;fname.npz&#39;,array)</code>。后者<code>fname.npz</code> 是经过压缩的。</li>
+<li>加载：<code>np.load(fname)</code>。</li>
+</ol>
+<h1 id="4- 补充知识点"><a href="#4- 补充知识点" class="headerlink" title="4. 补充知识点"></a>4. 补充知识点 </h1><h2 id="4-1-Axis 理解"><a href="#4-1-Axis 理解" class="headerlink" title="4.1 Axis 理解"></a>4.1 Axis 理解</h2><p> 方便大家理解，可以认为 <strong><code>axis=0</code> 代表的是行 </strong>，<strong><code>axis=1</code> 代表的是列 </strong>。但其实不是这么简单理解的。这里具体解释一下这个<code>axis</code> 轴的概念。</p>
+<p>简单来说， <strong>最外面的括号代表着 axis=0，依次往里的括号对应的 axis 的计数就依次加 1</strong>：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1-1581749184285.png" alt=""></p>
+<p> <strong>操作方式：如果指定轴进行相关的操作，那么他会使用轴下的每个直接子元素的第 0 个，第 1 个，第 2 个…分别进行相关的操作。</strong></p>
+<p><strong>二维的数组求和：</strong></p>
+<pre><code class="python">&gt;&gt;&gt;x = np.array([[0,1],
+                 [2,3]])
+&gt;&gt;&gt;x.sum(axis=0)
+array([2, 4])
+&gt;&gt;&gt;x.sum(axis=1)
+array([1, 5])</code></pre>
+<p>按照 <code>axis=0</code> 的方式进行相加，那么就会把最外面轴下的所有直接子元素中的第 0 个位置 <code>x[0][0]</code> 与<code>x[1][0]</code></p>
+<p>进行相加，第 1 个位置 <code>x[0][1]</code> 与<code>x[1][1]</code>进行相加…依此类推。</p>
+<p>按照 <code>axis=1</code> 的方式进行相加，那么就会把轴为 1 里面的元素拿出来进行求和，<code>x[0][0]</code>与 <code>x[0][1]</code> 进行相加，<code>x[1][0]</code>与 <code>x[1][1]</code> 进行相加…依此类推。</p>
+<p><strong>用 <code>np.delete</code> 在<code>axis=0</code>和 <code>axis=1</code> 两种情况下删除元素：</strong></p>
+<pre><code class="python">&gt;&gt;&gt;x = np.random.randint(0,10,size=(3,5))
+&gt;&gt;&gt; np.delete(x,0,axis=0)
+array([[0, 4, 2, 5, 2],
+       [2, 2, 1, 0, 8]])         #删除了行</code></pre>
+<p><code>np.delete</code>是个例外。我们按照 <code>axis=0</code> 的方式进行删除，那么他会首先找到最外面的括号下的直接子元素中的第 0 个，然后删掉，剩下最后一行的数据。</p>
+<p><strong>三维数组：</strong></p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/2-1581750404175.png" style="zoom:80%;" />
+
+<p>按照 <code>axis=0</code> 的方式进行相加：<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/3-1581750466746.png" alt=""></p>
+<p>按照 <code>axis=1</code> 的方式进行相加：<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/4-1581750497037.png" alt=""></p>
+<h2 id="4-2-NAN 和 INF 值处理"><a href="#4-2-NAN 和 INF 值处理" class="headerlink" title="4.2 NAN 和 INF 值处理"></a>4.2 NAN 和 INF 值处理 </h2><p><strong> 意义解释：</strong></p>
+<ol>
+<li><code>NAN</code>：<code>Not A number</code>，不是一个数字的意思，但是他是属于浮点类型的，所以想要进行数据操作的时候需要注意他的类型。</li>
+<li><code>INF</code>：<code>Infinity</code>，代表的是无穷大的意思，也是属于浮点类型。<code>np.inf</code>表示正无穷大，<code>-np.inf</code>表示负无穷大，一般在出现除数为 0 的时候为无穷大。比如<code>2/0</code></li>
+</ol>
+<p><strong>特点：</strong></p>
+<ol>
+<li>NAN 和 NAN 不相等。比如 <code>np.NAN != np.NAN</code> 这个条件是成立的。</li>
+<li>NAN 和任何值做运算，结果都是 NAN。</li>
+</ol>
+<p><strong>删除缺失值：</strong></p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-15_15-36-25.png" style="zoom:80%;" />
+
+<p><strong>替换缺失值：</strong></p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-15_16-34-56.png" alt=""></p>
+<p>打开表格 <code>scores.csv</code> 可看到如下表格：</p>
+<table>
+<thead>
+<tr>
+<th>数学</th>
+<th>英语</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>59</td>
+<td>89</td>
+</tr>
+<tr>
+<td>90</td>
+<td>32</td>
+</tr>
+<tr>
+<td>78</td>
+<td>45</td>
+</tr>
+<tr>
+<td>34</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>nan</td>
+<td>56</td>
+</tr>
+<tr>
+<td>23</td>
+<td>56</td>
+</tr>
+</tbody></table>
+<p>替换缺失值为 0：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-15_16-37-04.png" alt=""></p>
+<h2 id="4-3- 深浅拷贝"><a href="#4-3- 深浅拷贝" class="headerlink" title="4.3 深浅拷贝"></a>4.3 深浅拷贝 </h2><p> 在操作数组的时候，它们的数据有时候拷贝进一个新的数组，有时候又不是。这经常是初学者感到困惑。下面有三种情况：</p>
+<p><strong>不拷贝：</strong></p>
+<p>如果只是 <strong> 简单的赋值</strong>，那么不会进行拷贝。示例代码如下：</p>
+<pre><code class="python">a = np.arange(12)
+b = a #这种情况不会进行拷贝
+print(b is a) #返回 True，说明 b 和 a 是相同的</code></pre>
+<p><strong>View 或者浅拷贝：</strong></p>
+<p>有些情况，会进行 <strong> 变量的拷贝 </strong>，但是他们所<strong> 指向的内存空间都是一样的</strong>，那么这种情况叫做浅拷贝，或者叫做<code>View(视图)</code>。比如以下代码：</p>
+<pre><code class="python">a = np.arange(12)
+c = a.view()
+print(c is a) #返回 False，说明 c 和 a 是两个不同的变量
+c[0] = 100
+print(a[0]) #打印 100，说明对 c 上的改变，会影响 a 上面的值，说明他们指向的内存空间还是一样的，这种叫做浅拷贝，或者说是 view</code></pre>
+<p><strong>深拷贝：</strong></p>
+<p>将之前数据 <strong> 完完整整的拷贝一份放到另外一块内存空间中</strong>，这样就是两个完全不同的值了。示例代码如下：</p>
+<pre><code class="python">a = np.arange(12)
+d = a.copy()
+print(d is a) #返回 False，说明 d 和 a 是两个不同的变量
+d[0] = 100
+print(a[0]) #打印 0，说明 d 和 a 指向的内存空间完全不同了。</code></pre>
+<p><strong>图例说明：</strong></p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-15_16-54-54.png" alt=""></p>
+<p>像之前讲到的 <code>flatten</code> 和<code>ravel</code>就是这种情况，<code>ravel</code>返回的就是 View，而 <code>flatten</code> 返回的就是深拷贝。</p>
+<h1 id="5-Numpy 实际应用"><a href="#5-Numpy 实际应用" class="headerlink" title="5. Numpy 实际应用"></a>5. Numpy 实际应用 </h1><h2 id="5-1- 图像处理"><a href="#5-1- 图像处理" class="headerlink" title="5.1 图像处理"></a>5.1 图像处理</h2><p> 以下简单举例 Numpy 数组在图像处理领域的应用：</p>
+<p><strong>读取图片并将其转化成数组数据：</strong></p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-15_17-38-39.png" style="zoom: 80%;" />
+
+<p><strong>处理数组数据并还原成图片：</strong></p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-15_17-44-07.png" style="zoom:80%;" />
+
+
+
+<p>图像处理库 Pillow(PIL)更多用法参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/yhjoker/p/10773444.html">https://www.cnblogs.com/yhjoker/p/10773444.html</a></p>
+<p>官方文档：<a target="_blank" rel="noopener" href="https://pillow.readthedocs.io/en/stable/index.html">https://pillow.readthedocs.io/en/stable/index.html</a></p>
+
+        
+        </div>
         <p>官方中文文档：<a target="_blank" rel="noopener" href="https://www.numpy.org.cn/user/">https://www.numpy.org.cn/user/</a></p>
 <p>这里使用 jupyter notebook 进行演示。</p>
 <p>安装：<code>pip install jupyter</code></p>

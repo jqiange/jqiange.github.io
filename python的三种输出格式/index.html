@@ -25,6 +25,8 @@
 
 <link href="/css/style.css?v=1.1.0" rel="stylesheet">
 
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
 <link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
 
 <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
@@ -49,7 +51,7 @@
   <input class="theme_preload_comment" value="">
   <input class="theme_blog_path" value="">
   <input id="theme_shortcut" value="true" />
-  <input id="theme_highlight_on" value="false" />
+  <input id="theme_highlight_on" value="true" />
   <input id="theme_code_copy" value="true" />
 </div>
 
@@ -931,7 +933,6 @@
         </span>
         
         
-        
     </div>
     <div class="article-meta">
         
@@ -975,6 +976,93 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+        <!-- 添加文章容器，便于样式控制 -->
+        <div class="article-container">
+        
+            <h1 id="拼接"><a href="# 拼接" class="headerlink" title="拼接"></a>拼接</h1><ul>
+<li><p><code>+</code>加号拼接</p>
+<pre><code class="python">name=&#39;zs&#39;
+print(&#39;hello,&#39;+ name)
+
+#输出结果：
+hello,zs</code></pre>
+</li>
+<li><p><code>，</code>逗号拼接</p>
+<pre><code class="python">name=&#39;zs&#39;
+print(&#39;hello,&#39;, name)
+
+#输出结果：
+hello,zs</code></pre>
+</li>
+</ul>
+<h1 id="占位符方法"><a href="# 占位符方法" class="headerlink" title="占位符方法"></a>占位符方法</h1><pre><code class="python">name=&#39;zs&#39;
+print(&#39;hello,%s&#39;%name)    #这里 s% 就是一个占位符，为“字符串”占位
+
+#输出结果：
+hello,zs</code></pre>
+<p><strong>常见占位符：</strong></p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/obytmcy9FdS91eEl3PT0.png" alt=""></p>
+<p><strong>为输出设置限制条件：</strong></p>
+<ul>
+<li>%3s 表示输出的字符串类型最少 3 个字符，少于 3 个用空格填充</li>
+<li>%.5s 表示输出的字符串类型最多 5 个字符，超出 3 个会被删掉</li>
+<li>%3f 少于 3 位数，小数点后面用 0 填充</li>
+<li>%.3f 控制小数点后的位数，保留 3 位小数。</li>
+</ul>
+<p><strong>下面补充一些相关知识：转义符</strong> </p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/kVrcUZTQzRBPT0.png" style="zoom: 80%;" />
+
+<h1 id="格式化输出"><a href="# 格式化输出" class="headerlink" title="格式化输出"></a>格式化输出 </h1><h2 id="第一种："><a href="# 第一种：" class="headerlink" title="第一种："></a> 第一种：</h2><pre><code class="python">name=&#39;zs&#39;
+print(f&#39;hello,&#123;name&#125;&#39;)   
+
+#输出结果：
+hello,zs</code></pre>
+<h2 id="第二种："><a href="# 第二种：" class="headerlink" title="第二种："></a>第二种：</h2><pre><code class="python">name=&#39;zs&#39;
+print(&#39;hello,&#123;&#125;&#39;.format(name))   
+
+#输出结果：
+hello,zs</code></pre>
+<ul>
+<li><p>在大括号里 <code>&#123;&#125;</code> 指定位置参数：</p>
+<pre><code class="python">print(&#39;&#123;1&#125;,&#123;0&#125;,&#123;1&#125;&#39;.format(&#39;abc&#39;,18))
+
+#输出结果：
+18,abc,18</code></pre>
+</li>
+<li><p>格式控制信息还包括【填充】，【对齐】，【宽度】，【千位分隔符】，【精度】，【类型】等。</p>
+<pre><code class="python">print(&#39;&#123;0:30&#125;&#39;.format(&#39;python&#39;))   #宽度
+#输出结果：
+python                             #python 字符后面有空格的，总长度 30
+
+print(&#39;&#123;0:&gt;30&#125;&#39;.format(&#39;python&#39;))  #对齐 &lt;，&gt;，^ 分别表示左对齐，右对齐，居中
+#输出结果：
+                        python
+
+print(&#39;&#123;0:*^30&#125;&#39;.format(&#39;python&#39;))  #填充
+#输出结果：
+************python************
+
+print(&#39;&#123;0:-^20,&#125;&#39;.format(123456456789))  #逗号为千位分隔符
+#输出结果：
+--123,456,456,789---
+
+print(&#39;&#123;0:.2f&#125;&#39;.format(123.45645))   #精度控制
+#输出结果：
+123.46
+
+print(&#39;&#123;0:.4&#125;&#39;.format(&#39;python&#39;))   #字符分割
+#输出结果：
+pyth
+
+print(&#39;&#123;0:.2%&#125;&#39;.format(3.14152))  #类型控制
+#输出结果：
+314.15%</code></pre>
+</li>
+</ul>
+<p>更多用法详见官方文档：<a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/string.html#format-string-syntax">https://docs.python.org/zh-cn/3/library/string.html#format-string-syntax</a></p>
+
+        
+        </div>
         <h1 id="拼接"><a href="# 拼接" class="headerlink" title="拼接"></a>拼接</h1><ul>
 <li><p><code>+</code>加号拼接</p>
 <pre><code class="python">name=&#39;zs&#39;

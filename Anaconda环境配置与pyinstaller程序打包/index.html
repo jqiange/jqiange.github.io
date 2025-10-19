@@ -145,7 +145,7 @@
                     <div data-rel="工具">
                         
                         工具
-                        <small>(8)</small>
+                        <small>(9)</small>
                         
                     </div>
                     
@@ -285,7 +285,7 @@
                     <div data-rel="python">
                         
                         python
-                        <small>(15)</small>
+                        <small>(14)</small>
                         
                     </div>
                     
@@ -314,7 +314,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="58">
-<input type="hidden" id="yelog_site_word_count" value="248.8k">
+<input type="hidden" id="yelog_site_word_count" value="249.4k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -874,7 +874,7 @@
             <span class="post-date" title="2020-02-13 22:57:50">2020/02/13</span>
         </a>
         
-        <a  class="全部文章 python "
+        <a  class="全部文章 工具 "
            href="/Anaconda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8Epyinstaller%E7%A8%8B%E5%BA%8F%E6%89%93%E5%8C%85/"
            data-tag=""
            data-author="" >
@@ -928,7 +928,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="python">python</a>
+            <a  data-rel="工具">工具</a>
             
         </span>
         
@@ -936,12 +936,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2025-02-28 12:27:15'>2020-02-13 20:01</time>
+            发布时间 : <time class="date" title='最后更新: 2025-09-27 11:35:59'>2020-02-13 20:01</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:2.4k</span>
+        <span>字数:2.5k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1099,20 +1099,20 @@ coll = COLLECT(exe,
 </li>
 </ol>
 <h2 id="2-2- 开始打包"><a href="#2-2- 开始打包" class="headerlink" title="2.2 开始打包"></a>2.2 开始打包 </h2><p> 切换到你的工作目录，就是你的 python 程序所在的路径，创建虚拟环境：</p>
-<p><strong>方法一</strong>：<code>python -m venv v_env</code></p>
-<pre><code class="shell">python -m venv v_env   # 使用 Python 的 venv 模块来创建一个新的虚拟环境 v_env
+<p><strong>方法一</strong>：<code>python -m venv v_env</code>  使用 Python 的 venv 模块来创建一个新的虚拟环境 v_env</p>
+<pre><code class="shell">python -m venv v_env   # 在当前路径下新建一个 v_env 文件夹，包含了环境配置
 
 source v_env/bin/activate.csh   #如果当前是 csh 环境
 source v_env/bin/activate       #如果当前是 bash 环境
 
 pip install pyqt5 pyinstaller   #在虚拟环境 v_env 安装需要用到的包
 
-pyinstaller --onfile --windowed --hidden-import PyQt5.sip xxx.py</code></pre>
-<p><strong>方法二</strong>：<code>conda create --name myenv</code>  </p>
+pyinstaller --onefile --windowed --hidden-import PyQt5.sip xxx.py  #这里导入需要的库文件 PyQt5.sip</code></pre>
+<p><strong>方法二</strong>：<code>conda create --name myenv</code>  使用 anaconda 创建虚拟环境，</p>
 <pre><code class="shell">conda create --name myenv python=3.10 pyqt5 pyinstaller  # 使用 anaconda 创建虚拟环境，并夹带一些指定的包
 conda activate myenv        # 激活环境
 
-pyinstaller --onfile --windowed --hidden-import PyQt5.sip xxx.py</code></pre>
+pyinstaller --onefile --windowed --hidden-import PyQt5.sip xxx.py</code></pre>
 <blockquote>
 <p>当你使用 Anaconda 创建一个新的虚拟环境时，默认情况下，这个新环境并不会自动包含 Anaconda 安装时自带的所有包。新创建的 Conda 环境通常只包含一些最基本、最核心的包，比如 <code>python</code> 和 <code>pip</code>，以及其他少量基础工具。</p>
 </blockquote>
@@ -1122,7 +1122,7 @@ pyinstaller --onfile --windowed --hidden-import PyQt5.sip xxx.py</code></pre>
 
 source v_env/bin/activate.csh       #先激活虚拟环境
 
-pyinstaller --onfile --windowed \
+pyinstaller --onefile --windowed \
             --add_data &quot;assets:assets&quot;        #静态资源目录
             --hidden-import PyQt5.sip         #声明隐藏依赖
             --icon=app.ico                    #程序图标

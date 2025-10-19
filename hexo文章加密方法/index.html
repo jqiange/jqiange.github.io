@@ -145,7 +145,7 @@
                     <div data-rel="工具">
                         
                         工具
-                        <small>(8)</small>
+                        <small>(9)</small>
                         
                     </div>
                     
@@ -285,7 +285,7 @@
                     <div data-rel="python">
                         
                         python
-                        <small>(15)</small>
+                        <small>(14)</small>
                         
                     </div>
                     
@@ -314,7 +314,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="58">
-<input type="hidden" id="yelog_site_word_count" value="248.8k">
+<input type="hidden" id="yelog_site_word_count" value="249.4k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -874,7 +874,7 @@
             <span class="post-date" title="2020-02-13 22:57:50">2020/02/13</span>
         </a>
         
-        <a  class="全部文章 python "
+        <a  class="全部文章 工具 "
            href="/Anaconda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8Epyinstaller%E7%A8%8B%E5%BA%8F%E6%89%93%E5%8C%85/"
            data-tag=""
            data-author="" >
@@ -936,12 +936,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2025-09-24 16:24:00'>2025-09-21 22:33</time>
+            发布时间 : <time class="date" title='最后更新: 2025-09-24 23:11:33'>2025-09-21 22:33</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:317</span>
+        <span>字数:375</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -976,8 +976,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在 Hexo 博客中实现文章加密，可以通过使用 <code>hexo-blog-encrypt</code> 插件来实现。这个插件可以让你为特定的文章设置密码，只有输入正确的密码才能查看文章内容。</p>
+        <p>在 Hexo 博客中实现文章加密，可以通过使用 <code>hexo-blog-encrypt</code> 插件来实现。这个插件可以让你为特定的文章设置密码，只有输入正确的密码才能查看文章内容。插件仓库 readme: <a target="_blank" rel="noopener" href="https://github.com/D0n9X1n/hexo-blog-encrypt/blob/master/ReadMe.zh.md">hexo-blog-encrypt/ReadMe.zh.md at master · D0n9X1n/hexo-blog-encrypt</a></p>
 <p>其核心的技术点就是在 hexo 渲染时将原文进行 AES 加密, 然后在展示的时候使用密码进行解密。</p>
+<p><strong>安全性</strong>：即使静态文章发布到远程仓库，仓库为 public，相关文章也是被加密的，无法查看到任何文章内容。</p>
 <p><strong>插件安装</strong>：</p>
 <ol>
 <li><p>使用 npm 安装</p>

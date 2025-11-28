@@ -314,7 +314,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="58">
-<input type="hidden" id="yelog_site_word_count" value="249.4k">
+<input type="hidden" id="yelog_site_word_count" value="249.7k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -936,12 +936,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2025-08-30 09:40:28'>2020-06-17 22:33</time>
+            发布时间 : <time class="date" title='最后更新: 2025-11-27 10:45:38'>2020-06-17 22:33</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:8.6k</span>
+        <span>字数:8.9k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1118,7 +1118,7 @@ find ./ -not -name &#39;plot*&#39;  #取反，不包含</code></pre>
 find /dir/path/* -type f -mtime +2 -exec rm &#123;&#125; \;  #-type f 表示只删文件, -mtime +2 筛选修改日期是 2 天前的</code></pre>
 <blockquote>
 <p>-type，-mtime 都是 find 的 options，<code>find --help</code>可以查看更多用法</p>
-<p>2.8 章节也有介绍</p>
+<p>2.8 章节也有介绍，支持删除大量文件</p>
 </blockquote>
 <h2 id="1-10- 移动与拷贝"><a href="#1-10- 移动与拷贝" class="headerlink" title="1.10 移动与拷贝"></a>1.10 移动与拷贝</h2><pre><code class="shell">mv 1.txt 1_1.txt  #重命名 1.txt 为 1_1.txt
 
@@ -1321,14 +1321,18 @@ yum update</code></pre>
 <p>（4）apt-get 是 ubuntu 下的一个软件安装方式，它是基于 debain。</p>
 <h2 id="2-8- 其他常见组合命令"><a href="#2-8- 其他常见组合命令" class="headerlink" title="2.8 其他常见组合命令"></a>2.8 其他常见组合命令</h2><h3 id="2-8-1- 查找删除"><a href="#2-8-1- 查找删除" class="headerlink" title="2.8.1 查找删除"></a>2.8.1 查找删除</h3><ul>
 <li><p>按照文件创建日期删除</p>
-<pre><code class="shell">find ./dir -type f -mtime +2 -exec rm &#123;&#125; \;</code></pre>
+<pre><code class="shell">find ./dir -type f -mtime +2 -exec rm &#123;&#125; \;  # 不适合大量删除，会报错
+find ./dir -type f -mtime +2 -exec rm &#123;&#125; +   # 适合大量删除</code></pre>
 <ul>
 <li>-type f：指定对象为文件，不含目录</li>
 <li>-mtime +2 筛选修改日期是 2 天前的</li>
+<li><code>&#123;&#125;</code> 是 <code>find</code> 的占位符，代表当前找到的文件路径。</li>
+<li><code>\;</code> 是 <code>-exec</code> 语句的结束标志（必须转义分号）</li>
+<li><code>+</code> 是另一种结束标志，表示“批量传参”。</li>
 </ul>
 </li>
 <li><p>按照文件类型 / 名字删除</p>
-<pre><code class="shell">find ./dir -name &quot;*.log&quot; -exec rm &#123;&#125; \;</code></pre>
+<pre><code class="shell">find ./dir -name &quot;*.log&quot; -exec rm &#123;&#125; +</code></pre>
 </li>
 <li><p>大量文件删除，避免删除报错</p>
 <pre><code class="shell">find ./dir -type f -name &quot;filename&quot; | xargs rm
@@ -1337,6 +1341,19 @@ find ./dir -type f -name &quot;filename&quot; -print0 | xargs -0 rm</code></pre>
 <p>当你处理大量文件时，使用 <code>xargs</code> 可能比 <code>-exec</code> 更高效，因为它会将找到的文件批量传递给 <code>rm</code> 命令</p>
 <p>对于包含空格或其他特殊字符的文件名，最好使用 <code>-print0</code> 和<code>-0</code>参数以避免错误</p>
 </blockquote>
+<hr>
+<p>在 <code>find</code> 命令中，<code>-exec rm &#123;&#125; \;</code> 和 <code>-exec rm &#123;&#125; +</code> 都用于对查找到的文件执行 <code>rm</code> 删除操作，但它们在 <strong> 执行方式 </strong> 和<strong>效率 </strong> 上有重要区别：</p>
+<p><code>-exec rm &#123;&#125; \;</code></p>
+<ul>
+<li><strong>含义</strong>：对每一个匹配到的文件，单独执行一次 <code>rm</code> 命令。如果 <code>find</code> 找到 100 个文件，就会调用 <code>rm</code> 100 次。</li>
+<li><strong>缺点</strong>：效率较低（尤其在文件数量大时），因为每次都要 fork 一个新进程。</li>
+</ul>
+<p><code>-exec rm &#123;&#125; +</code></p>
+<ul>
+<li><strong>含义</strong>：将多个匹配到的文件作为参数一次性传递给 <code>rm</code>。<code>find</code> 会尽可能多地把文件名拼接成一个命令行（不超过系统 <code>ARG_MAX</code> 限制）。只需调用 <code>rm</code> 少数几次（甚至一次）即可删除所有文件。</li>
+<li><strong>优点</strong>：高效，减少进程创建开销。</li>
+<li><strong>缺点</strong>：某些非常老的系统可能不支持（但现代系统基本都支持）。</li>
+</ul>
 </li>
 </ul>
 <h1 id="3、Linux 文本处理"><a href="#3、Linux 文本处理" class="headerlink" title="3、Linux 文本处理"></a>3、Linux 文本处理</h1><h2 id="3-1-Sed 命令"><a href="#3-1-Sed 命令" class="headerlink" title="3.1  Sed 命令"></a>3.1  Sed 命令</h2><p>sed 是一种流编辑器，是一种面向行的文本处理工具，配合正则使用更强大。每次从文本读入一行，在“保持空间”和“模式空间”进行修改，然后再读入下一行。</p>
@@ -1347,24 +1364,24 @@ find ./dir -type f -name &quot;filename&quot; -print0 | xargs -0 rm</code></pre>
 <table>
 <thead>
 <tr>
-<th>options 选项</th>
+<th align="left">options 选项</th>
 <th>含义</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>-e</td>
+<td align="left">-e</td>
 <td>该选项会将其后跟的脚本命令添加到已有的命令中。默认 -e</td>
 </tr>
 <tr>
-<td>-f</td>
+<td align="left">-f</td>
 <td>该选项会将其后文件中的脚本命令添加到已有的命令中。</td>
 </tr>
 <tr>
-<td>-n</td>
+<td align="left">-n</td>
 <td>默认情况下，sed 会在所有的脚本指定执行完毕后，会自动输出处理后的内容，而该选项会屏蔽启动输出，需使用 print 命令来完成输出。</td>
 </tr>
 <tr>
-<td>-i</td>
+<td align="left">-i</td>
 <td>此选项会直接修改源文件。</td>
 </tr>
 </tbody></table>

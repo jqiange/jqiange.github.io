@@ -1477,10 +1477,13 @@
   background-color: #009688;
 }
 #post .pjax article :not(pre) > code {
+  font-family: "Fira Code", "Cascadia Code", "JetBrains Mono", monospace;
   background-color: #fff5f5;
   color: #ff502c;
-  font-size: 0.87em;
-  padding: 0.065em 0.4em;
+  font-size: 0.9em;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  white-space: nowrap;
 }
 #post .pjax article pre.mermaid {
   border: none;

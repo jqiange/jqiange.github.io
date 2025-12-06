@@ -936,7 +936,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2025-12-06 20:54:05'>2022-03-07 20:24</time>
+            发布时间 : <time class="date" title='最后更新: 2025-12-06 21:16:39'>2022-03-07 20:24</time>
         
     </div>
     <div class="article-meta">
@@ -1459,8 +1459,12 @@ test -d /home/test
 echo $?
 0                     #在 shell 中，为真的退出状态码为 0，为假时状态码为 1</code></pre>
 <h3 id="2-5-2- 数值比较"><a href="#2-5-2- 数值比较" class="headerlink" title="2.5.2 数值比较"></a>2.5.2 数值比较 </h3><p> 关系运算符只支持 <strong> 整数运算</strong>，不支持字符串，除非字符串的值是数字。</p>
-<p>在 <code>[]</code> 或 <code>test</code> 中同时支持自 <strong> 字母 </strong> 和<strong>符号 </strong> 运算符</p>
-<p>在 <code>(())</code> 仅仅使用<strong> 符号 </strong> 运算符</p>
+<ul>
+<li>在 <code>[]</code> 或 <code>test</code> 中同时支持自 <strong> 字母 </strong> 和<strong>符号 </strong> 运算符</li>
+</ul>
+<ul>
+<li>在 <code>(())</code> 仅仅使用<strong> 符号 </strong> 运算符</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -2095,6 +2099,20 @@ endif</code></pre>
 
         /*高亮代码块行号*/
         
+        $('pre code').each(function(){
+            var lines = $(this).text().trim().split('\n').length, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
 
         /*访问数量*/
         
@@ -2114,6 +2132,38 @@ endif</code></pre>
 </script>
 
 <!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
 
 <!--自定义样式设置-->
 <style>

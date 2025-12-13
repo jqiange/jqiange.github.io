@@ -1,0 +1,1622 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redis 数据库 | jqiange</title>
+  <meta name="keywords" content=" Redis ">
+  <meta name="description" content="Redis 数据库 | jqiange">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="人畜无害的姜小强">
+<meta property="og:url" content="https://jqiange.github.io/about/index.html">
+<meta property="og:site_name" content="jqiange">
+<meta property="og:description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+<meta property="article:published_time" content="2020-02-18T08:21:04.000Z">
+<meta property="article:modified_time" content="2025-12-13T05:23:10.695Z">
+<meta property="article:author" content="姜小强">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+
+
+<link rel="icon" href="/img/jqiange.png">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/jqiange.png"/>
+</a>
+<div class="author">
+    <span>姜小强</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/jqiange"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(58)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(9)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据库">
+                        
+                        数据库
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="每日一学">
+                        
+                        每日一学
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="爬虫">
+                        
+                        爬虫
+                        <small>(10)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="前端">
+                        
+                        前端
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="深度学习">
+                        
+                        深度学习
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据分析">
+                        
+                        数据分析
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="chip">
+                        
+                        chip
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="CPP">
+                        
+                        CPP
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Linux">
+                        
+                        Linux
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="python">
+                        
+                        python
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="58">
+<input type="hidden" id="yelog_site_word_count" value="251.9k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSS-Xpath</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Markdown</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Matplotlib</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Mysql</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Numpy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pandas</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pip</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pyecharts</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pygal</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pymysql-ORM</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>RE</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Redis</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Scrapy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Seaborn</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Selenium</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>yield</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="全部文章 python "
+           href="/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%A6%E8%A7%A3/"
+           data-tag="RE"
+           data-author="" >
+            <span class="post-title" title="正则表达式详解">正则表达式详解</span>
+            <span class="post-date" title="2020-02-26 09:25:46">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/tcl%E4%B8%8Eopc/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 与 opc">tcl 与 opc</span>
+            <span class="post-date" title="2025-09-24 13:36:07">2025/09/24</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/hexo%E6%96%87%E7%AB%A0%E5%8A%A0%E5%AF%86%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="hexo 文章加密方法">hexo 文章加密方法</span>
+            <span class="post-date" title="2025-09-21 22:33:03">2025/09/21</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/tcl%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 语言入门">tcl 语言入门</span>
+            <span class="post-date" title="2025-09-14 22:43:20">2025/09/14</span>
+        </a>
+        
+        <a  class="全部文章 每日一学 "
+           href="/%E6%95%85%E4%BA%8B%E4%BC%9A%E4%B8%8E%E4%BC%81%E4%B8%9A%E8%82%A1%E6%9D%83%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="故事会与企业股权架构设计">故事会与企业股权架构设计</span>
+            <span class="post-date" title="2025-08-30 09:42:43">2025/08/30</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%AE%A1%E7%AE%97%E5%85%89%E5%88%BBOPC%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="计算光刻 OPC 名词解释">计算光刻 OPC 名词解释</span>
+            <span class="post-date" title="2025-08-26 21:44:36">2025/08/26</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%8A%AF%E7%89%87%E5%88%B6%E9%80%A0%E6%B5%81%E7%A8%8B%E4%B8%8E%E5%B7%A5%E8%89%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="芯片制造流程与工艺">芯片制造流程与工艺</span>
+            <span class="post-date" title="2025-06-14 12:13:17">2025/06/14</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E8%81%8C%E5%9C%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入职场">C++ 入职场</span>
+            <span class="post-date" title="2024-06-22 15:52:55">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/Protocol-Buffers-%E5%85%A5%E9%97%A8%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Protocol Buffers 入门使用">Protocol Buffers 入门使用</span>
+            <span class="post-date" title="2024-06-22 15:50:39">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-python%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B-boost/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++python 混合编程 -boost">C++python 混合编程 -boost</span>
+            <span class="post-date" title="2024-06-22 15:36:18">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B%E4%B8%8E%E6%A8%A1%E6%9D%BF/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 泛型编程与模板">C++ 泛型编程与模板</span>
+            <span class="post-date" title="2024-06-22 15:27:49">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入门学习笔记">C++ 入门学习笔记</span>
+            <span class="post-date" title="2024-06-22 14:53:46">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 Linux "
+           href="/shell%E7%BC%96%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="shell 编程">shell 编程</span>
+            <span class="post-date" title="2022-03-07 20:24:24">2022/03/07</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Git 版本控制工具">Git 版本控制工具</span>
+            <span class="post-date" title="2022-03-05 23:23:45">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Hexo%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E4%B8%8E%E5%A4%9A%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hexo 博客迁移与多平台使用">Hexo 博客迁移与多平台使用</span>
+            <span class="post-date" title="2022-03-05 01:26:56">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%B8%8E%E9%87%8D%E9%9A%BE%E7%82%B9%E6%B1%87%E6%80%BB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的基础知识与重难点汇总">python 中的基础知识与重难点汇总</span>
+            <span class="post-date" title="2020-11-17 23:05:15">2020/11/17</span>
+        </a>
+        
+        <a  class="全部文章 前端 "
+           href="/javascript%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="JavaScript 入门">JavaScript 入门</span>
+            <span class="post-date" title="2020-11-09 20:46:08">2020/11/09</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E8%AF%AD%E6%B3%95%E7%B3%96/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的语法糖">python 中的语法糖</span>
+            <span class="post-date" title="2020-11-06 10:53:29">2020/11/06</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E8%BF%9B%E7%A8%8B%EF%BC%8C%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%8D%8F%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的进程，线程与协程">python 中的进程，线程与协程</span>
+            <span class="post-date" title="2020-11-04 21:29:16">2020/11/04</span>
+        </a>
+        
+        <a  class="全部文章 Linux "
+           href="/linux%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="linux 常见命令学习">linux 常见命令学习</span>
+            <span class="post-date" title="2020-06-17 22:33:28">2020/06/17</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="机器学习经典算法">机器学习经典算法</span>
+            <span class="post-date" title="2020-06-16 10:36:50">2020/06/16</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/tensorflow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tensorflow 学习笔记">tensorflow 学习笔记</span>
+            <span class="post-date" title="2020-06-05 01:49:53">2020/06/05</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/%E6%B7%B1%E5%BA%A6%E7%90%86%E8%A7%A3%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="深度理解卷积神经网络工作原理">深度理解卷积神经网络工作原理</span>
+            <span class="post-date" title="2020-06-04 13:24:45">2020/06/04</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E7%88%AC%E8%99%AB%E7%9A%84%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫的定时执行">爬虫的定时执行</span>
+            <span class="post-date" title="2020-04-06 22:44:47">2020/04/06</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/Token-%EF%BC%8CCookie%E5%92%8CSession%E7%9A%84%E5%8C%BA%E5%88%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Token ，Cookie 和 Session 的区别">Token ，Cookie 和 Session 的区别</span>
+            <span class="post-date" title="2020-04-03 10:46:54">2020/04/03</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E5%9C%A8python%E4%B8%AD%E8%BF%9B%E8%A1%8C%E8%A7%86%E9%A2%91-%E9%9F%B3%E9%A2%91%E5%A4%84%E7%90%86%E5%8F%8A%E5%90%88%E5%B9%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="在 python 中进行视频 - 音频处理及合并">在 python 中进行视频 - 音频处理及合并</span>
+            <span class="post-date" title="2020-03-29 10:56:44">2020/03/29</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8BJS%E8%A7%A3%E5%AF%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之 JS 解密">反反爬虫之 JS 解密</span>
+            <span class="post-date" title="2020-03-24 10:04:43">2020/03/24</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E7%90%86%E8%A7%A3python%E4%B8%AD%E7%9A%84%E9%97%AD%E5%8C%85%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="理解 python 中的闭包与装饰器">理解 python 中的闭包与装饰器</span>
+            <span class="post-date" title="2020-03-21 17:34:45">2020/03/21</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Mongodb%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Mongodb 数据库入门">Mongodb 数据库入门</span>
+            <span class="post-date" title="2020-03-17 22:50:33">2020/03/17</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%8A%A0%E4%B8%AA%E7%A9%BA%E6%A0%BC%E5%91%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="为什么不加个空格呢">为什么不加个空格呢</span>
+            <span class="post-date" title="2020-03-14 13:53:44">2020/03/14</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8/"
+           data-tag="yield"
+           data-author="" >
+            <span class="post-title" title="迭代器与生成器">迭代器与生成器</span>
+            <span class="post-date" title="2020-03-13 21:58:25">2020/03/13</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E6%BB%91%E5%9D%97%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之滑块验证码">反反爬虫之滑块验证码</span>
+            <span class="post-date" title="2020-03-08 21:00:17">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E5%9B%BE%E7%89%87%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之图片验证码">反反爬虫之图片验证码</span>
+            <span class="post-date" title="2020-03-08 16:16:16">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Python%E6%93%8D%E4%BD%9CRedis/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Python 操作 Redis">Python 操作 Redis</span>
+            <span class="post-date" title="2020-03-07 16:15:44">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy-Redis%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Scrapy-Redis 分布式爬虫">Scrapy-Redis 分布式爬虫</span>
+            <span class="post-date" title="2020-03-07 15:35:50">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%ABRequest%E5%8E%BB%E9%87%8D%E5%8F%8A%E8%BF%87%E6%BB%A4%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫 Request 去重及过滤器">爬虫 Request 去重及过滤器</span>
+            <span class="post-date" title="2020-03-07 15:22:23">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Redis%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Redis 数据库">Redis 数据库</span>
+            <span class="post-date" title="2020-03-06 20:30:00">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Pymysql%E4%B8%8EORM%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="pymysql-ORM"
+           data-author="" >
+            <span class="post-title" title="Pymysql 与 ORM 操作数据库">Pymysql 与 ORM 操作数据库</span>
+            <span class="post-date" title="2020-03-06 10:49:03">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/MySql%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Mysql"
+           data-author="" >
+            <span class="post-title" title="MySql 数据库">MySql 数据库</span>
+            <span class="post-date" title="2020-03-04 23:31:02">2020/03/04</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy%E6%A1%86%E6%9E%B6%E7%88%AC%E8%99%AB/"
+           data-tag="Scrapy"
+           data-author="" >
+            <span class="post-title" title="Scrapy 框架爬虫">Scrapy 框架爬虫</span>
+            <span class="post-date" title="2020-03-02 10:44:55">2020/03/02</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="多线程与多进程爬虫">多线程与多进程爬虫</span>
+            <span class="post-date" title="2020-03-01 15:33:08">2020/03/01</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Selenium%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%A8%A1%E6%8B%9F/"
+           data-tag="Selenium"
+           data-author="" >
+            <span class="post-title" title="Selenium 自动化测试模拟">Selenium 自动化测试模拟</span>
+            <span class="post-date" title="2020-02-29 21:29:54">2020/02/29</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96-%E6%96%87%E4%BB%B6%E4%BF%9D%E5%AD%98/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="数据持久化 - 文件保存本地">数据持久化 - 文件保存本地</span>
+            <span class="post-date" title="2020-02-27 22:01:14">2020/02/27</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫基础入门">爬虫基础入门</span>
+            <span class="post-date" title="2020-02-26 20:44:27">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/CSS%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%8EXpath%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96/"
+           data-tag="CSS-Xpath"
+           data-author="" >
+            <span class="post-title" title="CSS 选择器与 Xpath 数据提取">CSS 选择器与 Xpath 数据提取</span>
+            <span class="post-date" title="2020-02-26 19:07:35">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Seaborn-Pygal-Pyecharts%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Seaborn,pygal,Pyecharts"
+           data-author="" >
+            <span class="post-title" title="Seaborn-Pygal-Pyecharts 可视化">Seaborn-Pygal-Pyecharts 可视化</span>
+            <span class="post-date" title="2020-02-22 16:24:55">2020/02/22</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/python%E4%B9%8BMatplotlib%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Matplotlib"
+           data-author="" >
+            <span class="post-title" title="python 之 Matplotlib 可视化">python 之 Matplotlib 可视化</span>
+            <span class="post-date" title="2020-02-20 20:28:44">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%A4%84%E7%90%86%E5%AE%9E%E6%93%8D/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Pandas 数据分析处理实操">Pandas 数据分析处理实操</span>
+            <span class="post-date" title="2020-02-20 10:51:39">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Markdown%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E6%8A%80%E5%B7%A7/"
+           data-tag="Markdown"
+           data-author="" >
+            <span class="post-title" title="Markdown 文本编辑技巧">Markdown 文本编辑技巧</span>
+            <span class="post-date" title="2020-02-18 16:31:40">2020/02/18</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BPandas%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Python 之 Pandas 库从入门到实战">Python 之 Pandas 库从入门到实战</span>
+            <span class="post-date" title="2020-02-15 20:46:52">2020/02/15</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BNumpy%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Numpy"
+           data-author="" >
+            <span class="post-title" title="Python 之 Numpy 库从入门到实战">Python 之 Numpy 库从入门到实战</span>
+            <span class="post-date" title="2020-02-13 23:15:38">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E9%95%9C%E5%83%8F%E6%BA%90%E7%BD%91%E5%9D%80/"
+           data-tag="pip"
+           data-author="" >
+            <span class="post-title" title="python pip 国内镜像大全及库的安装">python pip 国内镜像大全及库的安装</span>
+            <span class="post-date" title="2020-02-13 23:13:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E7%9A%84%E4%B8%89%E7%A7%8D%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 的三种输出格式">python 的三种输出格式</span>
+            <span class="post-date" title="2020-02-13 23:04:49">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E6%97%B6%E9%97%B4%E6%A8%A1%E5%9D%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的时间模块">python 中的时间模块</span>
+            <span class="post-date" title="2020-02-13 23:01:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E6%9F%A5%E7%9C%8B%E4%BB%BB%E4%BD%95%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E7%94%A8%E6%B3%95%E7%9A%84%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 查看任何第三方库的用法的方法">python 查看任何第三方库的用法的方法</span>
+            <span class="post-date" title="2020-02-13 22:57:50">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Anaconda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8Epyinstaller%E7%A8%8B%E5%BA%8F%E6%89%93%E5%8C%85/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Anaconda 环境配置与 pyinstaller 程序打包">Anaconda 环境配置与 pyinstaller 程序打包</span>
+            <span class="post-date" title="2020-02-13 20:01:52">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%BD%BF%E7%94%A8Hexo-Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%85%8D%E8%B4%B9%E5%8D%9A%E5%AE%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="使用 Hexo+Github 搭建个人免费博客">使用 Hexo+Github 搭建个人免费博客</span>
+            <span class="post-date" title="2020-02-13 15:44:02">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E5%85%B3%E4%BA%8Ehexo%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"
+           data-tag="Hexo"
+           data-author="" >
+            <span class="post-title" title="关于 hexo 使用过程中报错问题汇总">关于 hexo 使用过程中报错问题汇总</span>
+            <span class="post-date" title="2020-02-12 23:03:46">2020/02/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-Redis数据库" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Redis 数据库</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="数据库">数据库</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color1">Redis</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2025-12-13 13:23:10'>2020-03-06 20:30</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:8.3k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-redis%20%E4%BB%8B%E7%BB%8D"><span class="toc-text">1. redis 介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-Redis-%20%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-text">1.1 Redis 是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-Redis-%20%E7%9A%84%E4%BC%98%E7%82%B9"><span class="toc-text">1.2 Redis 的优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-redis%20%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">1.3 redis 应用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-redis%20%E5%AF%B9%E6%AF%94%20mysql"><span class="toc-text">1.4 redis 对比 mysql</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-%20%E6%8E%A8%E8%8D%90%E9%98%85%E8%AF%BB"><span class="toc-text">1.5 推荐阅读</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-Redis-%20%E5%AE%89%E8%A3%85"><span class="toc-text">2. Redis 安装 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-Linux"><span class="toc-text">2.1 Linux</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1-%20%E5%9C%A8%E7%BA%BF%E5%AE%89%E8%A3%85"><span class="toc-text">2.1.1 在线安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2-%20%E4%BB%8E%E6%BA%90%E7%A0%81%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85"><span class="toc-text">2.1.2 从源码开始安装 </span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E9%87%8D%E8%A6%81%E6%96%87%E4%BB%B6"><span class="toc-text">查看重要文件 </span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-text">设置环境变量 </span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E6%B5%8B%E8%AF%95"><span class="toc-text">运行测试 </span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-3-Redis-%20%E5%90%AF%E5%8A%A8"><span class="toc-text">2.1.3 Redis 启动</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%20-Redis-server"><span class="toc-text">启动 Redis-server</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%20-Redis"><span class="toc-text">查看 Redis</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%20-Redis-client"><span class="toc-text">启动 Redis-client</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-windows%20%E5%AE%89%E8%A3%85"><span class="toc-text">2.2 windows 安装 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%20REdis"><span class="toc-text">启动 REdis</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">3. 数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-Redis-strings"><span class="toc-text">3.1 Redis strings</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-Redis-Lists"><span class="toc-text">3.2 Redis Lists</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#List-%20%E9%98%BB%E5%A1%9E%E6%93%8D%E4%BD%9C"><span class="toc-text">List 阻塞操作 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#List-%20%E5%B8%B8%E8%A7%81%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">List 常见应用场景 </span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-Redis-%20%E6%97%A0%E5%BA%8F%E9%9B%86%E5%90%88"><span class="toc-text">3.3 Redis 无序集合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-Redis-%20%E6%9C%89%E5%BA%8F%E9%9B%86%E5%90%88"><span class="toc-text">3.4 Redis 有序集合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-Redis-Hashes"><span class="toc-text">3.5 Redis Hashes</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%20%E6%93%8D%E4%BD%9C"><span class="toc-text">4. 操作 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%82%E5%90%88%E5%85%A8%E4%BD%93%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">适合全体类型的常用命令 </span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#EXISTS-and-DEL"><span class="toc-text">EXISTS and DEL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#TYPE-and-KEYS"><span class="toc-text">TYPE and KEYS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#RANDOMKEY-and-CLEAR"><span class="toc-text">RANDOMKEY and CLEAR</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#RENAME-and-RENAMENX"><span class="toc-text">RENAME and RENAMENX</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DBSIZE"><span class="toc-text">DBSIZE</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis-%20%E6%97%B6%E9%97%B4%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4"><span class="toc-text">Redis 时间相关命令 </span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%99%90%E5%AE%9A%20-key-%20%E7%94%9F%E5%AD%98%E6%97%B6%E9%97%B4"><span class="toc-text">限定 key 生存时间 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%20-key-%20%E5%89%A9%E4%BD%99%E7%94%9F%E5%AD%98%E6%97%B6%E9%97%B4"><span class="toc-text">查询 key 剩余生存时间 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B8%85%E9%99%A4%20-key"><span class="toc-text">清除 key</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis-%20%E8%AE%BE%E7%BD%AE%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4"><span class="toc-text">Redis 设置相关命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#CONFIG-GET-and-CONFIG-SET"><span class="toc-text">CONFIG GET and CONFIG SET</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%20%E6%9F%A5%E8%AF%A2%E4%BF%A1%E6%81%AF"><span class="toc-text">5. 查询信息</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-%20%E9%AB%98%E7%BA%A7%E6%93%8D%E4%BD%9C"><span class="toc-text">6. 高级操作 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%80%A7"><span class="toc-text">安全性 </span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E5%AF%86%E7%A0%81"><span class="toc-text">设置密码 </span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6"><span class="toc-text">主从复制 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86"><span class="toc-text">事务处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%81%E4%B9%85%E5%8C%96%E6%9C%BA%E5%88%B6"><span class="toc-text">持久化机制 </span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-%20%E4%B8%80%E4%BA%9B%E6%8A%A5%E9%94%99"><span class="toc-text">7. 一些报错 </span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-redis 介绍"><a href="#1-redis 介绍" class="headerlink" title="1. redis 介绍"></a>1. redis 介绍</h1><h2 id="1-1-Redis- 是什么"><a href="#1-1-Redis- 是什么" class="headerlink" title="1.1 Redis 是什么"></a>1.1 Redis 是什么</h2><p>REmote DIctionary Server(Redis) 是一个由 Salvatore Sanfilippo 写的 key-value 存储系统。它是一种非关系型数据库， 提供了一些丰富的数据结构，包括 lists、sets、ordered sets 以及 hashes ，当然还有和 Memcached 一样的 strings 结构。Redis 当然还包括了对这些数据结构的丰富操作。</p>
+<p>Redis 常被称作是一款数据结构服务器（data structure server）。Redis 的键值可以包括字符串（strings）类型，同时它还包括哈希（hashes）、列表（lists）、集合（sets）和 有序集合（sorted sets）等数据类型。</p>
+<p>对于这些数据类型，你可以执行原子操作。例如：对字符串进行附加操作（append）；递增哈希中的值；向列表中增加元素；计算集合的交集、并集与差集等。</p>
+<h2 id="1-2-Redis- 的优点"><a href="#1-2-Redis- 的优点" class="headerlink" title="1.2 Redis 的优点"></a>1.2 Redis 的优点</h2><ul>
+<li>性能极高 : Redis 能读的速度是 110000 次 /s, 写的速度是 81000 次 /s 。</li>
+<li>丰富的数据类型：Redis 支持二进制案例的 Strings, Lists, Hashes, Sets 及 Ordered Sets 数据类型操作。</li>
+<li>原子：Redis 的所有操作都是原子性的，同时 Redis 还支持对几个操作全并后的原子性执行。</li>
+<li>丰富的特性：Redis 还支持 publish/subscribe, 通知, key 过期等等特性。</li>
+</ul>
+<p>使用 Redis 只需要下载对应的软件包开箱即用，截止目前（2019.1）最新的版本有 5.* 可用</p>
+<h2 id="1-3-redis 应用场景"><a href="#1-3-redis 应用场景" class="headerlink" title="1.3 redis 应用场景"></a>1.3 redis 应用场景</h2><ul>
+<li>用来做缓存(ehcache/memcached)——redis 的所有数据是放在内存中的（内存数据库）</li>
+<li>可以在某些特定应用场景下替代传统数据库——比如社交类的应用</li>
+<li>在一些大型系统中，巧妙地实现一些特定的功能：session 共享、购物车</li>
+<li>只要你有丰富的想象力，redis 可以用在可以给你无限的惊喜…….</li>
+</ul>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-06_20-59-24.png" alt=""></p>
+<h2 id="1-4-redis 对比 mysql"><a href="#1-4-redis 对比 mysql" class="headerlink" title="1.4 redis 对比 mysql"></a>1.4 redis 对比 mysql</h2><p>Redis 的数据存放在内存，所以速度快但是会受到内存空间限制。MySQL 存放在硬盘，在速度上没有 Redis 快，但是存放的数据量要多的多。所以 redis 适合放一些频繁使用，比较热的数据，因为是放在内存中，读写速度都非常快，一般会应用在下面一些场景: 排行榜、计数器、消息队列推送。</p>
+<p>Redis 是一个 K-V 数据库，同时还支持 List/Hash/Set/Sorted Set 等几个简单数据结构，所以只能以这些数据结构为基础实现功能。而 MySQL 这点就不必说了。</p>
+<p>Redis 是内存型数据库，不可能存储过大的数据；而 mysql 是存储在硬盘上的，可以支持更大规模的数据，成本更低。</p>
+<p>目前大多数公司的存储都是 mysql + redis，mysql 作为主存储，redis 作为辅助存储被用作缓存，加快访问读取的速度，提高性能。</p>
+<h2 id="1-5- 推荐阅读"><a href="#1-5- 推荐阅读" class="headerlink" title="1.5 推荐阅读"></a>1.5 推荐阅读</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://redis.io/">redis 官方网站</a> </li>
+<li><a target="_blank" rel="noopener" href="http://redis.cn/">redis 中文官网</a> </li>
+</ul>
+<h1 id="2-Redis- 安装"><a href="#2-Redis- 安装" class="headerlink" title="2. Redis 安装"></a>2. Redis 安装 </h1><h2 id="2-1-Linux"><a href="#2-1-Linux" class="headerlink" title="2.1 Linux"></a>2.1 Linux</h2><h3 id="2-1-1- 在线安装"><a href="#2-1-1- 在线安装" class="headerlink" title="2.1.1 在线安装"></a>2.1.1 在线安装</h3><p> 直接输入命令 </p>
+<pre><code>sudo apt-get install redis-server</code></pre><p>安装完成后，Redis 服务器会自动启动。<br>使用</p>
+<pre><code>ps -aux|grep redis</code></pre><p>命令可以看到服务器系统进程默认端口 6379</p>
+<p>配置文件为 /etc/redis/redis.conf(在线安装推荐)或者 /usr/local/redis/redis.conf(手动安装)</p>
+<p><strong>【调整默认配置】</strong></p>
+<pre><code>sudo vi /etc/redis/redis.conf</code></pre><p>①开启 Redis 的远程连接：<br>注释掉绑定地址 ，不然只允许本机访问</p>
+<p><code># bind 127.0.0.1</code></p>
+<p>②修改 Redis 的默认端口<br><code>port 6379</code></p>
+<p>③关闭保护模式：</p>
+<p><code>redis.conf 修改 88 行为 no</code></p>
+<p>④开启后台启动:</p>
+<p><code>redis.conf 修改 136 行为 yes</code></p>
+<p>⑤添加 Redis 的访问账号：<br>Redis 服务器默认是不需要密码的，假设设置密码为 123456。</p>
+<p><code>config set requirepass 123456</code></p>
+<p>如此，便将密码设置成了 123456<br>设置之后，可通过以下指令查看密码</p>
+<pre><code>config get requirepass</code></pre><p>密码设置之后，当你退出再次连上 redis 的时候，就需要输入密码了，不然是无法操作的。这里有两种方式输入密码，一是连接的时候直接输入密码，而是连接上之后再输入密码，分别如下所示：</p>
+<pre><code>auth 123456</code></pre><p><strong>配置完成后重新启动服务器</strong></p>
+<p>sudo service redis-server   + 下面的命令：</p>
+<p>start 启动服务</p>
+<p>restart 重启服务</p>
+<p>stop 停止服务</p>
+<pre><code>sudo /etc/init.d/redis-server restar
+sudo service redis-server restart
+sudo redis-server /etc/redis/redis.conf</code></pre><h3 id="2-1-2- 从源码开始安装"><a href="#2-1-2- 从源码开始安装" class="headerlink" title="2.1.2 从源码开始安装"></a>2.1.2 从源码开始安装 </h3><p> 进入 root 目录，并下载 Redis 的程序包：</p>
+<pre><code>sudo su
+wget http://download.redis.io/redis-stable.tar.gz</code></pre><p>在目录下，解压安装包，生成新的目录 redis-4.0.14：</p>
+<pre><code>tar -xzvf redis-stable.tar.gz</code></pre><p>进入解压之后的目录，进行编译：</p>
+<pre><code>cd redis-stable
+make</code></pre><p>说明：如果没有明显的错误，则表示编译成功。</p>
+<p>操作截图：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1558538164013.png" alt=""></p>
+<h5 id="查看重要文件"><a href="# 查看重要文件" class="headerlink" title="查看重要文件"></a>查看重要文件 </h5><p> 在 Redis 安装完成后，注意一些重要的文件，可用 <strong>ls</strong> 命令查看。</p>
+<ul>
+<li>服务端：src/redis-server</li>
+<li>客户端：src/redis-cli</li>
+<li>默认配置文件：redis.conf</li>
+</ul>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1558543779151.png" alt=""></p>
+<h5 id="设置环境变量"><a href="# 设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量 </h5><p> 为了今后能更方便地打开 Redis 服务器和客户端，可以将 src 目录下的 redis-server 和 redis-cli 添加进环境变量所属目录里面。</p>
+<pre><code>cp redis-server /usr/local/bin/
+cp redis-cli /usr/local/bin/</code></pre><p>添加完成后在任何目录下输入 <code>redis-server</code> 可启动服务器，输入 <code>redis-cli</code> 可启动客户端。</p>
+<h5 id="运行测试"><a href="# 运行测试" class="headerlink" title="运行测试"></a>运行测试 </h5><p> 在前面的步骤设置完成后可以运行测试，确认 Redis 的功能是否正常：</p>
+<pre><code>cd /root/redis-2.8.4
+make test</code></pre><p>运行测试需要花费一定的时间。操作截图如下：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1558539004966.png" alt=""></p>
+<h3 id="2-1-3-Redis- 启动"><a href="#2-1-3-Redis- 启动" class="headerlink" title="2.1.3 Redis 启动"></a>2.1.3 Redis 启动</h3><p>Redis 是一个服务端和客户端配合的程序，和 Mysql 类似，因此要使用 Redis 需要先启动服务端，客户端有多种形式，比如在 Java 中连接 Redis 服务器也是扮演了一个客户端的角色，本节实验中采用终端的形式来对 Redis 的各项操作进行练习。</p>
+<h4 id="启动 -Redis-server"><a href="# 启动 -Redis-server" class="headerlink" title="启动 Redis-server"></a>启动 Redis-server</h4><p>在命令行终端输入如下命令：</p>
+<pre><code>redis-server  </code></pre><p>操作截图：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1558539083727.png" alt=""></p>
+<p>说明：从以上的截图中，可以发现启动的端口为缺省的 6379。用户可以在启动的时候，指定具体的配置文件，并在其中指定启动的端口。</p>
+<p>保持此终端的运行，Ctrl+Shift+T 重开一个终端标签。</p>
+<h4 id="查看 -Redis"><a href="# 查看 -Redis" class="headerlink" title="查看 Redis"></a>查看 Redis</h4><p>在命令行终端执行如下命令查看 Redis：</p>
+<pre><code>ps -ef | grep redis</code></pre><p>操作截图：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1558539129020.png" alt=""></p>
+<p>通过端口号检查 Redis 服务器状态：</p>
+<pre><code>netstat -nlt|grep 6379</code></pre><p>操作截图：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1558539149394.png" alt=""></p>
+<h4 id="启动 -Redis-client"><a href="# 启动 -Redis-client" class="headerlink" title="启动 Redis-client"></a>启动 Redis-client</h4><p>在命令行终端执行如下命令启动 Redis-client：</p>
+<pre><code>redis-cli</code></pre><p>操作结果：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1558539282420.png" alt=""></p>
+<p>至此，redis 启动完成。</p>
+<p>在有的环境下，redis 交互环境可能出现中文乱码的情况，解决办法是用下列命令启动 redis 客户端：</p>
+<pre><code>redis-cli --raw</code></pre><h2 id="2-2-windows 安装"><a href="#2-2-windows 安装" class="headerlink" title="2.2 windows 安装"></a>2.2 windows 安装 </h2><p> 点击: <a target="_blank" rel="noopener" href="https://github.com/microsoftarchive/redis/releases">https://github.com/microsoftarchive/redis/releases</a></p>
+<p>然后选择 msi 文件</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1568647099924.png" alt=""></p>
+<p>下载完成后双击打开安装（安装过程中一定要添加到 path 环境）</p>
+<h3 id="启动 REdis"><a href="# 启动 REdis" class="headerlink" title="启动 REdis"></a>启动 REdis</h3><p>在命令行终端执行如下命令启动 Redis-client：</p>
+<pre><code>redis-cli</code></pre><h1 id="3- 数据类型"><a href="#3- 数据类型" class="headerlink" title="3. 数据类型"></a>3. 数据类型</h1><p>Redis 不仅仅是简单的 key-value 存储器，同时也是一种 data structures server。传统的 key-value 是指支持使用一个 key 字符串来索引 value 字符串的存储，而 Redis 中，value 不仅仅支持字符串，还支持更多的复杂结构，包括列表、集合、哈希表等。</p>
+<p>现在我们一一讲解：Redis keys 是采用二进制安全，这就意味着你可以使用任何二进制序列作为重点，比如：”foo” 可以联系一个 JPEG 文件；空字符串也是一个有效的密钥。</p>
+<p>Redis 字符串是二进制安全的，这意味着一个 Redis 字符串能包含任意类型的数据，例如： 一张经过 base64 编码的图片或者一个序列化的对象。通过这样的方式，Redis 的字符串可以支持任意形式的数据，但是对于过大的文件不适合存入 redis，一方面系统内存有限，另外一方面字符串类型的值最多能存储 512M 字节的内容。</p>
+<p><strong>知识点</strong> </p>
+<ul>
+<li>Redis strings</li>
+<li>Redis Lists</li>
+<li>Redis Hashes</li>
+<li>Redis set</li>
+</ul>
+<h3 id="3-1-Redis-strings"><a href="#3-1-Redis-strings" class="headerlink" title="3.1 Redis strings"></a>3.1 Redis strings</h3><ul>
+<li><p><strong>set</strong> 设置值</p>
+</li>
+<li><p><strong>get</strong> 获取值</p>
+</li>
+</ul>
+<pre><code>$ redis-cli
+&gt; set mykey somevalue
+&gt; get mykey</code></pre><p>操作截图：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1558539338731.png" alt=""></p>
+<p>如上例所示，可以使用 set 和 get 命令来创建和检索 strings。</p>
+<ul>
+<li><strong>mset</strong> 设置多个值</li>
+<li><strong>mget</strong> 获取多个值</li>
+<li><strong>keys *</strong> 获取所有的键</li>
+</ul>
+<p>Redis 可以运用 mset 和 mget 命令一次性完成多个 key-value 的对应关系，使用 mget 命令，Redis 返回一个 value 数组：</p>
+<pre><code>&gt; mset a 10 b 20 c 30
+&gt; mget a b c</code></pre><p>操作截图：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1558539651556.png" alt=""></p>
+<ul>
+<li><strong>append</strong> 添加字符</li>
+<li><strong>del</strong>  删除</li>
+<li><strong>incr/decr</strong> 增加 / 减少</li>
+</ul>
+<p>即使 string 是 Redis 的基本类型，也可以对其进行一些有趣的操作，例如加法器：</p>
+<pre><code>&gt; set counter 100 # 初始化
+&gt; incr counter   # +1
+&gt; incr counter   # +1
+&gt; incrby counter 50 # +50 自定义计数 </code></pre><p> 操作截图：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1558539601807.png" alt=""></p>
+<p>incr 命令让 the value 成为一个整数，运行一次 incr 便加一。incrby 命令便是一个加法运算。类似的命令如减法运算为： decr 和 decrby。</p>
+<p>注意：set 命令将取代现有的任何已经存在的 key。set 命令还有一个提供附加参数的选项，我们能够让 set 命令只有在没有相同 key 的情况下成功，反之亦然，可以让 set 命令在有相同 key 值的情况下成功：</p>
+<pre><code>&gt; set mykey newval nx
+&gt; set mykey newval xx</code></pre><p>操作截图;</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1558539410969.png" alt=""></p>
+<p><strong>set 完整内容</strong></p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1559386310906.png" alt=""></p>
+<p>参数含义:</p>
+<ul>
+<li>set : 设置一个键值对内容</li>
+<li>key : 键名</li>
+<li>value : 值内容</li>
+<li>[EX seconds] : 设置指定的过期时间，以秒为单位。(可选)</li>
+<li>[PX milliseconds] : 设置指定的过期时间，以毫秒为单位。(可选)</li>
+<li>NX : 只有键 key 不存在的时候才会设置 key 的值</li>
+<li>XX : 只有键 key 存在的时候才会设置 key 的值</li>
+</ul>
+<h3 id="3-2-Redis-Lists"><a href="#3-2-Redis-Lists" class="headerlink" title="3.2 Redis Lists"></a>3.2 Redis Lists</h3><p>Redis 列表是简单的字符串列表，按照插入顺序排序。你可以添加一个元素到列表的头部（左边）或者尾部（右边），lpush 命令插入一个新的元素到头部，而 rpush 命令插入一个新元素到尾部。当这两个操作中的任一操作在一个空的 Key 上执行时就会创建一个新的列表。相似的，如果一个列表操作清空一个列表，那么对应的 key 将被从 key 空间删除。</p>
+<ul>
+<li><strong>lpush/rpush</strong> 队列左边或者右边增加内容</li>
+<li><strong>lrange</strong> 获取指定长度的内容</li>
+</ul>
+<p>push 一类的命令的返回值为 list 的长度。这里有一些类表操作和结果的例子：</p>
+<pre><code>&gt; rpush mylist A
+&gt; rpush mylist B
+&gt; lpush mylist first
+&gt; lrange mylist 0 -1</code></pre><p>操作截图:</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1558539705684.png" alt=""></p>
+<p><strong>注意</strong>：lrange 需要两个索引，0 表示 list 开头第一个，-1 表示 list 的倒数第一个，即最后一个。-2 则是 list 的倒数第二个，以此类推。</p>
+<p>这些命令都是可变的命令，也就是说你可以一次加入多个元素放入 list：</p>
+<pre><code>&gt; rpush mylist 1 2 3 4 5 &quot;foo bar&quot;
+&gt; lrange mylist 0 -1</code></pre><p>操作截图：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1558539832387.png" alt=""></p>
+<ul>
+<li><strong>ltrim</strong> 对一个列表进行修剪(trim)，保留指定区间内的元素，不在指定区间之内的元素都将被删除。</li>
+<li><strong>lpop/rpop</strong> 从队列左边或者右边弹出内容</li>
+</ul>
+<p>在 Redis 的命令操作中，还有一类重要的操作：pop，它可以弹出一个元素，简单的理解就是获取并删除第一个元素，和 push 类似的是它也支持双边的操作，可以从右边弹出一个元素也可以从左边弹出一个元素，对应的指令为 rpop 和 lpop：</p>
+<pre><code>&gt; del mylist
+&gt; rpush mylist a b c
+&gt; rpop mylist
+&gt; lrange mylist 0 -1
+&gt; lpop mylist
+&gt; lrange mylist 0 -1</code></pre><p>操作截图：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1558539989212.png" alt=""></p>
+<ul>
+<li><strong>lpushx/rpushx</strong> key 存在时才插入数据, 不存在是不做任何处理</li>
+</ul>
+<p>一个列表最多可以包含 4294967295（2 的 32 次方减一） 个元素，这意味着它可以容纳海量的信息，最终瓶颈一般都取决于服务器内存大小。</p>
+<p>事实上，在高级的企业架构当中，会把缓存服务器分离开来，因为数据库服务器和缓存服务器的特点各异，比如对于数据库服务器应该用更快、更大的硬盘，而缓存专用服务器则偏向内存性能，一般都是 64GB 起步。</p>
+<h4 id="List- 阻塞操作"><a href="#List- 阻塞操作" class="headerlink" title="List 阻塞操作"></a>List 阻塞操作 </h4><p> 理解阻塞操作对一些请求操作有很大的帮助，关于阻塞操作的作用，这里举一个例子。</p>
+<p>假如你要去楼下买一个汉堡，一个汉堡需要花一定的时间才能做出来，非阻塞式的做法是去付完钱走人，过一段时间来看一下汉堡是否做好了，没好就先离开，过一会儿再来，而且要知道可能不止你一个人在买汉堡，在你离开的时候很可能别人会取走你的汉堡，这是很让人烦的事情。</p>
+<p>阻塞式就不一样了，付完钱一直在那儿等着，不拿到汉堡不走人，并且后面来的人统统排队。</p>
+<p>Redis 提供了阻塞式访问 brpop 和 blpop 命令。用户可以在获取数据不存在时阻塞请求队列，如果在时限内获得数据则立即返回，如果超时还没有数据则返回 null。</p>
+<h4 id="List- 常见应用场景"><a href="#List- 常见应用场景" class="headerlink" title="List 常见应用场景"></a>List 常见应用场景 </h4><p> 分析 List 应用场景需要结合它的特点，List 元素是线性有序的，很容易就可以联想到聊天记录，你一言我一语都有先后，因此 List 很适合用来存储聊天记录等顺序结构的数据。</p>
+<h3 id="3-3-Redis- 无序集合"><a href="#3-3-Redis- 无序集合" class="headerlink" title="3.3 Redis 无序集合"></a>3.3 Redis 无序集合</h3><p>Redis 集合（Set）是一个无序的字符串集合。你可以以 O(1) 的时间复杂度 (无论集合中有多少元素时间复杂度都是常量）完成添加、删除以及测试元素是否存在。</p>
+<p>Redis 集合拥有令人满意的不允许包含相同成员的属性，多次添加相同的元素，最终在集合里只会有一个元素，这意味着它可以非常方便地对数据进行去重操作，一个 Redis 集合的非常有趣的事情是它支持一些服务端的命令从现有的集合出发去进行集合运算，因此你可以在非常短的时间内进行合并（unions）, 求交集（intersections）, 找出不同的元素（differences of sets）。</p>
+<ul>
+<li><strong>sadd/srem</strong> 添加 / 删除元素</li>
+<li><strong>sismember</strong> 判断是否为 set 的一个元素</li>
+<li><strong>smembers</strong> 返回该集合的所有成员 </li>
+</ul>
+<pre><code>&gt; sadd myset 1 2 3
+&gt; smembers myset</code></pre><p>sadd 命令产生一个无序集合，返回集合的元素个数。smembers 用于查看集合。</p>
+<p>操作截图：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1558540427157.png" alt=""></p>
+<p>sismember 用于查看集合是否存在，匹配项包括集合名和元素个数。匹配成功返回 1，匹配失败返回 0。</p>
+<pre><code>&gt; sismember myset 3
+&gt; sismember myset 30
+&gt; sismember mys 3</code></pre><p>操作截图：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1558540577228.png" alt=""></p>
+<ul>
+<li><strong>sdiff</strong> 返回一个集合与其他集合的差异</li>
+<li><strong>sinter</strong> 返回几个集合的交集</li>
+<li><strong>sunion</strong> 返回几个集合的并集</li>
+</ul>
+<h3 id="3-4-Redis- 有序集合"><a href="#3-4-Redis- 有序集合" class="headerlink" title="3.4 Redis 有序集合"></a>3.4 Redis 有序集合</h3><p>Redis 有序集合与普通集合非常相似，是一个没有重复元素的字符串集合。不同之处是有序集合的每一个成员都关联了一个权值，这个权值被用来按照从最低分到最高分的方式排序集合中的成员。集合的成员是唯一的，但是权值可以是重复的。</p>
+<p>使用有序集合你可以以非常快的速度（O(log(N))）添加、删除和更新元素。因为元素是有序的, 所以你也可以很快的根据权值（score）或者次序（position）来获取一个范围的元素。访问有序集合的中间元素也是非常快的，因此你能够使用有序集合作为一个没有重复成员的智能列表。在有序集合中，你可以很快捷的访问一切你需要的东西：有序的元素，快速的存在性测试，快速访问集合的中间元素！简而言之使用有序集合你可以完成许多对性能有极端要求的任务，而那些任务使用其它类型的数据库真的是很难完成的。</p>
+<p>zadd 与 sadd 类似，但是在元素之前多了一个参数，这个参数便是用于排序的。形成一个有序的集合。</p>
+<pre><code>&gt; zadd hackers 1940 &quot;Alan Kay&quot;
+&gt; zadd hackers 1957 &quot;Sophie Wilson&quot;
+&gt; zadd hackers 1953 &quot;Richard Stallman&quot;
+&gt; zadd hackers 1949 &quot;Anita Borg&quot;
+&gt; zadd hackers 1965 &quot;Yukihiro Matsumoto&quot;
+&gt; zadd hackers 1914 &quot;Hedy Lamarr&quot;
+&gt; zadd hackers 1916 &quot;Claude Shannon&quot;
+&gt; zadd hackers 1969 &quot;Linus Torvalds&quot;
+&gt; zadd hackers 1912 &quot;Alan Turing&quot;</code></pre><p>查看集合：<strong>zrange 是查看正序的集合</strong>，<strong>zrevrange 是查看反序的集合</strong>。0 表示集合第一个元素，-1 表示集合的倒数第一个元素。</p>
+<pre><code>&gt; zrange hackers 0 -1
+&gt; zrevrange hackers 0 -1</code></pre><p>操作截图：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1558540664912.png" alt=""></p>
+<p>使用 withscores 参数返回记录值。</p>
+<pre><code>&gt; zrange hackers 0 -1 withscores</code></pre><p>操截图：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1558540712107.png" alt=""></p>
+<h3 id="3-5-Redis-Hashes"><a href="#3-5-Redis-Hashes" class="headerlink" title="3.5 Redis Hashes"></a>3.5 Redis Hashes</h3><p>Redis Hashes 是字符串字段和字符串值之间的映射，因此它们是展现对象的完美数据类型。例如一个有名、姓、年龄等等属性的用户：一个带有一些字段的 hash 仅仅需要一块很小的空间存储，因此你可以存储数以百万计的对象在一个小的 Redis 实例中。哈希主要用来表现对象，它们有能力存储很多对象，因此你可以将哈希用于许多其它的任务。</p>
+<ul>
+<li><strong>hset/hget</strong> 设置 / 获取散列值</li>
+<li><strong>hmset/hgetall</strong> 设置 / 获取多对散列值</li>
+</ul>
+<pre><code>&gt; hmset user:1000 username antirez birthyear 1977 verified 1
+&gt; hget user:1000 username
+&gt; hget user:1000 birthyear
+&gt; hgetall user:1000</code></pre><p>格式：<code>hset key field values</code></p>
+<p>格式：<code>hmset [key:[seq_num]] field values field values</code></p>
+<p>操作截图：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1558540146964.png" alt=""></p>
+<p>hmset 命令设置一个多域的 hash 表，hget 命令获取指定的单域，hgetall 命令获取指定 key 的所有信息。hmget 类似于 hget，只是返回一个 value 数组。</p>
+<pre><code>&gt; hmget user:1000 username birthyear</code></pre><p>操作截图：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1558540248325.png" alt=""></p>
+<p>同样可以根据需要对 hash 表的表项进行单独的操作，例如 hincrby： （原本 birthyear 为 1977，见上一图）</p>
+<pre><code>&gt; hincrby user:1000 birthyear 10
+&gt; hincrby user:1000 birthyear 10</code></pre><p>操作截图：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1558540391566.png" alt=""></p>
+<ul>
+<li><strong>hsetnx</strong> 如果散列已经存在, 则不设置</li>
+<li><strong>hkeys/hvals</strong> 查看散列的 keys/valus</li>
+<li><strong>hlen</strong> 返回散列指定的域(field)</li>
+<li><strong>hexists</strong> 判断是否存在</li>
+</ul>
+<p>参看:</p>
+<p><a target="_blank" rel="noopener" href="http://redis.io/topics/data-types-intro">http://redis.io/topics/data-types-intro</a></p>
+<h1 id="4- 操作"><a href="#4- 操作" class="headerlink" title="4. 操作"></a>4. 操作 </h1><p> 前面讲述了 Redis 的基本数据类型，接下来继续讲解 Redis 相关命令及管理操作。</p>
+<p>在 Redis 中，命令大小写不敏感。</p>
+<ul>
+<li>适合全体类型的常用命令</li>
+<li>Redis 时间相关命令</li>
+<li>Redis 设置相关命令</li>
+<li>查询信息</li>
+</ul>
+<h3 id="适合全体类型的常用命令"><a href="# 适合全体类型的常用命令" class="headerlink" title="适合全体类型的常用命令"></a>适合全体类型的常用命令 </h3><p> 启动 redis 服务和 redis-cli 命令界面继续后续实验：</p>
+<pre><code>sudo service redis-server start
+redis-cli</code></pre><h4 id="EXISTS-and-DEL"><a href="#EXISTS-and-DEL" class="headerlink" title="EXISTS and DEL"></a>EXISTS and DEL</h4><p>exists key：判断一个 key 是否存在，存在返回 1，否则返回 0。</p>
+<p><code>del</code> key：删除某个 key，或是一系列 key，比如：del key1 key2 key3 key4。成功返回 1，失败返回 0（key 值不存在）。</p>
+<pre><code>&gt; set mykey hello
+&gt; exists mykey
+&gt; del mykey
+&gt; exists mykey</code></pre><p>操作截图：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1558540770677.png" alt=""></p>
+<h4 id="TYPE-and-KEYS"><a href="#TYPE-and-KEYS" class="headerlink" title="TYPE and KEYS"></a>TYPE and KEYS</h4><p><code>type</code> key：返回某个 key 元素的数据类型 (none: 不存在，string: 字符，list: 列表，set: 元组，zset: 有序集合，hash: 哈希)，key 不存在返回空。</p>
+<p><code>keys</code> key—pattern：返回匹配的 key 列表，比如：keys foo* 表示查找 foo 开头的 keys。</p>
+<pre><code>&gt; set mykey x
+&gt; type mykey
+&gt; keys my*
+&gt; del mykey
+&gt; keys my*
+&gt; type mykey</code></pre><p>操作截图：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1558540853713.png" alt=""></p>
+<h4 id="RANDOMKEY-and-CLEAR"><a href="#RANDOMKEY-and-CLEAR" class="headerlink" title="RANDOMKEY and CLEAR"></a>RANDOMKEY and CLEAR</h4><p><code>randomkey</code>：随机获得一个已经存在的 key，如果当前数据库为空，则返回空字符串。</p>
+<pre><code>&gt; randomkey</code></pre><p>操作截图：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1558540896368.png" alt=""></p>
+<p><code>clear</code>：清除界面。</p>
+<pre><code>&gt; clear</code></pre><h4 id="RENAME-and-RENAMENX"><a href="#RENAME-and-RENAMENX" class="headerlink" title="RENAME and RENAMENX"></a>RENAME and RENAMENX</h4><p><code>rename oldname newname</code>：更改 key 的名字，新键如果存在将被覆盖。</p>
+<p><code>renamenx oldname newname</code>：更改 key 的名字，新键如果存在则更新失败。</p>
+<p>比如这里 randomkey 结果为 mylist，将此 key 值更名为 newlist。</p>
+<pre><code>&gt; randomkey
+&gt; rename mylist newlist
+&gt; exists mylist
+&gt; exists newlist</code></pre><p>操作截图：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1558542077323.png" alt=""></p>
+<h4 id="DBSIZE"><a href="#DBSIZE" class="headerlink" title="DBSIZE"></a>DBSIZE</h4><p><code>dbsize</code>：返回当前数据库的 key 的总数。</p>
+<pre><code>&gt; dbsize</code></pre><p>操作截图：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1558542094849.png" alt=""></p>
+<h3 id="Redis- 时间相关命令"><a href="#Redis- 时间相关命令" class="headerlink" title="Redis 时间相关命令"></a>Redis 时间相关命令 </h3><p> 下面我们将会学习 Redis 时间相关命令。</p>
+<h4 id="限定 -key- 生存时间"><a href="# 限定 -key- 生存时间" class="headerlink" title="限定 key 生存时间"></a>限定 key 生存时间 </h4><p> 这同样是一个无视数据类型的命令，对于临时存储很有用处。避免进行大量的 DEL 操作。</p>
+<p><code>expire</code>：设置某个 key 的过期时间（秒)，比如：expire bruce 1000 表示设置 bruce 这个 key 1000 秒后系统自动删除，注意：如果在还没有过期的时候，对值进行了改变，那么那个值会被清除。</p>
+<pre><code>&gt; set key some-value
+&gt; expire key 10
+&gt; get key       (马上执行此命令)
+&gt; get key       (10s 后执行此命令)</code></pre><p>操作截图：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1558542163817.png" alt=""></p>
+<p>结果显示：执行 expire 命令后，马上 get 会显示 key 存在；10 秒后再 get 时，key 已经被自动删除。</p>
+<h4 id="查询 -key- 剩余生存时间"><a href="# 查询 -key- 剩余生存时间" class="headerlink" title="查询 key 剩余生存时间"></a>查询 key 剩余生存时间 </h4><p> 限时操作可以在 set 命令中实现，并且可用 ttl 命令查询 key 剩余生存时间。</p>
+<p><code>ttl</code>：查找某个 key 还有多长时间过期，返回时间单位为秒。</p>
+<pre><code>&gt; set key 100 ex 30
+&gt; ttl key
+&gt; ttl key</code></pre><p>操作截图：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1558542626030.png" alt=""></p>
+<h4 id="清除 -key"><a href="# 清除 -key" class="headerlink" title="清除 key"></a>清除 key</h4><p><code>flushdb</code>：清空当前数据库中的所有键。</p>
+<p><code>flushall</code>：清空所有数据库中的所有键。</p>
+<pre><code>&gt; flushdb
+&gt; flushall</code></pre><h3 id="Redis- 设置相关命令"><a href="#Redis- 设置相关命令" class="headerlink" title="Redis 设置相关命令"></a>Redis 设置相关命令</h3><p>Redis 有其配置文件，可以通过 client-command 窗口查看或者更改相关配置。下面介绍相关命令。</p>
+<h4 id="CONFIG-GET-and-CONFIG-SET"><a href="#CONFIG-GET-and-CONFIG-SET" class="headerlink" title="CONFIG GET and CONFIG SET"></a>CONFIG GET and CONFIG SET</h4><p><code>config get</code>：用来读取运行 Redis 服务器的配置参数。</p>
+<p><code>config set</code>：用于更改运行 Redis 服务器的配置参数。</p>
+<p><code>auth</code>：认证密码。</p>
+<p>下面针对 Redis 密码的示例：</p>
+<pre><code>&gt; config get requirepass  # 查看密码
+&gt; config set requirepass 123456  # 设置密码为 123456
+&gt; config get requirepass  # 报错，没有认证
+&gt; auth 123456  # 认证密码
+&gt; config get requirepass</code></pre><p>操作截图：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1558542785780.png" alt=""></p>
+<p>由结果可知，刚开始时 Reids 并未设置密码，密码查询结果为空。然后设置密码为 123456，再次查询报错。经过 auth 命令认证后，可正常查询。</p>
+<p>可以通过修改 Redis 的配置文件 redis.conf 修改密码。</p>
+<h1 id="5- 查询信息"><a href="#5- 查询信息" class="headerlink" title="5. 查询信息"></a>5. 查询信息</h1><p><code>info [section]</code>：查询 Redis 相关信息。</p>
+<p>info 命令可以查询 Redis 几乎所有的信息，其命令选项有如下：</p>
+<ul>
+<li>server: Redis server 的常规信息</li>
+<li>clients: Client 的连接选项</li>
+<li>memory: 存储占用相关信息</li>
+<li>persistence: RDB and AOF 相关信息</li>
+<li>stats: 常规统计</li>
+<li>replication: Master/Slave 请求信息</li>
+<li>cpu: CPU 占用信息统计</li>
+<li>cluster: Redis 集群信息</li>
+<li>keyspace: 数据库信息统计</li>
+<li>all: 返回所有信息</li>
+<li>default: 返回常规设置信息</li>
+</ul>
+<p>若命令参数为空，info 命令返回所有信息。</p>
+<pre><code>&gt; info server</code></pre><p>操作截图：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1558542924652.png" alt=""></p>
+<p>参考:</p>
+<p><a target="_blank" rel="noopener" href="http://redis.io/commands/config-resetstat">http://redis.io/commands/config-resetstat</a></p>
+<h1 id="6- 高级操作"><a href="#6- 高级操作" class="headerlink" title="6. 高级操作"></a>6. 高级操作 </h1><p> 前面学习了 Redis 的基础知识和基本命令，接下来继续讲解 Redis 的高级应用，包括：安全性设置，主从复制，事务处理，持久化机制，虚拟内存的使用。</p>
+<p><strong>知识点</strong> </p>
+<ul>
+<li>安全性</li>
+<li>主从复制</li>
+<li>事务处理</li>
+<li>持久化机制</li>
+<li>虚拟内存的使用</li>
+</ul>
+<h3 id="安全性"><a href="# 安全性" class="headerlink" title="安全性"></a>安全性 </h3><p> 涉及到客户端连接是需要指定密码的（由于 redis 速度相当的快，一秒钟可以 150K 次的密码尝试，所以需要设置一个强度很大的密码）。</p>
+<p>设置密码的方式有两种：</p>
+<ul>
+<li>使用 <code>config set</code> 命令的 requirepass 参数，具体格式为 <code>config set requirepass “password”</code>。</li>
+<li>在 redis.conf 文件中设置 requirepass 属性，后面为密码。</li>
+</ul>
+<p>输入认证的方式也有两种：</p>
+<ul>
+<li>登录时可以使用 <code>redis-cli -a password</code>。</li>
+<li>登录后可以使用 <code>auth password</code>。</li>
+</ul>
+<h4 id="设置密码"><a href="# 设置密码" class="headerlink" title="设置密码"></a>设置密码 </h4><p> 第一种密码设置方式在上一个实验中已经提到（在 CONFIG SET 命令讲解的实例），此处我们来看看第二种方式设置密码。</p>
+<p>首先需要进入 Redis 的安装目录，然后修改配置文件 redis.conf。根据 grep 命令的结果，使用 vim 编辑器修改 “# requirepass foobared” 为 “requirepass test123”，然后保存退出。</p>
+<pre><code>sudo vim /etc/redis/redis.conf</code></pre><p>编辑 redis.conf 的结果：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1558543168293.png" alt=""></p>
+<p>重启之后就需要验证密码了</p>
+<h3 id="主从复制"><a href="# 主从复制" class="headerlink" title="主从复制"></a>主从复制 </h3><p> 为了分担服务器压力，会在特定情况下部署多台服务器分别用于缓存的读和写操作，用于写操作的服务器称为主服务器，用于读操作的服务器称为从服务器。</p>
+<p>从服务器通过 psync 操作同步主服务器的写操作，并按照一定的时间间隔更新主服务器上新写入的内容。</p>
+<p>Redis 主从复制的过程：</p>
+<ol>
+<li>Slave 与 Master 建立连接，发送 psync 同步命令。</li>
+<li>Master 会启动一个后台进程，将数据库快照保存到文件中，同时 Master 主进程会开始收集新的写命令并缓存。</li>
+<li>后台完成保存后，就将此文件发送给 Slave。</li>
+<li>Slave 将此文件保存到磁盘上。</li>
+</ol>
+<p>Redis 主从复制特点：</p>
+<ol>
+<li>可以拥有多个 Slave。</li>
+<li>多个 Slave 可以连接同一个 Master 外，还可以连接到其它的 Slave。（当 Master 宕机后，相连的 Slave 转变为 Master）</li>
+<li>主从复制不会阻塞 Master，在同步数据时， Master 可以继续处理 Client 请求。</li>
+<li>提高了系统的可伸缩性。</li>
+</ol>
+<p>从服务器的主要作用是响应客户端的数据请求，比如返回一篇博客信息。</p>
+<p>上面说到了主从复制是不会阻塞 Master 的，就是说 Slave 在从 Master 复制数据时，Master 的删改插入等操作继续进行不受影响。</p>
+<p>如果在同步过程中，主服务器修改了一篇博客，而同步到从服务器上的博客是修改前的。这时候就会出现时间差，即修改了博客过后，在访问网站的时候还是原来的数据，这是因为从服务器还未同步最新的更改，这也就意味着非阻塞式的同步只能应用于对读数据延迟接受度较高的场景。</p>
+<p><strong>【主从服务器的配置】</strong></p>
+<p>（1）首先确保云服务器开启了 6379（默认的 redis 端口）端口，本地电脑 6379 端口一般默认是开的。</p>
+<p>开启云服务器端口的方法：</p>
+<p>① 新建安全组</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20201020211017731.png" style="zoom: 80%;" />
+
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20201020211134490.png" style="zoom:80%;" />
+
+<p>② 将新建的安全组加入到云服务器实例中</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20201020211429320.png" style="zoom:80%;" />
+
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20201020211632016.png" style="zoom:80%;" />
+
+<p>（2）主服务器配置</p>
+<p>装好 redis 之后，<code>redis-cli</code>可启动 redis。</p>
+<p>命令 <code>ps -aux|grep redis</code> 出现：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20201020221441021.png" alt=""></p>
+<p>会发现 redis 只能本机访问（127.0.0.1 代表本机 ip）</p>
+<p>需要做如下修改</p>
+<p>编辑 /etc/redis/redis.conf 文件：</p>
+<pre><code>sudo vim /etc/redis/redis.conf</code></pre><p>将 bind 127.0.0.1 注释掉：# bind 127.0.0.1</p>
+<p>增加：bind 0.0.0.0    代表任何 ip 都可以访问</p>
+<p>然后确认：daemonize yes  若为 no，则改为 yes</p>
+<p>然后确认：protected-mode yes  若为 no，则改为 yes (若这一行本身没有，则不用管)</p>
+<p>设置密码：requirepass 123456</p>
+<p>最后重启 redis 服务：</p>
+<pre><code> /etc/init.d/redis-server restart</code></pre><p>然后就可以看到：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20201020222540484.png" alt=""></p>
+<p>这样就允许任何 ip 地址访问了。</p>
+<p>（2）从服务器配置</p>
+<p>Linux 中编辑 /etc/redis/redis.conf 文件：</p>
+<pre><code>sudo vim /etc/redis/redis.conf</code></pre><p>将 bind 127.0.0.1 注释掉：# bind 127.0.0.1</p>
+<p>增加：bind 0.0.0.0    代表任何 ip 都可以访问</p>
+<p>然后确认：daemonize yes  若为 no，则改为 yes</p>
+<p>设置密码：requirepass 123456</p>
+<p>增加：slaveof 81.68.121.123 6379  (绑定主服务器 ip 和 redis 端口)</p>
+<p>增加：masterauth 123456   （加上主服务器的密码）</p>
+<p>最后重启 redis 服务。</p>
+<p>（若是 windows 系统，在 redis.windows.conf 和 redis.windows-service.conf 文件中设置上述参数，重启命令为<code>net stop redis</code> 和<code>net start redis</code>）</p>
+<p>（3）验证是否连接成功</p>
+<p>在从服务器中，输入命令：</p>
+<pre><code>redis-cli
+auth 123456
+info replication</code></pre><p>若出现 <code>master_link_status:up</code> 则说明连接成功。</p>
+<p>若出现 <code>master_link_status:down</code> 则说明连接失败。</p>
+<p>可以尝试关闭主服务器的防火墙：</p>
+<pre><code>sudo ufw status #查看防火墙状态
+sudo ufw disable #关闭防火墙
+sudo ufw enable  #启用防火墙</code></pre><hr>
+<p>要建立这样一个主从关系的缓存服务器，只需要在 Slave 端执行命令:</p>
+<pre><code>&gt; SLAVEOF 81.68.121.172 6379
+&gt; config set masterauth &lt;password&gt;</code></pre><p>以上命令可以实现设置从服务器和设置密码的目的，但是不持久，当关闭 redis 服务时，设置将会失效。</p>
+<p>这样，<strong>当前服务器就作为 81.68.121.142:6379 下的一个从服务器</strong>，它将定期从该服务器复制数据到自身。</p>
+<p>在以前的版本中（2.8 以前），你应该慎用 redis 的主从复制功能，因为它的同步机制效率低下，可以想象每一次短线重连都要复制主服务器上的全部数据，算上网络通讯所耗费的时间，反而可能达不到通过 redis 缓存来提升应用响应速度的效果。但是幸运的是，官方在 2.8 以后推出了解决方案，通过部分同步来解决大量的重复操作。</p>
+<p>这需要主服务器和从服务器都至少达到 2.8 的版本要求。</p>
+<h3 id="事务处理"><a href="# 事务处理" class="headerlink" title="事务处理"></a>事务处理</h3><p>Redis 的事务处理比较简单。只能保证 client 发起的事务中的命令可以连续的执行，而且不会插入其它的 client 命令，当一个 client 在连接中发出 <code>multi</code> 命令时，这个连接就进入一个事务的上下文，该连接后续的命令不会执行，而是存放到一个队列中，当执行 <code>exec</code> 命令时，redis 会顺序的执行队列中的所有命令。</p>
+<p>需要注意的是，redis 对于事务的处理方式比较特殊，它不会在事务过程中出错时恢复到之前的状态，这在实际应用中导致我们不能依赖 redis 的事务来保证数据一致性。</p>
+<h3 id="持久化机制"><a href="# 持久化机制" class="headerlink" title="持久化机制"></a>持久化机制 </h3><p> 内存和磁盘的区别除了速度差别以外，还有就是内存中的数据会在重启之后消失，持久化的作用就是要将这些数据长久存到磁盘中以支持长久使用。</p>
+<p>Redis 是一个支持持久化的内存数据库，Redis 需要经常将内存中的数据同步到磁盘来保证持久化。</p>
+<p>Redis 支持两种持久化方式：</p>
+<p>1、<code>snapshotting</code>（快照）：将数据存放到文件里，默认方式。</p>
+<p>是将内存中的数据以快照的方式写入到二进制文件中，默认文件 dump.rdb，可以通过配置设置自动做快照持久化的方式。可配置 Redis 在 n 秒内如果超过 m 个 key 被修改就自动保存快照。比如：</p>
+<p><code>save 900 1</code>：900 秒内如果超过 1 个 key 被修改，则发起快照保存。</p>
+<p><code>save 300 10</code>：300 秒内如果超过 10 个 key 被修改，则快照保存。</p>
+<p>2、<code>Append-only file</code>（缩写为 aof）：将读写操作存放到文件中。</p>
+<p>由于快照方式在一定间隔时间做一次，所以如果 Redis 意外 down 掉的话，就会丢失最后一次快照后的所有修改。</p>
+<p>aof 比快照方式有更好的持久化性，是由于使用 aof 时，redis 会将每一个收到的写命令都通过 write 函数写入到文件中，当 redis 启动时会通过重新执行文件中保存的写命令来在内存中重新建立整个数据库的内容。</p>
+<p>由于 os 会在内核中缓存 write 做的修改，所以可能不是立即写到磁盘上，这样 aof 方式的持久化也还是有可能会丢失一部分数据。可以通过配置文件告诉 redis 我们想要通过 fsync 函数强制 os 写入到磁盘的时机。</p>
+<p>配置文件中的可配置参数：</p>
+<pre><code>appendonly yes // 启用 aof 持久化方式
+
+# appendfsync always // 收到写命令就立即写入磁盘，最慢，但是保证了数据的完整持久化
+
+appendfsync everysec // 每秒钟写入磁盘一次，在性能和持久化方面做了很好的折中
+
+# appendfsync no // 完全依赖 os，性能最好，持久化没有保证 </code></pre><p> 在 redis-cli 的命令中，<code>save</code> 命令是将数据写入磁盘中。</p>
+<pre><code>&gt; help save
+&gt; save</code></pre><p>操作截图：</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1558542924652.png" alt="1558542924652" style="zoom:67%;" />
+
+<h1 id="7- 一些报错"><a href="#7- 一些报错" class="headerlink" title="7. 一些报错"></a>7. 一些报错 </h1><p>（1）由于一些不正常原因，redis 安装损坏，重新<code>sudo apt install redis-server</code> 发现显示 redis 已经安装，没法再安装了。</p>
+<p>解决办法：</p>
+<pre><code>sudo apt-get install --reinstall redis-server
+sudo apt-get upgrade</code></pre><p>此时会发现 redis 已经安装好，<code>ps -aux|grep redis</code>会发现 redis 已经在后台运行。</p>
+<p>但是，<code>redis-cli</code>会显示此命令不存在。</p>
+<p>原因是客户端没有安装，依次输入下面的命令，即可解决。</p>
+<pre><code>wget http://download.redis.io/redis-stable.tar.gz（下载 redis-cli 的压缩包）
+tar xvzf redis-stable.tar.gz（解压）
+cd redis-stable（进入 redis-stable 目录）
+make（安装）
+sudo cp src/redis-cli /usr/local/bin/（将 redis-cli 拷贝到 bin 下，让 redis-cli 指令可以在任意目录下直接使用）</code></pre>
+      
+       <hr><span style="font-style: italic;color: gray;"> 欢迎各位看官及技术大佬前来交流指导呀，可以邮件至 jqiange@yeah.net </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2021 Jqiange
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

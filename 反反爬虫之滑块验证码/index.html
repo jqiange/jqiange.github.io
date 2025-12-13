@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>反反爬虫之滑块验证码 | jqiange</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="反反爬虫之滑块验证码 | jqiange">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="人畜无害的姜小强">
+<meta property="og:url" content="https://jqiange.github.io/about/index.html">
+<meta property="og:site_name" content="jqiange">
+<meta property="og:description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+<meta property="article:published_time" content="2020-02-18T08:21:04.000Z">
+<meta property="article:modified_time" content="2025-12-13T05:23:10.695Z">
+<meta property="article:author" content="姜小强">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+
+
+<link rel="icon" href="/img/jqiange.png">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/jqiange.png"/>
+</a>
+<div class="author">
+    <span>姜小强</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/jqiange"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(58)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(9)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据库">
+                        
+                        数据库
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="每日一学">
+                        
+                        每日一学
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="爬虫">
+                        
+                        爬虫
+                        <small>(10)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="前端">
+                        
+                        前端
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="深度学习">
+                        
+                        深度学习
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据分析">
+                        
+                        数据分析
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="chip">
+                        
+                        chip
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="CPP">
+                        
+                        CPP
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Linux">
+                        
+                        Linux
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="python">
+                        
+                        python
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="58">
+<input type="hidden" id="yelog_site_word_count" value="251.9k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSS-Xpath</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Markdown</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Matplotlib</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Mysql</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Numpy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pandas</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pip</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pyecharts</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pygal</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pymysql-ORM</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>RE</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Redis</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Scrapy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Seaborn</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Selenium</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>yield</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="全部文章 python "
+           href="/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%A6%E8%A7%A3/"
+           data-tag="RE"
+           data-author="" >
+            <span class="post-title" title="正则表达式详解">正则表达式详解</span>
+            <span class="post-date" title="2020-02-26 09:25:46">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/tcl%E4%B8%8Eopc/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 与 opc">tcl 与 opc</span>
+            <span class="post-date" title="2025-09-24 13:36:07">2025/09/24</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/hexo%E6%96%87%E7%AB%A0%E5%8A%A0%E5%AF%86%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="hexo 文章加密方法">hexo 文章加密方法</span>
+            <span class="post-date" title="2025-09-21 22:33:03">2025/09/21</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/tcl%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 语言入门">tcl 语言入门</span>
+            <span class="post-date" title="2025-09-14 22:43:20">2025/09/14</span>
+        </a>
+        
+        <a  class="全部文章 每日一学 "
+           href="/%E6%95%85%E4%BA%8B%E4%BC%9A%E4%B8%8E%E4%BC%81%E4%B8%9A%E8%82%A1%E6%9D%83%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="故事会与企业股权架构设计">故事会与企业股权架构设计</span>
+            <span class="post-date" title="2025-08-30 09:42:43">2025/08/30</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%AE%A1%E7%AE%97%E5%85%89%E5%88%BBOPC%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="计算光刻 OPC 名词解释">计算光刻 OPC 名词解释</span>
+            <span class="post-date" title="2025-08-26 21:44:36">2025/08/26</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%8A%AF%E7%89%87%E5%88%B6%E9%80%A0%E6%B5%81%E7%A8%8B%E4%B8%8E%E5%B7%A5%E8%89%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="芯片制造流程与工艺">芯片制造流程与工艺</span>
+            <span class="post-date" title="2025-06-14 12:13:17">2025/06/14</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E8%81%8C%E5%9C%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入职场">C++ 入职场</span>
+            <span class="post-date" title="2024-06-22 15:52:55">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/Protocol-Buffers-%E5%85%A5%E9%97%A8%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Protocol Buffers 入门使用">Protocol Buffers 入门使用</span>
+            <span class="post-date" title="2024-06-22 15:50:39">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-python%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B-boost/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++python 混合编程 -boost">C++python 混合编程 -boost</span>
+            <span class="post-date" title="2024-06-22 15:36:18">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B%E4%B8%8E%E6%A8%A1%E6%9D%BF/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 泛型编程与模板">C++ 泛型编程与模板</span>
+            <span class="post-date" title="2024-06-22 15:27:49">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入门学习笔记">C++ 入门学习笔记</span>
+            <span class="post-date" title="2024-06-22 14:53:46">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 Linux "
+           href="/shell%E7%BC%96%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="shell 编程">shell 编程</span>
+            <span class="post-date" title="2022-03-07 20:24:24">2022/03/07</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Git 版本控制工具">Git 版本控制工具</span>
+            <span class="post-date" title="2022-03-05 23:23:45">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Hexo%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E4%B8%8E%E5%A4%9A%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hexo 博客迁移与多平台使用">Hexo 博客迁移与多平台使用</span>
+            <span class="post-date" title="2022-03-05 01:26:56">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%B8%8E%E9%87%8D%E9%9A%BE%E7%82%B9%E6%B1%87%E6%80%BB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的基础知识与重难点汇总">python 中的基础知识与重难点汇总</span>
+            <span class="post-date" title="2020-11-17 23:05:15">2020/11/17</span>
+        </a>
+        
+        <a  class="全部文章 前端 "
+           href="/javascript%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="JavaScript 入门">JavaScript 入门</span>
+            <span class="post-date" title="2020-11-09 20:46:08">2020/11/09</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E8%AF%AD%E6%B3%95%E7%B3%96/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的语法糖">python 中的语法糖</span>
+            <span class="post-date" title="2020-11-06 10:53:29">2020/11/06</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E8%BF%9B%E7%A8%8B%EF%BC%8C%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%8D%8F%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的进程，线程与协程">python 中的进程，线程与协程</span>
+            <span class="post-date" title="2020-11-04 21:29:16">2020/11/04</span>
+        </a>
+        
+        <a  class="全部文章 Linux "
+           href="/linux%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="linux 常见命令学习">linux 常见命令学习</span>
+            <span class="post-date" title="2020-06-17 22:33:28">2020/06/17</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="机器学习经典算法">机器学习经典算法</span>
+            <span class="post-date" title="2020-06-16 10:36:50">2020/06/16</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/tensorflow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tensorflow 学习笔记">tensorflow 学习笔记</span>
+            <span class="post-date" title="2020-06-05 01:49:53">2020/06/05</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/%E6%B7%B1%E5%BA%A6%E7%90%86%E8%A7%A3%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="深度理解卷积神经网络工作原理">深度理解卷积神经网络工作原理</span>
+            <span class="post-date" title="2020-06-04 13:24:45">2020/06/04</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E7%88%AC%E8%99%AB%E7%9A%84%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫的定时执行">爬虫的定时执行</span>
+            <span class="post-date" title="2020-04-06 22:44:47">2020/04/06</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/Token-%EF%BC%8CCookie%E5%92%8CSession%E7%9A%84%E5%8C%BA%E5%88%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Token ，Cookie 和 Session 的区别">Token ，Cookie 和 Session 的区别</span>
+            <span class="post-date" title="2020-04-03 10:46:54">2020/04/03</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E5%9C%A8python%E4%B8%AD%E8%BF%9B%E8%A1%8C%E8%A7%86%E9%A2%91-%E9%9F%B3%E9%A2%91%E5%A4%84%E7%90%86%E5%8F%8A%E5%90%88%E5%B9%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="在 python 中进行视频 - 音频处理及合并">在 python 中进行视频 - 音频处理及合并</span>
+            <span class="post-date" title="2020-03-29 10:56:44">2020/03/29</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8BJS%E8%A7%A3%E5%AF%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之 JS 解密">反反爬虫之 JS 解密</span>
+            <span class="post-date" title="2020-03-24 10:04:43">2020/03/24</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E7%90%86%E8%A7%A3python%E4%B8%AD%E7%9A%84%E9%97%AD%E5%8C%85%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="理解 python 中的闭包与装饰器">理解 python 中的闭包与装饰器</span>
+            <span class="post-date" title="2020-03-21 17:34:45">2020/03/21</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Mongodb%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Mongodb 数据库入门">Mongodb 数据库入门</span>
+            <span class="post-date" title="2020-03-17 22:50:33">2020/03/17</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%8A%A0%E4%B8%AA%E7%A9%BA%E6%A0%BC%E5%91%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="为什么不加个空格呢">为什么不加个空格呢</span>
+            <span class="post-date" title="2020-03-14 13:53:44">2020/03/14</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8/"
+           data-tag="yield"
+           data-author="" >
+            <span class="post-title" title="迭代器与生成器">迭代器与生成器</span>
+            <span class="post-date" title="2020-03-13 21:58:25">2020/03/13</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E6%BB%91%E5%9D%97%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之滑块验证码">反反爬虫之滑块验证码</span>
+            <span class="post-date" title="2020-03-08 21:00:17">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E5%9B%BE%E7%89%87%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之图片验证码">反反爬虫之图片验证码</span>
+            <span class="post-date" title="2020-03-08 16:16:16">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Python%E6%93%8D%E4%BD%9CRedis/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Python 操作 Redis">Python 操作 Redis</span>
+            <span class="post-date" title="2020-03-07 16:15:44">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy-Redis%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Scrapy-Redis 分布式爬虫">Scrapy-Redis 分布式爬虫</span>
+            <span class="post-date" title="2020-03-07 15:35:50">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%ABRequest%E5%8E%BB%E9%87%8D%E5%8F%8A%E8%BF%87%E6%BB%A4%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫 Request 去重及过滤器">爬虫 Request 去重及过滤器</span>
+            <span class="post-date" title="2020-03-07 15:22:23">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Redis%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Redis 数据库">Redis 数据库</span>
+            <span class="post-date" title="2020-03-06 20:30:00">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Pymysql%E4%B8%8EORM%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="pymysql-ORM"
+           data-author="" >
+            <span class="post-title" title="Pymysql 与 ORM 操作数据库">Pymysql 与 ORM 操作数据库</span>
+            <span class="post-date" title="2020-03-06 10:49:03">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/MySql%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Mysql"
+           data-author="" >
+            <span class="post-title" title="MySql 数据库">MySql 数据库</span>
+            <span class="post-date" title="2020-03-04 23:31:02">2020/03/04</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy%E6%A1%86%E6%9E%B6%E7%88%AC%E8%99%AB/"
+           data-tag="Scrapy"
+           data-author="" >
+            <span class="post-title" title="Scrapy 框架爬虫">Scrapy 框架爬虫</span>
+            <span class="post-date" title="2020-03-02 10:44:55">2020/03/02</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="多线程与多进程爬虫">多线程与多进程爬虫</span>
+            <span class="post-date" title="2020-03-01 15:33:08">2020/03/01</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Selenium%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%A8%A1%E6%8B%9F/"
+           data-tag="Selenium"
+           data-author="" >
+            <span class="post-title" title="Selenium 自动化测试模拟">Selenium 自动化测试模拟</span>
+            <span class="post-date" title="2020-02-29 21:29:54">2020/02/29</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96-%E6%96%87%E4%BB%B6%E4%BF%9D%E5%AD%98/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="数据持久化 - 文件保存本地">数据持久化 - 文件保存本地</span>
+            <span class="post-date" title="2020-02-27 22:01:14">2020/02/27</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫基础入门">爬虫基础入门</span>
+            <span class="post-date" title="2020-02-26 20:44:27">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/CSS%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%8EXpath%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96/"
+           data-tag="CSS-Xpath"
+           data-author="" >
+            <span class="post-title" title="CSS 选择器与 Xpath 数据提取">CSS 选择器与 Xpath 数据提取</span>
+            <span class="post-date" title="2020-02-26 19:07:35">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Seaborn-Pygal-Pyecharts%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Seaborn,pygal,Pyecharts"
+           data-author="" >
+            <span class="post-title" title="Seaborn-Pygal-Pyecharts 可视化">Seaborn-Pygal-Pyecharts 可视化</span>
+            <span class="post-date" title="2020-02-22 16:24:55">2020/02/22</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/python%E4%B9%8BMatplotlib%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Matplotlib"
+           data-author="" >
+            <span class="post-title" title="python 之 Matplotlib 可视化">python 之 Matplotlib 可视化</span>
+            <span class="post-date" title="2020-02-20 20:28:44">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%A4%84%E7%90%86%E5%AE%9E%E6%93%8D/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Pandas 数据分析处理实操">Pandas 数据分析处理实操</span>
+            <span class="post-date" title="2020-02-20 10:51:39">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Markdown%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E6%8A%80%E5%B7%A7/"
+           data-tag="Markdown"
+           data-author="" >
+            <span class="post-title" title="Markdown 文本编辑技巧">Markdown 文本编辑技巧</span>
+            <span class="post-date" title="2020-02-18 16:31:40">2020/02/18</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BPandas%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Python 之 Pandas 库从入门到实战">Python 之 Pandas 库从入门到实战</span>
+            <span class="post-date" title="2020-02-15 20:46:52">2020/02/15</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BNumpy%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Numpy"
+           data-author="" >
+            <span class="post-title" title="Python 之 Numpy 库从入门到实战">Python 之 Numpy 库从入门到实战</span>
+            <span class="post-date" title="2020-02-13 23:15:38">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E9%95%9C%E5%83%8F%E6%BA%90%E7%BD%91%E5%9D%80/"
+           data-tag="pip"
+           data-author="" >
+            <span class="post-title" title="python pip 国内镜像大全及库的安装">python pip 国内镜像大全及库的安装</span>
+            <span class="post-date" title="2020-02-13 23:13:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E7%9A%84%E4%B8%89%E7%A7%8D%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 的三种输出格式">python 的三种输出格式</span>
+            <span class="post-date" title="2020-02-13 23:04:49">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E6%97%B6%E9%97%B4%E6%A8%A1%E5%9D%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的时间模块">python 中的时间模块</span>
+            <span class="post-date" title="2020-02-13 23:01:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E6%9F%A5%E7%9C%8B%E4%BB%BB%E4%BD%95%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E7%94%A8%E6%B3%95%E7%9A%84%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 查看任何第三方库的用法的方法">python 查看任何第三方库的用法的方法</span>
+            <span class="post-date" title="2020-02-13 22:57:50">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Anaconda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8Epyinstaller%E7%A8%8B%E5%BA%8F%E6%89%93%E5%8C%85/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Anaconda 环境配置与 pyinstaller 程序打包">Anaconda 环境配置与 pyinstaller 程序打包</span>
+            <span class="post-date" title="2020-02-13 20:01:52">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%BD%BF%E7%94%A8Hexo-Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%85%8D%E8%B4%B9%E5%8D%9A%E5%AE%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="使用 Hexo+Github 搭建个人免费博客">使用 Hexo+Github 搭建个人免费博客</span>
+            <span class="post-date" title="2020-02-13 15:44:02">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E5%85%B3%E4%BA%8Ehexo%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"
+           data-tag="Hexo"
+           data-author="" >
+            <span class="post-title" title="关于 hexo 使用过程中报错问题汇总">关于 hexo 使用过程中报错问题汇总</span>
+            <span class="post-date" title="2020-02-12 23:03:46">2020/02/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-反反爬虫之滑块验证码" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">反反爬虫之滑块验证码</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="爬虫">爬虫</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2025-12-13 13:23:10'>2020-03-08 21:00</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.9k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%20%E6%BB%91%E5%8A%A8%E9%AA%8C%E8%AF%81%E7%A0%81"><span class="toc-text">1. 滑动验证码 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%20%E7%AE%80%E5%8D%95%E6%BB%91%E5%8A%A8%E9%AA%8C%E8%AF%81%E7%A0%81"><span class="toc-text">1.1 简单滑动验证码 </span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%20%E6%9E%81%E9%AA%8C%E9%AA%8C%E8%AF%81"><span class="toc-text">2. 极验验证</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%20%E6%BB%91%E5%8A%A8%E9%AA%8C%E8%AF%81"><span class="toc-text">2.1 滑动验证 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1-%20%E8%8E%B7%E5%8F%96%E5%9B%BE%E7%89%87"><span class="toc-text">2.1.1 获取图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2-%20%E5%AF%B9%E5%9B%BE%E7%89%87%E8%BF%9B%E8%A1%8C%E5%A4%84%E7%90%86"><span class="toc-text">2.1.2 对图片进行处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-3-%20%E8%AE%A1%E7%AE%97%E7%A7%BB%E5%8A%A8%E8%B7%9D%E7%A6%BB"><span class="toc-text">2.1.3 计算移动距离</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-4-%20%E8%8E%B7%E5%8F%96%E7%A7%BB%E5%8A%A8%E8%BD%A8%E8%BF%B9"><span class="toc-text">2.1.4 获取移动轨迹</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%20%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BD%BF%E7%94%A8%E7%94%A8%E6%88%B7%E6%95%B0%E6%8D%AE"><span class="toc-text">3. 浏览器使用用户数据</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1- 滑动验证码"><a href="#1- 滑动验证码" class="headerlink" title="1. 滑动验证码"></a>1. 滑动验证码 </h1><p> 说到滑动验证码，一定一定要提某验，虽然说市面上关于滑动验证码的产品有很多，但是某验的地位就像 10 年前脑白金在保健品市场的地位一样，业界标杆啊。</p>
+<p>它越牛逼，市场上用它做防护的网站也越多，像国家企业信用信息公示系统、B 站、京东等等。</p>
+<p>像某验的解决方案也有很多，不过原理大同小异。</p>
+<h2 id="1-1- 简单滑动验证码"><a href="#1-1- 简单滑动验证码" class="headerlink" title="1.1 简单滑动验证码"></a>1.1 简单滑动验证码 </h2><p> 目标网址：<a target="_blank" rel="noopener" href="https://member.zjtcn.com/common/login.html">https://member.zjtcn.com/common/login.html</a></p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-08_21-13-51.png" alt=""></p>
+<p>一般来说我们与页面的交互可以使用 <code>Webelement</code> 的方法来进行点击等操作。</p>
+<p>但是，有时候我们需要一些更复杂的动作，类似于拖动，双击，长按等等。</p>
+<p>这时候就需要用到我们的 <code>Action Chains</code>（动作链）了。使用 selenium 去实现。</p>
+<pre><code class="python">from selenium import webdriver
+
+url=&#39;https://member.zjtcn.com/common/login.html&#39;
+
+browser=webdriver.Chrome()
+browser.get(url)
+
+slider=browser.find_element_by_css_selector(&#39;.ui-slider-btn&#39;)
+
+// 使用动作链
+action=webdriver.ActionChains(browser)
+action.click_and_hold(slider).perform()  //perform()是按住不放的意思
+action.move_by_offset(300,0)
+action.release().perform()</code></pre>
+<h1 id="2- 极验验证"><a href="#2- 极验验证" class="headerlink" title="2. 极验验证"></a>2. 极验验证</h1><p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1327694-20180419013633887-1956614758.png" alt=""></p>
+<p>以上图片是最典型的要属于极验滑动认证了，极验官网：<a target="_blank" rel="noopener" href="http://www.geetest.com/。">http://www.geetest.com/。</a></p>
+<p>现在极验验证码已经更新到了 3.0 版本，截至 2017 年 7 月全球已有十六万家企业正在使用极验，每天服务响应超过四亿次，广泛应用于直播视频、金融服务、电子商务、游戏娱乐、政府企业等各大类型网站</p>
+<p>对于这类验证，如果我们直接模拟表单请求，繁琐的认证参数与认证流程会让你蛋碎一地，我们可以用 selenium 驱动浏览器来解决这个问题，大致分为以下几个步骤</p>
+<p><strong>1、输入用户名，密码</strong></p>
+<p><strong>2、点击按钮验证，弹出没有缺口的图</strong></p>
+<p><strong>3、获得没有缺口的图片</strong></p>
+<p><strong>4、点击滑动按钮，弹出有缺口的图</strong></p>
+<p><strong>5、获得有缺口的图片</strong></p>
+<p><strong>6、对比两张图片，找出缺口，即滑动的位移</strong></p>
+<p><strong>7、按照人的行为行为习惯，把总位移切成一段段小的位移</strong></p>
+<p><strong>8、按照位移移动</strong></p>
+<p><strong>9、完成登录</strong></p>
+<p>步骤大致是将缺口图和原图进行对比获取缺口的横坐标，并使用计算完成拖动轨迹模拟，之后使用 selenium 按照轨迹滑动完成缺口的拼接。</p>
+<p>这一类方法的优点是门槛低，原理简单，缺点是完成滑动耗时较长，成功率无法估计（同一轨迹计算规则使用多次后成功率迅速下降）</p>
+<h2 id="2-1- 滑动验证"><a href="#2-1- 滑动验证" class="headerlink" title="2.1 滑动验证"></a>2.1 滑动验证 </h2><p> 目标网址：<a target="_blank" rel="noopener" href="http://www.cnbaowen.net/api/geetest">http://www.cnbaowen.net/api/geetest</a></p>
+<p><strong>位移移动相当于匀变速直线运动，类似于小汽车从起点开始运行到终点的过程（首先为匀加速，然后再匀减速）。</strong></p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1327694-20180419003434653-666693563.png" alt=""></p>
+<p><strong>其中 a 为加速度，且为恒量（即单位时间内的加速度是不变的），t 为时间</strong></p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1327694-20180419004117298-644560068.png" alt=""></p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1327694-20180419004741089-303812653.png" alt=""></p>
+<h3 id="2-1-1- 获取图片"><a href="#2-1-1- 获取图片" class="headerlink" title="2.1.1 获取图片"></a>2.1.1 获取图片</h3><pre><code>def get_image(driver, div_path):
+    &#39;&#39;&#39;
+    下载无序的图片  然后进行拼接 获得完整的图片
+    :param driver:
+    :param div_path:
+    :return:
+    &#39;&#39;&#39;
+    time.sleep(2)
+    # 获取图片地址
+    background_images = driver.find_elements_by_xpath(div_path)
+    # 图片位置信息
+    location_list = []
+    # 获取图片碎片
+    for background_image in background_images:
+        # 当前碎片位置
+        location = &#123;&#125;
+        # 匹配当前图片碎片的地址，位置
+        result = re.findall(&#39;background-image: url\(&quot;(.*?)&quot;\); background-position: (.*?)px (.*?)px;&#39;,background_image.get_attribute(&#39;style&#39;))
+        # print(result)
+        location[&#39;x&#39;] = int(result[0][1])
+        location[&#39;y&#39;] = int(result[0][2])
+
+        image_url = result[0][0]
+        # 将当前碎片信息添加到图片位置信息列表
+        location_list.append(location)
+
+        print(&#39;==================================&#39;)
+        # 获取图片
+        image_url = image_url.replace(&#39;webp&#39;, &#39;jpg&#39;)
+        # &#39; 替换 url http://static.geetest.com/pictures/gt/579066de6/579066de6.webp&#39;
+        image_result = requests.get(image_url).content
+        # with open(&#39;1.jpg&#39;,&#39;wb&#39;) as f:
+        #     f.write(image_result)
+        # 是一张无序的图片
+        image_file = BytesIO(image_result)    // 将 image_result 以二进制的形式写进内存
+        # image = merge_image(image_file, location_list)
+        return image_file, location_list
+</code></pre><h3 id="2-1-2- 对图片进行处理"><a href="#2-1-2- 对图片进行处理" class="headerlink" title="2.1.2 对图片进行处理"></a>2.1.2 对图片进行处理</h3><pre><code>def merge_image(image_file, location_list):
+    &quot;&quot;&quot;
+     拼接图片
+    :param image_file:
+    :param location_list:
+    :return:
+    &quot;&quot;&quot;
+    im = Image.open(image_file)
+    im.save(&#39;code.jpg&#39;)
+    new_im = Image.new(&#39;RGB&#39;, (260, 116))
+    # 把无序的图片 切成 52 张小图片
+    im_list_upper = []
+    im_list_down = []
+    # print(location_list)
+    for location in location_list:
+        # print(location[&#39;y&#39;])
+        if location[&#39;y&#39;] == -58:  # 上半边
+            im_list_upper.append(im.crop((abs(location[&#39;x&#39;]), 58, abs(location[&#39;x&#39;]) + 10, 116)))
+        if location[&#39;y&#39;] == 0:  # 下半边
+            im_list_down.append(im.crop((abs(location[&#39;x&#39;]), 0, abs(location[&#39;x&#39;]) + 10, 58)))
+
+    x_offset = 0
+    for im in im_list_upper:
+        new_im.paste(im, (x_offset, 0))  # 把小图片放到 新的空白图片上
+        x_offset += im.size[0]
+
+    x_offset = 0
+    for im in im_list_down:
+        new_im.paste(im, (x_offset, 58))
+        x_offset += im.size[0]
+    new_im.show()
+    return new_im</code></pre><h3 id="2-1-3- 计算移动距离"><a href="#2-1-3- 计算移动距离" class="headerlink" title="2.1.3 计算移动距离"></a>2.1.3 计算移动距离</h3><pre><code>def get_distance(image1, image2):
+    &quot;&quot;&quot;
+    拿到滑动验证码需要移动的距离
+    :param image1: 没有缺口的图片对象
+    :param image2: 带缺口的图片对象
+    :return: 需要移动的距离
+    &quot;&quot;&quot;
+    # print(&#39;size&#39;, image1.size)
+
+    threshold = 50
+    for i in range(0, image1.size[0]):  # 260
+        for j in range(0, image1.size[1]):  # 160
+            pixel1 = image1.getpixel((i, j))
+            pixel2 = image2.getpixel((i, j))
+            res_R = abs(pixel1[0] - pixel2[0])  # 计算 RGB 差
+            res_G = abs(pixel1[1] - pixel2[1])  # 计算 RGB 差
+            res_B = abs(pixel1[2] - pixel2[2])  # 计算 RGB 差
+            if res_R &gt; threshold and res_G &gt; threshold and res_B &gt; threshold:
+                return i  # 需要移动的距离</code></pre><h3 id="2-1-4- 获取移动轨迹"><a href="#2-1-4- 获取移动轨迹" class="headerlink" title="2.1.4 获取移动轨迹"></a>2.1.4 获取移动轨迹</h3><pre><code>def get_track(distance):
+    &#39;&#39;&#39;
+    拿到移动轨迹，模仿人的滑动行为，先匀加速后匀减速
+    匀变速运动基本公式：
+    ① v=v0+at
+    ② s=v0t+(1/2)at²
+    ③ v²-v0²=2as
+
+    :param distance: 需要移动的距离
+    :return: 存放每 0.2 秒移动的距离
+    &#39;&#39;&#39;
+    # 初速度
+    v = 0
+    # 单位时间为 0.2s 来统计轨迹，轨迹即 0.2 内的位移
+    t = 0.2
+    # 位移 / 轨迹列表，列表内的一个元素代表 0.2s 的位移
+    tracks = []
+    # 当前的位移
+    current = 0
+    # 到达 mid 值开始减速
+    mid = distance * 7 / 8
+
+    distance += 10  # 先滑过一点，最后再反着滑动回来
+    # a = random.randint(1,3)
+    while current &lt; distance:
+        # 设置速度
+        if current &lt; mid:
+            # 加速度越小，单位时间的位移越小, 模拟的轨迹就越多越详细
+            a = random.randint(2, 4)  # 加速运动
+        else:
+            a = -random.randint(3, 5)  # 减速运动
+
+        # 初速度
+        v0 = v
+        # 0.2 秒时间内的位移
+        s = v0 * t + 0.5 * a * (t ** 2)
+        # 当前的位置
+        current += s
+        # 添加到轨迹列表
+        tracks.append(round(s))
+
+        # 速度已经达到 v, 该速度作为下次的初速度
+        v = v0 + a * t
+
+    while (total - distance - 10) &gt; 0:
+        # 反着滑动到大概准确位置
+        tracks.append(-random.randint(2, 3))
+        total = sum(tracks)
+    return tracks</code></pre><h1 id="3- 浏览器使用用户数据"><a href="#3- 浏览器使用用户数据" class="headerlink" title="3. 浏览器使用用户数据"></a>3. 浏览器使用用户数据</h1><blockquote>
+<p>加载 Chrome 用户默认数据绕过登录</p>
+</blockquote>
+<p>用户每次打开浏览器做相应操作时，对应的缓存和 cookie 会保存到浏览器默认的路径下，我们先查看个人资料路径，以 chrome 为例，我们在地址栏输入 chrome://version/</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1581676388412.png" alt=""></p>
+<p>图中的个人资料路径就是我们需要的，我们去掉后面的 \Default，然后在路径前加上「–user-data-dir=」就拼接出我们要的路径了。</p>
+<pre><code>from selenium import webdriver
+
+option = webdriver.ChromeOptions()
+option.add_argument(r&#39;--user-data-dir=C:\Users\xxp\AppData\Local\Google\Chrome\User Data&#39;)  # 设置成用户自己的数据目录
+
+driver = webdriver.Chrome(chrome_options=option)
+
+driver.get(&#39;https://www.baidu.com&#39;)</code></pre><p>我们启动浏览器的时候采用带选项时的启动，这种方式启动浏览器需要注意，运行代码前需要关闭所有的正在运行 chrome 程序，不然会报错。</p>
+<p>执行代码运行程序，selenium 自动化启动浏览器后我们会发现我之前保存的书签完整在浏览器上方，个人数据全部都在。</p>
+<p>参考：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/duziea/Python-imitate-login">https://github.com/duziea/Python-imitate-login</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_34192032/article/details/101059706">https://blog.csdn.net/qq_34192032/article/details/101059706</a></p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 欢迎各位看官及技术大佬前来交流指导呀，可以邮件至 jqiange@yeah.net </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2021 Jqiange
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

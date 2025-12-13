@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mongodb 数据库入门 | jqiange</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="Mongodb 数据库入门 | jqiange">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="人畜无害的姜小强">
+<meta property="og:url" content="https://jqiange.github.io/about/index.html">
+<meta property="og:site_name" content="jqiange">
+<meta property="og:description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+<meta property="article:published_time" content="2020-02-18T08:21:04.000Z">
+<meta property="article:modified_time" content="2025-12-13T05:23:10.695Z">
+<meta property="article:author" content="姜小强">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+
+
+<link rel="icon" href="/img/jqiange.png">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/jqiange.png"/>
+</a>
+<div class="author">
+    <span>姜小强</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/jqiange"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(58)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(9)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据库">
+                        
+                        数据库
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="每日一学">
+                        
+                        每日一学
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="爬虫">
+                        
+                        爬虫
+                        <small>(10)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="前端">
+                        
+                        前端
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="深度学习">
+                        
+                        深度学习
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据分析">
+                        
+                        数据分析
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="chip">
+                        
+                        chip
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="CPP">
+                        
+                        CPP
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Linux">
+                        
+                        Linux
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="python">
+                        
+                        python
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="58">
+<input type="hidden" id="yelog_site_word_count" value="251.9k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSS-Xpath</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Markdown</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Matplotlib</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Mysql</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Numpy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pandas</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pip</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pyecharts</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pygal</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pymysql-ORM</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>RE</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Redis</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Scrapy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Seaborn</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Selenium</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>yield</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="全部文章 python "
+           href="/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%A6%E8%A7%A3/"
+           data-tag="RE"
+           data-author="" >
+            <span class="post-title" title="正则表达式详解">正则表达式详解</span>
+            <span class="post-date" title="2020-02-26 09:25:46">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/tcl%E4%B8%8Eopc/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 与 opc">tcl 与 opc</span>
+            <span class="post-date" title="2025-09-24 13:36:07">2025/09/24</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/hexo%E6%96%87%E7%AB%A0%E5%8A%A0%E5%AF%86%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="hexo 文章加密方法">hexo 文章加密方法</span>
+            <span class="post-date" title="2025-09-21 22:33:03">2025/09/21</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/tcl%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 语言入门">tcl 语言入门</span>
+            <span class="post-date" title="2025-09-14 22:43:20">2025/09/14</span>
+        </a>
+        
+        <a  class="全部文章 每日一学 "
+           href="/%E6%95%85%E4%BA%8B%E4%BC%9A%E4%B8%8E%E4%BC%81%E4%B8%9A%E8%82%A1%E6%9D%83%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="故事会与企业股权架构设计">故事会与企业股权架构设计</span>
+            <span class="post-date" title="2025-08-30 09:42:43">2025/08/30</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%AE%A1%E7%AE%97%E5%85%89%E5%88%BBOPC%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="计算光刻 OPC 名词解释">计算光刻 OPC 名词解释</span>
+            <span class="post-date" title="2025-08-26 21:44:36">2025/08/26</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%8A%AF%E7%89%87%E5%88%B6%E9%80%A0%E6%B5%81%E7%A8%8B%E4%B8%8E%E5%B7%A5%E8%89%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="芯片制造流程与工艺">芯片制造流程与工艺</span>
+            <span class="post-date" title="2025-06-14 12:13:17">2025/06/14</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E8%81%8C%E5%9C%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入职场">C++ 入职场</span>
+            <span class="post-date" title="2024-06-22 15:52:55">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/Protocol-Buffers-%E5%85%A5%E9%97%A8%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Protocol Buffers 入门使用">Protocol Buffers 入门使用</span>
+            <span class="post-date" title="2024-06-22 15:50:39">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-python%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B-boost/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++python 混合编程 -boost">C++python 混合编程 -boost</span>
+            <span class="post-date" title="2024-06-22 15:36:18">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B%E4%B8%8E%E6%A8%A1%E6%9D%BF/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 泛型编程与模板">C++ 泛型编程与模板</span>
+            <span class="post-date" title="2024-06-22 15:27:49">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入门学习笔记">C++ 入门学习笔记</span>
+            <span class="post-date" title="2024-06-22 14:53:46">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 Linux "
+           href="/shell%E7%BC%96%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="shell 编程">shell 编程</span>
+            <span class="post-date" title="2022-03-07 20:24:24">2022/03/07</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Git 版本控制工具">Git 版本控制工具</span>
+            <span class="post-date" title="2022-03-05 23:23:45">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Hexo%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E4%B8%8E%E5%A4%9A%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hexo 博客迁移与多平台使用">Hexo 博客迁移与多平台使用</span>
+            <span class="post-date" title="2022-03-05 01:26:56">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%B8%8E%E9%87%8D%E9%9A%BE%E7%82%B9%E6%B1%87%E6%80%BB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的基础知识与重难点汇总">python 中的基础知识与重难点汇总</span>
+            <span class="post-date" title="2020-11-17 23:05:15">2020/11/17</span>
+        </a>
+        
+        <a  class="全部文章 前端 "
+           href="/javascript%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="JavaScript 入门">JavaScript 入门</span>
+            <span class="post-date" title="2020-11-09 20:46:08">2020/11/09</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E8%AF%AD%E6%B3%95%E7%B3%96/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的语法糖">python 中的语法糖</span>
+            <span class="post-date" title="2020-11-06 10:53:29">2020/11/06</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E8%BF%9B%E7%A8%8B%EF%BC%8C%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%8D%8F%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的进程，线程与协程">python 中的进程，线程与协程</span>
+            <span class="post-date" title="2020-11-04 21:29:16">2020/11/04</span>
+        </a>
+        
+        <a  class="全部文章 Linux "
+           href="/linux%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="linux 常见命令学习">linux 常见命令学习</span>
+            <span class="post-date" title="2020-06-17 22:33:28">2020/06/17</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="机器学习经典算法">机器学习经典算法</span>
+            <span class="post-date" title="2020-06-16 10:36:50">2020/06/16</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/tensorflow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tensorflow 学习笔记">tensorflow 学习笔记</span>
+            <span class="post-date" title="2020-06-05 01:49:53">2020/06/05</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/%E6%B7%B1%E5%BA%A6%E7%90%86%E8%A7%A3%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="深度理解卷积神经网络工作原理">深度理解卷积神经网络工作原理</span>
+            <span class="post-date" title="2020-06-04 13:24:45">2020/06/04</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E7%88%AC%E8%99%AB%E7%9A%84%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫的定时执行">爬虫的定时执行</span>
+            <span class="post-date" title="2020-04-06 22:44:47">2020/04/06</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/Token-%EF%BC%8CCookie%E5%92%8CSession%E7%9A%84%E5%8C%BA%E5%88%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Token ，Cookie 和 Session 的区别">Token ，Cookie 和 Session 的区别</span>
+            <span class="post-date" title="2020-04-03 10:46:54">2020/04/03</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E5%9C%A8python%E4%B8%AD%E8%BF%9B%E8%A1%8C%E8%A7%86%E9%A2%91-%E9%9F%B3%E9%A2%91%E5%A4%84%E7%90%86%E5%8F%8A%E5%90%88%E5%B9%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="在 python 中进行视频 - 音频处理及合并">在 python 中进行视频 - 音频处理及合并</span>
+            <span class="post-date" title="2020-03-29 10:56:44">2020/03/29</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8BJS%E8%A7%A3%E5%AF%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之 JS 解密">反反爬虫之 JS 解密</span>
+            <span class="post-date" title="2020-03-24 10:04:43">2020/03/24</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E7%90%86%E8%A7%A3python%E4%B8%AD%E7%9A%84%E9%97%AD%E5%8C%85%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="理解 python 中的闭包与装饰器">理解 python 中的闭包与装饰器</span>
+            <span class="post-date" title="2020-03-21 17:34:45">2020/03/21</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Mongodb%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Mongodb 数据库入门">Mongodb 数据库入门</span>
+            <span class="post-date" title="2020-03-17 22:50:33">2020/03/17</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%8A%A0%E4%B8%AA%E7%A9%BA%E6%A0%BC%E5%91%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="为什么不加个空格呢">为什么不加个空格呢</span>
+            <span class="post-date" title="2020-03-14 13:53:44">2020/03/14</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8/"
+           data-tag="yield"
+           data-author="" >
+            <span class="post-title" title="迭代器与生成器">迭代器与生成器</span>
+            <span class="post-date" title="2020-03-13 21:58:25">2020/03/13</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E6%BB%91%E5%9D%97%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之滑块验证码">反反爬虫之滑块验证码</span>
+            <span class="post-date" title="2020-03-08 21:00:17">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E5%9B%BE%E7%89%87%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之图片验证码">反反爬虫之图片验证码</span>
+            <span class="post-date" title="2020-03-08 16:16:16">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Python%E6%93%8D%E4%BD%9CRedis/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Python 操作 Redis">Python 操作 Redis</span>
+            <span class="post-date" title="2020-03-07 16:15:44">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy-Redis%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Scrapy-Redis 分布式爬虫">Scrapy-Redis 分布式爬虫</span>
+            <span class="post-date" title="2020-03-07 15:35:50">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%ABRequest%E5%8E%BB%E9%87%8D%E5%8F%8A%E8%BF%87%E6%BB%A4%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫 Request 去重及过滤器">爬虫 Request 去重及过滤器</span>
+            <span class="post-date" title="2020-03-07 15:22:23">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Redis%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Redis 数据库">Redis 数据库</span>
+            <span class="post-date" title="2020-03-06 20:30:00">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Pymysql%E4%B8%8EORM%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="pymysql-ORM"
+           data-author="" >
+            <span class="post-title" title="Pymysql 与 ORM 操作数据库">Pymysql 与 ORM 操作数据库</span>
+            <span class="post-date" title="2020-03-06 10:49:03">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/MySql%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Mysql"
+           data-author="" >
+            <span class="post-title" title="MySql 数据库">MySql 数据库</span>
+            <span class="post-date" title="2020-03-04 23:31:02">2020/03/04</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy%E6%A1%86%E6%9E%B6%E7%88%AC%E8%99%AB/"
+           data-tag="Scrapy"
+           data-author="" >
+            <span class="post-title" title="Scrapy 框架爬虫">Scrapy 框架爬虫</span>
+            <span class="post-date" title="2020-03-02 10:44:55">2020/03/02</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="多线程与多进程爬虫">多线程与多进程爬虫</span>
+            <span class="post-date" title="2020-03-01 15:33:08">2020/03/01</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Selenium%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%A8%A1%E6%8B%9F/"
+           data-tag="Selenium"
+           data-author="" >
+            <span class="post-title" title="Selenium 自动化测试模拟">Selenium 自动化测试模拟</span>
+            <span class="post-date" title="2020-02-29 21:29:54">2020/02/29</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96-%E6%96%87%E4%BB%B6%E4%BF%9D%E5%AD%98/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="数据持久化 - 文件保存本地">数据持久化 - 文件保存本地</span>
+            <span class="post-date" title="2020-02-27 22:01:14">2020/02/27</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫基础入门">爬虫基础入门</span>
+            <span class="post-date" title="2020-02-26 20:44:27">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/CSS%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%8EXpath%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96/"
+           data-tag="CSS-Xpath"
+           data-author="" >
+            <span class="post-title" title="CSS 选择器与 Xpath 数据提取">CSS 选择器与 Xpath 数据提取</span>
+            <span class="post-date" title="2020-02-26 19:07:35">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Seaborn-Pygal-Pyecharts%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Seaborn,pygal,Pyecharts"
+           data-author="" >
+            <span class="post-title" title="Seaborn-Pygal-Pyecharts 可视化">Seaborn-Pygal-Pyecharts 可视化</span>
+            <span class="post-date" title="2020-02-22 16:24:55">2020/02/22</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/python%E4%B9%8BMatplotlib%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Matplotlib"
+           data-author="" >
+            <span class="post-title" title="python 之 Matplotlib 可视化">python 之 Matplotlib 可视化</span>
+            <span class="post-date" title="2020-02-20 20:28:44">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%A4%84%E7%90%86%E5%AE%9E%E6%93%8D/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Pandas 数据分析处理实操">Pandas 数据分析处理实操</span>
+            <span class="post-date" title="2020-02-20 10:51:39">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Markdown%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E6%8A%80%E5%B7%A7/"
+           data-tag="Markdown"
+           data-author="" >
+            <span class="post-title" title="Markdown 文本编辑技巧">Markdown 文本编辑技巧</span>
+            <span class="post-date" title="2020-02-18 16:31:40">2020/02/18</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BPandas%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Python 之 Pandas 库从入门到实战">Python 之 Pandas 库从入门到实战</span>
+            <span class="post-date" title="2020-02-15 20:46:52">2020/02/15</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BNumpy%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Numpy"
+           data-author="" >
+            <span class="post-title" title="Python 之 Numpy 库从入门到实战">Python 之 Numpy 库从入门到实战</span>
+            <span class="post-date" title="2020-02-13 23:15:38">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E9%95%9C%E5%83%8F%E6%BA%90%E7%BD%91%E5%9D%80/"
+           data-tag="pip"
+           data-author="" >
+            <span class="post-title" title="python pip 国内镜像大全及库的安装">python pip 国内镜像大全及库的安装</span>
+            <span class="post-date" title="2020-02-13 23:13:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E7%9A%84%E4%B8%89%E7%A7%8D%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 的三种输出格式">python 的三种输出格式</span>
+            <span class="post-date" title="2020-02-13 23:04:49">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E6%97%B6%E9%97%B4%E6%A8%A1%E5%9D%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的时间模块">python 中的时间模块</span>
+            <span class="post-date" title="2020-02-13 23:01:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E6%9F%A5%E7%9C%8B%E4%BB%BB%E4%BD%95%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E7%94%A8%E6%B3%95%E7%9A%84%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 查看任何第三方库的用法的方法">python 查看任何第三方库的用法的方法</span>
+            <span class="post-date" title="2020-02-13 22:57:50">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Anaconda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8Epyinstaller%E7%A8%8B%E5%BA%8F%E6%89%93%E5%8C%85/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Anaconda 环境配置与 pyinstaller 程序打包">Anaconda 环境配置与 pyinstaller 程序打包</span>
+            <span class="post-date" title="2020-02-13 20:01:52">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%BD%BF%E7%94%A8Hexo-Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%85%8D%E8%B4%B9%E5%8D%9A%E5%AE%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="使用 Hexo+Github 搭建个人免费博客">使用 Hexo+Github 搭建个人免费博客</span>
+            <span class="post-date" title="2020-02-13 15:44:02">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E5%85%B3%E4%BA%8Ehexo%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"
+           data-tag="Hexo"
+           data-author="" >
+            <span class="post-title" title="关于 hexo 使用过程中报错问题汇总">关于 hexo 使用过程中报错问题汇总</span>
+            <span class="post-date" title="2020-02-12 23:03:46">2020/02/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-Mongodb数据库入门" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Mongodb 数据库入门</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="数据库">数据库</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2025-12-13 13:23:10'>2020-03-17 22:50</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:4.3k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-Mongodb%20%E5%87%86%E5%A4%87"><span class="toc-text">1. Mongodb 准备 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-Windows"><span class="toc-text">1.1 Windows</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-1-%20%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85%EF%BC%9A"><span class="toc-text">1.1.1 下载与安装：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-2-%20%E9%85%8D%E7%BD%AE"><span class="toc-text">1.1.2 配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-3-%20%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-text">1.1.3 设置环境变量 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-4-%20%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-text">1.1.4 创建文件夹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-5-%20%E5%BC%80%E5%90%AF%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%88%E6%8C%82%E8%B5%B7%EF%BC%89"><span class="toc-text">1.1.5 开启服务器（挂起）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-6-%20%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">1.1.6 连接服务器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-Linux"><span class="toc-text">1.2 Linux</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%20%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C"><span class="toc-text">2. 数据库操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%20%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4"><span class="toc-text">2.1 基础命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%20%E9%9B%86%E5%90%88%E6%93%8D%E4%BD%9C"><span class="toc-text">1.2 集合操作 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-1-%20%E5%88%9B%E5%BB%BA%E9%9B%86%E5%90%88"><span class="toc-text">1.2.1 创建集合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-2-%20%E6%98%BE%E7%A4%BA%E9%9B%86%E5%90%88"><span class="toc-text">1.2.2  显示集合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-3-%20%E5%88%A0%E9%99%A4%E9%9B%86%E5%90%88"><span class="toc-text">1.2.3  删除集合</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%20%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89"><span class="toc-text">2.3 数据操作（重点）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-1-%20%E5%A2%9E%E5%8A%A0%E6%95%B0%E6%8D%AE"><span class="toc-text">2.3.1 增加数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-2-%20%E6%9F%A5%E7%9C%8B%E6%95%B0%E6%8D%AE"><span class="toc-text">2.3.2 查看数据 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-3-%20%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE"><span class="toc-text">2.3.3 修改数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-4-%20%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE"><span class="toc-text">2.3.4 删除数据 </span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%20%E9%AB%98%E7%BA%A7%E5%91%BD%E4%BB%A4"><span class="toc-text">3. 高级命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%20%E6%8C%89%E6%9D%A1%E4%BB%B6%E6%9F%A5%E8%AF%A2"><span class="toc-text">3.1 按条件查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-1-%20%E6%A0%B9%E6%8D%AE%E6%9D%A1%E4%BB%B6%E6%9F%A5%E8%AF%A2"><span class="toc-text">3.1.1 根据条件查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-2-gt-%20%E5%A4%A7%E4%BA%8E"><span class="toc-text">3.1.2 $gt 大于</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-3-lt-%20%E5%B0%8F%E4%BA%8E"><span class="toc-text">3.1.3 $lt 小于</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-4-gte-%20%E5%A4%A7%E4%BA%8E%E7%AD%89%E4%BA%8E"><span class="toc-text">3.1.4 $gte 大于等于</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-5-lte-%20%E5%A4%A7%E4%BA%8E%E7%AD%89%E4%BA%8E"><span class="toc-text">3.1.5 $lte 大于等于</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-6-%20%E9%80%89%E6%8B%A9%E5%8C%BA%E9%97%B4"><span class="toc-text">3.1.6 选择区间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-7-ne-%20%E4%B8%8D%E7%AD%89%E4%BA%8E"><span class="toc-text">3.1.7 $ne 不等于</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-8-in-%20%E5%9C%A8%E9%9B%86%E5%90%88%E4%B8%AD"><span class="toc-text">3.1.8 $in 在集合中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-9-nin-%20%E4%B8%8D%E5%9C%A8%E9%9B%86%E5%90%88%E4%B8%AD"><span class="toc-text">3.1.9 $nin 不在集合中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-10-size-%20%E5%80%BC%E7%9A%84%E4%B8%AA%E6%95%B0"><span class="toc-text">3.1.10 $size 值的个数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-11-exists-%20%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E6%9F%90%E4%B8%AA%E9%94%AE%E5%90%8D"><span class="toc-text">3.1.11 $exists 是否存在某个键名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-12-or-%20%E5%AD%98%E5%9C%A8%E4%BB%BB%E6%84%8F%E4%B8%80%E4%B8%AA"><span class="toc-text">3.1.12 $or 存在任意一个</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-13-%20%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2"><span class="toc-text">3.1.13 模糊查询</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-%20%E6%8E%92%E5%BA%8F"><span class="toc-text">3.2 排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-%20%E9%99%90%E5%88%B6%E8%BE%93%E5%87%BA"><span class="toc-text">3.3 限制输出</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-1-limit"><span class="toc-text">3.3.1 limit()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-2-skip"><span class="toc-text">3.3.2 skip()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">3.4 数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-1-Object-ID"><span class="toc-text">3.4.1 Object ID</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%20%E8%81%9A%E5%90%88%E4%B8%8E%E5%88%86%E7%BB%84"><span class="toc-text">4. 聚合与分组</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-%20%E8%81%9A%E5%90%88"><span class="toc-text">4.1 聚合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-%20%E8%81%9A%E5%90%88%E7%A4%BA%E4%BE%8B"><span class="toc-text">4.2 聚合示例 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-1-group"><span class="toc-text">4.2.1 $group</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-2-match"><span class="toc-text">4.2.2 $match</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-3-project"><span class="toc-text">4.2.3 $project</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-4-sort"><span class="toc-text">4.2.4 $sort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-5-skip"><span class="toc-text">4.2.5 $skip</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-6-unwind"><span class="toc-text">4.2.6 $unwind</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%20%E5%AE%89%E5%85%A8"><span class="toc-text">5. 安全 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-%20%E8%BF%9B%E5%85%A5%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0"><span class="toc-text">5.1 进入管理平台</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-%20%E5%88%9B%E5%BB%BA%E7%AE%A1%E7%90%86%E5%91%98"><span class="toc-text">5.2 创建管理员 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-3-%20%E9%AA%8C%E8%AF%81%E8%B4%A6%E6%88%B7%E5%92%8C%E5%AF%86%E7%A0%81"><span class="toc-text">5.3 验证账户和密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-4-%20%E6%8C%82%E8%B5%B7%E9%9C%80%E8%A6%81%E9%AA%8C%E8%AF%81%E7%9A%84%E6%9C%8D%E5%8A%A1"><span class="toc-text">5.4 挂起需要验证的服务 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-5-%20%E6%B5%8B%E8%AF%95%E8%B4%A6%E6%88%B7"><span class="toc-text">5.5 测试账户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-6-%20%E4%B8%BA%E6%8C%87%E5%AE%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7"><span class="toc-text">5.6 为指定数据库添加用户</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-%20%E4%B8%BB%E4%BB%8E%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">6. 主从服务器 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#6-1-%20%E8%AE%BE%E7%BD%AE%E5%A4%8D%E5%88%B6%E8%8A%82%E7%82%B9"><span class="toc-text">6.1 设置复制节点 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-1-%20%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9B%AE%E5%BD%95"><span class="toc-text">6.1.1 创建数据库目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-2-%20%E5%90%AF%E5%8A%A8%20mongodb%20%E6%9C%8D%E5%8A%A1"><span class="toc-text">6.1.2 启动 mongodb 服务 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-3-%20%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">6.1.3 连接服务器 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-4-%20%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-text">6.1.4 初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-5-%20%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E7%8A%B6%E6%80%81"><span class="toc-text">6.1.5 查看当前状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-6-%20%E6%B7%BB%E5%8A%A0%E5%89%AF%E6%9C%AC%E9%9B%86"><span class="toc-text">6.1.6 添加副本集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-7-%20%E8%BF%9E%E6%8E%A5%E4%BB%8E%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">6.1.7 连接从服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-8-%20%E5%9C%A8%E4%BB%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%AD%E6%9F%A5%E8%AF%A2"><span class="toc-text">6.1.8 在从服务器中查询 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-9-%20%E5%85%B6%E4%BB%96"><span class="toc-text">6.1.9 其他 </span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-%20%E5%A4%87%E4%BB%BD%E4%B8%8E%E6%81%A2%E5%A4%8D"><span class="toc-text">7. 备份与恢复 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#7-1-%20%E5%A4%87%E4%BB%BD"><span class="toc-text">7.1 备份</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-2-%20%E6%81%A2%E5%A4%8D"><span class="toc-text">7.2 恢复 </span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-python%20%E6%93%8D%E4%BD%9C"><span class="toc-text">8. python 操作 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#8-1-%20%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">8.1 连接数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-2-%20%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-text">8.2 插入数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-3-%20%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE"><span class="toc-text">8.3 读取数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-4-%20%E4%BF%AE%E6%94%B9%E6%96%87%E6%A1%A3"><span class="toc-text">8.4 修改文档 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-5-%20%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE"><span class="toc-text">8.5 删除数据 </span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>MongoDB 是一个基于分布式文件存储的数据库。由 C++ 语言编写。旨在为 <strong>WEB 应用 </strong> 提供可扩展的高性能数据存储解决方案。</p>
+<p>MongoDB 是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。</p>
+<p>Mongo 最大的特点是它支持的查询语言非常强大，其语法有点类似于面向对象的查询语言。</p>
+<p><strong>MongoDB 数据存储方式 </strong>：<strong> 虚拟内存 + 持久化</strong>，使用的内存映射技术，写入数据时候只要在内存里完成就可以返回给应用程序，这样并发量自然就很高。然后再将数据从内存里写到硬盘保存。（当然，mongdb 也支持把常用的数据放在内存里供读取，以提高效率）。</p>
+<h1 id="1-Mongodb 准备"><a href="#1-Mongodb 准备" class="headerlink" title="1. Mongodb 准备"></a>1. Mongodb 准备 </h1><h2 id="1-1-Windows"><a href="#1-1-Windows" class="headerlink" title="1.1 Windows"></a>1.1 Windows</h2><h3 id="1-1-1- 下载与安装："><a href="#1-1-1- 下载与安装：" class="headerlink" title="1.1.1 下载与安装："></a>1.1.1 下载与安装：</h3><p> 下载地址：<a target="_blank" rel="noopener" href="https://www.mongodb.com/download-center/community">https://www.mongodb.com/download-center/community</a></p>
+<p>下载完成之后可以选择自定义安装</p>
+<h3 id="1-1-2- 配置"><a href="#1-1-2- 配置" class="headerlink" title="1.1.2 配置"></a>1.1.2 配置</h3><p>（1）认识执行命令</p>
+<p><code>mongo</code>  用于连接 mongodb 数据库服务器</p>
+<p><code>mongod</code> 用于开启服务器</p>
+<h3 id="1-1-3- 设置环境变量"><a href="#1-1-3- 设置环境变量" class="headerlink" title="1.1.3 设置环境变量"></a>1.1.3 设置环境变量 </h3><p> 将执行文件所在的目录设置为环境变量 D:\Database\Mongodb\bin\</p>
+<h3 id="1-1-4- 创建文件夹"><a href="#1-1-4- 创建文件夹" class="headerlink" title="1.1.4 创建文件夹"></a>1.1.4 创建文件夹</h3><p>D:\Database\Mongodb\data 用于存储数据库</p>
+<p>D:\Database\Mongodb\log 用于存储日志</p>
+<h3 id="1-1-5- 开启服务器（挂起）"><a href="#1-1-5- 开启服务器（挂起）" class="headerlink" title="1.1.5 开启服务器（挂起）"></a>1.1.5 开启服务器（挂起）</h3><p>CMD 命令行下（以管理员身份）</p>
+<p><code>mongod -dppath D:\Database\Mongodb\data --logpath D:\Database\Mongodb\log</code></p>
+<p>开启服务，并指定数据存储位置和日志存储位置</p>
+<p>服务开启后会自动挂在后台，可在：任务管理器 \ 服务 中看到</p>
+<p>将 mongodb 挂载成 windows 服务，开机自启动：</p>
+<p><code>mongod -dppath D:\Database\Mongodb\data --logpath D:\Database\Mongodb\log  --install --serviceName &quot;Mongodb&quot;</code></p>
+<p>操作服务的命令：</p>
+<p>net start mongodb 开启 mongodb 服务</p>
+<p>net stop mongodb 关闭 mongodb 服务</p>
+<p>sc delete mongodb 卸载 mongodb 服务</p>
+<h3 id="1-1-6- 连接服务器"><a href="#1-1-6- 连接服务器" class="headerlink" title="1.1.6 连接服务器"></a>1.1.6 连接服务器</h3><p><code>mongo</code></p>
+<p><code>show dbs</code>显示所有数据库列表</p>
+<h2 id="1-2-Linux"><a href="#1-2-Linux" class="headerlink" title="1.2 Linux"></a>1.2 Linux</h2><p>下载安装：<code>sudo apt install mongodb-server</code></p>
+<p>添加到 Path 路径中：<code>export PATH=/usr/local/mongodb4/bin:$PATH</code></p>
+<p>设置数据存储目录及日志文件目录：</p>
+<pre><code>sudo mkdir -p /var/lib/mongo
+sudo mkdir -p /var/log/mongodb
+sudo chown `whoami` /var/lib/mongo     # 设置权限
+sudo chown `whoami` /var/log/mongodb   # 设置权限
+
+mongod --dbpath /var/lib/mongo --logpath /var/log/mongodb/mongod.log --fork
+
+mongo   #启动</code></pre><h1 id="2- 数据库操作"><a href="#2- 数据库操作" class="headerlink" title="2. 数据库操作"></a>2. 数据库操作</h1><h2 id="2-1- 基础命令"><a href="#2-1- 基础命令" class="headerlink" title="2.1 基础命令"></a>2.1 基础命令</h2><p><code>show dbs;</code>   显示数据库列表</p>
+<p><code>db;</code> 显示当前正在使用的数据库</p>
+<p><code>use dbname;</code> 创建或切换数据库  </p>
+<p>如果数据库不存在，则创建数据库 dbname，否则切换到指定数据库 dbname。创建的数据库并不在数据库的列表中，要显示它，我们需要向数据库 dbname 插入一些数据。</p>
+<p><code>db.dropDatabase();</code> 切到要删除的数据库，就可以删除数据库</p>
+<p><strong>MongoDB 中默认的数据库为 test，如果你没有创建新的数据库，集合将存放在 test 数据库中。</strong></p>
+<h2 id="1-2- 集合操作"><a href="#1-2- 集合操作" class="headerlink" title="1.2 集合操作"></a>1.2 集合操作 </h2><p> 注意：<strong>正常来讲在 MongoDB 中不需要创建集合。当插入一些文档时，MongoDB 会自动创建集合。</strong></p>
+<h3 id="1-2-1- 创建集合"><a href="#1-2-1- 创建集合" class="headerlink" title="1.2.1 创建集合"></a>1.2.1 创建集合</h3><p><code>db.createCollection(name, options);</code></p>
+<p>name 是要创建的集合的名称</p>
+<p>options 是一个文档，用于指定集合的配置</p>
+<p>选项参数是可选的，所以只需要到指定的集合名称。</p>
+<p>例 1：不限制集合大小</p>
+<p><code>db.createCollection(&quot;stu&quot;)</code></p>
+<p>例 2：限制集合大小，后面学会插入语句后可以查看效果</p>
+<p>参数 capped：默认值为 false 表示不设置上限，值为 true 表示设置上限</p>
+<p>参数 size：当 capped 值为 true 时，需要指定此参数，表示上限大小，当文档达到上限时，会将之前的数据覆盖，单位为字节。如：</p>
+<p><code>db.createCollection(&quot;sub&quot;, &#123; capped : true, size : 10 &#125;)</code></p>
+<h3 id="1-2-2- 显示集合"><a href="#1-2-2- 显示集合" class="headerlink" title="1.2.2  显示集合"></a>1.2.2  显示集合</h3><p><code>show collections;</code> 显示数据库中的集合列表</p>
+<h3 id="1-2-3- 删除集合"><a href="#1-2-3- 删除集合" class="headerlink" title="1.2.3  删除集合"></a>1.2.3  删除集合</h3><p><code>db. 集合名.drop();</code> 删除指定的集合</p>
+<h2 id="2-3- 数据操作（重点）"><a href="#2-3- 数据操作（重点）" class="headerlink" title="2.3 数据操作（重点）"></a>2.3 数据操作（重点）</h2><h3 id="2-3-1- 增加数据"><a href="#2-3-1- 增加数据" class="headerlink" title="2.3.1 增加数据"></a>2.3.1 增加数据</h3><p><code>db.web.insert(&#123;&quot;name&quot;:&quot;ghost&quot;, &quot;age&quot;:10&#125;)</code></p>
+<p>在 web 集合中插入一条新数据，如果没有 web 这个集合，mongodb 会自动创建</p>
+<p>_id 是主键，主键是每条数据的唯一标识，不能重复，就像身份证是每个人唯一的编号一样。</p>
+<h3 id="2-3-2- 查看数据"><a href="#2-3-2- 查看数据" class="headerlink" title="2.3.2 查看数据"></a>2.3.2 查看数据 </h3><p><code>db. 集合名.find();</code> 查找 users 集合中所有数据</p>
+<p><code>db. 集合名.findOne();</code> 查找 users 集合中的第一条数据</p>
+<p><code>db. 集合名.find().pretty();</code>  格式化查询到的数据</p>
+<p>示例：</p>
+<pre><code>db.web.find();
+&#123; &quot;_id&quot; : ObjectId(&quot;5e70f05a7de50c32cd5380c9&quot;), &quot;name&quot; : &quot;ghost&quot;, &quot;age&quot; : 10 &#125;</code></pre><h3 id="2-3-3- 修改数据"><a href="#2-3-3- 修改数据" class="headerlink" title="2.3.3 修改数据"></a>2.3.3 修改数据</h3><p><code>db. 集合名.update(&#123; 查询条件 &#125;,&#123; 修改的目标 &#125;);</code></p>
+<p><code>db. 集合名.update(&#123; 查询条件 &#125;,&#123;$set:&#123;&#39; 键名 &#39;:&#39; 新的值 &#39;&#125;&#125;);</code> 修改指定键名的值</p>
+<p>示例：</p>
+<pre><code>db.web.update(&#123;&quot;name&quot;:&quot;a1&quot;&#125;, &#123;&quot;age&quot;:10&#125;);
+db.web.update(&#123;&quot;name&quot;:&quot;a1&quot;&#125;, &#123;$set:&#123;&quot;age&quot;:10&#125;&#125;);</code></pre><h3 id="2-3-4- 删除数据"><a href="#2-3-4- 删除数据" class="headerlink" title="2.3.4 删除数据"></a>2.3.4 删除数据 </h3><p><code>db.users.remove(&#123;&#125;);</code> 删除集合中全部数据</p>
+<p><code>db.users.remove(&#123; 查询条件 &#125;);</code>删除集合中全部数据</p>
+<p>示例：</p>
+<pre><code>db.users.remove(&#123;&quot;name&quot;: &quot;lecaf&quot;&#125;)   
+删除 users 集合下 name=”lecaf”的数据</code></pre><h1 id="3- 高级命令"><a href="#3- 高级命令" class="headerlink" title="3. 高级命令"></a>3. 高级命令</h1><h2 id="3-1- 按条件查询"><a href="#3-1- 按条件查询" class="headerlink" title="3.1 按条件查询"></a>3.1 按条件查询</h2><h3 id="3-1-1- 根据条件查询"><a href="#3-1-1- 根据条件查询" class="headerlink" title="3.1.1 根据条件查询"></a>3.1.1 根据条件查询</h3><p><code>db. 集合名.find(&#123; 查询条件 &#125;);</code></p>
+<p>示例：</p>
+<pre><code>db.singer.find(&#123;&quot;sex&quot;:&quot; 男 &quot;&#125;)；</code></pre><h3 id="3-1-2-gt- 大于"><a href="#3-1-2-gt- 大于" class="headerlink" title="3.1.2 $gt 大于"></a>3.1.2 $gt 大于</h3><p><code>db. 集合名.find(&#123;&quot; 键名 &quot;:&#123;$gt: 值 &#125;&#125;);</code></p>
+<p>示例：</p>
+<pre><code>`db.singer.find(&#123;&quot;age&quot;:&#123;$gt:50&#125;&#125;);`
+查询所有年龄大于 50 的歌手</code></pre><h3 id="3-1-3-lt- 小于"><a href="#3-1-3-lt- 小于" class="headerlink" title="3.1.3 $lt 小于"></a>3.1.3 $lt 小于</h3><p><code>db. 集合名.find(&#123;&quot; 键名 &quot;:&#123;$lt: 值 &#125;&#125;);</code></p>
+<h3 id="3-1-4-gte- 大于等于"><a href="#3-1-4-gte- 大于等于" class="headerlink" title="3.1.4 $gte 大于等于"></a>3.1.4 $gte 大于等于</h3><p><code>db. 集合名.find(&#123;&quot; 键名 &quot;:&#123;$gte: 值 &#125;&#125;);</code></p>
+<h3 id="3-1-5-lte- 大于等于"><a href="#3-1-5-lte- 大于等于" class="headerlink" title="3.1.5 $lte 大于等于"></a>3.1.5 $lte 大于等于</h3><p><code>db. 集合名.find(&#123;&quot; 键名 &quot;:&#123;$lte: 值 &#125;&#125;);</code></p>
+<h3 id="3-1-6- 选择区间"><a href="#3-1-6- 选择区间" class="headerlink" title="3.1.6 选择区间"></a>3.1.6 选择区间</h3><p><code>db. 集合名.find(&#123;&quot; 键名 &quot;:&#123;$gt: 值 1,$lt: 值 2&#125;&#125;);</code></p>
+<h3 id="3-1-7-ne- 不等于"><a href="#3-1-7-ne- 不等于" class="headerlink" title="3.1.7 $ne 不等于"></a>3.1.7 $ne 不等于</h3><p><code>db. 集合名.find(&#123;&quot; 键名 &quot;:&#123;$ne: 值 &#125;&#125;);</code></p>
+<h3 id="3-1-8-in- 在集合中"><a href="#3-1-8-in- 在集合中" class="headerlink" title="3.1.8 $in 在集合中"></a>3.1.8 $in 在集合中</h3><p><code>db. 集合名.find(&#123;&quot; 键名 &quot;:&#123;$in:&#123; 值 1, 值 2, 值 n&#125;&#125;&#125;);</code></p>
+<h3 id="3-1-9-nin- 不在集合中"><a href="#3-1-9-nin- 不在集合中" class="headerlink" title="3.1.9 $nin 不在集合中"></a>3.1.9 $nin 不在集合中</h3><p><code>db. 集合名.find(&#123;&quot; 键名 &quot;:&#123;$nin:&#123; 值 1, 值 2, 值 n&#125;&#125;&#125;);</code></p>
+<h3 id="3-1-10-size- 值的个数"><a href="#3-1-10-size- 值的个数" class="headerlink" title="3.1.10 $size 值的个数"></a>3.1.10 $size 值的个数</h3><p><code>db. 集合名.find(&#123;&quot; 键名 &quot;:&#123;$size:num&#125;&#125;);</code></p>
+<p>示例：</p>
+<pre><code>`db.singers.find(&#123;&quot;works&quot;:&#123;$size:2&#125;&#125;);`</code></pre><h3 id="3-1-11-exists- 是否存在某个键名"><a href="#3-1-11-exists- 是否存在某个键名" class="headerlink" title="3.1.11 $exists 是否存在某个键名"></a>3.1.11 $exists 是否存在某个键名</h3><p><code>db. 集合名.find(&#123;&quot; 键名 &quot;:&#123;$exists:true|false&#125;&#125;);</code></p>
+<h3 id="3-1-12-or- 存在任意一个"><a href="#3-1-12-or- 存在任意一个" class="headerlink" title="3.1.12 $or 存在任意一个"></a>3.1.12 $or 存在任意一个</h3><p><code>db. 集合名.find(&#123;$or:[条件 1, 条件 2, 条件 n]&#125;);</code></p>
+<h3 id="3-1-13- 模糊查询"><a href="#3-1-13- 模糊查询" class="headerlink" title="3.1.13 模糊查询"></a>3.1.13 模糊查询</h3><p><code>db. 集合名.find(&#123;&quot; 键名 &quot;, 值 &#125;);</code></p>
+<p>示例：</p>
+<pre><code>db.singers.find(&#123;&quot;name&quot;,/xx/&#125;);   #查出含 XX 的歌手
+
+db.singers.find(&#123;&#39;name&#39;:/^xx/&#125;)； #查出所有以 xx 开头的歌手
+
+db.singers.find(&#123;&#39;name&#39;:/xx^/&#125;)； #查出所有以 xx 结尾的歌手
+
+db.singers.find(&#123;&#39;name&#39;:/xx/i&#125;)； #查出所有含 xx（忽略大小写）的歌手</code></pre><h2 id="3-2- 排序"><a href="#3-2- 排序" class="headerlink" title="3.2 排序"></a>3.2 排序</h2><p><code>db. 集合名.find(&#123;&#125;).sort(&#123;&quot; 键名 1&quot;:1,&quot; 键名 2&quot;:-1&#125;)</code></p>
+<p>1：升序</p>
+<p>-1：降序</p>
+<h2 id="3-3- 限制输出"><a href="#3-3- 限制输出" class="headerlink" title="3.3 限制输出"></a>3.3 限制输出</h2><h3 id="3-3-1-limit"><a href="#3-3-1-limit" class="headerlink" title="3.3.1 limit()"></a>3.3.1 limit()</h3><p><code>db. 集合名.find(&#123;&#125;).limit(n)</code></p>
+<p>示例：</p>
+<pre><code>db. 集合名.find(&#123;&#125;).sort(&#123;&quot;age&quot;:1&#125;).limit(3)
+找出年龄最小的三个歌手</code></pre><h3 id="3-3-2-skip"><a href="#3-3-2-skip" class="headerlink" title="3.3.2 skip()"></a>3.3.2 skip()</h3><p><code>db. 集合名.find(&#123;&#125;).skip(n)</code></p>
+<p>示例：</p>
+<pre><code>db. 集合名.find(&#123;&#125;).sort(&#123;&quot;age&quot;:1&#125;).skip(3).limit(3)
+找出年龄最小的三个以外的 2 个歌手 </code></pre><p> 这个方法通常的用法是实现分页。</p>
+<h2 id="3-4- 数据类型"><a href="#3-4- 数据类型" class="headerlink" title="3.4 数据类型"></a>3.4 数据类型</h2><p>Mongdb 中常见的数据类型：</p>
+<p>● Object ID： ⽂档 ID<br>● String： 字符串， 最常⽤， 必须是有效的 UTF-8<br>● Boolean： 存储⼀个布尔值， true 或 false<br>● Integer： 整数可以是 32 位或 64 位， 这取决于服务器<br>● Double： 存储浮点值<br>● Arrays： 数组或列表， 多个值存储到⼀个键<br>● Object： ⽤于嵌⼊式的⽂档， 即⼀个值为⼀个⽂档<br>● Null： 存储 Null 值<br>● Timestamp： 时间戳， 表示从 1970-1-1 到现在的总秒数<br>● Date： 存储当前⽇期或时间的 UNIX 时间格式</p>
+<h3 id="3-4-1-Object-ID"><a href="#3-4-1-Object-ID" class="headerlink" title="3.4.1 Object ID"></a>3.4.1 Object ID</h3><p>每个文档都有一个属性，为_id，以保证每个文档的唯一性。mongodb 默认使用 id 作为主键。</p>
+<p>可以自己指定设置，也可以自动生成。</p>
+<p>默认生成的 Object ID 是十六进制的 12 位数。</p>
+<h1 id="4- 聚合与分组"><a href="#4- 聚合与分组" class="headerlink" title="4. 聚合与分组"></a>4. 聚合与分组</h1><h2 id="4-1- 聚合"><a href="#4-1- 聚合" class="headerlink" title="4.1 聚合"></a>4.1 聚合</h2><pre><code>db. 集合名.aggregate([
+                    &#123; 管道 1:&#123; 表达式 1&#125;&#125;,
+                    &#123; 管道 2:&#123; 表达式 2&#125;&#125;,
+                    &#123; 管道 3:&#123; 表达式 3&#125;&#125;,
+                    ])</code></pre><p>管道：管道一般用于将当前的命令的输出结果作为下一个命令的输入，在 mongodb 中，管道具有同样的作用，文档处理完毕后，通过管道进行下一次的处理。</p>
+<p><strong>常用的管道：</strong></p>
+<ul>
+<li>$project：修改输入文档的结构。可以用来重命名、增加或删除域，也可以用于创建计算结果以及嵌套文档。</li>
+<li>$match：用于过滤数据，只输出符合条件的文档。$match 使用 MongoDB 的标准查询操作。</li>
+<li>$limit：用来限制 MongoDB 聚合管道返回的文档数。</li>
+<li>$skip：在聚合管道中跳过指定数量的文档，并返回余下的文档。</li>
+<li>$unwind：将文档中的某一个数组类型字段拆分成多条，每条包含数组中的一个值。</li>
+<li>$group：将集合中的文档分组，可用于统计结果。</li>
+<li>$sort：将输入文档排序后输出。</li>
+<li>$geoNear：输出接近某一地理位置的有序文档。</li>
+</ul>
+<p><strong>常用的表达式：</strong></p>
+<ul>
+<li><p>$sum：对目标键对应的值计算总和。</p>
+</li>
+<li><p>$avg：对目标键对应的值计算平均值。</p>
+</li>
+<li><p>$min：取目标键对应的值的最小值。</p>
+</li>
+<li><p>$max：取目标键对应的值的最大值。</p>
+</li>
+<li><p>$push：取出目标值组成一个数组</p>
+</li>
+<li><p>$addToSet：在结果文档中插入值到一个数组中，但不创建副本。</p>
+</li>
+<li><p>$first：取目标键对应的值的第一个文档数据。</p>
+</li>
+<li><p>$last：取目标键对应的值的最后一个文档数据。</p>
+</li>
+</ul>
+<p>更多请参阅官方文档。</p>
+<h2 id="4-2- 聚合示例"><a href="#4-2- 聚合示例" class="headerlink" title="4.2 聚合示例"></a>4.2 聚合示例 </h2><h3 id="4-2-1-group"><a href="#4-2-1-group" class="headerlink" title="4.2.1 $group"></a>4.2.1 $group</h3><p> 作用：分组</p>
+<pre><code>db. 集合名.aggreate(
+     &#123;$group:
+         &#123;
+         _id:&#39;$ 字段名 &#39;
+         别名：&#123;$ 聚合函数：&#39;$ 字段名 &#39;&#125;
+         &#125;
+      &#125;)</code></pre><p>示例：</p>
+<pre><code>统计男和女生的总人数
+db.singer.aggreate(
+     &#123;$group:
+         &#123;
+         _id:&#39;$sex&#39;,
+         count：&#123;$sum：1&#125;
+         &#125;
+      &#125;)
+输出结果：
+&lt;&quot;_id&quot;:&quot; 男 &quot;,&quot;count&quot;:11&gt;
+&lt;&quot;_id&quot;:&quot; 女 &quot;,&quot;count&quot;:4&gt;
+
+统计男和女生的总人数及名单
+db.singer.aggreate(
+     &#123;$group:
+         &#123;
+         _id:null,
+         总人数:&#123;$sum：1&#125;
+         平均年龄:&#123;&#39;$avg&#39;:&#39;$age&#39;&#125;
+         名单:&#123;$push:&#39;$name&#39;&#125;
+         &#125;
+      &#125;)
+输出结果：
+&lt;&quot;_id&quot;:null,&quot; 总人数 &quot;:15,&quot; 平均年龄 &quot;:42.666,&quot; 名单 &quot;:[&#39; 刘德华 &#39;,&#39; 许嵩 &#39;,&#39; 周华健 &#39;……]&gt;</code></pre><h3 id="4-2-2-match"><a href="#4-2-2-match" class="headerlink" title="4.2.2 $match"></a>4.2.2 $match</h3><p>作用：过滤</p>
+<pre><code>db. 集合名.aggreate(&#123;$match:&#123;&quot; 键名 &quot;:&#123;$gt:30&#125;&#125;&#125;)</code></pre><p>示例：</p>
+<pre><code>对年龄大于 40 的歌手进行性别分组统计
+db.singer.aggreate([
+     &#123;$match:&#123;&quot;age&quot;:&#123;$gt:40&#125;&#125;&#125;,
+     &#123;$group:&#123;_id:&#39;$sex&#39;, 总人数:&#123;$sum:1&#125;&#125;&#125;
+     ])
+输出结果：
+&lt;&quot;_id&quot;:&quot; 男 &quot;,&quot; 总人数 &quot;:8&gt;
+&lt;&quot;_id&quot;:&quot; 女 &quot;,&quot; 总人数 &quot;:1&gt;</code></pre><h3 id="4-2-3-project"><a href="#4-2-3-project" class="headerlink" title="4.2.3 $project"></a>4.2.3 $project</h3><p>作用：限定输出字段</p>
+<pre><code>db. 集合名.aggreate(&#123;$project:&#123;&quot; 键名 &quot;:1)  //1 表示显示，0 表示不显示 </code></pre><p> 示例：</p>
+<pre><code>找出年龄大于 50 的选手，只显示姓名和年龄
+db.singer.aggreate([
+     &#123;$match:&#123;&quot;age&quot;:&#123;$gt:50&#125;&#125;&#125;,
+     &#123;$group:&#123;_id:0,name:1,age:1&#125;&#125;
+     ])</code></pre><h3 id="4-2-4-sort"><a href="#4-2-4-sort" class="headerlink" title="4.2.4 $sort"></a>4.2.4 $sort</h3><p>作用：排序</p>
+<pre><code>db. 集合名.aggreate(&#123;$project:&#123;&quot; 键名 &quot;:1|-1&#125;&#125;)  //1 表示升序，-1 表示降序 </code></pre><p> 示例：</p>
+<pre><code>db.singer.aggreate([
+     &#123;$match:&#123;&quot;age&quot;:&#123;$gt:50&#125;&#125;&#125;,
+     &#123;$group:&#123;_id:0,name:1,age:1&#125;&#125;,
+     &#123;$sort:&#123;age:1&#125;&#125;,
+     &#123;$limit:3&#125;
+     ])</code></pre><h3 id="4-2-5-skip"><a href="#4-2-5-skip" class="headerlink" title="4.2.5 $skip"></a>4.2.5 $skip</h3><p>作用：跳过</p>
+<pre><code>db. 集合名.aggreate(&#123;$skip:n&#125;)  </code></pre><h3 id="4-2-6-unwind"><a href="#4-2-6-unwind" class="headerlink" title="4.2.6 $unwind"></a>4.2.6 $unwind</h3><p>作用：拆分字段</p>
+<pre><code>db. 集合名.aggreate(&#123;$unwind:&quot; 键名 &quot;&#125;)  </code></pre><h1 id="5- 安全"><a href="#5- 安全" class="headerlink" title="5. 安全"></a>5. 安全 </h1><h2 id="5-1- 进入管理平台"><a href="#5-1- 进入管理平台" class="headerlink" title="5.1 进入管理平台"></a>5.1 进入管理平台</h2><p> 首先以无密码形式登陆：<code>mongo</code></p>
+<h2 id="5-2- 创建管理员"><a href="#5-2- 创建管理员" class="headerlink" title="5.2 创建管理员"></a>5.2 创建管理员 </h2><p> 新建数据库：admin</p>
+<p><code>use admin</code></p>
+<p>创建用户名及密码</p>
+<p><code>db.createUser(&#123;user:&quot;admin&quot;,pwd:&quot;123&quot;,roles:[&quot;root&quot;]&#125;)</code></p>
+<h2 id="5-3- 验证账户和密码"><a href="#5-3- 验证账户和密码" class="headerlink" title="5.3 验证账户和密码"></a>5.3 验证账户和密码</h2><p><code>db.auth(&quot;admin&quot;,&quot;123&quot;)</code></p>
+<h2 id="5-4- 挂起需要验证的服务"><a href="#5-4- 挂起需要验证的服务" class="headerlink" title="5.4 挂起需要验证的服务"></a>5.4 挂起需要验证的服务 </h2><p> 先停止已有的服务，并卸载：<code>sc delete mongodb</code></p>
+<p>重新挂载服务：</p>
+<p><code>mongod -dppath D:\Database\Mongodb\data --logpath D:\Database\Mongodb\log  --install --serviceName &quot;Mongodb&quot; --auth</code></p>
+<p>–auth 开启需要身份验证</p>
+<p>服务可以临时挂起多个。</p>
+<h2 id="5-5- 测试账户"><a href="#5-5- 测试账户" class="headerlink" title="5.5 测试账户"></a>5.5 测试账户</h2><p><code>show dbs</code> 会显示 无法访问，需要身份验证</p>
+<p>切换到 admin 数据库，再验证。</p>
+<p><code>db.auth(账户, 密码)</code></p>
+<h2 id="5-6- 为指定数据库添加用户"><a href="#5-6- 为指定数据库添加用户" class="headerlink" title="5.6 为指定数据库添加用户"></a>5.6 为指定数据库添加用户</h2><p><code>db.createUser(&#123;user:&quot;itsource&quot;,pwd:&quot;123&quot;,roles:[&#123;role:&quot;dbOwer&quot;,db:&quot;python&quot;&#125;]&#125;)</code></p>
+<h1 id="6- 主从服务器"><a href="#6- 主从服务器" class="headerlink" title="6. 主从服务器"></a>6. 主从服务器 </h1><p> 主从服务器：也叫复制，将数据同步在多个服务器的过程。主服务器用来写，从服务器用来读。</p>
+<p>复制提供了数据的冗余备份，并在多个服务器上存储数据副本，提高了数据的可用性， 并可以保证数据的安全性。</p>
+<p>复制还允许您从硬件故障和服务中断中恢复数据。</p>
+<ul>
+<li><p>复制原理</p>
+<p>mongodb 的复制至少需要两个节点。其中一个是主节点，负责处理客户端请求，其余的都是从节点，负责复制主节点上的数据。</p>
+<p>mongodb 各个节点常见的搭配方式为：一主一从、一主多从。</p>
+<p>主节点记录在其上的所有操作 oplog，从节点定期轮询主节点获取这些操作，然后对自己的数据副本执行这些操作，从而保证从节点的数据与主节点一致。</p>
+</li>
+<li><p>为什么要复制</p>
+<p>数据备份</p>
+<p>数据灾难恢复</p>
+<p>读写分离</p>
+<p>数据可用性高</p>
+<p>无宕机维护</p>
+<p>副本集对应的程序是透明</p>
+</li>
+</ul>
+<h2 id="6-1- 设置复制节点"><a href="#6-1- 设置复制节点" class="headerlink" title="6.1 设置复制节点"></a>6.1 设置复制节点 </h2><h3 id="6-1-1- 创建数据库目录"><a href="#6-1-1- 创建数据库目录" class="headerlink" title="6.1.1 创建数据库目录"></a>6.1.1 创建数据库目录</h3><p> 创建两个数据库目录，如 db1，db2，用于挂起两个 mongodb 服务。</p>
+<h3 id="6-1-2- 启动 mongodb 服务"><a href="#6-1-2- 启动 mongodb 服务" class="headerlink" title="6.1.2 启动 mongodb 服务"></a>6.1.2 启动 mongodb 服务 </h3><p> 使用如下格式启动 mongod，注意 replSet 的名称是一样的。</p>
+<p><code>mongod --bind_ip 192.168.0.104 --port 27017 --dbpath d:\Database\Mongodb\db1 --replSet rs0</code></p>
+<p><code>mongod --bind_ip 192.168.0.104 --port 27018 --dbpath d:\Database\Mongodb\db2 --replSet rs0</code></p>
+<p><strong>注意上面的要写自己的 ip，开两个命令行分别输入以上两个命令，这两个服务器同属于集群 rs0。</strong></p>
+<h3 id="6-1-3- 连接服务器"><a href="#6-1-3- 连接服务器" class="headerlink" title="6.1.3 连接服务器"></a>6.1.3 连接服务器 </h3><p> 连接服务器，此处设置 <code>192.168.0.104:27017</code> 为主服务器。再打开一个命令行，输入：</p>
+<p><code>mongo --host 192.168.0.104 --port 27017</code></p>
+<p>先连接的为主服务器。</p>
+<h3 id="6-1-4- 初始化"><a href="#6-1-4- 初始化" class="headerlink" title="6.1.4 初始化"></a>6.1.4 初始化</h3><p><code>rs.initiate()</code></p>
+<h3 id="6-1-5- 查看当前状态"><a href="#6-1-5- 查看当前状态" class="headerlink" title="6.1.5 查看当前状态"></a>6.1.5 查看当前状态</h3><p><code>rs.status()</code></p>
+<h3 id="6-1-6- 添加副本集"><a href="#6-1-6- 添加副本集" class="headerlink" title="6.1.6 添加副本集"></a>6.1.6 添加副本集</h3><p><code>rs.add(&quot;192.168.0.104:27018&quot;)</code></p>
+<h3 id="6-1-7- 连接从服务器"><a href="#6-1-7- 连接从服务器" class="headerlink" title="6.1.7 连接从服务器"></a>6.1.7 连接从服务器</h3><p><code>mongo --host 192.168.0.104 --port 27018</code></p>
+<h3 id="6-1-8- 在从服务器中查询"><a href="#6-1-8- 在从服务器中查询" class="headerlink" title="6.1.8 在从服务器中查询"></a>6.1.8 在从服务器中查询 </h3><p> 在从服务器中进行读操作，需要设置：</p>
+<p><code>rs.slaveOk()</code></p>
+<p><code>db.users,find()</code></p>
+<h3 id="6-1-9- 其他"><a href="#6-1-9- 其他" class="headerlink" title="6.1.9 其他"></a>6.1.9 其他 </h3><p> 主从切换：主从服务器可以自行切换，无需人为设置</p>
+<pre><code>主服务器标志：
+rs0:PRIMARY&gt;
+
+从服务器标志：
+rs0:SECONDARY&gt;</code></pre><p>删除从节点：</p>
+<p><code>rs.remove(&quot;192.168.0.104:27018&quot;)</code></p>
+<h1 id="7- 备份与恢复"><a href="#7- 备份与恢复" class="headerlink" title="7. 备份与恢复"></a>7. 备份与恢复 </h1><h2 id="7-1- 备份"><a href="#7-1- 备份" class="headerlink" title="7.1 备份"></a>7.1 备份</h2><p> 语法：<code>mongodump --h dbhost -d dbname -o dbdirectory</code></p>
+<p>-h：指定服务器地址，也可指定端口号</p>
+<p>-d：需要备份的数据库名称</p>
+<p>-o：备份数据存放的位置，此目录中存放这备份出来的数据</p>
+<p>示例：</p>
+<pre><code>mongodump --h 127.0.0.1:27017 -d itsource -o d:\bakup</code></pre><p><strong>注意：备份前保证服务器在后台开着</strong></p>
+<h2 id="7-2- 恢复"><a href="#7-2- 恢复" class="headerlink" title="7.2 恢复"></a>7.2 恢复 </h2><p> 语法：<code>mongorestore --h dbhost -d dbname --dir dbdirectory</code></p>
+<p>-h：指定服务器地址，也可指定端口号</p>
+<p>-d：需要恢复的数据库名称</p>
+<p>-o：备份数据存放的位置。</p>
+<h1 id="8-python 操作"><a href="#8-python 操作" class="headerlink" title="8. python 操作"></a>8. python 操作 </h1><p> 官方文档：<a target="_blank" rel="noopener" href="https://pymongo.readthedocs.io/en/stable/tutorial.html">https://pymongo.readthedocs.io/en/stable/tutorial.html</a></p>
+<p>首先安装 python 包：<code>pip install pymongo</code></p>
+<h2 id="8-1- 连接数据库"><a href="#8-1- 连接数据库" class="headerlink" title="8.1 连接数据库"></a>8.1 连接数据库</h2><pre><code class="python">import pymongo
+client = pymongo.MongoClient(&#39;localhost&#39;, 27017)
+db=client[&#39;itsource&#39;]</code></pre>
+<h2 id="8-2- 插入数据"><a href="#8-2- 插入数据" class="headerlink" title="8.2 插入数据"></a>8.2 插入数据</h2><pre><code class="python">db.admin.insert_one(&#123;&#39;name&#39;:&#39; 小明 &#39;,&#39;age&#39;:&#39;18&#39;&#125;)  // 插入一条数据
+db.admin.insert_many([&#123;&#39;name&#39;:&#39; 小明 &#39;,&#39;age&#39;:&#39;18&#39;&#125;,&#123;&#39;name&#39;:&#39; 张飞 &#39;,&#39;age&#39;:&#39;27&#39;&#125;]) 
+// 插入多条数据</code></pre>
+<h2 id="8-3- 读取数据"><a href="#8-3- 读取数据" class="headerlink" title="8.3 读取数据"></a>8.3 读取数据</h2><pre><code class="python">data=db.admin.find_one()  // 读取一条数据
+datas=db.admin.find()   // 这里得到的游标，可通过遍历游标获取数据
+for data in datas:
+    print(data)
+print(datas.count) // 打印读取到的数据数目</code></pre>
+<p>还可按条件获取数据：</p>
+<pre><code>datas=db.admin.find(&#39; 条件 &#39;)</code></pre><p>条件语法结构可参照【3.1】</p>
+<h2 id="8-4- 修改文档"><a href="#8-4- 修改文档" class="headerlink" title="8.4 修改文档"></a>8.4 修改文档 </h2><pre><code>db.admin.update_one(filter=&#123; 查询条件 &#125;,update=&#123;&#39;$set&#39;:&#123; 修改目标 &#125;&#125;)</code></pre><p> 示例：</p>
+<pre><code>db.admin.update_one(filter=&#123;&#39;name&#39;:&#39; 小明 &#39;&#125;,update=&#123;&#39;$set&#39;:&#123;&#39;age&#39;:18&#125;&#125;)</code></pre><h2 id="8-5- 删除数据"><a href="#8-5- 删除数据" class="headerlink" title="8.5 删除数据"></a>8.5 删除数据 </h2><p> 语法：<code>db.admin.delete_one(&#123; 条件 &#125;)</code></p>
+<p><code>db.admin.delete_many(&#123; 条件 &#125;)</code></p>
+<p>示例：</p>
+<pre><code>db.admin.delete_many(&#123;&#39;name&#39;:&#39; 小明 &#39;&#125;)</code></pre>
+      
+       <hr><span style="font-style: italic;color: gray;"> 欢迎各位看官及技术大佬前来交流指导呀，可以邮件至 jqiange@yeah.net </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2021 Jqiange
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

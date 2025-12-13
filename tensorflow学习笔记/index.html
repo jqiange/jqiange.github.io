@@ -1,0 +1,2690 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>tensorflow 学习笔记 | jqiange</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="tensorflow 学习笔记 | jqiange">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="人畜无害的姜小强">
+<meta property="og:url" content="https://jqiange.github.io/about/index.html">
+<meta property="og:site_name" content="jqiange">
+<meta property="og:description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+<meta property="article:published_time" content="2020-02-18T08:21:04.000Z">
+<meta property="article:modified_time" content="2025-12-13T05:23:10.695Z">
+<meta property="article:author" content="姜小强">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+
+
+<link rel="icon" href="/img/jqiange.png">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/jqiange.png"/>
+</a>
+<div class="author">
+    <span>姜小强</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/jqiange"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(58)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(9)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据库">
+                        
+                        数据库
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="每日一学">
+                        
+                        每日一学
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="爬虫">
+                        
+                        爬虫
+                        <small>(10)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="前端">
+                        
+                        前端
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="深度学习">
+                        
+                        深度学习
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据分析">
+                        
+                        数据分析
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="chip">
+                        
+                        chip
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="CPP">
+                        
+                        CPP
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Linux">
+                        
+                        Linux
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="python">
+                        
+                        python
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="58">
+<input type="hidden" id="yelog_site_word_count" value="251.9k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSS-Xpath</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Markdown</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Matplotlib</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Mysql</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Numpy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pandas</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pip</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pyecharts</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pygal</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pymysql-ORM</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>RE</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Redis</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Scrapy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Seaborn</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Selenium</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>yield</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="全部文章 python "
+           href="/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%A6%E8%A7%A3/"
+           data-tag="RE"
+           data-author="" >
+            <span class="post-title" title="正则表达式详解">正则表达式详解</span>
+            <span class="post-date" title="2020-02-26 09:25:46">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/tcl%E4%B8%8Eopc/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 与 opc">tcl 与 opc</span>
+            <span class="post-date" title="2025-09-24 13:36:07">2025/09/24</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/hexo%E6%96%87%E7%AB%A0%E5%8A%A0%E5%AF%86%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="hexo 文章加密方法">hexo 文章加密方法</span>
+            <span class="post-date" title="2025-09-21 22:33:03">2025/09/21</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/tcl%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 语言入门">tcl 语言入门</span>
+            <span class="post-date" title="2025-09-14 22:43:20">2025/09/14</span>
+        </a>
+        
+        <a  class="全部文章 每日一学 "
+           href="/%E6%95%85%E4%BA%8B%E4%BC%9A%E4%B8%8E%E4%BC%81%E4%B8%9A%E8%82%A1%E6%9D%83%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="故事会与企业股权架构设计">故事会与企业股权架构设计</span>
+            <span class="post-date" title="2025-08-30 09:42:43">2025/08/30</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%AE%A1%E7%AE%97%E5%85%89%E5%88%BBOPC%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="计算光刻 OPC 名词解释">计算光刻 OPC 名词解释</span>
+            <span class="post-date" title="2025-08-26 21:44:36">2025/08/26</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%8A%AF%E7%89%87%E5%88%B6%E9%80%A0%E6%B5%81%E7%A8%8B%E4%B8%8E%E5%B7%A5%E8%89%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="芯片制造流程与工艺">芯片制造流程与工艺</span>
+            <span class="post-date" title="2025-06-14 12:13:17">2025/06/14</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E8%81%8C%E5%9C%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入职场">C++ 入职场</span>
+            <span class="post-date" title="2024-06-22 15:52:55">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/Protocol-Buffers-%E5%85%A5%E9%97%A8%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Protocol Buffers 入门使用">Protocol Buffers 入门使用</span>
+            <span class="post-date" title="2024-06-22 15:50:39">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-python%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B-boost/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++python 混合编程 -boost">C++python 混合编程 -boost</span>
+            <span class="post-date" title="2024-06-22 15:36:18">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B%E4%B8%8E%E6%A8%A1%E6%9D%BF/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 泛型编程与模板">C++ 泛型编程与模板</span>
+            <span class="post-date" title="2024-06-22 15:27:49">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入门学习笔记">C++ 入门学习笔记</span>
+            <span class="post-date" title="2024-06-22 14:53:46">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 Linux "
+           href="/shell%E7%BC%96%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="shell 编程">shell 编程</span>
+            <span class="post-date" title="2022-03-07 20:24:24">2022/03/07</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Git 版本控制工具">Git 版本控制工具</span>
+            <span class="post-date" title="2022-03-05 23:23:45">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Hexo%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E4%B8%8E%E5%A4%9A%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hexo 博客迁移与多平台使用">Hexo 博客迁移与多平台使用</span>
+            <span class="post-date" title="2022-03-05 01:26:56">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%B8%8E%E9%87%8D%E9%9A%BE%E7%82%B9%E6%B1%87%E6%80%BB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的基础知识与重难点汇总">python 中的基础知识与重难点汇总</span>
+            <span class="post-date" title="2020-11-17 23:05:15">2020/11/17</span>
+        </a>
+        
+        <a  class="全部文章 前端 "
+           href="/javascript%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="JavaScript 入门">JavaScript 入门</span>
+            <span class="post-date" title="2020-11-09 20:46:08">2020/11/09</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E8%AF%AD%E6%B3%95%E7%B3%96/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的语法糖">python 中的语法糖</span>
+            <span class="post-date" title="2020-11-06 10:53:29">2020/11/06</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E8%BF%9B%E7%A8%8B%EF%BC%8C%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%8D%8F%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的进程，线程与协程">python 中的进程，线程与协程</span>
+            <span class="post-date" title="2020-11-04 21:29:16">2020/11/04</span>
+        </a>
+        
+        <a  class="全部文章 Linux "
+           href="/linux%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="linux 常见命令学习">linux 常见命令学习</span>
+            <span class="post-date" title="2020-06-17 22:33:28">2020/06/17</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="机器学习经典算法">机器学习经典算法</span>
+            <span class="post-date" title="2020-06-16 10:36:50">2020/06/16</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/tensorflow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tensorflow 学习笔记">tensorflow 学习笔记</span>
+            <span class="post-date" title="2020-06-05 01:49:53">2020/06/05</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/%E6%B7%B1%E5%BA%A6%E7%90%86%E8%A7%A3%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="深度理解卷积神经网络工作原理">深度理解卷积神经网络工作原理</span>
+            <span class="post-date" title="2020-06-04 13:24:45">2020/06/04</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E7%88%AC%E8%99%AB%E7%9A%84%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫的定时执行">爬虫的定时执行</span>
+            <span class="post-date" title="2020-04-06 22:44:47">2020/04/06</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/Token-%EF%BC%8CCookie%E5%92%8CSession%E7%9A%84%E5%8C%BA%E5%88%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Token ，Cookie 和 Session 的区别">Token ，Cookie 和 Session 的区别</span>
+            <span class="post-date" title="2020-04-03 10:46:54">2020/04/03</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E5%9C%A8python%E4%B8%AD%E8%BF%9B%E8%A1%8C%E8%A7%86%E9%A2%91-%E9%9F%B3%E9%A2%91%E5%A4%84%E7%90%86%E5%8F%8A%E5%90%88%E5%B9%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="在 python 中进行视频 - 音频处理及合并">在 python 中进行视频 - 音频处理及合并</span>
+            <span class="post-date" title="2020-03-29 10:56:44">2020/03/29</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8BJS%E8%A7%A3%E5%AF%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之 JS 解密">反反爬虫之 JS 解密</span>
+            <span class="post-date" title="2020-03-24 10:04:43">2020/03/24</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E7%90%86%E8%A7%A3python%E4%B8%AD%E7%9A%84%E9%97%AD%E5%8C%85%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="理解 python 中的闭包与装饰器">理解 python 中的闭包与装饰器</span>
+            <span class="post-date" title="2020-03-21 17:34:45">2020/03/21</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Mongodb%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Mongodb 数据库入门">Mongodb 数据库入门</span>
+            <span class="post-date" title="2020-03-17 22:50:33">2020/03/17</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%8A%A0%E4%B8%AA%E7%A9%BA%E6%A0%BC%E5%91%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="为什么不加个空格呢">为什么不加个空格呢</span>
+            <span class="post-date" title="2020-03-14 13:53:44">2020/03/14</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8/"
+           data-tag="yield"
+           data-author="" >
+            <span class="post-title" title="迭代器与生成器">迭代器与生成器</span>
+            <span class="post-date" title="2020-03-13 21:58:25">2020/03/13</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E6%BB%91%E5%9D%97%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之滑块验证码">反反爬虫之滑块验证码</span>
+            <span class="post-date" title="2020-03-08 21:00:17">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E5%9B%BE%E7%89%87%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之图片验证码">反反爬虫之图片验证码</span>
+            <span class="post-date" title="2020-03-08 16:16:16">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Python%E6%93%8D%E4%BD%9CRedis/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Python 操作 Redis">Python 操作 Redis</span>
+            <span class="post-date" title="2020-03-07 16:15:44">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy-Redis%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Scrapy-Redis 分布式爬虫">Scrapy-Redis 分布式爬虫</span>
+            <span class="post-date" title="2020-03-07 15:35:50">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%ABRequest%E5%8E%BB%E9%87%8D%E5%8F%8A%E8%BF%87%E6%BB%A4%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫 Request 去重及过滤器">爬虫 Request 去重及过滤器</span>
+            <span class="post-date" title="2020-03-07 15:22:23">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Redis%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Redis 数据库">Redis 数据库</span>
+            <span class="post-date" title="2020-03-06 20:30:00">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Pymysql%E4%B8%8EORM%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="pymysql-ORM"
+           data-author="" >
+            <span class="post-title" title="Pymysql 与 ORM 操作数据库">Pymysql 与 ORM 操作数据库</span>
+            <span class="post-date" title="2020-03-06 10:49:03">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/MySql%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Mysql"
+           data-author="" >
+            <span class="post-title" title="MySql 数据库">MySql 数据库</span>
+            <span class="post-date" title="2020-03-04 23:31:02">2020/03/04</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy%E6%A1%86%E6%9E%B6%E7%88%AC%E8%99%AB/"
+           data-tag="Scrapy"
+           data-author="" >
+            <span class="post-title" title="Scrapy 框架爬虫">Scrapy 框架爬虫</span>
+            <span class="post-date" title="2020-03-02 10:44:55">2020/03/02</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="多线程与多进程爬虫">多线程与多进程爬虫</span>
+            <span class="post-date" title="2020-03-01 15:33:08">2020/03/01</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Selenium%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%A8%A1%E6%8B%9F/"
+           data-tag="Selenium"
+           data-author="" >
+            <span class="post-title" title="Selenium 自动化测试模拟">Selenium 自动化测试模拟</span>
+            <span class="post-date" title="2020-02-29 21:29:54">2020/02/29</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96-%E6%96%87%E4%BB%B6%E4%BF%9D%E5%AD%98/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="数据持久化 - 文件保存本地">数据持久化 - 文件保存本地</span>
+            <span class="post-date" title="2020-02-27 22:01:14">2020/02/27</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫基础入门">爬虫基础入门</span>
+            <span class="post-date" title="2020-02-26 20:44:27">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/CSS%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%8EXpath%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96/"
+           data-tag="CSS-Xpath"
+           data-author="" >
+            <span class="post-title" title="CSS 选择器与 Xpath 数据提取">CSS 选择器与 Xpath 数据提取</span>
+            <span class="post-date" title="2020-02-26 19:07:35">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Seaborn-Pygal-Pyecharts%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Seaborn,pygal,Pyecharts"
+           data-author="" >
+            <span class="post-title" title="Seaborn-Pygal-Pyecharts 可视化">Seaborn-Pygal-Pyecharts 可视化</span>
+            <span class="post-date" title="2020-02-22 16:24:55">2020/02/22</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/python%E4%B9%8BMatplotlib%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Matplotlib"
+           data-author="" >
+            <span class="post-title" title="python 之 Matplotlib 可视化">python 之 Matplotlib 可视化</span>
+            <span class="post-date" title="2020-02-20 20:28:44">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%A4%84%E7%90%86%E5%AE%9E%E6%93%8D/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Pandas 数据分析处理实操">Pandas 数据分析处理实操</span>
+            <span class="post-date" title="2020-02-20 10:51:39">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Markdown%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E6%8A%80%E5%B7%A7/"
+           data-tag="Markdown"
+           data-author="" >
+            <span class="post-title" title="Markdown 文本编辑技巧">Markdown 文本编辑技巧</span>
+            <span class="post-date" title="2020-02-18 16:31:40">2020/02/18</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BPandas%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Python 之 Pandas 库从入门到实战">Python 之 Pandas 库从入门到实战</span>
+            <span class="post-date" title="2020-02-15 20:46:52">2020/02/15</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BNumpy%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Numpy"
+           data-author="" >
+            <span class="post-title" title="Python 之 Numpy 库从入门到实战">Python 之 Numpy 库从入门到实战</span>
+            <span class="post-date" title="2020-02-13 23:15:38">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E9%95%9C%E5%83%8F%E6%BA%90%E7%BD%91%E5%9D%80/"
+           data-tag="pip"
+           data-author="" >
+            <span class="post-title" title="python pip 国内镜像大全及库的安装">python pip 国内镜像大全及库的安装</span>
+            <span class="post-date" title="2020-02-13 23:13:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E7%9A%84%E4%B8%89%E7%A7%8D%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 的三种输出格式">python 的三种输出格式</span>
+            <span class="post-date" title="2020-02-13 23:04:49">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E6%97%B6%E9%97%B4%E6%A8%A1%E5%9D%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的时间模块">python 中的时间模块</span>
+            <span class="post-date" title="2020-02-13 23:01:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E6%9F%A5%E7%9C%8B%E4%BB%BB%E4%BD%95%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E7%94%A8%E6%B3%95%E7%9A%84%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 查看任何第三方库的用法的方法">python 查看任何第三方库的用法的方法</span>
+            <span class="post-date" title="2020-02-13 22:57:50">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Anaconda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8Epyinstaller%E7%A8%8B%E5%BA%8F%E6%89%93%E5%8C%85/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Anaconda 环境配置与 pyinstaller 程序打包">Anaconda 环境配置与 pyinstaller 程序打包</span>
+            <span class="post-date" title="2020-02-13 20:01:52">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%BD%BF%E7%94%A8Hexo-Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%85%8D%E8%B4%B9%E5%8D%9A%E5%AE%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="使用 Hexo+Github 搭建个人免费博客">使用 Hexo+Github 搭建个人免费博客</span>
+            <span class="post-date" title="2020-02-13 15:44:02">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E5%85%B3%E4%BA%8Ehexo%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"
+           data-tag="Hexo"
+           data-author="" >
+            <span class="post-title" title="关于 hexo 使用过程中报错问题汇总">关于 hexo 使用过程中报错问题汇总</span>
+            <span class="post-date" title="2020-02-12 23:03:46">2020/02/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-tensorflow学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">tensorflow 学习笔记</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="深度学习">深度学习</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2025-12-13 13:23:10'>2020-06-05 01:49</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:13.7k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Tensorflow%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="toc-text">Tensorflow 学习笔记 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%20%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5"><span class="toc-text">1. 基础概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%20%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD"><span class="toc-text">1.1 人工智能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%20%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF"><span class="toc-text">1.2 神经网络实现思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%20%E4%B8%80%E4%BA%9B%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A"><span class="toc-text">1.3 一些名词解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%20%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0"><span class="toc-text">1.4 常用函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-1-%20%E5%88%9B%E5%BB%BA%E5%BC%A0%E9%87%8F"><span class="toc-text">1.4.1 创建张量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-2-%20%E5%88%9B%E5%BB%BA%E7%89%B9%E6%AE%8A%E5%BC%A0%E9%87%8F"><span class="toc-text">1.4.2 创建特殊张量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-3-%20%E7%BB%9F%E8%AE%A1"><span class="toc-text">1.4.3 统计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-4-%20%E5%8F%AF%E8%AE%AD%E7%BB%83"><span class="toc-text">1.4.4 可训练</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-5-%20%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97"><span class="toc-text">1.4.5 数学运算 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-6-%20%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9A%84%E6%9E%84%E5%BB%BA%EF%BC%88%E9%87%8D%E8%A6%81%EF%BC%89"><span class="toc-text">1.4.6 数据集的构建（重要）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-7-%20%E7%8B%AC%E7%83%AD%E7%BC%96%E7%A0%81"><span class="toc-text">1.4.7 独热编码 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-8-%20%E6%9F%94%E6%80%A7%E6%9C%80%E5%A4%A7%E5%80%BC"><span class="toc-text">1.4.8 柔性最大值 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-9-%20%E8%8E%B7%E5%8F%96%E6%9C%80%E5%A4%A7%E7%B4%A2%E5%BC%95"><span class="toc-text">1.4.9 获取最大索引</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-%20%E6%89%8B%E5%8A%A8%E6%90%AD%E5%BB%BA%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="toc-text">1.5 手动搭建神经网络 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-6-%20%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%EF%BC%88NN%EF%BC%89%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-text">1.6 神经网络（NN）复杂度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-7-%20%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="toc-text">1.7 激活函数 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-8-%20%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-text">1.8 损失函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-9-%20%E6%AC%A0%E6%8B%9F%E5%90%88%E5%92%8C%E8%BF%87%E6%8B%9F%E5%90%88"><span class="toc-text">1.9 欠拟合和过拟合 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-10-%20%E4%BC%98%E5%8C%96%E5%99%A8"><span class="toc-text">1.10  优化器 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%20%E6%90%AD%E5%BB%BA%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="toc-text">2. 搭建神经网络</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%20%E5%85%AD%E6%AD%A5%E6%B3%95"><span class="toc-text">2.1 六步法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-1-%20%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%B1%82"><span class="toc-text">2.1.1 神经网络层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-2-%20%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE"><span class="toc-text">2.1.2 神经网络配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-3-%20%E6%89%A7%E8%A1%8C%E8%AE%AD%E7%BB%83%E8%BF%87%E7%A8%8B"><span class="toc-text">2.1.3 执行训练过程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%20%E9%B8%A2%E5%B0%BE%E8%8A%B1%E5%88%86%E7%B1%BB%E7%A4%BA%E4%BE%8B"><span class="toc-text">2.2 鸢尾花分类示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-mnist%20%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-text">2.3 mnist 数据集 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-Fashion%20%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-text">2.4 Fashion 数据集 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%20%E9%BB%91%E7%99%BD%E5%9B%BE%E7%89%87%E5%BA%94%E7%94%A8"><span class="toc-text">3. 黑白图片应用 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%20%E8%87%AA%E5%88%B6%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-text">3.1 自制数据集 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%20%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA"><span class="toc-text">3.2 数据增强</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%20%E4%BF%9D%E5%AD%98%E5%8F%8A%E8%AF%BB%E5%8F%96%E6%A8%A1%E5%9E%8B"><span class="toc-text">3.3 保存及读取模型 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%20%E5%8F%82%E6%95%B0%E6%8F%90%E5%8F%96"><span class="toc-text">3.4 参数提取 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-acc-loss%20%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="toc-text">3.5 acc&#x2F;loss 可视化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-%20%E7%BB%99%E5%9B%BE%E8%AF%86%E7%89%A9"><span class="toc-text">3.6 给图识物</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%20%E5%BD%A9%E8%89%B2%E5%9B%BE%E7%89%87%E5%BA%94%E7%94%A8"><span class="toc-text">4. 彩色图片应用 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%20%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="toc-text">4.1 卷积神经网络 </span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%84%9F%E5%8F%97%E9%87%8E"><span class="toc-text">感受野</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%A8%E9%9B%B6%E5%A1%AB%E5%85%85"><span class="toc-text">全零填充</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-2-%20%E6%89%B9%E6%A0%87%E5%87%86%E5%8C%96%20BN"><span class="toc-text">4.1.2 批标准化 BN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-3-%20%E6%B1%A0%E5%8C%96"><span class="toc-text">4.1.3 池化 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-4-%20%E8%88%8D%E5%BC%83"><span class="toc-text">4.1.4 舍弃 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-5-%20%E6%80%BB%E7%BB%93"><span class="toc-text">4.1.5 总结 </span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%20%E5%BA%94%E7%94%A8"><span class="toc-text">4.2 应用 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%20%E7%BB%8F%E5%85%B8%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="toc-text">5. 经典卷积神经网络</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-LeNet"><span class="toc-text">5.1 LeNet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-AlexNet"><span class="toc-text">5.2 AlexNet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-VGGNet"><span class="toc-text">5.3 VGGNet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-InceptionNet"><span class="toc-text">5.4 InceptionNet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-5-ResNet"><span class="toc-text">5.5 ResNet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-6-%20%E5%B0%8F%E7%BB%93"><span class="toc-text">5.6 小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%20%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%20RNN"><span class="toc-text">6. 循环神经网络 RNN</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-%20%E5%BE%AA%E7%8E%AF%E6%A0%B8"><span class="toc-text">6.1 循环核 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-TF%20%E6%8F%8F%E8%BF%B0%E5%BE%AA%E7%8E%AF%E8%AE%B0%E5%BF%86%E5%B1%82"><span class="toc-text">6.2 TF 描述循环记忆层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-%20%E5%BA%94%E7%94%A8"><span class="toc-text">6.3 应用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-3-1%20%E4%BE%9D%E6%AC%A1%E9%A2%84"><span class="toc-text">6.3.1 依次预</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-3-2-%20%E8%BF%9E%E7%BB%AD%E9%A2%84%E6%B5%8B"><span class="toc-text">6.3.2 连续预测</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-%20%E7%BC%96%E7%A0%81"><span class="toc-text">6.4 编码 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%20%E9%95%BF%E7%9F%AD%E8%AE%B0%E5%BF%86%E7%BD%91%E7%BB%9C%20LSTM"><span class="toc-text">7. 长短记忆网络 LSTM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-GRU%20%E7%BD%91%E7%BB%9C"><span class="toc-text">8. GRU 网络</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Tensorflow 学习笔记"><a href="#Tensorflow 学习笔记" class="headerlink" title="Tensorflow 学习笔记"></a>Tensorflow 学习笔记 </h1><h2 id="1- 基础概念"><a href="#1- 基础概念" class="headerlink" title="1. 基础概念"></a>1. 基础概念</h2><h3 id="1-1- 人工智能"><a href="#1-1- 人工智能" class="headerlink" title="1.1 人工智能"></a>1.1 人工智能</h3><p> 人工智能：让机器具备人的 <u> 思维 </u> 和<u>意识</u></p>
+<p>人工智能三学派：</p>
+<p>行为主义：基于控制论，构建感知—动作控制系统。（如汽车的自动驾驶）</p>
+<p>符号主义：基于数学逻辑表达式，人为发现规律，把问题描述为表达式，理性思维的实现。</p>
+<p>连接主义：仿生学，模仿神经元连接关系，实现感性思维。（比如今天见到陌生人 A，明天再见就会感到眼熟）</p>
+<blockquote>
+<p><strong>深度学习——神经网络————&gt; 连接主义</strong></p>
+</blockquote>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20200605020413956.png" alt=""></p>
+<blockquote>
+<p><strong>利用仿生学的观点，用计算机仿出神经网络连接关系，让计算机具备感性思维</strong></p>
+</blockquote>
+<h3 id="1-2- 神经网络实现思路"><a href="#1-2- 神经网络实现思路" class="headerlink" title="1.2 神经网络实现思路"></a>1.2 神经网络实现思路</h3><ul>
+<li>准备数据：采集大量“特征 / 标签”数据对。</li>
+<li>搭建网络：搭建神经网络结构。</li>
+<li>优化参数：训练网络获取最佳参数。</li>
+<li>应用网络：将网络保存为模型，输入新数据，输出分类或预测结果。</li>
+</ul>
+<h3 id="1-3- 一些名词解释"><a href="#1-3- 一些名词解释" class="headerlink" title="1.3 一些名词解释"></a>1.3 一些名词解释</h3><hr>
+<p>损失函数：预测值（y）与标准答案（y_)的差距。</p>
+<p>损失函数可以定量判断 w,b 的优劣，当损失函数输出最小时，参数 w,b 会出现最优值。</p>
+<p>常用均方误差 MSE 代表损失函数。<br>$$<br>MSE(x,y)=∑((y-y_)^2)/n<br>$$</p>
+<p>$$<br>loss_mse=tf.reduce_mean(tf.square(y_-y))<br>$$</p>
+<p>优化参数：找到一组参数 w,b，使得损失函数最小。</p>
+<p>梯度：损失函数对各参数求偏导后的向量。</p>
+<p>梯度下降法：沿损失函数梯度下降的方向，寻找损失函数的最小值，得到最优参数的方法。</p>
+<p>w 的更新：<br>$$<br>w_{t+1}=w_t-l_r×\frac{∂loss}{∂w_t}<br>$$<br>学习率（lr）：当学习率设置过小时，收敛将变得十分缓慢。当过大时，梯度可能在最小值附近来回震荡，甚至可能无法收敛。</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20200605025338012.png" alt=""></p>
+<p>指数衰减学习率：先用较大的学习率，快速得到较优的解，然后逐步减小学习率，使模型在训练后期稳定。</p>
+<p>指数衰减学习率 = 初始学习率×学习率衰减率 ^（当前轮数 / 多少轮衰减一次）</p>
+<p>反向传播：从后向前，逐层求损失函数对每层神经元参数的偏导数，迭代更新所有参数。</p>
+<p><strong>举个例子</strong></p>
+<p>损失函数 <br>$$<br>loss=(w+1)^2  \qquad ——&gt;<br>\frac{∂loss}{∂w}=2w+2<br>$$<br> 程序的实现：</p>
+<pre><code class="python">import tensorflow as tf
+w=tf.Variable(tf.constant(5,dtype=tf.float32))  // 随机初始化 w
+lr=0.2
+epochs=40
+
+for epoch in range(epochs):
+    with tf.GradientTape() as tape:
+        loss=tf.square(w+1)
+        grads=tape.gradient(loss,w)
+
+    w.assign_sub(lr*grads)
+    print(&#39;After %s epoch,w is %f,loss is %f&#39;%(epoch,w.numpy(),loss))</code></pre>
+<p><strong>张量（Tensor）</strong>：多维数组</p>
+<p>标量（scalar）：a=0</p>
+<p>向量（vector）：b=[0,1,2]</p>
+<p>矩阵（matrix）：c=[[0,1,2],[3,4,5]]</p>
+<p>张量（tensor）：d=[[[…..]]]</p>
+<p>以上可统称张量。</p>
+<h3 id="1-4- 常用函数"><a href="#1-4- 常用函数" class="headerlink" title="1.4 常用函数"></a>1.4 常用函数</h3><h4 id="1-4-1- 创建张量"><a href="#1-4-1- 创建张量" class="headerlink" title="1.4.1 创建张量"></a>1.4.1 创建张量</h4><blockquote>
+<p><code>tf.constant(张量内容，dtype= 数据类型（可选）)</code></p>
+</blockquote>
+<p>如<code>tf.constant([1,5], dtype= 数据类型（可选）)</code></p>
+<blockquote>
+<p><code>tf.convert_to_tensor(numpy 数组，dtype= 数据类型)</code></p>
+</blockquote>
+<h4 id="1-4-2- 创建特殊张量"><a href="#1-4-2- 创建特殊张量" class="headerlink" title="1.4.2 创建特殊张量"></a>1.4.2 创建特殊张量</h4><pre><code>tf.zeros(维度)        // 创建全为 0 的张量
+tf.ones(维度)         // 创建全为 1 的张量
+tf.fill(维度，指定值)  // 创建全为指定值的张量
+tf.random.normal(维度，mean= 均值，stddev= 标准差)
+tf.random.uniform(维度，minval= 最小值，maxval= 最大值)</code></pre><h4 id="1-4-3- 统计"><a href="#1-4-3- 统计" class="headerlink" title="1.4.3 统计"></a>1.4.3 统计</h4><pre><code>tf.cast(张量名，dtype= 数据类型)  类型转换
+tf.reduce_min(张量名)  计算张量维度上元素的最小值
+tf.reduce_max(张量名)  计算张量维度上元素的最大值
+tf.reduce_mean(张量名，axis= 操作轴 0 or 1)
+tf.reduce_sum(张量名，axis= 操作轴 0 or 1)</code></pre><h4 id="1-4-4- 可训练"><a href="#1-4-4- 可训练" class="headerlink" title="1.4.4 可训练"></a>1.4.4 可训练</h4><p>tf.Variable() 将变量标记为可训练</p>
+<pre><code>w=tf.Variable(tf.random.normal([2,2],mean=0,stddev=1))</code></pre><p>以上就是神经网络默认起始 w 的生成方法示例。</p>
+<h4 id="1-4-5- 数学运算"><a href="#1-4-5- 数学运算" class="headerlink" title="1.4.5 数学运算"></a>1.4.5 数学运算 </h4><p> 四则运算：tf.add，tf.subtract，tf.multiply，tf.divide</p>
+<p>平方、次方与开方：tf.square，tf.pow，tf.sqrt</p>
+<p>矩阵乘：tf.matmul</p>
+<h4 id="1-4-6- 数据集的构建（重要）"><a href="#1-4-6- 数据集的构建（重要）" class="headerlink" title="1.4.6 数据集的构建（重要）"></a>1.4.6 数据集的构建（重要）</h4><pre><code>data=tf.data.Dataset.from_tensor_slices((输入标签，标签))</code></pre><h4 id="1-4-7- 独热编码"><a href="#1-4-7- 独热编码" class="headerlink" title="1.4.7 独热编码"></a>1.4.7 独热编码 </h4><pre><code>tf.one_hot(待转换的数据，depth= 几分类)</code></pre><p> 如：</p>
+<pre><code class="python">import tensorflow as tf
+
+lables=tf.constant([1,0,2])
+output=tf.one_hot(lables,3)
+print(output)
+
+输出结果如下：
+tf.Tensor([[0. 1. 0.]
+ [1. 0. 0.]
+ [0. 0. 1.]], shape=(3, 3), dtype=float32)</code></pre>
+<h4 id="1-4-8- 柔性最大值"><a href="#1-4-8- 柔性最大值" class="headerlink" title="1.4.8 柔性最大值"></a>1.4.8 柔性最大值 </h4><p><code>tf.nn.softmax(x)</code> 使输出符合概率分布</p>
+<p>$$<br>Softmax(y_i)=\frac{e^{y_i}}{∑e^{y_i}}<br>$$</p>
+<h4 id="1-4-9- 获取最大索引"><a href="#1-4-9- 获取最大索引" class="headerlink" title="1.4.9 获取最大索引"></a>1.4.9 获取最大索引</h4><p><code>tf.argmax(张量名，axis= 操作轴)</code></p>
+<h3 id="1-5- 手动搭建神经网络"><a href="#1-5- 手动搭建神经网络" class="headerlink" title="1.5 手动搭建神经网络"></a>1.5 手动搭建神经网络 </h3><p> 以鸢尾花分类为例，它有四个特征值（花瓣长，花瓣宽，花萼长，花萼宽），这四个特征值表现了三种鸢尾花类型。</p>
+<pre><code class="python"># 利用鸢尾花数据集，实现前向传播、反向传播，可视化 loss 曲线
+
+# 导入所需模块
+import tensorflow as tf
+from sklearn import datasets
+from matplotlib import pyplot as plt
+import numpy as np
+
+# 导入数据，分别为输入特征和标签
+x_data = datasets.load_iris().data
+y_data = datasets.load_iris().target
+
+# 随机打乱数据（因为原始数据是顺序的，顺序不打乱会影响准确率）
+# seed: 随机数种子，是一个整数，当设置之后，每次生成的随机数都一样（为方便教学，以保每位同学结果一致）
+np.random.seed(116)  # 使用相同的 seed，保证输入特征和标签一一对应
+np.random.shuffle(x_data)
+np.random.seed(116)
+np.random.shuffle(y_data)
+tf.random.set_seed(116)
+
+# 将打乱后的数据集分割为训练集和测试集，训练集为前 120 行，测试集为后 30 行
+x_train = x_data[:-30]
+y_train = y_data[:-30]
+x_test = x_data[-30:]
+y_test = y_data[-30:]
+
+# 转换 x 的数据类型，否则后面矩阵相乘时会因数据类型不一致报错
+x_train = tf.cast(x_train, tf.float32)
+x_test = tf.cast(x_test, tf.float32)
+
+# from_tensor_slices 函数使输入特征和标签值一一对应。（把数据集分批次，每个批次 batch 组数据）
+train_db = tf.data.Dataset.from_tensor_slices((x_train, y_train)).batch(32)
+test_db = tf.data.Dataset.from_tensor_slices((x_test, y_test)).batch(32)
+
+# 生成神经网络的参数，4 个输入特征故，输入层为 4 个输入节点；因为 3 分类，故输出层为 3 个神经元
+# 用 tf.Variable()标记参数可训练
+# 使用 seed 使每次生成的随机数相同（方便教学，使大家结果都一致，在现实使用时不写 seed）
+w1 = tf.Variable(tf.random.truncated_normal([4, 3], stddev=0.1, seed=1))
+b1 = tf.Variable(tf.random.truncated_normal([3], stddev=0.1, seed=1))
+
+lr = 0.1  # 学习率为 0.1
+train_loss_results = []  # 将每轮的 loss 记录在此列表中，为后续画 loss 曲线提供数据
+test_acc = []  # 将每轮的 acc 记录在此列表中，为后续画 acc 曲线提供数据
+epoch = 500  # 循环 500 轮
+loss_all = 0  # 每轮分 4 个 step，loss_all 记录四个 step 生成的 4 个 loss 的和
+
+# 训练部分
+for epoch in range(epoch):  #数据集级别的循环，每个 epoch 循环一次数据集
+    for step, (x_train, y_train) in enumerate(train_db):  #batch 级别的循环 ，每个 step 循环一个 batch
+        with tf.GradientTape() as tape:  # with 结构记录梯度信息
+            y = tf.matmul(x_train, w1) + b1  # 神经网络乘加运算
+            y = tf.nn.softmax(y)  # 使输出 y 符合概率分布（此操作后与独热码同量级，可相减求 loss）
+            y_ = tf.one_hot(y_train, depth=3)  # 将标签值转换为独热码格式，方便计算 loss 和 accuracy
+            loss = tf.reduce_mean(tf.square(y_ - y))  # 采用均方误差损失函数 mse = mean(sum(y-out)^2)
+            loss_all += loss.numpy()  # 将每个 step 计算出的 loss 累加，为后续求 loss 平均值提供数据，这样计算的 loss 更准确
+        # 计算 loss 对各个参数的梯度
+        grads = tape.gradient(loss, [w1, b1])
+
+        # 实现梯度更新 w1 = w1 - lr * w1_grad    b = b - lr * b_grad
+        w1.assign_sub(lr * grads[0])  # 参数 w1 自更新
+        b1.assign_sub(lr * grads[1])  # 参数 b 自更新
+
+    # 每个 epoch，打印 loss 信息
+    print(&quot;Epoch &#123;&#125;, loss: &#123;&#125;&quot;.format(epoch, loss_all/4))
+    train_loss_results.append(loss_all / 4)  # 将 4 个 step 的 loss 求平均记录在此变量中
+    loss_all = 0  # loss_all 归零，为记录下一个 epoch 的 loss 做准备
+
+    # 测试部分
+    # total_correct 为预测对的样本个数, total_number 为测试的总样本数，将这两个变量都初始化为 0
+    total_correct, total_number = 0, 0
+    for x_test, y_test in test_db:
+        # 使用更新后的参数进行预测
+        y = tf.matmul(x_test, w1) + b1
+        y = tf.nn.softmax(y)
+        pred = tf.argmax(y, axis=1)  # 返回 y 中最大值的索引，即预测的分类
+        # 将 pred 转换为 y_test 的数据类型
+        pred = tf.cast(pred, dtype=y_test.dtype)
+        # 若分类正确，则 correct=1，否则为 0，将 bool 型的结果转换为 int 型
+        correct = tf.cast(tf.equal(pred, y_test), dtype=tf.int32)
+        # 将每个 batch 的 correct 数加起来
+        correct = tf.reduce_sum(correct)
+        # 将所有 batch 中的 correct 数加起来
+        total_correct += int(correct)
+        # total_number 为测试的总样本数，也就是 x_test 的行数，shape[0]返回变量的行数
+        total_number += x_test.shape[0]
+    # 总的准确率等于 total_correct/total_number
+    acc = total_correct / total_number
+    test_acc.append(acc)
+    print(&quot;Test_acc:&quot;, acc)
+    print(&quot;--------------------------&quot;)
+
+# 绘制 loss 曲线
+plt.title(&#39;Loss Function Curve&#39;)  # 图片标题
+plt.xlabel(&#39;Epoch&#39;)  # x 轴变量名称
+plt.ylabel(&#39;Loss&#39;)  # y 轴变量名称
+plt.plot(train_loss_results, label=&quot;$Loss$&quot;)  # 逐点画出 trian_loss_results 值并连线，连线图标是 Loss
+plt.legend()  # 画出曲线图标
+plt.show()  # 画出图像
+
+# 绘制 Accuracy 曲线
+plt.title(&#39;Acc Curve&#39;)  # 图片标题
+plt.xlabel(&#39;Epoch&#39;)  # x 轴变量名称
+plt.ylabel(&#39;Acc&#39;)  # y 轴变量名称
+plt.plot(test_acc, label=&quot;$Accuracy$&quot;)  # 逐点画出 test_acc 值并连线，连线图标是 Accuracy
+plt.legend()
+plt.show()</code></pre>
+<h3 id="1-6- 神经网络（NN）复杂度"><a href="#1-6- 神经网络（NN）复杂度" class="headerlink" title="1.6 神经网络（NN）复杂度"></a>1.6 神经网络（NN）复杂度</h3><p>NN 层数 +NN 参数个数表示。</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20200606101213975.png" style="zoom:67%;" />
+
+<blockquote>
+<p>空间复杂度：</p>
+</blockquote>
+<p>层数 = 隐藏层的层数 +1 个输出层</p>
+<p>总参数 = 总 w+ 总 b</p>
+<p>上图示例中层数为 2，总参数为（3×4+4）+（4×2+2）=26</p>
+<blockquote>
+<p>时间复杂度</p>
+</blockquote>
+<p>乘加运算次数</p>
+<p>上图中，时间复杂度为（3×4）+（4×2）=20</p>
+<script> pangu.spacingElementByTagName('p');/* 在标签 p 里面进行自动加空格处理 */ </script>
+<h3 id="1-7- 激活函数"><a href="#1-7- 激活函数" class="headerlink" title="1.7 激活函数"></a>1.7 激活函数 </h3><p> 激活函数的目的：增加网络的非线性分割能力</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20200606104326748.png" alt=""></p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20200606104228355.png" alt=""></p>
+<p><strong>（1）Sigmoid 函数<code>tf.nn.sigmoid(x)</code></strong><br>$$<br>f(x)=\frac{1}{1+e^{-x}}<br>$$<br><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20200606103734586.png" alt=""></p>
+<ul>
+<li><p>特点：<br>易造成梯度消失</p>
+<p>输出非 0 均值，收敛慢</p>
+<p>幂运算复杂，训练时间长</p>
+</li>
+</ul>
+<p><strong>（2）Tanh 函数<code>tf.math.tanh(x)</code></strong><br>$$<br>f(x)=\frac{1-e^{-2x}}{1+e^{-2x}}<br>$$<br><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20200606104506328.png" alt=""></p>
+<ul>
+<li><p>特点：</p>
+<p>输出是 0 均值</p>
+<p>易造成梯度消失</p>
+<p>幂运算复杂，训练时间长</p>
+</li>
+</ul>
+<p><strong>（3）Relu 函数<code>tf.nn.relu(x)</code></strong></p>
+<img src="/assets/image-20200606105345922.png" style="zoom:67%;" />
+
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20200606105900451.png" alt=""></p>
+<ul>
+<li><p>优点：</p>
+<p>解决了梯度消失的问题（在正区间）</p>
+<p>只需判断输入是否大于 0，计算速度快</p>
+<p>收敛速度远快于 sigmoid 和 tanh</p>
+</li>
+<li><p>缺点</p>
+<p>输出非 0 均值，收敛慢</p>
+<p>Dead Relu 问题，某些神经元可能永远不被激活，导致相应的参数永远不能被更新。</p>
+</li>
+</ul>
+<p><strong>（4）Leaky Relu 函数<code>tf.nn.leaky_relu(x)</code></strong></p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20200606152404913.png" alt=""> </p>
+<p><strong>几点认知</strong></p>
+<ul>
+<li><p>首选 relu 激活函数</p>
+</li>
+<li><p>学习率设置较小值</p>
+</li>
+<li><p>输入特征标准化，即让输入特征满足以 0 为均值，1 为标准差的正态分布</p>
+</li>
+<li><p>初始参数中心化，即让随机生成的参数满足以 0 为均值，sqar(2/ 当前层输入特征个数)</p>
+</li>
+</ul>
+<h3 id="1-8- 损失函数"><a href="#1-8- 损失函数" class="headerlink" title="1.8 损失函数"></a>1.8 损失函数</h3><p>1.3 章节已对损失函数做了简单介绍，这里进行补充。均方误差示例代码如下：</p>
+<pre><code class="python">import tensorflow as tf
+import numpy as np
+
+SEED = 23455
+
+rdm = np.random.RandomState(seed=SEED)  # 生成 [0,1) 之间的随机数
+x = rdm.rand(32, 2)
+y_ = [[x1 + x2 + (rdm.rand() / 10.0 - 0.05)] for (x1, x2) in x]  # 生成噪声[0,1)/10=[0,0.1); [0,0.1)-0.05=[-0.05,0.05)
+x = tf.cast(x, dtype=tf.float32)
+
+w1 = tf.Variable(tf.random.normal([2, 1], stddev=1, seed=1))
+
+epoch = 15000
+lr = 0.002
+
+for epoch in range(epoch):
+    with tf.GradientTape() as tape:
+        y = tf.matmul(x, w1)
+        loss_mse = tf.reduce_mean(tf.square(y_ - y))
+
+    grads = tape.gradient(loss_mse, w1)
+    w1.assign_sub(lr * grads)
+
+    if epoch % 500 == 0:
+        print(&quot;After %d training steps,w1 is &quot; % (epoch))
+        print(w1.numpy(), &quot;\n&quot;)
+print(&quot;Final w1 is: &quot;, w1.numpy())</code></pre>
+<p>除了采用均方差作为损失函数，还可采用交叉熵作为损失函数</p>
+<p>交叉熵损失函数 CE（Cross Entropy）：表征两个概率分布之间的距离<br>$$<br>H(y_, y)=-∑y_×lny<br>$$<br><code>tf.losses.catagorical_crossentropy(y_, y)</code></p>
+<p><strong>softmax 与交叉熵结合：</strong></p>
+<p>输出先过 softmax 函数，再计算 y 与 y_的交叉熵损失函数。</p>
+<p><code>tf.nn.softmax_cross_entropy_with_logits(y_, y)</code></p>
+<pre><code class="python"># softmax 与交叉熵损失函数的结合
+import tensorflow as tf
+import numpy as np
+
+y_ = np.array([[1, 0, 0], [0, 1, 0], [0, 0, 1], [1, 0, 0], [0, 1, 0]])
+y = np.array([[12, 3, 2], [3, 10, 1], [1, 2, 5], [4, 6.5, 1.2], [3, 6, 1]])
+y_pro = tf.nn.softmax(y)
+loss_ce1 = tf.losses.categorical_crossentropy(y_,y_pro)
+loss_ce2 = tf.nn.softmax_cross_entropy_with_logits(y_, y)
+
+print(&#39; 分步计算的结果:\n&#39;, loss_ce1)
+print(&#39; 结合计算的结果:\n&#39;, loss_ce2)
+// 输出结果是一样的</code></pre>
+<h3 id="1-9- 欠拟合和过拟合"><a href="#1-9- 欠拟合和过拟合" class="headerlink" title="1.9 欠拟合和过拟合"></a>1.9 欠拟合和过拟合 </h3><p> 欠拟合：模型不能有效拟合数据集，是对现有数据集学习的不够彻底</p>
+<p>过拟合：模型对当前数据拟合的太好了，但对未见过的新数据难以做出正确的判断，模型缺乏泛化力。</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20200606162013190.png" alt=""></p>
+<ul>
+<li><p>欠拟合解决办法</p>
+<p>增加输入特征项</p>
+<p>增加网络参数</p>
+<p>减少正则化参数</p>
+</li>
+<li><p>过拟合的解决办法：</p>
+<p>数据清洗</p>
+<p>增大训练集</p>
+<p>采用正则化</p>
+<p>增大正则化参数</p>
+</li>
+</ul>
+<p><strong>（1）正则化缓解过拟合</strong></p>
+<p>正则化在损失函数中引入模型复杂度指标，利用给 w 加权值，弱化了训练数据的噪声（一般不正则化 b）</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20200606162802978.png" alt=""></p>
+<p><strong>正则化的选择：</strong></p>
+<p><strong>L1 正则化 </strong> 大概率会使很多参数变为 0，因此该方法可通过稀疏参数，即减少参数的数量，降低复杂度。<br>$$<br>loss_{L1}(w)=∑|w_i|<br>$$<br><code>tf.keras.regularizers.l1()</code></p>
+<p><strong>L2 正则化 </strong> 会使参数很接近 0 但不为 0，因此该方法可通过减少参数值的大小降低复杂度。<br>$$<br>loss_{L2}(w)=∑|{w_i}^2|<br>$$<br><code>tf.keras.regularizers.l2()</code></p>
+<h3 id="1-10- 优化器"><a href="#1-10- 优化器" class="headerlink" title="1.10  优化器"></a>1.10  优化器 </h3><p> 神经网络模型中有多种优化算法，优化算法的作用用来优化更新参数 w。</p>
+<p>待优化参数 w 每迭代一个 batch(一小段)：就会有如下思考：</p>
+<blockquote>
+<p>a. 计算该时刻（t）损失函数关于当前参数的梯度：<br>$$<br>g_t=▽loss=\frac{∂loss}{∂(w_t)}<br>$$<br>—— t 表示当前 batch 迭代的总次数。</p>
+<p>b. 计算 t 时刻一阶动量 m<del>t</del>和二阶动量 V<del>t</del></p>
+<p>c. 计算 t 时刻下降梯度：η<del>t</del>=lr×m<del>t</del>/√(V<del>t</del>)</p>
+<p>d. 计算 t+1 时刻参数：w<del>t+1</del>=w<del>t</del>-η<del>t</del>=w<del>t</del>-lr×m<del>t</del>/√(V<del>t</del>)</p>
+</blockquote>
+<p>一阶动量：与梯度相关的函数</p>
+<p>二阶动量：与梯度平方相关的函数</p>
+<table>
+<thead>
+<tr>
+<th>动量的释义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>动量（momentum）来自物理类比，根据牛顿运动定律，负梯度是移动参数空间中粒子的力。 动量在物理学上定义为质量乘以速度。在动量学习算法中，我们假设是单位质量，因此速度向量 v 也可以看作是粒子的动量。</td>
+</tr>
+<tr>
+<td>在某个参数值附近，有一个局部极小点（local minimum）：在这个点附近，向左移动和向右移动都会导致损失值增大。如果使用小学习率的 SGD 进行优化，那么优化过程可能会陷入局部极小点，导致无法找到全局最小点。<br />使用动量方法可以避免这样的问题，这一方法的灵感来源于物理学。有一种有用的思维图像，就是将优化过程想象成一个小球从损失函数曲线上滚下来。如果小球的动量足够大，那么它不会卡在峡谷里，最终会到达全局最小点。<br />动量方法的实现过程是每一步都移动小球，不仅要考虑当前的斜率值（当前的加速度），还要考虑当前的速度（来自于之前的加速度）。这在实践中的是指，更新参数 w 不仅要考虑当前的梯度值，还要考虑上一次的参数更新。</td>
+</tr>
+</tbody></table>
+<p><strong>常见优化器如下</strong></p>
+<p>（1）随机梯度下降法 SGD：无动量<br>$$<br>m_t=g_t<br>$$</p>
+<p>$$<br>V_t=1<br>$$</p>
+<p>$$<br>w_{t+1}=w_t-lr×g_t<br>$$</p>
+<p>这里：<br>$$<br>g_t=\frac{∂loss}{∂w_t}<br>$$<br>参数 w1 自更新：<code>w1.assign_sub(lr×grads[0])</code></p>
+<p>参数 b 自更新：<code>b.assign_sub(lr×grads[1])</code></p>
+<p>（2）SGDM（含动量的 SGD），在 SGD 基础上增加一阶动量<br>$$<br>m_t=β·m_{t-1}+(1-β)·g_t<br>$$</p>
+<p>$$<br>V_t=1<br>$$</p>
+<p>$$<br>w_{t+1}=w_t-η<em>t=w_t-lr·(β·m</em>{t-1}+(1-β)·g_t)<br>$$</p>
+<p>参数 w1 自更新：<code>w1.assign_sub(lr×m_w)</code></p>
+<p>参数 b 自更新：<code>b.assign_sub(lr×m_b)</code></p>
+<p>（3）Adagrad，在 SGD 基础上增加二阶动量<br>$$<br>m_t=g_t<br>$$</p>
+<p>$$<br>V_t=∑g_i^2<br>$$</p>
+<p>$$<br>w_{t+1}=w_t-η_t=w_t-lr·g_t/(√V_t)<br>$$</p>
+<p>（4）RMSProp，在 SGD 基础上增加二阶动量</p>
+<p>$$<br>m_t=g_t<br>$$</p>
+<p>$$<br>V_t=β·V_{t-1}+(1-β)·g_t^2<br>$$</p>
+<p>$$<br>w_{t+1}=w_t-η_t=w_t-lr·g_t/(√V_t)<br>$$</p>
+<p>（5）Adam，同时结合 SGDM 一阶动量和 RMSProp 二阶动量</p>
+<p>$$<br>m_t=β<em>1·m</em>{t-1}+(1-β_1)·g_t<br>\ 修正一阶动量偏差：m_t’=\frac{m_t}{1-β_1^t}<br>$$</p>
+<p>$$<br>V_t=β<em>2·V</em>{t-1}+(1-β_2)·g_t^2<br>\ 修正二阶动量的偏差：V_t’=\frac{V_t}{1-β_2^t}<br>$$</p>
+<p>$$<br>w_{t+1}=w_t-η_t=w_t-lr·\frac{m_t}{1-β_1^t}/√(\frac{V_t}{1-β_2^t})<br>$$</p>
+<h2 id="2- 搭建神经网络"><a href="#2- 搭建神经网络" class="headerlink" title="2. 搭建神经网络"></a>2. 搭建神经网络</h2><p>tensorflow 核心 API：<code>tf.keras</code></p>
+<h3 id="2-1- 六步法"><a href="#2-1- 六步法" class="headerlink" title="2.1 六步法"></a>2.1 六步法</h3><p>import</p>
+<p>train，test</p>
+<blockquote>
+<p>a. 顺序网络结构：model=tf.keras.models.Sequential </p>
+<p>b. 带跳连的非顺序结构：先定义网络类：calss MyModel(Model) </p>
+<p>再调用 model=MyModel</p>
+</blockquote>
+<p>model.compile</p>
+<p>model.fit</p>
+<p>model.summary</p>
+<h4 id="2-1-1- 神经网络层"><a href="#2-1-1- 神经网络层" class="headerlink" title="2.1.1 神经网络层"></a>2.1.1 神经网络层</h4><p><strong>（1）顺序网络层</strong></p>
+<pre><code>model=tf.keras.models.Sequential([网络结构])   #描述各层网络 </code></pre><p> 网络结构有：</p>
+<p><strong>拉直层</strong>：tf.keras.layers.Flatten()  ————&gt; 不含计算，只是形状转换，把输入特征拉直为一维数组。</p>
+<p><strong>全连接层</strong>：</p>
+<p>tf.keras.layers.Dense(神经元个数，activation=’激活函数’，kernel_regularizer= 哪种正则化)</p>
+<p><strong>卷积层</strong>：</p>
+<p>tf.keras.layers.Dense(filters= 卷积核个数，kernel_size= 卷积核尺寸，strides= 卷积步长，padding=’valid’or’same’)</p>
+<p><strong>循环神经网络层 LSTM</strong>：</p>
+<p>tf.keras.layers.LSTM()</p>
+<p><strong>（2）非顺序网络层</strong></p>
+<pre><code class="python">class MyModel(Model):
+    def __init__(self):
+        super(MyModel,self).__init__():
+            #这里定义网络结构快
+    def call(self,x):
+        #调用网络结构快，实现前向传播
+        return y
+model=MyModel()</code></pre>
+<h4 id="2-1-2- 神经网络配置"><a href="#2-1-2- 神经网络配置" class="headerlink" title="2.1.2 神经网络配置"></a>2.1.2 神经网络配置</h4><pre><code>model.compile(optimizer= 优化器，loss= 损失函数，metrics=[&#39; 准确率 &#39;])</code></pre><p>（1）优化器</p>
+<p>‘sgd’或者 tf.keras.optimizers.SGD(lr= 学习率，momentum= 动量参数)</p>
+<p>‘adagrad’或者 tf.keras.optimizers.Adagred(lr= 学习率)</p>
+<p>‘adadelta’或者 tf.keras.optimizers.Adadelta(lr= 学习率)</p>
+<p>‘adam’或者 tf.keras.optimizers.Adam(lr= 学习率，beta_1=0.9，beta_2=0.999)</p>
+<p>（2）损失函数 loss</p>
+<p>‘mse’或者 tf.keras.losses.MeanSquaredError()</p>
+<p>‘sparse_categorical_crossentropy’ 或者 tf.keras.losses.SparseCategoricalCrossentropy(from_logits=False)</p>
+<p>神经网络经 softmax 函数概率分布输出，就设置 from_logits=False</p>
+<p>不经过 softmax 函数概率分布输出概率输出，而是直接输出，则设置 from_logits=True</p>
+<p>（3）准确率指标 Metrics</p>
+<p>‘accuracy’：y_和 y 都是数值，如 y_=[1]，y=[1]</p>
+<p>‘categorical_accuracy’：y_和 y 都是独热码（概率分布），如 y_=[0,1,1]，y=[0.256,0.695,0.048]</p>
+<p>‘sparse_categorical_accuracy’：y_是数值，y 是独热码（概率分布），如 y_=[1]，y=[0.256,0.695,0.048]</p>
+<h4 id="2-1-3- 执行训练过程"><a href="#2-1-3- 执行训练过程" class="headerlink" title="2.1.3 执行训练过程"></a>2.1.3 执行训练过程</h4><pre><code>model.fit(训练集的输入特征，训练集的标签，
+          batch_size=,epochs=,
+          validation_data=(测试集的输入特征，测试集的标签),
+          validation_split= 从训练集划分多少比例给测试集，
+          validation_freq= 多少次 epoch 测试一次)</code></pre><h3 id="2-2- 鸢尾花分类示例"><a href="#2-2- 鸢尾花分类示例" class="headerlink" title="2.2 鸢尾花分类示例"></a>2.2 鸢尾花分类示例</h3><p><strong>（1）Sequential 搭建神经网络</strong></p>
+<pre><code class="python">import tensorflow as tf
+from sklearn import datasets
+import numpy as np
+
+x_train=datasets.load_iris().data
+y_lable=datasets.load_iris().target
+
+np.random.seed(10)
+np.random.shuffle(x_train)
+np.random.seed(10)
+np.random.shuffle(y_lable)
+tf.random.set_seed(10)
+
+# print(x_train,x_train.shape)
+# print(y_lable)
+
+model=tf.keras.models.Sequential([tf.keras.layers.Dense(4,activation=&#39;softmax&#39;,kernel_regularizer=tf.keras.regularizers.l2())
+])
+model.compile(optimizer=tf.keras.optimizers.SGD(lr=0.1),loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=False),
+              metrics=[&#39;sparse_categorical_accuracy&#39;])
+
+model.fit(x_train,y_lable,batch_size=32,epochs=50,validation_freq=20,validation_split=0.2)
+model.summary()</code></pre>
+<p><strong>（2）class 类搭建神经网络</strong></p>
+<pre><code class="python">import tensorflow as tf
+from sklearn import datasets
+from tensorflow.keras.layers import Dense
+from tensorflow.keras import Model
+import numpy as np
+
+x_train=datasets.load_iris().data
+y_lable=datasets.load_iris().target
+
+np.random.seed(10)
+np.random.shuffle(x_train)
+np.random.seed(10)
+np.random.shuffle(y_lable)
+tf.random.set_seed(10)
+
+print(x_train,x_train.shape)
+print(y_lable)
+
+class IrisModel(Model):
+    def __init__(self):
+        super(IrisModel,self).__init__()  #这里一定是要的
+        self.d1=Dense(4,activation=&#39;softmax&#39;,kernel_regularizer=tf.keras.regularizers.l2())        
+    def call(self,x):
+        y=self.d1(x)
+        return y
+
+model=IrisModel()
+model.compile(optimizer=tf.keras.optimizers.SGD(lr=0.1),loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=False),
+              metrics=[&#39;sparse_categorical_accuracy&#39;])
+
+model.fit(x_train,y_lable,batch_size=32,epochs=50,validation_freq=20,validation_split=0.2)
+model.summary()
+</code></pre>
+<h3 id="2-3-mnist 数据集"><a href="#2-3-mnist 数据集" class="headerlink" title="2.3 mnist 数据集"></a>2.3 mnist 数据集 </h3><p> 提供 6 万张 28×28 像素点的 1-9 手写数字图片和标签，用于训练；</p>
+<p>提供 1 万张 28×28 像素点的 1-9 手写数字图片和标签，用于测试；</p>
+<p>数据集的导入：</p>
+<p>mnist=tf.keras.datasets.mnist</p>
+<p>(x_train,y_train),(x_test,y_test)=mnist.load.load_data()</p>
+<p>作为输入特征，输入神经网络时，将数据拉伸为一维数组：</p>
+<p>tf.keras.layers.Flatten()</p>
+<p><strong>Sequential 搭建神经网络代码如下：</strong></p>
+<pre><code class="python">import tensorflow as tf
+import matplotlib.pyplot as plt
+
+(x_train,y_train),(x_test,y_test)=tf.keras.datasets.mnist.load_data()
+x_train,x_test=x_train/255,x_test/255
+
+#print(y_train)
+model=tf.keras.models.Sequential([tf.keras.layers.Flatten(),
+    tf.keras.layers.Dense(128,activation=&#39;relu&#39;),
+    tf.keras.layers.Dense(10,activation=&#39;softmax&#39;),
+])
+
+model.compile(optimizer=&#39;adam&#39;,loss=&#39;sparse_categorical_crossentropy&#39;,
+              metrics=[&#39;sparse_categorical_accuracy&#39;])
+history=model.fit(x_train,y_train,batch_size=32,epochs=8,validation_data=(x_test,y_test),
+          validation_freq=2)
+
+model.summary()
+
+// 输出结果如下：
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+flatten (Flatten)            multiple                  0         
+_________________________________________________________________
+dense (Dense)                multiple                  100480    
+_________________________________________________________________
+dense_1 (Dense)              multiple                  1290      
+=================================================================
+Total params: 101,770
+Trainable params: 101,770
+Non-trainable params: 0
+_________________________________________________________________
+</code></pre>
+<p><strong>class 类搭建神经网络：</strong></p>
+<pre><code class="python">import tensorflow as tf
+import matplotlib.pyplot as plt
+from tensorflow.keras import Model
+from tensorflow.keras.layers import Flatten,Dense
+
+(x_train,y_train),(x_test,y_test)=tf.keras.datasets.mnist.load_data()
+x_train,x_test=x_train/255,x_test/255
+
+#print(y_train)
+class MnistModel(Model):
+    def __init__(self):
+        super(MnistModel,self).__init__()
+        self.flatten=Flatten()
+        self.d1=Dense(128,activation=&#39;relu&#39;)
+        self.d2=Dense(10,activation=&#39;softmax&#39;)
+    def call(self,x):
+        x=self.flatten(x)
+        x=self.d1(x)
+        y=self.d2(x)
+        return y
+
+model=MnistModel()
+
+model.compile(optimizer=&#39;adam&#39;,loss=&#39;sparse_categorical_crossentropy&#39;,
+              metrics=[&#39;sparse_categorical_accuracy&#39;])
+history=model.fit(x_train,y_train,batch_size=32,epochs=8,validation_data=(x_test,y_test),
+          validation_freq=2)
+
+model.summary()
+
+// 输出结果如下：
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+flatten (Flatten)            multiple                  0         
+_________________________________________________________________
+dense (Dense)                multiple                  100480    
+_________________________________________________________________
+dense_1 (Dense)              multiple                  1290      
+=================================================================
+Total params: 101,770
+Trainable params: 101,770
+Non-trainable params: 0
+_________________________________________________________________
+</code></pre>
+<h3 id="2-4-Fashion 数据集"><a href="#2-4-Fashion 数据集" class="headerlink" title="2.4 Fashion 数据集"></a>2.4 Fashion 数据集 </h3><p> 提供 6 万张 28×18 像素点的衣服等图片和标签，用于训练。</p>
+<p>提供 1 万张 28×18 像素点的衣服等图片和标签，用于测试。</p>
+<p><strong>Sequential 搭建神经网络代码如下：</strong></p>
+<pre><code class="python">import tensorflow as tf
+import matplotlib.pyplot as plt
+(x_train,y_train),(x_test,y_test)=tf.keras.datasets.fashion_mnist.load_data()
+x_train,x_test=x_train/255,x_test/255
+
+#剩下代码同 minist 数据集代码</code></pre>
+<h2 id="3- 黑白图片应用"><a href="#3- 黑白图片应用" class="headerlink" title="3. 黑白图片应用"></a>3. 黑白图片应用 </h2><p> 以上的示例都是自带准备好的数据集，直接可以拿来用，如果是我们自己的训练数据包，该如何处理成为规范化成为可以喂入神经网络的数据呢？</p>
+<p>这里提出两个概念：<strong>自制数据集和数据增强</strong>！</p>
+<p>数据增强：是针对于你的数据量过少，模型训练不足，泛化力会弱，这时就需要数据增强。</p>
+<p>还有一个问题是，我们已有一些数据集，已经训练好了参数，但后面又需补充一些新的数据，如果这时又重新加入新数据重头再训练，就显得太笨了，</p>
+<p>这时就需要 <strong> 断点续训 </strong> 了！实时保存最优模型。</p>
+<p>训练神经网络的目的就是要获取各层神经网络的最优参数，只要拿到这些参数，就能跨机跨平台使用了，这时就需要 <strong> 参数提取 </strong> 了。</p>
+<p>与此同时，我们还需要见证模型的优化过程，到底是不是在往好的方向优化，这时就需要绘制 <strong>acc/loss 曲线</strong> 了！</p>
+<p>最后，训练出模型，我们就需要用它干点事了，给神经网络一组新的数据，实现前向推理，让神经网络 <strong> 预测 </strong> 出结果，实现学以致用！</p>
+<p>以上归纳就是如下：</p>
+<p>①自制数据集，解决本领域的应用</p>
+<p>②数据增强，扩充数据集</p>
+<p>③断点续训，存取模型</p>
+<p>④参数提取，把参数存入文本</p>
+<p>⑤acc/loss 可视化，查看训练结果</p>
+<p>⑥应用程序，给物识图</p>
+<h3 id="3-1- 自制数据集"><a href="#3-1- 自制数据集" class="headerlink" title="3.1 自制数据集"></a>3.1 自制数据集 </h3><p><strong> 准备两个文件夹：</strong></p>
+<p>trian_jpg_60000   用于放置训练的图片</p>
+<p>test_jpg_10000  用于放置测试的图片</p>
+<p><strong>准备两个 txt 文件：</strong></p>
+<p>train_label_60000.txt 用于放置训练的图片名及其对应标签</p>
+<p>test_label_10000.txt   用于放置测试的图片名及其对应标签</p>
+<p>txt 文本文件内容示例如下：</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20200609160339651.png" style="zoom:67%;" />
+
+<p>实现代码如下：</p>
+<pre><code class="python">from PIL import Image
+import numpy as np
+import os
+
+def generated(path,txt): #将原生图片转换成数组格式
+    f=open(txt,&#39;r&#39;)
+    contents=f.readlines()
+    f.close()
+    x,y=[],[]
+    for content in contents:
+        img_name=content.split()[0]
+        img_label=content.split()[1]
+        img_path=path+&#39;\\&#39;+img_name
+        img=Image.open(img_path)
+        img=np.array(img.convert(&#39;L&#39;))
+        img=img/255.
+        x.append(img)
+        y.append(img_label)
+        print(&#39;loading:&#39;,img_name)
+    x=np.array(x)
+    y=np.array(y)
+    y=y.astype(np.int64)
+    return x,y
+
+train_img_path=&#39;D:\\ 北大 tf2 课程 \\ 制作数据集 \\mnist_train_jpg_60000&#39;  #训练图片文件夹, 这里是 6000 张 28×28 像素的图片
+train_label_path=&#39;D:\\ 北大 tf2 课程 \\ 制作数据集 \\mnist_train_jpg_60000.txt&#39;   #训练图片对应的 txt 文件
+test_img_path=&#39;D:\\ 北大 tf2 课程 \\ 制作数据集 \\mnist_test_jpg_10000&#39;  #测试图片文件夹
+test_label_path=&#39;D:\\ 北大 tf2 课程 \\ 制作数据集 \\mnist_test_jpg_10000.txt&#39;   #测试图片对应的 txt 文件
+
+train_datasets_path=&#39;D:\\ 北大 tf2 课程 \\ 制作数据集 \\mnist_train.npy&#39;    #训练图片转换成可用数据集，这里设置其存储路径及格式
+train_label_datasets_path=&#39;D:\\ 北大 tf2 课程 \\ 制作数据集 \\mnist_train_label.npy&#39; #训练图片标签转换成可用数据集，这里设置其存储路径及格式
+test_datasets_path=&#39;D:\\ 北大 tf2 课程 \\ 制作数据集 \\mnist_test.npy&#39;    #测试图片转换成可用数据集，这里设置其存储路径及格式
+test_label_datasets_path=&#39;D:\\ 北大 tf2 课程 \\ 制作数据集 \\mnist_test_label.npy&#39; #测试图片标签转换成可用数据集，这里设置其存储路径及格式
+
+if  not os.path.exists(train_datasets_path) and not os.path.exists(train_label_datasets_path) and not os.path.exists(test_datasets_path) and not os.path.exists(test_label_datasets_path):
+    print(&#39;-------------Generate Datasets-----------------&#39;)
+    x_train, y_lable = generated(train_img_path, train_label_path)
+    x_test, y_test_label = generated(test_img_path, test_label_path)
+
+    print(&#39;-------------Save Datasets-----------------&#39;)
+    x_train = np.reshape(x_train, (len(x_train), -1))
+    x_test = np.reshape(x_test, (len(x_test), -1))
+    np.save(train_datasets_path,x_train)
+    np.save(train_label_datasets_path,y_lable)
+    np.save(test_datasets_path,x_test)
+    np.save(test_label_datasets_path,y_test_label)
+
+else:
+    print(&#39;-------------Load Datasets-----------------&#39;)
+    x_train = np.load(train_datasets_path)
+    y_label = np.load(train_label_datasets_path)
+
+    x_test = np.load(test_datasets_path)
+    y_test_label = np.load(test_label_datasets_path)
+
+    x_train = np.reshape(x_train, (len(x_train), 28, 28))
+    x_test = np.reshape(x_test, (len(x_test), 28, 28))
+
+print(x_train.shape,y_label.shape)
+print(x_test,y_test_label)</code></pre>
+<h3 id="3-2- 数据增强"><a href="#3-2- 数据增强" class="headerlink" title="3.2 数据增强"></a>3.2 数据增强</h3><p><code>image_gen_train=tf.keras.preprocessing.image.ImageDataGenerator(增强方法)</code></p>
+<p><code>image_gen_train.fit(x_train)</code></p>
+<p><strong>常用增强方法：</strong></p>
+<p>缩放系数：rescale= 所有数据将乘以该系数</p>
+<p>随机旋转：rotation_range= 随机旋转角度范围</p>
+<p>宽度偏移：width_shift_range= 随机宽度偏移量</p>
+<p>高度偏移：height_shift_range= 随机高度偏移量</p>
+<p>水平旋转：horizontal_flip= 是否水平随机翻转</p>
+<p>随机缩放：zoom_range= 随机缩放的范围 [1-n,1+n]</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20200609175704555.png" alt=""></p>
+<p><code>model.fit(……)</code>更新为：</p>
+<p><code>model.fit(image_gen_train.flow(x_train,y_train,batch_size=),...)</code></p>
+<p><strong>代码示例：</strong></p>
+<pre><code class="python">import tensorflow as tf
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+
+mnist = tf.keras.datasets.mnist
+(x_train, y_train), (x_test, y_test) = mnist.load_data()
+x_train, x_test = x_train / 255.0, x_test / 255.0
+x_train = x_train.reshape(x_train.shape[0], 28, 28, 1)  # 给数据增加一个维度, 从(60000, 28, 28)reshape 为(60000, 28, 28, 1)
+
+image_gen_train = ImageDataGenerator(
+    rescale=1. / 1.,  # 如为图像，分母为 255 时，可归至 0～1
+    rotation_range=45,  # 随机 45 度旋转
+    width_shift_range=.15,  # 宽度偏移
+    height_shift_range=.15,  # 高度偏移
+    horizontal_flip=False,  # 水平翻转
+    zoom_range=0.5  # 将图像随机缩放阈量 50％
+)
+image_gen_train.fit(x_train)
+
+model = tf.keras.models.Sequential([tf.keras.layers.Flatten(),
+    tf.keras.layers.Dense(128, activation=&#39;relu&#39;),
+    tf.keras.layers.Dense(10, activation=&#39;softmax&#39;)
+])
+
+model.compile(optimizer=&#39;adam&#39;,        loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=False),
+              metrics=[&#39;sparse_categorical_accuracy&#39;])
+
+model.fit(image_gen_train.flow(x_train, y_train, batch_size=32), epochs=5,             validation_data=(x_test, y_test),
+        validation_freq=1)
+model.summary()</code></pre>
+<h3 id="3-3- 保存及读取模型"><a href="#3-3- 保存及读取模型" class="headerlink" title="3.3 保存及读取模型"></a>3.3 保存及读取模型 </h3><p> 保存模型：</p>
+<pre><code class="python">cp_callback=tf.keras.callbacks.ModelCheckpoint(
+        filepath=&#39; 路径文件名 &#39;,
+        save_weights_only=True/False,
+        save_best_only=True/False)
+
+model.fit(...,callback=[cp_callback])</code></pre>
+<p>读取模型：</p>
+<pre><code>model.load_weights(&#39; 路径文件名 &#39;)</code></pre><p>应用示例如下：</p>
+<pre><code class="python">import tensorflow as tf
+import os
+
+mnist = tf.keras.datasets.mnist
+(x_train, y_train), (x_test, y_test) = mnist.load_data()
+x_train, x_test = x_train / 255.0, x_test / 255.0
+
+model = tf.keras.models.Sequential([tf.keras.layers.Flatten(),
+    tf.keras.layers.Dense(128, activation=&#39;relu&#39;),
+    tf.keras.layers.Dense(10, activation=&#39;softmax&#39;)
+])
+
+model.compile(optimizer=&#39;adam&#39;,
+    loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=False),
+    metrics=[&#39;sparse_categorical_accuracy&#39;])
+
+checkpoint_save_path = &quot;./checkpoint/mnist.ckpt&quot;
+if os.path.exists(checkpoint_save_path + &#39;.index&#39;):
+    print(&#39;-------------load the model-----------------&#39;)
+    model.load_weights(checkpoint_save_path)
+
+cp_callback = tf.keras.callbacks.ModelCheckpoint(filepath=checkpoint_save_path,
+                                                 save_weights_only=True,
+                                                 save_best_only=True)
+
+history = model.fit(x_train, y_train, batch_size=32, epochs=5, 
+                    validation_data=(x_test, y_test), validation_freq=1,
+                    callbacks=[cp_callback]) 
+#调用 callbacks 后会在加载模型基础上继续训练
+model.summary()</code></pre>
+<h3 id="3-4- 参数提取"><a href="#3-4- 参数提取" class="headerlink" title="3.4 参数提取"></a>3.4 参数提取 </h3><p> 提取可训练参数：</p>
+<p>model.trainable_variables 返回模型中可训练参数</p>
+<p>设置 print 输出格式</p>
+<p>np.set_printoptions(threshold= 超过多少省略显示)  #np.inf 表示无限大</p>
+<pre><code class="python">model.sumary() #sumary 之后可接上以下代码实现参数提取
+print(model.trainable_variables)
+file=open(&#39;./weights.txt&#39;,&#39;w&#39;)
+for v in model.trainable_variables:
+    file.write(str(v.name)+&#39;\n&#39;)
+    file.write(str(v.shape)+&#39;\n&#39;)
+    file.write(str(v.numpy())+&#39;\n&#39;)
+file.close()</code></pre>
+<h3 id="3-5-acc-loss 可视化"><a href="#3-5-acc-loss 可视化" class="headerlink" title="3.5 acc/loss 可视化"></a>3.5 acc/loss 可视化</h3><pre><code class="python">history=model.fit(...)
+acc=history.history[&#39;sparse_categorical_accuracy&#39;] #训练集准确率
+val_acc=history.history[&#39;val_sparse_categorical_accuracy&#39;] #测试集准确率
+loss=history.history[&#39;loss&#39;]       #训练集损失率
+val_loss=history.history[&#39;val_loss&#39;]  #测试集损失率
+
+plt.subplot(1,2,1)
+plt.plot(acc,label=&#39;Training Accuracy&#39;)
+plt.plot(val_acc,label=&#39;Validation Accuracy&#39;)
+plt.title(&#39;training and validation accuracy&#39;)
+plt.legend()
+
+plt.subplot(1,2,2)
+plt.plot(loss,label=&#39;Training loss&#39;)
+plt.plot(val_loss,label=&#39;Validation loss&#39;)
+plt.title(&#39;training and validation loss&#39;)
+plt.legend()
+plt.show()</code></pre>
+<h3 id="3-6- 给图识物"><a href="#3-6- 给图识物" class="headerlink" title="3.6 给图识物"></a>3.6 给图识物</h3><pre><code class="python">model=tf.keras.models.Sequentical([tf.keras.layers.Flatten(),
+    tf.keras.layers.Dense(128,activation=&#39;relu&#39;),
+    tf.keras.layers.Dense(10,activation=&#39;softmax&#39;),
+])
+model.load_weights(model_save_path)
+result=model.predict(x_predict)</code></pre>
+<p>应用示例：</p>
+<pre><code class="python">from PIL import Image
+import numpy as np
+import tensorflow as tf
+
+model_save_path = &#39;./checkpoint/mnist.ckpt&#39;
+
+model = tf.keras.models.Sequential([tf.keras.layers.Flatten(),
+    tf.keras.layers.Dense(128, activation=&#39;relu&#39;),
+    tf.keras.layers.Dense(10, activation=&#39;softmax&#39;)])
+
+model.load_weights(model_save_path)
+
+preNum = int(input(&quot;input the number of test pictures:&quot;))
+
+for i in range(preNum):
+    image_path = input(&quot;the path of test picture:&quot;)
+    img = Image.open(image_path)
+    img = img.resize((28, 28), Image.ANTIALIAS) #以高质量缩放到 28×28size 大小
+    img_arr = np.array(img.convert(&#39;L&#39;))
+
+    for i in range(28):
+        for j in range(28):
+            if img_arr[i][j] &lt; 200:
+                img_arr[i][j] = 255
+            else:
+                img_arr[i][j] = 0
+
+    img_arr = img_arr / 255.0
+    x_predict = img_arr[tf.newaxis, ...]  #这行代码很重要！将（28,28）变成(1,28,28)
+    result = model.predict(x_predict)
+
+    pred = tf.argmax(result, axis=1)
+
+    print(&#39;\n&#39;)
+    tf.print(pred)</code></pre>
+<p>补充点：</p>
+<p>Image.NEAREST ：低质量<br> Image.BILINEAR：双线性<br> Image.BICUBIC ：三次样条插值<br> Image.ANTIALIAS：高质量</p>
+<h2 id="4- 彩色图片应用"><a href="#4- 彩色图片应用" class="headerlink" title="4. 彩色图片应用"></a>4. 彩色图片应用 </h2><p> 现实世界中，实际项目中的图片多是高分辨率彩色图，包含 RGB 三通道。</p>
+<p>图片色彩丰富会导致待优化的参数过多，容易造成模型过拟合。</p>
+<p>实际应用时会把原始图片进行特征提取，再把提取到的特征送给全连接网络。</p>
+<h3 id="4-1- 卷积神经网络"><a href="#4-1- 卷积神经网络" class="headerlink" title="4.1 卷积神经网络"></a>4.1 卷积神经网络 </h3><p> 卷积计算是一种有效的提取图像特征的方法。</p>
+<p>一般会采用一个正方形的卷积核，按指定步长，在输入特征图上滑动，遍历输入特征图中每个像素点。每一个步长，卷积核会与输入特征图出现重合区域，重合区域对应元素相乘，求和再加上偏置项，得到输入特征的一个像素点。</p>
+<p>输入特征图的深度，决定了当前层卷积核的深度。如黑白为一维，RGB 彩色图为三维。</p>
+<p>当前卷积核的个数，决定了当前层输出特征图的深度。</p>
+<p>卷积计算过程：</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20200610160153536.png" style="zoom: 80%;" />
+
+<p>原始图像矩阵与卷积核对应位置的像素点值进行乘运算，最后把这九个值相加，并加上偏置项 1。</p>
+<p>1×(-1)+0×0+2×1+5×(-1)+4×0+2×1+3×(-1)+4×0+5×1+1=1</p>
+<p>以上可以看到，5×5 的图片经过 3×3 卷积核计算，输出图片变成了 3×3，大大减少了图片信息量，有利于模型训练。</p>
+<h4 id="感受野"><a href="# 感受野" class="headerlink" title="感受野"></a>感受野</h4><p>Receptive Field，卷积神经网络各输入特征图中的每个像素点，在原始输入图片上映射区域的大小。</p>
+<h4 id="全零填充"><a href="# 全零填充" class="headerlink" title="全零填充"></a>全零填充</h4><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20200610161834423.png" style="zoom: 67%;" />
+
+<p>在原始图像像素矩阵四周加 0，使得在卷积计算过程中，输出结果图片大小与原图片一致。</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20200610162046768.png" style="zoom: 67%;" />
+
+<p>以上公式表现了是否采用全零填充时，原图片与输出图片，步长，核长四者之间的关系。</p>
+<p><strong>TF 描述卷积层：</strong></p>
+<pre><code>tf.keras.layers.Conv2D(
+    filters= 卷积核个数,
+    kernel_size= 卷积核尺寸, #也可 (高，宽) 给出
+    strides= 滑动步长,        # 默认 1
+    padding=&#39;same&#39;or&#39;valid,  #全零填充是 &#39;same&#39;, 默认 &#39;valid&#39;
+    activation=&#39; 激活函数 &#39;,     #若有 BN 此处不写
+    input_shape=(高，宽，通道数), #输入特征维度，可省略
+    )</code></pre><h4 id="4-1-2- 批标准化 BN"><a href="#4-1-2- 批标准化 BN" class="headerlink" title="4.1.2 批标准化 BN"></a>4.1.2 批标准化 BN</h4><p>输入数据经过网络训练之后，由于权重的不同，可能造成输出数据变得过大或过小，这样进行激活时，如使用 tanh 函数激活，一旦 x 值超过 2 之后，其激活效果没有差别，激活函数对 0 附近的数据更加敏感。</p>
+<p>神经网络对 0 附近的数据更敏感，但是随着网络层数的增加，特征数据会出现偏离 0 均值的情况，这时可以通过标准化进行调整。</p>
+<p>标准化：使数据整体符合 0 均值，1 为标准差的分布。</p>
+<p>批标准化：对一小批数据，做标准化处理</p>
+<p>为每个卷积核引入可训练参数γ<del>i</del>，β<del>i</del>，调整批归一化的力度。使得输出数据过激活函数前，进行统一的标准化处理。</p>
+<p>不用担心批标准化之后改变原数据之间的关系，本来有的特征就是需要强化，有的需要弱化，所有的这些可训练参数（权重 w，偏置项 b，标准化参数γ<del>i</del>，β<del>i</del>等）经过训练之后，通过固定的相配对的网络结构就能准确反映预期的结果。</p>
+<p>目的：提升激活函数对输入数据的区分力。</p>
+<ul>
+<li><p>BN 层位于卷积层之后，激活层之前。</p>
+</li>
+<li><p>TF 描述批标准化</p>
+<p>tf.keras.layers.BatchNormalization()</p>
+</li>
+</ul>
+<pre><code>model=tf.keras.models.Sequential([Conv2D(filters=6,kernel_size=(5,5),padding=&#39;same&#39;),
+    BatchNormalization(),
+    Activation(&#39;relu&#39;),
+    MaxPool2D(pool_size=(2,2),strides=2,padding=&#39;same&#39;),
+    Dropout(0.2)
+])</code></pre><h4 id="4-1-3- 池化"><a href="#4-1-3- 池化" class="headerlink" title="4.1.3 池化"></a>4.1.3 池化 </h4><p> 目的：减少特征数据量</p>
+<p>所谓池化，就是取目标图片像素矩阵中一块区域数值的最大值，或均值来代替原图片像素矩阵。</p>
+<p>最大值池化可提取图片纹理，均值池化可保留背景特征。</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20200611163359181.png" style="zoom:67%;" />
+
+<p><strong>TF 描述池化</strong></p>
+<pre><code>tf.keras.layers.MaxPool2D(
+    pool_size= 池化核尺寸，
+    strides= 滑动步长,        # 默认 pool_size
+    padding=&#39;same&#39;or&#39;valid,  #全零填充是 &#39;same&#39;, 默认 &#39;valid&#39;
+    )
+tf.keras.layers.AveragePooling2D(
+    pool_size= 池化核尺寸，
+    strides= 滑动步长,        # 默认 pool_size
+    padding=&#39;same&#39;or&#39;valid,  #全零填充是 &#39;same&#39;, 默认 &#39;valid&#39;
+    )
+</code></pre><h4 id="4-1-4- 舍弃"><a href="#4-1-4- 舍弃" class="headerlink" title="4.1.4 舍弃"></a>4.1.4 舍弃 </h4><p> 为了缓解神经网络过拟合，在神经网络训练中，将隐藏层一部分神经元按照一定概率从神经网络中暂时舍弃。神经网络使用时，被舍弃的神经元恢复连接。</p>
+<p><strong>TF 描述池化：</strong></p>
+<p>tf.keras.layers.Dropout(舍弃概率)</p>
+<h4 id="4-1-5- 总结"><a href="#4-1-5- 总结" class="headerlink" title="4.1.5 总结"></a>4.1.5 总结 </h4><p> 卷积神经网络：借助卷积核提取特征后，送入全连接网络。</p>
+<p>卷积神经网络主要模块：</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20200612101346395.png" style="zoom:80%;" />
+
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20200612101445935.png" alt=""></p>
+<h3 id="4-2- 应用"><a href="#4-2- 应用" class="headerlink" title="4.2 应用"></a>4.2 应用 </h3><p> 以 Cifar10 数据集为例：</p>
+<p>提供 5 万张 32×32 像素点的十分类彩色图片和标签，用于训练。</p>
+<p>提供 1 万张 32×32 像素点的十分类彩色图片和标签，用于测试。</p>
+<p>一共有十类动物图片。</p>
+<p>导入 cifar10 数据集：</p>
+<pre><code>cifar10=tf.keras.datasets.cifar10
+(x_train,y_train),(x_test,y_test)=cifar10.load_data()</code></pre><p>实现示例：</p>
+<pre><code class="python">import tensorflow as tf
+import os
+import matplotlib.pyplot as plt
+from tensorflow.keras.models import Model
+from tensorflow.keras.layers import Conv2D,BatchNormalization,Activation,MaxPool2D,Dropout,Flatten,Dense
+
+cifar10=tf.keras.datasets.cifar10
+(x_train,y_train),(x_test,y_test)=cifar10.load_data()
+x_train=x_train/255.
+x_test=x_test/255.
+
+class Baseline(Model):
+    def __init__(self):
+        super(Baseline,self).__init__()
+        self.c1=Conv2D(filters=6,kernel_size=5,padding=&#39;same&#39;)
+        self.b1=BatchNormalization()
+        self.a1=Activation(&#39;relu&#39;)
+        self.p1=MaxPool2D(pool_size=2,strides=2,padding=&#39;same&#39;)
+        self.d1=Dropout(0.2)
+
+        self.f1=Flatten()
+        self.d2=Dense(128,activation=&#39;relu&#39;)
+        self.d3=Dropout(0.2)
+        self.d4=Dense(10,activation=&#39;softmax&#39;)
+
+    def call(self,x):
+        x=self.c1(x)
+        x=self.b1(x)
+        x=self.a1(x)
+        x=self.p1(x)
+        x=self.d1(x)
+        x=self.f1(x)
+        x=self.d2(x)
+        x=self.d3(x)
+        y=self.d4(x)
+        return y
+
+model=Baseline()
+
+model.compile(optimizer=tf.keras.optimizers.Adam(lr=0.1),
+              loss=&#39;sparse_categorical_crossentropy&#39;,
+              metrics=[&#39;sparse_categorical_accuracy&#39;])
+
+model_path=&#39;./checkpoint/cifar10.ckpt&#39;
+if os.path.exists(model_path+&#39;.index&#39;):
+    print(&#39;loading model&#39;)
+    model.load_weights(model_path)
+cp_callback=tf.keras.callbacks.ModelCheckpoint(filepath=model_path,
+                                               save_best_only=True,
+                                               save_weights_only=True)
+
+
+history=model.fit(x_train,y_train,batch_size=32,epochs=9,
+                  validation_data=(x_test,y_test),
+                  validation_freq=1,callbacks=[cp_callback])
+model.summary()
+
+loss=history.history[&#39;loss&#39;]
+val_loss=history.history[&#39;val_loss&#39;]
+acc=history.history[&#39;sparse_categorical_accuracy&#39;]
+val_acc=history.history[&#39;val_sparse_categorical_accuracy&#39;]
+
+plt.subplot(121)
+plt.plot(loss,label=&#39;loss&#39;)
+plt.plot(val_loss,label=&#39;val_loss&#39;)
+plt.legend()
+
+plt.subplot(122)
+plt.plot(acc,label=&#39;acc&#39;)
+plt.plot(val_acc,label=&#39;val_acc&#39;)
+plt.legend()
+plt.show()</code></pre>
+<h2 id="5- 经典卷积神经网络"><a href="#5- 经典卷积神经网络" class="headerlink" title="5. 经典卷积神经网络"></a>5. 经典卷积神经网络</h2><p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20200612145825710.png" alt=""></p>
+<h3 id="5-1-LeNet"><a href="#5-1-LeNet" class="headerlink" title="5.1 LeNet"></a>5.1 LeNet</h3><p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20200612145921978.png" alt=""></p>
+<p>LeNet 神经网络结果如上，运用了：</p>
+<p>两个卷积神经网络 + 一个拉直层 + 三个全连接网络</p>
+<h3 id="5-2-AlexNet"><a href="#5-2-AlexNet" class="headerlink" title="5.2 AlexNet"></a>5.2 AlexNet</h3><p>AlexNet 网络诞生于 2012 年，当年的 ImageNet 竞赛的冠军，Top5 错误率为 16.4%。</p>
+<p><em>Alex Krizhevsky, Ilya Sutskever; Geoffrey E. Hinton. ImageNet Classfication with Deep Convolution Networks. In NIPS 2012.</em></p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20200612150720746.png" alt=""></p>
+<p>AlexNet 神经网络结果如上，运用了：</p>
+<p>五个卷积神经网络 + 一个拉直层 + 三个全连接网络</p>
+<h3 id="5-3-VGGNet"><a href="#5-3-VGGNet" class="headerlink" title="5.3 VGGNet"></a>5.3 VGGNet</h3><p>VGGNet 诞生于 2014 年，当年 ImageNet 竞赛的亚军，Top5 错误率减小到 7.3%。使用小尺寸卷积核，减少了参数的同时提高了准确率，其网络结构规整，非常适合硬件加速。</p>
+<p><em>K Simonyan, A Zisserman. Very Deep Convolutional Networks for Large Scale Image RecognitionI. In NIPS 2015.</em></p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20200612151928712.png" alt=""></p>
+<p>VGGNet 神经网络结果如上，运用了：</p>
+<p>十三个卷积神经网络 + 一个拉直层 + 三个全连接网络</p>
+<h3 id="5-4-InceptionNet"><a href="#5-4-InceptionNet" class="headerlink" title="5.4 InceptionNet"></a>5.4 InceptionNet</h3><p> InceptionNet 诞生于 2014 年，当年 ImageNet 竞赛的亚军，Top5 错误率减小到 6.67%。</p>
+<p><em>SzegedyC, Liu w, Jia y, et al. Going Deeper with Convolutions. In CVPR, 2015.</em></p>
+<p>引入 Inception 结构块，在同一层网络内使用不同尺寸的卷积核，提升了模型感知力，使用批标准化，缓解了梯度消失。</p>
+<p> InceptionNet 的核心是它的基本单元 Inception 结构块，包括其后续版本，都是基于 Inception 结构块搭建的网络。</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20200612153034354.png" alt=""></p>
+<p>实现代码如下：</p>
+<pre><code class="python">import tensorflow as tf
+import os
+import numpy as np
+from matplotlib import pyplot as plt
+from tensorflow.keras.layers import Conv2D, BatchNormalization, Activation, MaxPool2D, Dropout, Flatten, Dense, GlobalAveragePooling2D
+from tensorflow.keras import Model
+
+np.set_printoptions(threshold=np.inf)  #设置输出打印格式
+
+cifar10 = tf.keras.datasets.cifar10
+(x_train, y_train), (x_test, y_test) = cifar10.load_data()
+x_train, x_test = x_train / 255.0, x_test / 255.0
+
+
+class ConvBNRelu(Model):
+    def __init__(self, ch, kernelsz=3, strides=1, padding=&#39;same&#39;):
+        super(ConvBNRelu, self).__init__()
+        self.model = tf.keras.models.Sequential([Conv2D(ch, kernelsz, strides=strides, padding=padding),
+            BatchNormalization(),
+            Activation(&#39;relu&#39;)
+        ])
+
+    def call(self, x):
+        x = self.model(x, training=False) 
+        #在 training=False 时，BN 通过整个训练集计算均值、方差去做批归一化，training=True 时，通过当前 batch 的均值、方差去做批归一化。推理时 training=False 效果好
+        return x
+
+
+class InceptionBlk(Model):
+    def __init__(self, ch, strides=1):
+        super(InceptionBlk, self).__init__()
+        self.ch = ch
+        self.strides = strides
+        self.c1 = ConvBNRelu(ch, kernelsz=1, strides=strides)
+        self.c2_1 = ConvBNRelu(ch, kernelsz=1, strides=strides)
+        self.c2_2 = ConvBNRelu(ch, kernelsz=3, strides=1)
+        self.c3_1 = ConvBNRelu(ch, kernelsz=1, strides=strides)
+        self.c3_2 = ConvBNRelu(ch, kernelsz=5, strides=1)
+        self.p4_1 = MaxPool2D(3, strides=1, padding=&#39;same&#39;)
+        self.c4_2 = ConvBNRelu(ch, kernelsz=1, strides=strides)
+
+    def call(self, x):
+        x1 = self.c1(x)
+        x2_1 = self.c2_1(x)
+        x2_2 = self.c2_2(x2_1)
+        x3_1 = self.c3_1(x)
+        x3_2 = self.c3_2(x3_1)
+        x4_1 = self.p4_1(x)
+        x4_2 = self.c4_2(x4_1)
+        # concat along axis=channel
+        x = tf.concat([x1, x2_2, x3_2, x4_2], axis=3)
+        return x
+
+
+class Inception10(Model):
+    def __init__(self, num_blocks, num_classes, init_ch=16, **kwargs):
+        super(Inception10, self).__init__(**kwargs)
+        self.in_channels = init_ch
+        self.out_channels = init_ch
+        self.num_blocks = num_blocks
+        self.init_ch = init_ch
+        self.c1 = ConvBNRelu(init_ch)
+        self.blocks = tf.keras.models.Sequential()
+        for block_id in range(num_blocks):
+            for layer_id in range(2):
+                if layer_id == 0:
+                    block = InceptionBlk(self.out_channels, strides=2)
+                else:
+                    block = InceptionBlk(self.out_channels, strides=1)
+                self.blocks.add(block)
+            # enlarger out_channels per block
+            self.out_channels *= 2
+        self.p1 = GlobalAveragePooling2D()
+        self.f1 = Dense(num_classes, activation=&#39;softmax&#39;)
+
+    def call(self, x):
+        x = self.c1(x)
+        x = self.blocks(x)
+        x = self.p1(x)
+        y = self.f1(x)
+        return y
+
+
+model = Inception10(num_blocks=2, num_classes=10)
+
+model.compile(optimizer=&#39;adam&#39;,
+    loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=False),
+    metrics=[&#39;sparse_categorical_accuracy&#39;])
+
+checkpoint_save_path = &quot;./checkpoint/Inception10.ckpt&quot;
+if os.path.exists(checkpoint_save_path + &#39;.index&#39;):
+    print(&#39;-------------load the model-----------------&#39;)
+    model.load_weights(checkpoint_save_path)
+
+cp_callback = tf.keras.callbacks.ModelCheckpoint(filepath=checkpoint_save_path,
+                                                 save_weights_only=True,
+                                                 save_best_only=True)
+
+history = model.fit(x_train, y_train, batch_size=32, 
+                    epochs=5, validation_data=(x_test, y_test),
+                    validation_freq=1,
+                    callbacks=[cp_callback])
+model.summary()</code></pre>
+<h3 id="5-5-ResNet"><a href="#5-5-ResNet" class="headerlink" title="5.5 ResNet"></a>5.5 ResNet</h3><p>ResNet 诞生于 2015 年，当年 ImageNet 竞赛冠军，Top5 错误率为 3.57%。</p>
+<p><em>Kaiming He, Xiangyu Zhang, Shaoqing Ren. Deep Residual Learning for Image Recognition. InCPVR2016.</em></p>
+<p>单纯叠加网络层数会使神经网络模型退化，以至于后面的特征丢失了前边特征的原本模样。</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20200612162433953.png" style="zoom:80%;" />
+
+<p>上述有效缓解了神经网络模型堆叠导致的退化，使得神经网络可以朝着更深层级的方向发展。</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20200612162829214.png" alt=""></p>
+<p>实现代码如下：</p>
+<pre><code class="python">import tensorflow as tf
+import os
+import numpy as np
+from matplotlib import pyplot as plt
+from tensorflow.keras.layers import Conv2D, BatchNormalization, Activation, MaxPool2D, Dropout, Flatten, Dense
+from tensorflow.keras import Model
+
+np.set_printoptions(threshold=np.inf)
+
+cifar10 = tf.keras.datasets.cifar10
+(x_train, y_train), (x_test, y_test) = cifar10.load_data()
+x_train, x_test = x_train / 255.0, x_test / 255.0
+
+
+class ResnetBlock(Model):
+    def __init__(self, filters, strides=1, residual_path=False):
+        super(ResnetBlock, self).__init__()
+        self.filters = filters
+        self.strides = strides
+        self.residual_path = residual_path
+
+        self.c1 = Conv2D(filters, (3, 3), strides=strides, 
+                         padding=&#39;same&#39;, use_bias=False)
+        self.b1 = BatchNormalization()
+        self.a1 = Activation(&#39;relu&#39;)
+
+        self.c2 = Conv2D(filters, (3, 3), strides=1, 
+                         padding=&#39;same&#39;, use_bias=False)
+        self.b2 = BatchNormalization()
+
+        # residual_path 为 True 时，对输入进行下采样，即用 1x1 的卷积核做卷积操作，保证 x 能和 F(x)维度相同，顺利相加
+        if residual_path:
+            self.down_c1 = Conv2D(filters, (1, 1), strides=strides, 
+                                  padding=&#39;same&#39;, use_bias=False)
+            self.down_b1 = BatchNormalization()
+
+        self.a2 = Activation(&#39;relu&#39;)
+
+    def call(self, inputs):
+        residual = inputs  # residual 等于输入值本身，即 residual=x
+        # 将输入通过卷积、BN 层、激活层，计算 F(x)
+        x = self.c1(inputs)
+        x = self.b1(x)
+        x = self.a1(x)
+
+        x = self.c2(x)
+        y = self.b2(x)
+
+        if self.residual_path:
+            residual = self.down_c1(inputs)
+            residual = self.down_b1(residual)
+
+        out = self.a2(y + residual)  # 最后输出的是两部分的和，即 F(x)+x 或 F(x)+Wx, 再过激活函数
+        return out
+
+
+class ResNet18(Model):
+
+    def __init__(self, block_list, initial_filters=64):  # block_list 表示每个 block 有几个卷积层
+        super(ResNet18, self).__init__()
+        self.num_blocks = len(block_list)  # 共有几个 block
+        self.block_list = block_list
+        self.out_filters = initial_filters
+        self.c1 = Conv2D(self.out_filters, (3, 3), strides=1, 
+                         padding=&#39;same&#39;, use_bias=False)
+        self.b1 = BatchNormalization()
+        self.a1 = Activation(&#39;relu&#39;)
+        self.blocks = tf.keras.models.Sequential()
+        # 构建 ResNet 网络结构
+        for block_id in range(len(block_list)):  # 第几个 resnet block
+            for layer_id in range(block_list[block_id]):  # 第几个卷积层
+
+                if block_id != 0 and layer_id == 0:  # 对除第一个 block 以外的每个 block 的输入进行下采样
+                    block = ResnetBlock(self.out_filters, strides=2, 
+                                        residual_path=True)
+                else:
+                    block = ResnetBlock(self.out_filters, residual_path=False)
+                self.blocks.add(block)  # 将构建好的 block 加入 resnet
+            self.out_filters *= 2  # 下一个 block 的卷积核数是上一个 block 的 2 倍
+        self.p1 = tf.keras.layers.GlobalAveragePooling2D()
+        self.f1 = tf.keras.layers.Dense(10, activation=&#39;softmax&#39;,
+                        kernel_regularizer=tf.keras.regularizers.l2())
+
+    def call(self, inputs):
+        x = self.c1(inputs)
+        x = self.b1(x)
+        x = self.a1(x)
+        x = self.blocks(x)
+        x = self.p1(x)
+        y = self.f1(x)
+        return y
+
+
+model = ResNet18([2, 2, 2, 2])
+
+model.compile(optimizer=&#39;adam&#39;,
+              loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=False),
+              metrics=[&#39;sparse_categorical_accuracy&#39;])
+
+checkpoint_save_path = &quot;./checkpoint/ResNet18.ckpt&quot;
+if os.path.exists(checkpoint_save_path + &#39;.index&#39;):
+    print(&#39;-------------load the model-----------------&#39;)
+    model.load_weights(checkpoint_save_path)
+
+cp_callback = tf.keras.callbacks.ModelCheckpoint(filepath=checkpoint_save_path,
+                                                 save_weights_only=True,
+                                                 save_best_only=True)
+
+history = model.fit(x_train, y_train, batch_size=32, epochs=5, 
+                    validation_data=(x_test, y_test), validation_freq=1,
+                    callbacks=[cp_callback])
+model.summary()</code></pre>
+<h3 id="5-6- 小结"><a href="#5-6- 小结" class="headerlink" title="5.6 小结"></a>5.6 小结</h3><p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20200612163538135.png" alt=""></p>
+<h2 id="6- 循环神经网络 RNN"><a href="#6- 循环神经网络 RNN" class="headerlink" title="6. 循环神经网络 RNN"></a>6. 循环神经网络 RNN</h2><p>实现连续数据的预测，根据上文，预测下文：如输入 abc，系统可以预测下一步是 d；如输入鱼离不开__，系统能预测空格应该填入水。</p>
+<h3 id="6-1- 循环核"><a href="#6-1- 循环核" class="headerlink" title="6.1 循环核"></a>6.1 循环核 </h3><p> 循环核：参数时间共享，循环层提取时间信息。</p>
+<p>循环核具有记忆力，通过不同时刻的参数共享，实现了对时间序列的信息提取。</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20200612201312920.png" alt=""></p>
+<p>前向传播时，记忆体内存储的状态信息 h<del>t</del>，在每个时刻都被刷新，三个参数矩阵 w<del>xh</del>，w<del>hh</del>，w<del>hy</del>自始至终都是固定不变的。</p>
+<p>反向传播时，三个参数矩阵 w<del>xh</del>，w<del>hh</del>，w<del>hy</del>被梯度下降法更新。</p>
+<p>y<del>t</del>=softmax(h<del>t</del>w<del>hy</del>+by)</p>
+<p>h<del>t</del>=tanh(x<del>t</del>w<del>xh</del>+h<del>t-1</del>w<del>hh</del>+bh)</p>
+<p>循环神经网络：借助循环核提取时间特征后，送入全连接网络。</p>
+<h3 id="6-2-TF 描述循环记忆层"><a href="#6-2-TF 描述循环记忆层" class="headerlink" title="6.2 TF 描述循环记忆层"></a>6.2 TF 描述循环记忆层</h3><pre><code class="python">tf.keras.layers.SimpleRNN(记忆体个数，activation=&#39; 激活函数 &#39;，
+                         return_sequences= 是否每个时刻输出 ht 到下一层)</code></pre>
+<p>activation=’激活函数’，默认使用 tanh。</p>
+<p> return_sequences=True，各时间步输出 ht</p>
+<p>return_sequences=False，仅最后时间步输出 ht（默认）</p>
+<p>入 RNN 时，x_train 维度：</p>
+<p>[送入样本数，循环核时间展开步数，每个时间步输入特征个数]</p>
+<p>如下图：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20200615132851909.png" alt=""></p>
+<p>若输入 4 个字母出结果，循环核时间展开步数为 4。</p>
+<h3 id="6-3- 应用"><a href="#6-3- 应用" class="headerlink" title="6.3 应用"></a>6.3 应用</h3><h4 id="6-3-1 依次预"><a href="#6-3-1 依次预" class="headerlink" title="6.3.1 依次预"></a><strong>6.3.1 依次预</strong></h4><pre><code class="python">import numpy as np
+import tensorflow as tf
+from tensorflow.keras.layers import Dense, SimpleRNN
+import matplotlib.pyplot as plt
+import os
+
+input_word = &quot;abcde&quot;
+w_to_id = &#123;&#39;a&#39;: 0, &#39;b&#39;: 1, &#39;c&#39;: 2, &#39;d&#39;: 3, &#39;e&#39;: 4&#125;  # 单词映射到数值 id 的词典
+id_to_onehot = &#123;0: [1., 0., 0., 0., 0.], 1: [0., 1., 0., 0., 0.], 2: [0., 0., 1., 0., 0.], 3: [0., 0., 0., 1., 0.],
+                4: [0., 0., 0., 0., 1.]&#125;  # id 编码为 one-hot
+
+x_train = [id_to_onehot[w_to_id[&#39;a&#39;]], id_to_onehot[w_to_id[&#39;b&#39;]], id_to_onehot[w_to_id[&#39;c&#39;]],
+           id_to_onehot[w_to_id[&#39;d&#39;]], id_to_onehot[w_to_id[&#39;e&#39;]]]
+y_train = [w_to_id[&#39;b&#39;], w_to_id[&#39;c&#39;], w_to_id[&#39;d&#39;], w_to_id[&#39;e&#39;], w_to_id[&#39;a&#39;]]
+
+np.random.seed(7)
+np.random.shuffle(x_train)
+np.random.seed(7)
+np.random.shuffle(y_train)
+tf.random.set_seed(7)
+
+# 使 x_train 符合 SimpleRNN 输入要求：[送入样本数， 循环核时间展开步数， 每个时间步输入特征个数]。
+# 此处整个数据集送入，送入样本数为 len(x_train)；输入 1 个字母出结果，循环核时间展开步数为 1; 表示为独热码有 5 个输入特征，每个时间步输入特征个数为 5
+x_train = np.reshape(x_train, (len(x_train), 1, 5))
+y_train = np.array(y_train)
+
+model = tf.keras.Sequential([SimpleRNN(3),
+    Dense(5, activation=&#39;softmax&#39;)
+])
+#以下省略</code></pre>
+<h4 id="6-3-2- 连续预测"><a href="#6-3-2- 连续预测" class="headerlink" title="6.3.2 连续预测"></a>6.3.2 连续预测</h4><pre><code class="python">import numpy as np
+import tensorflow as tf
+from tensorflow.keras.layers import Dense, SimpleRNN
+import matplotlib.pyplot as plt
+import os
+
+input_word = &quot;abcde&quot;
+w_to_id = &#123;&#39;a&#39;: 0, &#39;b&#39;: 1, &#39;c&#39;: 2, &#39;d&#39;: 3, &#39;e&#39;: 4&#125;  # 单词映射到数值 id 的词典
+id_to_onehot = &#123;0: [1., 0., 0., 0., 0.], 1: [0., 1., 0., 0., 0.], 
+                2: [0., 0., 1., 0., 0.], 3: [0., 0., 0., 1., 0.],
+                4: [0., 0., 0., 0., 1.]&#125;  # id 编码为 one-hot
+
+x_train = [[id_to_onehot[w_to_id[&#39;a&#39;]], id_to_onehot[w_to_id[&#39;b&#39;]], id_to_onehot[w_to_id[&#39;c&#39;]], id_to_onehot[w_to_id[&#39;d&#39;]]],
+    [id_to_onehot[w_to_id[&#39;b&#39;]], id_to_onehot[w_to_id[&#39;c&#39;]], id_to_onehot[w_to_id[&#39;d&#39;]], id_to_onehot[w_to_id[&#39;e&#39;]]],
+    [id_to_onehot[w_to_id[&#39;c&#39;]], id_to_onehot[w_to_id[&#39;d&#39;]], id_to_onehot[w_to_id[&#39;e&#39;]], id_to_onehot[w_to_id[&#39;a&#39;]]],
+    [id_to_onehot[w_to_id[&#39;d&#39;]], id_to_onehot[w_to_id[&#39;e&#39;]], id_to_onehot[w_to_id[&#39;a&#39;]], id_to_onehot[w_to_id[&#39;b&#39;]]],
+    [id_to_onehot[w_to_id[&#39;e&#39;]], id_to_onehot[w_to_id[&#39;a&#39;]], id_to_onehot[w_to_id[&#39;b&#39;]], id_to_onehot[w_to_id[&#39;c&#39;]]],
+]
+y_train = [w_to_id[&#39;e&#39;], w_to_id[&#39;a&#39;], w_to_id[&#39;b&#39;], w_to_id[&#39;c&#39;], w_to_id[&#39;d&#39;]]
+
+np.random.seed(7)
+np.random.shuffle(x_train)
+np.random.seed(7)
+np.random.shuffle(y_train)
+tf.random.set_seed(7)
+
+# 使 x_train 符合 SimpleRNN 输入要求：[送入样本数， 循环核时间展开步数， 每个时间步输入特征个数]。
+# 此处整个数据集送入，送入样本数为 len(x_train)；输入 4 个字母出结果，循环核时间展开步数为 4; 表示为独热码有 5 个输入特征，每个时间步输入特征个数为 5
+x_train = np.reshape(x_train, (len(x_train), 4, 5))
+y_train = np.array(y_train)
+
+model = tf.keras.Sequential([SimpleRNN(3),
+    Dense(5, activation=&#39;softmax&#39;)
+])
+#以下省略</code></pre>
+<h3 id="6-4- 编码"><a href="#6-4- 编码" class="headerlink" title="6.4 编码"></a>6.4 编码 </h3><p> 独热码：数据量大，过于稀松，映射之间是独立的，没有表现出关联性。</p>
+<p>Embedding：是一种单词编码方法，用低维向量实现了编码，这种编码通过神经网络训练优化，能表达出单词之间的相关性。</p>
+<pre><code>tf.keras.layers.Embedding(词汇表大小，编码维度)
+#编码维度就是用几个数字表达一个单词 </code></pre><p> 入 Embedding 时，x_train 维度：[送入样本数，循环核时间展开步数]</p>
+<p>6.3.1 的例子如下：</p>
+<pre><code class="python">import numpy as np
+import tensorflow as tf
+from tensorflow.keras.layers import Dense, SimpleRNN, Embedding
+import matplotlib.pyplot as plt
+import os
+
+input_word = &quot;abcde&quot;
+w_to_id = &#123;&#39;a&#39;: 0, &#39;b&#39;: 1, &#39;c&#39;: 2, &#39;d&#39;: 3, &#39;e&#39;: 4&#125;  # 单词映射到数值 id 的词典
+
+x_train = [w_to_id[&#39;a&#39;], w_to_id[&#39;b&#39;], w_to_id[&#39;c&#39;], w_to_id[&#39;d&#39;], w_to_id[&#39;e&#39;]]
+y_train = [w_to_id[&#39;b&#39;], w_to_id[&#39;c&#39;], w_to_id[&#39;d&#39;], w_to_id[&#39;e&#39;], w_to_id[&#39;a&#39;]]
+
+np.random.seed(7)
+np.random.shuffle(x_train)
+np.random.seed(7)
+np.random.shuffle(y_train)
+tf.random.set_seed(7)
+
+# 使 x_train 符合 Embedding 输入要求：[送入样本数， 循环核时间展开步数] ，
+# 此处整个数据集送入所以送入，送入样本数为 len(x_train)；输入 1 个字母出结果，循环核时间展开步数为 1。
+x_train = np.reshape(x_train, (len(x_train), 1))
+y_train = np.array(y_train)
+
+model = tf.keras.Sequential([Embedding(5, 2),
+    SimpleRNN(3),
+    Dense(5, activation=&#39;softmax&#39;)
+])
+
+model.compile(optimizer=tf.keras.optimizers.Adam(0.01),
+              loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=False),
+              metrics=[&#39;sparse_categorical_accuracy&#39;])
+model.fit(x_train, y_train, batch_size=32, epochs=100])</code></pre>
+<p>6.3.2 的例子如下：</p>
+<pre><code class="python">import numpy as np
+import tensorflow as tf
+from tensorflow.keras.layers import Dense, SimpleRNN, Embedding
+import matplotlib.pyplot as plt
+import os
+
+input_word = &quot;abcdefghijklmnopqrstuvwxyz&quot;
+w_to_id = &#123;&#39;a&#39;: 0, &#39;b&#39;: 1, &#39;c&#39;: 2, &#39;d&#39;: 3, &#39;e&#39;: 4,
+           &#39;f&#39;: 5, &#39;g&#39;: 6, &#39;h&#39;: 7, &#39;i&#39;: 8, &#39;j&#39;: 9,
+           &#39;k&#39;: 10, &#39;l&#39;: 11, &#39;m&#39;: 12, &#39;n&#39;: 13, &#39;o&#39;: 14,
+           &#39;p&#39;: 15, &#39;q&#39;: 16, &#39;r&#39;: 17, &#39;s&#39;: 18, &#39;t&#39;: 19,
+           &#39;u&#39;: 20, &#39;v&#39;: 21, &#39;w&#39;: 22, &#39;x&#39;: 23, &#39;y&#39;: 24, &#39;z&#39;: 25&#125;  # 单词映射到数值 id 的词典
+
+training_set_scaled = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+                       11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+                       21, 22, 23, 24, 25]
+
+x_train = []
+y_train = []
+
+for i in range(4, 26):
+    x_train.append(training_set_scaled[i - 4:i])
+    y_train.append(training_set_scaled[i])
+
+np.random.seed(7)
+np.random.shuffle(x_train)
+np.random.seed(7)
+np.random.shuffle(y_train)
+tf.random.set_seed(7)
+
+# 使 x_train 符合 Embedding 输入要求：[送入样本数， 循环核时间展开步数] ，
+# 此处整个数据集送入所以送入，送入样本数为 len(x_train)；输入 4 个字母出结果，循环核时间展开步数为 4。
+x_train = np.reshape(x_train, (len(x_train), 4))
+y_train = np.array(y_train)
+
+model = tf.keras.Sequential([Embedding(26, 2),
+    SimpleRNN(10),
+    Dense(26, activation=&#39;softmax&#39;)
+])
+
+model.compile(optimizer=tf.keras.optimizers.Adam(0.01),
+              loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=False),
+              metrics=[&#39;sparse_categorical_accuracy&#39;])
+model.fit(x_train, y_train, batch_size=32, epochs=100])</code></pre>
+<h2 id="7- 长短记忆网络 LSTM"><a href="#7- 长短记忆网络 LSTM" class="headerlink" title="7. 长短记忆网络 LSTM"></a>7. 长短记忆网络 LSTM</h2><p>传统的 RNN 可以通过记忆体实现短期记忆实现连续数据的预测，但是当连续的数据序列变长时，会使展开时间步变长，在反向传播更新参数时，梯度按照时间步连续相乘，会导致梯度消失，所以 1997 年由 Hochreiter 和 Schmidhuber 等人提出了长短记忆网络<strong>LSTM</strong>。</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20200615152345713.png" alt=""></p>
+<p><strong>TF 描述 LSTM 层：</strong></p>
+<pre><code class="python">tf.keras.layers.LSTM(记忆体个数，return_sequences= 是否返回输出)
+
+#示例
+model=tf.keras.Sequential([LSTM(80,return_sequences=True),
+    Dropout(0.2),
+    LSTM(100),
+    Dropout(0.2),
+    Dense(1)
+])</code></pre>
+<p>LSTM 实现股票预测代码：</p>
+<pre><code class="python">import numpy as np
+import tensorflow as tf
+from tensorflow.keras.layers import Dropout, Dense, LSTM
+import matplotlib.pyplot as plt
+import os
+import pandas as pd
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.metrics import mean_squared_error, mean_absolute_error
+import math
+
+maotai = pd.read_csv(&#39;./SH600519.csv&#39;)  # 读取股票文件
+
+training_set = maotai.iloc[0:2426 - 300, 2:3].values  # 前 (2426-300=2126) 天的开盘价作为训练集, 表格从 0 开始计数，2:3 是提取 [2:3) 列，前闭后开, 故提取出 C 列开盘价
+test_set = maotai.iloc[2426 - 300:, 2:3].values  # 后 300 天的开盘价作为测试集
+
+# 归一化
+sc = MinMaxScaler(feature_range=(0, 1))  # 定义归一化：归一化到 (0，1) 之间
+training_set_scaled = sc.fit_transform(training_set)  # 求得训练集的最大值，最小值这些训练集固有的属性，并在训练集上进行归一化
+test_set = sc.transform(test_set)  # 利用训练集的属性对测试集进行归一化
+
+x_train = []
+y_train = []
+
+x_test = []
+y_test = []
+
+# 测试集：csv 表格中前 2426-300=2126 天数据
+# 利用 for 循环，遍历整个训练集，提取训练集中连续 60 天的开盘价作为输入特征 x_train，第 61 天的数据作为标签，for 循环共构建 2426-300-60=2066 组数据。
+for i in range(60, len(training_set_scaled)):
+    x_train.append(training_set_scaled[i - 60:i, 0])
+    y_train.append(training_set_scaled[i, 0])
+# 对训练集进行打乱
+np.random.seed(7)
+np.random.shuffle(x_train)
+np.random.seed(7)
+np.random.shuffle(y_train)
+tf.random.set_seed(7)
+# 将训练集由 list 格式变为 array 格式
+x_train, y_train = np.array(x_train), np.array(y_train)
+
+# 使 x_train 符合 RNN 输入要求：[送入样本数， 循环核时间展开步数， 每个时间步输入特征个数]。
+# 此处整个数据集送入，送入样本数为 x_train.shape[0]即 2066 组数据；输入 60 个开盘价，预测出第 61 天的开盘价，循环核时间展开步数为 60; 每个时间步送入的特征是某一天的开盘价，只有 1 个数据，故每个时间步输入特征个数为 1
+x_train = np.reshape(x_train, (x_train.shape[0], 60, 1))
+# 测试集：csv 表格中后 300 天数据
+# 利用 for 循环，遍历整个测试集，提取测试集中连续 60 天的开盘价作为输入特征 x_train，第 61 天的数据作为标签，for 循环共构建 300-60=240 组数据。
+for i in range(60, len(test_set)):
+    x_test.append(test_set[i - 60:i, 0])
+    y_test.append(test_set[i, 0])
+# 测试集变 array 并 reshape 为符合 RNN 输入要求：[送入样本数， 循环核时间展开步数， 每个时间步输入特征个数]
+x_test, y_test = np.array(x_test), np.array(y_test)
+x_test = np.reshape(x_test, (x_test.shape[0], 60, 1))
+
+model = tf.keras.Sequential([LSTM(80, return_sequences=True),
+    Dropout(0.2),
+    LSTM(100),
+    Dropout(0.2),
+    Dense(1)
+])
+
+model.compile(optimizer=tf.keras.optimizers.Adam(0.001),
+              loss=&#39;mean_squared_error&#39;)  # 损失函数用均方误差
+# 该应用只观测 loss 数值，不观测准确率，所以删去 metrics 选项，一会在每个 epoch 迭代显示时只显示 loss 值
+
+checkpoint_save_path = &quot;./checkpoint/LSTM_stock.ckpt&quot;
+
+if os.path.exists(checkpoint_save_path + &#39;.index&#39;):
+    print(&#39;-------------load the model-----------------&#39;)
+    model.load_weights(checkpoint_save_path)
+
+cp_callback = tf.keras.callbacks.ModelCheckpoint(filepath=checkpoint_save_path,
+                                                 save_weights_only=True,
+                                                 save_best_only=True,
+                                                 monitor=&#39;val_loss&#39;)
+
+history = model.fit(x_train, y_train, batch_size=64, epochs=50, validation_data=(x_test, y_test), validation_freq=1,
+                    callbacks=[cp_callback])
+
+model.summary()
+
+file = open(&#39;./weights.txt&#39;, &#39;w&#39;)  # 参数提取
+for v in model.trainable_variables:
+    file.write(str(v.name) + &#39;\n&#39;)
+    file.write(str(v.shape) + &#39;\n&#39;)
+    file.write(str(v.numpy()) + &#39;\n&#39;)
+file.close()
+
+loss = history.history[&#39;loss&#39;]
+val_loss = history.history[&#39;val_loss&#39;]
+
+plt.plot(loss, label=&#39;Training Loss&#39;)
+plt.plot(val_loss, label=&#39;Validation Loss&#39;)
+plt.title(&#39;Training and Validation Loss&#39;)
+plt.legend()
+plt.show()
+
+################## predict ######################
+# 测试集输入模型进行预测
+predicted_stock_price = model.predict(x_test)
+# 对预测数据还原 --- 从（0，1）反归一化到原始范围
+predicted_stock_price = sc.inverse_transform(predicted_stock_price)
+# 对真实数据还原 --- 从（0，1）反归一化到原始范围
+real_stock_price = sc.inverse_transform(test_set[60:])
+# 画出真实数据和预测数据的对比曲线
+plt.plot(real_stock_price, color=&#39;red&#39;, label=&#39;MaoTai Stock Price&#39;)
+plt.plot(predicted_stock_price, color=&#39;blue&#39;, label=&#39;Predicted MaoTai Stock Price&#39;)
+plt.title(&#39;MaoTai Stock Price Prediction&#39;)
+plt.xlabel(&#39;Time&#39;)
+plt.ylabel(&#39;MaoTai Stock Price&#39;)
+plt.legend()
+plt.show()
+
+##########evaluate##############
+# calculate MSE 均方误差 ---&gt; E[(预测值 - 真实值)^2] (预测值减真实值求平方后求均值)
+mse = mean_squared_error(predicted_stock_price, real_stock_price)
+# calculate RMSE 均方根误差 ---&gt;sqrt[MSE]    (对均方误差开方)
+rmse = math.sqrt(mean_squared_error(predicted_stock_price, real_stock_price))
+# calculate MAE 平均绝对误差 -----&gt;E[| 预测值 - 真实值 |](预测值减真实值求绝对值后求均值）
+mae = mean_absolute_error(predicted_stock_price, real_stock_price)
+print(&#39; 均方误差: %.6f&#39; % mse)
+print(&#39; 均方根误差: %.6f&#39; % rmse)
+print(&#39; 平均绝对误差: %.6f&#39; % mae)</code></pre>
+<h2 id="8-GRU 网络"><a href="#8-GRU 网络" class="headerlink" title="8. GRU 网络"></a>8. GRU 网络</h2><p>2014 年 cho 等人简化了 LSTM 网络结构，提出了 GRU 网络。</p>
+<p>GRU 使记忆体 ht 融合了长期记忆个短期记忆。</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20200615154320364.png" alt=""></p>
+<p><strong>TF 描述 GRU 层：</strong></p>
+<pre><code class="python">tf.keras.layers.GRU(记忆体个数，return_sequences= 是否返回输出)
+
+#示例
+model=tf.keras.Sequential([GRU(80,return_sequences=True),
+    Dropout(0.2),
+    GRU(100),
+    Dropout(0.2),
+    Dense(1)
+])</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 欢迎各位看官及技术大佬前来交流指导呀，可以邮件至 jqiange@yeah.net </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2021 Jqiange
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>爬虫基础入门 | jqiange</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="爬虫基础入门 | jqiange">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="人畜无害的姜小强">
+<meta property="og:url" content="https://jqiange.github.io/about/index.html">
+<meta property="og:site_name" content="jqiange">
+<meta property="og:description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+<meta property="article:published_time" content="2020-02-18T08:21:04.000Z">
+<meta property="article:modified_time" content="2025-12-13T05:23:10.695Z">
+<meta property="article:author" content="姜小强">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+
+
+<link rel="icon" href="/img/jqiange.png">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/jqiange.png"/>
+</a>
+<div class="author">
+    <span>姜小强</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/jqiange"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(58)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(9)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据库">
+                        
+                        数据库
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="每日一学">
+                        
+                        每日一学
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="爬虫">
+                        
+                        爬虫
+                        <small>(10)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="前端">
+                        
+                        前端
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="深度学习">
+                        
+                        深度学习
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据分析">
+                        
+                        数据分析
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="chip">
+                        
+                        chip
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="CPP">
+                        
+                        CPP
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Linux">
+                        
+                        Linux
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="python">
+                        
+                        python
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="58">
+<input type="hidden" id="yelog_site_word_count" value="251.9k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSS-Xpath</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Markdown</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Matplotlib</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Mysql</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Numpy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pandas</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pip</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pyecharts</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pygal</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pymysql-ORM</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>RE</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Redis</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Scrapy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Seaborn</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Selenium</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>yield</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="全部文章 python "
+           href="/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%A6%E8%A7%A3/"
+           data-tag="RE"
+           data-author="" >
+            <span class="post-title" title="正则表达式详解">正则表达式详解</span>
+            <span class="post-date" title="2020-02-26 09:25:46">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/tcl%E4%B8%8Eopc/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 与 opc">tcl 与 opc</span>
+            <span class="post-date" title="2025-09-24 13:36:07">2025/09/24</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/hexo%E6%96%87%E7%AB%A0%E5%8A%A0%E5%AF%86%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="hexo 文章加密方法">hexo 文章加密方法</span>
+            <span class="post-date" title="2025-09-21 22:33:03">2025/09/21</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/tcl%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 语言入门">tcl 语言入门</span>
+            <span class="post-date" title="2025-09-14 22:43:20">2025/09/14</span>
+        </a>
+        
+        <a  class="全部文章 每日一学 "
+           href="/%E6%95%85%E4%BA%8B%E4%BC%9A%E4%B8%8E%E4%BC%81%E4%B8%9A%E8%82%A1%E6%9D%83%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="故事会与企业股权架构设计">故事会与企业股权架构设计</span>
+            <span class="post-date" title="2025-08-30 09:42:43">2025/08/30</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%AE%A1%E7%AE%97%E5%85%89%E5%88%BBOPC%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="计算光刻 OPC 名词解释">计算光刻 OPC 名词解释</span>
+            <span class="post-date" title="2025-08-26 21:44:36">2025/08/26</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%8A%AF%E7%89%87%E5%88%B6%E9%80%A0%E6%B5%81%E7%A8%8B%E4%B8%8E%E5%B7%A5%E8%89%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="芯片制造流程与工艺">芯片制造流程与工艺</span>
+            <span class="post-date" title="2025-06-14 12:13:17">2025/06/14</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E8%81%8C%E5%9C%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入职场">C++ 入职场</span>
+            <span class="post-date" title="2024-06-22 15:52:55">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/Protocol-Buffers-%E5%85%A5%E9%97%A8%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Protocol Buffers 入门使用">Protocol Buffers 入门使用</span>
+            <span class="post-date" title="2024-06-22 15:50:39">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-python%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B-boost/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++python 混合编程 -boost">C++python 混合编程 -boost</span>
+            <span class="post-date" title="2024-06-22 15:36:18">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B%E4%B8%8E%E6%A8%A1%E6%9D%BF/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 泛型编程与模板">C++ 泛型编程与模板</span>
+            <span class="post-date" title="2024-06-22 15:27:49">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入门学习笔记">C++ 入门学习笔记</span>
+            <span class="post-date" title="2024-06-22 14:53:46">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 Linux "
+           href="/shell%E7%BC%96%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="shell 编程">shell 编程</span>
+            <span class="post-date" title="2022-03-07 20:24:24">2022/03/07</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Git 版本控制工具">Git 版本控制工具</span>
+            <span class="post-date" title="2022-03-05 23:23:45">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Hexo%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E4%B8%8E%E5%A4%9A%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hexo 博客迁移与多平台使用">Hexo 博客迁移与多平台使用</span>
+            <span class="post-date" title="2022-03-05 01:26:56">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%B8%8E%E9%87%8D%E9%9A%BE%E7%82%B9%E6%B1%87%E6%80%BB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的基础知识与重难点汇总">python 中的基础知识与重难点汇总</span>
+            <span class="post-date" title="2020-11-17 23:05:15">2020/11/17</span>
+        </a>
+        
+        <a  class="全部文章 前端 "
+           href="/javascript%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="JavaScript 入门">JavaScript 入门</span>
+            <span class="post-date" title="2020-11-09 20:46:08">2020/11/09</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E8%AF%AD%E6%B3%95%E7%B3%96/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的语法糖">python 中的语法糖</span>
+            <span class="post-date" title="2020-11-06 10:53:29">2020/11/06</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E8%BF%9B%E7%A8%8B%EF%BC%8C%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%8D%8F%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的进程，线程与协程">python 中的进程，线程与协程</span>
+            <span class="post-date" title="2020-11-04 21:29:16">2020/11/04</span>
+        </a>
+        
+        <a  class="全部文章 Linux "
+           href="/linux%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="linux 常见命令学习">linux 常见命令学习</span>
+            <span class="post-date" title="2020-06-17 22:33:28">2020/06/17</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="机器学习经典算法">机器学习经典算法</span>
+            <span class="post-date" title="2020-06-16 10:36:50">2020/06/16</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/tensorflow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tensorflow 学习笔记">tensorflow 学习笔记</span>
+            <span class="post-date" title="2020-06-05 01:49:53">2020/06/05</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/%E6%B7%B1%E5%BA%A6%E7%90%86%E8%A7%A3%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="深度理解卷积神经网络工作原理">深度理解卷积神经网络工作原理</span>
+            <span class="post-date" title="2020-06-04 13:24:45">2020/06/04</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E7%88%AC%E8%99%AB%E7%9A%84%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫的定时执行">爬虫的定时执行</span>
+            <span class="post-date" title="2020-04-06 22:44:47">2020/04/06</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/Token-%EF%BC%8CCookie%E5%92%8CSession%E7%9A%84%E5%8C%BA%E5%88%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Token ，Cookie 和 Session 的区别">Token ，Cookie 和 Session 的区别</span>
+            <span class="post-date" title="2020-04-03 10:46:54">2020/04/03</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E5%9C%A8python%E4%B8%AD%E8%BF%9B%E8%A1%8C%E8%A7%86%E9%A2%91-%E9%9F%B3%E9%A2%91%E5%A4%84%E7%90%86%E5%8F%8A%E5%90%88%E5%B9%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="在 python 中进行视频 - 音频处理及合并">在 python 中进行视频 - 音频处理及合并</span>
+            <span class="post-date" title="2020-03-29 10:56:44">2020/03/29</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8BJS%E8%A7%A3%E5%AF%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之 JS 解密">反反爬虫之 JS 解密</span>
+            <span class="post-date" title="2020-03-24 10:04:43">2020/03/24</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E7%90%86%E8%A7%A3python%E4%B8%AD%E7%9A%84%E9%97%AD%E5%8C%85%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="理解 python 中的闭包与装饰器">理解 python 中的闭包与装饰器</span>
+            <span class="post-date" title="2020-03-21 17:34:45">2020/03/21</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Mongodb%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Mongodb 数据库入门">Mongodb 数据库入门</span>
+            <span class="post-date" title="2020-03-17 22:50:33">2020/03/17</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%8A%A0%E4%B8%AA%E7%A9%BA%E6%A0%BC%E5%91%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="为什么不加个空格呢">为什么不加个空格呢</span>
+            <span class="post-date" title="2020-03-14 13:53:44">2020/03/14</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8/"
+           data-tag="yield"
+           data-author="" >
+            <span class="post-title" title="迭代器与生成器">迭代器与生成器</span>
+            <span class="post-date" title="2020-03-13 21:58:25">2020/03/13</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E6%BB%91%E5%9D%97%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之滑块验证码">反反爬虫之滑块验证码</span>
+            <span class="post-date" title="2020-03-08 21:00:17">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E5%9B%BE%E7%89%87%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之图片验证码">反反爬虫之图片验证码</span>
+            <span class="post-date" title="2020-03-08 16:16:16">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Python%E6%93%8D%E4%BD%9CRedis/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Python 操作 Redis">Python 操作 Redis</span>
+            <span class="post-date" title="2020-03-07 16:15:44">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy-Redis%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Scrapy-Redis 分布式爬虫">Scrapy-Redis 分布式爬虫</span>
+            <span class="post-date" title="2020-03-07 15:35:50">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%ABRequest%E5%8E%BB%E9%87%8D%E5%8F%8A%E8%BF%87%E6%BB%A4%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫 Request 去重及过滤器">爬虫 Request 去重及过滤器</span>
+            <span class="post-date" title="2020-03-07 15:22:23">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Redis%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Redis 数据库">Redis 数据库</span>
+            <span class="post-date" title="2020-03-06 20:30:00">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Pymysql%E4%B8%8EORM%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="pymysql-ORM"
+           data-author="" >
+            <span class="post-title" title="Pymysql 与 ORM 操作数据库">Pymysql 与 ORM 操作数据库</span>
+            <span class="post-date" title="2020-03-06 10:49:03">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/MySql%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Mysql"
+           data-author="" >
+            <span class="post-title" title="MySql 数据库">MySql 数据库</span>
+            <span class="post-date" title="2020-03-04 23:31:02">2020/03/04</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy%E6%A1%86%E6%9E%B6%E7%88%AC%E8%99%AB/"
+           data-tag="Scrapy"
+           data-author="" >
+            <span class="post-title" title="Scrapy 框架爬虫">Scrapy 框架爬虫</span>
+            <span class="post-date" title="2020-03-02 10:44:55">2020/03/02</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="多线程与多进程爬虫">多线程与多进程爬虫</span>
+            <span class="post-date" title="2020-03-01 15:33:08">2020/03/01</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Selenium%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%A8%A1%E6%8B%9F/"
+           data-tag="Selenium"
+           data-author="" >
+            <span class="post-title" title="Selenium 自动化测试模拟">Selenium 自动化测试模拟</span>
+            <span class="post-date" title="2020-02-29 21:29:54">2020/02/29</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96-%E6%96%87%E4%BB%B6%E4%BF%9D%E5%AD%98/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="数据持久化 - 文件保存本地">数据持久化 - 文件保存本地</span>
+            <span class="post-date" title="2020-02-27 22:01:14">2020/02/27</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫基础入门">爬虫基础入门</span>
+            <span class="post-date" title="2020-02-26 20:44:27">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/CSS%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%8EXpath%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96/"
+           data-tag="CSS-Xpath"
+           data-author="" >
+            <span class="post-title" title="CSS 选择器与 Xpath 数据提取">CSS 选择器与 Xpath 数据提取</span>
+            <span class="post-date" title="2020-02-26 19:07:35">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Seaborn-Pygal-Pyecharts%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Seaborn,pygal,Pyecharts"
+           data-author="" >
+            <span class="post-title" title="Seaborn-Pygal-Pyecharts 可视化">Seaborn-Pygal-Pyecharts 可视化</span>
+            <span class="post-date" title="2020-02-22 16:24:55">2020/02/22</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/python%E4%B9%8BMatplotlib%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Matplotlib"
+           data-author="" >
+            <span class="post-title" title="python 之 Matplotlib 可视化">python 之 Matplotlib 可视化</span>
+            <span class="post-date" title="2020-02-20 20:28:44">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%A4%84%E7%90%86%E5%AE%9E%E6%93%8D/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Pandas 数据分析处理实操">Pandas 数据分析处理实操</span>
+            <span class="post-date" title="2020-02-20 10:51:39">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Markdown%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E6%8A%80%E5%B7%A7/"
+           data-tag="Markdown"
+           data-author="" >
+            <span class="post-title" title="Markdown 文本编辑技巧">Markdown 文本编辑技巧</span>
+            <span class="post-date" title="2020-02-18 16:31:40">2020/02/18</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BPandas%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Python 之 Pandas 库从入门到实战">Python 之 Pandas 库从入门到实战</span>
+            <span class="post-date" title="2020-02-15 20:46:52">2020/02/15</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BNumpy%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Numpy"
+           data-author="" >
+            <span class="post-title" title="Python 之 Numpy 库从入门到实战">Python 之 Numpy 库从入门到实战</span>
+            <span class="post-date" title="2020-02-13 23:15:38">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E9%95%9C%E5%83%8F%E6%BA%90%E7%BD%91%E5%9D%80/"
+           data-tag="pip"
+           data-author="" >
+            <span class="post-title" title="python pip 国内镜像大全及库的安装">python pip 国内镜像大全及库的安装</span>
+            <span class="post-date" title="2020-02-13 23:13:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E7%9A%84%E4%B8%89%E7%A7%8D%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 的三种输出格式">python 的三种输出格式</span>
+            <span class="post-date" title="2020-02-13 23:04:49">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E6%97%B6%E9%97%B4%E6%A8%A1%E5%9D%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的时间模块">python 中的时间模块</span>
+            <span class="post-date" title="2020-02-13 23:01:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E6%9F%A5%E7%9C%8B%E4%BB%BB%E4%BD%95%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E7%94%A8%E6%B3%95%E7%9A%84%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 查看任何第三方库的用法的方法">python 查看任何第三方库的用法的方法</span>
+            <span class="post-date" title="2020-02-13 22:57:50">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Anaconda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8Epyinstaller%E7%A8%8B%E5%BA%8F%E6%89%93%E5%8C%85/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Anaconda 环境配置与 pyinstaller 程序打包">Anaconda 环境配置与 pyinstaller 程序打包</span>
+            <span class="post-date" title="2020-02-13 20:01:52">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%BD%BF%E7%94%A8Hexo-Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%85%8D%E8%B4%B9%E5%8D%9A%E5%AE%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="使用 Hexo+Github 搭建个人免费博客">使用 Hexo+Github 搭建个人免费博客</span>
+            <span class="post-date" title="2020-02-13 15:44:02">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E5%85%B3%E4%BA%8Ehexo%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"
+           data-tag="Hexo"
+           data-author="" >
+            <span class="post-title" title="关于 hexo 使用过程中报错问题汇总">关于 hexo 使用过程中报错问题汇总</span>
+            <span class="post-date" title="2020-02-12 23:03:46">2020/02/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-爬虫基础入门" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">爬虫基础入门</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="爬虫">爬虫</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2025-12-13 13:23:10'>2020-02-26 20:44</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:2.7k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1%E3%80%81%E7%88%AC%E8%99%AB%E7%AE%80%E4%BB%8B"><span class="toc-text">1、爬虫简介 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%20%E7%88%AC%E8%99%AB%E5%88%86%E7%B1%BB"><span class="toc-text">1.1 爬虫分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-1-%20%E9%80%9A%E7%94%A8%E7%88%AC%E8%99%AB"><span class="toc-text">1.1.1 通用爬虫</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-2-%20%E8%81%9A%E7%84%A6%E7%88%AC%E8%99%AB"><span class="toc-text">1.1.2 聚焦爬虫 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-Robots%20%E5%8D%8F%E8%AE%AE"><span class="toc-text">1.2 Robots 协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-HTTP%20%E5%8D%8F%E8%AE%AE"><span class="toc-text">1.3 HTTP 协议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-1-%20%E8%AF%B7%E6%B1%82%E4%B8%8E%E5%93%8D%E5%BA%94"><span class="toc-text">1.3.1 请求与响应</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-2-URL%20%E8%AF%B7%E6%B1%82"><span class="toc-text">1.3.2 URL 请求 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-%20%E5%85%B3%E4%BA%8E%E7%BC%96%E7%A0%81"><span class="toc-text">1.4 关于编码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%E3%80%81requests%20%E8%AF%B7%E6%B1%82"><span class="toc-text">2、requests 请求</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-GET%20%E8%AF%B7%E6%B1%82"><span class="toc-text">2.1  GET 请求 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1-%20%E4%BC%A0%E9%80%92%20URL%20%E5%8F%82%E6%95%B0"><span class="toc-text">2.1.1 传递 URL 参数 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2-%20%E4%BC%A0%E9%80%92%E8%AF%B7%E6%B1%82%E5%A4%B4"><span class="toc-text">2.1.2 传递请求头 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-3-%20%E4%BC%A0%E9%80%92%E4%BB%A3%E7%90%86%20ip"><span class="toc-text">2.1.3 传递代理 ip</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-4-response%20%E8%BF%94%E5%9B%9E"><span class="toc-text">2.1.4 response 返回</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-5-%20%E6%96%87%E6%9C%AC%E4%B9%B1%E7%A0%81"><span class="toc-text">2.1.5 文本乱码 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-POST%20%E8%AF%B7%E6%B1%82"><span class="toc-text">2.2 POST 请求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-HTTP%20%E5%93%8D%E5%BA%94%E6%8A%A5%E6%96%87"><span class="toc-text">2.3 HTTP 响应报文</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%20%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-text">2.4 重定向 </span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1、爬虫简介"><a href="#1、爬虫简介" class="headerlink" title="1、爬虫简介"></a>1、爬虫简介 </h1><h2 id="1-1- 爬虫分类"><a href="#1-1- 爬虫分类" class="headerlink" title="1.1 爬虫分类"></a>1.1 爬虫分类</h2><h3 id="1-1-1- 通用爬虫"><a href="#1-1-1- 通用爬虫" class="headerlink" title="1.1.1 通用爬虫"></a>1.1.1 通用爬虫</h3><p> 通用网络爬虫是捜索引擎抓取系统（Baidu、Google、Sogou 等）的一个重要组成部分。主要目的是将互联网上的网页下载到本地，形成一个互联网内容的镜像备份。为搜索引擎提供搜索支持。主要是提供检索服务，网站排名。</p>
+<p>搜索引擎去成千上万个网站抓取数据。抓取的是整个网页，不是具体详细的信息。无法提供针对具体某个客户需求的搜索结果</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1559978600808.png" alt=""></p>
+<h3 id="1-1-2- 聚焦爬虫"><a href="#1-1-2- 聚焦爬虫" class="headerlink" title="1.1.2 聚焦爬虫"></a>1.1.2 聚焦爬虫 </h3><p> 聚焦爬虫，是”面向特定主题需求”的一种网络爬虫程序，它与通用搜索引擎爬虫的区别在于： <strong>聚焦爬虫在实施网页抓取时会对内容进行处理筛选，尽量保证只抓取与需求相关的网页数据。</strong></p>
+<p>后续探讨的是 <strong>聚焦爬虫</strong>。</p>
+<h2 id="1-2-Robots 协议"><a href="#1-2-Robots 协议" class="headerlink" title="1.2 Robots 协议"></a>1.2 Robots 协议</h2><p>robots 是网站跟爬虫间的协议，用简单直接的 txt 格式文本方式告诉对应的爬虫被允许的权限，也就是说 robots.txt 是搜索引擎中访问网站的时候要查看的第一个文件。当一个搜索蜘蛛访问一个站点时，它会首先检查该站点根目录下是否存在 robots.txt，如果存在，搜索机器人就会按照该文件中的内容来确定访问的范围；如果该文件不存在，所有的搜索蜘蛛将能够访问网站上所有没有被口令保护的页面。</p>
+<p>Robots 协议也叫爬虫协议、机器人协议等，全称是“网络爬虫排除标准”（Robots Exclusion Protocol），<strong>网站通过 Robots 协议告诉搜索引擎哪些页面可以抓取，哪些页面不能抓取</strong>。</p>
+<p>怎么看 robots 协议：网站主域名 +robots.txt</p>
+<p>如：淘宝：<a target="_blank" rel="noopener" href="https://www.taobao.com/robots.txt">https://www.taobao.com/robots.txt</a></p>
+<h2 id="1-3-HTTP 协议"><a href="#1-3-HTTP 协议" class="headerlink" title="1.3 HTTP 协议"></a>1.3 HTTP 协议</h2><ul>
+<li>HTTP 协议（HyperText Transfer Protocol，超文本传输协议）：是一种发布和接收 HTML 页面的方法。</li>
+<li>HTTPS（Hypertext Transfer Protocol over Secure Socket Layer）简单讲是 HTTP 的安全版，在 HTTP 下加入 SSL 层。</li>
+</ul>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1559979143803.png" alt=""></p>
+<h3 id="1-3-1- 请求与响应"><a href="#1-3-1- 请求与响应" class="headerlink" title="1.3.1 请求与响应"></a>1.3.1 请求与响应</h3><p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1559979266295.png" alt=""></p>
+<ol>
+<li>当我们在浏览器输入 URL 的时候，浏览器发送一个 Request 请求去获取目标 URL 的 html 文件，服务器把 Response 返回文件对象发送回给浏览器。</li>
+<li>浏览器分析 Response 中的 HTML，发现其中引用了很多其他文件，比如 Images 文件，CSS 文件，JS 文件。 浏览器会自动再次发送 Request 去获取图片，CSS 文件，或者 JS 文件。 </li>
+<li>当所有的文件都下载成功后，网页会根据 HTML 语法结构，完整的显示出来了。</li>
+</ol>
+<h3 id="1-3-2-URL 请求"><a href="#1-3-2-URL 请求" class="headerlink" title="1.3.2 URL 请求"></a>1.3.2 URL 请求 </h3><p>URL 又叫作<strong> 统一资源定位符</strong>，是用于完整地描述 Internet 上网页和其他资源的地址的一种方法。类似于 Windows 的文件路径。</p>
+ <center><font size=8 face="Times New Roman">http://mail.163.com/index.html</font></center>
+** 一个网址的组成：**
+
+<ol>
+<li><p>http://:  这个是协议，也就是 HTTP 超文本传输协议，也就是网页在网上传输的协议。</p>
+</li>
+<li><p>mail：这个是服务器名，代表着是一个邮箱服务器，所以是 mail。</p>
+</li>
+<li><p>163.com: 这个是域名，是用来定位网站的独一无二的名字。</p>
+</li>
+<li><p>mail.163.com： 这个是网站名，由服务器名 + 域名组成。</p>
+</li>
+<li><p>/： 这个是根目录，也就是说，通过网站名找到服务器，然后在服务器存放网页的根目录。</p>
+</li>
+<li><p>index.html： 这个是根目录下的网页。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="http://mail.163.com/index.html">http://mail.163.com/index.html</a> 这个叫做 URL，统一资源定位符，全球性地址，用于定位网上的资源。</p>
+</li>
+</ol>
+<p><strong>请求方法：</strong></p>
+<p>最主要分两种：</p>
+<ol>
+<li><code>get</code>请求：一般情况下，只从服务器获取数据下来，并不会对服务器资源产生任何影响的时候会使用 <code>get</code> 请求。</li>
+<li><code>post</code>请求：向服务器发送数据（登录）、上传文件等，会对服务器资源产生影响的时候会使用 <code>post</code> 请求。 </li>
+</ol>
+<h2 id="1-4- 关于编码"><a href="#1-4- 关于编码" class="headerlink" title="1.4 关于编码"></a>1.4 关于编码</h2><p>ASCII 码：处理英文字符而发明的</p>
+<p>GB2312：为了处理中文字符发明的</p>
+<p>GBK：中文拓展库，加入繁体，亚裔文字编码。</p>
+<p>Unicode：万国码，包含世界范围的语言编码</p>
+<p>UTF-8：为了提高 Unicode 存储和传输性能。</p>
+<h1 id="2、requests 请求"><a href="#2、requests 请求" class="headerlink" title="2、requests 请求"></a>2、requests 请求</h1><ul>
+<li>Requests 模块就是 Python 实现的简单易用的 <strong>HTTP 库</strong></li>
+</ul>
+<p>还有其他库例如 <code>urllib</code>，<code>urllib2</code> 等模块。但是目前来说 Requests 模块是最流行的。而且也是做好用的模块。</p>
+<p>requests 库的安装</p>
+<pre><code class="python">pip install requests</code></pre>
+<h2 id="2-1-GET 请求"><a href="#2-1-GET 请求" class="headerlink" title="2.1  GET 请求"></a>2.1  GET 请求 </h2><p><strong> 请求获取数据：</strong></p>
+<pre><code>response = requests.get(url,*karaws)</code></pre><p><strong>requests.get 中包含的方法：</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">method</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><strong>url</strong></td>
+<td>指定 Request 对象的 URL</td>
+</tr>
+<tr>
+<td align="center"><strong>params</strong>（可选）</td>
+<td>指定 Request 对象的查询字符串，可以是字典（Dict）或者字节数组（Bytes）</td>
+</tr>
+<tr>
+<td align="center"><strong>headers</strong>（可选）</td>
+<td>指定 Request 对象的 HTTP 头部内容，是以字典（Dict）的形式</td>
+</tr>
+<tr>
+<td align="center"><strong>proxies</strong>（可选）</td>
+<td>指定代理网址，是以字典（Dict）的形式</td>
+</tr>
+<tr>
+<td align="center"><strong>timeout</strong>（可选）</td>
+<td>指定等待服务器响应的超时时间，可以是整形、浮点型，也可以是一个元组 (t1, t2)，如果是元组，那么 t1 表示连接超时，t2 表示读取超时</td>
+</tr>
+<tr>
+<td align="center"><strong>cookies</strong>（可选）</td>
+<td>指定 Request 对象的 cookies 内容，可以是字典（Dict）或者 CookieJar 对象</td>
+</tr>
+<tr>
+<td align="center"><strong>data</strong>（可选）</td>
+<td>指定 Request 对象的 body 内容，可以是字典（Dict）、包含元组的列表 [(key, value)]、字节数组（Bytes）或者类文件对象</td>
+</tr>
+<tr>
+<td align="center">json（可选）</td>
+<td>指定 Request 对象的 body 内容，是以 JSON 格式的形式</td>
+</tr>
+<tr>
+<td align="center">files（可选）</td>
+<td>以字典的形式上传多部分编码文件（{‘name’: file-like-objects} 或 {‘name’: file-tuple}），其中的 file-tuple 可以是一个 2 元组 (‘filename’, fileobj)，也可以是一个 3 元组 (‘filename’, fileobj, ‘content_type’)，还可以是一个 4 元组 (‘filename’, fileobj, ‘content_type’, custom_headers)。注：’content-type’ 是由一个字符串来描述上传的文件类型；custom_headers 是一个类似字典的对象，包含额外的 header 信息</td>
+</tr>
+<tr>
+<td align="center">auth（可选）</td>
+<td>启用 Basic（基础）或 Digest（摘要式）或 Custom（自定义）的 HTTP 认证</td>
+</tr>
+<tr>
+<td align="center">allow_redirects（可选）</td>
+<td>是否允许重定向，Enable（启用）或 disable（禁用）GET/OPTIONS/POST/PUT/PATCH/DELETE/HEAD 的重定向，默认值是 True</td>
+</tr>
+<tr>
+<td align="center">cert（可选）</td>
+<td>如果是字符串，那么是 ssl 客户端证书（.pem）的路径；如果是元组，那么是一个 (‘cert’, ‘key’) 的键值对</td>
+</tr>
+<tr>
+<td align="center">verify（可选）</td>
+<td>可以是一个布尔类型的值，表示是否验证服务器的 TLS 证书；也可以是一个字符串，包含一个 CA 证书的路径。默认值是 True</td>
+</tr>
+<tr>
+<td align="center">stream（可选）</td>
+<td>是否允许流式传输数据（大视频），如果为 False，响应内容会立即下载</td>
+</tr>
+</tbody></table>
+<h3 id="2-1-1- 传递 URL 参数"><a href="#2-1-1- 传递 URL 参数" class="headerlink" title="2.1.1 传递 URL 参数"></a>2.1.1 传递 URL 参数 </h3><p> 给 URL 的查询字符串 (query string) 传递某种数据。如果你是手工构建 URL，也就是通过拼接字符串构造的 URL。那么数据会以键 / 值对的形式置于 URL 中，跟在一个问号的后面。</p>
+<pre><code class="python">import requests
+
+payload = &#123;&#39;key1&#39;: &#39;value1&#39;， &#39;key2&#39;: &#39;value2&#39;&#125;
+response = requests.get(&quot;http://httpbin.org/get&quot;， params=payload)
+
+print(response.url)
+# 结果如下：
+http://httpbin.org/get?key2=value2&amp;key1=value1</code></pre>
+<h3 id="2-1-2- 传递请求头"><a href="#2-1-2- 传递请求头" class="headerlink" title="2.1.2 传递请求头"></a>2.1.2 传递请求头 </h3><p> 为了将爬虫伪装成浏览器访问，以躲过目标网站的屏蔽，可以给爬虫添加请求头信息。</p>
+<pre><code>header=&#123;
+&#39;User-Agent&#39;: 
+&#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36&#39;
+&#125;
+response=requests.get(url, headers=header)</code></pre><h3 id="2-1-3- 传递代理 ip"><a href="#2-1-3- 传递代理 ip" class="headerlink" title="2.1.3 传递代理 ip"></a>2.1.3 传递代理 ip</h3><p>有时候仅仅传递请求头并不能躲避目标网站的封锁，这时候可以再加代理 ip，搭建代理 ip 池，实现匿名访问。</p>
+<pre><code class="python">ipset=[&#39;134.209.13.16:8080&#39;,&#39;134.203.13.14:8080&#39;]
+
+response=requests.get(url, proxies=&#123;&#39;http&#39;:random.choice(ipset)&#125;)
+</code></pre>
+<h3 id="2-1-4-response 返回"><a href="#2-1-4-response 返回" class="headerlink" title="2.1.4 response 返回"></a>2.1.4 response 返回</h3><pre><code class="python">print(response)  // 打印状态码   r.status_code 也可以
+print(response.text) // 打印返回的文本信息
+print(response.content)  // 打印返回的二进制信息，用于图片，视频，音频等
+print(response.encoding) // 打印网页的编码信息
+print(response.json())   // 打印 json 解码的 response 对象
+print(response.url)    // 打印网页的请求 url
+print(response.apparent_encoding)  // 返回网页的编码信息</code></pre>
+<p>除了一些常用的，还包括一下这些内容：</p>
+<pre><code>In [5]: response.
+apparent_encoding     cookies                   history
+iter_lines            ok                        close                 
+elapsed               is_permanent_redirect     json                  
+raise_for_status      connection                encoding              
+is_redirect           links                     raw                   
+content               headers                   iter_content          
+next                  reason                    url
+.....</code></pre><h3 id="2-1-5- 文本乱码"><a href="#2-1-5- 文本乱码" class="headerlink" title="2.1.5 文本乱码"></a>2.1.5 文本乱码 </h3><p> 添加解码信息</p>
+<p>添加一行</p>
+<pre><code>response.encoding=&#39;utf-8&#39;</code></pre><p>万能解码</p>
+<pre><code>response.encoding = response.apparent_encoding</code></pre><h2 id="2-2-POST 请求"><a href="#2-2-POST 请求" class="headerlink" title="2.2 POST 请求"></a>2.2 POST 请求</h2><p>POST 请求主要用来提交表单数据，然后服务器根据表单数据进行分析，再决定返回什么样的数据给客户端。</p>
+<pre><code>response=requests.post(url, data=formdata, headers=headers,*karaws)</code></pre><p>post 请求除了要传递目标 url 以外，还需要传递表单数据给 data。</p>
+<p>如：</p>
+<pre><code>headers = &#123;
+    &#39;Cookie&#39;: cookies_str,
+    &#39;Host&#39;: &#39;www.lagou.com&#39;,
+    &#39;Origin&#39;: &#39;https://www.lagou.com&#39;,
+    &#39;Referer&#39;: &#39;https://www.lagou.com/jobs/list_python?labelWords=&amp;fromSearch=true&amp;suginput=&#39;,
+    &#39;User-Agent&#39;: &#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&#39;,
+&#125;
+
+# post 的表单数据
+formdata = &#123;
+    &#39;first&#39;: &#39;true&#39;,
+    &#39;pn&#39;: &#39;1&#39;,
+    &#39;kd&#39;: &#39;python&#39;
+&#125;
+
+# 提交数据
+response = requests.post(url, data=formdata, headers=headers)
+# 查看数据
+print(response.json())</code></pre><h2 id="2-3-HTTP 响应报文"><a href="#2-3-HTTP 响应报文" class="headerlink" title="2.3 HTTP 响应报文"></a>2.3 HTTP 响应报文</h2><p>HTTP 响应报文也由三部分组成：响应行、响应头、响应体。</p>
+<p>这里主要说说常见的状态码</p>
+<p>总结如下：</p>
+<pre><code>凡是以 2 开头的状态码 都是成功
+凡是以 4 开有的状态码 都是客户端的问题（请求不存在的内容）
+凡是以 5 开头的状态吗 都是服务器的问题 </code></pre><p> 如果发送了一个错误请求 (一个 4XX 客户端错误，或者 5XX 服务器错误响应)，我们可以通过 <code>response.raise_for_status()</code> 来抛出异常。</p>
+<p>100~199：表示成功接收请求，要求客户端继续提交下一次请求才能完成整个处理过程。</p>
+<p>200~299：表示成功接收请求并已完成整个处理过程。常用 200</p>
+<p>300~399：为完成请求，客户需进一步细化请求。例如：请求的资源已经移动一个新地址、常用 302(意味着你请求我，我让你去找别人)，307 和 304(我不给你这个资源，自己拿缓存)</p>
+<p>400~499：客户端的请求有错误，常用 404(意味着你请求的资源在 web 服务器中没有)403(服务器拒绝访问，权限不够)</p>
+<p>500~599：服务器端出现错误，常用 500</p>
+<h2 id="2-4- 重定向"><a href="#2-4- 重定向" class="headerlink" title="2.4 重定向"></a>2.4 重定向 </h2><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%87%8D%E5%AE%9A%E5%90%91/9064196"> 重定向 </a> (Redirect) 就是通过各种方法将一个网络请求重新定个方向转到其它位置。可能的原因是有些网址现在已经废弃不准备再使用等。</p>
+<p>如果你使用的是 GET、POST 等，那么你可以通过 <code>allow_redirects</code> 参数禁用重定向处理：</p>
+<pre><code class="python">r = requests.get(url， allow_redirects=False)</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 欢迎各位看官及技术大佬前来交流指导呀，可以邮件至 jqiange@yeah.net </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2021 Jqiange
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

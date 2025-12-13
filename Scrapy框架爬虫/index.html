@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Scrapy 框架爬虫 | jqiange</title>
+  <meta name="keywords" content=" Scrapy ">
+  <meta name="description" content="Scrapy 框架爬虫 | jqiange">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="人畜无害的姜小强">
+<meta property="og:url" content="https://jqiange.github.io/about/index.html">
+<meta property="og:site_name" content="jqiange">
+<meta property="og:description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+<meta property="article:published_time" content="2020-02-18T08:21:04.000Z">
+<meta property="article:modified_time" content="2025-12-13T05:23:10.695Z">
+<meta property="article:author" content="姜小强">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+
+
+<link rel="icon" href="/img/jqiange.png">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/jqiange.png"/>
+</a>
+<div class="author">
+    <span>姜小强</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/jqiange"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(58)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(9)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据库">
+                        
+                        数据库
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="每日一学">
+                        
+                        每日一学
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="爬虫">
+                        
+                        爬虫
+                        <small>(10)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="前端">
+                        
+                        前端
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="深度学习">
+                        
+                        深度学习
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据分析">
+                        
+                        数据分析
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="chip">
+                        
+                        chip
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="CPP">
+                        
+                        CPP
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Linux">
+                        
+                        Linux
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="python">
+                        
+                        python
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="58">
+<input type="hidden" id="yelog_site_word_count" value="251.9k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSS-Xpath</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Markdown</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Matplotlib</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Mysql</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Numpy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pandas</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pip</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pyecharts</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pygal</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pymysql-ORM</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>RE</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Redis</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Scrapy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Seaborn</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Selenium</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>yield</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="全部文章 python "
+           href="/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%A6%E8%A7%A3/"
+           data-tag="RE"
+           data-author="" >
+            <span class="post-title" title="正则表达式详解">正则表达式详解</span>
+            <span class="post-date" title="2020-02-26 09:25:46">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/tcl%E4%B8%8Eopc/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 与 opc">tcl 与 opc</span>
+            <span class="post-date" title="2025-09-24 13:36:07">2025/09/24</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/hexo%E6%96%87%E7%AB%A0%E5%8A%A0%E5%AF%86%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="hexo 文章加密方法">hexo 文章加密方法</span>
+            <span class="post-date" title="2025-09-21 22:33:03">2025/09/21</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/tcl%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 语言入门">tcl 语言入门</span>
+            <span class="post-date" title="2025-09-14 22:43:20">2025/09/14</span>
+        </a>
+        
+        <a  class="全部文章 每日一学 "
+           href="/%E6%95%85%E4%BA%8B%E4%BC%9A%E4%B8%8E%E4%BC%81%E4%B8%9A%E8%82%A1%E6%9D%83%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="故事会与企业股权架构设计">故事会与企业股权架构设计</span>
+            <span class="post-date" title="2025-08-30 09:42:43">2025/08/30</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%AE%A1%E7%AE%97%E5%85%89%E5%88%BBOPC%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="计算光刻 OPC 名词解释">计算光刻 OPC 名词解释</span>
+            <span class="post-date" title="2025-08-26 21:44:36">2025/08/26</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%8A%AF%E7%89%87%E5%88%B6%E9%80%A0%E6%B5%81%E7%A8%8B%E4%B8%8E%E5%B7%A5%E8%89%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="芯片制造流程与工艺">芯片制造流程与工艺</span>
+            <span class="post-date" title="2025-06-14 12:13:17">2025/06/14</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E8%81%8C%E5%9C%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入职场">C++ 入职场</span>
+            <span class="post-date" title="2024-06-22 15:52:55">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/Protocol-Buffers-%E5%85%A5%E9%97%A8%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Protocol Buffers 入门使用">Protocol Buffers 入门使用</span>
+            <span class="post-date" title="2024-06-22 15:50:39">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-python%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B-boost/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++python 混合编程 -boost">C++python 混合编程 -boost</span>
+            <span class="post-date" title="2024-06-22 15:36:18">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B%E4%B8%8E%E6%A8%A1%E6%9D%BF/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 泛型编程与模板">C++ 泛型编程与模板</span>
+            <span class="post-date" title="2024-06-22 15:27:49">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入门学习笔记">C++ 入门学习笔记</span>
+            <span class="post-date" title="2024-06-22 14:53:46">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 Linux "
+           href="/shell%E7%BC%96%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="shell 编程">shell 编程</span>
+            <span class="post-date" title="2022-03-07 20:24:24">2022/03/07</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Git 版本控制工具">Git 版本控制工具</span>
+            <span class="post-date" title="2022-03-05 23:23:45">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Hexo%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E4%B8%8E%E5%A4%9A%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hexo 博客迁移与多平台使用">Hexo 博客迁移与多平台使用</span>
+            <span class="post-date" title="2022-03-05 01:26:56">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%B8%8E%E9%87%8D%E9%9A%BE%E7%82%B9%E6%B1%87%E6%80%BB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的基础知识与重难点汇总">python 中的基础知识与重难点汇总</span>
+            <span class="post-date" title="2020-11-17 23:05:15">2020/11/17</span>
+        </a>
+        
+        <a  class="全部文章 前端 "
+           href="/javascript%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="JavaScript 入门">JavaScript 入门</span>
+            <span class="post-date" title="2020-11-09 20:46:08">2020/11/09</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E8%AF%AD%E6%B3%95%E7%B3%96/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的语法糖">python 中的语法糖</span>
+            <span class="post-date" title="2020-11-06 10:53:29">2020/11/06</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E8%BF%9B%E7%A8%8B%EF%BC%8C%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%8D%8F%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的进程，线程与协程">python 中的进程，线程与协程</span>
+            <span class="post-date" title="2020-11-04 21:29:16">2020/11/04</span>
+        </a>
+        
+        <a  class="全部文章 Linux "
+           href="/linux%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="linux 常见命令学习">linux 常见命令学习</span>
+            <span class="post-date" title="2020-06-17 22:33:28">2020/06/17</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="机器学习经典算法">机器学习经典算法</span>
+            <span class="post-date" title="2020-06-16 10:36:50">2020/06/16</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/tensorflow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tensorflow 学习笔记">tensorflow 学习笔记</span>
+            <span class="post-date" title="2020-06-05 01:49:53">2020/06/05</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/%E6%B7%B1%E5%BA%A6%E7%90%86%E8%A7%A3%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="深度理解卷积神经网络工作原理">深度理解卷积神经网络工作原理</span>
+            <span class="post-date" title="2020-06-04 13:24:45">2020/06/04</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E7%88%AC%E8%99%AB%E7%9A%84%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫的定时执行">爬虫的定时执行</span>
+            <span class="post-date" title="2020-04-06 22:44:47">2020/04/06</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/Token-%EF%BC%8CCookie%E5%92%8CSession%E7%9A%84%E5%8C%BA%E5%88%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Token ，Cookie 和 Session 的区别">Token ，Cookie 和 Session 的区别</span>
+            <span class="post-date" title="2020-04-03 10:46:54">2020/04/03</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E5%9C%A8python%E4%B8%AD%E8%BF%9B%E8%A1%8C%E8%A7%86%E9%A2%91-%E9%9F%B3%E9%A2%91%E5%A4%84%E7%90%86%E5%8F%8A%E5%90%88%E5%B9%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="在 python 中进行视频 - 音频处理及合并">在 python 中进行视频 - 音频处理及合并</span>
+            <span class="post-date" title="2020-03-29 10:56:44">2020/03/29</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8BJS%E8%A7%A3%E5%AF%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之 JS 解密">反反爬虫之 JS 解密</span>
+            <span class="post-date" title="2020-03-24 10:04:43">2020/03/24</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E7%90%86%E8%A7%A3python%E4%B8%AD%E7%9A%84%E9%97%AD%E5%8C%85%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="理解 python 中的闭包与装饰器">理解 python 中的闭包与装饰器</span>
+            <span class="post-date" title="2020-03-21 17:34:45">2020/03/21</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Mongodb%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Mongodb 数据库入门">Mongodb 数据库入门</span>
+            <span class="post-date" title="2020-03-17 22:50:33">2020/03/17</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%8A%A0%E4%B8%AA%E7%A9%BA%E6%A0%BC%E5%91%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="为什么不加个空格呢">为什么不加个空格呢</span>
+            <span class="post-date" title="2020-03-14 13:53:44">2020/03/14</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8/"
+           data-tag="yield"
+           data-author="" >
+            <span class="post-title" title="迭代器与生成器">迭代器与生成器</span>
+            <span class="post-date" title="2020-03-13 21:58:25">2020/03/13</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E6%BB%91%E5%9D%97%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之滑块验证码">反反爬虫之滑块验证码</span>
+            <span class="post-date" title="2020-03-08 21:00:17">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E5%9B%BE%E7%89%87%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之图片验证码">反反爬虫之图片验证码</span>
+            <span class="post-date" title="2020-03-08 16:16:16">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Python%E6%93%8D%E4%BD%9CRedis/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Python 操作 Redis">Python 操作 Redis</span>
+            <span class="post-date" title="2020-03-07 16:15:44">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy-Redis%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Scrapy-Redis 分布式爬虫">Scrapy-Redis 分布式爬虫</span>
+            <span class="post-date" title="2020-03-07 15:35:50">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%ABRequest%E5%8E%BB%E9%87%8D%E5%8F%8A%E8%BF%87%E6%BB%A4%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫 Request 去重及过滤器">爬虫 Request 去重及过滤器</span>
+            <span class="post-date" title="2020-03-07 15:22:23">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Redis%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Redis 数据库">Redis 数据库</span>
+            <span class="post-date" title="2020-03-06 20:30:00">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Pymysql%E4%B8%8EORM%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="pymysql-ORM"
+           data-author="" >
+            <span class="post-title" title="Pymysql 与 ORM 操作数据库">Pymysql 与 ORM 操作数据库</span>
+            <span class="post-date" title="2020-03-06 10:49:03">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/MySql%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Mysql"
+           data-author="" >
+            <span class="post-title" title="MySql 数据库">MySql 数据库</span>
+            <span class="post-date" title="2020-03-04 23:31:02">2020/03/04</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy%E6%A1%86%E6%9E%B6%E7%88%AC%E8%99%AB/"
+           data-tag="Scrapy"
+           data-author="" >
+            <span class="post-title" title="Scrapy 框架爬虫">Scrapy 框架爬虫</span>
+            <span class="post-date" title="2020-03-02 10:44:55">2020/03/02</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="多线程与多进程爬虫">多线程与多进程爬虫</span>
+            <span class="post-date" title="2020-03-01 15:33:08">2020/03/01</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Selenium%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%A8%A1%E6%8B%9F/"
+           data-tag="Selenium"
+           data-author="" >
+            <span class="post-title" title="Selenium 自动化测试模拟">Selenium 自动化测试模拟</span>
+            <span class="post-date" title="2020-02-29 21:29:54">2020/02/29</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96-%E6%96%87%E4%BB%B6%E4%BF%9D%E5%AD%98/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="数据持久化 - 文件保存本地">数据持久化 - 文件保存本地</span>
+            <span class="post-date" title="2020-02-27 22:01:14">2020/02/27</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫基础入门">爬虫基础入门</span>
+            <span class="post-date" title="2020-02-26 20:44:27">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/CSS%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%8EXpath%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96/"
+           data-tag="CSS-Xpath"
+           data-author="" >
+            <span class="post-title" title="CSS 选择器与 Xpath 数据提取">CSS 选择器与 Xpath 数据提取</span>
+            <span class="post-date" title="2020-02-26 19:07:35">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Seaborn-Pygal-Pyecharts%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Seaborn,pygal,Pyecharts"
+           data-author="" >
+            <span class="post-title" title="Seaborn-Pygal-Pyecharts 可视化">Seaborn-Pygal-Pyecharts 可视化</span>
+            <span class="post-date" title="2020-02-22 16:24:55">2020/02/22</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/python%E4%B9%8BMatplotlib%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Matplotlib"
+           data-author="" >
+            <span class="post-title" title="python 之 Matplotlib 可视化">python 之 Matplotlib 可视化</span>
+            <span class="post-date" title="2020-02-20 20:28:44">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%A4%84%E7%90%86%E5%AE%9E%E6%93%8D/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Pandas 数据分析处理实操">Pandas 数据分析处理实操</span>
+            <span class="post-date" title="2020-02-20 10:51:39">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Markdown%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E6%8A%80%E5%B7%A7/"
+           data-tag="Markdown"
+           data-author="" >
+            <span class="post-title" title="Markdown 文本编辑技巧">Markdown 文本编辑技巧</span>
+            <span class="post-date" title="2020-02-18 16:31:40">2020/02/18</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BPandas%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Python 之 Pandas 库从入门到实战">Python 之 Pandas 库从入门到实战</span>
+            <span class="post-date" title="2020-02-15 20:46:52">2020/02/15</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BNumpy%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Numpy"
+           data-author="" >
+            <span class="post-title" title="Python 之 Numpy 库从入门到实战">Python 之 Numpy 库从入门到实战</span>
+            <span class="post-date" title="2020-02-13 23:15:38">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E9%95%9C%E5%83%8F%E6%BA%90%E7%BD%91%E5%9D%80/"
+           data-tag="pip"
+           data-author="" >
+            <span class="post-title" title="python pip 国内镜像大全及库的安装">python pip 国内镜像大全及库的安装</span>
+            <span class="post-date" title="2020-02-13 23:13:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E7%9A%84%E4%B8%89%E7%A7%8D%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 的三种输出格式">python 的三种输出格式</span>
+            <span class="post-date" title="2020-02-13 23:04:49">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E6%97%B6%E9%97%B4%E6%A8%A1%E5%9D%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的时间模块">python 中的时间模块</span>
+            <span class="post-date" title="2020-02-13 23:01:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E6%9F%A5%E7%9C%8B%E4%BB%BB%E4%BD%95%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E7%94%A8%E6%B3%95%E7%9A%84%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 查看任何第三方库的用法的方法">python 查看任何第三方库的用法的方法</span>
+            <span class="post-date" title="2020-02-13 22:57:50">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Anaconda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8Epyinstaller%E7%A8%8B%E5%BA%8F%E6%89%93%E5%8C%85/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Anaconda 环境配置与 pyinstaller 程序打包">Anaconda 环境配置与 pyinstaller 程序打包</span>
+            <span class="post-date" title="2020-02-13 20:01:52">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%BD%BF%E7%94%A8Hexo-Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%85%8D%E8%B4%B9%E5%8D%9A%E5%AE%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="使用 Hexo+Github 搭建个人免费博客">使用 Hexo+Github 搭建个人免费博客</span>
+            <span class="post-date" title="2020-02-13 15:44:02">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E5%85%B3%E4%BA%8Ehexo%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"
+           data-tag="Hexo"
+           data-author="" >
+            <span class="post-title" title="关于 hexo 使用过程中报错问题汇总">关于 hexo 使用过程中报错问题汇总</span>
+            <span class="post-date" title="2020-02-12 23:03:46">2020/02/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-Scrapy框架爬虫" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Scrapy 框架爬虫</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="爬虫">爬虫</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color2">Scrapy</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2025-12-13 13:23:10'>2020-03-02 10:44</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:5k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1%E3%80%81Scrapy%20%E7%AE%80%E4%BB%8B"><span class="toc-text">1、Scrapy 简介 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%20%E6%9E%B6%E6%9E%84%E5%8E%9F%E7%90%86"><span class="toc-text">1.1 架构原理 </span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%E3%80%81%E5%BC%80%E5%A7%8B%E9%A1%B9%E7%9B%AE"><span class="toc-text">2、开始项目 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%20%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%88%AC%E8%99%AB%E9%A1%B9%E7%9B%AE"><span class="toc-text">2.1 创建一个爬虫项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-quto-py%20%E7%88%AC%E8%99%AB"><span class="toc-text">2.1 quto.py 爬虫</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1-%20%E5%A4%9A%E4%B8%AA%E8%B5%B7%E5%A7%8B%20url"><span class="toc-text">2.1.1 多个起始 url</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-item%20%E7%B1%BB"><span class="toc-text">2.3 item 类 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-ItemPipeline"><span class="toc-text">2.4 ItemPipeline</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-1-%20%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86"><span class="toc-text">2.4.1 数据处理 </span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%9D%E5%AD%98"><span class="toc-text">保存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8E%BB%E9%87%8D"><span class="toc-text">去重 </span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-2-%20%E5%90%AF%E7%94%A8%20-ItemPipeline"><span class="toc-text">2.4.2 启用 ItemPipeline</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-3-%20%E4%B8%93%E7%94%A8%20ItemPipeline"><span class="toc-text">2.4.3 专用 ItemPipeline</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-4-POST%20%E8%AF%B7%E6%B1%82"><span class="toc-text">2.4.4 POST 请求 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-Middlewares"><span class="toc-text">2.5 Middlewares</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-1-Headers%20%E9%85%8D%E7%BD%AE"><span class="toc-text">2.5.1 Headers 配置 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-2-cookies%20%E9%85%8D%E7%BD%AE"><span class="toc-text">2.5.2 cookies 配置 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-3-Proxy%20%E9%85%8D%E7%BD%AE"><span class="toc-text">2.5.3 Proxy 配置 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-4-%20%E8%B6%85%E6%97%B6%E4%B8%8E%E9%87%8D%E8%AF%95"><span class="toc-text">2.5.4 超时与重试 </span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3%E3%80%81CrawlSpider"><span class="toc-text">3、CrawlSpider</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%20%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA"><span class="toc-text">3.1 项目创建 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-Rules%20%E5%8F%82%E6%95%B0"><span class="toc-text">3.2 Rules 参数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-1-LinkExtractor"><span class="toc-text">3.2.1 LinkExtractor</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-2-%20%E5%85%B6%E4%BB%96"><span class="toc-text">3.2.2 其他</span></a></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1、Scrapy 简介"><a href="#1、Scrapy 简介" class="headerlink" title="1、Scrapy 简介"></a>1、Scrapy 简介 </h1><p> 官方文档：<a target="_blank" rel="noopener" href="https://doc.scrapy.org/en/latest/topics/commands.html#std:command-startproject">https://doc.scrapy.org/en/latest/topics/commands.html#std:command-startproject</a></p>
+<blockquote>
+<p>Scrapy 是一个使用 Python 语言（基于 Twisted 框架）编写的开源网络爬虫框架，目前由 Scrapinghub Ltd 维护。Scrapy 简单易用、灵活易拓展、开发社区活跃，并且是跨平台的。在 Linux、 MaxOS 以及 Windows 平台都可以使用。 </p>
+</blockquote>
+<p>一个网络爬虫程序的基本执行流程可以总结三个过程：<strong>请求数据 </strong>， <strong> 解析数据 </strong>， <strong> 保存数据</strong></p>
+<p>往往一个爬虫项目会包含多个这样的过程（请求—解析—保存），为了避免因制造轮子而消耗大量时间，一些爬虫框架会将这些工作单独分开过来，将重复的过程进行封装， 使得程序员能够我们能够专注于爬虫数据获取逻辑，提高工作效率与代码质量。</p>
+<p>Scrapy 已经包含了协程部分，不再需要多进程多线程。</p>
+<h2 id="1-1- 架构原理"><a href="#1-1- 架构原理" class="headerlink" title="1.1 架构原理"></a>1.1 架构原理 </h2><p><strong> 以下是爬虫框架 Scrapy 的工作流程：</strong></p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-02_15-09-34.png" style="zoom:80%;" />
+
+<ol>
+<li>scrapy 引擎向 spider 获取起始 Request 集合, 也就是 spider 中定义的 <code>start_urls</code>。如果 spider 重写了<code>start_requests()</code> 方法，那么这个方法返回的 Request 集合就是起始 Request。</li>
+<li>scrapy 引擎将拿到的 Request 发给调度中心开始调度。</li>
+<li>scrapy 引擎向调度中心请求获取下一个要爬取的 Request。</li>
+<li>scrapy 引擎拿到 Request 后，然后将 Request 发给下载器。这个过程经过一系列在 <code>settings.py</code> 中配置的下载中间件，所有在 <code>settings.py</code> 中配置的下载中间件会依次对 Request 进行处理。对应 <code>DownloaderMiddleware #process_request()</code> 方法</li>
+<li>下载器根据 Request 获取响应的内容，比如 Request 的 url 是<code>http://www.baidu.com</code>，下载器就会获取对应的网页内容下来并封装成 Response 对象。</li>
+<li>下载器将 Response 发送给 scrapy 引擎。这个过程也会经过一系列在 <code>settings.py</code> 中配置的下载中间件，这些下载中间件会依次对 Response 进行处理。对应 <code>DownloaderMiddleware#process_response()</code> 方法</li>
+<li>scrapy 引擎拿到 Response 后将 Response 发给 spider, 交给对应的 spider 函数处理。这里默认方法是 <code>parse()</code>, 这个回调方法构造 Request 的时候指定。引擎发送 Response 的过程会经过一系列在<code>settings.py</code> 中配置的 spider 中间件，这些 spider 中间件会依次对 Response 进行一些处理。对应<code>SpiderMiddleware#process_spider_input()</code></li>
+<li>spider 处理完 Response 后会返回一个 result，这个 result 是一个 <code> 包含 Request 或 Item 对象的可迭代对象 (iterable)</code>。然后将 result 发给 scrapy 引擎，这个过程也会经过一系列在<code>settings.py</code> 中配置的 spider 中间件，这些 spider 中间件会依次对这个 result 进行一些处理。对应<code>SpiderMiddleware#process_spider_output()</code></li>
+<li>scrapy 引擎拿到这个 result 后，会将其中的 Item 发送给 <code>Item Pipeline</code> 处理, 这些 item 就会被一系列我们在 <code>settings.py</code> 中配置的 <code>pipeline</code> 处理。同时，scrapy 也会将 result 中的 Request 发给调度中间准备调度。</li>
+<li>继续重复第 2 步的步骤，直到所有的 Request 全部处理完后程序退出。</li>
+</ol>
+<h1 id="2、开始项目"><a href="#2、开始项目" class="headerlink" title="2、开始项目"></a>2、开始项目 </h1><h2 id="2-1- 创建一个爬虫项目"><a href="#2-1- 创建一个爬虫项目" class="headerlink" title="2.1 创建一个爬虫项目"></a>2.1 创建一个爬虫项目</h2><p><strong> 查看 scrapy 命令：</strong></p>
+<pre><code class="python">$ scrapy
+// 输出如下
+Scrapy 1.8.0 - no active project
+
+Usage:
+  scrapy &lt;command&gt; [options] [args]
+
+Available commands:
+  bench         Run quick benchmark test
+  fetch         Fetch a URL using the Scrapy downloader
+  genspider     Generate new spider using pre-defined templates
+  runspider     Run a self-contained spider (without creating a project)
+  settings      Get settings values
+  shell         Interactive scraping console
+  startproject  Create new project
+  version       Print Scrapy version
+  view          Open URL in browser, as seen by Scrapy
+
+  [more]      More commands available when run from project directory
+
+Use &quot;scrapy &lt;command&gt; -h&quot; to see more info about a command
+</code></pre>
+<p><strong>创建一个项目(名为 qutos)：</strong></p>
+<pre><code class="python">cd (目标文件夹)
+
+scrapy startproject qutos</code></pre>
+<p><strong>进入项目文件夹：</strong></p>
+<pre><code>cd qutos</code></pre><p><strong>生成一个爬虫（quto）：</strong></p>
+<pre><code>scrapy genspider quto toscrape.com  // 这里的 toscrape.com 是爬虫的目标域名 </code></pre><p> 此时项目目录下会创建如下文件：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-02_11-02-32.png" alt=""></p>
+<p><code>spider</code>文件夹：</p>
+<p>​            <code>quto.py</code>：爬虫，用于编写爬虫程序</p>
+<p><code>__init__.py</code> ：</p>
+<p><code>items.py</code>：用于保存抓取的数据</p>
+<p><code>middlewares.py</code>：额外功能拓展区</p>
+<p><code>pipelines.py</code>：核心处理器</p>
+<p><code>settings.py</code>：爬虫的设置文件，供用户进行设置定义</p>
+<p><code>scrapy.cfg</code>：默认配置文件</p>
+<h2 id="2-1-quto-py 爬虫"><a href="#2-1-quto-py 爬虫" class="headerlink" title="2.1 quto.py 爬虫"></a>2.1 quto.py 爬虫</h2><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-02_11-33-05.png" style="zoom:80%;" />
+
+<p><strong>写好 quto.py 爬虫文件代码，就可以爬取数据了：</strong></p>
+<p>启动爬虫之前，注意在 <code>settings.py</code> 里设置<code>ROBOTSTXT_OBEY = False</code> 不遵守爬虫协议</p>
+<pre><code>scrapy crawl quto   // 启动爬虫 </code></pre><p><strong> 保存为 json 数据到本地：</strong></p>
+<pre><code>scrapy crawl quto -o qutodata.json  //</code></pre><p><strong>一个例子 quto.py</strong></p>
+<pre><code class="python">import scrapy
+import urllib
+
+class QutoSpider(scrapy.Spider):
+    name = &#39;quto&#39;   #爬虫名字
+    allowed_domains = [&#39;toscrape.com&#39;]      #允许爬取的范围
+    start_urls = [&#39;http://quotes.toscrape.com/&#39;]   #爬虫的起点，发送请求
+
+    def parse(self, response):   #网址响应的内容 response 会传到这里面
+        divs=response.css(&#39;.quote&#39;)
+        for div in divs:
+            text=div.css(&#39;.text::text&#39;).get()
+            author=div.css(&#39;.author::text&#39;).get()
+            tag=div.css(&#39;.tag::text&#39;).getall()
+            yield dict(text=text,author=author,tag=tag)   #返回的内容必须是字典 dict 或 item(scrapy 特有的)
+
+        next_page=response.css(&#39;.next a::attr(href)&#39;).get()     #获取下一页网址
+        next_url=urllib.parse.urljoin(response.url,next_page)   #只能通过这种方式
+        print(next_url)
+        yield scrapy.Request(next_url,callback=self.parse)</code></pre>
+<h3 id="2-1-1- 多个起始 url"><a href="#2-1-1- 多个起始 url" class="headerlink" title="2.1.1 多个起始 url"></a>2.1.1 多个起始 url</h3><p><strong>简单写法：</strong></p>
+<pre><code>start_urls=[f&#39;http://quotes.toscrape.com/&#123;page&#125;&#39; for page in range(1,11)]</code></pre><p><strong>重写：</strong></p>
+<p>使用 <code>start_requests()</code> <strong> 重写 </strong><code>start_urls</code>，要使用<code>Request()</code> 方法自己发送请求：</p>
+<pre><code class="python">def start_requests(self):
+    yield scrapy.Request(&#39;http://quotes.toscrape.com/&#39;,callback=self.parse)</code></pre>
+<p>Request()对象用来描述一个 HTTP 请求，下面是其构造器方法的参数列表：</p>
+<pre><code>Request(url, callback=None, method=&#39;GET&#39;, headers=None, body=None,
+        cookies=None, meta=None, encoding=&#39;utf-8&#39;, priority=0,
+        dont_filter=False, errback=None, flags=None, cb_kwargs=None)</code></pre><ul>
+<li><strong>url</strong>（<em>字符串</em>）–此请求的 URL</li>
+<li><strong>callback</strong>（<em>callable</em>）–将以请求的响应（一旦下载）作为第一个参数调用的函数。有关更多信息，请参见下面的将其他数据传递给回调函数。如果“请求”未指定回调，parse() 则将使用“Spider” 方法。请注意，如果在处理过程中引发异常，则会调用 errback。</li>
+<li><strong>method</strong>（<em>字符串</em>）–此请求的 HTTP 方法。默认为<code>&#39;GET&#39;</code>。</li>
+<li><strong>meta</strong>（dict）– Request.meta 属性的初始值。如果给出，则在此参数中传递的字典将被浅表复制。</li>
+<li><strong>headers</strong>（dict）–请求头。dict 值可以是字符串（对于单值标头）或列表（对于多值标头）。如果 <code>None</code>作为值传递，则将根本不发送 HTTP 标头。</li>
+</ul>
+<p><strong>其中里面的 meta 参数也比较重要：</strong></p>
+<p>主要作用是用来传递数据的</p>
+<p>meta 是通过 Request 产生时传进去，通过 Response 对象中取出来。</p>
+<h2 id="2-3-item 类"><a href="#2-3-item 类" class="headerlink" title="2.3 item 类"></a>2.3 item 类 </h2><p>spider 解析出数据之后，其结果是通过<code>yield</code> 一个 <code>dict</code>，但<code>dict</code> 缺少数据结构，没法保证每一处返回都能返回相同的字段。因此 scrapy 提供了 <code>Item</code> 类，用来声明爬取数据的数据结构，该类提供了 <code>dict-like</code> 的接口，因此可以很方便的使用。</p>
+<p>items.py 用法如下：</p>
+<pre><code class="python">import scrapy
+
+class QutosItem(scrapy.Item):
+    name = scrapy.Field()
+    tags=scrapy.Field()</code></pre>
+<p>item 是自定义的数据结构，涉及到 2 个类：</p>
+<p><code>scrapy.Item</code>：基类；</p>
+<p><code>scrapy.Field</code>：用来描述自定义数据包含哪些字段信息，也仅此而已，并没有实际的作用。</p>
+<h2 id="2-4-ItemPipeline"><a href="#2-4-ItemPipeline" class="headerlink" title="2.4 ItemPipeline"></a>2.4 ItemPipeline</h2><p>当 item 从 spider 爬取获得之后，会被送到 ItemPipeline，在 scrapy，ItemPipeline 是处理数据的组件，它们接收 Item 参数并再其之上进行处理。</p>
+<p>ItemPipeline 的典型用法：</p>
+<ol>
+<li>清理脏数据；</li>
+<li>验证数据的有效性；</li>
+<li>去重</li>
+<li>保存 item 到 db，即持久化存储</li>
+</ol>
+<h3 id="2-4-1- 数据处理"><a href="#2-4-1- 数据处理" class="headerlink" title="2.4.1 数据处理"></a>2.4.1 数据处理 </h3><p>Scrapy 提供了 <code>pipeline</code> 模块来执行保存数据的操作。在创建的 Scrapy 项目中自动创建了一个 <code>pipelines.py</code> 文件，同时创建了一个默认的 <code>Pipeline</code> 类：</p>
+<pre><code class="python">class TutorialPipeline(object):     // 类名是可以修改的，也可以根据需要增加
+    def process_item(self, item, spider):
+        return item</code></pre>
+<p>在这个类中，有个方法叫 <code>process_item()</code>方法，每个 定义的 Pipeline 类 都需要调用该方法。得到 item 类数据后，就是通过 <code>process_item()</code>里传入的 <code>item</code> 参数作为一个入口，进入 Class 类中执行一些操作。</p>
+<p><code>process_item()</code> 方法必须 <strong> 返回 </strong> 一个字典数据。默认有两个参数。如果把 <code>return item</code> 删除了那就不会再调用其他 Pipeline 方法了。</p>
+<p>参数：</p>
+<ul>
+<li><p><strong>item</strong> (Item 对象 dict) </p>
+</li>
+<li><p><strong>spider</strong> (Spider 对象) </p>
+</li>
+</ul>
+<p><strong>数据保存到 txt：</strong></p>
+<pre><code class="python">import json
+
+class TutorialPipeline(object):
+    def process_item(self, item, spider):
+        ## 保存数据
+        with open(&#39;data.json&#39;, &#39;a&#39;, encoding=&#39;utf-8&#39;) as f:
+            f.write(json.dumps(dict(item), ensure_ascii=False))
+            f.write(&#39;\n&#39;)
+        return item</code></pre>
+<p>*<em>下面是一个完整的 item pipeline 模板 *</em></p>
+<pre><code>import something
+
+class SomethingPipeline(object):
+    def __init__(self):    
+        ## 可选实现，做参数初始化等
+        ## doing something
+        pass
+
+    def process_item(self, item, spider):
+        ## item (Item 对象) – 被爬取的 item
+        ## spider (Spider 对象) – 爬取该 item 的 spider
+        ## 这个方法必须实现，每个 item pipeline 组件都需要调用该方法，
+        ## 这个方法必须返回一个 Item 对象，被丢弃的 item 将不会被之后的 pipeline 组件所处理。
+        return item
+
+    def open_spider(self, spider):
+        ## spider (Spider 对象) – 被开启的 spider
+        ## 可选实现，当 spider 被开启时，这个方法被调用。
+        pass
+
+    def close_spider(self, spider):
+        ## spider (Spider 对象) – 被关闭的 spider
+        ## 可选实现，当 spider 被关闭时，这个方法才被调用
+        pass</code></pre><p>在 Spider 整个爬取过程中，数据库的连接和关闭操作只需要进行一次，应在开始处理数据之前连接数据库，并在处理完所有数据之后关闭数据库。因此实现以下两个方法（在 Spider 打开和关闭时被调用）：</p>
+<p><code>open_spider(spider)</code></p>
+<p><code>close_spider(spider)</code></p>
+<h4 id="保存"><a href="# 保存" class="headerlink" title="保存"></a><strong>保存</strong></h4><pre><code>// 保存为 json
+
+import json
+
+class ItcastJsonPipeline(object):
+
+    def __init__(self):
+        self.file = open(&#39;item.json&#39;, &#39;wb&#39;)          // 提前创建并打开文件
+
+    def process_item(self, item, spider):
+        content = json.dumps(dict(item), ensure_ascii=False) + &quot;\n&quot;
+        self.file.write(content)
+        return item
+
+    def close_spider(self, spider):
+        self.file.close()
+
+// 保存为 excel 文件
+
+from openpyxl import Workbook
+
+class ToexcelPipeline(object):
+    def __init__(self):
+        self.wb=Workbook()
+        self.ws=self.wb.active
+        self.ws.append([&#39; 名字 &#39;,&#39; 性别 &#39;,&#39; 身高 &#39;,&#39; 生日 &#39;,&#39; 省份 &#39;,&#39; 城市 &#39;,&#39; 文化水平 &#39;,&#39; 年薪 &#39;])
+
+    def process_item(self, item, spider):
+        infos=[item[&#39;username&#39;],item[&#39;gender&#39;],item[&#39;height&#39;],item[&#39;birthdayyear&#39;],
+              item[&#39;province&#39;] ,item[&#39;city&#39;]  ,item[&#39;education&#39;],item[&#39;salary&#39;]]
+        self.ws.append(infos)
+        self.wb.save(&#39;wzly-infos.xlsx&#39;)
+        return item</code></pre><h4 id="去重"><a href="# 去重" class="headerlink" title="去重"></a><strong>去重 </strong></h4><p> 当数据重复时，我们就可以不保存：</p>
+<pre><code>from scrapy.exceptions import DropItem
+
+class DuplicatesPipeline(object):
+
+    def __init__(self):
+        self.ids_seen = set()
+
+    def process_item(self, item, spider):
+        if item[&#39;id&#39;] in self.ids_seen:
+            raise DropItem(&quot;Duplicate item found: %s&quot; % item)
+        else:
+            self.ids_seen.add(item[&#39;id&#39;])
+            return item</code></pre><h3 id="2-4-2- 启用 -ItemPipeline"><a href="#2-4-2- 启用 -ItemPipeline" class="headerlink" title="2.4.2 启用 ItemPipeline"></a>2.4.2 启用 ItemPipeline</h3><p>上面配置的 <code>ItemPipeline</code> 类需要在 settings.py 中进行启用才能生效。</p>
+<p><strong>启用 ItemPipeline</strong></p>
+<p>在 <code>settings.py</code> 中添加以下内容：</p>
+<pre><code class="python">ITEM_PIPELINES = &#123;
+    &#39;newproject.pipelines.ItemPipeline&#39;: 300,  
+&#125;</code></pre>
+<p>其中，<code>ITEM_PIPELINES</code>是一个字典文件，<strong>【键】为在<code>pipelines.py</code> 文件中配置的 ItemPipeline 类</strong>，<strong>【值】为优先级</strong>，ItemPipeline 是按照优先级来调用的，值越小，优先级越高。通过这个值来调控 ItemPipeline 执行的顺序。</p>
+<h3 id="2-4-3- 专用 ItemPipeline"><a href="#2-4-3- 专用 ItemPipeline" class="headerlink" title="2.4.3 专用 ItemPipeline"></a>2.4.3 专用 ItemPipeline</h3><p><strong>Scrapy 框架内部提供了两个 Item Pipeline，专门用于下载文件和图片：</strong></p>
+<p>*<em>FilesPipeline 和 ImagesPipeline *</em></p>
+<p>我们可以将这两个 Item Pipeline 看作特殊的下载器，用户使用时只需要通过 item 的一个特殊字段将要下载文件或图片的 url 传递给它们，它们会自动将文件或图片下载到本地，并将下载结果信息存入 item 的另一个特殊字段，以便用户在导出文件中查阅。</p>
+<blockquote>
+<p><strong>ImagesPipeline 使用说明</strong> </p>
+</blockquote>
+<p><strong>用法如下：</strong></p>
+<pre><code class="python">from scrapy.pipelines.images import ImagesPipeline   // 记得导入
+
+class PicturePipeline(ImagesPipeline):    // 类名字无所谓，需要继承基类 ImagesPipeline
+
+    def get_media_requests(self, item, info):      // 这个定义名唯一
+        for image_url in item[&#39;img_s&#39;]:
+            yield scrapy.Request(image_url, meta=&#123;&#39;filename&#39;: item[&#39;title&#39;]&#125;)
+
+// 如果还需要对图片进行分类整理，还需重写以下方法
+    def file_path(self, request, response=None, info=None):
+        ## 重命名，若不重写这函数，图片名为哈希
+        ## 提取 url 前面名称作为图片名。
+        filename = request.meta.get(&#39;filename&#39;)
+        image_guid = request.url.split(&#39;/&#39;)[-1]
+        return os.path.join(filename, image_guid)
+
+    def item_completed(self, results, item, info):
+        ## 下载完进行一些处理
+        image_paths = [x[&#39;path&#39;] for ok, x in results if ok]
+        if not image_paths:
+            raise DropItem(&quot;Item contains no images&quot;)
+        item[&#39;image_paths&#39;] = image_paths
+        return item</code></pre>
+<p>其中包含了下载图片或文件的最重要的组件：</p>
+<ul>
+<li><code>get_media_requests()</code>是用来发送请求的，需要传入图片的网址，一定要有。</li>
+<li><code>file_path()</code>是用来指定保存的文件的名字。</li>
+<li><code>item_completed</code>() 当请求完成后进行的操作</li>
+<li>除了编写图片管道文件，还要在配置环境中激活，以及指定图片的存储位置。<strong>在 settings.py 在添加 IMAGES_STORE = ‘./images’</strong></li>
+</ul>
+<blockquote>
+<p> <strong>FilesPipeline 使用说明</strong> </p>
+</blockquote>
+<p>使用 FilesPipeline 下载页面中所有 PDF 文件，可按以下步骤进行：</p>
+<p>在配置文件 settings.py 中启用 FilesPipeline，通常将其置于其他 Item Pipeline 之前：</p>
+<pre><code>ITEM_PIPELINES = &#123;&#39;scrapy.pipelines.files.FilesPipeline&#39;: 1&#125;</code></pre><p>在配置文件 settings.py 中，使用 FILES_STORE 指定文件下载目录，如：</p>
+<pre><code>FILES_STORE = &#39;/home/liushuo/Download/scrapy&#39;</code></pre><p>在 Spider 解析一个包含文件下载链接的页面时，将所有需要下载文件的 url 地址收集到一个列表，赋给 item 的 file_urls 字段（<code>item[&#39;file_urls&#39;]</code>）。FilesPipeline 在处理每一项 item 时，会读取<code>item[&#39;file_urls&#39;]</code>，对其中每一个 url 进行下载。</p>
+<p><strong>Spider</strong>中示例代码如下：</p>
+<pre><code class="python">class DownloadBookSpider(scrapy.Spider):
+      def parse(response):
+            item = &#123;&#125;
+            # 下载列表
+            item[&#39;file_urls&#39;] = []
+            for url in response.xpath(&#39;//a/@href&#39;).extract():
+                download_url = response.urljoin(url)
+                # 将 url 填入下载列表
+                item[&#39;file_urls&#39;].append(download_url)
+      yield item</code></pre>
+<p>当 FilesPipeline 下载完 <code>item[&#39;file_urls&#39;]</code> 中的所有文件后，会将各文件的下载结果信息收集到另一个列表，赋给 item 的 files 字段（<code>item[&#39;files&#39;]</code>）。下载结果信息包括以下内容：</p>
+<p>●　Path 文件下载到本地的路径（相对于 FILES_STORE 的相对路径）。</p>
+<p>●　Checksum 文件的校验和。</p>
+<p>●　url 文件的 url 地址。</p>
+<h3 id="2-4-4-POST 请求"><a href="#2-4-4-POST 请求" class="headerlink" title="2.4.4 POST 请求"></a>2.4.4 POST 请求 </h3><p> 在 Spider.py 爬虫文件里：</p>
+<pre><code class="python">import scrapy
+import requests
+
+class LgSpider(scrapy.Spider):
+    name = &#39;lg&#39;
+    allowed_domains = [&#39;lagou.com&#39;]
+    # start_urls = [&#39;http://lagou.com/&#39;]   // 不能再用这个起始 url 了，需要重写
+
+   def start_requests(self):
+        yield scrapy.http.JsonRequest(&#39;https://www.lagou.com/jobs/positionAjax.json?needAddtionalResult=false&#39;,
+        data=&#123; &#39;first&#39;: &#39;true&#39;,
+        &#39;pn&#39;: 1,
+        &#39;kd&#39;: &#39;python&#39; &#125;,
+        headers=headers),
+
+   def parse(self, response):
+        print(response.text)</code></pre>
+<p>也可以在这个文件里继续添加请求头信息：</p>
+<pre><code class="python">def get_cookie():
+    cookie=requests.get(
+    &#39;https://www.lagou.com/jobs/list_python?labelWords=&amp;fromSearch=true&amp;suginput=&#39;,
+    headers=&#123;&#39;User-Agent&#39;:&#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36&#39;,&#125;,
+    allow_redirects=False).cookies.get_dict()
+    return cookie
+
+headers=&#123; &#39;Host&#39;: &#39;www.lagou.com&#39;,
+         &#39;Origin&#39;: &#39;https://www.lagou.com&#39;,
+         &#39;Referer&#39;: &#39;https://www.lagou.com/jobs/list_python?labelWords=&amp;fromSearch=true&amp;suginput=&#39;,
+        &#39;User-Agent&#39;: &#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36&#39;,
+       &#39;cookies&#39;:get_cookie()&#125;  </code></pre>
+<h2 id="2-5-Middlewares"><a href="#2-5-Middlewares" class="headerlink" title="2.5 Middlewares"></a>2.5 Middlewares</h2><p>Downloader Middlewares(下载器中间件)，位于 scrapy 引擎和下载器之间的一层组件。作用：</p>
+<ul>
+<li>引擎将 <strong>请求 </strong> 传递给下载器之前， <strong> 下载中间件 </strong> 可以对 <strong> 请求</strong> 进行一系列处理。比如设置请求的 User-Agent，设置代理等</li>
+<li>在下载器完成将 Response 传递给引擎之前，下载中间件可以对响应进行一系列处理。比如进行 gzip 解压等。</li>
+</ul>
+<p>我们主要使用下载中间件处理请求，一般会对请求设置随机的 User-Agent，设置随机的代理。目的在于防止爬取网站的反爬虫策略。</p>
+<h3 id="2-5-1-Headers 配置"><a href="#2-5-1-Headers 配置" class="headerlink" title="2.5.1 Headers 配置"></a>2.5.1 Headers 配置 </h3><p><strong> 将请求头 <code>headers</code> 放到<code>middlewares.py</code></strong></p>
+<pre><code class="python">//middlewares.py 文件下
+
+from scrapy import signals
+
+class UserAgentMiddleware(object):
+    def process_request(self, request, spider):
+        request.headers.update(&#123;
+                          &#39;Host&#39;: &#39;www.lagou.com&#39;,
+                          &#39;Origin&#39;: &#39;https://www.lagou.com&#39;,
+                          &#39;Referer&#39;: &#39;https://www.lagou.com/jobs/list_python?labelWords=&amp;fromSearch=true&amp;suginput=&#39;,
+                          &#39;User-Agent&#39;: &#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36&#39;,
+                      &#125;)
+        return None  // 没有异常就返回 None</code></pre>
+<p>配置完成之后记得在 settings.py 里添加：</p>
+<pre><code>DOWNLOADER_MIDDLEWARES = &#123;
+   &#39;lagou.middlewares.UserAgentMiddleware&#39;: 543,
+&#125;</code></pre><p><strong>利用 faker 库生成 UserAgent</strong></p>
+<pre><code class="python">from faker import Faker
+
+class UserAgentMiddleware(object):
+    def __init__(self):
+        self.fake=Faker()
+
+    def process_request(self, request, spider):
+        request.headers.update(&#123;
+                          &#39;Host&#39;: &#39;www.lagou.com&#39;,
+                          &#39;Origin&#39;: &#39;https://www.lagou.com&#39;,
+                          &#39;Referer&#39;: &#39;https://www.lagou.com/jobs/list_python?labelWords=&amp;fromSearch=true&amp;suginput=&#39;,
+                          &#39;User-Agent&#39;: self.fake.user_agent(),
+                      &#125;)
+        return None</code></pre>
+<h3 id="2-5-2-cookies 配置"><a href="#2-5-2-cookies 配置" class="headerlink" title="2.5.2 cookies 配置"></a>2.5.2 cookies 配置 </h3><p><strong> 将<code>cookies</code>放到<code>middlewares.py</code></strong></p>
+<pre><code class="python">import requests
+
+def get_cookie():
+    cookie=requests.get(&#39;https://www.lagou.com/jobs/list_python?labelWords=&amp;fromSearch=true&amp;suginput=&#39;,headers=&#123;
+                        &#39;User-Agent&#39;:&#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36&#39;,&#125;,
+                          allow_redirects=False).cookies.get_dict()
+    return cookie
+
+class CookiesMiddleware(object):
+    def process_request(self, request, spider):
+        request.cookies.update(get_cookie())
+        return None</code></pre>
+<p>配置完成之后记得添加到 settings.py 里。</p>
+<p>cookies 也可以在 headers 里一起配置。</p>
+<h3 id="2-5-3-Proxy 配置"><a href="#2-5-3-Proxy 配置" class="headerlink" title="2.5.3 Proxy 配置"></a>2.5.3 Proxy 配置 </h3><p><strong> 将<code>proxy</code>放到<code>middlewares.py</code></strong></p>
+<pre><code class="python">import requests
+
+class ProxyMiddleware(object):
+    def process_request(self, request, spider):
+        request.meta[&#39;proxy&#39;]=&#39;http://223.199.16.186:9999&#39;
+
+        return None</code></pre>
+<p>配置完成之后记得在 settings.py 里添加。</p>
+<h3 id="2-5-4- 超时与重试"><a href="#2-5-4- 超时与重试" class="headerlink" title="2.5.4 超时与重试"></a>2.5.4 超时与重试 </h3><p> 有时候我们设置的代理 ip 网速比较慢，这时候就可以在 <code>settings.py</code> 里设置超时与重试。</p>
+<pre><code>// 请求失败就换下一个代理 ip
+DOWNLOAD_TIMEOUT=5
+# RETRY_ENABLED=True  // 这个是默认的
+RETRY_TIMES=5</code></pre><h1 id="3、CrawlSpider"><a href="#3、CrawlSpider" class="headerlink" title="3、CrawlSpider"></a>3、CrawlSpider</h1><p><strong>Scrapy 框架中分两类爬虫：</strong></p>
+<p>Spider 类和 CrawlSpider 类。上面介绍的都是第一类爬虫——Spider 类。</p>
+<p>这部分我们开始介绍第二类爬虫。</p>
+<p>Crawlspider 是 Spider 的派生类 (一个子类)，<strong>Spider 类的设计原则是只爬取 start_url 列表中的网页</strong>，而<strong>CrawlSpider 类</strong> 定义了一些规则 (Rule)，可以更方便的跟进网页中的 Link，自动捕获并请求，从而<strong> 进行全站数据爬取</strong>。</p>
+<h2 id="3-1- 项目创建"><a href="#3-1- 项目创建" class="headerlink" title="3.1 项目创建"></a>3.1 项目创建 </h2><pre><code>scrapy startproject + 项目名称</code></pre><p><strong> 创建一个项目(名为 qutos)：</strong></p>
+<pre><code class="python">cd (目标文件夹)
+
+scrapy startproject qutos</code></pre>
+<p><strong>进入项目文件夹：</strong></p>
+<pre><code>cd qutos</code></pre><p><strong>使用模板生成一个 Crawlspider：</strong></p>
+<pre><code>scrapy genspider -t crawl 爬虫名称 + 域 </code></pre><p> 生成爬虫界面是这样的</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-04_12-14-56.png" alt=""></p>
+<h2 id="3-2-Rules 参数"><a href="#3-2-Rules 参数" class="headerlink" title="3.2 Rules 参数"></a>3.2 Rules 参数</h2><p>CrawlSpider 使用 rules 来决定爬虫的爬取规则，并将匹配后的 url 请求提交给引擎。所以在正常情况下，CrawlSpider 不需要单独手动返回请求了。</p>
+<p>在 rules 中包含一个或多个 Rule 对象，每个 Rule 对爬取网站的动作定义了某种特定操作，比如提取当前相应内容里的特定链接，是否对提取的链接跟进爬取，对提交的请求设置回调函数等。</p>
+<p><strong>Rule : 规则解析器。根据链接提取器中提取到的链接，根据指定规则提取解析器链接网页中的内容。</strong></p>
+<p><strong>一个 Rule 对象表示一种提取规则。</strong></p>
+<h3 id="3-2-1-LinkExtractor"><a href="#3-2-1-LinkExtractor" class="headerlink" title="3.2.1 LinkExtractor"></a>3.2.1 LinkExtractor</h3><p>顾名思义，作用就是链接提取器。</p>
+<pre><code class="python">LinkExtractor(allow=r&#39;Items/&#39;, deny=, restrict_css=, restrict_xpaths=,deny_domains=)</code></pre>
+<p>其中 <code>allow=</code> 和<code>deny=</code>是采用 <strong> 正则匹配 </strong> 需要爬取（不爬取）的链接；</p>
+<p><code>restrict_css=</code>和 <code>restrict_xpaths=</code> 是进一步对链接进行限制，采用 css 或 xpath 选择器；</p>
+<p><code>deny_domains=</code>可以指定过滤掉的域名。</p>
+<h3 id="3-2-2- 其他"><a href="#3-2-2- 其他" class="headerlink" title="3.2.2 其他"></a>3.2.2 其他</h3><p><code>callback</code>： 从 link_extractor 中每获取到链接时，参数所指定的值作为回调函数，该回调函数接受一个 response 作为其第一个参数。</p>
+<blockquote>
+<p>注意：当编写爬虫规则时，避免使用 parse()作为回调函数。由于 CrawlSpider 使用 parse 方法来实现其逻辑，如果覆盖了 parse 方法，crawl spider 将会运行失败。</p>
+</blockquote>
+<p><code>follow</code>：默认设置为 True ，否则默认为 False。指定了是否将链接提取器继续作用到链接提取器提取出的链接网页中。。</p>
+<p><code>callback</code>：指定规则解析器解析数据的规则（回调函数）</p>
+<p><code>process_links</code>：指定该 spider 中哪个的函数将会被调用，从 link_extractor 中获取到链接列表时将会调用该函数。该方法主要 <strong> 用来过滤</strong>。</p>
+<p><code>process_request</code>：指定该 spider 中哪个的函数将会被调用， 该规则提取到每个 request 时都会调用该函数。 (用来过滤 request)。</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 欢迎各位看官及技术大佬前来交流指导呀，可以邮件至 jqiange@yeah.net </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2021 Jqiange
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

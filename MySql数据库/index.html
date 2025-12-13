@@ -1,0 +1,2160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>MySql 数据库 | jqiange</title>
+  <meta name="keywords" content=" Mysql ">
+  <meta name="description" content="MySql 数据库 | jqiange">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="人畜无害的姜小强">
+<meta property="og:url" content="https://jqiange.github.io/about/index.html">
+<meta property="og:site_name" content="jqiange">
+<meta property="og:description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+<meta property="article:published_time" content="2020-02-18T08:21:04.000Z">
+<meta property="article:modified_time" content="2025-12-13T05:23:10.695Z">
+<meta property="article:author" content="姜小强">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+
+
+<link rel="icon" href="/img/jqiange.png">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/jqiange.png"/>
+</a>
+<div class="author">
+    <span>姜小强</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/jqiange"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(58)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(9)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据库">
+                        
+                        数据库
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="每日一学">
+                        
+                        每日一学
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="爬虫">
+                        
+                        爬虫
+                        <small>(10)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="前端">
+                        
+                        前端
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="深度学习">
+                        
+                        深度学习
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据分析">
+                        
+                        数据分析
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="chip">
+                        
+                        chip
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="CPP">
+                        
+                        CPP
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Linux">
+                        
+                        Linux
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="python">
+                        
+                        python
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="58">
+<input type="hidden" id="yelog_site_word_count" value="251.9k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSS-Xpath</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Markdown</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Matplotlib</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Mysql</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Numpy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pandas</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pip</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pyecharts</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pygal</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pymysql-ORM</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>RE</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Redis</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Scrapy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Seaborn</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Selenium</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>yield</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="全部文章 python "
+           href="/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%A6%E8%A7%A3/"
+           data-tag="RE"
+           data-author="" >
+            <span class="post-title" title="正则表达式详解">正则表达式详解</span>
+            <span class="post-date" title="2020-02-26 09:25:46">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/tcl%E4%B8%8Eopc/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 与 opc">tcl 与 opc</span>
+            <span class="post-date" title="2025-09-24 13:36:07">2025/09/24</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/hexo%E6%96%87%E7%AB%A0%E5%8A%A0%E5%AF%86%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="hexo 文章加密方法">hexo 文章加密方法</span>
+            <span class="post-date" title="2025-09-21 22:33:03">2025/09/21</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/tcl%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 语言入门">tcl 语言入门</span>
+            <span class="post-date" title="2025-09-14 22:43:20">2025/09/14</span>
+        </a>
+        
+        <a  class="全部文章 每日一学 "
+           href="/%E6%95%85%E4%BA%8B%E4%BC%9A%E4%B8%8E%E4%BC%81%E4%B8%9A%E8%82%A1%E6%9D%83%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="故事会与企业股权架构设计">故事会与企业股权架构设计</span>
+            <span class="post-date" title="2025-08-30 09:42:43">2025/08/30</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%AE%A1%E7%AE%97%E5%85%89%E5%88%BBOPC%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="计算光刻 OPC 名词解释">计算光刻 OPC 名词解释</span>
+            <span class="post-date" title="2025-08-26 21:44:36">2025/08/26</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%8A%AF%E7%89%87%E5%88%B6%E9%80%A0%E6%B5%81%E7%A8%8B%E4%B8%8E%E5%B7%A5%E8%89%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="芯片制造流程与工艺">芯片制造流程与工艺</span>
+            <span class="post-date" title="2025-06-14 12:13:17">2025/06/14</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E8%81%8C%E5%9C%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入职场">C++ 入职场</span>
+            <span class="post-date" title="2024-06-22 15:52:55">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/Protocol-Buffers-%E5%85%A5%E9%97%A8%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Protocol Buffers 入门使用">Protocol Buffers 入门使用</span>
+            <span class="post-date" title="2024-06-22 15:50:39">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-python%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B-boost/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++python 混合编程 -boost">C++python 混合编程 -boost</span>
+            <span class="post-date" title="2024-06-22 15:36:18">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B%E4%B8%8E%E6%A8%A1%E6%9D%BF/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 泛型编程与模板">C++ 泛型编程与模板</span>
+            <span class="post-date" title="2024-06-22 15:27:49">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入门学习笔记">C++ 入门学习笔记</span>
+            <span class="post-date" title="2024-06-22 14:53:46">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 Linux "
+           href="/shell%E7%BC%96%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="shell 编程">shell 编程</span>
+            <span class="post-date" title="2022-03-07 20:24:24">2022/03/07</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Git 版本控制工具">Git 版本控制工具</span>
+            <span class="post-date" title="2022-03-05 23:23:45">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Hexo%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E4%B8%8E%E5%A4%9A%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hexo 博客迁移与多平台使用">Hexo 博客迁移与多平台使用</span>
+            <span class="post-date" title="2022-03-05 01:26:56">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%B8%8E%E9%87%8D%E9%9A%BE%E7%82%B9%E6%B1%87%E6%80%BB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的基础知识与重难点汇总">python 中的基础知识与重难点汇总</span>
+            <span class="post-date" title="2020-11-17 23:05:15">2020/11/17</span>
+        </a>
+        
+        <a  class="全部文章 前端 "
+           href="/javascript%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="JavaScript 入门">JavaScript 入门</span>
+            <span class="post-date" title="2020-11-09 20:46:08">2020/11/09</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E8%AF%AD%E6%B3%95%E7%B3%96/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的语法糖">python 中的语法糖</span>
+            <span class="post-date" title="2020-11-06 10:53:29">2020/11/06</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E8%BF%9B%E7%A8%8B%EF%BC%8C%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%8D%8F%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的进程，线程与协程">python 中的进程，线程与协程</span>
+            <span class="post-date" title="2020-11-04 21:29:16">2020/11/04</span>
+        </a>
+        
+        <a  class="全部文章 Linux "
+           href="/linux%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="linux 常见命令学习">linux 常见命令学习</span>
+            <span class="post-date" title="2020-06-17 22:33:28">2020/06/17</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="机器学习经典算法">机器学习经典算法</span>
+            <span class="post-date" title="2020-06-16 10:36:50">2020/06/16</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/tensorflow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tensorflow 学习笔记">tensorflow 学习笔记</span>
+            <span class="post-date" title="2020-06-05 01:49:53">2020/06/05</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/%E6%B7%B1%E5%BA%A6%E7%90%86%E8%A7%A3%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="深度理解卷积神经网络工作原理">深度理解卷积神经网络工作原理</span>
+            <span class="post-date" title="2020-06-04 13:24:45">2020/06/04</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E7%88%AC%E8%99%AB%E7%9A%84%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫的定时执行">爬虫的定时执行</span>
+            <span class="post-date" title="2020-04-06 22:44:47">2020/04/06</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/Token-%EF%BC%8CCookie%E5%92%8CSession%E7%9A%84%E5%8C%BA%E5%88%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Token ，Cookie 和 Session 的区别">Token ，Cookie 和 Session 的区别</span>
+            <span class="post-date" title="2020-04-03 10:46:54">2020/04/03</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E5%9C%A8python%E4%B8%AD%E8%BF%9B%E8%A1%8C%E8%A7%86%E9%A2%91-%E9%9F%B3%E9%A2%91%E5%A4%84%E7%90%86%E5%8F%8A%E5%90%88%E5%B9%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="在 python 中进行视频 - 音频处理及合并">在 python 中进行视频 - 音频处理及合并</span>
+            <span class="post-date" title="2020-03-29 10:56:44">2020/03/29</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8BJS%E8%A7%A3%E5%AF%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之 JS 解密">反反爬虫之 JS 解密</span>
+            <span class="post-date" title="2020-03-24 10:04:43">2020/03/24</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E7%90%86%E8%A7%A3python%E4%B8%AD%E7%9A%84%E9%97%AD%E5%8C%85%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="理解 python 中的闭包与装饰器">理解 python 中的闭包与装饰器</span>
+            <span class="post-date" title="2020-03-21 17:34:45">2020/03/21</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Mongodb%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Mongodb 数据库入门">Mongodb 数据库入门</span>
+            <span class="post-date" title="2020-03-17 22:50:33">2020/03/17</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%8A%A0%E4%B8%AA%E7%A9%BA%E6%A0%BC%E5%91%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="为什么不加个空格呢">为什么不加个空格呢</span>
+            <span class="post-date" title="2020-03-14 13:53:44">2020/03/14</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8/"
+           data-tag="yield"
+           data-author="" >
+            <span class="post-title" title="迭代器与生成器">迭代器与生成器</span>
+            <span class="post-date" title="2020-03-13 21:58:25">2020/03/13</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E6%BB%91%E5%9D%97%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之滑块验证码">反反爬虫之滑块验证码</span>
+            <span class="post-date" title="2020-03-08 21:00:17">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E5%9B%BE%E7%89%87%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之图片验证码">反反爬虫之图片验证码</span>
+            <span class="post-date" title="2020-03-08 16:16:16">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Python%E6%93%8D%E4%BD%9CRedis/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Python 操作 Redis">Python 操作 Redis</span>
+            <span class="post-date" title="2020-03-07 16:15:44">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy-Redis%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Scrapy-Redis 分布式爬虫">Scrapy-Redis 分布式爬虫</span>
+            <span class="post-date" title="2020-03-07 15:35:50">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%ABRequest%E5%8E%BB%E9%87%8D%E5%8F%8A%E8%BF%87%E6%BB%A4%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫 Request 去重及过滤器">爬虫 Request 去重及过滤器</span>
+            <span class="post-date" title="2020-03-07 15:22:23">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Redis%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Redis 数据库">Redis 数据库</span>
+            <span class="post-date" title="2020-03-06 20:30:00">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Pymysql%E4%B8%8EORM%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="pymysql-ORM"
+           data-author="" >
+            <span class="post-title" title="Pymysql 与 ORM 操作数据库">Pymysql 与 ORM 操作数据库</span>
+            <span class="post-date" title="2020-03-06 10:49:03">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/MySql%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Mysql"
+           data-author="" >
+            <span class="post-title" title="MySql 数据库">MySql 数据库</span>
+            <span class="post-date" title="2020-03-04 23:31:02">2020/03/04</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy%E6%A1%86%E6%9E%B6%E7%88%AC%E8%99%AB/"
+           data-tag="Scrapy"
+           data-author="" >
+            <span class="post-title" title="Scrapy 框架爬虫">Scrapy 框架爬虫</span>
+            <span class="post-date" title="2020-03-02 10:44:55">2020/03/02</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="多线程与多进程爬虫">多线程与多进程爬虫</span>
+            <span class="post-date" title="2020-03-01 15:33:08">2020/03/01</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Selenium%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%A8%A1%E6%8B%9F/"
+           data-tag="Selenium"
+           data-author="" >
+            <span class="post-title" title="Selenium 自动化测试模拟">Selenium 自动化测试模拟</span>
+            <span class="post-date" title="2020-02-29 21:29:54">2020/02/29</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96-%E6%96%87%E4%BB%B6%E4%BF%9D%E5%AD%98/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="数据持久化 - 文件保存本地">数据持久化 - 文件保存本地</span>
+            <span class="post-date" title="2020-02-27 22:01:14">2020/02/27</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫基础入门">爬虫基础入门</span>
+            <span class="post-date" title="2020-02-26 20:44:27">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/CSS%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%8EXpath%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96/"
+           data-tag="CSS-Xpath"
+           data-author="" >
+            <span class="post-title" title="CSS 选择器与 Xpath 数据提取">CSS 选择器与 Xpath 数据提取</span>
+            <span class="post-date" title="2020-02-26 19:07:35">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Seaborn-Pygal-Pyecharts%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Seaborn,pygal,Pyecharts"
+           data-author="" >
+            <span class="post-title" title="Seaborn-Pygal-Pyecharts 可视化">Seaborn-Pygal-Pyecharts 可视化</span>
+            <span class="post-date" title="2020-02-22 16:24:55">2020/02/22</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/python%E4%B9%8BMatplotlib%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Matplotlib"
+           data-author="" >
+            <span class="post-title" title="python 之 Matplotlib 可视化">python 之 Matplotlib 可视化</span>
+            <span class="post-date" title="2020-02-20 20:28:44">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%A4%84%E7%90%86%E5%AE%9E%E6%93%8D/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Pandas 数据分析处理实操">Pandas 数据分析处理实操</span>
+            <span class="post-date" title="2020-02-20 10:51:39">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Markdown%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E6%8A%80%E5%B7%A7/"
+           data-tag="Markdown"
+           data-author="" >
+            <span class="post-title" title="Markdown 文本编辑技巧">Markdown 文本编辑技巧</span>
+            <span class="post-date" title="2020-02-18 16:31:40">2020/02/18</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BPandas%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Python 之 Pandas 库从入门到实战">Python 之 Pandas 库从入门到实战</span>
+            <span class="post-date" title="2020-02-15 20:46:52">2020/02/15</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BNumpy%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Numpy"
+           data-author="" >
+            <span class="post-title" title="Python 之 Numpy 库从入门到实战">Python 之 Numpy 库从入门到实战</span>
+            <span class="post-date" title="2020-02-13 23:15:38">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E9%95%9C%E5%83%8F%E6%BA%90%E7%BD%91%E5%9D%80/"
+           data-tag="pip"
+           data-author="" >
+            <span class="post-title" title="python pip 国内镜像大全及库的安装">python pip 国内镜像大全及库的安装</span>
+            <span class="post-date" title="2020-02-13 23:13:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E7%9A%84%E4%B8%89%E7%A7%8D%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 的三种输出格式">python 的三种输出格式</span>
+            <span class="post-date" title="2020-02-13 23:04:49">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E6%97%B6%E9%97%B4%E6%A8%A1%E5%9D%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的时间模块">python 中的时间模块</span>
+            <span class="post-date" title="2020-02-13 23:01:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E6%9F%A5%E7%9C%8B%E4%BB%BB%E4%BD%95%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E7%94%A8%E6%B3%95%E7%9A%84%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 查看任何第三方库的用法的方法">python 查看任何第三方库的用法的方法</span>
+            <span class="post-date" title="2020-02-13 22:57:50">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Anaconda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8Epyinstaller%E7%A8%8B%E5%BA%8F%E6%89%93%E5%8C%85/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Anaconda 环境配置与 pyinstaller 程序打包">Anaconda 环境配置与 pyinstaller 程序打包</span>
+            <span class="post-date" title="2020-02-13 20:01:52">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%BD%BF%E7%94%A8Hexo-Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%85%8D%E8%B4%B9%E5%8D%9A%E5%AE%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="使用 Hexo+Github 搭建个人免费博客">使用 Hexo+Github 搭建个人免费博客</span>
+            <span class="post-date" title="2020-02-13 15:44:02">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E5%85%B3%E4%BA%8Ehexo%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"
+           data-tag="Hexo"
+           data-author="" >
+            <span class="post-title" title="关于 hexo 使用过程中报错问题汇总">关于 hexo 使用过程中报错问题汇总</span>
+            <span class="post-date" title="2020-02-12 23:03:46">2020/02/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-MySql数据库" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">MySql 数据库</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="数据库">数据库</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color1">Mysql</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2025-12-13 13:23:10'>2020-03-04 23:31</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:9.2k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1%E3%80%81%E5%AE%89%E8%A3%85"><span class="toc-text">1、安装 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-Windows%20%E7%B3%BB%E7%BB%9F"><span class="toc-text">1.1 Windows 系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-1-%20%E4%B8%8B%E8%BD%BD"><span class="toc-text">1.1.1 下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-2-%20%E5%AE%89%E8%A3%85"><span class="toc-text">1.1.2 安装 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-3-%20%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-text">1.1.3 配置环境变量 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-Ubuntu%20%E7%B3%BB%E7%BB%9F"><span class="toc-text">1.2 Ubuntu 系统 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-1-%20%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE"><span class="toc-text">1.2.1 安装及配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-2-%20%E9%97%AE%E9%A2%98%E4%BF%AE%E5%A4%8D"><span class="toc-text">1.2.2 问题修复 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-%20%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%86%E7%A0%81"><span class="toc-text">1.3 修改数据库密码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%E3%80%81%E5%A2%9E%E5%88%A0%E6%94%B9"><span class="toc-text">2、增删改 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%20%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-text">2.1 基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1-CMD%20%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%8B"><span class="toc-text">2.1.1 CMD 命令行下</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2-%20%E8%BF%9E%E6%8E%A5%20Pycharm"><span class="toc-text">2.1.2 连接 Pycharm</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%20%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-text">2.2 基础知识 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1-%20%E5%88%9B%E5%BB%BA%E4%B8%8E%E5%88%A0%E9%99%A4"><span class="toc-text">2.2.1 创建与删除 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2-%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.2.2 数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%80%BC"><span class="toc-text">数值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E5%9E%8B"><span class="toc-text">字符型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A5%E6%9C%9F%E5%9E%8B"><span class="toc-text">日期型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-3-%20%E5%AD%97%E7%AC%A6%E9%95%BF%E5%BA%A6"><span class="toc-text">2.2.3 字符长度 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%20%E4%B8%8D%E6%87%82%E5%B0%B1%E6%9F%A5"><span class="toc-text">2.3 不懂就查 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E7%9A%84%E4%BF%AE%E6%94%B9"><span class="toc-text"> 表的修改 </span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%8D%E5%91%BD%E5%90%8D%E4%B8%80%E5%BC%A0%E8%A1%A8"><span class="toc-text"> 重命名一张表 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E4%B8%80%E5%BC%A0%E8%A1%A8"><span class="toc-text">删除一张表 </span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%97%E7%9A%84%E4%BF%AE%E6%94%B9"><span class="toc-text">列的修改</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A2%9E%E5%8A%A0%E4%B8%80%E5%88%97"><span class="toc-text">增加一列 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E4%B8%80%E5%88%97"><span class="toc-text">删除一列 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%8D%E5%91%BD%E5%90%8D%E4%B8%80%E5%88%97"><span class="toc-text">重命名一列 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%94%B9%E5%8F%98%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">改变数据类型 </span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AE%B9%E4%BF%AE%E6%94%B9"><span class="toc-text">内容修改 </span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E8%A1%A8%E4%B8%AD%E6%9F%90%E4%B8%AA%E5%80%BC"><span class="toc-text"> 修改表中某个值 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E4%B8%80%E8%A1%8C%E8%AE%B0%E5%BD%95"><span class="toc-text">删除一行记录 </span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3%E3%80%81%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-text">3、插入数据</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%20%E6%8F%92%E5%85%A5"><span class="toc-text">3.1 插入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-%20%E6%9B%B4%E6%96%B0"><span class="toc-text">3.2 更新</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-%20%E5%88%A0%E9%99%A4"><span class="toc-text">3.3 删除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-%20%E6%B8%85%E7%A9%BA"><span class="toc-text">3.4 清空</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4%E3%80%81-%20%E6%9F%A5%E8%AF%A2"><span class="toc-text">4、 查询</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-%20%E5%9F%BA%E7%A1%80%E6%9F%A5%E8%AF%A2"><span class="toc-text">4.1 基础查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SELECT%20%E5%AD%90%E5%8F%A5"><span class="toc-text">SELECT 子句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E6%AE%B5%E8%B5%B7%E5%88%AB%E5%90%8D"><span class="toc-text">字段起别名 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E5%8E%BB%E9%87%8D"><span class="toc-text">查询结果去重</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-%20%E6%9D%A1%E4%BB%B6%E6%9F%A5%E8%AF%A2"><span class="toc-text">4.2 条件查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#WHERE%20%E5%AD%90%E5%8F%A5"><span class="toc-text">WHERE 子句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">比较运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">逻辑运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-1-%20%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2"><span class="toc-text">4.2.1 模糊查询 </span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-text"> 模糊查询关键字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%9A%E9%85%8D%E7%AC%A6"><span class="toc-text">通配符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%AC%E4%B9%89%E9%80%9A%E9%85%8D%E7%AC%A6"><span class="toc-text">转义通配符</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-%20%E6%8E%92%E5%BA%8F%E6%9F%A5%E8%AF%A2"><span class="toc-text">4.3 排序查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ORDER-BY%20%E5%AD%90%E5%8F%A5"><span class="toc-text">ORDER BY 子句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E9%87%8D%E6%8E%92%E5%BA%8F%E6%A0%87%E5%87%86"><span class="toc-text">多重排序标准</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4-%20%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0"><span class="toc-text">4.4 常用函数 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E5%87%BD%E6%95%B0"><span class="toc-text"> 字符函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0"><span class="toc-text">数学函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E6%9C%9F%E5%87%BD%E6%95%B0"><span class="toc-text">日期函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5"><span class="toc-text">流程控制语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%87%BD%E6%95%B0"><span class="toc-text">其他函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E5%87%BD%E6%95%B0"><span class="toc-text">统计函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-5-%20%E5%88%86%E7%BB%84%E6%9F%A5%E8%AF%A2"><span class="toc-text">4.5 分组查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#GROUP-BY-%20%E5%AD%90%E5%8F%A5"><span class="toc-text">GROUP BY 子句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HAVING-%EF%BC%88%E8%BF%87%E6%BB%A4%EF%BC%89%E5%AD%90%E5%8F%A5"><span class="toc-text">HAVING （过滤）子句</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-6-%20%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2"><span class="toc-text">4.6 连接查询 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%B1%BB"><span class="toc-text"> 分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95"><span class="toc-text">语法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-7-%20%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2"><span class="toc-text">4.7 分页查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LIMIT%20%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">LIMIT 的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E9%A1%B5%E9%80%9A%E7%94%A8%E5%86%99%E6%B3%95"><span class="toc-text">分页通用写法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-8-%20%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2"><span class="toc-text">4.8 联合查询</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5%E3%80%81-%20%E6%95%B0%E6%8D%AE%E7%BA%A6%E6%9D%9F"><span class="toc-text">5、 数据约束</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-%20%E4%BA%94%E5%A4%A7%E7%BA%A6%E6%9D%9F%E7%B1%BB%E5%9E%8B"><span class="toc-text">5.1 五大约束类型 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-1-%20%E4%B8%BB%E9%94%AE%E7%BA%A6%E6%9D%9F"><span class="toc-text">5.1.1 主键约束 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-2-%20%E9%BB%98%E8%AE%A4%E5%80%BC%E7%BA%A6%E6%9D%9F"><span class="toc-text">5.1.2 默认值约束 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-3-%20%E5%94%AF%E4%B8%80%E7%BA%A6%E6%9D%9F"><span class="toc-text">5.1.3 唯一约束 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-4-%20%E5%A4%96%E9%94%AE%E7%BA%A6%E6%9D%9F"><span class="toc-text">5.1.4 外键约束 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-5-%20%E9%9D%9E%E7%A9%BA%E7%BA%A6%E6%9D%9F"><span class="toc-text">5.1.5 非空约束 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-%20%E5%88%97%E7%BA%A7%E7%BA%A6%E6%9D%9F%E4%B8%8E%E8%A1%A8%E7%BA%A7%E7%BA%A6%E6%9D%9F"><span class="toc-text">5.2 列级约束与表级约束</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-3-%20%E4%B8%BB%E9%94%AE%E7%BA%A6%E6%9D%9F%E5%92%8C%E5%94%AF%E4%B8%80%E7%BA%A6%E6%9D%9F%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">5.3 主键约束和唯一约束的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-4-%20%E5%A4%96%E9%94%AE%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-text">5.4 外键使用注意事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-5-%20%E8%81%94%E5%90%88%E4%B8%BB%E9%94%AE"><span class="toc-text">5.5 联合主键 </span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6%E3%80%81%E9%AB%98%E7%BA%A7%E6%93%8D%E4%BD%9C"><span class="toc-text">6、高级操作 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%86%E5%A4%87"><span class="toc-text">准备</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-1-%20%E7%B4%A2%E5%BC%95"><span class="toc-text">6.1 索引 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-2-%20%E8%A7%86%E5%9B%BE"><span class="toc-text">6.2 视图 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-3-%20%E5%A4%87%E4%BB%BD"><span class="toc-text">6.3 备份 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-4-%20%E6%81%A2%E5%A4%8D"><span class="toc-text">6.4 恢复 </span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结 </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%99%84%E5%BD%95"><span class="toc-text">附录 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-text"> 导入数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%BC%E5%87%BA%E6%95%B0%E6%8D%AE"><span class="toc-text">导出数据</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><code>MySQL</code> 是一个 DBMS（数据库管理系统），由瑞典 MySQLAB 公司开发，目前属于 Oracle (甲骨文)公司，是最流行的关系型数据库管理系统（关系数据库，是建立在关系数据库模型基础上的数据库，借助于集合代数等概念和方法来处理数据库中的数据）。由于其体积小、速度快、总体拥有成本低，尤其是开放源码这一特点，一般中小型网站的开发者都选择 <code>MySQL</code> 作为网站数据库。<code>MySQL</code> 使用 <code>SQL</code> 语言进行操作。</p>
+<p>菜鸟教程：<a target="_blank" rel="noopener" href="https://www.runoob.com/mysql/mysql-administration.html">https://www.runoob.com/mysql/mysql-administration.html</a></p>
+<p><strong>概念对比</strong></p>
+<ul>
+<li>DB：数据库，存放数据的容器</li>
+<li>DBMS：数据库管理系统，用于管理 DB</li>
+<li>SQL：结构化查询语言，是关系型数据库的通用语言</li>
+</ul>
+<p><strong>RDBMS 术语</strong></p>
+<p>在我们开始学习 MySQL 数据库前，让我们先了解下 RDBMS 的一些术语：</p>
+<ul>
+<li><strong>数据库:</strong> 数据库是一些关联表的集合。</li>
+<li><strong>数据表:</strong> 表是数据的矩阵。在一个数据库中的表看起来像一个简单的电子表格。</li>
+<li><strong>列:</strong> 一列(数据元素) 包含了相同类型的数据, 例如邮政编码的数据。</li>
+<li><strong>行：</strong>一行（= 元组，或记录）是一组相关的数据，例如一条用户订阅的数据。</li>
+</ul>
+<h1 id="1、安装"><a href="#1、安装" class="headerlink" title="1、安装"></a>1、安装 </h1><h2 id="1-1-Windows 系统"><a href="#1-1-Windows 系统" class="headerlink" title="1.1 Windows 系统"></a>1.1 Windows 系统</h2><h3 id="1-1-1- 下载"><a href="#1-1-1- 下载" class="headerlink" title="1.1.1 下载"></a>1.1.1 下载</h3><p> 安装包下载地址：<a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/mysql/">https://dev.mysql.com/downloads/mysql/</a></p>
+<p>注意选择 size 大点的下载。</p>
+<h3 id="1-1-2- 安装"><a href="#1-1-2- 安装" class="headerlink" title="1.1.2 安装"></a>1.1.2 安装 </h3><p><strong> 建议自定义安装，如下：</strong><br><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-05_11-32-45.png" style="zoom: 67%;" /></p>
+<p><strong>选择模块：</strong></p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-05_11-40-02.png" style="zoom:80%;" />
+
+<p><strong>自定义安装路径：</strong></p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-05_11-41-05.png"  style="zoom:80%;" />
+
+<p><strong>接下来一直 next 就行。</strong></p>
+<h3 id="1-1-3- 配置环境变量"><a href="#1-1-3- 配置环境变量" class="headerlink" title="1.1.3 配置环境变量"></a>1.1.3 配置环境变量 </h3><p> 为了避免每次需要在 CMD 命令行下，需 CD 到 Mysql 安装目录下才能启动 Mysql，可以提前配置好环境变量，这样就可以不用进入其安装目录也能执行启动命令。</p>
+<p><strong>找到环境变量设置入口：</strong></p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-05_11-48-00.png" style="zoom:80%;" />
+
+<p><strong>将 Mysql 安装路径加入到环境变量中：</strong></p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-05_11-49-50.png" style="zoom:80%;" />
+
+
+
+<h2 id="1-2-Ubuntu 系统"><a href="#1-2-Ubuntu 系统" class="headerlink" title="1.2 Ubuntu 系统"></a>1.2 Ubuntu 系统 </h2><h3 id="1-2-1- 安装及配置"><a href="#1-2-1- 安装及配置" class="headerlink" title="1.2.1 安装及配置"></a>1.2.1 安装及配置</h3><p> 首先依次执行：</p>
+<pre><code>sudo apt-get install mysql-server
+
+sudo apt install mysql-client
+
+sudo apt install libmysqlclient-dev</code></pre><p>安装成功后可以通过下面的命令测试是否安装成功：</p>
+<pre><code>sudo netstat -tap | grep mysql
+
+#出现……localhost:mysql……等信息说明成功 </code></pre><p> 进入 mysql：</p>
+<pre><code>sudo mysql</code></pre><p>退出：</p>
+<pre><code class="mysql">mysql&gt;quit</code></pre>
+<p>设置 mysql 允许远程访问，首先编辑文件 /etc/mysql/mysql.conf.d/mysqld.cnf</p>
+<pre><code>sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf</code></pre><p> 注释掉 bind-address = 127.0.0.1，保存退出。</p>
+<p>然后进入 mysql 服务，执行授权命令：</p>
+<pre><code class="mysql">mysql&gt;grant all on *.* to root@&#39;%&#39; identified by &#39; 你的密码 &#39; with grant option;
+
+mysql&gt;flush privileges;</code></pre>
+<p>然后执行 quit 命令退出 mysql 服务，执行如下命令重启 mysql：</p>
+<pre><code>sudo service mysql restart</code></pre><p>现在在 windows 下可以使用 navicat 远程连接 ubuntu 下的 mysql 服务。</p>
+<p>navicat 连接 mysql 数据库：在 general 界面输入数据库相关信息，在 SSH 界面输入 linux 系统登陆信息。</p>
+<p><strong>默认 mysql 相关文件位置：</strong></p>
+<pre><code class="php">/var/lib/mysql           日志文件，数据库  ［重点要知道这个］
+
+/usr/bin                 客户端程序和脚本  
+/usr/sbin                mysqld 服务器
+/usr/share/doc/packages  文档  
+/usr/include/mysql       包含(头) 文件  
+/usr/lib/mysql           库  
+/usr/share/mysql         错误消息和字符集文件  
+/usr/share/sql-bench     基准程序  </code></pre>
+<h3 id="1-2-2- 问题修复"><a href="#1-2-2- 问题修复" class="headerlink" title="1.2.2 问题修复"></a>1.2.2 问题修复 </h3><p> 发现采用 1.3 章节设置密码后，不输入密码依然能进数据库，如：</p>
+<pre><code>sudo mysql
+
+mysql&gt;</code></pre><p>修复方法如下：</p>
+<pre><code class="mysql"># 进入 mysql
+sudo mysql
+
+#依次输入以下命令：
+mysql&gt;update user set authentication_string=PASSWORD(&quot; 密码 &quot;) where user=&#39;root&#39;;
+
+mysql&gt;update user set plugin=&quot;mysql_native_password&quot;;
+
+mysql&gt;flush privileges;
+
+mysql&gt;quit;
+
+sudo service mysql restart</code></pre>
+<h2 id="1-3- 修改数据库密码"><a href="#1-3- 修改数据库密码" class="headerlink" title="1.3 修改数据库密码"></a>1.3 修改数据库密码</h2><pre><code class="sql">mysql&gt; set password for root@localhost = password(&#39;123&#39;); </code></pre>
+<h1 id="2、增删改"><a href="#2、增删改" class="headerlink" title="2、增删改"></a>2、增删改 </h1><h2 id="2-1- 基本操作"><a href="#2-1- 基本操作" class="headerlink" title="2.1 基本操作"></a>2.1 基本操作</h2><h3 id="2-1-1-CMD 命令行下"><a href="#2-1-1-CMD 命令行下" class="headerlink" title="2.1.1 CMD 命令行下"></a>2.1.1 CMD 命令行下</h3><p><strong> 启动 mysql：</strong></p>
+<pre><code class="python">mysql -uroot -p   // 启动时会提示输入密码</code></pre>
+<p>由于已经配置了环境变量，直接输入上述命令即可。如没有配置，需要 cd 到其安装目录才能执行启动命令。</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-05_11-54-52.png" style="zoom:80%;" />
+
+<p><strong>查看已有数据库：</strong></p>
+<pre><code> show databases;</code></pre><p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-05_12-02-39.png" alt=""></p>
+<p><strong>创建，使用及退出：</strong></p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-05_12-04-58.png" alt=""></p>
+<p>注意这里的 quit 并没有真正退出，后台还有 mysql 服务存在。</p>
+<h3 id="2-1-2- 连接 Pycharm"><a href="#2-1-2- 连接 Pycharm" class="headerlink" title="2.1.2 连接 Pycharm"></a>2.1.2 连接 Pycharm</h3><p>首先要求 Pycharm 使用的是专业版，社区版是没有的数据库功能的。</p>
+<p>启动数据库（保证 Mysql 服务在后台运行，在任务管理器中查看）。</p>
+<p><strong>打开连接界面：</strong></p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-05_12-17-06.png" alt=""></p>
+<p><strong>进行连接：</strong></p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-05_12-21-17.png" alt=""></p>
+<p><strong>测试连接时，如出现错误 Server returns invalid timezone……</strong></p>
+<p>应该是时区没设置对</p>
+<pre><code>show variables like &#39;%time_zone%&#39;;</code></pre><p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-05_12-25-06.png" alt=""></p>
+<p>这里的 SYSTEM 默认时的美国时间。</p>
+<p><strong>解决办法：</strong></p>
+<p>①</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-05_12-27-20.png" style="zoom:80%;" />
+
+<p>②在 mysql 的命令模式下，CMD 下输入：</p>
+<pre><code>mysql&gt;  set global time_zone=&#39;+8:00&#39;;</code></pre><p><strong>设置完成之后，就可以进行愉快的玩耍了！</strong></p>
+<p>尝试使用命令：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-05_13-38-54.png" alt="Snipaste_2020-03-05_13-38-54"></p>
+<h2 id="2-2- 基础知识"><a href="#2-2- 基础知识" class="headerlink" title="2.2 基础知识"></a>2.2 基础知识 </h2><p> 在 pycharm 里操作数据库。</p>
+<h3 id="2-2-1- 创建与删除"><a href="#2-2-1- 创建与删除" class="headerlink" title="2.2.1 创建与删除"></a>2.2.1 创建与删除 </h3><p><strong> 创建与删除数据库</strong></p>
+<pre><code class="python">show databases;                                // 显示数据库
+create database python character set utf8;     // 创建数据库, 指定字符集，避免中文无法识别
+drop database 库名;                            // 删除数据库
+ALTER DATABASE 库名 CHARACTER SET gbk;        // 更改库的字符集</code></pre>
+<p>创建数据库，还可以这样：</p>
+<pre><code>create database if not exists 库名     // 不存在才创建 </code></pre><p><strong> 创建数据表</strong></p>
+<p>只有创建了数据表才能进行数据操作。</p>
+<pre><code class="sql">use python;                            // 指定要操作的数据库
+create table maoyan(moive_name varchar(50) primary key,
+    moive_data varchar(50),
+    score varchar(10)
+) character set utf8;            //varchar(50)指定字符串最大长度
+desc maoyan;     // 查看表结构</code></pre>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-05_14-13-14.png" alt=""></p>
+<p><strong>删除数据表</strong></p>
+<pre><code>drop table if exists 表名;     </code></pre><p><strong>修改数据表</strong></p>
+<pre><code>alter table maoyan modify column score char(3);</code></pre><p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-05_14-24-26.png" alt=""></p>
+<p><strong>增加新字段</strong></p>
+<pre><code>alter table maoyan add column star varchar(50);</code></pre><p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-05_14-27-47.png" alt=""></p>
+<p><strong>删除字段</strong></p>
+<pre><code>alter table maoyan drop column star;</code></pre><p><strong>修改表名</strong></p>
+<pre><code>alter table maoyan rename to 新表名 ;</code></pre><h3 id="2-2-2- 数据类型"><a href="#2-2-2- 数据类型" class="headerlink" title="2.2.2 数据类型"></a>2.2.2 数据类型</h3><table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>大小(字节)</th>
+<th>用途</th>
+<th>格式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>INT</td>
+<td>4</td>
+<td>整数</td>
+<td></td>
+</tr>
+<tr>
+<td>FLOAT</td>
+<td>4</td>
+<td>单精度浮点数</td>
+<td></td>
+</tr>
+<tr>
+<td>DOUBLE</td>
+<td>8</td>
+<td>双精度浮点数</td>
+<td></td>
+</tr>
+<tr>
+<td>ENUM</td>
+<td>–</td>
+<td>单选, 比如性别</td>
+<td>ENUM(‘a’,’b’,’c’)</td>
+</tr>
+<tr>
+<td>SET</td>
+<td>–</td>
+<td>多选</td>
+<td>SET(‘1’,’2’,’3’)</td>
+</tr>
+<tr>
+<td>DATE</td>
+<td>3</td>
+<td>日期</td>
+<td>YYYY-MM-DD</td>
+</tr>
+<tr>
+<td>TIME</td>
+<td>3</td>
+<td>时间点或持续时间</td>
+<td>HH:MM:SS</td>
+</tr>
+<tr>
+<td>YEAR</td>
+<td>1</td>
+<td>年份值</td>
+<td>YYYY</td>
+</tr>
+<tr>
+<td>CHAR</td>
+<td>0~255</td>
+<td>定长字符串</td>
+<td></td>
+</tr>
+<tr>
+<td>VARCHAR</td>
+<td>0~255</td>
+<td>变长字符串</td>
+<td></td>
+</tr>
+<tr>
+<td>TEXT</td>
+<td>0~65535</td>
+<td>长文本数据</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>整数除了 INT 外，还有 <code>TINYINT</code>、<code>SMALLINT</code>、<code>MEDIUMINT</code>、<code>BIGINT</code>。</p>
+<h4 id="数值"><a href="# 数值" class="headerlink" title="数值"></a>数值</h4><ul>
+<li><p>整数</p>
+<ul>
+<li><p>分类</p>
+<ul>
+<li>Tinyint，1 个字节</li>
+<li>Smallint，2 个字节</li>
+<li>Mediumint，3 个字节</li>
+<li>Int，4 个字节</li>
+<li>Bigint，8 个字节</li>
+</ul>
+</li>
+<li><p>符号</p>
+<ul>
+<li>默认有符号</li>
+<li>设置无符号的方法，使用 UNSIGNED 关键字</li>
+</ul>
+<pre><code class="sql">CREATE TABLE t (
+    t1 INT,
+    t2 INT UNSIGNED
+);</code></pre>
+</li>
+<li><p>长度</p>
+<ul>
+<li>长度表示最大显示宽度，当使用 zerofill 时，不够长度时，用 0 填空</li>
+<li>如果不配合 zerofill，则整型的长度没用</li>
+</ul>
+</li>
+<li><p>越界</p>
+<ul>
+<li>如果插入的数值超出范围，则报 out of range 异常，并插入最接近的临界值</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>浮点数</p>
+<ul>
+<li>Float，4 个字节</li>
+<li>Double，8 个字节</li>
+</ul>
+</li>
+<li><p>定点数</p>
+<ul>
+<li>DECIMAL(M,D)<ul>
+<li>M：整数 + 小数的位数</li>
+<li>D：小数的位数</li>
+<li>M 默认为 10, D 默认为 0</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="字符型"><a href="# 字符型" class="headerlink" title="字符型"></a>字符型</h4><ul>
+<li>较短文本<ul>
+<li>char：固定长度，性能高，不能节约空间</li>
+<li>varchar：可变长度，性能低，能节约空间</li>
+<li>长度为最大长度</li>
+</ul>
+</li>
+<li>较长文本<ul>
+<li>text</li>
+</ul>
+</li>
+<li>二进制<ul>
+<li>binary：类似 char，存储的是二进制</li>
+<li>varbinary：类似 varchar，存储的是二进制</li>
+<li>Blob：存储数据量大的二进制，比如视频，图片</li>
+</ul>
+</li>
+</ul>
+<h4 id="日期型"><a href="# 日期型" class="headerlink" title="日期型"></a>日期型</h4><ul>
+<li>date：2018-09-26</li>
+<li>time：17:11:37</li>
+<li>year：2018</li>
+<li>datetime：2018-09-26 17:11:50，与时区无关，8 个字节</li>
+<li>timestamp：20180926171211，受 MySQL 版本影响，与时区有关，4 个字节</li>
+</ul>
+<h3 id="2-2-3- 字符长度"><a href="#2-2-3- 字符长度" class="headerlink" title="2.2.3 字符长度"></a>2.2.3 字符长度 </h3><p> 一个汉字占多少长度与编码有关：</p>
+<p>UTF-8：一个汉字＝3 个字节</p>
+<p>GBK：一个汉字＝2 个字节</p>
+<p>在 MySQL 中 varchar(n)和 char(n)表示 n 个字符，无论汉字和英文，Mysql 都能存入 n 个字符，仅是实际字节长度有所区别。</p>
+<p>即 MySQL 并不会对超过长度的字符报错, 而是直接截断了。并且 char(2) 和 varchar(2) 都能存储 2 个汉字, 或者是两个英文字符。</p>
+<h2 id="2-3- 不懂就查"><a href="#2-3- 不懂就查" class="headerlink" title="2.3 不懂就查"></a>2.3 不懂就查 </h2><h3 id="表的修改"><a href="# 表的修改" class="headerlink" title="表的修改"></a> 表的修改 </h3><h4 id="重命名一张表"><a href="# 重命名一张表" class="headerlink" title="重命名一张表"></a> 重命名一张表 </h4><p> 重命名一张表的语句有多种形式，以下 3 种格式效果是一样的：</p>
+<pre><code>rename table 原名 to 新名字;
+
+alter table 原名 rename 新名;
+
+alter table 原名 rename to 新名;
+</code></pre><p>进入数据库 python：</p>
+<pre><code>use python</code></pre><p>使用命令尝试修改 <code>table_1</code> 的名字为 <code>table_2</code> ：</p>
+<pre><code>rename table table_1 to table_2;</code></pre><h4 id="删除一张表"><a href="# 删除一张表" class="headerlink" title="删除一张表"></a>删除一张表 </h4><p> 删除一张表的语句，类似于刚才用过的删除数据库的语句，格式是这样的：</p>
+<pre><code>drop table 表名字;</code></pre><p>比如我们把 <code>table_2</code> 表删除：</p>
+<pre><code>drop table table_2;</code></pre><h3 id="列的修改"><a href="# 列的修改" class="headerlink" title="列的修改"></a>列的修改</h3><blockquote>
+<p>即对表结构的修改</p>
+</blockquote>
+<p>对表结构的修改，有时候一些小的错误会造成不可挽回的后果，所以请细心操作。另外需要注意，<strong>非必要情况不要修改表结构。</strong></p>
+<h4 id="增加一列"><a href="# 增加一列" class="headerlink" title="增加一列"></a>增加一列 </h4><p> 在表中增加一列的语句格式为：</p>
+<pre><code>alter table 表名字 add column 列名字 数据类型 约束;
+或：
+alter table 表名字 add 列名字 数据类型 约束;</code></pre><p>现在 employee 表中有 <code>id、name、age、salary、phone、in_dpt</code> 这 6 个列，我们尝试加入 <code>height</code> (身高)一个列并指定 DEFAULT 约束：</p>
+<pre><code class="sql">alter table employee add height INT(4) default 170;</code></pre>
+<p>新增加的列，被默认放置在这张表的最右边。如果要把增加的列插入在指定位置，则需要在语句的最后使用 AFTER 关键词(<strong>“AFTER 列 1” 表示新增的列被放置在 “列 1” 的后面</strong>)。</p>
+<blockquote>
+<p>提醒：语句中的 INT(4) 不是表示整数的字节数，而是表示该值的显示宽度，如果设置填充字符为 0，则 170 显示为 0170</p>
+</blockquote>
+<p>比如我们新增一列 <code>weight</code>(体重) 放置在 <code>age</code>(年龄) 的后面：</p>
+<pre><code class="python">alter table employee add weight INT(4) default 120 after age;</code></pre>
+<p>上面的效果是把新增的列加在某位置的后面，如果想放在第一列的位置，则使用 <code>FIRST</code>关键词，如语句：</p>
+<pre><code>alter table employee add test INT(10) default 11 FIRST;</code></pre><h4 id="删除一列"><a href="# 删除一列" class="headerlink" title="删除一列"></a>删除一列 </h4><p> 删除表中的一列和刚才使用的新增一列的语句格式十分相似，只是把关键词 <code>ADD</code> 改为 <code>DROP</code> ，语句后面不需要有数据类型、约束或位置信息。具体语句格式：</p>
+<pre><code>alter table 表名字 drop column 列名字;
+
+或： alter table 表名字 drop 列名字;</code></pre><p>我们把刚才新增的 <code>test</code> 删除：</p>
+<pre><code>alter table employee drop test;</code></pre><h4 id="重命名一列"><a href="# 重命名一列" class="headerlink" title="重命名一列"></a>重命名一列 </h4><p> 这条语句其实不只可用于重命名一列，准确地说，它是对一个列做修改(CHANGE) ：</p>
+<pre><code>alter table 表名字 change 原列名 新列名 数据类型 约束;</code></pre><blockquote>
+<p><strong>注意：这条重命名语句后面的 “数据类型” 不能省略，否则重命名失败。</strong></p>
+</blockquote>
+<p>当 <strong> 原列名 </strong> 和<strong>新列名 </strong> 相同的时候，指定新的 <strong> 数据类型 </strong> 或<strong>约束</strong>，就可以用于修改数据类型或约束。需要注意的是，修改数据类型可能会导致数据丢失，所以要慎重使用。</p>
+<p>我们用这条语句将 “height” 一列重命名为汉语拼音 “shengao” ，效果如下：</p>
+<pre><code>alter table employee change height shengao INT(4) default 170;
+</code></pre><h4 id="改变数据类型"><a href="# 改变数据类型" class="headerlink" title="改变数据类型"></a>改变数据类型 </h4><p> 要修改一列的数据类型，除了使用刚才的 <strong>CHANGE</strong> 语句外，还可以用这样的 <strong>MODIFY</strong>语句：</p>
+<pre><code>alter table 表名字 modify 列名字 新数据类型;</code></pre><p>再次提醒，修改数据类型必须小心，因为这可能会导致数据丢失。在尝试修改数据类型之前，请慎重考虑。</p>
+<h3 id="内容修改"><a href="# 内容修改" class="headerlink" title="内容修改"></a>内容修改 </h3><h4 id="修改表中某个值"><a href="# 修改表中某个值" class="headerlink" title="修改表中某个值"></a> 修改表中某个值 </h4><p> 大多数时候我们需要做修改的不会是整个数据库或整张表，而是表中的某一个或几个数据，这就需要我们用下面这条命令达到精确的修改：</p>
+<pre><code>update 表名字 set 列 1 = 值 1, 列 2= 值 2 where 条件;
+</code></pre><p>比如，我们要把 Tom 的 age 改为 21，salary 改为 3000：</p>
+<pre><code>update employee set age=21,salary=3000 where name=&#39;Tom&#39;;
+</code></pre><blockquote>
+<p><strong>注意：一定要有 WHERE 条件，否则会出现你不想看到的后果</strong></p>
+</blockquote>
+<h4 id="删除一行记录"><a href="# 删除一行记录" class="headerlink" title="删除一行记录"></a>删除一行记录 </h4><p> 删除表中的一行数据，也必须加上 WHERE 条件，否则整列的数据都会被删除。删除语句：</p>
+<pre><code>delete from 表名字 where 条件;</code></pre><p>我们尝试把 Tom 的数据删除：</p>
+<pre><code>delete from employee where name=&#39;Tom&#39;;</code></pre><h1 id="3、插入数据"><a href="#3、插入数据" class="headerlink" title="3、插入数据"></a>3、插入数据</h1><h2 id="3-1- 插入"><a href="#3-1- 插入" class="headerlink" title="3.1 插入"></a>3.1 插入</h2><blockquote>
+<p>insert into</p>
+</blockquote>
+<ul>
+<li><p>语法 1 - 【常用；支持多行；可用于子查询】</p>
+<pre><code class="sql">insert into 表名(字段 1, 字段 2, 字段 3……) values(字值 1, 字值 2, 字值 3……);</code></pre>
+</li>
+<li><p>注意</p>
+<ul>
+<li>如果想设置空值，可以用 NULL 表示</li>
+<li>字段列表和字段值列表必须一一对应</li>
+<li>需要自己指定 id</li>
+<li>若字值数是完整，可以省略字段</li>
+</ul>
+</li>
+<li><p>语法 2 - 【不常用；不支持多行；不可用于子查询】</p>
+<pre><code class="sql">insert into 表名 set 字段名 = 值, 字段名 = 值,...;</code></pre>
+</li>
+</ul>
+<p><strong>注意：当插入字符有中文时，需要在创建表时设置<code>character set utf8</code></strong></p>
+<p><strong>如创建表时，指定了约束 <code>auto_increment</code>就可以不用指定 id。</strong></p>
+<blockquote>
+<p>replace into  数据替换更新，与 insert into 写法相同</p>
+</blockquote>
+<h2 id="3-2- 更新"><a href="#3-2- 更新" class="headerlink" title="3.2 更新"></a>3.2 更新</h2><blockquote>
+<p>udate</p>
+</blockquote>
+<ul>
+<li><p>语法 1 - 【单表更新】</p>
+<pre><code class="sql">udate 表名 set 字段名 = 值, 字段名 = 值 where 筛选条件;</code></pre>
+</li>
+<li><p>语法 2 - 【多表更新】</p>
+<pre><code class="sql">udate 表 1 as 别名
+inner | left | right join 表 2 as 别名
+on 连接条件
+set 字段名 = 值
+where 筛选条件;</code></pre>
+</li>
+<li><p>例子</p>
+<pre><code class="sql">udate boys as b
+inner join girls as g
+on b.id = g.id
+set g.phone = 1111
+where b.name = &quot; 小明 &quot;;</code></pre>
+</li>
+</ul>
+<h2 id="3-3- 删除"><a href="#3-3- 删除" class="headerlink" title="3.3 删除"></a>3.3 删除</h2><blockquote>
+<p>delete from</p>
+</blockquote>
+<ul>
+<li><p>语法 1 - 【单表删除】</p>
+<pre><code class="sql">delete from 表名 where 筛选条件;</code></pre>
+</li>
+<li><p>语法 2 - 【多表删除】</p>
+<pre><code class="sql">delete from 表 1 as 别名
+inner | left | right join 表 2 as 别名
+on 连接条件
+where 筛选条件;</code></pre>
+</li>
+<li><p>例子</p>
+<pre><code class="sql">delete from girls  as g
+inner join boys as b
+on b.id = g.id
+where b.name=&quot; 小明 &quot;;</code></pre>
+</li>
+</ul>
+<h2 id="3-4- 清空"><a href="#3-4- 清空" class="headerlink" title="3.4 清空"></a>3.4 清空</h2><blockquote>
+<p> truncate table</p>
+</blockquote>
+<ul>
+<li><p>语法</p>
+<pre><code class="sql">truncate table boys;</code></pre>
+</li>
+<li><p>注意事项</p>
+<ul>
+<li>delete from 是删除表中某些行数据， truncate table 是清空整张表</li>
+<li>delete from 删除后，自增字段不重置； truncate table 清空后，自增字段重置为 1</li>
+<li>delete from 可以回滚， truncate table 不能回滚</li>
+</ul>
+</li>
+</ul>
+<p>刚才我们新建了两张表，使用语句 <code>SELECT * FROM employee;</code> 查看表中的内容，可以看到 employee 表中现在还是空的：</p>
+<pre><code>mysql&gt; SELECT * FROM employee;
+Empty set (0.00 sec)</code></pre><p>我们通过 INSERT 语句向表中插入数据，语句格式为：</p>
+<pre><code>insert into 表的名字 (列名 a, 列名 b, 列名 c) values(值 1, 值 2, 值 3);</code></pre><p> 我们尝试向 employee 中加入 Tom、Jack 和 Rose：</p>
+<pre><code>insert into employee(id,name,phone) values(01,&#39;Tom&#39;,110110110);
+
+insert into employee values(02,&#39;Jack&#39;,119119119);
+
+insert into employee(id,name) values(03,&#39;Rose&#39;);</code></pre><p>你已经注意到了，有的数据需要用单引号括起来，比如 Tom、Jack、Rose 的名字，这是由于它们的数据类型是 CHAR 型。此外 <strong>VARCHAR,TEXT,DATE,TIME,ENUM</strong> 等类型的数据也需要单引号修饰，而 <strong>INT,FLOAT,DOUBLE</strong> 等则不需要。</p>
+<p>第一条语句比第二条语句多了一部分：<code>(id,name,phone)</code> 这个括号里列出的，是将要添加的数据 <code>(01,&#39;Tom&#39;,110110110)</code> 其中每个值在表中对应的列。而第三条语句只添加了 <code>(id,name)</code> 两列的数据，<strong>所以在表中 Rose 的 phone 为 NULL</strong>。</p>
+<p>现在我们再次使用语句 <code>SELECT * FROM employee;</code> 查看 employee 表，可见 Tom 和 Jack 的相关数据已经保存在其中了：</p>
+<pre><code>mysql&gt; SELECT * FROM employee;
++------+------+-----------+
+| id   | name | phone     |
++------+------+-----------+
+|    1 | Tom  | 110110110 |
+|    2 | Jack | 119119119 |
+|    3 | Rose |      NULL |
++------+------+-----------+
+3 rows in set (0.00 sec)
+</code></pre><h1 id="4、- 查询"><a href="#4、- 查询" class="headerlink" title="4、 查询"></a>4、 查询</h1><blockquote>
+<p>Data Query Language[DQL]</p>
+</blockquote>
+<p>SQL 中最常用的 SELECT 语句，用来在表中选取数据，本节实验中将通过一系列的动手操作详细学习 SELECT 语句的用法。</p>
+<p><strong>练习用数据库导入</strong></p>
+<ul>
+<li>下载相关资源中的 <code>select.sql</code></li>
+<li>执行 sql 脚本</li>
+</ul>
+<pre><code class="sql">source myemployees.sql;</code></pre>
+<h2 id="4-1- 基础查询"><a href="#4-1- 基础查询" class="headerlink" title="4.1 基础查询"></a>4.1 基础查询</h2><h3 id="SELECT 子句"><a href="#SELECT 子句" class="headerlink" title="SELECT 子句"></a>SELECT 子句</h3><pre><code class="sql">select 查询字段 from 表名;
+
+-- 查询字段包括：表的字段，常量值，表达式，函数
+-- 查询的结果是一个虚拟的表</code></pre>
+<ul>
+<li><p>查询表中单个字段</p>
+<pre><code class="sql">select name from employees;</code></pre>
+</li>
+<li><p>查询表中多个字段</p>
+<pre><code class="sql">select name, salary, age from employees;</code></pre>
+</li>
+<li><p>查询表中所有字段</p>
+<pre><code class="sql">select * from employees;</code></pre>
+</li>
+</ul>
+<h3 id="字段起别名"><a href="# 字段起别名" class="headerlink" title="字段起别名"></a>字段起别名 </h3><pre><code class="sql"> 方式一：select name as 姓 from employees;
+方式二：select name 姓 from employees;
+
+特殊符号：select last_name as &quot;OUT#PUT&quot; from employees;</code></pre>
+<h3 id="查询结果去重"><a href="# 查询结果去重" class="headerlink" title="查询结果去重"></a>查询结果去重</h3><pre><code class="sql">select distinct department_id from employees;</code></pre>
+<h2 id="4-2- 条件查询"><a href="#4-2- 条件查询" class="headerlink" title="4.2 条件查询"></a>4.2 条件查询</h2><h3 id="WHERE 子句"><a href="#WHERE 子句" class="headerlink" title="WHERE 子句"></a>WHERE 子句</h3><pre><code class="sql">select 查询列表 from 表名 where 条件表达式;</code></pre>
+<h3 id="比较运算符"><a href="# 比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h3><pre><code class="sql">&gt; &lt; &gt;= &lt;= = !=(&lt;&gt;) </code></pre>
+<h3 id="逻辑运算符"><a href="# 逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><pre><code class="sql">&amp;&amp;      ||      !
+AND     OR     NOT</code></pre>
+<p>例如：</p>
+<pre><code class="sql">select * from maoyan where film_name =&#39; 龙猫 &#39;;</code></pre>
+<p>结果如下（pycharm 环境下）<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-04-05_20-57-50.png" alt=""></p>
+<h3 id="4-2-1- 模糊查询"><a href="#4-2-1- 模糊查询" class="headerlink" title="4.2.1 模糊查询"></a>4.2.1 模糊查询 </h3><h4 id="模糊查询关键字"><a href="# 模糊查询关键字" class="headerlink" title="模糊查询关键字"></a> 模糊查询关键字</h4><table>
+<thead>
+<tr>
+<th>模糊查询语句</th>
+<th>注意事项</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>like</td>
+<td>与通配符配合使用</td>
+</tr>
+<tr>
+<td>between  x  and  y</td>
+<td>包含边界，等价于 &gt;= x &amp;&amp; &lt;= y</td>
+</tr>
+<tr>
+<td>in</td>
+<td>IN (待选列表)，待选列表中的元素类型要相同</td>
+</tr>
+<tr>
+<td>is null</td>
+<td>不能用 = 判断是否是 NULL，只能用 IS 判断是否是 NULL，仅可以判断 NULL</td>
+</tr>
+</tbody></table>
+<h4 id="通配符"><a href="# 通配符" class="headerlink" title="通配符"></a>通配符</h4><pre><code class="sql">% ：任意多个字符，包含 0 个
+_ ：任意 1 个字符</code></pre>
+<h4 id="转义通配符"><a href="# 转义通配符" class="headerlink" title="转义通配符"></a>转义通配符</h4><pre><code class="sql">\_
+\%</code></pre>
+<pre><code class="sql">select name,age,phone
+from employee 
+where name like &#39; 张一 %&#39;;   // 找出表中 name 列中含有‘张三’的内容</code></pre>
+<h2 id="4-3- 排序查询"><a href="#4-3- 排序查询" class="headerlink" title="4.3 排序查询"></a>4.3 排序查询</h2><h3 id="ORDER-BY 子句"><a href="#ORDER-BY 子句" class="headerlink" title="ORDER BY 子句"></a>ORDER BY 子句</h3><pre><code class="sql">select * FROM employees
+order by salary DESC; -- DESC：降序，ASC: 升序，默认为 ASC</code></pre>
+<pre><code class="sql">// 举例：
+select * from maoyan order by scores;</code></pre>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-04-05_22-39-48.png" alt=""></p>
+<h3 id="多重排序标准"><a href="# 多重排序标准" class="headerlink" title="多重排序标准"></a>多重排序标准</h3><pre><code class="sql">-- 先按 salary 进行升序排序，保证满足前提条件的情况下，按 employee_id 进行降序排序
+select *
+from employees
+order by salary ASC, employee_id DESC;</code></pre>
+<h2 id="4-4- 常用函数"><a href="#4-4- 常用函数" class="headerlink" title="4.4 常用函数"></a>4.4 常用函数 </h2><h3 id="字符函数"><a href="# 字符函数" class="headerlink" title="字符函数"></a> 字符函数</h3><ul>
+<li>length</li>
+</ul>
+<pre><code class="sql">-- 求出字节的个数
+select length(last_name) from employees;</code></pre>
+<ul>
+<li>concat</li>
+</ul>
+<pre><code class="sql">select concat(&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;d&#39;) as &#39; 结果 &#39;;
+select concat(last_name, first_name) as name from employee;  // 合并</code></pre>
+<ul>
+<li>upper</li>
+</ul>
+<pre><code class="sql">select upper(last_name) from employees;</code></pre>
+<ul>
+<li>lower</li>
+</ul>
+<pre><code class="sql">select lower(last_name) from employees;</code></pre>
+<ul>
+<li>substr</li>
+</ul>
+<pre><code class="sql">select substr(&quot;123456789&quot;, 5)       // 56789 索引从 1 开始
+select substr(&quot;123456789&quot;, 5, 2)    // 567 从索引 5 开始，长度为 2</code></pre>
+<ul>
+<li>instr</li>
+</ul>
+<pre><code class="sql">select instr(&quot;123456789&quot;, &quot;567&quot;) // 返回第一次出现的索引 5
+select instr(&quot;123456789&quot;, &quot;xxx&quot;) // 找不到返回 0</code></pre>
+<ul>
+<li>trim</li>
+</ul>
+<pre><code class="sql">select trim(&quot;    xxx    &quot;) // 去除前后空格
+select trim(&quot;a&quot; from &quot;aaaaaaaaaaaaaxxxaaaxxxaaaaaaaaa&quot;) // 返回 &quot;xxxaaaxxx&quot;</code></pre>
+<ul>
+<li>lapd</li>
+</ul>
+<pre><code class="sql">select lpad(&quot;abc&quot;, 15, &quot;*&quot;) // &quot;***************abc&quot;
+select lpad(&quot;abc&quot;, 2, &quot;*&quot;) // &quot;ab&quot;</code></pre>
+<ul>
+<li>rpad</li>
+</ul>
+<pre><code class="sql">select rpad(&quot;abc&quot;, 15, &quot;*&quot;) // &quot;abc***************&quot;
+select rpad(&quot;abc&quot;, 2, &quot;*&quot;) // &quot;bc&quot;</code></pre>
+<h3 id="数学函数"><a href="# 数学函数" class="headerlink" title="数学函数"></a>数学函数</h3><ul>
+<li>round</li>
+</ul>
+<pre><code class="sql">select round(4.56); // 5
+select round(-1.56) // -2
+select round(-1.567, 2) // -1.57 </code></pre>
+<ul>
+<li>cell</li>
+</ul>
+<pre><code class="sql">select cell(1.0001) // 2
+select cell(-1.02)  // -1
+select cell(1.00)   // 1</code></pre>
+<ul>
+<li>floor</li>
+</ul>
+<pre><code class="sql">select floor(1.0001) // 1
+select floor(-9.8)   //-10</code></pre>
+<ul>
+<li>truncate</li>
+</ul>
+<pre><code class="sql">select truncate(1.699999,1);  // 1.6</code></pre>
+<h3 id="日期函数"><a href="# 日期函数" class="headerlink" title="日期函数"></a>日期函数</h3><ul>
+<li>NOW</li>
+</ul>
+<pre><code class="sql">select now();</code></pre>
+<ul>
+<li>CURDATE</li>
+</ul>
+<pre><code class="sql">select curdate();</code></pre>
+<ul>
+<li>CURTIME</li>
+</ul>
+<pre><code class="sql">select curtime();</code></pre>
+<ul>
+<li>YEAR</li>
+</ul>
+<pre><code class="sql">select year(now());
+select year(&quot;2018-9-14 08:23:57&quot;);</code></pre>
+<blockquote>
+<p>MONTH，DAY，HOUR，MINUTE，SECOND 同上</p>
+</blockquote>
+<ul>
+<li>STR_TO_DATE</li>
+</ul>
+<pre><code class="sql">str_to date(&quot;9-13-1999&quot;, &quot;%m-%-%y&quot;)
+
+%y 18 %Y 2018
+%m 08 %c 8
+%d 08
+%H 24 小时制
+%h 12 小时制
+%i 35
+%s 05</code></pre>
+<ul>
+<li>DATE_FORMAT</li>
+</ul>
+<pre><code class="sql">date_format(&quot;2018/6/6&quot;,&quot;%Y 年 %m 月 %d 日 &quot;)</code></pre>
+<h3 id="流程控制语句"><a href="# 流程控制语句" class="headerlink" title="流程控制语句"></a>流程控制语句</h3><ul>
+<li>IF<pre><code class="sql">select *, if(scores&lt;9,&#39; 低 &#39;,&#39; 高 &#39;) level from maoyan;</code></pre>
+</li>
+</ul>
+<p>如下：新增了一列”level”</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-04-05_23-41-18.png" alt=""></p>
+<pre><code class="sql">// 多层嵌套写法：
+select *,if(sex=0,&#39; 女 &#39;,if(sex=1,&#39; 男 &#39;,&#39; 保密 &#39;)) sex_l from user;</code></pre>
+<ul>
+<li>CASE</li>
+</ul>
+<pre><code class="sql">case (要判断的表达式，有就是 switch，否则是 if-else)
+when 常量 1 then 语句 1
+when 常量 2 then 语句 2
+...
+else 语句 x
+end
+
+// 如：
+select *,case 
+when username=&#39;admin&#39; then &#39; 超级管理员 &#39; 
+when email=&#39;root@qq.com&#39; then &#39; 系统管理员 &#39; 
+when is_super = 2 then &#39; 测试管理员 &#39; 
+when status =&#39;0 &#39;then &#39; 失效管理员 &#39;
+else &#39; 其它管理员 &#39; end &#39; 管理员类型 &#39; from db_admin_user </code></pre>
+<h3 id="其他函数"><a href="# 其他函数" class="headerlink" title="其他函数"></a>其他函数</h3><ul>
+<li>IFNULL 函数</li>
+</ul>
+<pre><code class="sql">-- ifnull(exp1, exp2)
+-- exp1：将要进行判断的字段
+-- exp2：替换的字段
+-- 如果 exp1 为 NULL，则返回替换的字段
+
+select ifnull(commission_pct, 0) as &quot; 奖金率 &quot;, commission_pct
+from employees;</code></pre>
+<h3 id="统计函数"><a href="# 统计函数" class="headerlink" title="统计函数"></a>统计函数</h3><ul>
+<li>SUM：忽略 NULL</li>
+<li>AVG：忽略 NULL</li>
+<li>MAX：忽略 NULL</li>
+<li>MIN：忽略 NULL</li>
+<li>COUNT：忽略 NULL</li>
+<li>注意事项<ul>
+<li>sum avg 可以处理数值</li>
+<li>max，min，count 可以处理任何类型</li>
+<li>分组函数都忽略 NULL</li>
+<li>可以和 distinct 配合实现去重</li>
+<li>COUNT(*) ：统计行数，只要有不含 NULL 的，都算一行</li>
+<li>COUNT(1)：统计行数，只要有不含 NULL 的，都算一行 </li>
+<li>和分组函数一同查询的字段要求是 group by 后的字段</li>
+</ul>
+</li>
+</ul>
+<pre><code class="sql">select sum(scores) as sum_scores from maoyan;</code></pre>
+<h2 id="4-5- 分组查询"><a href="#4-5- 分组查询" class="headerlink" title="4.5 分组查询"></a>4.5 分组查询</h2><h3 id="GROUP-BY- 子句"><a href="#GROUP-BY- 子句" class="headerlink" title="GROUP BY 子句"></a>GROUP BY 子句</h3><pre><code class="sql">select
+from
+where
+group by 
+group by </code></pre>
+<p>group by 强调的是一个整体，就是组，<strong>只能显示一个组里满足聚合函数的一条记录</strong>。 partition by 在整体后更强调个体，能显示组里所有个体的记录。</p>
+<h3 id="HAVING-（过滤）子句"><a href="#HAVING-（过滤）子句" class="headerlink" title="HAVING （过滤）子句"></a>HAVING （过滤）子句</h3><pre><code class="sql">select *
+from maoyan
+where scores&gt;9
+group by made_country
+having made_country=&#39;china&#39;
+order by  scores desc;</code></pre>
+<h2 id="4-6- 连接查询"><a href="#4-6- 连接查询" class="headerlink" title="4.6 连接查询"></a>4.6 连接查询 </h2><h3 id="分类"><a href="# 分类" class="headerlink" title="分类"></a> 分类</h3><ul>
+<li>内连接<ul>
+<li>等值连接</li>
+<li>非等值连接</li>
+<li>自连接</li>
+</ul>
+</li>
+<li>外连接<ul>
+<li>左外连接</li>
+<li>右外连接</li>
+<li>全外连接</li>
+</ul>
+</li>
+<li>交叉连接：就是笛卡尔积</li>
+</ul>
+<h3 id="语法"><a href="# 语法" class="headerlink" title="语法"></a>语法</h3><pre><code class="sql">select 查询列表
+from 表 1 as 别名
+连接类型 表 2 as 别名
+on 连接条件
+where
+group by
+having
+order by
+
+连接类型
+内连接：inner join，可以省略 inner
+左外连接：left join
+右外连接：right join
+全外连接：full join
+交叉连接：cross join</code></pre>
+<p><strong>例子</strong></p>
+<pre><code class="sql">select last_name, department_name
+from employees as e
+inner join department as d
+on e.department_id = d.department_id;</code></pre>
+<h2 id="4-7- 分页查询"><a href="#4-7- 分页查询" class="headerlink" title="4.7 分页查询"></a>4.7 分页查询</h2><h3 id="LIMIT 的使用"><a href="#LIMIT 的使用" class="headerlink" title="LIMIT 的使用"></a>LIMIT 的使用</h3><ul>
+<li><p>放在全部 SQL 语句最后</p>
+</li>
+<li><p>LIMIT 开始索引，条目个数</p>
+</li>
+<li><p>如果开始索引是 0，则可以省略</p>
+</li>
+<li><p>例子</p>
+</li>
+</ul>
+<h3 id="分页通用写法"><a href="# 分页通用写法" class="headerlink" title="分页通用写法"></a>分页通用写法</h3><pre><code class="sql">sleect 查询列表
+from 表
+limit (页码 -1) * 每页条目个数, 每页条目个数;</code></pre>
+<h2 id="4-8- 联合查询"><a href="#4-8- 联合查询" class="headerlink" title="4.8 联合查询"></a>4.8 联合查询</h2><ul>
+<li>将多条查询语句的结果集合并为一个结果集</li>
+<li>关键字：UNION</li>
+</ul>
+<p><strong>例如</strong></p>
+<pre><code class="sql">select * from employees where email like &#39;%a%&#39;
+union
+select * from employees where department_id &gt; 90;</code></pre>
+<p><strong>注意事项</strong></p>
+<ul>
+<li>要求多条查询语句的查询结果列数相同</li>
+<li>UNION 关键字默认去重，如果不想去重则 UNION ALL 可以包含重复项</li>
+</ul>
+<h1 id="5、- 数据约束"><a href="#5、- 数据约束" class="headerlink" title="5、 数据约束"></a>5、 数据约束</h1><blockquote>
+<p> <code>constraint.sql</code> 文件中包含的代码可以新建一个数据库 <code>python</code>, 然后在其中创建三张表 <code>department</code>，<code>employee</code>，<code>project</code>，它们包含了各种约束。</p>
+</blockquote>
+<p>听名字就知道，约束是一种限制，它通过对表的行或列的数据做出限制，来确保表的数据的完整性、唯一性。</p>
+<p>比如，规定一个用户的用户名不能为空值且没有重复的记录，这就是一种约束规则。</p>
+<h2 id="5-1- 五大约束类型"><a href="#5-1- 五大约束类型" class="headerlink" title="5.1 五大约束类型"></a>5.1 五大约束类型 </h2><p> 在 MySQL 中，通常有这几种约束：</p>
+<table>
+<thead>
+<tr>
+<th>约束类型：</th>
+<th>主键</th>
+<th>默认值</th>
+<th>唯一</th>
+<th>外键</th>
+<th>非空</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>关键字：</td>
+<td>primary key</td>
+<td>default</td>
+<td>unique</td>
+<td>foreign key</td>
+<td>not null</td>
+</tr>
+</tbody></table>
+<h3 id="5-1-1- 主键约束"><a href="#5-1-1- 主键约束" class="headerlink" title="5.1.1 主键约束"></a>5.1.1 主键约束 </h3><p> 在数据库中，如果有两行记录数据完全一样，那么如何来区分呢？ 答案是无法区分，如果有两行记录完全相同，那么对于 <code>Mysql</code> 就会认定它们是同一个实体，这于现实生活是存在差别的。</p>
+<p>假如我们要存储一个学生的信息，信息包含姓名，身高，性别，年龄。</p>
+<p>不幸的是有两个女孩都叫小梦，且她们的身高和年龄相同，数据库将无法区分这两个实体，这时就需要用到主键了。</p>
+<p>主键 (PRIMARY KEY)是用于约束表中的一行，作为这一行的唯一标识符，在一张表中通过主键就能准确定位到一行，因此主键十分重要，主键不能有重复记录且不能为空。</p>
+<blockquote>
+<p>还有一种特殊的主键——复合主键。主键不仅可以是表中的一列，也可以由表中的两列或多列来共同标识</p>
+</blockquote>
+<h3 id="5-1-2- 默认值约束"><a href="#5-1-2- 默认值约束" class="headerlink" title="5.1.2 默认值约束"></a>5.1.2 默认值约束 </h3><p> 默认值约束 (DEFAULT) 规定，当有 DEFAULT 约束的列，插入数据为空时，将使用默认值。</p>
+<p>DEFAULT 约束只会在使用 INSERT 语句时体现出来， INSERT 语句中，如果被 DEFAULT 约束的位置没有值，那么这个位置将会被 DEFAULT 的值填充</p>
+<h3 id="5-1-3- 唯一约束"><a href="#5-1-3- 唯一约束" class="headerlink" title="5.1.3 唯一约束"></a>5.1.3 唯一约束 </h3><p> 唯一约束 (UNIQUE) 比较简单，它规定一张表中指定的一列的值必须不能有重复值，即这一列每个值都是唯一的。</p>
+<p>当 INSERT 语句新插入的数据和已有数据重复的时候，如果有 UNIQUE 约束，则 INSERT 失败，</p>
+<h3 id="5-1-4- 外键约束"><a href="#5-1-4- 外键约束" class="headerlink" title="5.1.4 外键约束"></a>5.1.4 外键约束 </h3><p> 外键 (FOREIGN KEY) 既能确保数据完整性，也能表现表之间的关系。</p>
+<p>比如，现在有用户表和文章表，给文章表中添加一个指向用户 id 的外键，表示这篇文章所属的用户 id，外键将确保这个外键指向的记录是存在的，如果你尝试删除一个用户，而这个用户还有文章存在于数据库中，那么操作将无法完成并报错。因为你删除了该用户过后，他发布的文章都没有所属用户了，而这样的情况是不被允许的。同理，你在创建一篇文章的时候也不能为它指定一个不存在的用户 id。</p>
+<p>一个表可以有多个外键，每个外键必须 REFERENCES (参考) 另一个表的主键，被外键约束的列，取值必须在它参考的列中有对应值。</p>
+<h3 id="5-1-5- 非空约束"><a href="#5-1-5- 非空约束" class="headerlink" title="5.1.5 非空约束"></a>5.1.5 非空约束 </h3><p> 非空约束 (NOT NULL), 听名字就能理解，被非空约束的列，在插入值时必须非空。</p>
+<p>在 MySQL 中违反非空约束，会报错</p>
+<h2 id="5-2- 列级约束与表级约束"><a href="#5-2- 列级约束与表级约束" class="headerlink" title="5.2 列级约束与表级约束"></a>5.2 列级约束与表级约束</h2><ul>
+<li><p>列级约束：约束语法都不报错，但是外键约束没有效果</p>
+</li>
+<li><p>表级约束：支持主键约束，外键约束，唯一约束</p>
+<pre><code class="mysql">create table 表名(
+    字段名 字段类型 列级约束
+    字段名 字段类型
+    constraint 表级约束名 表级约束类型(字段名)
+)</code></pre>
+</li>
+<li><p>列级约束例子</p>
+<pre><code class="mysql">create table stuinfo (
+    id      INT         primary key,                     # 主键约束
+    stuName VARCHAR(20) not null,                        # 非空约束
+    gender  CHAR(1)     default &#39;m&#39;,                     # 默认约束
+    seat    INT         unique,                          # 唯一约束
+    major   INT         foreign key references major(id) # 外键约束，但是没有效果
+);</code></pre>
+</li>
+<li><p>表级约束例子</p>
+<pre><code class="mysql">create table stuinfo (
+    id      INT         
+    stuName VARCHAR(20) not null,                        # 非空约束
+    gender  CHAR(1)     default &#39;m&#39;,                     # 默认约束
+    seat    INT,         
+    major   INT,         
+
+    constraint pk primary key(id), # 主键约束
+    constraint uq unique(seat),    # 唯一约束
+    constraint fk_stuinfo_major foreign key(major(id)) references major(id) # 外键约束
+);</code></pre>
+</li>
+</ul>
+<h2 id="5-3- 主键约束和唯一约束的区别"><a href="#5-3- 主键约束和唯一约束的区别" class="headerlink" title="5.3 主键约束和唯一约束的区别"></a>5.3 主键约束和唯一约束的区别</h2><table>
+<thead>
+<tr>
+<th>约束类型</th>
+<th>保证唯一性</th>
+<th>是否允许为空</th>
+<th>允许多少个</th>
+<th>是否允许组合</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>主键</td>
+<td>保证</td>
+<td>不允许</td>
+<td>最多 1 个</td>
+<td>允许</td>
+</tr>
+<tr>
+<td>唯一</td>
+<td>保证</td>
+<td>允许</td>
+<td>可以多个</td>
+<td>允许</td>
+</tr>
+</tbody></table>
+<h2 id="5-4- 外键使用注意事项"><a href="#5-4- 外键使用注意事项" class="headerlink" title="5.4 外键使用注意事项"></a>5.4 外键使用注意事项</h2><ul>
+<li>外键关联的必须是 Key，一般是 主键 / 唯一键</li>
+<li>插入数据时，先插入主表，再插入从表</li>
+<li>删除数据时，先删除从表，再删除主表</li>
+</ul>
+<h2 id="5-5- 联合主键"><a href="#5-5- 联合主键" class="headerlink" title="5.5 联合主键"></a>5.5 联合主键 </h2><p> 用几个列进行唯一标识一行，即若两列（n 列）作为联合主键，这两列相同，就意味这重复，就会插入数据失败。</p>
+<pre><code class="sql">create table abc(
+    a date  ,
+    d varchar(8),
+    c varchar(8),
+    constraint a_d primary key(a,d)
+)character set utf8;
+
+insert into abc(a,d,c) values (&#39;1993-09-02&#39;,&#39; 小明 &#39;,&#39; 男 &#39;);
+// 插入成功
+insert into abc(a,d,c) values (&#39;1993-09-02&#39;,&#39; 小红 &#39;,&#39; 男 &#39;);
+// 插入成功
+insert into abc(a,d,c) values (&#39;1993-09-02&#39;,&#39; 小明 &#39;,&#39; 女 &#39;);
+// 插入失败，因为 a 和 d 列相同</code></pre>
+<h1 id="6、高级操作"><a href="#6、高级操作" class="headerlink" title="6、高级操作"></a>6、高级操作 </h1><p> 本节实验中我们将学习并实践数据库的其他基本操作：索引、视图，导入和导出，备份和恢复等。</p>
+<p>这些概念对于数据库管理员而言都非常重要，请仔细理解并完成所有实验操作。</p>
+<p>作为基础篇，不会涉及到关于索引和视图的高级应用和核心概念，但是基本操作大家会了解，尤其是关于索引的内容，学会建立恰当的索引可以大大提高数据库的查询效率，更高级的应用我们会在进阶篇详细讲解。</p>
+<p><strong>知识点</strong></p>
+<ul>
+<li>索引</li>
+<li>视图</li>
+<li>导入和导出</li>
+<li>备份和恢复</li>
+</ul>
+<h3 id="准备"><a href="# 准备" class="headerlink" title="准备"></a>准备</h3><blockquote>
+<p>注：进入本节进行学习的，请先删除上一节建立的数据库<code>python</code>，删除语句为<code>DROP DATABASE python;</code>。</p>
+</blockquote>
+<p>在开始之前, 将<code>sql 资料</code> 文件夹下的 <code>advanced_operation.sql</code> 拷贝到桌面</p>
+<p>代码会搭建好一个名为 <code>python</code> 的数据库(有三张表：department，employee，project)，并向其中插入数据。</p>
+<p>输入命令开启 <code>MySQL</code> 服务并登录：</p>
+<pre><code># 打开 MySQL 服务
+sudo service mysql start
+
+#使用 root 用户登录
+mysql -u root
+</code></pre><p> <code>advanced_operation.sql</code> 和 <code>in.txt</code>，其中第一个文件用于创建数据库并向其中插入数据，第二个文件用于测试数据导入功能。</p>
+<p>如果你是接着上一个实验操作的话，首先把 <code>python</code> 数据库删掉：</p>
+<pre><code>mysql&gt; drop database python;
+</code></pre><p>输入命令运行第一个文件，搭建数据库并插入数据：</p>
+<pre><code>mysql&gt; source /home/ubuntu/Desktop/advanced_operation.sql
+</code></pre><h2 id="6-1- 索引"><a href="#6-1- 索引" class="headerlink" title="6.1 索引"></a>6.1 索引 </h2><p> 索引是一种与表有关的结构，它的作用相当于书的目录，可以根据目录中的页码快速找到所需的内容。</p>
+<p>当表中有大量记录时，若要对表进行查询，没有索引的情况是全表搜索：将所有记录一一取出，和查询条件进行一一对比，然后返回满足条件的记录。这样做会消耗大量数据库系统时间，并造成大量磁盘 I/O 操作。</p>
+<p>而如果在表中已建立索引，在索引中找到符合查询条件的索引值，通过索引值就可以快速找到表中的数据，可以 <strong> 大大加快查询速度</strong>。</p>
+<p>对一张表中的某个列建立索引，有以下两种语句格式：</p>
+<pre><code>alter table 表名字 add index 索引名 (列名);
+
+create index 索引名 on 表名字 (列名);
+</code></pre><p>我们用这两种语句分别建立索引：</p>
+<pre><code>alter table employee add index idx_id (id);  #在 employee 表的 id 列上建立名为 idx_id 的索引
+
+create index idx_name on employee (name);   #在 employee 表的 name 列上建立名为 idx_name 的索引 </code></pre><p> 索引的效果是加快查询速度，当表中数据不够多的时候是感受不出它的效果的。这里我们使用命令 <strong>SHOW INDEX FROM 表名字;</strong> 查看刚才新建的索引。</p>
+<p>在使用 SELECT 语句查询的时候，语句中 WHERE 里面的条件，会 <strong> 自动判断有没有可用的索引</strong>。</p>
+<p>比如有一个用户表，它拥有用户名 (<code>username</code> ) 和个人签名 (<code>note</code> ) 两个字段。其中用户名具有唯一性，并且格式具有较强的限制，我们给用户名加上一个唯一索引；个性签名格式多变，而且允许不同用户使用重复的签名，不加任何索引。</p>
+<p>这时候，如果你要查找某一用户，使用语句 <code>select * from user where username=?</code> 和 <code>select * from user where note=?</code> 性能是有很大差距的，对 <strong>建立了索引的用户名 </strong> 进行条件查询会比 <strong> 没有索引的个性签名</strong> 条件查询快几倍，在数据量大的时候，这个差距只会更大。</p>
+<p>一些字段不适合创建索引，比如性别，这个字段存在大量的重复记录无法享受索引带来的速度加成，甚至会拖累数据库，导致数据冗余和额外的 CPU 开销。</p>
+<h2 id="6-2- 视图"><a href="#6-2- 视图" class="headerlink" title="6.2 视图"></a>6.2 视图 </h2><p> 视图是从一个或多个表中导出来的表，是一种 <strong>虚拟存在的表</strong> 。它就像一个窗口，通过这个窗口可以看到系统专门提供的数据，这样，用户可以不用看到整个数据库中的数据，而只关心对自己有用的数据。</p>
+<p>注意理解视图是虚拟的表：</p>
+<ul>
+<li>数据库中只存放了视图的定义，而没有存放视图中的数据，这些数据存放在原来的表中；</li>
+<li>使用视图查询数据时，数据库系统会从原来的表中取出对应的数据；</li>
+<li>视图中的数据依赖于原来表中的数据，一旦表中数据发生改变，显示在视图中的数据也会发生改变；</li>
+<li>在使用视图的时候，可以把它当作一张表。</li>
+</ul>
+<p>创建视图的语句格式为：</p>
+<pre><code class="sql">create view 视图名(列 a, 列 b, 列 c) as select 列 1, 列 2, 列 3 from 表名字;</code></pre>
+<p>可见创建视图的语句，后半句是一个 SELECT 查询语句，所以 <strong> 视图也可以建立在多张表上 </strong>，只需在 SELECT 语句中使用<strong> 子查询 </strong> 或<strong>连接查询</strong>，这些在之前的实验已经进行过。</p>
+<p>现在我们创建一个简单的视图，名为 <strong>v_emp</strong>，包含 <strong>v_name</strong>，<strong>v_age</strong>，<strong>v_phone</strong> 三个列：</p>
+<pre><code class="sql">create view v_emp (v_name,v_age,v_phone) as select name,age,phone from employee;</code></pre>
+<blockquote>
+<p>视图的作用</p>
+</blockquote>
+<ul>
+<li>提高了重用性，就像一个函数。如果要频繁获取 user 表的 name 和 goods 表的 name。若没有视图，就只能写一大段 sql 语句查询。而 view 则可以简单整合两个 name 到一张虚拟表里，查询简单很多。</li>
+<li>对数据库重构，却不影响程序的运行。若要拆分一张表，可以视图进行虚拟拆分，又不改变原表的结构。</li>
+<li>提高了安全性能。可以对不同的用户，设定不同的视图。</li>
+</ul>
+<h2 id="6-3- 备份"><a href="#6-3- 备份" class="headerlink" title="6.3 备份"></a>6.3 备份 </h2><p> 数据库中的数据十分重要，出于安全性考虑，在数据库的使用中，应该注意使用备份功能。</p>
+<blockquote>
+<p>备份与导出的区别：导出的文件只是保存数据库中的数据；而备份，则是把数据库的结构，包括数据、约束、索引、视图等全部另存为一个文件。</p>
+</blockquote>
+<p><code>mysqldump</code> 是 <code>MySQL</code> 用于备份数据库的实用程序。它主要产生一个 <code>SQL</code> 脚本文件，其中包含从头重新创建数据库所必需的命令 CREATE TABLE INSERT 等。</p>
+<p>使用 <code>mysqldump</code> 备份的语句：</p>
+<pre><code>mysqldump -u root 数据库名 &gt; 备份文件名;   #备份整个数据库
+
+mysqldump -u root 数据库名 表名字 &gt; 备份文件名;  #备份整个表
+</code></pre><blockquote>
+<p>mysqldump 是一个备份工具，因此该命令是在终端中执行的，而不是在 mysql 交互环境下</p>
+</blockquote>
+<p>我们尝试备份整个数据库 <code>python</code>，将备份文件命名为 <code>bak.sql</code>，先 <code>Ctrl+D</code> 退出 MySQL 控制台，再打开 Xfce 终端，在终端中输入命令：</p>
+<pre><code class="sql">cd /home/ubuntu/
+mysqldump -u root python &gt; bak.sql;
+</code></pre>
+<blockquote>
+<p>你可以用 gedit 查看备份文件的内容，可以看见里面不仅保存了数据，还有所备份的数据库的其他信息。</p>
+</blockquote>
+<h2 id="6-4- 恢复"><a href="#6-4- 恢复" class="headerlink" title="6.4 恢复"></a>6.4 恢复 </h2><p> 用备份文件恢复数据库，其实我们早就使用过了。在本次实验的开始，我们使用过这样一条命令：</p>
+<pre><code>source /home/ubuntu/Desktop/advanced_operation.sql
+</code></pre><p>这就是一条恢复语句，它把 advanced_operation-06.sql 文件中保存的<code>python</code> 数据库恢复。</p>
+<p>还有另一种方式恢复数据库，但是在这之前我们先使用命令新建一个 <strong> 空的数据库 test</strong>：</p>
+<pre><code>mysql -u root -p         #因为在上一步已经退出了 MySQL，现在需要重新登录
+
+create database test;  #新建一个名为 test 的数据库
+</code></pre><p>再次 <strong>Ctrl+D</strong> 退出 MySQL，然后输入语句进行恢复，把刚才备份的 <strong>bak.sql</strong> 恢复到 <strong>test</strong>数据库：</p>
+<pre><code>mysql -u root test &lt; bak.sql</code></pre><p>我们输入命令查看 test 数据库的表，便可验证是否恢复成功：</p>
+<pre><code>mysql -u root -p          #因为在上一步已经退出了 MySQL，现在需要重新登录
+
+use test               #连接数据库 test
+
+SHOW TABLES;           #查看 test 数据库的表
+</code></pre><p>实验总结<br>  在本实验中，我们实践了下面几个基本概念：</p>
+<ol>
+<li>索引：可以加快查询速度</li>
+<li>视图：是一种虚拟存在的表</li>
+<li>导入：从文件中导入数据到表</li>
+<li>导出：从表中导出到文件中</li>
+<li>备份：<code>mysqldump</code> 备份数据库到文件</li>
+<li>恢复：从文件恢复数据库</li>
+</ol>
+<p>我们将学习 MySQL 服务安装及命令使用 。</p>
+<h1 id="总结"><a href="# 总结" class="headerlink" title="总结"></a>总结 </h1><p><strong> 查询的完整格式  不要被吓到 其实很简单 !</strong></p>
+<pre><code class="sql">select select_expr [,select_expr,...] [      
+      from tb_name
+      [where 条件判断]
+      [group by &#123;col_name | postion&#125; [ASC | DESC], ...] 
+      [having where 条件判断]
+      [order by &#123;col_name|expr|postion&#125; [ASC | DESC], ...]
+      [limit &#123;[offset,]rowcount | row_count OFFSET offset&#125;]
+]</code></pre>
+<ul>
+<li>完整的 select 语句</li>
+</ul>
+<pre><code class="sql">select distinct *
+from 表名
+where ....
+group by ... having ...
+order by ...
+limit start,count</code></pre>
+<ul>
+<li>执行顺序为：<ul>
+<li>from 表名</li>
+<li>where ….</li>
+<li>group by …</li>
+<li>select distinct *</li>
+<li>having …</li>
+<li>order by …</li>
+<li>limit start,count</li>
+</ul>
+</li>
+<li>实际使用中，只是语句中某些部分的组合，而不是全部</li>
+</ul>
+<h1 id="附录"><a href="# 附录" class="headerlink" title="附录"></a>附录 </h1><h2 id="导入数据"><a href="# 导入数据" class="headerlink" title="导入数据"></a> 导入数据</h2><ul>
+<li><p>mysql 命令导入</p>
+<pre><code class="mysql">&gt;&gt; mysql -u 用户名 -p 密码 &lt; /home/abc/ 源.sql</code></pre>
+</li>
+<li><p>source 命令导入</p>
+<pre><code class="mysql">mysql&gt; source /home/abc/ 源.sql</code></pre>
+</li>
+</ul>
+<h2 id="导出数据"><a href="# 导出数据" class="headerlink" title="导出数据"></a>导出数据</h2><ul>
+<li><p>mysqldump 命令导出</p>
+<pre><code class="bash">&gt;&gt; mysqldump -u 用户名 -p 密码 数据库名 表名 &gt; 导出文件路径</code></pre>
+</li>
+<li><p>select … into outfile 命令导出</p>
+<pre><code class="mysql">select * 
+from 表名
+into outfile 导出文件路径</code></pre>
+</li>
+</ul>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 欢迎各位看官及技术大佬前来交流指导呀，可以邮件至 jqiange@yeah.net </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2021 Jqiange
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

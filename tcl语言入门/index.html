@@ -1,0 +1,1686 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>tcl 语言入门 | jqiange</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="tcl 语言入门 | jqiange">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="人畜无害的姜小强">
+<meta property="og:url" content="https://jqiange.github.io/about/index.html">
+<meta property="og:site_name" content="jqiange">
+<meta property="og:description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+<meta property="article:published_time" content="2020-02-18T08:21:04.000Z">
+<meta property="article:modified_time" content="2025-12-13T05:23:10.695Z">
+<meta property="article:author" content="姜小强">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+
+
+<link rel="icon" href="/img/jqiange.png">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/jqiange.png"/>
+</a>
+<div class="author">
+    <span>姜小强</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/jqiange"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(58)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(9)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据库">
+                        
+                        数据库
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="每日一学">
+                        
+                        每日一学
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="爬虫">
+                        
+                        爬虫
+                        <small>(10)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="前端">
+                        
+                        前端
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="深度学习">
+                        
+                        深度学习
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据分析">
+                        
+                        数据分析
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="chip">
+                        
+                        chip
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="CPP">
+                        
+                        CPP
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Linux">
+                        
+                        Linux
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="python">
+                        
+                        python
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="58">
+<input type="hidden" id="yelog_site_word_count" value="251.9k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSS-Xpath</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Markdown</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Matplotlib</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Mysql</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Numpy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pandas</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pip</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pyecharts</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pygal</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pymysql-ORM</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>RE</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Redis</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Scrapy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Seaborn</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Selenium</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>yield</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="全部文章 python "
+           href="/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%A6%E8%A7%A3/"
+           data-tag="RE"
+           data-author="" >
+            <span class="post-title" title="正则表达式详解">正则表达式详解</span>
+            <span class="post-date" title="2020-02-26 09:25:46">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/tcl%E4%B8%8Eopc/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 与 opc">tcl 与 opc</span>
+            <span class="post-date" title="2025-09-24 13:36:07">2025/09/24</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/hexo%E6%96%87%E7%AB%A0%E5%8A%A0%E5%AF%86%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="hexo 文章加密方法">hexo 文章加密方法</span>
+            <span class="post-date" title="2025-09-21 22:33:03">2025/09/21</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/tcl%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 语言入门">tcl 语言入门</span>
+            <span class="post-date" title="2025-09-14 22:43:20">2025/09/14</span>
+        </a>
+        
+        <a  class="全部文章 每日一学 "
+           href="/%E6%95%85%E4%BA%8B%E4%BC%9A%E4%B8%8E%E4%BC%81%E4%B8%9A%E8%82%A1%E6%9D%83%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="故事会与企业股权架构设计">故事会与企业股权架构设计</span>
+            <span class="post-date" title="2025-08-30 09:42:43">2025/08/30</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%AE%A1%E7%AE%97%E5%85%89%E5%88%BBOPC%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="计算光刻 OPC 名词解释">计算光刻 OPC 名词解释</span>
+            <span class="post-date" title="2025-08-26 21:44:36">2025/08/26</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%8A%AF%E7%89%87%E5%88%B6%E9%80%A0%E6%B5%81%E7%A8%8B%E4%B8%8E%E5%B7%A5%E8%89%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="芯片制造流程与工艺">芯片制造流程与工艺</span>
+            <span class="post-date" title="2025-06-14 12:13:17">2025/06/14</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E8%81%8C%E5%9C%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入职场">C++ 入职场</span>
+            <span class="post-date" title="2024-06-22 15:52:55">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/Protocol-Buffers-%E5%85%A5%E9%97%A8%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Protocol Buffers 入门使用">Protocol Buffers 入门使用</span>
+            <span class="post-date" title="2024-06-22 15:50:39">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-python%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B-boost/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++python 混合编程 -boost">C++python 混合编程 -boost</span>
+            <span class="post-date" title="2024-06-22 15:36:18">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B%E4%B8%8E%E6%A8%A1%E6%9D%BF/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 泛型编程与模板">C++ 泛型编程与模板</span>
+            <span class="post-date" title="2024-06-22 15:27:49">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入门学习笔记">C++ 入门学习笔记</span>
+            <span class="post-date" title="2024-06-22 14:53:46">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 Linux "
+           href="/shell%E7%BC%96%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="shell 编程">shell 编程</span>
+            <span class="post-date" title="2022-03-07 20:24:24">2022/03/07</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Git 版本控制工具">Git 版本控制工具</span>
+            <span class="post-date" title="2022-03-05 23:23:45">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Hexo%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E4%B8%8E%E5%A4%9A%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hexo 博客迁移与多平台使用">Hexo 博客迁移与多平台使用</span>
+            <span class="post-date" title="2022-03-05 01:26:56">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%B8%8E%E9%87%8D%E9%9A%BE%E7%82%B9%E6%B1%87%E6%80%BB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的基础知识与重难点汇总">python 中的基础知识与重难点汇总</span>
+            <span class="post-date" title="2020-11-17 23:05:15">2020/11/17</span>
+        </a>
+        
+        <a  class="全部文章 前端 "
+           href="/javascript%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="JavaScript 入门">JavaScript 入门</span>
+            <span class="post-date" title="2020-11-09 20:46:08">2020/11/09</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E8%AF%AD%E6%B3%95%E7%B3%96/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的语法糖">python 中的语法糖</span>
+            <span class="post-date" title="2020-11-06 10:53:29">2020/11/06</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E8%BF%9B%E7%A8%8B%EF%BC%8C%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%8D%8F%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的进程，线程与协程">python 中的进程，线程与协程</span>
+            <span class="post-date" title="2020-11-04 21:29:16">2020/11/04</span>
+        </a>
+        
+        <a  class="全部文章 Linux "
+           href="/linux%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="linux 常见命令学习">linux 常见命令学习</span>
+            <span class="post-date" title="2020-06-17 22:33:28">2020/06/17</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="机器学习经典算法">机器学习经典算法</span>
+            <span class="post-date" title="2020-06-16 10:36:50">2020/06/16</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/tensorflow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tensorflow 学习笔记">tensorflow 学习笔记</span>
+            <span class="post-date" title="2020-06-05 01:49:53">2020/06/05</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/%E6%B7%B1%E5%BA%A6%E7%90%86%E8%A7%A3%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="深度理解卷积神经网络工作原理">深度理解卷积神经网络工作原理</span>
+            <span class="post-date" title="2020-06-04 13:24:45">2020/06/04</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E7%88%AC%E8%99%AB%E7%9A%84%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫的定时执行">爬虫的定时执行</span>
+            <span class="post-date" title="2020-04-06 22:44:47">2020/04/06</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/Token-%EF%BC%8CCookie%E5%92%8CSession%E7%9A%84%E5%8C%BA%E5%88%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Token ，Cookie 和 Session 的区别">Token ，Cookie 和 Session 的区别</span>
+            <span class="post-date" title="2020-04-03 10:46:54">2020/04/03</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E5%9C%A8python%E4%B8%AD%E8%BF%9B%E8%A1%8C%E8%A7%86%E9%A2%91-%E9%9F%B3%E9%A2%91%E5%A4%84%E7%90%86%E5%8F%8A%E5%90%88%E5%B9%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="在 python 中进行视频 - 音频处理及合并">在 python 中进行视频 - 音频处理及合并</span>
+            <span class="post-date" title="2020-03-29 10:56:44">2020/03/29</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8BJS%E8%A7%A3%E5%AF%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之 JS 解密">反反爬虫之 JS 解密</span>
+            <span class="post-date" title="2020-03-24 10:04:43">2020/03/24</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E7%90%86%E8%A7%A3python%E4%B8%AD%E7%9A%84%E9%97%AD%E5%8C%85%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="理解 python 中的闭包与装饰器">理解 python 中的闭包与装饰器</span>
+            <span class="post-date" title="2020-03-21 17:34:45">2020/03/21</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Mongodb%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Mongodb 数据库入门">Mongodb 数据库入门</span>
+            <span class="post-date" title="2020-03-17 22:50:33">2020/03/17</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%8A%A0%E4%B8%AA%E7%A9%BA%E6%A0%BC%E5%91%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="为什么不加个空格呢">为什么不加个空格呢</span>
+            <span class="post-date" title="2020-03-14 13:53:44">2020/03/14</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8/"
+           data-tag="yield"
+           data-author="" >
+            <span class="post-title" title="迭代器与生成器">迭代器与生成器</span>
+            <span class="post-date" title="2020-03-13 21:58:25">2020/03/13</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E6%BB%91%E5%9D%97%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之滑块验证码">反反爬虫之滑块验证码</span>
+            <span class="post-date" title="2020-03-08 21:00:17">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E5%9B%BE%E7%89%87%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之图片验证码">反反爬虫之图片验证码</span>
+            <span class="post-date" title="2020-03-08 16:16:16">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Python%E6%93%8D%E4%BD%9CRedis/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Python 操作 Redis">Python 操作 Redis</span>
+            <span class="post-date" title="2020-03-07 16:15:44">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy-Redis%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Scrapy-Redis 分布式爬虫">Scrapy-Redis 分布式爬虫</span>
+            <span class="post-date" title="2020-03-07 15:35:50">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%ABRequest%E5%8E%BB%E9%87%8D%E5%8F%8A%E8%BF%87%E6%BB%A4%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫 Request 去重及过滤器">爬虫 Request 去重及过滤器</span>
+            <span class="post-date" title="2020-03-07 15:22:23">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Redis%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Redis 数据库">Redis 数据库</span>
+            <span class="post-date" title="2020-03-06 20:30:00">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Pymysql%E4%B8%8EORM%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="pymysql-ORM"
+           data-author="" >
+            <span class="post-title" title="Pymysql 与 ORM 操作数据库">Pymysql 与 ORM 操作数据库</span>
+            <span class="post-date" title="2020-03-06 10:49:03">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/MySql%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Mysql"
+           data-author="" >
+            <span class="post-title" title="MySql 数据库">MySql 数据库</span>
+            <span class="post-date" title="2020-03-04 23:31:02">2020/03/04</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy%E6%A1%86%E6%9E%B6%E7%88%AC%E8%99%AB/"
+           data-tag="Scrapy"
+           data-author="" >
+            <span class="post-title" title="Scrapy 框架爬虫">Scrapy 框架爬虫</span>
+            <span class="post-date" title="2020-03-02 10:44:55">2020/03/02</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="多线程与多进程爬虫">多线程与多进程爬虫</span>
+            <span class="post-date" title="2020-03-01 15:33:08">2020/03/01</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Selenium%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%A8%A1%E6%8B%9F/"
+           data-tag="Selenium"
+           data-author="" >
+            <span class="post-title" title="Selenium 自动化测试模拟">Selenium 自动化测试模拟</span>
+            <span class="post-date" title="2020-02-29 21:29:54">2020/02/29</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96-%E6%96%87%E4%BB%B6%E4%BF%9D%E5%AD%98/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="数据持久化 - 文件保存本地">数据持久化 - 文件保存本地</span>
+            <span class="post-date" title="2020-02-27 22:01:14">2020/02/27</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫基础入门">爬虫基础入门</span>
+            <span class="post-date" title="2020-02-26 20:44:27">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/CSS%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%8EXpath%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96/"
+           data-tag="CSS-Xpath"
+           data-author="" >
+            <span class="post-title" title="CSS 选择器与 Xpath 数据提取">CSS 选择器与 Xpath 数据提取</span>
+            <span class="post-date" title="2020-02-26 19:07:35">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Seaborn-Pygal-Pyecharts%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Seaborn,pygal,Pyecharts"
+           data-author="" >
+            <span class="post-title" title="Seaborn-Pygal-Pyecharts 可视化">Seaborn-Pygal-Pyecharts 可视化</span>
+            <span class="post-date" title="2020-02-22 16:24:55">2020/02/22</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/python%E4%B9%8BMatplotlib%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Matplotlib"
+           data-author="" >
+            <span class="post-title" title="python 之 Matplotlib 可视化">python 之 Matplotlib 可视化</span>
+            <span class="post-date" title="2020-02-20 20:28:44">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%A4%84%E7%90%86%E5%AE%9E%E6%93%8D/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Pandas 数据分析处理实操">Pandas 数据分析处理实操</span>
+            <span class="post-date" title="2020-02-20 10:51:39">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Markdown%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E6%8A%80%E5%B7%A7/"
+           data-tag="Markdown"
+           data-author="" >
+            <span class="post-title" title="Markdown 文本编辑技巧">Markdown 文本编辑技巧</span>
+            <span class="post-date" title="2020-02-18 16:31:40">2020/02/18</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BPandas%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Python 之 Pandas 库从入门到实战">Python 之 Pandas 库从入门到实战</span>
+            <span class="post-date" title="2020-02-15 20:46:52">2020/02/15</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BNumpy%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Numpy"
+           data-author="" >
+            <span class="post-title" title="Python 之 Numpy 库从入门到实战">Python 之 Numpy 库从入门到实战</span>
+            <span class="post-date" title="2020-02-13 23:15:38">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E9%95%9C%E5%83%8F%E6%BA%90%E7%BD%91%E5%9D%80/"
+           data-tag="pip"
+           data-author="" >
+            <span class="post-title" title="python pip 国内镜像大全及库的安装">python pip 国内镜像大全及库的安装</span>
+            <span class="post-date" title="2020-02-13 23:13:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E7%9A%84%E4%B8%89%E7%A7%8D%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 的三种输出格式">python 的三种输出格式</span>
+            <span class="post-date" title="2020-02-13 23:04:49">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E6%97%B6%E9%97%B4%E6%A8%A1%E5%9D%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的时间模块">python 中的时间模块</span>
+            <span class="post-date" title="2020-02-13 23:01:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E6%9F%A5%E7%9C%8B%E4%BB%BB%E4%BD%95%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E7%94%A8%E6%B3%95%E7%9A%84%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 查看任何第三方库的用法的方法">python 查看任何第三方库的用法的方法</span>
+            <span class="post-date" title="2020-02-13 22:57:50">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Anaconda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8Epyinstaller%E7%A8%8B%E5%BA%8F%E6%89%93%E5%8C%85/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Anaconda 环境配置与 pyinstaller 程序打包">Anaconda 环境配置与 pyinstaller 程序打包</span>
+            <span class="post-date" title="2020-02-13 20:01:52">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%BD%BF%E7%94%A8Hexo-Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%85%8D%E8%B4%B9%E5%8D%9A%E5%AE%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="使用 Hexo+Github 搭建个人免费博客">使用 Hexo+Github 搭建个人免费博客</span>
+            <span class="post-date" title="2020-02-13 15:44:02">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E5%85%B3%E4%BA%8Ehexo%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"
+           data-tag="Hexo"
+           data-author="" >
+            <span class="post-title" title="关于 hexo 使用过程中报错问题汇总">关于 hexo 使用过程中报错问题汇总</span>
+            <span class="post-date" title="2020-02-12 23:03:46">2020/02/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-tcl语言入门" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">tcl 语言入门</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="工具">工具</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2025-09-24 17:02:14'>2025-09-14 22:43</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:5.9k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%20%E7%AE%80%E4%BB%8B"><span class="toc-text">1. 简介 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%20%E8%AF%AD%E8%A8%80%E7%89%B9%E7%82%B9"><span class="toc-text">1.1 语言特点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%20%E5%BC%80%E5%A7%8B%20TCL"><span class="toc-text">2. 开始 TCL</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1%20%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%E4%B8%8E%E8%B5%8B%E5%80%BC"><span class="toc-text">2.1 变量声明与赋值</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1-%20%E8%B5%8B%E5%80%BC%E4%B8%8E%E8%BE%93%E5%87%BA"><span class="toc-text">2.1.1 赋值与输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2-%20%E6%9B%B4%E6%94%B9%E5%8F%98%E9%87%8F"><span class="toc-text">2.1.2 更改变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-3-%20%E5%91%BD%E4%BB%A4%E6%9E%84%E9%80%A0"><span class="toc-text">2.1.3 命令构造</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%20%E7%BD%AE%E6%8D%A2"><span class="toc-text">2.2 置换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1-%20%E5%8F%98%E9%87%8F%E7%BD%AE%E6%8D%A2%20-variable-subtitution"><span class="toc-text">2.2.1 变量置换 variable subtitution</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2-%20%E5%91%BD%E4%BB%A4%E7%BD%AE%E6%8D%A2%20-command-substitution"><span class="toc-text">2.2.2 命令置换 command substitution</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-3-%20%E5%8F%8D%E6%96%9C%E6%9D%A0%E7%BD%AE%E6%8D%A2%20-backslash-substitution"><span class="toc-text">2.2.3 反斜杠置换(backslash substitution)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%20%E5%8F%8C%E5%BC%95%E5%8F%B7%E5%92%8C%E6%8B%AC%E5%8F%B7"><span class="toc-text">2.3 双引号和括号 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%20%E6%B3%A8%E9%87%8A"><span class="toc-text">2.4 注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-6-%20%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">2.6 字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-1-%20%E5%B8%B8%E8%A7%84%E6%96%B9%E6%B3%95"><span class="toc-text">2.6.1 常规方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-2-%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D"><span class="toc-text">2.6.2 字符串匹配 </span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-6-2-1-%20%E7%AE%80%E5%8D%95%E5%8C%B9%E9%85%8D"><span class="toc-text">2.6.2.1 简单匹配</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-6-2-2-%20%E5%A4%8D%E6%9D%82%E5%8C%B9%E9%85%8D"><span class="toc-text">2.6.2.2 复杂匹配 </span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-%20%E6%95%B0%E7%BB%84"><span class="toc-text">2.5 数组 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-7-%20%E6%93%8D%E4%BD%9C%E6%95%B0"><span class="toc-text">2.7 操作数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-8-%20%E5%88%97%E8%A1%A8"><span class="toc-text">2.8 列表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-8-1-%20%E5%88%9B%E5%BB%BA%E5%88%97%E8%A1%A8"><span class="toc-text">2.8.1 创建列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-8-2-%20%E5%88%97%E8%A1%A8%E6%96%B9%E6%B3%95"><span class="toc-text">2.8.2 列表方法 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-9-%20%E6%8E%A7%E5%88%B6%E6%B5%81"><span class="toc-text">2.9 控制流</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-9-1-if"><span class="toc-text">2.9.1 if</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-9-2-for"><span class="toc-text">2.9.2 for</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-9-3-foreach"><span class="toc-text">2.9.3 foreach</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-9-4-while"><span class="toc-text">2.9.4 while</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-9-5-switch"><span class="toc-text">2.9.5 switch</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-10-%20%E8%BF%87%E7%A8%8B%20procedure"><span class="toc-text">2.10 过程 procedure</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-11-%20%E5%AD%97%E5%85%B8"><span class="toc-text">2.11 字典 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-11-1-%20%E5%AD%97%E5%85%B8%E5%AE%9A%E4%B9%89"><span class="toc-text">2.11.1 字典定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-11-2-%20%E5%AD%97%E5%85%B8%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">2.11.2 字典的使用 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-12-%20%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%92%8C%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="toc-text">2.12 全局变量和局部变量 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-13-%20%E4%B8%80%E4%BA%9B%E5%B8%B8%E8%A7%81%E5%87%BD%E6%95%B0"><span class="toc-text">2.13 一些常见函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-13-1-%20%E7%B3%BB%E7%BB%9F%E5%87%BD%E6%95%B0"><span class="toc-text">2.13.1 系统函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-13-2-%20%E5%85%B6%E4%BB%96%E5%B8%B8%E8%A7%81%E5%87%BD%E6%95%B0"><span class="toc-text">2.13.2 其他常见函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-14-%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B"><span class="toc-text">2.14 面向对象编程</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1- 简介"><a href="#1- 简介" class="headerlink" title="1. 简介"></a>1. 简介 </h1><p>TCL（Tool Command Language，工具命令语言）是一种功能强大且易于学习的<strong> 脚本语言</strong>，广泛应用于快速开发、测试自动化、过程控制及嵌入式系统等领域。</p>
+<ul>
+<li><p><strong>来源</strong>：TCL 最初由 John Ousterhout 于 1980 年代末在加州大学伯克利分校开发，用于创建用户界面工具。</p>
+</li>
+<li><p><strong>特点</strong>：简单灵活、内置字符串处理功能强大、易于嵌入到其他应用程序中。</p>
+</li>
+<li><p><strong>运行 TCL 脚本</strong>：使用 tclsh 命令来执行 TCL 脚本文件，例如 tclsh script.tcl。</p>
+</li>
+</ul>
+<h2 id="1-1- 语言特点"><a href="#1-1- 语言特点" class="headerlink" title="1.1 语言特点"></a>1.1 语言特点</h2><ul>
+<li><p>一个 TCL 脚本可以包含一个或多个命令。</p>
+</li>
+<li><p>命令之间必须用换行符或分号隔开。</p>
+</li>
+<li><p>TCL 的每一个命令包含一个或几个单词，第一个单词代表命令名，另外的单词则是这个命令的 <br> 参数，单词之间必须用空格或 TAB 键隔开。</p>
+</li>
+<li><p>使用 <code>#</code> 进行注释</p>
+</li>
+</ul>
+<p>TCL 解释器对一个命令的求值过程分为两部分：分析和执行。</p>
+<ul>
+<li>在分析阶段，TCL 解释器运用规 则把命令分成一个个独立的单词，同时进行必要的置换(substitution)；</li>
+<li>在执行阶段，TCL 解释器会把第一个单词当作命令名，并查看这个命令是否有定义，如果有定义就激活这个命令对应 的 C/C++ 过程，并把所有的单词作为参数传递给该命令过程，让命令过程进行处理。</li>
+</ul>
+<h1 id="2- 开始 TCL"><a href="#2- 开始 TCL" class="headerlink" title="2. 开始 TCL"></a>2. 开始 TCL</h1><h2 id="2-1 变量声明与赋值"><a href="#2-1 变量声明与赋值" class="headerlink" title="2.1 变量声明与赋值"></a>2.1 变量声明与赋值</h2><h3 id="2-1-1- 赋值与输出"><a href="#2-1-1- 赋值与输出" class="headerlink" title="2.1.1 赋值与输出"></a>2.1.1 赋值与输出</h3><blockquote>
+<p>TCL 中基本数据类型只有一种：字符串类型，tcl 的所有数据类型最终都可以表示为字符串。</p>
+<p>赋值时无需声明变量类型。</p>
+</blockquote>
+<p>变量声明语法：<code>set 变量名 数据</code></p>
+<p>数据类型分为：</p>
+<ul>
+<li>字符串或数字。引号可带可不带，当字符串中有空格时，才必须加引号；数字内部存储为字符串</li>
+<li>列表，用大括号（花括号）表示</li>
+<li>数组</li>
+<li>句柄</li>
+</ul>
+<pre><code class="tcl">#!/bin/tclsh
+
+set aa &quot;hello world&quot;            ;# 字符串
+set bb    10                      ;# 字符串
+set cc &#123;red bule green&#125;         ;# 列表
+set marks(english) 92           ;# 数组
+set myfile [open &quot;filename&quot; r]  ;# 句柄
+
+unset cc marks myfile
+
+puts $aa
+puts $bb</code></pre>
+<p>使用 <strong>puts</strong> 来输出变量的值：<code>puts  $ 变量名</code></p>
+<p>使用 <strong>unset</strong> 来删除变量：<code>unset 变量名 1 变量名 2...</code></p>
+<p>一个 TCL 的简单变量包含两个部分：名字和值。名字和值都可以是任意字符串。</p>
+<p>例如一个名为“1323 7&amp;*: hdgg”的变量在 TCL 中都是合法的。不过为了更好的使用置换 (substitution)， 变量名最好按 C\C++ 语言中标识符的命名规则命名。 TCL 解释器在分析一个变量置换时，只把从<code>$</code> 符号往后直到第一个不是字母、数字或下划线的字符之间的单词符号作为要被置换的变量的名字。</p>
+<p>为了界定变量名的开始和结束，建议使用 <code>&#123; &#125;</code> 限制变量名</p>
+<p>TCL 中的 set 命令能生成一个变量、也能读取或改变一个变量的值。</p>
+<h3 id="2-1-2- 更改变量"><a href="#2-1-2- 更改变量" class="headerlink" title="2.1.2 更改变量"></a>2.1.2 更改变量</h3><ul>
+<li>append: 加文本</li>
+<li>incr：加值</li>
+</ul>
+<pre><code class="tcl">#!/bin/tclsh
+
+set aa &quot;hello&quot;
+append aa &quot; world&quot;
+puts $aa ;# 输出：hello world
+
+set x1 10
+incr x1 1
+puts $x1 ; 输出：11</code></pre>
+<h3 id="2-1-3- 命令构造"><a href="#2-1-3- 命令构造" class="headerlink" title="2.1.3 命令构造"></a>2.1.3 命令构造</h3><p>tcl 使用 eval 命令用来构造和执行 TCL 脚本，其语法为：</p>
+<p><code>eval command arg1 arg2...</code></p>
+<p><code>eval</code> 目的是构造单一脚本，将后面的部分拼接成字符串，整体解析执行</p>
+<ul>
+<li>eval 一般是非必要的，只要按照命令用法写参数，可以直接执行。</li>
+<li>但是如果存在变量替换，有可能被替换参数的命令会报错，这个时候就可以使用 eval 解决这个问题</li>
+</ul>
+<p>举例如下：</p>
+<p>假如一个命令用法是：<code>create polygon layer x1 y1 x2 y2... xn yn</code></p>
+<pre><code class="tcl">#!/bin/tclsh
+
+set coord1 &quot;0 0 100 100&quot;
+set coord2 &#123;0 0 100 100&#125;
+
+create polygon tgt 0 0 100 100 ;# 可以运行
+
+create polygon tgt $coord1 ;# 报错
+create polygon tgt $coord2 ;# 报错</code></pre>
+<p>上述 create polygon 会执行 <strong> 报错</strong>，因为 coord 是字符串或者列表，而命令要求的输入是直接的数字或字符。解决如下：</p>
+<pre><code class="tcl">eval create polygon tgt $coord1
+eval create polygon tgt $coord2</code></pre>
+<p>eval 会把后面的部分整体解析执行。</p>
+<h2 id="2-2- 置换"><a href="#2-2- 置换" class="headerlink" title="2.2 置换"></a>2.2 置换</h2><blockquote>
+<p>TCL 解释器在分析命令时，把所有的命令参数都当作字符串看待</p>
+</blockquote>
+<h3 id="2-2-1- 变量置换 -variable-subtitution"><a href="#2-2-1- 变量置换 -variable-subtitution" class="headerlink" title="2.2.1 变量置换 variable subtitution"></a>2.2.1 变量置换 variable subtitution</h3><p>变量置换由一个 <strong>＄</strong> 符号标记，变量置换会将变量代表的值进行替换。</p>
+<pre><code class="tcl">#!/bin/tclsh
+
+set x 10
+set y $x+100
+puts $y ;# 输出为：10+100</code></pre>
+<p>这时，y 的值还不是我们想要的值 110，而是 10+100，因为 TCL 解释器把 10+100 看成是一个字符串而不是表达式，y 要想得到值 110，还必须用命令置换，使得 TCL 会把 10+100 看成一个表达式并求值。  </p>
+<h3 id="2-2-2- 命令置换 -command-substitution"><a href="#2-2-2- 命令置换 -command-substitution" class="headerlink" title="2.2.2 命令置换 command substitution"></a>2.2.2 命令置换 command substitution</h3><p>命令置换是由 <code>[]</code> 括起来的 TCL 命令及其参数，命令置换会导致某一个命令的所有或部分单词被另一个命令的结果所代替。</p>
+<pre><code class="tcl">#!/bin/tclsh
+
+set x 10
+set y [expr $x+100]
+puts $y ; #输出为：110</code></pre>
+<p>当 TCL 解释器遇到字符’[‘时，它就会把随后的 expr 作为一个命令名，从 而激活与 expr 对应的 C/C++ 过程，并把’expr’和变量置换后得到的’10+110’传递给该命令过 程进行处理。  </p>
+<p>注意，<code>[]</code>中必须是一个合法的 TCL 脚本，长度不限。</p>
+<p><code>[]</code>中脚本的值为最后一个命令的返回值， 例如：  </p>
+<pre><code class="tcl">#!/bin/tclsh
+
+set y [expr $x+100;set b 300]
+puts $y ; #输出为：300</code></pre>
+<p>有了命令置换，实际上就表示命令之间是可以嵌套的，即一个命令的结果可以作为别的命令的参数。</p>
+<h3 id="2-2-3- 反斜杠置换 -backslash-substitution"><a href="#2-2-3- 反斜杠置换 -backslash-substitution" class="headerlink" title="2.2.3 反斜杠置换(backslash substitution)"></a>2.2.3 反斜杠置换(backslash substitution)</h3><p>TCL 语言中的反斜杠置换类似于 C 语言中反斜杠的用法，主要用于在单词符号中插入诸如换行符、空格、[、$ 等被 TCL 解释器当作特殊符号对待的字符。</p>
+<p>反斜杠置换符 <code>\</code> 主要用于连接两行或者取消空格的分隔符属性，或者取消其他的特殊符号的作用</p>
+<pre><code class="tcl">#!/bin/tclsh
+
+set aa hello\ world; #空格为分隔符, \ 后接空格会取消空格的分割作用
+
+set x 10
+set y \$x
+
+puts $y   ; #输出为 $x</code></pre>
+<h2 id="2-3- 双引号和括号"><a href="#2-3- 双引号和括号" class="headerlink" title="2.3 双引号和括号"></a>2.3 双引号和括号 </h2><p>TCL 解释器对双引号<code>&quot; &quot;</code> 中的各种分隔符将不作处理，但是对换行符及 <code>＄</code> 和<code>[]</code>两种置换符会照常处理。例如：  </p>
+<pre><code class="tcl">#!/bin/tclsh
+
+set aa &quot;hello world&quot;
+set bb &quot;$aa nihao!&quot;
+</code></pre>
+<p>而在花括号 <code>&#123; &#125;</code> 中，所有特殊字符都将成为普通字符，失去其特殊意义，TCL 解释器不会对其作特 殊处理。例如：</p>
+<pre><code class="tcl">#!/bin/tclsh
+
+set bb &#123;$aa nihao!&#125;</code></pre>
+<p><strong>单引号 (<code>&#39;</code>)</strong></p>
+<ul>
+<li><strong>作用 </strong>：<strong> 没有特殊作用 </strong>。单引号在 Tcl 的基本语法中<strong> 不被视为引号</strong>，它只是一个普通的字符。</li>
+</ul>
+<h2 id="2-4- 注释"><a href="#2-4- 注释" class="headerlink" title="2.4 注释"></a>2.4 注释</h2><p>TCL 中的注释符是’＃’，’＃’和直到所在行结尾的所有字符都被 TCL 看作注释，TCL 解释器对注释将不作任何处理。不过，要注意的是，’＃’必须出现在 TCL 解释器期望命令的第一个字符出现的地方，才被当作注释。  </p>
+<pre><code class="tcl">#!/bin/tclsh
+
+#This is a comment  
+set a 100 # Not a comment  
+wrong # args: should be &quot;set varName ?newValue?&quot;  
+
+set b 101 ; # this is a comment  </code></pre>
+<blockquote>
+<p>要在命令行后面写注释，需要用分号分隔符</p>
+</blockquote>
+<p>第二行中’＃’就不被当作注释符，因为它出现在命令的中间，TCL 解释器把它和后面的字符当作命令的参数处理，从而导致错误。而第四行的’＃’就被作为注释，因为前一个命令已经用一个分号结束，TCL 解释器期望下一个命令接着出现。现在在这个位置出现’#’，随后的字符就被当作注释了。 </p>
+<h2 id="2-6- 字符串"><a href="#2-6- 字符串" class="headerlink" title="2.6 字符串"></a>2.6 字符串</h2><h3 id="2-6-1- 常规方法"><a href="#2-6-1- 常规方法" class="headerlink" title="2.6.1 常规方法"></a>2.6.1 常规方法</h3><p> TCL 把所有的输入都当作字符串看待，所以 TCL 提供了较强的字符串操作功能，TCL 中与字符串操作有关的命令有：string、format、regexp、regsub、scan 等。 </p>
+<ul>
+<li><p>格式化输出：<code>format string value1 value2...</code></p>
+<pre><code class="tcl">set msg [format &quot;%s is %d years old&quot; $name $age] </code></pre>
+</li>
+<li><p>字符串比较是否相等：<code>string equal -nocase -length int str1 str2</code>。相同返回 1，不同返回 0</p>
+<ul>
+<li>-nocase 的意思就是不区分大小写。</li>
+<li>-length int 中的 int 就是需要比较的前面几个字符。</li>
+</ul>
+<pre><code class="tcl">set res [string equal &quot;hello world&quot; &quot;Hello World&quot;]</code></pre>
+</li>
+<li><p>字符串查找：<code>string first -exact substring str start</code>，返回索引</p>
+<ul>
+<li>如果使用了 <code>-exact</code> 选项，匹配会变得严格，即只有在大小写和字符顺序都完全匹配的情况下才会返回匹配位置。如果省略 <code>-exact</code>，则匹配是大小写不敏感的。</li>
+<li>substring，需要查找的子串</li>
+<li>start，一个数字，指定开始查找位置</li>
+</ul>
+<pre><code class="tcl">set res1 [string first &quot;tcl&quot; &quot;This is a tcl example&quot;]
+set res2 [string first &quot;is&quot; &quot;This is a tcl example&quot; 4]
+set res3 [string first &quot;is&quot; &quot;This is a tcl example&quot;]</code></pre>
+</li>
+<li><p>字符串查找：<code>string last substring str last</code>，与 first 命令相似，只是返回的是从尾部开始搜索到的匹配的字符段</p>
+</li>
+<li><p>返回索引到的字符：<code>string index str charIndex</code>，<strong>字符串的索引从 0 开始</strong></p>
+</li>
+<li><p>返回字符串类型：<code>string is class -strict -failindex varname str</code>。如果 string 是指定 class 中的成员就返回 1，否则返回 0。如果指定了 -strict，空字符串就返回 0，不指定则返回 1。如果指定了 -failindex varnane，那么将导致不匹配的索引储存在 varname 中，如果返回 1 则 varname 不会被赋值。</p>
+<ul>
+<li><p><code>string is lower &quot;This&quot;</code> 返回 0</p>
+</li>
+<li><p>class 支持以下选项：</p>
+</li>
+</ul>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20250915215054795.png" alt="class 类型" style="zoom: 50%;" />
+</li>
+<li><p>字符串切片：<code>string range str first last</code>。返回 str 中从 first 到 last 指定索引范围内的所有字符。first 和 last 指定索引</p>
+</li>
+<li><p>重复字符串：<code>string repeat str count</code>。返回一个把 str 重复 count 次的字符串。</p>
+</li>
+<li><p>字符串替换：<code>string replace str first last newstring</code>。first 和 last 指定了转换的范围。</p>
+</li>
+<li><p>全小写字符串：<code>string tolower str first last</code>。将一个字符串全部变为小写形式。first 和 last 指定了转换的范围。</p>
+</li>
+<li><p>全大写字符串：<code>string totitle str first last</code></p>
+</li>
+<li><p>首字符大写：<code>string toupper str first last</code></p>
+</li>
+<li><p>删除字符：<code>string trim str chars</code>。去掉 chars 字符，如果没有指定 chars 字符，则去掉空白符（包括空格符、制表符、换行符、回车符）。trim 对字符串开头和结尾都操作。</p>
+</li>
+<li><p>去掉开头或结尾：<code>string trimleft str chars</code>和<code>string trimright str chars</code></p>
+</li>
+</ul>
+<p>还有一些其他的就不一一列举了。</p>
+<h3 id="2-6-2- 字符串匹配"><a href="#2-6-2- 字符串匹配" class="headerlink" title="2.6.2 字符串匹配"></a>2.6.2 字符串匹配 </h3><h4 id="2-6-2-1- 简单匹配"><a href="#2-6-2-1- 简单匹配" class="headerlink" title="2.6.2.1 简单匹配"></a>2.6.2.1 简单匹配</h4><p> 语法：<code>[string match pattern str]</code>。如果 str 匹配 pattern 就返回 1，否则返回 0。使用的是通配风格的匹配。</p>
+<ul>
+<li><strong>string match</strong> 不支持正则表达式，仅支持简单通配符，例如：<code>*  ?  [0-9A-Za-z]</code>。</li>
+</ul>
+<p>举个例子：</p>
+<pre><code class="tcl">  set pattern &quot;hello*&quot;
+  set string &quot;hello world&quot;
+  if &#123;[string match $pattern $string]&#125; &#123;
+      puts &quot; 匹配成功 &quot;
+  &#125; else &#123;
+      puts &quot; 匹配失败 &quot;
+  &#125;
+
+  string match &#123;a*[6-81A-Z]xyz\*&#125; &quot;abcd6xyz*&quot;
+  # 使用大括号包括整个参数，来避免出现变量置换或者分隔符等一些问题,[6-81A-Z]表示匹配 6,7,8,1,A,B,C,D,...X,Y,Z</code></pre>
+<h4 id="2-6-2-2- 复杂匹配"><a href="#2-6-2-2- 复杂匹配" class="headerlink" title="2.6.2.2 复杂匹配"></a>2.6.2.2 复杂匹配 </h4><p> 语法：<code>[regexp pattern string match subMatch1...]</code>。</p>
+<ul>
+<li>pattern：匹配规则</li>
+<li>string：待匹配的字符串</li>
+<li>match：保存匹配的正则表达式结果</li>
+<li>subMatch1：Submatch1 到 Submatchn 是可选的子匹配变量，用于保存子匹配模式的结果</li>
+</ul>
+<pre><code class="tcl">set pattern &#123;hello\s\w+&#125;
+set string &quot;hello world&quot;
+if &#123;[regexp $pattern $string match]&#125; &#123;
+    puts &quot; 匹配成功: $match&quot;
+&#125; else &#123;
+    puts &quot; 匹配失败 &quot;
+&#125;
+
+regexp &#123;([A-Za-z]*)&#125; &quot;Tcl Tutorial&quot; a b 
+puts &quot;Full Match: a&quot;; #Full Match: Tcl
+puts &quot;Sub Match1:b&quot; ; #Sub Match1: Tcl
+</code></pre>
+<p>匹配符号和其他语言一般的正则表达式基本是一致的，下面给出一部分例子：</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20250915221359752.png" alt="匹配规则" style="zoom:50%;" />
+
+<p>regexp 可用的开关列表如下：</p>
+<ul>
+<li><p><code>-nocase</code>  用于忽略大小写。</p>
+</li>
+<li><p><code>-indices</code> 存储匹配子模式的位置，而不是匹配的字符。</p>
+</li>
+<li><p><code>-line</code>  新行敏感匹配。忽略换行符后的字符。</p>
+</li>
+<li><p><code>start index</code> 设置搜索模式的起始偏移量。</p>
+</li>
+</ul>
+<h2 id="2-5- 数组"><a href="#2-5- 数组" class="headerlink" title="2.5 数组"></a>2.5 数组 </h2><p> 数组是一些元素的集合。TCL 的数组和普通计算机语言中的数组有很大的区别。在 TCL 中，不能单独声明一个数组，数组只能和数组元素一起声明。数组中，数组元素的名字包含两部分：数组名和数组中元素的名字，TCL 中数组元素的名字（下标〕可以为任何字符串。例如：</p>
+<pre><code class="tcl">#!/bin/tclsh
+
+set day(monday) 1  
+set day(tuesday) 2</code></pre>
+<p>第一个命令生成一个名为 day 的数组，同时在数组中生成一个名为 monday 的数组元素，并把值置为 1，第二个命令生成一个名为 tuesday 的数组元素，并把值置为 2。</p>
+<p>monday 和 tuesday 可以理解为数组的下标。</p>
+<pre><code class="tcl">#!/bin/tclsh
+
+set day(monday) 1  
+set b $day(monday); #b 的值为 1</code></pre>
+<p>获取数组元素个数：</p>
+<pre><code>[array size variablename]</code></pre><h2 id="2-7- 操作数"><a href="#2-7- 操作数" class="headerlink" title="2.7 操作数"></a>2.7 操作数</h2><p>TCL 表达式的操作数通常是整数或实数。整数一般是十进制的， 但如果整数的第一个字符是 0(zero)，那么 TCL 将把这个整数看作八进制的，如果前两个字符是 0x 则这个整数被看作是十 六进制的。TCL 的实数的写法与 ANSI C 中完全一样。</p>
+<p><code>2.1  7.9e+12   6e4   3.</code>等都是合法的数字书写方式。</p>
+<p>TCL 支持多种运算符，比如 算术运算符，关系运算符，逻辑运算符，按位运算符，三元运算符等。参阅<a target="_blank" rel="noopener" href="https://www.w3ccoo.com/tcl-tk/tcl_operators.html">Tcl 运算符 | Tcl/Tk 教程</a></p>
+<p>TCL 支持常用的数学函数，表达式中数学函数的写法类似于 C\C++ 语言的写法。参阅<a target="_blank" rel="noopener" href="https://www.w3ccoo.com/tcl-tk/tcl_builtin_functions.html">Tcl - 内置函数</a></p>
+<p>这里额外介绍下条件运算符</p>
+<p><code>exp?:value1:value2</code></p>
+<pre><code class="tcl">#!/usr/bin/tclsh
+
+set a 10;
+set b [expr $a == 1 ? 20: 30]
+puts &quot;Value of b is $b\n&quot;
+set b [expr $a == 10 ? 20: 30]
+puts &quot;Value of b is $b\n&quot;</code></pre>
+<h2 id="2-8- 列表"><a href="#2-8- 列表" class="headerlink" title="2.8 列表"></a>2.8 列表</h2><p>list 这个概念在 TCL 中是用来表示集合的。TCL 中 list 是由一堆元素组成的有序集合，list 可以嵌套定义，list 每个元素可以是任意字符串，也可以是 list。下面都是 TCL 中的合法的 list：</p>
+<p>{} // 空 list  </p>
+<p>{a b c d}  </p>
+<p>{a {b c} d}  //list 可以嵌套 </p>
+<h3 id="2-8-1- 创建列表"><a href="#2-8-1- 创建列表" class="headerlink" title="2.8.1 创建列表"></a>2.8.1 创建列表</h3><pre><code class="tcl">set listName &#123; item1 item2 item3 .. itemn &#125;
+# or
+set listName [list item1 item2 item3]
+# or 
+set listName [split &quot;items separated by a character&quot; split_character]</code></pre>
+<h3 id="2-8-2- 列表方法"><a href="#2-8-2- 列表方法" class="headerlink" title="2.8.2 列表方法"></a>2.8.2 列表方法 </h3><p><code>concat listN1 listN2...</code> 合并多个 list</p>
+<p><code>lindex list index</code> 返回 list 的第 index 个 (0-based) 元素</p>
+<p><code>llength list</code>返回 list 的元素个数</p>
+<p><code>linsert list index value1 value2...</code>插入新的元素</p>
+<p><code>lreplace list first last value1 value2 ...</code>替换成新的元素</p>
+<p><code>lrange list first last</code>切片</p>
+<p><code>lappend varname value1 value2...</code>附加新元素</p>
+<p><code>lsearch -exact -glob -regexp list pattern</code>  返回匹配到的索引</p>
+<ul>
+<li>-exact、-glob、 -regexp 是三种模式匹配的技术。</li>
+<li>-exact 表示精确匹配；-glob 的匹配方式和 string match 命令的匹配方式相同；-regexp 表示正规表达式匹配</li>
+</ul>
+<p><code>lsort options list</code> 排序</p>
+<ul>
+<li>-ascii 按 ASCII 字符的顺序排序比较，默认方式</li>
+<li>-dictionary 按字典排序，与 -ascii 不同的地方是不考虑大小写，如果元素中有数字的话, 数字被当作整数来排序</li>
+<li>-integer 把 list 的元素转换成整数, 按整数排序. </li>
+<li>-real 把 list 的元素转换成浮点数, 按浮点数排序. </li>
+<li>-increasing 升序(按 ASCII 字符比较) </li>
+<li>-decreasing 降序(按 ASCII 字符比较) </li>
+<li>-command command TCL 自动利用 command 命令把每两个元素一一比较, 然后给出排序 <br> 结果。  </li>
+</ul>
+<p><code>split string splitChars</code> 分割字符串成 list</p>
+<ul>
+<li>如果 splitChars 没有给出, 以空格为分隔符</li>
+</ul>
+<p><code>join list joinString</code>  合并 list 为字符串</p>
+<h2 id="2-9- 控制流"><a href="#2-9- 控制流" class="headerlink" title="2.9 控制流"></a>2.9 控制流</h2><p>TCL 中的控制流和 C 语言类似，包括 if、while、for、foreach、switch、break、continue 等命令。 </p>
+<h3 id="2-9-1-if"><a href="#2-9-1-if" class="headerlink" title="2.9.1 if"></a>2.9.1 if</h3><p>语法为：</p>
+<pre><code>if &#123; $x&gt;0 &#125; &#123;  
+.....  
+&#125;elseif&#123; $x＝＝1 &#125; &#123;  
+.....  
+&#125;elseif &#123; $x＝＝2 &#125; &#123;  
+....  
+&#125;else&#123;  
+.....  
+&#125;  </code></pre><blockquote>
+<p>注意，上例中’{‘一定要写在上一行，因为如果不这样，TCL 解释器会认为 if 命令在换行符处已结束，下一行会被当成新的命令，从而导致错误的结果。</p>
+</blockquote>
+<h3 id="2-9-2-for"><a href="#2-9-2-for" class="headerlink" title="2.9.2 for"></a>2.9.2 for</h3><p>语法为：</p>
+<pre><code class="tcl">#!/bin/tclsh
+for &#123; set i 0&#125; &#123;$i &lt; 10 &#125; &#123;incr i&#125; &#123;
+    puts &quot;value of a: $a&quot;
+&#125;</code></pre>
+<h3 id="2-9-3-foreach"><a href="#2-9-3-foreach" class="headerlink" title="2.9.3 foreach"></a>2.9.3 foreach</h3><p>语法为：</p>
+<pre><code class="tcl">#!/bin/tclsh
+
+set values &#123;0 1 2 3 4 5&#125;
+
+foreach item $values &#123;
+    puts $item
+&#125;</code></pre>
+<p>还有另一种方式：成对取值</p>
+<pre><code class="tcl">set x &#123;&#125;  
+foreach &#123;i j&#125; &#123;a b c d e f&#125; &#123;  
+    lappend x $j $i  
+&#125;  
+#这时总共有三次循环，x 的值为 &quot;b a d c f e&quot;。 
+
+set x &#123;&#125;  
+foreach i &#123;a b c&#125; j &#123;d e f g&#125; &#123;  
+    lappend x $i $j  
+&#125;  
+#这时总共有四次循环，x 的值为 &quot;a d b e c f &#123;&#125; g&quot;。
+
+set x &#123;&#125;  
+foreach i &#123;a b c&#125; &#123;j k&#125; &#123;d e f g&#125; &#123;  
+lappend x $i $j $k  
+&#125;  
+#这时总共有三次循环，x 的值为 &quot;a d e b f g c &#123;&#125; &#123;&#125;&quot;。</code></pre>
+<h3 id="2-9-4-while"><a href="#2-9-4-while" class="headerlink" title="2.9.4 while"></a>2.9.4 while</h3><p>语法为：</p>
+<pre><code>while &#123;$i &gt; 0&#125; &#123;
+...
+&#125;</code></pre><p>在循环体中，可以用 break 和 continue 命令中断循环。</p>
+<p>其中 break 命令结束整个循环过程， 并从循环中跳出</p>
+<p>continue 只是结束本次循环。 </p>
+<h3 id="2-9-5-switch"><a href="#2-9-5-switch" class="headerlink" title="2.9.5 switch"></a>2.9.5 switch</h3><p>switch 命令的语法为: </p>
+<p>switch options string {pattern body pattern body …} </p>
+<p>第一个是可选参数 options，表示进行匹配的方式。TCL 支持三种匹配方式：</p>
+<ul>
+<li><p>-glob 方式的匹配方式和 string match 命令的匹配方式相同，缺省情况表示 -glob 方式。</p>
+</li>
+<li><p>-exact 方式表示的是精确匹配</p>
+</li>
+<li><p>-regexp 方式是正规表达式的</p>
+</li>
+</ul>
+<p>第二个参数 string 是要被用来作测试的值，第三个参数是括起来的一个或多个元素对。</p>
+<p>例子：</p>
+<pre><code class="tcl">switch $grade  &#123;
+    A &#123; puts &quot;Well done!&quot; &#125;  
+    B &#123; puts &quot;Excellent!&quot; &#125;  
+    C &#123; puts &quot;You passed!&quot;  &#125; 
+    F &#123; puts &quot;Better try again&quot;   &#125;   
+    default &#123;     puts &quot;Invalid grade&quot;   &#125;
+&#125;</code></pre>
+<h2 id="2-10- 过程 procedure"><a href="#2-10- 过程 procedure" class="headerlink" title="2.10 过程 procedure"></a>2.10 过程 procedure</h2><p>TCL 支持过程的定义和调用，在 TCL 中，过程可以看作是用 TCL 脚本实现的命令，效果与 TCL 的固有命令相似。我们可以在任何时候使用 proc 命令定义自己的过程，TCL 中的过程类似于 C 中的函数。  </p>
+<p>语法为：</p>
+<pre><code>proc name &#123; 形参 1 形参 2 ...&#125; &#123;
+    ...
+&#125;</code></pre><p>举个例子：</p>
+<pre><code class="tcl">proc add &#123;x y &#125; &#123;
+    expr $x+$y
+&#125;
+
+proc abs &#123;x&#125; &#123;  
+if &#123;$x &gt;= 0&#125; &#123; return $x &#125;  
+    return [expr -$x]  
+&#125;
+
+proc add &#123;val1 &#123;val2 2&#125; &#123;val3 3&#125;&#125;&#123;  
+    expr $val1+$val2+$val3  
+&#125;  
+#给 val2 和 val3 指定默认值</code></pre>
+<h2 id="2-11- 字典"><a href="#2-11- 字典" class="headerlink" title="2.11 字典"></a>2.11 字典 </h2><h3 id="2-11-1- 字典定义"><a href="#2-11-1- 字典定义" class="headerlink" title="2.11.1 字典定义"></a>2.11.1 字典定义</h3><p> 字典是将值映射到键的一种安排。 传统字典的语法如下所示：</p>
+<p><code>dict set dictname key value</code></p>
+<p>或者：</p>
+<p><code>dict create dictname key1 value1 key2 value2 .. keyn valuen</code></p>
+<p>举例说明：</p>
+<pre><code class="tcl">set colours [dict create colour1 &quot;black&quot; colour2 &quot;white&quot;]
+puts $colours
+
+dict set colours  colour3 red 
+dict set colours  colour4 green
+puts $colours</code></pre>
+<h3 id="2-11-2- 字典的使用"><a href="#2-11-2- 字典的使用" class="headerlink" title="2.11.2 字典的使用"></a>2.11.2 字典的使用 </h3><p> 获取字典键值对个数：<code>[dict size dictname]</code></p>
+<p>字典中的所有键：<code>[dict keys $dictname]</code></p>
+<p>字典中是否存在键：<code>[dict exists $dictname $key]</code></p>
+<p>根据键获取值：<code>[dict get $dictname $keyname]</code></p>
+<p>字典中的所有值：<code>[dict values $dictname]</code></p>
+<p>字典的迭代：</p>
+<pre><code class="tcl">set colours [dict create colour1 &quot;black&quot; colour2 &quot;white&quot;]
+foreach item [dict keys $colours] &#123;
+   set value [dict get $colours $item]
+   puts $value
+&#125;</code></pre>
+<h2 id="2-12- 全局变量和局部变量"><a href="#2-12- 全局变量和局部变量" class="headerlink" title="2.12 全局变量和局部变量"></a>2.12 全局变量和局部变量 </h2><p> 对于在过程中定义的变量，因为它们只能在过程中被访问，并且当过程退出时会被自动删除，所以称为局部变量；在所有过程之外定义的变量我们称之为全局变量。TCL 中，局部变量和全局变量可以同名，两者的作用域的交集为空：局部变量的作用域是它所在的过程的内部；全局变量的作用域则不包括所有过程的内部。</p>
+<p>如果我们想在过程内部引用一个全局变量的值，可以使用 global 命令</p>
+<pre><code class="tcl">proc sample &#123; x &#125; &#123;  
+    global a  
+    incr a  
+    return [expr $a+$x]  
+&#125;  </code></pre>
+<p>全局变量 a 在过程中被访问。在过程中对 a 的改变会直接反映到全局上。如果去掉语句 global a，TCL 会出错，因为它不认识变量 a。</p>
+<h2 id="2-13- 一些常见函数"><a href="#2-13- 一些常见函数" class="headerlink" title="2.13 一些常见函数"></a>2.13 一些常见函数</h2><h3 id="2-13-1- 系统函数"><a href="#2-13-1- 系统函数" class="headerlink" title="2.13.1 系统函数"></a>2.13.1 系统函数</h3><p>Tcl 中重要的系统函数包括，</p>
+<ul>
+<li><strong>clock seconds</strong> − 秒函数，返回当前时间（以秒为单位）。</li>
+<li><strong>clock format</strong> − format 函数，将秒格式化为日期和时间。</li>
+<li><strong>clock scan</strong> − scan 函数，扫描输入字符串并将其转换为秒。</li>
+<li><strong>open</strong> − 函数，用于打开文件。</li>
+<li><strong>exec</strong> − 函数，用于执行系统命令。</li>
+<li><strong>close</strong> − 函数，用于关闭文件。</li>
+</ul>
+<p>下面给些示例：</p>
+<pre><code class="tcl">#!/usr/bin/tclsh
+
+#get seconds
+set currentTime [clock seconds]
+puts $currentTime
+#get format 
+puts &quot;The time is: [clock format $currentTime -format %H:%M:%S]&quot;
+puts &quot;The date is: [clock format $currentTime -format %D]&quot;
+
+set date &quot;Jun 15, 2014&quot;
+puts [clock scan $date -format &#123;%b %d, %Y&#125;]
+
+puts [exec ls]
+puts [exec dir]
+
+set a  [open input.txt]
+puts [read $a];
+puts $a
+close $a</code></pre>
+<h3 id="2-13-2- 其他常见函数"><a href="#2-13-2- 其他常见函数" class="headerlink" title="2.13.2 其他常见函数"></a>2.13.2 其他常见函数</h3><ul>
+<li><strong>file</strong> 命令，用于处理文件路径，属性和操作的核心命令，支持跨平台<ul>
+<li><code>file join path1 path2...</code>路径拼接，自动适配系统分隔符</li>
+<li><code>file split path</code> 将路径拆分为列表</li>
+<li><code>file normalize path</code> 转换路径为绝对路径</li>
+<li><code>file dirname path</code>提取路径的目录部分</li>
+<li><code>file tail path</code> 提取路径中的文件名或最后一级目录名</li>
+<li><code>file extension path</code> 提取路径扩展名</li>
+<li><code>file rootname path</code> 提取路径中的文件名，不含扩展</li>
+<li><code>file exists path</code> 检查目录是否存在</li>
+<li><code>file isdirectory path</code> 检查是否为目录</li>
+<li><code>file isfile path</code> 检查是否为普通文件（非目录或符号链接）</li>
+<li><code>file size path</code> 返回文件大小（字节）</li>
+<li><code>file mtime path</code> 返回文件最后修改时间</li>
+<li><code>file copy path</code> 返回文件类型</li>
+<li><code>file delete path</code> 删除文件</li>
+<li><code>file rename path</code> 重命名文件</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-14- 面向对象编程"><a href="#2-14- 面向对象编程" class="headerlink" title="2.14 面向对象编程"></a>2.14 面向对象编程</h2><p>tcl 支持面向对象编程（OOP），主要通过扩展库实现。它类似于 C++ 对 C 的扩展，为 Tcl 提供了更结构化的编程方式，同时保持了 Tcl 的灵活性和简洁性。</p>
+<p><strong>类和对象</strong> 是 Tcl 面向对象编程的基础。</p>
+<p>类是对象的模板，定义了变量和方法。对象是类的实例，拥有独立的数据和行为。</p>
+<p>以下是一个简单的类定义示例：</p>
+<pre><code class="tcl">package require Itcl
+
+namespace import itcl::*
+
+itcl::class Person &#123;
+    variable name
+    variable age
+
+    constructor &#123;name age&#125; &#123;
+        set this-&gt;name $name
+        set this-&gt;age $age
+    &#125;
+
+    method introduce &#123;&#125; &#123;
+        return &quot;Hi, I am $name and I am $age years old.&quot;
+    &#125;
+&#125;
+
+# 创建对象并调用方法
+set person [Person new &quot;Alice&quot; 25]
+puts [$person introduce]</code></pre>
+<p>Tcl 的 OOP 还支持以下特性：</p>
+<ol>
+<li><strong>继承</strong>：通过 <em>inherit</em> 关键字实现类的继承，子类可以复用父类的变量和方法。</li>
+<li><strong>多态</strong>：子类可以重写父类的方法，实现不同的行为。</li>
+<li><strong>封装</strong>：支持 <em>public<em>、</em>protected</em> 和 <em>private</em> 修饰符，用于控制变量和方法的访问权限。</li>
+</ol>
+<p>Tcl 使用命名空间（<em>namespace</em>）来组织代码，避免命名冲突。命名空间可以包含变量、过程和类。</p>
+<p>这里不做更多介绍，熟悉 c/c++ 语言的朋友（正是笔者在下！）对 tcl 的类应该会举一反三，这些特性非常相似。而且一般 tcl 中我们也用不到继承多态封装的一些高级技术。</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 欢迎各位看官及技术大佬前来交流指导呀，可以邮件至 jqiange@yeah.net </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2021 Jqiange
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

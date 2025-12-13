@@ -1,0 +1,2267 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Python 之 Pandas 库从入门到实战 | jqiange</title>
+  <meta name="keywords" content=" Pandas ">
+  <meta name="description" content="Python 之 Pandas 库从入门到实战 | jqiange">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="人畜无害的姜小强">
+<meta property="og:url" content="https://jqiange.github.io/about/index.html">
+<meta property="og:site_name" content="jqiange">
+<meta property="og:description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+<meta property="article:published_time" content="2020-02-18T08:21:04.000Z">
+<meta property="article:modified_time" content="2025-12-13T05:23:10.695Z">
+<meta property="article:author" content="姜小强">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+
+
+<link rel="icon" href="/img/jqiange.png">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/jqiange.png"/>
+</a>
+<div class="author">
+    <span>姜小强</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/jqiange"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(58)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(9)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据库">
+                        
+                        数据库
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="每日一学">
+                        
+                        每日一学
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="爬虫">
+                        
+                        爬虫
+                        <small>(10)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="前端">
+                        
+                        前端
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="深度学习">
+                        
+                        深度学习
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据分析">
+                        
+                        数据分析
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="chip">
+                        
+                        chip
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="CPP">
+                        
+                        CPP
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Linux">
+                        
+                        Linux
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="python">
+                        
+                        python
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="58">
+<input type="hidden" id="yelog_site_word_count" value="251.9k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSS-Xpath</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Markdown</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Matplotlib</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Mysql</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Numpy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pandas</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pip</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pyecharts</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pygal</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pymysql-ORM</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>RE</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Redis</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Scrapy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Seaborn</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Selenium</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>yield</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="全部文章 python "
+           href="/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%A6%E8%A7%A3/"
+           data-tag="RE"
+           data-author="" >
+            <span class="post-title" title="正则表达式详解">正则表达式详解</span>
+            <span class="post-date" title="2020-02-26 09:25:46">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/tcl%E4%B8%8Eopc/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 与 opc">tcl 与 opc</span>
+            <span class="post-date" title="2025-09-24 13:36:07">2025/09/24</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/hexo%E6%96%87%E7%AB%A0%E5%8A%A0%E5%AF%86%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="hexo 文章加密方法">hexo 文章加密方法</span>
+            <span class="post-date" title="2025-09-21 22:33:03">2025/09/21</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/tcl%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 语言入门">tcl 语言入门</span>
+            <span class="post-date" title="2025-09-14 22:43:20">2025/09/14</span>
+        </a>
+        
+        <a  class="全部文章 每日一学 "
+           href="/%E6%95%85%E4%BA%8B%E4%BC%9A%E4%B8%8E%E4%BC%81%E4%B8%9A%E8%82%A1%E6%9D%83%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="故事会与企业股权架构设计">故事会与企业股权架构设计</span>
+            <span class="post-date" title="2025-08-30 09:42:43">2025/08/30</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%AE%A1%E7%AE%97%E5%85%89%E5%88%BBOPC%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="计算光刻 OPC 名词解释">计算光刻 OPC 名词解释</span>
+            <span class="post-date" title="2025-08-26 21:44:36">2025/08/26</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%8A%AF%E7%89%87%E5%88%B6%E9%80%A0%E6%B5%81%E7%A8%8B%E4%B8%8E%E5%B7%A5%E8%89%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="芯片制造流程与工艺">芯片制造流程与工艺</span>
+            <span class="post-date" title="2025-06-14 12:13:17">2025/06/14</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E8%81%8C%E5%9C%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入职场">C++ 入职场</span>
+            <span class="post-date" title="2024-06-22 15:52:55">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/Protocol-Buffers-%E5%85%A5%E9%97%A8%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Protocol Buffers 入门使用">Protocol Buffers 入门使用</span>
+            <span class="post-date" title="2024-06-22 15:50:39">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-python%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B-boost/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++python 混合编程 -boost">C++python 混合编程 -boost</span>
+            <span class="post-date" title="2024-06-22 15:36:18">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B%E4%B8%8E%E6%A8%A1%E6%9D%BF/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 泛型编程与模板">C++ 泛型编程与模板</span>
+            <span class="post-date" title="2024-06-22 15:27:49">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入门学习笔记">C++ 入门学习笔记</span>
+            <span class="post-date" title="2024-06-22 14:53:46">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 Linux "
+           href="/shell%E7%BC%96%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="shell 编程">shell 编程</span>
+            <span class="post-date" title="2022-03-07 20:24:24">2022/03/07</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Git 版本控制工具">Git 版本控制工具</span>
+            <span class="post-date" title="2022-03-05 23:23:45">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Hexo%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E4%B8%8E%E5%A4%9A%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hexo 博客迁移与多平台使用">Hexo 博客迁移与多平台使用</span>
+            <span class="post-date" title="2022-03-05 01:26:56">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%B8%8E%E9%87%8D%E9%9A%BE%E7%82%B9%E6%B1%87%E6%80%BB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的基础知识与重难点汇总">python 中的基础知识与重难点汇总</span>
+            <span class="post-date" title="2020-11-17 23:05:15">2020/11/17</span>
+        </a>
+        
+        <a  class="全部文章 前端 "
+           href="/javascript%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="JavaScript 入门">JavaScript 入门</span>
+            <span class="post-date" title="2020-11-09 20:46:08">2020/11/09</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E8%AF%AD%E6%B3%95%E7%B3%96/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的语法糖">python 中的语法糖</span>
+            <span class="post-date" title="2020-11-06 10:53:29">2020/11/06</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E8%BF%9B%E7%A8%8B%EF%BC%8C%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%8D%8F%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的进程，线程与协程">python 中的进程，线程与协程</span>
+            <span class="post-date" title="2020-11-04 21:29:16">2020/11/04</span>
+        </a>
+        
+        <a  class="全部文章 Linux "
+           href="/linux%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="linux 常见命令学习">linux 常见命令学习</span>
+            <span class="post-date" title="2020-06-17 22:33:28">2020/06/17</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="机器学习经典算法">机器学习经典算法</span>
+            <span class="post-date" title="2020-06-16 10:36:50">2020/06/16</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/tensorflow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tensorflow 学习笔记">tensorflow 学习笔记</span>
+            <span class="post-date" title="2020-06-05 01:49:53">2020/06/05</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/%E6%B7%B1%E5%BA%A6%E7%90%86%E8%A7%A3%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="深度理解卷积神经网络工作原理">深度理解卷积神经网络工作原理</span>
+            <span class="post-date" title="2020-06-04 13:24:45">2020/06/04</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E7%88%AC%E8%99%AB%E7%9A%84%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫的定时执行">爬虫的定时执行</span>
+            <span class="post-date" title="2020-04-06 22:44:47">2020/04/06</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/Token-%EF%BC%8CCookie%E5%92%8CSession%E7%9A%84%E5%8C%BA%E5%88%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Token ，Cookie 和 Session 的区别">Token ，Cookie 和 Session 的区别</span>
+            <span class="post-date" title="2020-04-03 10:46:54">2020/04/03</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E5%9C%A8python%E4%B8%AD%E8%BF%9B%E8%A1%8C%E8%A7%86%E9%A2%91-%E9%9F%B3%E9%A2%91%E5%A4%84%E7%90%86%E5%8F%8A%E5%90%88%E5%B9%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="在 python 中进行视频 - 音频处理及合并">在 python 中进行视频 - 音频处理及合并</span>
+            <span class="post-date" title="2020-03-29 10:56:44">2020/03/29</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8BJS%E8%A7%A3%E5%AF%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之 JS 解密">反反爬虫之 JS 解密</span>
+            <span class="post-date" title="2020-03-24 10:04:43">2020/03/24</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E7%90%86%E8%A7%A3python%E4%B8%AD%E7%9A%84%E9%97%AD%E5%8C%85%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="理解 python 中的闭包与装饰器">理解 python 中的闭包与装饰器</span>
+            <span class="post-date" title="2020-03-21 17:34:45">2020/03/21</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Mongodb%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Mongodb 数据库入门">Mongodb 数据库入门</span>
+            <span class="post-date" title="2020-03-17 22:50:33">2020/03/17</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%8A%A0%E4%B8%AA%E7%A9%BA%E6%A0%BC%E5%91%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="为什么不加个空格呢">为什么不加个空格呢</span>
+            <span class="post-date" title="2020-03-14 13:53:44">2020/03/14</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8/"
+           data-tag="yield"
+           data-author="" >
+            <span class="post-title" title="迭代器与生成器">迭代器与生成器</span>
+            <span class="post-date" title="2020-03-13 21:58:25">2020/03/13</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E6%BB%91%E5%9D%97%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之滑块验证码">反反爬虫之滑块验证码</span>
+            <span class="post-date" title="2020-03-08 21:00:17">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E5%9B%BE%E7%89%87%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之图片验证码">反反爬虫之图片验证码</span>
+            <span class="post-date" title="2020-03-08 16:16:16">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Python%E6%93%8D%E4%BD%9CRedis/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Python 操作 Redis">Python 操作 Redis</span>
+            <span class="post-date" title="2020-03-07 16:15:44">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy-Redis%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Scrapy-Redis 分布式爬虫">Scrapy-Redis 分布式爬虫</span>
+            <span class="post-date" title="2020-03-07 15:35:50">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%ABRequest%E5%8E%BB%E9%87%8D%E5%8F%8A%E8%BF%87%E6%BB%A4%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫 Request 去重及过滤器">爬虫 Request 去重及过滤器</span>
+            <span class="post-date" title="2020-03-07 15:22:23">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Redis%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Redis 数据库">Redis 数据库</span>
+            <span class="post-date" title="2020-03-06 20:30:00">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Pymysql%E4%B8%8EORM%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="pymysql-ORM"
+           data-author="" >
+            <span class="post-title" title="Pymysql 与 ORM 操作数据库">Pymysql 与 ORM 操作数据库</span>
+            <span class="post-date" title="2020-03-06 10:49:03">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/MySql%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Mysql"
+           data-author="" >
+            <span class="post-title" title="MySql 数据库">MySql 数据库</span>
+            <span class="post-date" title="2020-03-04 23:31:02">2020/03/04</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy%E6%A1%86%E6%9E%B6%E7%88%AC%E8%99%AB/"
+           data-tag="Scrapy"
+           data-author="" >
+            <span class="post-title" title="Scrapy 框架爬虫">Scrapy 框架爬虫</span>
+            <span class="post-date" title="2020-03-02 10:44:55">2020/03/02</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="多线程与多进程爬虫">多线程与多进程爬虫</span>
+            <span class="post-date" title="2020-03-01 15:33:08">2020/03/01</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Selenium%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%A8%A1%E6%8B%9F/"
+           data-tag="Selenium"
+           data-author="" >
+            <span class="post-title" title="Selenium 自动化测试模拟">Selenium 自动化测试模拟</span>
+            <span class="post-date" title="2020-02-29 21:29:54">2020/02/29</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96-%E6%96%87%E4%BB%B6%E4%BF%9D%E5%AD%98/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="数据持久化 - 文件保存本地">数据持久化 - 文件保存本地</span>
+            <span class="post-date" title="2020-02-27 22:01:14">2020/02/27</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫基础入门">爬虫基础入门</span>
+            <span class="post-date" title="2020-02-26 20:44:27">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/CSS%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%8EXpath%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96/"
+           data-tag="CSS-Xpath"
+           data-author="" >
+            <span class="post-title" title="CSS 选择器与 Xpath 数据提取">CSS 选择器与 Xpath 数据提取</span>
+            <span class="post-date" title="2020-02-26 19:07:35">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Seaborn-Pygal-Pyecharts%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Seaborn,pygal,Pyecharts"
+           data-author="" >
+            <span class="post-title" title="Seaborn-Pygal-Pyecharts 可视化">Seaborn-Pygal-Pyecharts 可视化</span>
+            <span class="post-date" title="2020-02-22 16:24:55">2020/02/22</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/python%E4%B9%8BMatplotlib%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Matplotlib"
+           data-author="" >
+            <span class="post-title" title="python 之 Matplotlib 可视化">python 之 Matplotlib 可视化</span>
+            <span class="post-date" title="2020-02-20 20:28:44">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%A4%84%E7%90%86%E5%AE%9E%E6%93%8D/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Pandas 数据分析处理实操">Pandas 数据分析处理实操</span>
+            <span class="post-date" title="2020-02-20 10:51:39">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Markdown%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E6%8A%80%E5%B7%A7/"
+           data-tag="Markdown"
+           data-author="" >
+            <span class="post-title" title="Markdown 文本编辑技巧">Markdown 文本编辑技巧</span>
+            <span class="post-date" title="2020-02-18 16:31:40">2020/02/18</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BPandas%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Python 之 Pandas 库从入门到实战">Python 之 Pandas 库从入门到实战</span>
+            <span class="post-date" title="2020-02-15 20:46:52">2020/02/15</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BNumpy%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Numpy"
+           data-author="" >
+            <span class="post-title" title="Python 之 Numpy 库从入门到实战">Python 之 Numpy 库从入门到实战</span>
+            <span class="post-date" title="2020-02-13 23:15:38">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E9%95%9C%E5%83%8F%E6%BA%90%E7%BD%91%E5%9D%80/"
+           data-tag="pip"
+           data-author="" >
+            <span class="post-title" title="python pip 国内镜像大全及库的安装">python pip 国内镜像大全及库的安装</span>
+            <span class="post-date" title="2020-02-13 23:13:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E7%9A%84%E4%B8%89%E7%A7%8D%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 的三种输出格式">python 的三种输出格式</span>
+            <span class="post-date" title="2020-02-13 23:04:49">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E6%97%B6%E9%97%B4%E6%A8%A1%E5%9D%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的时间模块">python 中的时间模块</span>
+            <span class="post-date" title="2020-02-13 23:01:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E6%9F%A5%E7%9C%8B%E4%BB%BB%E4%BD%95%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E7%94%A8%E6%B3%95%E7%9A%84%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 查看任何第三方库的用法的方法">python 查看任何第三方库的用法的方法</span>
+            <span class="post-date" title="2020-02-13 22:57:50">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Anaconda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8Epyinstaller%E7%A8%8B%E5%BA%8F%E6%89%93%E5%8C%85/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Anaconda 环境配置与 pyinstaller 程序打包">Anaconda 环境配置与 pyinstaller 程序打包</span>
+            <span class="post-date" title="2020-02-13 20:01:52">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%BD%BF%E7%94%A8Hexo-Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%85%8D%E8%B4%B9%E5%8D%9A%E5%AE%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="使用 Hexo+Github 搭建个人免费博客">使用 Hexo+Github 搭建个人免费博客</span>
+            <span class="post-date" title="2020-02-13 15:44:02">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E5%85%B3%E4%BA%8Ehexo%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"
+           data-tag="Hexo"
+           data-author="" >
+            <span class="post-title" title="关于 hexo 使用过程中报错问题汇总">关于 hexo 使用过程中报错问题汇总</span>
+            <span class="post-date" title="2020-02-12 23:03:46">2020/02/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-Python之Pandas库从入门到实战" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Python 之 Pandas 库从入门到实战</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="数据分析">数据分析</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color2">Pandas</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2025-12-13 13:23:10'>2020-02-15 20:46</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:9.4k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%20Pandas"><span class="toc-text">什么是 Pandas?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B9%A0%20pandas"><span class="toc-text">为什么要学习 pandas?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%20%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-text">1. 数据结构 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-Series"><span class="toc-text">1.1 Series</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-1-%20%E5%88%9B%E5%BB%BA"><span class="toc-text">1.1.1 创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-2-%20%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="toc-text">1.1.2 基本使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95"><span class="toc-text">索引</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%87%E7%89%87"><span class="toc-text">切片</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%BF%E6%92%AD"><span class="toc-text">广播</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A5%E5%85%85"><span class="toc-text">补充</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-DataFrame"><span class="toc-text">1.2 DataFrame</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-1-%20%E5%88%9B%E5%BB%BA"><span class="toc-text">1.2.1 创建 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-2-%20%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="toc-text">1.2.2 基本使用 </span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7"><span class="toc-text"> 属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%AC%E7%BD%AE"><span class="toc-text">转置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%97%E7%B4%A2%E5%BC%95"><span class="toc-text">列索引</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A2%9E%E5%8A%A0%E5%88%97"><span class="toc-text">增加列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%88%97"><span class="toc-text">删除列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%96%E5%80%BC"><span class="toc-text">取值</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-DataFrame-%20%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-text">2. DataFrame 基本操作 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%20%E7%B4%A2%E5%BC%95"><span class="toc-text">2.1 索引</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%97%E7%B4%A2%E5%BC%95%20-1"><span class="toc-text">列索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%8C%E7%B4%A2%E5%BC%95"><span class="toc-text">行索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E6%96%B0%E7%B4%A2%E5%BC%95"><span class="toc-text">重新索引 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A2%9E%E5%8A%A0%E5%88%97%20-1"><span class="toc-text">增加列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A2%9E%E5%8A%A0%E8%A1%8C"><span class="toc-text">增加行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4"><span class="toc-text">删除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%B9"><span class="toc-text">改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E7%89%87%20-1"><span class="toc-text">切片</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%20%E8%BF%90%E7%AE%97"><span class="toc-text">2.2 运算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1-%20%E5%AF%B9%E9%BD%90%E8%BF%90%E7%AE%97"><span class="toc-text">2.2.1 对齐运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2-%20%E5%A1%AB%E5%85%85%E7%BC%BA%E5%A4%B1%E5%80%BC%E8%BF%90%E7%AE%97"><span class="toc-text">2.2.2 填充缺失值运算</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-Pandas%20%E7%9A%84%E5%87%BD%E6%95%B0%E5%BA%94%E7%94%A8"><span class="toc-text">3. Pandas 的函数应用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%20%E5%BA%94%E7%94%A8%E5%87%BD%E6%95%B0"><span class="toc-text">3.1 应用函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-%20%E6%8E%92%E5%BA%8F"><span class="toc-text">3.2 排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-%20%E5%A4%84%E7%90%86%E7%BC%BA%E5%A4%B1%E5%80%BC"><span class="toc-text">3.3 处理缺失值</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%20%E5%B1%82%E7%BA%A7%E7%B4%A2%E5%BC%95"><span class="toc-text">4. 层级索引</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-%20%E9%80%89%E5%8F%96"><span class="toc-text">4.1 选取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-%20%E4%BA%A4%E6%8D%A2"><span class="toc-text">4.2 交换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-%20%E6%8E%92%E5%BA%8F"><span class="toc-text">4.3 排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4-%20%E9%87%8D%E5%A1%91"><span class="toc-text">4.4 重塑 </span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%20%E7%BB%9F%E8%AE%A1%E8%AE%A1%E7%AE%97"><span class="toc-text">5. 统计计算</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E6%8F%8F%E8%BF%B0"><span class="toc-text">统计描述</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-%20%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86"><span class="toc-text">6. 数据处理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#6-1-%20%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96"><span class="toc-text">6.1 文件读取</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-1-%20%E5%B8%B8%E7%94%A8"><span class="toc-text">6.1.1 常用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-2-%20%E6%80%BB%E7%BB%93"><span class="toc-text">6.1.2 总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-3-%20%E5%A4%A7%E6%96%87%E4%BB%B6%E5%88%86%E5%9D%97%E8%AF%BB%E5%8F%96"><span class="toc-text">6.1.3 大文件分块读取 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-2-%20%E6%96%87%E4%BB%B6%E4%BF%9D%E5%AD%98"><span class="toc-text">6.2 文件保存 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-3-%20%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97"><span class="toc-text">6.3 数据清洗 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-1-%20%E5%A4%84%E7%90%86%E7%BC%BA%E5%A4%B1%E5%80%BC"><span class="toc-text">6.3.1 处理缺失值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-2-%20%E5%A4%84%E7%90%86%E9%87%8D%E5%A4%8D%E8%A1%8C"><span class="toc-text">6.3.2 处理重复行 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-3-%20%E6%95%B0%E6%8D%AE%E5%88%86%E7%B1%BB"><span class="toc-text">6.3.3 数据分类 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-4-%20%E6%9B%BF%E6%8D%A2%E5%80%BC"><span class="toc-text">6.3.4 替换值 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-5-%20%E9%87%8D%E5%91%BD%E5%90%8D%E8%BD%B4%E7%B4%A2%E5%BC%95"><span class="toc-text">6.3.5 重命名轴索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-6-%20%E7%A6%BB%E6%95%A3%E5%8C%96%E4%B8%8E%E9%9D%A2%E5%85%83%E5%88%92%E5%88%86"><span class="toc-text">6.3.6 离散化与面元划分 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-7-%20%E6%8F%90%E5%8F%96%E5%BC%82%E5%B8%B8%E5%80%BC"><span class="toc-text">6.3.7 提取异常值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-7-%20%E9%87%87%E6%A0%B7%E4%B8%8E%E9%9A%8F%E6%9C%BA%E6%8E%92%E5%88%97"><span class="toc-text">6.3.7 采样与随机排列</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-4-%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C"><span class="toc-text">6.4 字符串操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-1-%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95"><span class="toc-text">6.4.1 字符串方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-2-%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%96%B9%E6%B3%95"><span class="toc-text">6.4.2 正则表达式方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-pandas%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95"><span class="toc-text">6.4 pandas 字符串方法 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-5-%20%E6%95%B0%E6%8D%AE%E8%A7%84%E6%95%B4"><span class="toc-text">6.5 数据规整</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-5-1-%20%E8%A7%84%E6%95%B4%E5%88%86%E5%9D%97"><span class="toc-text">6.5.1 规整分块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-5-2-%20%E6%95%B0%E6%8D%AE%E8%BF%9E%E6%8E%A5"><span class="toc-text">6.5.2 数据连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-5-3-%20%E6%95%B0%E6%8D%AE%E5%90%88%E5%B9%B6"><span class="toc-text">6.5.3 数据合并</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-5-4-%20%E8%BD%B4%E5%90%91%E6%97%8B%E8%BD%AC"><span class="toc-text">6.5.4 轴向旋转</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-6-%20%E6%95%B0%E6%8D%AE%E8%81%9A%E5%90%88%E4%B8%8E%E5%88%86%E7%BB%84"><span class="toc-text">6.6 数据聚合与分组 </span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-%20%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97"><span class="toc-text">7. 时间序列</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#7-1-%20%E5%9F%BA%E7%A1%80"><span class="toc-text">7.1 基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-1-%20%E5%88%9B%E5%BB%BA%E5%8F%8A%E7%B4%A2%E5%BC%95"><span class="toc-text">7.1.1 创建及索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-2-%20%E6%97%B6%E9%97%B4%E7%B4%A2%E5%BC%95%E7%9A%84%E8%8C%83%E5%9B%B4%EF%BC%8C%E9%A2%91%E7%8E%87%EF%BC%8C%E5%8F%8A%E7%A7%BB%E5%8A%A8"><span class="toc-text">7.1.2 时间索引的范围，频率，及移动 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-2-%20%E9%87%8D%E9%87%87%E6%A0%B7%E5%8F%8A%E9%A2%91%E7%8E%87%E8%BD%AC%E6%8D%A2"><span class="toc-text">7.2 重采样及频率转换 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-3-%20%E5%BA%94%E7%94%A8%E6%A1%88%E4%BE%8B"><span class="toc-text">7.3 应用案例</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-%20%E8%80%81%E5%B8%88%E6%80%BB%E7%BB%93"><span class="toc-text">8. 老师总结</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="什么是 Pandas"><a href="# 什么是 Pandas" class="headerlink" title="什么是 Pandas?"></a>什么是 Pandas?</h1><blockquote>
+<p>Pandas 的名称来自于面板数据（panel data）</p>
+</blockquote>
+<p>Pandas 是一个强大的分析结构化数据的工具集，基于 NumPy 构建，提供了 <strong> 高级数据结构 </strong> 和<strong>数据操作工具</strong>，它是使 Python 成为强大而高效的数据分析环境的重要因素之一。</p>
+<ul>
+<li>一个强大的分析和操作大型结构化数据集所需的工具集</li>
+<li>基础是 NumPy，提供了高性能矩阵的运算</li>
+<li>提供了大量能够快速便捷地处理数据的函数和方法</li>
+<li>应用于数据挖掘，数据分析</li>
+<li>提供数据清洗功能</li>
+</ul>
+<h1 id="为什么要学习 pandas"><a href="# 为什么要学习 pandas" class="headerlink" title="为什么要学习 pandas?"></a>为什么要学习 pandas?</h1><p>NumPy 已经能够帮助我们处理数据，能够结合 matplotlib 解决我们数据分析的问题，那么 pandas 学习的目的在什么地方呢？</p>
+<p>NumPy 能够帮我们处理处理数值型数据，但是这还不够， 很多时候，我们的数据除了数值之外，还有字符串，还有时间序列等。</p>
+<h1 id="1- 数据结构"><a href="#1- 数据结构" class="headerlink" title="1. 数据结构"></a>1. 数据结构 </h1><h2 id="1-1-Series"><a href="#1-1-Series" class="headerlink" title="1.1 Series"></a>1.1 Series</h2><h3 id="1-1-1- 创建"><a href="#1-1-1- 创建" class="headerlink" title="1.1.1 创建"></a>1.1.1 创建</h3><p><strong> 从列表创建：</strong></p>
+<pre><code class="python">&gt;&gt;&gt; import pandas as pd
+&gt;&gt;&gt; pd.Series([1,2,3,4,5])
+0    1
+1    2
+2    3
+3    4
+4    5
+dtype: int64</code></pre>
+<p><strong>从数组创建：</strong></p>
+<pre><code class="python">&gt;&gt;&gt; import pandas as pd
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; pd.Series(np.arange(5))
+0    0
+1    1
+2    2
+3    3
+4    4
+dtype: int32</code></pre>
+<p><strong>自定义索引：</strong></p>
+<pre><code class="python">&gt;&gt;&gt; a=pd.Series([1,2,3,4,5],index=[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;d&#39;,&#39;e&#39;])    // 自定义索引
+&gt;&gt;&gt; a                             
+a    1
+b    2
+c    3
+d    4
+e    5               // 此时 a,b,c,d,e 叫标签，索引还是 0-4
+dtype: int64
+&gt;&gt;&gt; a.values
+array([1, 2, 3, 4, 5], dtype=int64)
+&gt;&gt;&gt; a.index
+Index([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;], dtype=&#39;object&#39;)</code></pre>
+<p><strong>从字典创建：</strong></p>
+<pre><code class="python">&gt;&gt;&gt; dict=&#123;&#39;name&#39;:&#39; 姚明 &#39;,&#39;age&#39;:46,&#39;height&#39;:190&#125;
+&gt;&gt;&gt; pd.Series(dict)
+name      姚明
+age        46
+height    190
+dtype: object</code></pre>
+<h3 id="1-1-2- 基本使用"><a href="#1-1-2- 基本使用" class="headerlink" title="1.1.2 基本使用"></a>1.1.2 基本使用</h3><pre><code class="python">&gt;&gt;&gt; dict=&#123;&#39;name&#39;:&#39; 姚明 &#39;,&#39;age&#39;:46,&#39;height&#39;:190&#125;
+&gt;&gt;&gt; a=pd.Series(dict,index=[&#39;name&#39;,&#39;age&#39;,&#39;sex&#39;])
+&gt;&gt;&gt; a
+name     姚明
+age      46
+sex     NaN
+dtype: object
+
+&gt;&gt;&gt; a.isnull()  // 检查是否为空
+name    False
+age     False
+sex      True
+dtype: bool
+&gt;&gt;&gt; a.notnull()   // 检查是否不为空</code></pre>
+<h4 id="索引"><a href="# 索引" class="headerlink" title="索引"></a>索引</h4><pre><code class="python">&gt;&gt;&gt; a[0]             // 位置索引
+&gt;&gt;&gt; a[&#39;name&#39;]        // 标签索引
+&gt;&gt;&gt; a[-1]            // 负号索引
+&gt;&gt;&gt; a[[0,2]]         // 选取多个，也可标签 a[[&#39;name&#39;,&#39;sex&#39;]]
+
+&gt;&gt;&gt; s=pd.Series(np.arange(5))
+&gt;&gt;&gt; s[s&gt;3]           // 布尔索引</code></pre>
+<h4 id="切片"><a href="# 切片" class="headerlink" title="切片"></a>切片</h4><pre><code class="python">&gt;&gt;&gt; a[0:2]
+&gt;&gt;&gt; a[&#39;name&#39;:&#39;sex&#39;]</code></pre>
+<h4 id="广播"><a href="# 广播" class="headerlink" title="广播"></a>广播</h4><pre><code class="python">&gt;&gt;&gt; s=pd.Series(np.arange(5),index=[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;d&#39;,&#39;e&#39;])
+&gt;&gt;&gt; s+2
+a    2
+b    3
+c    4
+d    5
+e    6
+dtype: int32</code></pre>
+<h4 id="补充"><a href="# 补充" class="headerlink" title="补充"></a>补充</h4><p><code>s.index.unique()</code> 返回索引唯一值</p>
+<p><code>s.index.is_unique()</code>  判断是否为唯一值 返回<code>True/False</code></p>
+<p><code>s.value_counts()</code>     返回值以及计数，组成一个 Series</p>
+<p><code>s.isin([8])</code> 判断 s 里面是否有 8  返回布尔类型的 Series    # 也可对 DataFrame 进行判断</p>
+<h2 id="1-2-DataFrame"><a href="#1-2-DataFrame" class="headerlink" title="1.2 DataFrame"></a>1.2 DataFrame</h2><p>表格型数据结构</p>
+<h3 id="1-2-1- 创建"><a href="#1-2-1- 创建" class="headerlink" title="1.2.1 创建"></a>1.2.1 创建 </h3><p><strong> 从字典类</strong></p>
+<blockquote>
+<p>数组，列表和元祖构成的字典创建 dataframe</p>
+<p>Series 构成的字典创建 dataframe</p>
+<p>字典构成的字典创建 dataframe</p>
+</blockquote>
+<pre><code class="python">&gt;&gt;&gt; import pandas as pd
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; data=&#123;
+    &quot;a&quot;:[1,2,3,4],
+    &quot;b&quot;:(5,6,7,8),
+    &quot;c&quot;:np.arange(9,13),
+    &quot;d&quot;:pd.Series(np.range(4))
+&#125;
+&gt;&gt;&gt; df=pd.DataFrame(data)     // 创建 DataFrame 可以指定 index=
+&gt;&gt;&gt; df
+     a     b     c     d
+0     1     5     9     0
+1     2     6     10     1
+2     3     7     11     2
+3     4     8     12     3
+
+&gt;&gt;&gt; data=&#123;
+    &quot;a&quot;:&#123;&#39;apple&#39;:&quot;4&quot;,&#39;banana&#39;:&#39;2.5&#39;&#125;,
+    &quot;b&quot;:&#123;&#39;apple&#39;:&quot;3.5&quot;,&#39;banana&#39;:&#39;3&#39;&#125;,
+    &quot;c&quot;:&#123;&#39;apple&#39;:&quot;3.5&quot;&#125;
+&#125;
+&gt;&gt;&gt; pd.DataFrame(data)
+          a     b      c    
+apple       4   3.5      3.5   
+banana     2.5     3      NaN</code></pre>
+<p><strong>从列表类</strong></p>
+<blockquote>
+<p>2D ndarray 创建 dataframe</p>
+<p>字典构成的列表创建 dataframe</p>
+<p>Series 构成的字典创建 dataframe</p>
+</blockquote>
+<pre><code class="python">&gt;&gt;&gt;pd.DataFrame(np.arange(12).reshape(3,4),index=[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;],columns=[&#39;A&#39;,&#39;B&#39;,&#39;C&#39;,&#39;D&#39;])
+     A     B     C     D
+a     0     1     2     3
+b     4     5     6     7
+c     8     9     10     11          //index 和 columns 指定索引名称</code></pre>
+<h3 id="1-2-2- 基本使用"><a href="#1-2-2- 基本使用" class="headerlink" title="1.2.2 基本使用"></a>1.2.2 基本使用 </h3><h4 id="属性"><a href="# 属性" class="headerlink" title="属性"></a> 属性</h4><pre><code class="python">&gt;&gt;&gt; df
+     a     b     c     d
+0     1     5     9     0
+1     2     6     10     1
+2     3     7     11     2
+3     4     8     12     3
+&gt;&gt;&gt; df.index     // 查看数据表的行索引
+RangeIndex(start=0, stop=4, step=1)
+&gt;&gt;&gt; df.columns   // 查看数据表的列索引
+Index([&#39;a&#39;, &#39;b&#39;, &#39;c&#39; ,&#39;d&#39;], dtype=&#39;object&#39;)
+&gt;&gt;&gt; df.values    // 查看数据表的值
+array([[1,  5,  9,  0],
+       [2,  6, 10,  1],
+       [3,  7, 11,  2],
+       [4,  8, 12,  3]], dtype=int64)
+&gt;&gt;&gt; df.dtypes   // 查看每列数据格式
+&gt;&gt;&gt; df.info()   // 查看数据表的信息（维度，列名，数据格式。所占空间等）
+&gt;&gt;&gt; df[&#39;d&#39;].astype(&#39;float&#39;)  // 将数据格式转换成浮点型</code></pre>
+<h4 id="转置"><a href="# 转置" class="headerlink" title="转置"></a>转置</h4><pre><code class="python">&gt;&gt;&gt; df.T
+     a     b     c
+A     0     4     8
+B     1     5     9
+C     2     6     10
+D     3     7     11</code></pre>
+<h4 id="列索引"><a href="# 列索引" class="headerlink" title="列索引"></a>列索引</h4><pre><code class="python">&gt;&gt;&gt; df.T[&#39;a&#39;]    // 直接索引默认只能列索引  且只能标签索引，不能位置索引
+A    0
+B    1
+C    2
+D    3
+Name: a, dtype: int32</code></pre>
+<h4 id="增加列"><a href="# 增加列" class="headerlink" title="增加列"></a>增加列</h4><pre><code class="python">&gt;&gt;&gt; df.T[&#39;d&#39;]=[&#39;2&#39;,&#39;2&#39;,&#39;2&#39;,&#39;2&#39;]
+&gt;&gt;&gt; df.T
+     a     b     c     d
+A     0     4     8     2
+B     1     5     9     2
+C     2     6     10     2
+D     3     7     11     2</code></pre>
+<h4 id="删除列"><a href="# 删除列" class="headerlink" title="删除列"></a>删除列</h4><pre><code class="python">&gt;&gt;&gt; del(df.T[&#39;d&#39;])
+&gt;&gt;&gt; df.T
+     a     b     c 
+A     0     4     8     
+B     1     5     9     
+C     2     6     10     
+D     3     7     11     </code></pre>
+<h4 id="取值"><a href="# 取值" class="headerlink" title="取值"></a>取值</h4><pre><code class="python">&gt;&gt;&gt; df.T[&#39;b&#39;][2]   // 列索引之后变成了 Series, 故其后可以进行 &#39; 位置索引 &#39;&#39; 标签索引 &#39;&#39; 负号索引 &#39;&#39; 布尔索引 &#39;
+6</code></pre>
+<h1 id="2-DataFrame- 基本操作"><a href="#2-DataFrame- 基本操作" class="headerlink" title="2. DataFrame 基本操作"></a>2. DataFrame 基本操作 </h1><h2 id="2-1- 索引"><a href="#2-1- 索引" class="headerlink" title="2.1 索引"></a>2.1 索引</h2><p> 列名索引：<code>df[&#39; 列名 &#39;]</code>   —   适用列索引</p>
+<p>标签索引：<code>df.loc[&#39; 行名 &#39;]</code> —  适用行索引</p>
+<p>位置索引：<code>df.iloc[]</code>  —  列行索引均可</p>
+<p>切片：<code>df[:]</code>—  行切片</p>
+<h3 id="列索引 -1"><a href="# 列索引 -1" class="headerlink" title="列索引"></a>列索引</h3><pre><code class="python">&gt;&gt;&gt; df
+     A     B     C     
+a     0     1     2     
+b     3     4     5     
+c     6     7     8     
+
+&gt;&gt;&gt; df[&#39;A&#39;]      // 列名索引，取 A 列数据
+a    0
+b    4
+c    8
+Name: A, dtype: int32
+&gt;&gt;&gt; df.columns[1]
+&#39;B&#39;
+&gt;&gt;&gt; df.columns[&#39;A&#39;]   // 会报错
+&gt;&gt;&gt; df.iloc[:,1]     // 位置索引，可取到 B 列数据</code></pre>
+<h3 id="行索引"><a href="# 行索引" class="headerlink" title="行索引"></a>行索引</h3><pre><code class="python">&gt;&gt;&gt; df
+     A     B     C     
+a     0     1     2     
+b     3     4     5     
+c     6     7     8 
+
+#index 索引
+&gt;&gt;&gt; df.index[1]
+&#39;b&#39;
+&gt;&gt;&gt; df.index[1]=&#39;e&#39;   // 会报错，不支持修改行索引名称
+&gt;&gt;&gt; df.index[&#39;a&#39;]     // 会报错，无法取出 &#39;a&#39; 行数据
+
+# 标签索引 loc
+&gt;&gt;&gt; df.loc[&#39;a&#39;]     // 终于能取到行数据了，也能增加行……此法不能取列
+A    0
+B    1
+C    2
+Name: a, dtype: int32
+
+#支持切片索引
+&gt;&gt;&gt; df[:2]
+     A     B     C
+a     0     1     2
+b     3     4     5
+
+#位置索引 iloc
+&gt;&gt;&gt; df.iloc[2]   // 选取第三行数据</code></pre>
+<h3 id="重新索引"><a href="# 重新索引" class="headerlink" title="重新索引"></a><strong>重新索引 </strong></h3><p><strong> 行重建</strong></p>
+<pre><code class="python">&gt;&gt;&gt; df.reindex([&#39;A&#39;,&#39;B&#39;,&#39;C&#39;,&#39;D&#39;,&#39;E&#39;])
+      A       B      C       D
+A     NaN     NaN     NaN     NaN
+B     NaN     NaN     NaN     NaN
+C     NaN     NaN     NaN     NaN
+D     NaN     NaN     NaN     NaN
+E     NaN     NaN     NaN     NaN
+// 以上只能再新增 A-E 行数据而已
+
+&gt;&gt;&gt; df.reindex([&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;d&#39;])
+      A     B           C     D
+a     0.0     1.0     2.0     3.0
+b     4.0     5.0     6.0     7.0
+c     8.0     9.0     10.0     11.0
+d     NaN     NaN     NaN     NaN
+// a,b,c 照旧，新增了 d 行  </code></pre>
+<p><strong>列重建</strong></p>
+<pre><code class="python">&gt;&gt;&gt; df
+     A     B     C     D
+a     0     1     2     3
+b     4     5     6     7
+c     8     9     10     11
+&gt;&gt;&gt; df.reindex(columns=[&#39;C&#39;,&#39;A&#39;,&#39;B&#39;,&#39;E&#39;])
+     C     A     B     E
+a     2     0     1     NaN
+b     6     4     5     NaN
+c     10     8     9     NaN</code></pre>
+<p><strong>列变索引</strong></p>
+<pre><code class="python">&gt;&gt;&gt; df.set_index(&#39;D&#39;)   // 将“D”列变成索引
+     A     B     C
+D             
+3     0     1     2
+7     4     5     6
+11     8     9     10</code></pre>
+<h3 id="增加列 -1"><a href="# 增加列 -1" class="headerlink" title="增加列"></a>增加列</h3><pre><code class="python">&gt;&gt;&gt; df
+     A     B     C     
+a     0     1     2     
+b     3     4     5     
+c     6     7     8 
+&gt;&gt;&gt; df[0]=[1,1,1]      // 默认往后增加列     
+     A     B     C     0
+a     0     1     2     1
+b     3     4     5     1
+c     6     7     8     1
+
+&gt;&gt;&gt; df.insert(0,&#39;E&#39;,[88,88,88])   // 指定位置插入列
+     E     A     B     C
+a     88     0     1     2
+b     88     3     4     5
+c     88     6     7     8</code></pre>
+<h3 id="增加行"><a href="# 增加行" class="headerlink" title="增加行"></a>增加行</h3><pre><code class="python">&gt;&gt;&gt; df.loc(6)=[1,1,1]
+&gt;&gt;&gt; df
+     A     B     C
+a     0     1     2
+b     3     4     5
+c     6     7     8
+6     1     1     1
+
+&gt;&gt;&gt; row=&#123;&#39;A&#39;:3,&#39;B&#39;:3,&#39;C&#39;:3&#125;
+&gt;&gt;&gt; df.append(row,ignore_index=True)  // 默认为 false, 但是为 true 时，会自动使用新索引
+     A     B     C
+0     0     1     2
+1     3     4     5
+2     6     7     8
+3     1     1     1
+4     3     3     3</code></pre>
+<h3 id="删除"><a href="# 删除" class="headerlink" title="删除"></a>删除</h3><pre><code class="python">&gt;&gt;&gt; df
+     A     B     C
+a     0     1     2
+b     3     4     5
+c     6     7     8
+
+# del
+&gt;&gt;&gt; del(df[&#39;A&#39;])         // 只能删除列，且每次只能删除一个
+
+#.drop
+&gt;&gt;&gt; df.drop(columns=[&#39;A&#39;,&#39;B&#39;])   // 删除列
+&gt;&gt;&gt; df.drop(index=[&#39;a&#39;,&#39;b&#39;])     // 删除行
+&gt;&gt;&gt; df.drop([&#39;a&#39;,&#39;b&#39;])           // 删除行
+// 此法还可以指定 axis 来取行还是列
+
+&gt;&gt;&gt; df.drop(&#39;a&#39;,inplace=True)  // 直接在原数据上删除，不返回新对象</code></pre>
+<h3 id="改"><a href="# 改" class="headerlink" title="改"></a>改</h3><pre><code class="python">&gt;&gt;&gt; df
+     A     B     C
+a     0     1     2
+b     3     4     5
+c     6     7     8
+
+&gt;&gt;&gt; df[&#39;A&#39;]=[1,1,1]   // 直接对 A 修改
+&gt;&gt;&gt; df.A = 1          // 这样也是可以的
+
+&gt;&gt;&gt;df.loc[&#39;a&#39;,&#39;A&#39;]=100   // 修改某一个值
+     A     B     C
+a 100     1     2
+b     3     4     5
+c     6     7     8</code></pre>
+<h3 id="切片 -1"><a href="# 切片 -1" class="headerlink" title="切片"></a>切片</h3><pre><code class="python">&gt;&gt;&gt; df.loc[&#39;a&#39;:&#39;b&#39;,&#39;A&#39;:&#39;B&#39;]   // 标签索引切片
+     A     B
+a     0     1
+b     3     4
+&gt;&gt;&gt; de.iloc(1:2,0:2)          // 位置索引切片</code></pre>
+<h2 id="2-2- 运算"><a href="#2-2- 运算" class="headerlink" title="2.2 运算"></a>2.2 运算</h2><h3 id="2-2-1- 对齐运算"><a href="#2-2-1- 对齐运算" class="headerlink" title="2.2.1 对齐运算"></a>2.2.1 对齐运算</h3><pre><code class="python">&gt;&gt;&gt; df1=pd.DataFrame(np.arange(12).reshape(4,3),index=[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;d&#39;],columns=[&#39;A&#39;,&#39;B&#39;,&#39;C&#39;])
+
+     A     B     C
+a     0     1     2
+b     3     4     5
+c     6     7     8
+d     9     10     11
+&gt;&gt;&gt; df2=pd.DataFrame(np.arange(9).reshape(3,3),index=[&#39;a&#39;,&#39;d&#39;,&#39;f&#39;],columns=list(&quot;ABD&quot;))
+
+     A     B     D
+a     0     1     2
+d     3     4     5
+f     6     7     8
+
+&gt;&gt;&gt; df1 + df2
+       A       B       C       D
+a     0.0     2.0     NaN     NaN
+b     NaN     NaN     NaN     NaN
+c     NaN     NaN     NaN     NaN
+d     12.0     14.0     NaN     NaN
+f     NaN     NaN     NaN     NaN
+// 不存在默认为为空，进行相加</code></pre>
+<p>DataFrame 与数组 numpy 数据一样，可以进行加减乘除多元运算，但是不能进行直接进行多元逻辑运算（逻辑或，逻辑与）。<br>要想进行多元逻辑运算，可使用 <code>np.logical_and(arr1,arr2,arr3)</code> 对<code>arr1,arr2,arr3</code>进行与集运算，但要求这三个数组形状一样。同理，逻辑或为<code>np.logical_or(arr1,arr2,arr3)</code>。</p>
+<h3 id="2-2-2- 填充缺失值运算"><a href="#2-2-2- 填充缺失值运算" class="headerlink" title="2.2.2 填充缺失值运算"></a>2.2.2 填充缺失值运算</h3><pre><code class="python">&gt;&gt;&gt; df1.add(df2.fill_value=0)
+       A       B       C       D
+a     0.0     2.0     2.0     2.0
+b     3.0     4.0     5.0     NaN
+c     6.0     7.0     8.0     NaN
+d     12.0     14.0     11.0     5.0
+f     6.0     7.0     NaN     8.0
+// 遇到数字加空值，这个空值填充为 0, 按数字加零进行计算，若是空值加空值，还是为空</code></pre>
+<h1 id="3-Pandas 的函数应用"><a href="#3-Pandas 的函数应用" class="headerlink" title="3. Pandas 的函数应用"></a>3. Pandas 的函数应用</h1><h2 id="3-1- 应用函数"><a href="#3-1- 应用函数" class="headerlink" title="3.1 应用函数"></a>3.1 应用函数</h2><ul>
+<li><strong>apply 将函数应用到列或者行</strong></li>
+</ul>
+<pre><code class="python">&gt;&gt;&gt; df=pd.DataFrame(np.random.randn(3,4))
+&gt;&gt;&gt; df
+           0           1            2            3
+0     0.330759     0.730455     -1.579240     -0.731951
+1     0.612881     0.097846     1.265440     2.285802
+2     -1.503725     1.155428     1.156895     0.776801
+
+&gt;&gt;&gt; f=lambda x:x.max()   // 定义一个匿名函数，给一个 x，就求 x 的最大值
+&gt;&gt;&gt; df.apply(f)          // 默认 axis=0, 按列求每一列的最大值
+0    0.612881
+1    1.155428
+2    1.265440
+3    2.285802
+dtype: float64</code></pre>
+<ul>
+<li><strong>applymap 将函数应用到每一个数据</strong></li>
+</ul>
+<pre><code class="python">&gt;&gt;&gt; f=lambda x:&quot;%.2f&quot;%x     // 定义一个匿名函数，给一个 x，就对 x 保留两位小数
+&gt;&gt;&gt; df.applymap(f)
+      0       1       2       3
+0     0.33     0.73     -1.58     -0.73
+1     0.61     0.10     1.27     2.29
+2     -1.50     1.16     1.16     0.78</code></pre>
+<p><code>agg(), aggregate(), apply()</code>这三种函数有着类似的功能。</p>
+<h2 id="3-2- 排序"><a href="#3-2- 排序" class="headerlink" title="3.2 排序"></a>3.2 排序</h2><ul>
+<li><strong>按索引排序</strong></li>
+</ul>
+<pre><code class="python">&gt;&gt;&gt; df=pd.DataFrame(np.arange(12).reshape(3,4),index=list(&quot;bca&quot;),columns=list(&#39;CBDA&#39;))
+&gt;&gt;&gt; df
+    C     B     D     A
+b     0     1     2     3
+c     4     5     6     7
+a     8     9     10     11
+&gt;&gt;&gt; df.sort_index()     // 按行索引大小排序……若想倒序 设置 ascending=False
+     C     B     D     A
+a     8     9     10     11
+b     0     1     2     3
+c     4     5     6     7
+                       // 若按照列索引排序，只需设置 axis=1</code></pre>
+<ul>
+<li><strong>按值排序</strong></li>
+</ul>
+<pre><code class="python">&gt;&gt;&gt; df=pd.DataFrame(&#123;&#39;a&#39;:[3,7,0,9],&#39;c&#39;:[5,2,8,0],&#39;b&#39;:[9,5,2,8]&#125;)
+&gt;&gt;&gt; df
+     a     c     b
+0     3     5     9
+1     7     2     5
+2     0     8     2
+3     9     0     8
+&gt;&gt;&gt; df.sort_values(by=[&#39;a&#39;,&#39;c&#39;])      // 按照 a 列数值大小排列，若 a 列相同，则按 c 列
+     a     c     b
+2     0     8     2
+0     3     5     9
+1     7     2     5
+3     9     0     8</code></pre>
+<h2 id="3-3- 处理缺失值"><a href="#3-3- 处理缺失值" class="headerlink" title="3.3 处理缺失值"></a>3.3 处理缺失值</h2><p><code>df.isnull()</code> 判断每个位置是否有缺失值，返回布尔类型的 DataFrame</p>
+<p><code>df.notnull()</code> 判断每个位置是否无缺失值，返回布尔类型的 DataFrame</p>
+<p><code>df.dropna()</code> 删除有缺失值的行 ，可传参<code>how=&#39;all&#39;</code> 默认为<code>&#39;any&#39;</code>，整行都是 nan 才删 / 只要有一个 nan 就删。</p>
+<pre><code class="python">&gt;&gt;&gt; df
+       a       c     b
+0     3.0     5.0     9
+1     7.0     NaN     5
+2     NaN     8.0     2
+3     9.0     0.0     8
+
+&gt;&gt;&gt; df.dropna()            // 默认按行删除   增加 axis=1 可按列删除       
+      a       c     b
+0     3.0     5.0     9
+3     9.0     0.0     8</code></pre>
+<p><code>df.fillna()</code> 填充缺失值：</p>
+<p>可传参<code>&#123;0:1,1:100&#125;</code>，意思是第 0 列缺失值填充为 1，第 1 列缺失值填充为 100；</p>
+<p>可传参<code>method=(&#39;ffill&#39;)</code>，意思是缺失值填充为它的上方的数据，继承上一行的数据；</p>
+<p>可传参<code>method=(&#39;ffill&#39;,limit=2)</code>，意思是对继承的次数进行限制。</p>
+<pre><code class="python">&gt;&gt;&gt; df.fillna(-100)       // 将所有缺失值补充填为 -100
+      a       c     b
+0     3.0     5.0     9
+1     7.0     -100.0     5
+2     -100.0     8.0     2
+3     9.0     0.0     8</code></pre>
+<h1 id="4- 层级索引"><a href="#4- 层级索引" class="headerlink" title="4. 层级索引"></a>4. 层级索引</h1><pre><code class="python">&gt;&gt;&gt; s=pd.Series(np.random.randn(6),index=[[&#39;a&#39;,&#39;a&#39;,&#39;a&#39;,&#39;b&#39;,&#39;b&#39;,&#39;b&#39;],[0,1,2,0,1,2]])
+a  0   -0.981812
+   1   -0.101430
+   2   -1.254341
+b  0    0.371863
+   1    0.434470
+   2   -0.729295
+dtype: float64
+&gt;&gt;&gt; s.index               // 多层索引
+MultiIndex([(&#39;a&#39;, 0),
+            (&#39;a&#39;, 1),
+            (&#39;a&#39;, 2),
+            (&#39;b&#39;, 0),
+            (&#39;b&#39;, 1),
+            (&#39;b&#39;, 2)],
+           )</code></pre>
+<h2 id="4-1- 选取"><a href="#4-1- 选取" class="headerlink" title="4.1 选取"></a>4.1 选取</h2><p><code>s[&#39;a&#39;]</code> 外层选取</p>
+<p><code>s[:,2]</code>内层选取</p>
+<pre><code class="python">&gt;&gt;&gt; s[:,2]    // 选取内层为 2 的数据
+a   -1.254341
+b   -0.729295
+dtype: float64</code></pre>
+<p><code>s[&#39;a&#39;,1]</code> 选取某一个值</p>
+<h2 id="4-2- 交换"><a href="#4-2- 交换" class="headerlink" title="4.2 交换"></a>4.2 交换</h2><p><code>s.swaplevel()</code> 交换内外层的索引</p>
+<pre><code class="python">&gt;&gt;&gt; s.swaplevel()
+0  a   -0.981812
+1  a   -0.101430
+2  a   -1.254341
+0  b    0.371863
+1  b    0.434470
+2  b   -0.729295
+dtype: float64</code></pre>
+<h2 id="4-3- 排序"><a href="#4-3- 排序" class="headerlink" title="4.3 排序"></a>4.3 排序</h2><p><code>s.sortlevel()</code> 先按照外层索引排序，再对内层索引排序</p>
+<h2 id="4-4- 重塑"><a href="#4-4- 重塑" class="headerlink" title="4.4 重塑"></a>4.4 重塑 </h2><p><code>df.stack()</code> 将 DataFrame 变成层级 Series</p>
+<p><code>s.unstack()</code> 将层级 Series 变成 DataFrame</p>
+<pre><code class="python">&gt;&gt;&gt; s=pd.Series(np.random.randn(6),index=[[&#39;a&#39;,&#39;a&#39;,&#39;a&#39;,&#39;b&#39;,&#39;b&#39;,&#39;b&#39;],[0,1,2,0,1,2]])
+a  0   -0.981812
+   1   -0.101430
+   2   -1.254341
+b  0    0.371863
+   1    0.434470
+   2   -0.729295
+&gt;&gt;&gt; s.unstack()         // 将层级 Series 变成 DataFrame
+           0          1             2
+a     -0.981812     -0.10143     -1.254341
+b     0.371863     0.43447     -0.729295</code></pre>
+<p>这样就可以对数据进行切片了。</p>
+<h1 id="5- 统计计算"><a href="#5- 统计计算" class="headerlink" title="5. 统计计算"></a>5. 统计计算</h1><p><code>df.sum()</code>   默认按列数据求和……补充 axis=1 按行数据求和</p>
+<p><code>df.cumsum()</code>  按列往下进行求和</p>
+<pre><code class="python">&gt;&gt;&gt; df=pd.DataFrame(&#123;&#39;a&#39;:[3,7,np.nan,9],&#39;c&#39;:[5,np.nan,8,0],&#39;b&#39;:[9,5,2,8]&#125;)
+       a       c     b
+0     3.0     5.0     9
+1     7.0     NaN     5
+2     NaN     8.0     2
+3     9.0     0.0     8
+
+&gt;&gt;&gt; df.cumsum()    // 默认 skipna=True 跳过缺失值求和
+       a       c     b
+0     3.0     5.0     9
+1     10.0     NaN     14
+2     NaN     13.0     16
+3     19.0     13.0     24</code></pre>
+<p><code>df.mean()</code>  默认按列数据求平均值</p>
+<p><code>df.max()</code>默认按列数据最大值</p>
+<p><code>df.min()</code>默认按列数据最小值</p>
+<p><code>df.idxmax()</code> 求每列最大的数值对应的行索引</p>
+<p><code>df[&#39;XX&#39;].value_counts()</code> 统计 XX 列中的种类及其个数</p>
+<h2 id="统计描述"><a href="# 统计描述" class="headerlink" title="统计描述"></a>统计描述</h2><p><code>df.describe()</code>  汇总统计</p>
+<pre><code class="python">&gt;&gt;&gt; df.describe()
+               a           c           b
+count     3.000000     3.000000     4.000000
+mean     6.333333     4.333333     6.000000
+std     3.055050     4.041452     3.162278
+min     3.000000     0.000000     2.000000
+25%     5.000000     2.500000     4.250000
+50%     7.000000     5.000000     6.500000
+75%     8.000000     6.500000     8.250000
+max     9.000000     8.000000     9.000000</code></pre>
+<p>统计函数对 Series 也适用，下面举一个字符类型的 Series 的例子</p>
+<pre><code class="python">&gt;&gt;&gt; s=pd.Series([&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;b&#39;,&#39;a&#39;,&#39;a&#39;,&#39;e&#39;])
+0    a
+1    b
+2    c
+3    b
+4    a
+5    a
+6    e
+dtype: object
+
+&gt;&gt;&gt; s.describe()
+count     7
+unique    4
+top       a            // 统计出现频率最多的
+freq      3
+dtype: object</code></pre>
+<h1 id="6- 数据处理"><a href="#6- 数据处理" class="headerlink" title="6. 数据处理"></a>6. 数据处理</h1><h2 id="6-1- 文件读取"><a href="#6-1- 文件读取" class="headerlink" title="6.1 文件读取"></a>6.1 文件读取</h2><h3 id="6-1-1- 常用"><a href="#6-1-1- 常用" class="headerlink" title="6.1.1 常用"></a>6.1.1 常用</h3><p><strong>CSV 文件：</strong></p>
+<pre><code class="python">&gt;&gt;&gt; import pandas as pd
+&gt;&gt;&gt; import numpy as np
+
+&gt;&gt;&gt; pd.read_csv(&#39;scores.csv&#39;,encoding=&#39;gbk&#39;)
+     数学      英语
+0     59.0     89.0
+1     78.0     45.0
+2     24.0     NaN
+3     NaN     56.0
+4     23.0     56.0
+&gt;&gt;&gt; pd.read_table(&#39;scores.csv&#39;,sep=&quot;,&quot;,encoding=&#39;gbk&#39;)
+     数学      英语
+0     59.0     89.0
+1     78.0     45.0
+2     24.0     NaN
+3     NaN     56.0
+4     23.0     56.0</code></pre>
+<p><strong>txt 文件：</strong></p>
+<pre><code class="python">&gt;&gt;&gt; list(open(&#39;demo.txt&#39;))
+[&#39;A  B   C\n&#39;, &#39;1  2   3\n&#39;, &#39;4  5    6&#39;]
+&gt;&gt;&gt; p=pd.read_table(&#39;demo.txt&#39;)
+     A B C
+0      1 2 3
+1      4 5 6
+&gt;&gt;&gt; p[&#39;A&#39;]       // 报错……不管怎么索引都会出错
+
+&gt;&gt;&gt; p=pd.read_table(&#39;demo.txt&#39;,sep=&#39;\s+&#39;)    // 应该这样读取…… \s 空白符
+     A     B     C
+0     1     2     3
+1     4     5     6
+&gt;&gt;&gt; p[&#39;a&#39;]
+0    1
+1    4
+Name: A, dtype: int64</code></pre>
+<p><strong>以下需要好好领悟</strong></p>
+<pre><code class="python">&gt;&gt;&gt; pd.read_table(&#39;demo.csv&#39;,sep=&quot;,&quot;)                          // 本来是这样的
+     key1     key2     value1     value2
+0     one       a       1       2
+1     one       b         2       4
+2     two       c       3       6
+3     two       d       4       8
+4     three       e       5       10
+5     three       f       6       12
+&gt;&gt;&gt; p=pd.read_table(&#39;demo.csv&#39;,sep=&quot;,&quot;,index_col=[&#39;key1&#39;,&#39;key2&#39;])    // 这样读取！
+             value1  value2                                           // 将列变成索引
+key1     key2         
+one     a       1     2
+        b       2     4
+two     c       3     6
+        d       4     8
+three     e       5     10
+        f       6     12
+&gt;&gt;&gt; p.index
+MultiIndex([(&#39;one&#39;, &#39;a&#39;),
+            (&#39;one&#39;, &#39;b&#39;),
+            (&#39;two&#39;, &#39;c&#39;),
+            (&#39;two&#39;, &#39;d&#39;),
+            (&#39;three&#39;, &#39;e&#39;),
+            (&#39;three&#39;, &#39;f&#39;)],
+           names=[&#39;key1&#39;, &#39;key2&#39;])</code></pre>
+<p>去头：括号传参<code>head=None</code></p>
+<p>赋头：括号传参<code>names=[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,...]</code></p>
+<p>加列索引：括号传参<code>index_col=[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,...]</code></p>
+<h3 id="6-1-2- 总结"><a href="#6-1-2- 总结" class="headerlink" title="6.1.2 总结"></a>6.1.2 总结</h3><p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-17_17-25-29.png" alt=""></p>
+<p><strong>包含的参数</strong></p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-17_17-25-51.png" alt="先看着，有空再改清晰点"></p>
+<h3 id="6-1-3- 大文件分块读取"><a href="#6-1-3- 大文件分块读取" class="headerlink" title="6.1.3 大文件分块读取"></a>6.1.3 大文件分块读取 </h3><p> 对于千万级以上的数据读取时，不能一次性全部读取，电脑内存受不了，这时就需要分块读取。</p>
+<ol>
+<li>指定 CHUNKSIZE 分块读取文件，用以指定一个块大小（每次读取多少行），返回一个可迭代的 <code>TextFileReader</code> 对象。</li>
+</ol>
+<pre><code class="python">&gt;&gt;&gt; table=pd.read_csv(&#39;fn.csv&#39;,chunksize=100)       // 每 100 行的读
+&gt;&gt;&gt; table.get_chunk(5)         // 获取前 5 行  注意这是迭代处理
+&gt;&gt;&gt; for df in table:           // 循环处理
+         对 df 处理</code></pre>
+<ol start="2">
+<li>指定迭代 = 真</li>
+</ol>
+<pre><code class="python">&gt;&gt;&gt; reader = pd.read_table(&#39;tmp.sv&#39;, sep=&#39;\t&#39;, iterator=True) 
+&gt;&gt;&gt; reader.get_chunk(10000)    // 通过 get_chunk(size)，返回一个 size 行的块</code></pre>
+<p>举个例子：</p>
+<pre><code class="python">&gt;&gt;&gt; reader = pd.read_table(&#39;tmp.sv&#39;, sep=&#39;\t&#39;, iterator=True)
+&gt;&gt;&gt; chunkSize = 1000
+&gt;&gt;&gt; chunks = []
+&gt;&gt;&gt; loop=True
+&gt;&gt;&gt; while loop:
+&gt;&gt;&gt;     try:
+&gt;&gt;&gt;         chunk = reader.get_chunk(chunkSize)
+&gt;&gt;&gt;         chunks.append(chunk)
+&gt;&gt;&gt;     except StopIteration:
+&gt;&gt;&gt;         loop=False
+&gt;&gt;&gt;         print (&quot;Iteration is stopped.&quot;)
+&gt;&gt;&gt; df = pd.concat(chunks, ignore_index=True)
+// 这样数据就被读取出来了</code></pre>
+<h2 id="6-2- 文件保存"><a href="#6-2- 文件保存" class="headerlink" title="6.2 文件保存"></a>6.2 文件保存 </h2><p><strong> 写入 CSV 文件：</strong></p>
+<p><code>pd.to_csv(file_path or buf,sep,columns,header,index,na_rep,mode)</code></p>
+<p><code>file_path</code>：保存文件路径, 默认 None</p>
+<p><code>sep</code>：分隔符，默认’,’ </p>
+<p><code>columns</code>：是否保留某列数据，默认 None</p>
+<p><code>header</code>：是否保留列名，默认 True</p>
+<p><code>index</code>：是否保留行索引，默认 True</p>
+<p><code>na_rep</code>：指定字符串来代替空值，默认是空字符</p>
+<p><code>mode</code>：默认’w’，追加’a’</p>
+<p>也可以<code>df.to_excel(file_path or buf,sep,columns,header,index,na_rep,mode)</code></p>
+<p><strong>保存为二进制文件：</strong></p>
+<p><code>df.to_pickle()</code>       此用法不多</p>
+<h2 id="6-3- 数据清洗"><a href="#6-3- 数据清洗" class="headerlink" title="6.3 数据清洗"></a>6.3 数据清洗 </h2><h3 id="6-3-1- 处理缺失值"><a href="#6-3-1- 处理缺失值" class="headerlink" title="6.3.1 处理缺失值"></a>6.3.1 处理缺失值</h3><p> 参照 3.3 节内容。</p>
+<h3 id="6-3-2- 处理重复行"><a href="#6-3-2- 处理重复行" class="headerlink" title="6.3.2 处理重复行"></a>6.3.2 处理重复行 </h3><p> 检查重复数据：</p>
+<p><code>data.duplicated()</code>  返回布尔类型数据，重复的那一行为 True。</p>
+<p>删除重复数据：</p>
+<p><code>data.drop_duplicates()</code>返回删除重复行后剩下的数据。默认检查行中所有的列数据。</p>
+<p>可传参<code>[&#39;B&#39;]，keep=&#39;last&#39;</code>，意思是以 B 列为准，判断是否有重复的行，如第三行的 B 列与第五行的 B 列数据重复，就会删除前一行，保留后一行。</p>
+<p>再看看下面的例子：</p>
+<pre><code class="python">&gt;&gt;&gt; data=pd.DataFrame(&#123;&#39;food&#39;:[&#39;Apple&#39;,&#39;banana&#39;,&#39;orange&#39;,&#39;apple&#39;,&#39;mango&#39;,&#39;tomato&#39;],
+                       &#39;price&#39;:[4,3,3.5,6,12,3]&#125;)
+     food     price
+0     Apple     4.0
+1     banana     3.0
+2     orange     3.5
+3     apple     6.0
+4     mango     12.0
+5     tomato     3.0</code></pre>
+<p>其中 apple 有重复，需要按 food 列删除。</p>
+<p>food 列大小写统一化处理：</p>
+<pre><code class="python">&gt;&gt;&gt; lower=data[&#39;food&#39;].str.lower()         //lower()小写，upper()大写
+0     apple
+1    banana
+2    orange
+3     apple
+4     mango
+5    tomato
+Name: food, dtype: object</code></pre>
+<h3 id="6-3-3- 数据分类"><a href="#6-3-3- 数据分类" class="headerlink" title="6.3.3 数据分类"></a>6.3.3 数据分类 </h3><p> 对 food 进行分类：</p>
+<pre><code class="python">&gt;&gt;&gt; classf=&#123;&#39;apple&#39;:&#39;fruit&#39;,&#39;banana&#39;:&#39;fruit&#39;,&#39;orange&#39;:&#39;fruit&#39;,&#39;mango&#39;:&#39;fruit&#39;,&#39;tomato&#39;:&#39;vagetables&#39;
+&#125;
+&gt;&gt;&gt; data[&#39;classf&#39;]=lower.map(classf)
+&gt;&gt;&gt; data
+     food     price     classf
+0     Apple     4.0     fruit
+1     banana     3.0     fruit
+2     orange     3.5     fruit
+3     apple     6.0     fruit
+4     mango     12.0     fruit
+5     tomato     3.0     vagetables
+
+// 也可以采用下面这种方式
+&gt;&gt;&gt; data[&#39;classf&#39;]=data[&#39;food&#39;].map(lambda x:classf[x.lower()])</code></pre>
+<h3 id="6-3-4- 替换值"><a href="#6-3-4- 替换值" class="headerlink" title="6.3.4 替换值"></a>6.3.4 替换值 </h3><p><code>data.replace(A,B)</code> 把 data 中的 A 替换成 B</p>
+<h3 id="6-3-5- 重命名轴索引"><a href="#6-3-5- 重命名轴索引" class="headerlink" title="6.3.5 重命名轴索引"></a>6.3.5 重命名轴索引</h3><pre><code class="python">&gt;&gt;&gt; data=pd.DataFrame((np.arange(12)).reshape(3,4),index=[&#39;Beijing&#39;,&#39;Tokyo&#39;,&#39;New York&#39;],columns=[&#39;one&#39;,&#39;two&#39;,&#39;three&#39;,&#39;four&#39;])
+&gt;&gt;&gt; data
+           one    two     three    four
+Beijing       0    1       2    3
+Tokyo       4    5       6    7
+New York   8    9      10    11</code></pre>
+<p><strong>方法 1：</strong></p>
+<pre><code class="python">&gt;&gt;&gt; data.index=[&#39;B&#39;,&#39;T&#39;,&#39;N&#39;]        // 重命名行
+&gt;&gt;&gt; data
+     one     two     three     four
+B       0       1       2     3
+T       4       5       6     7
+N       8       9       10     11
+&gt;&gt;&gt; data.columns=[&#39;One&#39;,&#39;Two&#39;,&#39;Three&#39;,&quot;Four&quot;]   // 重命名列
+     One     Two     Three     Four
+B       0       1       2     3
+T       4       5       6     7
+N       8       9       10     11</code></pre>
+<p><strong>方法 2：</strong></p>
+<pre><code class="python">&gt;&gt;&gt; data.rename(index=&#123;&#39;B&#39;:&#39;BJ&#39;&#125;,columns=&#123;&#39;Four&#39;:&#39; 第四年 &#39;&#125;)
+     One     Two     Three     第四年
+BJ       0       1       2     3
+T       4       5       6     7
+N       8       9       10     11</code></pre>
+<p>想要改变原数据时，即 data 本身也改变，可赋值<code>inplace=True</code></p>
+<h3 id="6-3-6- 离散化与面元划分"><a href="#6-3-6- 离散化与面元划分" class="headerlink" title="6.3.6 离散化与面元划分"></a>6.3.6 离散化与面元划分 </h3><p><strong> 对列表进行划分：</strong></p>
+<pre><code class="python">&gt;&gt;&gt; ages=[34,56,12,34,45,8,2,78,90,4]
+&gt;&gt;&gt; bin=[0,3,12,18,30,60,100]
+&gt;&gt;&gt; a=pd.cut(ages,bin)             // 对 ages 中的数字按照 bin 里的分区进行划分
+&gt;&gt;&gt; a
+[(30, 60], (30, 60], (3, 12], (30, 60], (30, 60], (3, 12], (0, 3], (60, 100], (60, 100], (3, 12]]
+Categories (6, interval[int64]): [(0, 3] &lt; (3, 12] &lt; (12, 18] &lt; (18, 30] &lt; (30, 60] &lt; (60, 100]]
+// 以上区间默认是左开右闭，可传入 right=False，就会变成左闭右开
+
+&gt;&gt;&gt; a.codes       // 返回 ages 中的每个数据在第几个区间
+array([4, 4, 1, 4, 4, 1, 0, 5, 5, 1], dtype=int8)
+
+&gt;&gt;&gt; pd.value_counts(a)    // 对 a 中的区间进行计数
+(30, 60]     4
+(3, 12]      3
+(60, 100]    2
+(0, 3]       1
+(18, 30]     0
+(12, 18]     0
+dtype: int64
+
+&gt;&gt;&gt; labels=[&#39; 幼儿 &#39;,&#39; 儿童 &#39;,&#39; 青少年 &#39;,&#39; 青年 &#39;,&#39; 中年 &#39;,&#39; 老年 &#39;]
+&gt;&gt;&gt; a=pd.cut(ages,bin,labels=labels)    #传入 label 标签
+&gt;&gt;&gt; a
+[中年, 中年, 儿童, 中年, 中年, 儿童, 幼儿, 老年, 老年, 儿童] Categories (6, object): [幼儿 &lt; 儿童 &lt; 青少年 &lt; 青年 &lt; 中年 &lt; 老年]
+
+&gt;&gt;&gt; s=pd.cut(ages,4)   // 将 ages 分成 4 个等分区间
+[(24.0, 46.0], (46.0, 68.0], (1.912, 24.0], (24.0, 46.0], (24.0, 46.0], (1.912, 24.0], (1.912, 24.0], (68.0, 90.0], (68.0, 90.0], (1.912, 24.0]]
+Categories (4, interval[float64]): [(1.912, 24.0] &lt; (24.0, 46.0] &lt; (46.0, 68.0] &lt; (68.0, 90.0]]
+// 可传入参数 precision=2，即可对数据保留两位小数
+
+&gt;&gt;&gt; pd.qcut(ages,4)   // 将 ages 分成 4 个区间, 每个区间中包含的数据个数相等</code></pre>
+<h3 id="6-3-7- 提取异常值"><a href="#6-3-7- 提取异常值" class="headerlink" title="6.3.7 提取异常值"></a>6.3.7 提取异常值</h3><pre><code>&gt;&gt;&gt; data[(np.abs[data]&gt;3).any(1)]    // 只要 data 中有一个大于 3 的，就取出来
+&gt;&gt;&gt; np.where(data.Size.str.contains(&#39; 室 &#39;)) // 把 data 中 Size 那一列中包含 &#39; 室 &#39; 的行索引号取出来 </code></pre><h3 id="6-3-7- 采样与随机排列"><a href="#6-3-7- 采样与随机排列" class="headerlink" title="6.3.7 采样与随机排列"></a>6.3.7 采样与随机排列</h3><p><strong> 采样：</strong></p>
+<pre><code>&gt;&gt;&gt; df.sample(n=2)   // 在 df 中随机采取 2 行数据 </code></pre><p><strong> 随机排列：</strong></p>
+<pre><code>&gt;&gt;&gt; sam=np.random.permutation(5)  // 生成 0-4 共 5 个数，并随机排列
+&gt;&gt;&gt; df.take(sam)   // 对 df 按照 sam 的顺序排列</code></pre><h2 id="6-4- 字符串操作"><a href="#6-4- 字符串操作" class="headerlink" title="6.4 字符串操作"></a>6.4 字符串操作</h2><h3 id="6-4-1- 字符串方法"><a href="#6-4-1- 字符串方法" class="headerlink" title="6.4.1 字符串方法"></a>6.4.1 字符串方法</h3><p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-18_21-39-52.jpg" alt=""></p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-18_21-40-11.jpg" alt="Snipaste_2020-02-18_21-40-11"></p>
+<h3 id="6-4-2- 正则表达式方法"><a href="#6-4-2- 正则表达式方法" class="headerlink" title="6.4.2 正则表达式方法"></a>6.4.2 正则表达式方法</h3><p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-18_21-40-27.jpg" alt=""></p>
+<h3 id="6-4-pandas 字符串方法"><a href="#6-4-pandas 字符串方法" class="headerlink" title="6.4 pandas 字符串方法"></a>6.4 pandas 字符串方法 </h3><p><strong> 首先举个例子：</strong></p>
+<pre><code class="python">&gt;&gt;&gt; data=pd.Series([&#39;dace@qq.com&#39;,&#39;dace@gmail.com&#39;,&#39;dace@163.com&#39;],index=[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;])
+a       dace@qq.com
+b    dace@gmail.com
+c      dace@163.com
+dtype: object
+
+&gt;&gt;&gt; data.str    // 注意这种用法很重要！！！
+&lt;pandas.core.strings.StringMethods at 0x1ffaa3ecdd8&gt;
+
+&gt;&gt;&gt; data.str.contains(&#39;gmail&#39;)       // 判断 data 里是否包含‘gmail’
+a    False
+b     True
+c    False
+dtype: bool
+
+&gt;&gt;&gt; data.str[:5]       // 字符串化之后，切片取值前 5 个字符
+a    dace@
+b    dace@
+c    dace@
+dtype: object</code></pre>
+<p><strong>归纳如下：</strong></p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-18_21-40-41.jpg" alt=""></p>
+<p>注意：以上判断字符串是否数字的函数，只能对整型数字进行判断，不能判断浮点类型数据。</p>
+<ul>
+<li><p><strong><code>isalnum()</code>用法：</strong>只要不出现特殊符号则返回真</p>
+<pre><code class="python">&gt;&gt;&gt; &#39;ytvu2313131y 树 &#39;.isalnum()  
+True
+&gt;&gt;&gt; &#39;+&#39;.isalnum()  //&#39;./&#39;.isalnum()
+False//False</code></pre>
+</li>
+<li><p><strong><code>isalpha()</code>用法：</strong>只要不出现阿拉伯数字或者特殊符号则返回真</p>
+<pre><code class="python">&gt;&gt;&gt; &#39;Wqwuu 数 &#39;.isalpha()   //&#39;wqwuu 数十 &#39;.isalpha()
+True//True
+&gt;&gt;&gt; &#39;wqwuu 数十。&#39;.isalpha()  //&#39;wqwuu 数十 123&#39;.isalpha()
+False//False</code></pre>
+</li>
+<li><p><strong><code>isdecimal()</code>用法：</strong></p>
+<p>True: Unicode 数字，全角数字（双字节）<br>False: 罗马数字，汉字数字，<strong>小数</strong><br>Error: byte 数字（单字节） </p>
+<pre><code class="python">&gt;&gt;&gt; &#39;123&#39;.isdecimal() 
+True
+&gt;&gt;&gt; &#39;123.34&#39;.isdecimal() //&#39;123.34fff&#39;.isdecimal()
+False//False</code></pre>
+</li>
+<li><p><strong><code>isdigit()</code>用法：</strong></p>
+<p>True: Unicode 数字，byte 数字（单字节），全角数字（双字节）<br>False: 汉字数字，罗马数字，<strong>小数</strong></p>
+<pre><code class="python">&gt;&gt;&gt; &#39;123&#39;.isdigit()  //&#39;２３３&#39; .isdigit()
+True</code></pre>
+</li>
+<li><p><strong><code>isnumeric()</code>用法：</strong></p>
+<p>True: Unicode 数字，全角数字（双字节），罗马数字，汉字数字 <br>False: <strong> 小数</strong><br>Error: byte 数字（单字节）</p>
+<pre><code class="python">&gt;&gt;&gt; &#39; 二十 3&#39; .isnumeric()
+True</code></pre>
+</li>
+<li><p><strong><code>islower()</code>用法：</strong>只要不出现大写字符则返回真</p>
+<pre><code class="python">&gt;&gt;&gt; &#39;zuo 天 123。&#39; .islower() 
+True</code></pre>
+</li>
+<li><p><strong><code>isupper()</code>用法：</strong>只要不出现小写字母则返回真</p>
+<pre><code class="python">&gt;&gt;&gt; &#39;ZUO 天 123。&#39; .isupper()
+True</code></pre>
+</li>
+</ul>
+<h2 id="6-5- 数据规整"><a href="#6-5- 数据规整" class="headerlink" title="6.5 数据规整"></a>6.5 数据规整</h2><h3 id="6-5-1- 规整分块"><a href="#6-5-1- 规整分块" class="headerlink" title="6.5.1 规整分块"></a>6.5.1 规整分块</h3><pre><code class="python">&gt;&gt;&gt; frame=pd.DataFrame(&#123;&#39;a&#39;:np.arange(7),&#39;b&#39;:np.arange(7,0,-1),
+                      &#39;c&#39;:[&#39;one&#39;,&#39;one&#39;,&#39;one&#39;,&#39;two&#39;,&#39;two&#39;,&#39;two&#39;,&#39;two&#39;],
+                      &#39;d&#39;:[0,1,2,0,1,2,3]&#125;
+&gt;&gt;&gt; frame
+　　a　b　c　　d
+0　0　7　one　0
+1　1　6　one　1
+2　2　5　one　2
+3　3　4　two　0
+4　4　3　two　1
+5　5　2　two　2
+6　6　1　two　3</code></pre>
+<p><strong>对数据进行规整分块</strong></p>
+<pre><code class="python">&gt;&gt;&gt; frame.set_index([&#39;c&#39;,&#39;d&#39;])   //c 列作为主索引，d 列作为次索引
+　　　　a　b
+c　　d         
+one　0　0　7
+　　　1　1　6
+　　　2　2　5
+two　0　3　4
+　　　1　4　3
+　　　2　5　2
+　　　3　6　1
+
+// 括号传参 drop=Flase 则在后面继续保留 c,d 列</code></pre>
+<h3 id="6-5-2- 数据连接"><a href="#6-5-2- 数据连接" class="headerlink" title="6.5.2 数据连接"></a>6.5.2 数据连接</h3><ol>
+<li><p><code>pd.merge()</code></p>
+<ul>
+<li><p>根据单个或多个键将不同 DataFrame 的行连接起来</p>
+</li>
+<li><p>类似数据库的连接操作</p>
+</li>
+<li><p><code>pd.merge(left, right, how=&#39;inner&#39;,on=None,left_on=None, right_on=None)</code></p>
+<p>left：合并时左边的 DataFrame</p>
+<p>right：合并时右边的 DataFrame</p>
+<p>how：合并的方式, 默认’inner’，还有’outer’, ‘left’, ‘right’</p>
+<p>on：需要合并的列名, 必须两边都有的列名，并以 left 和 right 中的列名的交集作为连接键</p>
+<p>left_on: left Dataframe 中用作连接键的列</p>
+<p>right_on: right Dataframe 中用作连接键的列</p>
+</li>
+<li><p>内连接 inner：对两张表都有的键的交集进行联合</p>
+</li>
+<li><p>外连接 outer：对两张表都有的键的并集进行联合</p>
+</li>
+<li><p>左连接 left：对所有左表的键进行联合</p>
+</li>
+<li><p>右连接 right：对所有右表的键进行联合</p>
+</li>
+</ul>
+</li>
+</ol>
+<p><strong>举个例子</strong></p>
+<pre><code>&gt;&gt;&gt; left = pd.DataFrame(&#123;&#39;key1&#39;: [&#39;K0&#39;, &#39;K0&#39;, &#39;K1&#39;, &#39;K2&#39;],
+                         &#39;key2&#39;: [&#39;K0&#39;, &#39;K1&#39;, &#39;K0&#39;, &#39;K1&#39;],
+                           &#39;A&#39;: [&#39;A0&#39;, &#39;A1&#39;, &#39;A2&#39;, &#39;A3&#39;],
+                           &#39;B&#39;: [&#39;B0&#39;, &#39;B1&#39;, &#39;B2&#39;, &#39;B3&#39;]&#125;)
+&gt;&gt;&gt; right = pd.DataFrame(&#123;&#39;key1&#39;: [&#39;K0&#39;, &#39;K1&#39;, &#39;K1&#39;, &#39;K2&#39;],
+                          &#39;key2&#39;: [&#39;K0&#39;, &#39;K0&#39;, &#39;K0&#39;, &#39;K0&#39;],
+                            &#39;C&#39;: [&#39;C0&#39;, &#39;C1&#39;, &#39;C2&#39;, &#39;C3&#39;],
+                            &#39;D&#39;: [&#39;D0&#39;, &#39;D1&#39;, &#39;D2&#39;, &#39;D3&#39;]&#125;)
+&gt;&gt;&gt; pd.merge(left,right, how=&#39;left&#39;, on=[&#39;key1&#39;, &#39;key2&#39;])</code></pre><p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-19_12-54-24.jpg" alt=""></p>
+<p><strong>处理重复列名：</strong></p>
+<p>参数 suffixes：默认为_x, _y</p>
+<pre><code class="python">&gt;&gt;&gt; df1 = pd.DataFrame(&#123;&#39;key&#39;: [&#39;b&#39;, &#39;b&#39;, &#39;a&#39;, &#39;c&#39;, &#39;a&#39;, &#39;a&#39;, &#39;b&#39;],
+                        &#39;data&#39; : np.random.randint(0,10,7)&#125;)
+&gt;&gt;&gt; df2= pd.DataFrame(&#123;&#39;key&#39;: [&#39;a&#39;, &#39;b&#39;, &#39;d&#39;],
+                        &#39;data&#39; : np.random.randint(0,10,3)&#125;)
+&gt;&gt;&gt; pd.merge(df1, df2, on=&#39;key&#39;, suffixes=(&#39;_left&#39;, &#39;_right&#39;)) </code></pre>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-19_12-35-27.jpg" style="zoom:80%;" />
+
+
+
+<p><strong>按索引连接：</strong></p>
+<p>参数 left_index=True 或 right_index=True，留下左索引 / 右索引。</p>
+<ol start="2">
+<li><code>df1.append(df2)</code></li>
+<li><code>left.join(right,on=&#39;key&#39;)</code></li>
+</ol>
+<h3 id="6-5-3- 数据合并"><a href="#6-5-3- 数据合并" class="headerlink" title="6.5.3 数据合并"></a>6.5.3 数据合并</h3><ol>
+<li><p><code>np.concatenate(a,b)</code></p>
+<p>介绍 Numpy 库中已经介绍。</p>
+</li>
+<li><p><code>pd.concat([a,b],axis,join, ignore_index=True)</code></p>
+<ul>
+<li>注意指定轴方向，默认 axis=0，按行拼接</li>
+<li>join 指定合并方式，默认为’outer’，取并集合并，还可指定’inner’，取交集合并</li>
+<li>Series 合并时查看行索引有无重复</li>
+</ul>
+</li>
+</ol>
+<h3 id="6-5-4- 轴向旋转"><a href="#6-5-4- 轴向旋转" class="headerlink" title="6.5.4 轴向旋转"></a>6.5.4 轴向旋转</h3><pre><code class="python">&gt;&gt;&gt; df = pd.DataFrame(&#123;&#39;date&#39;:[&#39;2018-1&#39;,&#39;2018-1&#39;,&#39;2018-2&#39;,&#39;2018-2&#39;,&#39;2018-3&#39;],
+                       &#39;class&#39;:[&#39;a&#39;,&#39;b&#39;,&#39;b&#39;,&#39;c&#39;,&#39;c&#39;],
+                       &#39;values&#39;:[5,3,2,6,1],
+                      &#39;values1&#39;:[4,5,6,8,9]&#125;,columns=[&#39;date&#39;,&#39;class&#39;,&#39;values&#39;,&#39;values1&#39;])
+&gt;&gt;&gt; df.pivot(&#39;date&#39;,&#39;class&#39;,&#39;values&#39;)</code></pre>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-19_14-27-54.jpg" style="zoom:80%;" />
+
+<h2 id="6-6- 数据聚合与分组"><a href="#6-6- 数据聚合与分组" class="headerlink" title="6.6 数据聚合与分组"></a>6.6 数据聚合与分组 </h2><p><strong> 聚合的分组的含义：</strong></p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-19_16-46-49.jpg" style="zoom:80%;" />
+
+<p><strong>分组函数：<code>df.groupby()</code></strong></p>
+<p><strong>分组：</strong></p>
+<pre><code class="python">&gt;&gt;&gt; df = pd.DataFrame(&#123;&#39;fruit&#39;:[&#39;apple&#39;,&#39;banana&#39;,&#39;orange&#39;,&#39;apple&#39;,&#39;banana&#39;],
+                        &#39;color&#39;:[&#39;red&#39;,&#39;yellow&#39;,&#39;yellow&#39;,&#39;red&#39;,&#39;cyan&#39;],
+                        &#39;price&#39;:[8.5,6.8,5.6,7.8,6.4]&#125;)
+&gt;&gt;&gt; df
+　　fruit　　　color　　price
+0　　apple　　　red　　　8.5
+1　　banana　　yellow　　6.8
+2　　orange　　yellow　　5.6
+3　　apple　　　red　　　7.8
+4　　banana　　cyan　　　6.4
+&gt;&gt;&gt; df[&#39;fruit&#39;].value_counts()    // 统计水果列种类及个数
+
+// 分组函数的应用
+&gt;&gt;&gt; g = df.groupby(by=&#39;fruit&#39;)
+&gt;&gt;&gt; type(g)
+pandas.core.groupby.generic.DataFrameGroupBy
+
+// 分组输出
+&gt;&gt;&gt;for name,group in g:
+      print(name)          // 输出组名
+      print(&#39;-&#39;*50)
+      print(group)         // 输出数据块    dataframe 类型
+apple
+--------------------------------------------------
+   fruit color  price
+0  apple   red    8.5
+3  apple   red    7.8
+banana
+--------------------------------------------------
+    fruit   color  price
+1  banana  yellow    6.8
+4  banana    cyan    6.4
+orange
+--------------------------------------------------
+    fruit   color  price
+2  orange  yellow    5.6
+
+// 选取任意数据块
+&gt;&gt;&gt; dict(list(df.groupby(by=&#39;fruit&#39;)))[&#39;apple&#39;]   // 先变成列表，再变成字典结构，易于索引
+      fruit     color     price
+0     apple     red     8.5
+3     apple     red     7.8</code></pre>
+<p><strong>通过字典或 Series 进行分组</strong></p>
+<pre><code class="python">&gt;&gt;&gt; people = pd.DataFrame(np.random.randn(5, 5),
+                      columns=[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;],
+                      index=[&#39;Sam&#39;, &#39;Make&#39;, &#39;Tony&#39;, &#39;Jim&#39;, &#39;Nana&#39;])
+&gt;&gt;&gt; m = &#123;&#39;a&#39;: &#39;red&#39;, &#39;b&#39;: &#39;red&#39;, &#39;c&#39;: &#39;blue&#39;,&#39;d&#39;: &#39;blue&#39;, &#39;e&#39;: &#39;red&#39;, &#39;f&#39; : &#39;orange&#39;&#125;
+&gt;&gt;&gt; people.groupby(m,axis=1).sum()</code></pre>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-19_18-02-02.jpg" style="zoom:80%;" />
+
+<p><strong>通过函数进行分组</strong></p>
+<pre><code class="python">&gt;&gt;&gt; people.groupby(len).sum()     // 按索引的字符长度进行求和
+     　　　a     　　　　b     　　　　　c　　　　　    d     　　　　　e
+3     1.067155     -0.081729     -1.635495     -0.659798     0.536373
+4     0.671735     0.274625     1.936964     -0.420179     0.449990</code></pre>
+<p><strong>聚合：</strong></p>
+<pre><code class="python">&gt;&gt;&gt; df.groupby([&#39;fruit&#39;,&#39;color&#39;])[[&#39;price&#39;]].mean()
+         　　　　　price
+fruit     color     
+apple     red     8.15
+banana　cyan     6.40
+　　　　　yellow　6.80
+orange     yellow     5.60</code></pre>
+<p><code>as_index</code>：对于聚合输出, 返回以组便签为索引的对象，仅对 DataFrame</p>
+<pre><code class="python">&gt;&gt;&gt; df.groupby(&#39;fruit&#39;)[&#39;price&#39;].mean()         // 返回 Series 对象
+&gt;&gt;&gt; df.groupby(&#39;fruit&#39;,as_index=False)[&#39;price&#39;].mean()    // 返回 DataFrame 对象</code></pre>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-19_17-44-18.jpg" style="zoom:80%;" />
+
+<pre><code class="python">&gt;&gt;&gt; df
+　　fruit　　　color　　price
+0　　apple　　　red　　　8.5
+1　　banana　　yellow　　6.8
+2　　orange　　yellow　　5.6
+3　　apple　　　red　　　7.8
+4　　banana　　cyan　　　6.4
+
+&gt;&gt;&gt; def diff(arr):
+    return arr.max() - arr.min()
+
+&gt;&gt;&gt; df.groupby(&#39;fruit&#39;)[&#39;price&#39;].agg(diff)   // 求差价
+fruit
+apple     0.7
+banana    0.4
+orange    0.0
+Name: price, dtype: float64</code></pre>
+<h1 id="7- 时间序列"><a href="#7- 时间序列" class="headerlink" title="7. 时间序列"></a>7. 时间序列</h1><h2 id="7-1- 基础"><a href="#7-1- 基础" class="headerlink" title="7.1 基础"></a>7.1 基础</h2><h3 id="7-1-1- 创建及索引"><a href="#7-1-1- 创建及索引" class="headerlink" title="7.1.1 创建及索引"></a>7.1.1 创建及索引</h3><pre><code class="python">&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; import pandas as pd
+&gt;&gt;&gt; from datetime import datetime
+
+&gt;&gt;&gt; dates = [datetime(2011, 1, 2), datetime(2011, 1, 5),
+             datetime(2011, 1, 7), datetime(2011, 1, 8),
+             datetime(2011, 1, 10), datetime(2011, 1, 12)]
+
+&gt;&gt;&gt; ts = pd.Series(np.random.randn(6), index=dates)
+2011-01-02   -0.540878
+2011-01-05   -1.736195
+2011-01-07   -1.751403
+2011-01-08   -0.683907
+2011-01-10   -0.458234
+2011-01-12   -1.284808
+dtype: float64
+dtype: float64
+
+&gt;&gt;&gt; ts.index
+DatetimeIndex([&#39;2011-01-02&#39;, &#39;2011-01-05&#39;, &#39;2011-01-07&#39;, &#39;2011-01-08&#39;,
+               &#39;2011-01-10&#39;, &#39;2011-01-12&#39;],
+              dtype=&#39;datetime64[ns]&#39;, freq=None)
+
+// 除了常规的一些标签，位置索引外，还支持以下的索引
+&gt;&gt;&gt; ts[&#39;20100110&#39;]
+-0.4582336049173489</code></pre>
+<p><strong>时间范围索引</strong></p>
+<pre><code class="python">&gt;&gt;&gt; ts = pd.Series(np.random.randn(1000),index=pd.date_range(&#39;1/1/2000&#39;,periods=1000))
+&gt;&gt;&gt; ts    // 时间序列默认每天生成，periods=1000 意思是生成 1000 天的时间</code></pre>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-19_20-42-03.jpg" style="zoom:80%;" />
+
+
+
+<p><strong>索引：</strong></p>
+<pre><code class="python">&gt;&gt;&gt; ts[&#39;2002&#39;]   // 会选取 2002 年的所有数据, 还可指定月份
+&gt;&gt;&gt; ts[datetime(2002,9,23):]  // 返回 2002-9-23 及以后 ts1 中有的值
+&gt;&gt;&gt; ts[&#39;2002-9-23&#39;:&#39;2002-12-30&#39;]=1
+&gt;&gt;&gt; ts    // 结果如下，这不同于切片，有的才赋值，没有就不管</code></pre>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-19_21-03-48.jpg" style="zoom:80%;" />
+
+<pre><code class="python">&gt;&gt;&gt; ts.truncate(after=&#39;1/9/2001&#39;)  // 取 1/9/2001（不包含）之前的数据</code></pre>
+<p><strong>重复的时间索引：</strong></p>
+<pre><code class="python">&gt;&gt;&gt; dates = pd.DatetimeIndex([&#39;1/1/2000&#39;, &#39;1/2/2000&#39;, &#39;1/2/2000&#39;,&#39;1/2/2000&#39;, &#39;1/3/2000&#39;])
+&gt;&gt;&gt; ts = pd.Series(np.arange(5), index=dates)
+&gt;&gt;&gt; ts
+2000-01-01    0
+2000-01-02    1
+2000-01-02    2
+2000-01-02    3
+2000-01-03    4
+dtype: int32
+
+&gt;&gt;&gt; ts.index.is_unique       // 检查是否为唯一
+False
+&gt;&gt;&gt; ts[&#39;1/2/2000&#39;]
+2000-01-02    1
+2000-01-02    2
+2000-01-02    3
+dtype: int32
+
+&gt;&gt;&gt; ts.groupby(level=0).count()   //  还支持分组
+2000-01-01    1
+2000-01-02    3
+2000-01-03    1
+dtype: int64</code></pre>
+<h3 id="7-1-2- 时间索引的范围，频率，及移动"><a href="#7-1-2- 时间索引的范围，频率，及移动" class="headerlink" title="7.1.2 时间索引的范围，频率，及移动"></a>7.1.2 时间索引的范围，频率，及移动 </h3><pre><code>&gt;&gt;&gt; index = pd.date_range(begin_time, end_time, periods, freq)</code></pre><p> 默认<code>periods=None</code>，若没有指定 end_time，可由 periods 指定生成天数。</p>
+<p>默认<code>freq=&#39;D&#39;</code>，还支持以下偏移：</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-19_21-25-41.jpg" style="zoom:80%;" />
+
+<p>举个例子：</p>
+<pre><code class="python">&gt;&gt;&gt; ts=pd.date_range(&#39;2012-01-01&#39;,&#39;2012-12-31&#39;,freq=&#39;M&#39;)  // 生成每个月的最后一天
+DatetimeIndex([&#39;2012-01-31&#39;, &#39;2012-02-29&#39;, &#39;2012-03-31&#39;, &#39;2012-04-30&#39;,
+               &#39;2012-05-31&#39;, &#39;2012-06-30&#39;, &#39;2012-07-31&#39;, &#39;2012-08-31&#39;,
+               &#39;2012-09-30&#39;, &#39;2012-10-31&#39;, &#39;2012-11-30&#39;, &#39;2012-12-31&#39;],
+              dtype=&#39;datetime64[ns]&#39;, freq=&#39;M&#39;)</code></pre>
+<p><strong>日期偏移量</strong></p>
+<pre><code class="python">&gt;&gt;&gt; from pandas.tseries.offsets import Hour,Minute
+&gt;&gt;&gt; pd.date_range(&#39;2012-01-01&#39;,&#39;2012-01-02&#39;,freq=&#39;4h&#39;)    // 按小时来偏移
+DatetimeIndex([&#39;2012-01-01 00:00:00&#39;, &#39;2012-01-01 04:00:00&#39;,
+               &#39;2012-01-01 08:00:00&#39;, &#39;2012-01-01 12:00:00&#39;,
+               &#39;2012-01-01 16:00:00&#39;, &#39;2012-01-01 20:00:00&#39;,
+               &#39;2012-01-02 00:00:00&#39;],
+              dtype=&#39;datetime64[ns]&#39;, freq=&#39;4H&#39;)
+&gt;&gt;&gt; ts.shift(2) // 将 value 向下偏移两个位置，也可传入 freq 参数</code></pre>
+<h2 id="7-2- 重采样及频率转换"><a href="#7-2- 重采样及频率转换" class="headerlink" title="7.2 重采样及频率转换"></a>7.2 重采样及频率转换 </h2><p><strong> 重采样（resampling）指的是将时间序列从一个频率转换到另一个频率的处理过程。将高频率数据聚合到低频率称为降采样（downsampling），而将低频率数据转换到高频率则称为升采样（upsampling）。</strong></p>
+<p><strong>降采样示例：</strong></p>
+<pre><code class="python">&gt;&gt;&gt; t = pd.DataFrame(np.random.uniform(10,50,(100,1)),index=pd.date_range(&#39;20170101&#39;,periods=100))
+&gt;&gt;&gt; t
+　　　　　　　　　0
+2017-01-01     19.606228
+2017-01-02     26.594414
+2017-01-03     40.741761
+2017-01-04     27.251084
+2017-01-05     10.215133
+...     ...
+2017-04-06     22.951463
+2017-04-07     23.516511
+2017-04-08     32.327609
+2017-04-09     22.503653
+2017-04-10     19.498829
+
+100 rows × 1 columns
+
+&gt;&gt;&gt; t.resample(&#39;M&#39;).sum()　　　　// 将 t 里面的数据按月求和
+　　　　　　　　　　0
+2017-01-31     920.056615
+2017-02-28     888.402558
+2017-03-31     1026.173892
+2017-04-30     305.172146</code></pre>
+<p><strong>升采样示例：</strong></p>
+<pre><code class="python">&gt;&gt;&gt; frame = pd.DataFrame(np.random.randn(2, 4),
+                       index=pd.date_range(&#39;1/1/2000&#39;, periods=2,freq=&#39;W-WED&#39;),
+                       columns=[&#39; 上海 &#39;, &#39; 北京 &#39;, &#39; 深圳 &#39;, &#39; 广州 &#39;])
+&gt;&gt;&gt; frame
+　　　　　　　　　上海　　　　　　北京　　　　　深圳　　　　　广州
+2000-01-05　-1.081783　　-0.340245　　-1.626201　　0.021319
+2000-01-12　-0.126046　　0.656332　　　-0.114384　　-1.840728
+
+&gt;&gt;&gt; frame.resample(&#39;D&#39;).asfreq()</code></pre>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-19_22-16-14.jpg" style="zoom:80%;" />
+
+<p>resample 是一个灵活高效的方法，可用于处理非常大的时间序列。</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-19_22-19-23.jpg" style="zoom:80%;" />
+
+<h2 id="7-3- 应用案例"><a href="#7-3- 应用案例" class="headerlink" title="7.3 应用案例"></a>7.3 应用案例</h2><pre><code class="python">&gt;&gt;&gt; df = pd.read_csv(&#39;911.csv&#39;)
+&gt;&gt;&gt; df.head()</code></pre>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-19_22-24-10.jpg" alt=""></p>
+<pre><code class="python">&gt;&gt;&gt; df[&#39;timeStamp&#39;] = pd.to_datetime(df[&#39;timeStamp&#39;])   // 转换成时间格式
+&gt;&gt;&gt; df.set_index(&#39;timeStamp&#39;,inplace=True)  // 设置其中一列为索引</code></pre>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-19_22-29-37.jpg" alt=""></p>
+<h1 id="8- 老师总结"><a href="#8- 老师总结" class="headerlink" title="8. 老师总结"></a>8. 老师总结</h1><p><a target="_blank" rel="noopener" href="https://docs.qq.com/pdf/DYmV0WXpOZFZLaW1G">Pandas 总结</a></p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 欢迎各位看官及技术大佬前来交流指导呀，可以邮件至 jqiange@yeah.net </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2021 Jqiange
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

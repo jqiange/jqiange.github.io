@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Python 操作 Redis | jqiange</title>
+  <meta name="keywords" content=" Redis ">
+  <meta name="description" content="Python 操作 Redis | jqiange">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="人畜无害的姜小强">
+<meta property="og:url" content="https://jqiange.github.io/about/index.html">
+<meta property="og:site_name" content="jqiange">
+<meta property="og:description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+<meta property="article:published_time" content="2020-02-18T08:21:04.000Z">
+<meta property="article:modified_time" content="2025-12-13T05:23:10.695Z">
+<meta property="article:author" content="姜小强">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+
+
+<link rel="icon" href="/img/jqiange.png">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/jqiange.png"/>
+</a>
+<div class="author">
+    <span>姜小强</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/jqiange"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(58)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(9)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据库">
+                        
+                        数据库
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="每日一学">
+                        
+                        每日一学
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="爬虫">
+                        
+                        爬虫
+                        <small>(10)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="前端">
+                        
+                        前端
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="深度学习">
+                        
+                        深度学习
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据分析">
+                        
+                        数据分析
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="chip">
+                        
+                        chip
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="CPP">
+                        
+                        CPP
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Linux">
+                        
+                        Linux
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="python">
+                        
+                        python
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="58">
+<input type="hidden" id="yelog_site_word_count" value="251.9k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSS-Xpath</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Markdown</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Matplotlib</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Mysql</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Numpy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pandas</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pip</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pyecharts</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pygal</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pymysql-ORM</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>RE</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Redis</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Scrapy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Seaborn</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Selenium</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>yield</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="全部文章 python "
+           href="/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%A6%E8%A7%A3/"
+           data-tag="RE"
+           data-author="" >
+            <span class="post-title" title="正则表达式详解">正则表达式详解</span>
+            <span class="post-date" title="2020-02-26 09:25:46">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/tcl%E4%B8%8Eopc/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 与 opc">tcl 与 opc</span>
+            <span class="post-date" title="2025-09-24 13:36:07">2025/09/24</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/hexo%E6%96%87%E7%AB%A0%E5%8A%A0%E5%AF%86%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="hexo 文章加密方法">hexo 文章加密方法</span>
+            <span class="post-date" title="2025-09-21 22:33:03">2025/09/21</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/tcl%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 语言入门">tcl 语言入门</span>
+            <span class="post-date" title="2025-09-14 22:43:20">2025/09/14</span>
+        </a>
+        
+        <a  class="全部文章 每日一学 "
+           href="/%E6%95%85%E4%BA%8B%E4%BC%9A%E4%B8%8E%E4%BC%81%E4%B8%9A%E8%82%A1%E6%9D%83%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="故事会与企业股权架构设计">故事会与企业股权架构设计</span>
+            <span class="post-date" title="2025-08-30 09:42:43">2025/08/30</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%AE%A1%E7%AE%97%E5%85%89%E5%88%BBOPC%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="计算光刻 OPC 名词解释">计算光刻 OPC 名词解释</span>
+            <span class="post-date" title="2025-08-26 21:44:36">2025/08/26</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%8A%AF%E7%89%87%E5%88%B6%E9%80%A0%E6%B5%81%E7%A8%8B%E4%B8%8E%E5%B7%A5%E8%89%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="芯片制造流程与工艺">芯片制造流程与工艺</span>
+            <span class="post-date" title="2025-06-14 12:13:17">2025/06/14</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E8%81%8C%E5%9C%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入职场">C++ 入职场</span>
+            <span class="post-date" title="2024-06-22 15:52:55">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/Protocol-Buffers-%E5%85%A5%E9%97%A8%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Protocol Buffers 入门使用">Protocol Buffers 入门使用</span>
+            <span class="post-date" title="2024-06-22 15:50:39">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-python%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B-boost/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++python 混合编程 -boost">C++python 混合编程 -boost</span>
+            <span class="post-date" title="2024-06-22 15:36:18">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B%E4%B8%8E%E6%A8%A1%E6%9D%BF/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 泛型编程与模板">C++ 泛型编程与模板</span>
+            <span class="post-date" title="2024-06-22 15:27:49">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入门学习笔记">C++ 入门学习笔记</span>
+            <span class="post-date" title="2024-06-22 14:53:46">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 Linux "
+           href="/shell%E7%BC%96%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="shell 编程">shell 编程</span>
+            <span class="post-date" title="2022-03-07 20:24:24">2022/03/07</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Git 版本控制工具">Git 版本控制工具</span>
+            <span class="post-date" title="2022-03-05 23:23:45">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Hexo%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E4%B8%8E%E5%A4%9A%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hexo 博客迁移与多平台使用">Hexo 博客迁移与多平台使用</span>
+            <span class="post-date" title="2022-03-05 01:26:56">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%B8%8E%E9%87%8D%E9%9A%BE%E7%82%B9%E6%B1%87%E6%80%BB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的基础知识与重难点汇总">python 中的基础知识与重难点汇总</span>
+            <span class="post-date" title="2020-11-17 23:05:15">2020/11/17</span>
+        </a>
+        
+        <a  class="全部文章 前端 "
+           href="/javascript%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="JavaScript 入门">JavaScript 入门</span>
+            <span class="post-date" title="2020-11-09 20:46:08">2020/11/09</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E8%AF%AD%E6%B3%95%E7%B3%96/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的语法糖">python 中的语法糖</span>
+            <span class="post-date" title="2020-11-06 10:53:29">2020/11/06</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E8%BF%9B%E7%A8%8B%EF%BC%8C%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%8D%8F%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的进程，线程与协程">python 中的进程，线程与协程</span>
+            <span class="post-date" title="2020-11-04 21:29:16">2020/11/04</span>
+        </a>
+        
+        <a  class="全部文章 Linux "
+           href="/linux%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="linux 常见命令学习">linux 常见命令学习</span>
+            <span class="post-date" title="2020-06-17 22:33:28">2020/06/17</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="机器学习经典算法">机器学习经典算法</span>
+            <span class="post-date" title="2020-06-16 10:36:50">2020/06/16</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/tensorflow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tensorflow 学习笔记">tensorflow 学习笔记</span>
+            <span class="post-date" title="2020-06-05 01:49:53">2020/06/05</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/%E6%B7%B1%E5%BA%A6%E7%90%86%E8%A7%A3%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="深度理解卷积神经网络工作原理">深度理解卷积神经网络工作原理</span>
+            <span class="post-date" title="2020-06-04 13:24:45">2020/06/04</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E7%88%AC%E8%99%AB%E7%9A%84%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫的定时执行">爬虫的定时执行</span>
+            <span class="post-date" title="2020-04-06 22:44:47">2020/04/06</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/Token-%EF%BC%8CCookie%E5%92%8CSession%E7%9A%84%E5%8C%BA%E5%88%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Token ，Cookie 和 Session 的区别">Token ，Cookie 和 Session 的区别</span>
+            <span class="post-date" title="2020-04-03 10:46:54">2020/04/03</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E5%9C%A8python%E4%B8%AD%E8%BF%9B%E8%A1%8C%E8%A7%86%E9%A2%91-%E9%9F%B3%E9%A2%91%E5%A4%84%E7%90%86%E5%8F%8A%E5%90%88%E5%B9%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="在 python 中进行视频 - 音频处理及合并">在 python 中进行视频 - 音频处理及合并</span>
+            <span class="post-date" title="2020-03-29 10:56:44">2020/03/29</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8BJS%E8%A7%A3%E5%AF%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之 JS 解密">反反爬虫之 JS 解密</span>
+            <span class="post-date" title="2020-03-24 10:04:43">2020/03/24</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E7%90%86%E8%A7%A3python%E4%B8%AD%E7%9A%84%E9%97%AD%E5%8C%85%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="理解 python 中的闭包与装饰器">理解 python 中的闭包与装饰器</span>
+            <span class="post-date" title="2020-03-21 17:34:45">2020/03/21</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Mongodb%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Mongodb 数据库入门">Mongodb 数据库入门</span>
+            <span class="post-date" title="2020-03-17 22:50:33">2020/03/17</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%8A%A0%E4%B8%AA%E7%A9%BA%E6%A0%BC%E5%91%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="为什么不加个空格呢">为什么不加个空格呢</span>
+            <span class="post-date" title="2020-03-14 13:53:44">2020/03/14</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8/"
+           data-tag="yield"
+           data-author="" >
+            <span class="post-title" title="迭代器与生成器">迭代器与生成器</span>
+            <span class="post-date" title="2020-03-13 21:58:25">2020/03/13</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E6%BB%91%E5%9D%97%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之滑块验证码">反反爬虫之滑块验证码</span>
+            <span class="post-date" title="2020-03-08 21:00:17">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E5%9B%BE%E7%89%87%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之图片验证码">反反爬虫之图片验证码</span>
+            <span class="post-date" title="2020-03-08 16:16:16">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Python%E6%93%8D%E4%BD%9CRedis/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Python 操作 Redis">Python 操作 Redis</span>
+            <span class="post-date" title="2020-03-07 16:15:44">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy-Redis%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Scrapy-Redis 分布式爬虫">Scrapy-Redis 分布式爬虫</span>
+            <span class="post-date" title="2020-03-07 15:35:50">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%ABRequest%E5%8E%BB%E9%87%8D%E5%8F%8A%E8%BF%87%E6%BB%A4%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫 Request 去重及过滤器">爬虫 Request 去重及过滤器</span>
+            <span class="post-date" title="2020-03-07 15:22:23">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Redis%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Redis 数据库">Redis 数据库</span>
+            <span class="post-date" title="2020-03-06 20:30:00">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Pymysql%E4%B8%8EORM%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="pymysql-ORM"
+           data-author="" >
+            <span class="post-title" title="Pymysql 与 ORM 操作数据库">Pymysql 与 ORM 操作数据库</span>
+            <span class="post-date" title="2020-03-06 10:49:03">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/MySql%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Mysql"
+           data-author="" >
+            <span class="post-title" title="MySql 数据库">MySql 数据库</span>
+            <span class="post-date" title="2020-03-04 23:31:02">2020/03/04</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy%E6%A1%86%E6%9E%B6%E7%88%AC%E8%99%AB/"
+           data-tag="Scrapy"
+           data-author="" >
+            <span class="post-title" title="Scrapy 框架爬虫">Scrapy 框架爬虫</span>
+            <span class="post-date" title="2020-03-02 10:44:55">2020/03/02</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="多线程与多进程爬虫">多线程与多进程爬虫</span>
+            <span class="post-date" title="2020-03-01 15:33:08">2020/03/01</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Selenium%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%A8%A1%E6%8B%9F/"
+           data-tag="Selenium"
+           data-author="" >
+            <span class="post-title" title="Selenium 自动化测试模拟">Selenium 自动化测试模拟</span>
+            <span class="post-date" title="2020-02-29 21:29:54">2020/02/29</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96-%E6%96%87%E4%BB%B6%E4%BF%9D%E5%AD%98/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="数据持久化 - 文件保存本地">数据持久化 - 文件保存本地</span>
+            <span class="post-date" title="2020-02-27 22:01:14">2020/02/27</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫基础入门">爬虫基础入门</span>
+            <span class="post-date" title="2020-02-26 20:44:27">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/CSS%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%8EXpath%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96/"
+           data-tag="CSS-Xpath"
+           data-author="" >
+            <span class="post-title" title="CSS 选择器与 Xpath 数据提取">CSS 选择器与 Xpath 数据提取</span>
+            <span class="post-date" title="2020-02-26 19:07:35">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Seaborn-Pygal-Pyecharts%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Seaborn,pygal,Pyecharts"
+           data-author="" >
+            <span class="post-title" title="Seaborn-Pygal-Pyecharts 可视化">Seaborn-Pygal-Pyecharts 可视化</span>
+            <span class="post-date" title="2020-02-22 16:24:55">2020/02/22</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/python%E4%B9%8BMatplotlib%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Matplotlib"
+           data-author="" >
+            <span class="post-title" title="python 之 Matplotlib 可视化">python 之 Matplotlib 可视化</span>
+            <span class="post-date" title="2020-02-20 20:28:44">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%A4%84%E7%90%86%E5%AE%9E%E6%93%8D/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Pandas 数据分析处理实操">Pandas 数据分析处理实操</span>
+            <span class="post-date" title="2020-02-20 10:51:39">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Markdown%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E6%8A%80%E5%B7%A7/"
+           data-tag="Markdown"
+           data-author="" >
+            <span class="post-title" title="Markdown 文本编辑技巧">Markdown 文本编辑技巧</span>
+            <span class="post-date" title="2020-02-18 16:31:40">2020/02/18</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BPandas%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Python 之 Pandas 库从入门到实战">Python 之 Pandas 库从入门到实战</span>
+            <span class="post-date" title="2020-02-15 20:46:52">2020/02/15</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BNumpy%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Numpy"
+           data-author="" >
+            <span class="post-title" title="Python 之 Numpy 库从入门到实战">Python 之 Numpy 库从入门到实战</span>
+            <span class="post-date" title="2020-02-13 23:15:38">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E9%95%9C%E5%83%8F%E6%BA%90%E7%BD%91%E5%9D%80/"
+           data-tag="pip"
+           data-author="" >
+            <span class="post-title" title="python pip 国内镜像大全及库的安装">python pip 国内镜像大全及库的安装</span>
+            <span class="post-date" title="2020-02-13 23:13:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E7%9A%84%E4%B8%89%E7%A7%8D%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 的三种输出格式">python 的三种输出格式</span>
+            <span class="post-date" title="2020-02-13 23:04:49">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E6%97%B6%E9%97%B4%E6%A8%A1%E5%9D%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的时间模块">python 中的时间模块</span>
+            <span class="post-date" title="2020-02-13 23:01:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E6%9F%A5%E7%9C%8B%E4%BB%BB%E4%BD%95%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E7%94%A8%E6%B3%95%E7%9A%84%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 查看任何第三方库的用法的方法">python 查看任何第三方库的用法的方法</span>
+            <span class="post-date" title="2020-02-13 22:57:50">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Anaconda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8Epyinstaller%E7%A8%8B%E5%BA%8F%E6%89%93%E5%8C%85/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Anaconda 环境配置与 pyinstaller 程序打包">Anaconda 环境配置与 pyinstaller 程序打包</span>
+            <span class="post-date" title="2020-02-13 20:01:52">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%BD%BF%E7%94%A8Hexo-Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%85%8D%E8%B4%B9%E5%8D%9A%E5%AE%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="使用 Hexo+Github 搭建个人免费博客">使用 Hexo+Github 搭建个人免费博客</span>
+            <span class="post-date" title="2020-02-13 15:44:02">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E5%85%B3%E4%BA%8Ehexo%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"
+           data-tag="Hexo"
+           data-author="" >
+            <span class="post-title" title="关于 hexo 使用过程中报错问题汇总">关于 hexo 使用过程中报错问题汇总</span>
+            <span class="post-date" title="2020-02-12 23:03:46">2020/02/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-Python操作Redis" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Python 操作 Redis</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="数据库">数据库</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color1">Redis</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2025-12-13 13:23:10'>2020-03-07 16:15</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:6k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-redis%20%E8%BF%9E%E6%8E%A5"><span class="toc-text">1. redis 连接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-redis%20%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4"><span class="toc-text">2. redis 基本命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-String"><span class="toc-text">2.1 String</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-set"><span class="toc-text">2.3 set</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-Zset"><span class="toc-text">2.4  Zset</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-hash"><span class="toc-text">2.5 hash</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%20%E5%85%B6%E4%BB%96%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C"><span class="toc-text">3. 其他常用操作 </span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-redis 连接"><a href="#1-redis 连接" class="headerlink" title="1. redis 连接"></a>1. redis 连接</h2><blockquote>
+<p>redis 提供两个类 Redis 和 StrictRedis 用于实现 Redis 的命令，StrictRedis 用于实现大部分官方的命令，并使用官方的语法和命令，Redis 是 StrictRedis 的子类，用于向后兼容旧版本的 redis-py。</p>
+</blockquote>
+<blockquote>
+<p>redis 连接实例是线程安全的，可以直接将 redis 连接实例设置为一个全局变量，直接使用。如果需要另一个 Redis 实例（or Redis 数据库）时，就需要重新创建 redis 连接实例来获取一个新的连接。同理，python 的 redis 没有实现 select 命令。</p>
+</blockquote>
+<p>安装 redis</p>
+<pre><code>pip install redis</code></pre><p>连接 redis，加上 decode_responses=True，写入的键值对中的 value 为 str 类型，不加这个参数写入的则为字节类型。</p>
+<pre><code class="python"># 导入 redis 模块，通过 python 操作 redis 也可以直接在 redis 主机的服务端操作缓存数据库
+import redis
+
+# host 是 redis 主机，需要 redis 服务端和客户端都启动 redis 默认端口是 6379
+r = redis.Redis(host=&#39;134.175.188.27&#39;, port=6379, decode_responses=True, password=123456)
+# key 是 &quot;foo&quot; value 是 &quot;bar&quot; 将键值对存入 redis 缓存
+r.set(&#39;name&#39;, &#39;junxi&#39;)
+print(r[&#39;name&#39;])
+# 取出键 name 对应的值
+print(r.get(&#39;name&#39;))
+print(type(r.get(&#39;name&#39;)))
+</code></pre>
+<h2 id="2-redis 基本命令"><a href="#2-redis 基本命令" class="headerlink" title="2. redis 基本命令"></a>2. redis 基本命令</h2><h3 id="2-1-String"><a href="#2-1-String" class="headerlink" title="2.1 String"></a>2.1 String</h3><p>set(name, value, ex=None, px=None, nx=False, xx=False)</p>
+<p>在 Redis 中设置值，默认，不存在则创建，存在则修改<br> 参数：<br> ex，过期时间（秒）<br> px，过期时间（毫秒）<br> nx，如果设置为 True，则只有 name 不存在时，当前 set 操作才执行<br> xx，如果设置为 True，则只有 name 存在时，当前 set 操作才执行</p>
+<p>ex，过期时间（秒） 这里过期时间是 3 秒，3 秒后 p，键 food 的值就变成 None</p>
+<pre><code>import redis
+
+pool = redis.ConnectionPool(host=&#39;localhost&#39;, port=6379, decode_responses=True)
+r = redis.Redis(connection_pool=pool)
+# key 是 &quot;food&quot; value 是 &quot;mutton&quot; 将键值对存入 redis 缓存
+r.set(&#39;food&#39;, &#39;mutton&#39;, ex=3)
+# mutton 取出键 food 对应的值
+print(r.get(&#39;food&#39;)) </code></pre><p>px，过期时间（豪秒） 这里过期时间是 3 豪秒，3 毫秒后，键 foo 的值就变成 None</p>
+<pre><code>import redis
+
+pool = redis.ConnectionPool(host=&#39;localhost&#39;, port=6379, decode_responses=True)
+r = redis.Redis(connection_pool=pool)
+r.set(&#39;food&#39;, &#39;beef&#39;, px=3)
+print(r.get(&#39;food&#39;))</code></pre><p>nx，如果设置为 True，则只有 name 不存在时，当前 set 操作才执行 （新建）</p>
+<pre><code>import redis
+
+pool = redis.ConnectionPool(host=&#39;localhost&#39;, port=6379, decode_responses=True)
+r = redis.Redis(connection_pool=pool)
+print(r.set(&#39;fruit&#39;, &#39;watermelon&#39;, nx=True))    # True-- 不存在
+# 如果键 fruit 不存在，那么输出是 True；如果键 fruit 已经存在，输出是 None</code></pre><p>xx，如果设置为 True，则只有 name 存在时，当前 set 操作才执行 （修改）</p>
+<pre><code># True-- 已经存在 
+# 如果键 fruit 已经存在，那么输出是 True；如果键 fruit 不存在，输出是 None
+print((r.set(&#39;fruit&#39;, &#39;watermelon&#39;, xx=True)))   </code></pre><p>setnx(name, value)<br> 设置值，只有 name 不存在时，执行设置操作（添加）</p>
+<pre><code>print(r.setnx(&#39;fruit1&#39;, &#39;banana&#39;))  # fruit1 不存在，输出为 True</code></pre><p>setex(name, value, time)<br> 设置值<br> 参数： time，过期时间（数字秒 或 timedelta 对象）</p>
+<pre><code>import redis
+import time
+
+pool = redis.ConnectionPool(host=&#39;localhost&#39;, port=6379, decode_responses=True)
+r = redis.Redis(connection_pool=pool)
+r.setex(&quot;fruit2&quot;, &quot;orange&quot;, 5)
+time.sleep(5)
+# 5 秒后，取值就从 orange 变成 None
+print(r.get(&#39;fruit2&#39;)) </code></pre><p>psetex(name, time_ms, value)<br> 设置值<br> 参数： time_ms，过期时间（数字毫秒 或 timedelta 对象）</p>
+<pre><code>r.psetex(&quot;fruit3&quot;, 5000, &quot;apple&quot;)
+time.sleep(5)
+print(r.get(&#39;fruit3&#39;))  # 5000 毫秒后，取值就从 apple 变成 None</code></pre><p>mset(<em>args, *</em>kwargs)<br> 批量设置值</p>
+<pre><code>r.mset(&#123;&#39;k1&#39;: &#39;v1&#39;, &#39;k2&#39;: &#39;v2&#39;&#125;)
+print(r.mget(&quot;k1&quot;, &quot;k2&quot;))   # 一次取出多个键对应的值
+print(r.mget(&quot;k1&quot;))</code></pre><p>mget(keys, *args)<br> 批量获取 如：</p>
+<pre><code>print(r.mget(&#39;k1&#39;, &#39;k2&#39;))
+print(r.mget([&#39;k1&#39;, &#39;k2&#39;]))
+# 将目前 redis 缓存中的键对应的值批量取出来
+print(r.mget(&quot;fruit&quot;, &quot;fruit1&quot;, &quot;fruit2&quot;, &quot;k1&quot;, &quot;k2&quot;))  </code></pre><p>getrange(key, start, end)<br> 获取子序列（根据字节获取，非字符）<br> 参数：<br> name，Redis 的 name<br> start，起始位置（字节）<br> end，结束位置（字节）<br> 如： “君惜大大” ，0-3 表示 “君”</p>
+<pre><code>r.set(&quot;cn_name&quot;, &quot; 君惜大大 &quot;) # 汉字
+# 取索引号是 0-2 前 3 位的字节 君 切片操作 （一个汉字 3 个字节 1 个字母一个字节 每个字节 8bit）
+print(r.getrange(&quot;cn_name&quot;, 0, 2))
+# 取所有的字节 君惜大大 切片操作
+print(r.getrange(&quot;cn_name&quot;, 0, -1)) 
+# 字母
+r.set(&quot;en_name&quot;,&quot;junxi&quot;) 
+# 取索引号是 0-2 前 3 位的字节 jun 切片操作 （一个汉字 3 个字节 1 个字母一个字节 每个字节 8bit）
+print(r.getrange(&quot;en_name&quot;, 0, 2))
+# 取所有的字节 junxi 切片操作
+print(r.getrange(&quot;en_name&quot;, 0, -1))</code></pre><p>setrange(name, offset, value)<br> 修改字符串内容，从指定字符串索引开始向后替换（新值太长时，则向后添加）<br> 参数：<br> offset，字符串的索引，字节（一个汉字三个字节）<br> value，要设置的值</p>
+<pre><code>r.setrange(&quot;en_name&quot;, 1, &quot;ccc&quot;)
+# jccci 原始值是 junxi 从索引号是 1 开始替换成 ccc 变成 jccci
+print(r.get(&quot;en_name&quot;))   </code></pre><p>strlen(name)<br> 返回 name 对应值的字节长度（一个汉字 3 个字节）</p>
+<pre><code>print(r.strlen(&quot;foo&quot;))  # 4 &#39;goo1&#39; 的长度是 4</code></pre><p>incr(self, name, amount=1)<br> 自增 name 对应的值，当 name 不存在时，则创建 name＝amount，否则，则自增。<br> 参数：<br> name,Redis 的 name<br> amount, 自增数（必须是整数）<br> 注：同 incrby</p>
+<pre><code>r.set(&quot;foo&quot;, 123)
+print(r.mget(&quot;foo&quot;, &quot;foo1&quot;, &quot;foo2&quot;, &quot;k1&quot;, &quot;k2&quot;))
+r.incr(&quot;foo&quot;, amount=1)
+print(r.mget(&quot;foo&quot;, &quot;foo1&quot;, &quot;foo2&quot;, &quot;k1&quot;, &quot;k2&quot;))</code></pre><p>应用场景 – 页面点击数 <br> 假定我们对一系列页面需要记录点击次数。例如论坛的每个帖子都要记录点击次数，而点击次数比回帖的次数的多得多。如果使用关系数据库来存储点击，可能存在大量的行级锁争用。所以，点击数的增加使用 redis 的 INCR 命令最好不过了。<br>当 redis 服务器启动时，可以从关系数据库读入点击数的初始值（12306 这个页面被访问了 34634 次）</p>
+<pre><code>r.set(&quot;visit:12306:totals&quot;, 34634)
+print(r.get(&quot;visit:12306:totals&quot;))</code></pre><p>每当有一个页面点击，则使用 INCR 增加点击数即可。</p>
+<pre><code>r.incr(&quot;visit:12306:totals&quot;)
+r.incr(&quot;visit:12306:totals&quot;)</code></pre><p>页面载入的时候则可直接获取这个值</p>
+<pre><code>print(r.get(&quot;visit:12306:totals&quot;))</code></pre><p>incrbyfloat(self, name, amount=1.0)<br> 自增 name 对应的值，当 name 不存在时，则创建 name＝amount，否则，则自增。<br> 参数：<br> name,Redis 的 name<br> amount, 自增数（浮点型）</p>
+<pre><code>r.set(&quot;foo1&quot;, &quot;123.0&quot;)
+r.set(&quot;foo2&quot;, &quot;221.0&quot;)
+print(r.mget(&quot;foo1&quot;, &quot;foo2&quot;))
+r.incrbyfloat(&quot;foo1&quot;, amount=2.0)
+r.incrbyfloat(&quot;foo2&quot;, amount=3.0)
+print(r.mget(&quot;foo1&quot;, &quot;foo2&quot;))</code></pre><p>decr(self, name, amount=1)<br> 自减 name 对应的值，当 name 不存在时，则创建 name＝amount，否则，则自减。<br> 参数：<br> name,Redis 的 name<br> amount, 自减数（整数)</p>
+<pre><code>r.decr(&quot;foo4&quot;, amount=3) # 递减 3
+r.decr(&quot;foo1&quot;, amount=1) # 递减 1
+print(r.mget(&quot;foo1&quot;, &quot;foo4&quot;))</code></pre><p>append(key, value)<br> 在 redis name 对应的值后面追加内容<br> 参数：<br> key, redis 的 name<br> value, 要追加的字符串</p>
+<pre><code>r.append(&quot;name&quot;, &quot;haha&quot;)    # 在 name 对应的值 junxi 后面追加字符串 haha
+print(r.mget(&quot;name&quot;))</code></pre><p>2.2 ###  list</p>
+<p>增加（类似于 list 的 append，只是这里是从左边新增加）–没有就新建<br> lpush(name,values)<br> 在 name 对应的 list 中添加元素，每个新的元素都添加到列表的最左边<br> 如：</p>
+<pre><code>import redis
+import time
+
+pool = redis.ConnectionPool(host=&#39;localhost&#39;, port=6379, decode_responses=True)
+r = redis.Redis(connection_pool=pool)
+
+r.lpush(&quot;list1&quot;, 11, 22, 33)
+print(r.lrange(&#39;list1&#39;, 0, -1))</code></pre><p>保存顺序为: 33,22,11</p>
+<p>扩展：</p>
+<pre><code>r.rpush(&quot;list2&quot;, 11, 22, 33)  # 表示从右向左操作
+print(r.llen(&quot;list2&quot;))  # 列表长度
+print(r.lrange(&quot;list2&quot;, 0, 3))  # 切片取出值，范围是索引号 0-3</code></pre><p>增加（从右边增加）–没有就新建</p>
+<pre><code>r.rpush(&quot;list2&quot;, 44, 55, 66)    # 在列表的右边，依次添加 44,55,66
+print(r.llen(&quot;list2&quot;))  # 列表长度
+print(r.lrange(&quot;list2&quot;, 0, -1)) # 切片取出值，范围是索引号 0 到 -1(最后一个元素)</code></pre><p>往已经有的 name 的列表的左边添加元素，没有的话无法创建 <br>lpushx(name,value)<br> 在 name 对应的 list 中添加元素，只有 name 已经存在时，值添加到列表的最左边 <br> 更多：</p>
+<pre><code>r.lpushx(&quot;list10&quot;, 10)   # 这里 list10 不存在
+print(r.llen(&quot;list10&quot;))  # 0
+print(r.lrange(&quot;list10&quot;, 0, -1))  # []
+r.lpushx(&quot;list2&quot;, 77)   # 这里 &quot;list2&quot; 之前已经存在，往列表最左边添加一个元素，一次只能添加一个
+print(r.llen(&quot;list2&quot;))  # 列表长度
+print(r.lrange(&quot;list2&quot;, 0, -1)) # 切片取出值，范围是索引号 0 到 -1(最后一个元素 </code></pre><p> 往已经有的 name 的列表的右边添加元素，没有的话无法创建</p>
+<pre><code>r.rpushx(&quot;list2&quot;, 99)   # 这里 &quot;foo_list1&quot; 之前已经存在，往列表最右边添加一个元素，一次只能添加一个
+print(r.llen(&quot;list2&quot;))  # 列表长度
+print(r.lrange(&quot;list2&quot;, 0, -1)) # 切片取出值，范围是索引号 0 到 -1(最后一个元素)</code></pre><p>新增（固定索引号位置插入元素）<br>linsert(name, where, refvalue, value))<br>在 name 对应的列表的某一个值前或后插入一个新值 <br> 参数：<br>name，redis 的 name<br>where，BEFORE 或 AFTER<br>refvalue，标杆值，即：在它前后插入数据<br>value，要插入的数据</p>
+<pre><code>r.linsert(&quot;list2&quot;, &quot;before&quot;, &quot;11&quot;, &quot;00&quot;)   # 往列表中左边第一个出现的元素 &quot;11&quot; 前插入元素 &quot;00&quot;
+print(r.lrange(&quot;list2&quot;, 0, -1))   # 切片取出值，范围是索引号 0- 最后一个元素 </code></pre><p> 修改（指定索引号进行修改）<br> r.lset(name, index, value)<br> 对 name 对应的 list 中的某一个索引位置重新赋值<br> 参数：<br> name，redis 的 name<br> index，list 的索引位置<br> value，要设置的值</p>
+<pre><code>r.lset(&quot;list2&quot;, 0, -11)    # 把索引号是 0 的元素修改成 -11
+print(r.lrange(&quot;list2&quot;, 0, -1))</code></pre><p>删除（指定值进行删除）<br> r.lrem(name, value, num)<br> 在 name 对应的 list 中删除指定的值<br> 参数：<br> name，redis 的 name<br> value，要删除的值<br> num， num=0，删除列表中所有的指定值；<br> num=2, 从前到后，删除 2 个； num=1, 从前到后，删除左边第 1 个<br> num=-2, 从后向前，删除 2 个</p>
+<pre><code>r.lrem(&quot;list2&quot;, &quot;11&quot;, 1)    # 将列表中左边第一次出现的 &quot;11&quot; 删除
+print(r.lrange(&quot;list2&quot;, 0, -1))
+r.lrem(&quot;list2&quot;, &quot;99&quot;, -1)    # 将列表中右边第一次出现的 &quot;99&quot; 删除
+print(r.lrange(&quot;list2&quot;, 0, -1))
+r.lrem(&quot;list2&quot;, &quot;22&quot;, 0)    # 将列表中所有的 &quot;22&quot; 删除
+print(r.lrange(&quot;list2&quot;, 0, -1))</code></pre><p>删除并返回 <br>lpop(name)<br> 在 name 对应的列表的左侧获取第一个元素并在列表中移除，返回值则是第一个元素 <br> 更多：<br>rpop(name) 表示从右向左操作</p>
+<pre><code>r.lpop(&quot;list2&quot;)    # 删除列表最左边的元素，并且返回删除的元素
+print(r.lrange(&quot;list2&quot;, 0, -1))
+r.rpop(&quot;list2&quot;)    # 删除列表最右边的元素，并且返回删除的元素
+print(r.lrange(&quot;list2&quot;, 0, -1))</code></pre><p>删除索引之外的值 <br>ltrim(name, start, end)<br> 在 name 对应的列表中移除没有在 start-end 索引之间的值 <br> 参数：<br>name，redis 的 name<br>start，索引的起始位置<br>end，索引结束位置</p>
+<pre><code>r.ltrim(&quot;list2&quot;, 0, 2)    # 删除索引号是 0-2 之外的元素，值保留索引号是 0-2 的元素
+print(r.lrange(&quot;list2&quot;, 0, -1))</code></pre><p>取值（根据索引号取值）<br>lindex(name, index)<br>在 name 对应的列表中根据索引获取列表元素</p>
+<pre><code>print(r.lindex(&quot;list2&quot;, 0))  # 取出索引号是 0 的值 </code></pre><h3 id="2-3-set"><a href="#2-3-set" class="headerlink" title="2.3 set"></a>2.3 set</h3><p> 新增<br> sadd(name,values)<br> name 对应的集合中添加元素</p>
+<pre><code>r.sadd(&quot;set1&quot;, 33, 44, 55, 66)  # 往集合中添加元素
+print(r.scard(&quot;set1&quot;))  # 集合的长度是 4
+print(r.smembers(&quot;set1&quot;))   # 获取集合中所有的成员 </code></pre><p> 获取元素个数 类似于 len<br>scard(name)<br>获取 name 对应的集合中元素个数</p>
+<pre><code>print(r.scard(&quot;set1&quot;))  # 集合的长度是 4</code></pre><p>获取集合中所有的成员 <br>smembers(name)<br> 获取 name 对应的集合的所有成员</p>
+<pre><code>print(r.smembers(&quot;set1&quot;))   # 获取集合中所有的成员 </code></pre><p> 获取集合中所有的成员–元组形式<br>sscan(name, cursor=0, match=None, count=None)</p>
+<pre><code>print(r.sscan(&quot;set1&quot;))</code></pre><p>获取集合中所有的成员–迭代器的方式<br> sscan_iter(name, match=None, count=None)<br> 同字符串的操作，用于增量迭代分批获取元素，避免内存消耗太大</p>
+<pre><code>for i in r.sscan_iter(&quot;set1&quot;):
+    print(i)</code></pre><p>差集 <br>sdiff(keys, *args)<br> 在第一个 name 对应的集合中且不在其他 name 对应的集合的元素集合</p>
+<pre><code>r.sadd(&quot;set2&quot;, 11, 22, 33)
+print(r.smembers(&quot;set1&quot;))   # 获取集合中所有的成员
+print(r.smembers(&quot;set2&quot;))
+print(r.sdiff(&quot;set1&quot;, &quot;set2&quot;))   # 在集合 set1 但是不在集合 set2 中
+print(r.sdiff(&quot;set2&quot;, &quot;set1&quot;))   # 在集合 set2 但是不在集合 set1 中 </code></pre><p> 差集–差集存在一个新的集合中 <br>sdiffstore(dest, keys, *args)<br> 获取第一个 name 对应的集合中且不在其他 name 对应的集合，再将其新加入到 dest 对应的集合中</p>
+<pre><code>r.sdiffstore(&quot;set3&quot;, &quot;set1&quot;, &quot;set2&quot;)    # 在集合 set1 但是不在集合 set2 中
+print(r.smembers(&quot;set3&quot;))   # 获取集合 3 中所有的成员 </code></pre><p> 交集 <br>sinter(keys, *args)<br> 获取多一个 name 对应集合的交集</p>
+<pre><code>print(r.sinter(&quot;set1&quot;, &quot;set2&quot;)) # 取 2 个集合的交集 </code></pre><p> 交集–交集存在一个新的集合中 <br>sinterstore(dest, keys, *args)<br> 获取多一个 name 对应集合的并集，再将其加入到 dest 对应的集合中</p>
+<pre><code>print(r.sinterstore(&quot;set3&quot;, &quot;set1&quot;, &quot;set2&quot;)) # 取 2 个集合的交集
+print(r.smembers(&quot;set3&quot;))</code></pre><p>并集<br> sunion(keys, *args)<br> 获取多个 name 对应的集合的并集</p>
+<pre><code>print(r.sunion(&quot;set1&quot;, &quot;set2&quot;)) # 取 2 个集合的并集 </code></pre><p> 并集–并集存在一个新的集合<br> sunionstore(dest,keys, *args)<br> 获取多一个 name 对应的集合的并集，并将结果保存到 dest 对应的集合中</p>
+<pre><code>print(r.sunionstore(&quot;set3&quot;, &quot;set1&quot;, &quot;set2&quot;)) # 取 2 个集合的并集
+print(r.smembers(&quot;set3&quot;))</code></pre><p>判断是否是集合的成员 类似 in<br>sismember(name, value)<br>检查 value 是否是 name 对应的集合的成员，结果为 True 和 False</p>
+<pre><code>print(r.sismember(&quot;set1&quot;, 33))  # 33 是集合的成员
+print(r.sismember(&quot;set1&quot;, 23))  # 23 不是集合的成员 </code></pre><p> 移动 <br>smove(src, dst, value)<br> 将某个成员从一个集合中移动到另外一个集合</p>
+<pre><code>r.smove(&quot;set1&quot;, &quot;set2&quot;, 44)
+print(r.smembers(&quot;set1&quot;))
+print(r.smembers(&quot;set2&quot;))</code></pre><p>删除–随机删除并且返回被删除值 <br>spop(name)<br> 从集合移除一个成员，并将其返回, 说明一下，集合是无序的，所有是随机删除的</p>
+<pre><code>print(r.spop(&quot;set2&quot;))   # 这个删除的值是随机删除的，集合是无序的
+print(r.smembers(&quot;set2&quot;))</code></pre><p>删除–指定值删除 <br>srem(name, values)<br> 在 name 对应的集合中删除某些值</p>
+<pre><code>print(r.srem(&quot;set2&quot;, 11))   # 从集合中删除指定值 11
+print(r.smembers(&quot;set2&quot;))</code></pre><h3 id="2-4-Zset"><a href="#2-4-Zset" class="headerlink" title="2.4  Zset"></a>2.4  Zset</h3><p>Set 操作，Set 集合就是不允许重复的列表，本身是无序的<br> 有序集合，在集合的基础上，为每元素排序；元素的排序需要根据另外一个值来进行比较，<br> 所以，对于有序集合，每一个元素有两个值，即：值和分数，分数专门用来做排序。</p>
+<p>新增 <br>zadd(name, <em>args, *</em>kwargs)<br> 在 name 对应的有序集合中添加元素 <br> 如：</p>
+<pre><code>import redis
+import time
+
+pool = redis.ConnectionPool(host=&#39;localhost&#39;, port=6379, decode_responses=True)
+r = redis.Redis(connection_pool=pool)
+
+r.zadd(&quot;zset1&quot;, n1=11, n2=22)
+r.zadd(&quot;zset2&quot;, &#39;m1&#39;, 22, &#39;m2&#39;, 44)
+print(r.zcard(&quot;zset1&quot;)) # 集合长度
+print(r.zcard(&quot;zset2&quot;)) # 集合长度
+print(r.zrange(&quot;zset1&quot;, 0, -1))   # 获取有序集合中所有元素
+print(r.zrange(&quot;zset2&quot;, 0, -1, withscores=True))   # 获取有序集合中所有元素和分数 </code></pre><p> 获取有序集合元素个数 类似于 len<br>zcard(name)<br>获取 name 对应的有序集合元素的数量</p>
+<pre><code>print(r.zcard(&quot;zset1&quot;)) # 集合长度 </code></pre><p> 获取有序集合的所有元素 <br>r.zrange(name, start, end, desc=False, withscores=False, score_cast_func=float)<br> 按照索引范围获取 name 对应的有序集合的元素 <br> 参数：<br>name，redis 的 name<br>start，有序集合索引起始位置（非分数）<br>end，有序集合索引结束位置（非分数）<br>desc，排序规则，默认按照分数从小到大排序<br>withscores，是否获取元素的分数，默认只获取元素的值<br>score_cast_func，对分数进行数据转换的函数</p>
+<p>从大到小排序(同 zrange，集合是从大到小排序的)<br> zrevrange(name, start, end, withscores=False, score_cast_func=float)</p>
+<pre><code>print(r.zrevrange(&quot;zset1&quot;, 0, -1))    # 只获取元素，不显示分数
+print(r.zrevrange(&quot;zset1&quot;, 0, -1, withscores=True)) # 获取有序集合中所有元素和分数, 分数倒序 </code></pre><p> 按照分数范围获取 name 对应的有序集合的元素<br>zrangebyscore(name, min, max, start=None, num=None, withscores=False, score_cast_func=float)</p>
+<pre><code>for i in range(1, 30):
+   element = &#39;n&#39; + str(i)
+   r.zadd(&quot;zset3&quot;, element, i)
+print(r.zrangebyscore(&quot;zset3&quot;, 15, 25)) # # 在分数是 15-25 之间，取出符合条件的元素
+print(r.zrangebyscore(&quot;zset3&quot;, 12, 22, withscores=True))    # 在分数是 12-22 之间，取出符合条件的元素（带分数）</code></pre><p>按照分数范围获取有序集合的元素并排序（默认从大到小排序）<br> zrevrangebyscore(name, max, min, start=None, num=None, withscores=False, score_cast_func=float)</p>
+<pre><code>print(r.zrevrangebyscore(&quot;zset3&quot;, 22, 11, withscores=True)) # 在分数是 22-11 之间，取出符合条件的元素 按照分数倒序 </code></pre><p> 获取所有元素–默认按照分数顺序排序<br>zscan(name, cursor=0, match=None, count=None, score_cast_func=float)</p>
+<pre><code>print(r.zscan(&quot;zset3&quot;))</code></pre><p>获取值的索引号 <br>zrank(name, value)<br> 获取某个值在 name 对应的有序集合中的索引（从 0 开始）<br>更多：<br> zrevrank(name, value)，从大到小排序</p>
+<pre><code>print(r.zrank(&quot;zset3&quot;, &quot;n1&quot;))   # n1 的索引号是 0 这里按照分数顺序（从小到大）
+print(r.zrank(&quot;zset3&quot;, &quot;n6&quot;))   # n6 的索引号是 1
+
+print(r.zrevrank(&quot;zset3&quot;, &quot;n1&quot;))    # n1 的索引号是 29 这里安照分数倒序（从大到小）</code></pre><p>删除–指定值删除 <br>zrem(name, values)<br> 删除 name 对应的有序集合中值是 values 的成员</p>
+<pre><code>r.zrem(&quot;zset3&quot;, &quot;n3&quot;)   # 删除有序集合中的元素 n3 删除单个
+print(r.zrange(&quot;zset3&quot;, 0, -1))</code></pre><p>删除–根据排行范围删除，按照索引号来删除 <br>zremrangebyrank(name, min, max)<br> 根据排行范围删除</p>
+<pre><code>r.zremrangebyrank(&quot;zset3&quot;, 0, 1)  # 删除有序集合中的索引号是 0, 1 的元素
+print(r.zrange(&quot;zset3&quot;, 0, -1))</code></pre><p>删除–根据分数范围删除 <br>zremrangebyscore(name, min, max)<br> 根据分数范围删除</p>
+<pre><code>r.zremrangebyscore(&quot;zset3&quot;, 11, 22)   # 删除有序集合中的分数是 11-22 的元素
+print(r.zrange(&quot;zset3&quot;, 0, -1))</code></pre><p>获取值对应的分数 <br>zscore(name, value)<br> 获取 name 对应有序集合中 value 对应的分数</p>
+<pre><code>print(r.zscore(&quot;zset3&quot;, &quot;n27&quot;))   # 获取元素 n27 对应的分数 27</code></pre><h3 id="2-5-hash"><a href="#2-5-hash" class="headerlink" title="2.5 hash"></a>2.5 hash</h3><p>单个增加–修改 (单个取出)–没有就新增，有的话就修改<br>hset(name, key, value)<br>name 对应的 hash 中设置一个键值对（不存在，则创建；否则，修改）<br> 参数：<br>name，redis 的 name<br>key，name 对应的 hash 中的 key<br>value，name 对应的 hash 中的 value<br>注：<br>hsetnx(name, key, value), 当 name 对应的 hash 中不存在当前 key 时则创建（相当于添加）</p>
+<pre><code>import redis
+import time
+
+pool = redis.ConnectionPool(host=&#39;localhost&#39;, port=6379, decode_responses=True)
+r = redis.Redis(connection_pool=pool)
+
+r.hset(&quot;hash1&quot;, &quot;k1&quot;, &quot;v1&quot;)
+r.hset(&quot;hash1&quot;, &quot;k2&quot;, &quot;v2&quot;)
+print(r.hkeys(&quot;hash1&quot;)) # 取 hash 中所有的 key
+print(r.hget(&quot;hash1&quot;, &quot;k1&quot;))    # 单个取 hash 的 key 对应的值
+print(r.hmget(&quot;hash1&quot;, &quot;k1&quot;, &quot;k2&quot;)) # 多个取 hash 的 key 对应的值
+r.hsetnx(&quot;hash1&quot;, &quot;k2&quot;, &quot;v3&quot;) # 只能新建
+print(r.hget(&quot;hash1&quot;, &quot;k2&quot;))</code></pre><p>批量增加（取出）<br>hmset(name, mapping)<br>在 name 对应的 hash 中批量设置键值对 <br> 参数：<br>name，redis 的 name<br>mapping，字典，如：{‘k1’:’v1’, ‘k2’: ‘v2’}<br>如：</p>
+<pre><code>r.hmset(&quot;hash2&quot;, &#123;&quot;k2&quot;: &quot;v2&quot;, &quot;k3&quot;: &quot;v3&quot;&#125;)</code></pre><p>hget(name,key)<br> 在 name 对应的 hash 中获取根据 key 获取 value<br> hmget(name, keys, *args)<br> 在 name 对应的 hash 中获取多个 key 的值<br> 参数：<br> name，reids 对应的 name<br> keys，要获取 key 集合，如：[‘k1’, ‘k2’, ‘k3’]<br> *args，要获取的 key，如：k1,k2,k3<br> 如：</p>
+<pre><code>print(r.hget(&quot;hash2&quot;, &quot;k2&quot;))  # 单个取出 &quot;hash2&quot; 的 key-k2 对应的 value
+print(r.hmget(&quot;hash2&quot;, &quot;k2&quot;, &quot;k3&quot;))  # 批量取出 &quot;hash2&quot; 的 key-k2 k3 对应的 value -- 方式 1
+print(r.hmget(&quot;hash2&quot;, [&quot;k2&quot;, &quot;k3&quot;]))  # 批量取出 &quot;hash2&quot; 的 key-k2 k3 对应的 value -- 方式 2</code></pre><p>取出所有的键值对<br> hgetall(name)<br> 获取 name 对应 hash 的所有键值</p>
+<pre><code>print(r.hgetall(&quot;hash1&quot;))</code></pre><p>得到所有键值对的格式 hash 长度<br> hlen(name)<br> 获取 name 对应的 hash 中键值对的个数</p>
+<pre><code>print(r.hlen(&quot;hash1&quot;))</code></pre><p>得到所有的 keys（类似字典的取所有 keys）<br> hkeys(name)<br> 获取 name 对应的 hash 中所有的 key 的值</p>
+<pre><code>print(r.hkeys(&quot;hash1&quot;))</code></pre><p>得到所有的 value（类似字典的取所有 value）<br> hvals(name)<br> 获取 name 对应的 hash 中所有的 value 的值</p>
+<pre><code>print(r.hvals(&quot;hash1&quot;))</code></pre><p>判断成员是否存在（类似字典的 in）<br> hexists(name, key)<br> 检查 name 对应的 hash 是否存在当前传入的 key</p>
+<pre><code>print(r.hexists(&quot;hash1&quot;, &quot;k4&quot;))  # False 不存在
+print(r.hexists(&quot;hash1&quot;, &quot;k1&quot;))  # True 存在 </code></pre><p> 删除键值对<br> hdel(name,*keys)<br> 将 name 对应的 hash 中指定 key 的键值对删除</p>
+<pre><code>print(r.hgetall(&quot;hash1&quot;))
+r.hset(&quot;hash1&quot;, &quot;k2&quot;, &quot;v222&quot;)   # 修改已有的 key k2
+r.hset(&quot;hash1&quot;, &quot;k11&quot;, &quot;v1&quot;)   # 新增键值对 k11
+r.hdel(&quot;hash1&quot;, &quot;k1&quot;)    # 删除一个键值对
+print(r.hgetall(&quot;hash1&quot;))</code></pre><h2 id="3- 其他常用操作"><a href="#3- 其他常用操作" class="headerlink" title="3. 其他常用操作"></a>3. 其他常用操作 </h2><p><strong> 删除</strong><br> delete(*names)<br> 根据删除 redis 中的任意数据类型（string、hash、list、set、有序 set）</p>
+<pre><code>r.delete(&quot;gender&quot;)  # 删除 key 为 gender 的键值对 </code></pre><p><strong> 检查名字是否存在</strong><br> exists(name)<br> 检测 redis 的 name 是否存在，存在就是 True，False 不存在</p>
+<pre><code>print(r.exists(&quot;zset1&quot;))</code></pre><p><strong>模糊匹配</strong><br> keys(pattern=’<em>‘) 根据模型获取 redis 的 name 更多： KEYS \</em> 匹配数据库中所有 key 。 KEYS h?llo 匹配 hello ， hallo 和 hxllo 等。 KEYS h*llo 匹配 hllo 和 heeeeello 等。<br> KEYS h[ae]llo 匹配 hello 和 hallo ，但不匹配 hillo</p>
+<pre><code>print(r.keys(&quot;foo*&quot;))</code></pre><p><strong>设置超时时间</strong><br> expire(name ,time)<br> 为某个 redis 的某个 name 设置超时时间</p>
+<pre><code>r.lpush(&quot;list5&quot;, 11, 22)
+r.expire(&quot;list5&quot;, time=3)
+print(r.lrange(&quot;list5&quot;, 0, -1))
+time.sleep(3)
+print(r.lrange(&quot;list5&quot;, 0, -1))</code></pre><p><strong>重命名</strong><br> rename(src, dst)<br> 对 redis 的 name 重命名</p>
+<pre><code>r.lpush(&quot;list5&quot;, 11, 22)
+r.rename(&quot;list5&quot;, &quot;list5-1&quot;)</code></pre><p><strong>随机获取 name</strong><br> randomkey()<br> 随机获取一个 redis 的 name（不删除）</p>
+<pre><code>print(r.randomkey())</code></pre><p><strong>获取类型</strong><br> type(name)<br> 获取 name 对应值的类型</p>
+<pre><code>print(r.type(&quot;set1&quot;))
+print(r.type(&quot;hash2&quot;))</code></pre><p><strong>查看所有元素</strong><br> scan(cursor=0, match=None, count=None)</p>
+<pre><code>print(r.hscan(&quot;hash2&quot;))
+print(r.sscan(&quot;set3&quot;))
+print(r.zscan(&quot;zset2&quot;))
+print(r.getrange(&quot;foo1&quot;, 0, -1))
+print(r.lrange(&quot;list2&quot;, 0, -1))
+print(r.smembers(&quot;set3&quot;))
+print(r.zrange(&quot;zset3&quot;, 0, -1))
+print(r.hgetall(&quot;hash1&quot;))</code></pre><p><strong>查看所有元素–迭代器</strong><br> scan_iter(match=None, count=None)</p>
+<pre><code>for i in r.hscan_iter(&quot;hash1&quot;):
+    print(i)
+
+for i in r.sscan_iter(&quot;set3&quot;):
+    print(i)
+
+for i in r.zscan_iter(&quot;zset3&quot;):
+    print(i)</code></pre><p><strong>其他方法</strong></p>
+<pre><code>print(r.get(&#39;name&#39;))    # 查询 key 为 name 的值
+r.delete(&quot;gender&quot;)  # 删除 key 为 gender 的键值对
+print(r.keys()) # 查询所有的 Key
+print(r.dbsize())   # 当前 redis 包含多少条数据
+r.save()    # 执行 &quot; 检查点 &quot; 操作，将数据写回磁盘。保存时阻塞
+# r.flushdb()        # 清空 r 中的所有数据</code></pre>
+      
+       <hr><span style="font-style: italic;color: gray;"> 欢迎各位看官及技术大佬前来交流指导呀，可以邮件至 jqiange@yeah.net </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2021 Jqiange
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

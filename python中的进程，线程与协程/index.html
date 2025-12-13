@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>python 中的进程，线程与协程 | jqiange</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="python 中的进程，线程与协程 | jqiange">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="人畜无害的姜小强">
+<meta property="og:url" content="https://jqiange.github.io/about/index.html">
+<meta property="og:site_name" content="jqiange">
+<meta property="og:description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+<meta property="article:published_time" content="2020-02-18T08:21:04.000Z">
+<meta property="article:modified_time" content="2025-12-13T05:23:10.695Z">
+<meta property="article:author" content="姜小强">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+
+
+<link rel="icon" href="/img/jqiange.png">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/jqiange.png"/>
+</a>
+<div class="author">
+    <span>姜小强</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/jqiange"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(58)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(9)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据库">
+                        
+                        数据库
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="每日一学">
+                        
+                        每日一学
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="爬虫">
+                        
+                        爬虫
+                        <small>(10)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="前端">
+                        
+                        前端
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="深度学习">
+                        
+                        深度学习
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据分析">
+                        
+                        数据分析
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="chip">
+                        
+                        chip
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="CPP">
+                        
+                        CPP
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Linux">
+                        
+                        Linux
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="python">
+                        
+                        python
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="58">
+<input type="hidden" id="yelog_site_word_count" value="251.9k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSS-Xpath</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Markdown</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Matplotlib</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Mysql</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Numpy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pandas</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pip</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pyecharts</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pygal</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pymysql-ORM</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>RE</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Redis</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Scrapy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Seaborn</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Selenium</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>yield</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="全部文章 python "
+           href="/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%A6%E8%A7%A3/"
+           data-tag="RE"
+           data-author="" >
+            <span class="post-title" title="正则表达式详解">正则表达式详解</span>
+            <span class="post-date" title="2020-02-26 09:25:46">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/tcl%E4%B8%8Eopc/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 与 opc">tcl 与 opc</span>
+            <span class="post-date" title="2025-09-24 13:36:07">2025/09/24</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/hexo%E6%96%87%E7%AB%A0%E5%8A%A0%E5%AF%86%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="hexo 文章加密方法">hexo 文章加密方法</span>
+            <span class="post-date" title="2025-09-21 22:33:03">2025/09/21</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/tcl%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 语言入门">tcl 语言入门</span>
+            <span class="post-date" title="2025-09-14 22:43:20">2025/09/14</span>
+        </a>
+        
+        <a  class="全部文章 每日一学 "
+           href="/%E6%95%85%E4%BA%8B%E4%BC%9A%E4%B8%8E%E4%BC%81%E4%B8%9A%E8%82%A1%E6%9D%83%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="故事会与企业股权架构设计">故事会与企业股权架构设计</span>
+            <span class="post-date" title="2025-08-30 09:42:43">2025/08/30</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%AE%A1%E7%AE%97%E5%85%89%E5%88%BBOPC%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="计算光刻 OPC 名词解释">计算光刻 OPC 名词解释</span>
+            <span class="post-date" title="2025-08-26 21:44:36">2025/08/26</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%8A%AF%E7%89%87%E5%88%B6%E9%80%A0%E6%B5%81%E7%A8%8B%E4%B8%8E%E5%B7%A5%E8%89%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="芯片制造流程与工艺">芯片制造流程与工艺</span>
+            <span class="post-date" title="2025-06-14 12:13:17">2025/06/14</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E8%81%8C%E5%9C%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入职场">C++ 入职场</span>
+            <span class="post-date" title="2024-06-22 15:52:55">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/Protocol-Buffers-%E5%85%A5%E9%97%A8%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Protocol Buffers 入门使用">Protocol Buffers 入门使用</span>
+            <span class="post-date" title="2024-06-22 15:50:39">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-python%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B-boost/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++python 混合编程 -boost">C++python 混合编程 -boost</span>
+            <span class="post-date" title="2024-06-22 15:36:18">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B%E4%B8%8E%E6%A8%A1%E6%9D%BF/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 泛型编程与模板">C++ 泛型编程与模板</span>
+            <span class="post-date" title="2024-06-22 15:27:49">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入门学习笔记">C++ 入门学习笔记</span>
+            <span class="post-date" title="2024-06-22 14:53:46">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 Linux "
+           href="/shell%E7%BC%96%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="shell 编程">shell 编程</span>
+            <span class="post-date" title="2022-03-07 20:24:24">2022/03/07</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Git 版本控制工具">Git 版本控制工具</span>
+            <span class="post-date" title="2022-03-05 23:23:45">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Hexo%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E4%B8%8E%E5%A4%9A%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hexo 博客迁移与多平台使用">Hexo 博客迁移与多平台使用</span>
+            <span class="post-date" title="2022-03-05 01:26:56">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%B8%8E%E9%87%8D%E9%9A%BE%E7%82%B9%E6%B1%87%E6%80%BB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的基础知识与重难点汇总">python 中的基础知识与重难点汇总</span>
+            <span class="post-date" title="2020-11-17 23:05:15">2020/11/17</span>
+        </a>
+        
+        <a  class="全部文章 前端 "
+           href="/javascript%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="JavaScript 入门">JavaScript 入门</span>
+            <span class="post-date" title="2020-11-09 20:46:08">2020/11/09</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E8%AF%AD%E6%B3%95%E7%B3%96/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的语法糖">python 中的语法糖</span>
+            <span class="post-date" title="2020-11-06 10:53:29">2020/11/06</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E8%BF%9B%E7%A8%8B%EF%BC%8C%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%8D%8F%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的进程，线程与协程">python 中的进程，线程与协程</span>
+            <span class="post-date" title="2020-11-04 21:29:16">2020/11/04</span>
+        </a>
+        
+        <a  class="全部文章 Linux "
+           href="/linux%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="linux 常见命令学习">linux 常见命令学习</span>
+            <span class="post-date" title="2020-06-17 22:33:28">2020/06/17</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="机器学习经典算法">机器学习经典算法</span>
+            <span class="post-date" title="2020-06-16 10:36:50">2020/06/16</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/tensorflow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tensorflow 学习笔记">tensorflow 学习笔记</span>
+            <span class="post-date" title="2020-06-05 01:49:53">2020/06/05</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/%E6%B7%B1%E5%BA%A6%E7%90%86%E8%A7%A3%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="深度理解卷积神经网络工作原理">深度理解卷积神经网络工作原理</span>
+            <span class="post-date" title="2020-06-04 13:24:45">2020/06/04</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E7%88%AC%E8%99%AB%E7%9A%84%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫的定时执行">爬虫的定时执行</span>
+            <span class="post-date" title="2020-04-06 22:44:47">2020/04/06</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/Token-%EF%BC%8CCookie%E5%92%8CSession%E7%9A%84%E5%8C%BA%E5%88%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Token ，Cookie 和 Session 的区别">Token ，Cookie 和 Session 的区别</span>
+            <span class="post-date" title="2020-04-03 10:46:54">2020/04/03</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E5%9C%A8python%E4%B8%AD%E8%BF%9B%E8%A1%8C%E8%A7%86%E9%A2%91-%E9%9F%B3%E9%A2%91%E5%A4%84%E7%90%86%E5%8F%8A%E5%90%88%E5%B9%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="在 python 中进行视频 - 音频处理及合并">在 python 中进行视频 - 音频处理及合并</span>
+            <span class="post-date" title="2020-03-29 10:56:44">2020/03/29</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8BJS%E8%A7%A3%E5%AF%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之 JS 解密">反反爬虫之 JS 解密</span>
+            <span class="post-date" title="2020-03-24 10:04:43">2020/03/24</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E7%90%86%E8%A7%A3python%E4%B8%AD%E7%9A%84%E9%97%AD%E5%8C%85%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="理解 python 中的闭包与装饰器">理解 python 中的闭包与装饰器</span>
+            <span class="post-date" title="2020-03-21 17:34:45">2020/03/21</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Mongodb%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Mongodb 数据库入门">Mongodb 数据库入门</span>
+            <span class="post-date" title="2020-03-17 22:50:33">2020/03/17</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%8A%A0%E4%B8%AA%E7%A9%BA%E6%A0%BC%E5%91%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="为什么不加个空格呢">为什么不加个空格呢</span>
+            <span class="post-date" title="2020-03-14 13:53:44">2020/03/14</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8/"
+           data-tag="yield"
+           data-author="" >
+            <span class="post-title" title="迭代器与生成器">迭代器与生成器</span>
+            <span class="post-date" title="2020-03-13 21:58:25">2020/03/13</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E6%BB%91%E5%9D%97%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之滑块验证码">反反爬虫之滑块验证码</span>
+            <span class="post-date" title="2020-03-08 21:00:17">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E5%9B%BE%E7%89%87%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之图片验证码">反反爬虫之图片验证码</span>
+            <span class="post-date" title="2020-03-08 16:16:16">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Python%E6%93%8D%E4%BD%9CRedis/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Python 操作 Redis">Python 操作 Redis</span>
+            <span class="post-date" title="2020-03-07 16:15:44">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy-Redis%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Scrapy-Redis 分布式爬虫">Scrapy-Redis 分布式爬虫</span>
+            <span class="post-date" title="2020-03-07 15:35:50">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%ABRequest%E5%8E%BB%E9%87%8D%E5%8F%8A%E8%BF%87%E6%BB%A4%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫 Request 去重及过滤器">爬虫 Request 去重及过滤器</span>
+            <span class="post-date" title="2020-03-07 15:22:23">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Redis%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Redis 数据库">Redis 数据库</span>
+            <span class="post-date" title="2020-03-06 20:30:00">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Pymysql%E4%B8%8EORM%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="pymysql-ORM"
+           data-author="" >
+            <span class="post-title" title="Pymysql 与 ORM 操作数据库">Pymysql 与 ORM 操作数据库</span>
+            <span class="post-date" title="2020-03-06 10:49:03">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/MySql%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Mysql"
+           data-author="" >
+            <span class="post-title" title="MySql 数据库">MySql 数据库</span>
+            <span class="post-date" title="2020-03-04 23:31:02">2020/03/04</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy%E6%A1%86%E6%9E%B6%E7%88%AC%E8%99%AB/"
+           data-tag="Scrapy"
+           data-author="" >
+            <span class="post-title" title="Scrapy 框架爬虫">Scrapy 框架爬虫</span>
+            <span class="post-date" title="2020-03-02 10:44:55">2020/03/02</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="多线程与多进程爬虫">多线程与多进程爬虫</span>
+            <span class="post-date" title="2020-03-01 15:33:08">2020/03/01</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Selenium%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%A8%A1%E6%8B%9F/"
+           data-tag="Selenium"
+           data-author="" >
+            <span class="post-title" title="Selenium 自动化测试模拟">Selenium 自动化测试模拟</span>
+            <span class="post-date" title="2020-02-29 21:29:54">2020/02/29</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96-%E6%96%87%E4%BB%B6%E4%BF%9D%E5%AD%98/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="数据持久化 - 文件保存本地">数据持久化 - 文件保存本地</span>
+            <span class="post-date" title="2020-02-27 22:01:14">2020/02/27</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫基础入门">爬虫基础入门</span>
+            <span class="post-date" title="2020-02-26 20:44:27">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/CSS%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%8EXpath%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96/"
+           data-tag="CSS-Xpath"
+           data-author="" >
+            <span class="post-title" title="CSS 选择器与 Xpath 数据提取">CSS 选择器与 Xpath 数据提取</span>
+            <span class="post-date" title="2020-02-26 19:07:35">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Seaborn-Pygal-Pyecharts%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Seaborn,pygal,Pyecharts"
+           data-author="" >
+            <span class="post-title" title="Seaborn-Pygal-Pyecharts 可视化">Seaborn-Pygal-Pyecharts 可视化</span>
+            <span class="post-date" title="2020-02-22 16:24:55">2020/02/22</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/python%E4%B9%8BMatplotlib%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Matplotlib"
+           data-author="" >
+            <span class="post-title" title="python 之 Matplotlib 可视化">python 之 Matplotlib 可视化</span>
+            <span class="post-date" title="2020-02-20 20:28:44">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%A4%84%E7%90%86%E5%AE%9E%E6%93%8D/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Pandas 数据分析处理实操">Pandas 数据分析处理实操</span>
+            <span class="post-date" title="2020-02-20 10:51:39">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Markdown%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E6%8A%80%E5%B7%A7/"
+           data-tag="Markdown"
+           data-author="" >
+            <span class="post-title" title="Markdown 文本编辑技巧">Markdown 文本编辑技巧</span>
+            <span class="post-date" title="2020-02-18 16:31:40">2020/02/18</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BPandas%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Python 之 Pandas 库从入门到实战">Python 之 Pandas 库从入门到实战</span>
+            <span class="post-date" title="2020-02-15 20:46:52">2020/02/15</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BNumpy%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Numpy"
+           data-author="" >
+            <span class="post-title" title="Python 之 Numpy 库从入门到实战">Python 之 Numpy 库从入门到实战</span>
+            <span class="post-date" title="2020-02-13 23:15:38">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E9%95%9C%E5%83%8F%E6%BA%90%E7%BD%91%E5%9D%80/"
+           data-tag="pip"
+           data-author="" >
+            <span class="post-title" title="python pip 国内镜像大全及库的安装">python pip 国内镜像大全及库的安装</span>
+            <span class="post-date" title="2020-02-13 23:13:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E7%9A%84%E4%B8%89%E7%A7%8D%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 的三种输出格式">python 的三种输出格式</span>
+            <span class="post-date" title="2020-02-13 23:04:49">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E6%97%B6%E9%97%B4%E6%A8%A1%E5%9D%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的时间模块">python 中的时间模块</span>
+            <span class="post-date" title="2020-02-13 23:01:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E6%9F%A5%E7%9C%8B%E4%BB%BB%E4%BD%95%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E7%94%A8%E6%B3%95%E7%9A%84%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 查看任何第三方库的用法的方法">python 查看任何第三方库的用法的方法</span>
+            <span class="post-date" title="2020-02-13 22:57:50">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Anaconda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8Epyinstaller%E7%A8%8B%E5%BA%8F%E6%89%93%E5%8C%85/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Anaconda 环境配置与 pyinstaller 程序打包">Anaconda 环境配置与 pyinstaller 程序打包</span>
+            <span class="post-date" title="2020-02-13 20:01:52">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%BD%BF%E7%94%A8Hexo-Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%85%8D%E8%B4%B9%E5%8D%9A%E5%AE%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="使用 Hexo+Github 搭建个人免费博客">使用 Hexo+Github 搭建个人免费博客</span>
+            <span class="post-date" title="2020-02-13 15:44:02">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E5%85%B3%E4%BA%8Ehexo%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"
+           data-tag="Hexo"
+           data-author="" >
+            <span class="post-title" title="关于 hexo 使用过程中报错问题汇总">关于 hexo 使用过程中报错问题汇总</span>
+            <span class="post-date" title="2020-02-12 23:03:46">2020/02/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-python中的进程，线程与协程" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">python 中的进程，线程与协程</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="python">python</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2025-12-13 13:23:10'>2020-11-04 21:29</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:4.3k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#GIL%20%E5%85%A8%E5%B1%80%E8%A7%A3%E9%87%8A%E5%99%A8%E9%94%81"><span class="toc-text">GIL 全局解释器锁 </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E3%80%81%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%8D%8F%E7%A8%8B"><span class="toc-text">进程、线程与协程 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E8%BF%9B%E7%A8%8B%E7%A4%BA%E4%BE%8B"><span class="toc-text">多进程示例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%A4%BA%E4%BE%8B"><span class="toc-text">多线程示例 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E6%B1%A0%E4%B8%8E%E7%BA%BF%E7%A8%8B%E6%B1%A0"><span class="toc-text">进程池与线程池 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E8%BF%9B%E7%A8%8B%E3%80%81%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%88%AC%E5%8F%96%E5%B0%8F%E8%AF%B4"><span class="toc-text">多进程、多线程爬取小说</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%8F%E7%A8%8B%E7%A4%BA%E4%BE%8B"><span class="toc-text">协程示例 </span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="GIL 全局解释器锁"><a href="#GIL 全局解释器锁" class="headerlink" title="GIL 全局解释器锁"></a>GIL 全局解释器锁 </h1><p> 在提到进程、线程和协程前，不得不提下<strong>GIL</strong>(<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/97218985">Global Interpreter Lock</a>)，全局解释器锁。</p>
+<p><strong>GIL</strong>是一个互斥锁（mutex），是 CPython（Python 解释器）限制了同一时间内，一个进程里只能有一个线程运行。它阻止了 多个线程同时执行 Python 字节码，毫无疑问，这降低了执行效率。</p>
+<p>Python 最初的设计理念在于，<strong>为了解决多线程之间数据完整性和状态同步的问题，设计为在任意时刻只有一个线程在解释器中运行。</strong>而当执行多线程程序时，由 GIL 来控制同一时刻只有一个线程能够运行。即 Python 中的多线程是表面多线程，也可以理解为‘假’多线程，不是真正的多线程。</p>
+<p>为什么要这样做呢？举个例子，比如用 python 计算：n=n+1。这个操作被分成了四步：</p>
+<ul>
+<li>加载全局变量 n</li>
+<li>加载常数 1</li>
+<li>进行二进制加法运算</li>
+<li>将运算结果存入变量 n</li>
+</ul>
+<p>以上的过程是非原子操作的，根据前面的线程释放 GIL 锁原则，线程 a 执行这四步的过程中，有可能会让出 GIL。如果这样，n=n+1 的运算过程就被打乱了。</p>
+<p>这就是为什么我们说 GIL 是粗粒度的，它只保证了一定程度的安全。如果要做到线程的绝对安全，是不是所有的非 IO 操作，我们都需要自己再加一把锁呢？答案是否定的。在 python 中，有些操作是是原子级的，它本身就是一个字节码，GIL 无法在执行过程中释放。对于这种原子级的方法操作，我们无需担心它的安全。比如 sort 方法，[1,4,2].sort()，翻译成字节码就是 CALL METHOD 0。只有一行，无法再分，所以它是线程安全的。</p>
+<p>同一时刻只有一个线程能够运行，那么是怎么执行多线程程序的呢？其实原理很简单：解释器的 <strong> 分时复用 </strong>。即多个线程的代码，<strong> 轮流 </strong> 被解释器 <strong> 执行 </strong>，只不过切换的很频繁很快，给人一种多线程“同时”在执行的错觉。聊的学术化一点，其实就是“<strong> 并发</strong>”。</p>
+<p><strong>“并发”和“并行”：</strong></p>
+<ul>
+<li>并发：不同的代码块交替执行</li>
+<li>并行：不同的代码块同时执行</li>
+</ul>
+<p><strong>GIL 锁最终是保证 Python 解释器中原子操作的线程安全</strong>。</p>
+<p><strong>GIL 是怎么起作用的：</strong></p>
+<ul>
+<li>由于 GIL 的机制，单核 CPU 在同一时刻只有一个线程在运行，当线程遇到 IO（读写）操作或 Timer  Tick 到期，释放 GIL 锁。其他的两个线程去竞争这把锁，得到锁之后，才开始运行。</li>
+<li>线程释放 GIL 锁有两种情况，一是遇到 IO 操作，二是 Time Tick 到期（执行完 100 个字节码指令或者 15ms）。IO 操作很好理解，比如发出一个 http 请求，等待响应。而 Time Tick 规定了线程的最长执行时间，超过时间后自动释放 GIL 锁。</li>
+</ul>
+<p>在多核 CPU 下，由于 GIL 锁的全局特性，无法发挥多核的特性，GIL 锁会使得多线程任务的效率大大降低。线程 1（Thread1）在 CPU1 上运行，线程 2（Thread2）在 CPU2 上运行。GIL 是全局的，CPU2 上的 Thread2 需要等待 CPU1 上的 Thread1 让出 GIL 锁，才有可能执行。如果在多次竞争中，Thread1 都胜出，Thread2 没有得到 GIL 锁，意味着 CPU2 一直是闲置的，无法发挥多核的优势。为了避免同一线程霸占 CPU，在 python3.x 中，线程会自动的调整自己的优先级，使得多线程任务执行效率更高。</p>
+<p><strong>GIL 的优缺点：</strong></p>
+<ul>
+<li><p>GIL 的优点是显而易见的，GIL 可以保证我们在多线程编程时，无需考虑多线程之间数据完整性和状态同步的问题。</p>
+</li>
+<li><p>GIL 缺点是：我们的多线程程序执行起来是“并发”，而不是“并行”。因此执行效率会很低，会不如单线程的执行效率。</p>
+</li>
+</ul>
+<p><strong>原子操作：</strong></p>
+<ul>
+<li>原子操作就是不会因为进程并发或者线程并发而导致被中断的操作。<strong>原子操作 </strong> 的特点就是 <strong> 要么一次全部执行，要么全不执行</strong>。不存在执行了一半而被中断的情况。</li>
+</ul>
+<p><strong>Python 解释器：</strong></p>
+<ul>
+<li>python 解释器是有多个版本的：CPython, Jpython 等。CPython 就是用 C 语言实现 Python 解释器，JPython 是用 Java 实现 Python 解释器。那么 GIL 的问题实际上是存在于 CPython 中的。</li>
+</ul>
+<p>最初是为了利用多核，Python 开始支持多线程。而解决多线程之间数据完整性和状态同步的最简单方法自然就是加锁。后来发现这种‘加锁’是低效的。但 <strong> 当大家试图去拆分和去除 GIL 的时候，发现大量库代码开发者已经重度依赖 GIL 而非常难以去除了</strong>。</p>
+<p><strong>在 Python 编程中，如果想利用计算机的多核提高程序执行效率，用多进程代替多线程。</strong></p>
+<p>使用多进程的好处：完全并行，无 GIL 的限制，可充分利用多 cpu 多核的环境。</p>
+<p>虽说一般使用多进程对电脑系统资源占用比较多，但是在类 unix 系统中，创建线程的开销并不比进程小，因此在并发操作时，多线程的效率还是受到了很大制约的。所以后来人们发现通过 yield 来中断代码片段的执行，同时交出了 cpu 的使用权，于是协程的概念产生了。</p>
+<h1 id="进程、线程与协程"><a href="# 进程、线程与协程" class="headerlink" title="进程、线程与协程"></a>进程、线程与协程 </h1><p><strong> 进程（process）是系统资源分配的最小单位，线程（thread）是程序执行的最小单位</strong>。</p>
+<p><strong>而协程（Coroutine）不是被操作系统内核所管理，而完全是由程序所控制（也就是在用户态执行）。</strong></p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20201105220526734.png" alt=""></p>
+<p>一个程序（进程）在计算机上运行时，操作系统会以进程为单位，分配系统资源（CPU 时间片、内存等资源），当这个进程存在多个线程时，由于 GIL 锁，系统资源的红箭头会随机指向其中一个进程，供其使用。遇到 IO 操作或者 Time Tick 到期（执行完 100 个字节码指令或者 15ms），该线程被设置成睡眠状态，红箭头就又会随机重新指向其中一个线程执行（按优先级），这就是多线程。</p>
+<p>协程的概念应该是从进程和线程演变而来的，协程其实并不真正存在，它只是人为设想的一种产物，由程序或用户可随意切换执行。协程在子程序内部是可中断的，然后转而执行别的子程序，在适当的时候再返回来接着执行。</p>
+<p><strong>协程的特点在一个线程中执行，那和多线程比，协程有何优势？</strong></p>
+<ul>
+<li><strong>极高的执行效率 </strong>：因为<strong> 子程序切换不是线程切换，而是由程序自身控制 </strong>，因此，<strong> 没有线程切换的开销</strong>，和多线程比，线程数量越多，协程的性能优势就越明显；</li>
+<li><strong>不需要多线程的锁机制 </strong>：因为只有一个线程，也不存在同时写变量冲突，<strong> 在协程中控制共享资源不加锁</strong>，只需要判断状态就好了，所以执行效率比多线程高很多。</li>
+</ul>
+<p>当你程序中方法需要等待时间的话，就可以用协程，效率高，消耗资源少。</p>
+<p>python 可以通过 yield/send 的方式实现 <strong> 协程</strong>。以此有程序员控制函数的中断与执行。</p>
+<p>在 Python3.4 正式引入了协程的概念，代码示例如下：</p>
+<pre><code class="python">import asyncio
+
+# Borrowed from http://curio.readthedocs.org/en/latest/tutorial.html.
+@asyncio.coroutine
+def countdown(number, n):
+    while n &gt; 0:
+        print(&#39;T-minus&#39;, n, &#39;(&#123;&#125;)&#39;.format(number))
+        yield from asyncio.sleep(1)
+        n -= 1
+
+loop = asyncio.get_event_loop()
+tasks = [asyncio.ensure_future(countdown(&quot;A&quot;, 2)),
+    asyncio.ensure_future(countdown(&quot;B&quot;, 3))]
+loop.run_until_complete(asyncio.wait(tasks))
+loop.close()</code></pre>
+<p>示例显示了在 Python3.4 引入两个重要概念 <strong> 协程 </strong> 和<strong>事件循环 </strong>。<br> 通过修饰符 @asyncio.coroutine 定义了一个协程，而通过 event loop 来执行 tasks 中所有的协程任务。</p>
+<p>之后在 Python3.5 引入了新的 async &amp; await 语法，从而有了原生协程的概念。</p>
+<h2 id="多进程示例"><a href="# 多进程示例" class="headerlink" title="多进程示例"></a>多进程示例</h2><p>multiprocessing 是 Python 的标准模块，它既可以用来编写多进程，也可以用来编写多线程。multiprocessing  提供了一个 Process 类来代表一个进程对象，这个对象可以理解为是一个独立的进程，可以执行另外的事情。</p>
+<pre><code class="python">import multiprocessing       // 导入多进程库
+import time
+
+def upload():
+    print(&quot; 开始上传文件...&quot;)
+    time.sleep(5)
+    print(&quot; 完成上传文件...&quot;)
+
+def download():
+    print(&quot; 开始下载文件...&quot;)
+    time.sleep(2)
+    print(&quot; 完成下载文件...&quot;)
+
+def main():
+    start=time.time()
+    #同时开启两个子进程
+    multiprocessing.Process(target=upload).start()
+    multiprocessing.Process(target=download).start()
+
+    end=time.time()
+    print(&#39;A 总耗时：%s&#39;%(end-start))
+
+if __name__ == &#39;__main__&#39;:
+    begin = time.time()
+
+    main()
+
+    stop=time.time()
+
+    print(&#39;B 总耗时：%s&#39;%(stop-begin))
+
+#输出结果：
+A 总耗时：0.02892470359802246
+B 总耗时：0.02892470359802246
+ 开始上传文件...
+ 开始下载文件...
+ 完成下载文件...
+ 完成上传文件...
+</code></pre>
+<p>这里面相当于有三个进程，该程序的这个主进程加上两个子进程 upload 和 download。从运行结果看，先输出了 A 和 B 的总耗时，这个是属于主进程的，因为耗时少，先运行完先输出，upload 和 download 两个子进程因为 time.sleep()的存在，先后输出。upload 和 download 谁先执行不一定的。</p>
+<h2 id="多线程示例"><a href="# 多线程示例" class="headerlink" title="多线程示例"></a>多线程示例 </h2><p> 当一个进程启动之后，会默认产生一个主线程，因为线程是程序执行流的最小单元，当设置多线程时，主线程会创建多个子线程，在 python  中，主线程执行完自己的任务以后，就退出了，此时子线程会继续执行自己的任务，直到自己的任务结束。</p>
+<pre><code class="python">import threading
+import time
+
+def target():
+    print(&quot;%s is runing&quot;%(threading.current_thread().name))
+    time.sleep(2)
+    print(&quot;%s is ended&quot;%(threading.current_thread().name))
+
+print(&quot;%s is runing&quot;%(threading.current_thread().name))   #主程序开始
+
+t = threading.Thread(target=target)   
+t.start()
+
+# t.join() # t.join 是阻塞当前线程(此处的当前线程是主线程) 
+#可以使主线程直到 Thread-1 结束之后才结束
+print(&quot;%s is ended&quot;%(threading.current_thread().name))
+
+#输出结果为：
+MainThread is runing
+Thread-1 is runing
+MainThread is ended
+Thread-1 is ended</code></pre>
+<h2 id="进程池与线程池"><a href="# 进程池与线程池" class="headerlink" title="进程池与线程池"></a>进程池与线程池 </h2><p> 均采用 <code>concurrent.futures</code> 模块。池的好处是，对于多个的进程 / 线程，它能进行合理调控，比如可以设置同时只能进行 5 个任务，避免 python 占用过多的电脑资源，当运行中的 5 个任务完成了其中 3 个，池会自动进行补调，保证同时 5 个任务的进行。</p>
+<p><strong>进程池</strong></p>
+<ul>
+<li><pre><code class="python">import concurrent.futures
+process_pool=concurrent.futures.ProcessPoolExecutor(max_workers=) // 创建进程池
+process_pool.submit(tasks, arg*)    // 提交任务
+process_pool.shutdown()</code></pre>
+</li>
+<li><p>示例：</p>
+<pre><code class="python">import concurrent.futures
+
+def download_one_page(url, name):
+    print(&#39;&#123;&#125; 对应的 &#123;&#125; 下载完毕 &#39;.format(url,name))
+
+process_pool=concurrent.futures.ProcessPoolExecutor(max_workers=5) // 设置最多子任务为 5
+
+for url, name in result:  # 每一次循环都启动一个新的线程
+    host_url = &#39;http://www.shuquge.com/txt/8659/&#39;
+    process_pool.submit(download_one_page, host_url+url, name)
+
+process_pool.shutdown()</code></pre>
+</li>
+</ul>
+<p><strong>线程池</strong></p>
+<ul>
+<li><pre><code class="python">thread_pool=concurrent.futures.ThreadPoolExecutor(max_workers=)
+thread_pool.submit(tasks, arg*)
+thread_pool.shutdown()</code></pre>
+</li>
+<li><p>示例：</p>
+<pre><code class="python">import concurrent.futures
+
+def download_one_page(url, name):
+    print(&#39;&#123;&#125; 对应的 &#123;&#125; 下载完毕 &#39;.format(url,name))
+
+thread_pool=concurrent.futures.ThreadPoolExecutor(max_workers=5) // 设置最多子任务为 5
+
+for url, name in result:  # 每一次循环都启动一个新的线程
+    host_url = &#39;http://www.shuquge.com/txt/8659/&#39;
+    thread_pool.submit(download_one_page, host_url + url, name)
+
+thread_pool.shutdown()</code></pre>
+<p>以上程序也可这样写：</p>
+<pre><code class="python"># 最简单方法是作为上下文管理器，使用 with 语句来管理池的创建和销毁。
+
+import concurrent.futures
+
+if __name__ == &quot;__main__&quot;:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
+         for url, name in result:  # 每一次循环都启动一个新的线程
+             host_url = &#39;http://www.shuquge.com/txt/8659/&#39;
+             executor.map(download_one_page, host_url + url, name)</code></pre>
+</li>
+</ul>
+<h3 id="多进程、多线程爬取小说"><a href="# 多进程、多线程爬取小说" class="headerlink" title="多进程、多线程爬取小说"></a>多进程、多线程爬取小说</h3><pre><code class="python">import requests
+import re
+import time
+import concurrent.futures
+
+def get_index():
+    response = requests.get(&#39;http://www.shuquge.com/txt/8659/index.html&#39;)
+    response.encoding = response.apparent_encoding
+    html = response.text
+    result = re.findall(&#39;&lt;dd&gt;&lt;a href=&quot;(.*?)&quot;&gt;(.*?)&lt;/a&gt;&lt;/dd&gt;&#39;, html)
+    return result
+
+# 多线程
+def thread_download_ebook(url, name):
+    print(name, url)
+    response = requests.get(url)
+    response.encoding = response.apparent_encoding
+    html = response.text
+    result = re.findall(&#39;&lt;div id=&quot;content&quot; class=&quot;showtxt&quot;&gt;(.*?)&lt;/div&gt;&#39;, html, re.S)
+    with open(name + &#39;.txt&#39;, mode=&#39;w&#39;, encoding=&#39;utf-8&#39;) as f:
+        f.write(result[0].replace(&#39;&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&#39;, &quot;&quot;).replace(&#39;&lt;br/&gt;&#39;, &quot;&quot;))
+
+# 多进程
+def process_download_ebook(urls):
+    # 每一个进程 启动五个线程 25
+    thread_pool = concurrent.futures.ThreadPoolExecutor(max_workers=5)
+    for url, name in urls:
+        # 往线程池里面放任务
+        thread_pool.submit(thread_download_ebook, &#39;http://www.shuquge.com/txt/8659/&#39; + url, name)
+    # 等待线程池关闭
+    thread_pool.shutdown()
+
+if __name__ == &#39;__main__&#39;:
+    content_list = get_index()[:20]
+    length = int(len(content_list)/5)  # 把所有任务分成五份
+    start_time = time.time()
+    # 启动五个进程
+    # 进程之间的相互通信 默认情况下 进程之间的变量不共享数据
+    process_pool = concurrent.futures.ProcessPoolExecutor(max_workers=length)
+    for i in range(length):
+        if i == length:
+            i += 1
+        process_pool.submit(process_download_ebook, content_list[i * length:(i + 1) * length])
+    process_pool.shutdown()
+    print(time.time() - start_time)</code></pre>
+<h2 id="协程示例"><a href="# 协程示例" class="headerlink" title="协程示例"></a>协程示例 </h2><p>async/await 关键字是出现在 python3.5 版本中的新功能，是一种关于<strong> 协程 </strong> 的语法糖。从此 python 就正式有了原生协程的概念。</p>
+<p>正常的函数在执行时是不会中断的，所以你要写一个能够中断的函数，就需要添加 async 关键词。</p>
+<p><code>async</code> 用来声明一个函数为异步函数，异步函数的特点是能在函数执行过程中挂起，去执行其他异步函数，等到挂起条件消失后，再回来执行。</p>
+<p><code>await</code> 用来声明程序挂起，比如异步程序执行到某一步时需要等待的时间很长，就将此挂起，去执行其他的异步程序，await 后面只能跟异步程序函数或有 <code>__await__</code> 属性的对象，也就是说 await 表达式中的对象必须是 awaitable 的。</p>
+<p>awaitable 对象必须满足如下条件中其中之一：</p>
+<ul>
+<li><strong>原生协程对象</strong></li>
+<li>types.coroutine()修饰的 <strong> 基于生成器的协程对象</strong></li>
+<li>实现了 await method，并在其中返回了<strong>iterator 的对象（可迭代对象）</strong></li>
+</ul>
+<p><strong>举例一：</strong></p>
+<pre><code class="python">def main():
+
+    //1、定义异步函数
+    async def funcA():             #声明 funcA 为一个异步函数（或者叫协程函数）
+        await asyncio.sleep(4)
+        print(&#39;A 函数执行完毕 &#39;)
+
+    async def funcB():              #定义的协程函数就是原生协程对象
+        await asyncio.sleep(2)
+        print(&#39;B 函数执行完毕 &#39;)
+
+    async def funcD():
+        await asyncio.sleep(8)
+        print(&#39;D 函数执行完毕 &#39;)
+
+    //2、创建一个事件循环    
+    loop = asyncio.get_event_loop() 
+
+    //3、将异步函数加入事件队列
+    tasks=[funcA(),funcB(),funcD()]
+
+    //4、执行事件队列, 直到最晚的一个事件被处理完毕后结束
+    loop.run_until_complete(asyncio.wait(tasks))
+
+    //5、如果不再使用 loop, 建议养成良好关闭的习惯
+    loop.close()
+
+
+
+if __name__==&#39;__main__&#39;:
+    start=time.time()
+    main()
+    end=time.time()
+    print(&#39; 总耗时为：&#39;+ str(end-start))
+
+#输出结果为：
+B 函数执行完毕
+A 函数执行完毕
+D 函数执行完毕
+总耗时为：8.006016969680786s
+</code></pre>
+<p><strong>举例二：</strong></p>
+<pre><code class="python">import asyncio
+import requests
+import time
+
+
+async def download(url): 
+    print(&quot;get %s&quot; % url)    
+    response = requests.get(url)
+    print(response.status_code)
+
+
+async def wait_download(url):
+    await download(url)        # 这里 download(url)就是一个原生的协程对象
+    print(&quot;get &#123;&#125; data complete.&quot;.format(url))
+
+
+async def main():
+    start = time.time()
+    await asyncio.wait([wait_download(&quot;http://www.163.com&quot;),
+        wait_download(&quot;http://www.mi.com&quot;),
+        wait_download(&quot;http://www.baidu.com&quot;)])
+    end = time.time()
+    print(&quot;Complete in &#123;&#125; seconds&quot;.format(end - start))
+
+
+loop = asyncio.get_event_loop()
+loop.run_until_complete(main())
+
+#运行结果：
+get http://www.163.com
+200
+get http://www.163.com data complete.
+get http://www.baidu.com
+200
+get http://www.baidu.com data complete.
+get http://www.mi.com
+200
+get http://www.mi.com data complete.
+Complete in 0.49027466773986816 seconds</code></pre>
+<p>程序可以运行，不过仍然有一个问题就是：它并没有真正地异步执行。</p>
+<p>这里程序始终是同步执行的，这就说明仅仅是把涉及 I/O 操作的代码封装到 async 当中是不能实现异步执行的。必须使用支持异步操作的非阻塞代码才能实现真正的异步。目前支持非阻塞异步 I/O 的库是 aiohttp。</p>
+<pre><code class="python">import asyncio
+import aiohttp
+import time
+
+
+async def download(url): # 通过 async def 定义的函数是原生的协程对象
+    print(&quot;get: %s&quot; % url)
+    async with aiohttp.ClientSession() as session:
+        async with session.get(url) as resp:
+            print(resp.status)
+            # response = await resp.read()
+
+# 此处的封装不再需要
+# async def wait_download(url):
+#    await download(url) 
+#    print(&quot;get &#123;&#125; data complete.&quot;.format(url))
+
+
+async def main():
+    start = time.time()
+    await asyncio.wait([download(&quot;http://www.163.com&quot;),
+        download(&quot;http://www.mi.com&quot;),
+        download(&quot;http://www.baidu.com&quot;)])
+    end = time.time()
+    print(&quot;Complete in &#123;&#125; seconds&quot;.format(end - start))
+
+
+loop = asyncio.get_event_loop()
+loop.run_until_complete(main())
+
+#测试结果：
+get: http://www.mi.com
+get: http://www.163.com
+get: http://www.baidu.com
+200
+200
+200
+Complete in 0.27292490005493164 seconds</code></pre>
+<p>可以看出这次是真正的异步了。</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 欢迎各位看官及技术大佬前来交流指导呀，可以邮件至 jqiange@yeah.net </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2021 Jqiange
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

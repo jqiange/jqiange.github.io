@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Seaborn-Pygal-Pyecharts 可视化 | jqiange</title>
+  <meta name="keywords" content=" Seaborn , pygal , Pyecharts ">
+  <meta name="description" content="Seaborn-Pygal-Pyecharts 可视化 | jqiange">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="人畜无害的姜小强">
+<meta property="og:url" content="https://jqiange.github.io/about/index.html">
+<meta property="og:site_name" content="jqiange">
+<meta property="og:description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+<meta property="article:published_time" content="2020-02-18T08:21:04.000Z">
+<meta property="article:modified_time" content="2025-12-13T05:23:10.695Z">
+<meta property="article:author" content="姜小强">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+
+
+<link rel="icon" href="/img/jqiange.png">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/jqiange.png"/>
+</a>
+<div class="author">
+    <span>姜小强</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/jqiange"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(58)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(9)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据库">
+                        
+                        数据库
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="每日一学">
+                        
+                        每日一学
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="爬虫">
+                        
+                        爬虫
+                        <small>(10)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="前端">
+                        
+                        前端
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="深度学习">
+                        
+                        深度学习
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据分析">
+                        
+                        数据分析
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="chip">
+                        
+                        chip
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="CPP">
+                        
+                        CPP
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Linux">
+                        
+                        Linux
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="python">
+                        
+                        python
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="58">
+<input type="hidden" id="yelog_site_word_count" value="251.9k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSS-Xpath</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Markdown</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Matplotlib</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Mysql</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Numpy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pandas</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pip</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pyecharts</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pygal</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pymysql-ORM</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>RE</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Redis</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Scrapy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Seaborn</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Selenium</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>yield</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="全部文章 python "
+           href="/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%A6%E8%A7%A3/"
+           data-tag="RE"
+           data-author="" >
+            <span class="post-title" title="正则表达式详解">正则表达式详解</span>
+            <span class="post-date" title="2020-02-26 09:25:46">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/tcl%E4%B8%8Eopc/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 与 opc">tcl 与 opc</span>
+            <span class="post-date" title="2025-09-24 13:36:07">2025/09/24</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/hexo%E6%96%87%E7%AB%A0%E5%8A%A0%E5%AF%86%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="hexo 文章加密方法">hexo 文章加密方法</span>
+            <span class="post-date" title="2025-09-21 22:33:03">2025/09/21</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/tcl%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 语言入门">tcl 语言入门</span>
+            <span class="post-date" title="2025-09-14 22:43:20">2025/09/14</span>
+        </a>
+        
+        <a  class="全部文章 每日一学 "
+           href="/%E6%95%85%E4%BA%8B%E4%BC%9A%E4%B8%8E%E4%BC%81%E4%B8%9A%E8%82%A1%E6%9D%83%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="故事会与企业股权架构设计">故事会与企业股权架构设计</span>
+            <span class="post-date" title="2025-08-30 09:42:43">2025/08/30</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%AE%A1%E7%AE%97%E5%85%89%E5%88%BBOPC%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="计算光刻 OPC 名词解释">计算光刻 OPC 名词解释</span>
+            <span class="post-date" title="2025-08-26 21:44:36">2025/08/26</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%8A%AF%E7%89%87%E5%88%B6%E9%80%A0%E6%B5%81%E7%A8%8B%E4%B8%8E%E5%B7%A5%E8%89%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="芯片制造流程与工艺">芯片制造流程与工艺</span>
+            <span class="post-date" title="2025-06-14 12:13:17">2025/06/14</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E8%81%8C%E5%9C%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入职场">C++ 入职场</span>
+            <span class="post-date" title="2024-06-22 15:52:55">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/Protocol-Buffers-%E5%85%A5%E9%97%A8%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Protocol Buffers 入门使用">Protocol Buffers 入门使用</span>
+            <span class="post-date" title="2024-06-22 15:50:39">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-python%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B-boost/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++python 混合编程 -boost">C++python 混合编程 -boost</span>
+            <span class="post-date" title="2024-06-22 15:36:18">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B%E4%B8%8E%E6%A8%A1%E6%9D%BF/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 泛型编程与模板">C++ 泛型编程与模板</span>
+            <span class="post-date" title="2024-06-22 15:27:49">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入门学习笔记">C++ 入门学习笔记</span>
+            <span class="post-date" title="2024-06-22 14:53:46">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 Linux "
+           href="/shell%E7%BC%96%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="shell 编程">shell 编程</span>
+            <span class="post-date" title="2022-03-07 20:24:24">2022/03/07</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Git 版本控制工具">Git 版本控制工具</span>
+            <span class="post-date" title="2022-03-05 23:23:45">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Hexo%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E4%B8%8E%E5%A4%9A%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hexo 博客迁移与多平台使用">Hexo 博客迁移与多平台使用</span>
+            <span class="post-date" title="2022-03-05 01:26:56">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%B8%8E%E9%87%8D%E9%9A%BE%E7%82%B9%E6%B1%87%E6%80%BB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的基础知识与重难点汇总">python 中的基础知识与重难点汇总</span>
+            <span class="post-date" title="2020-11-17 23:05:15">2020/11/17</span>
+        </a>
+        
+        <a  class="全部文章 前端 "
+           href="/javascript%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="JavaScript 入门">JavaScript 入门</span>
+            <span class="post-date" title="2020-11-09 20:46:08">2020/11/09</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E8%AF%AD%E6%B3%95%E7%B3%96/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的语法糖">python 中的语法糖</span>
+            <span class="post-date" title="2020-11-06 10:53:29">2020/11/06</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E8%BF%9B%E7%A8%8B%EF%BC%8C%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%8D%8F%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的进程，线程与协程">python 中的进程，线程与协程</span>
+            <span class="post-date" title="2020-11-04 21:29:16">2020/11/04</span>
+        </a>
+        
+        <a  class="全部文章 Linux "
+           href="/linux%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="linux 常见命令学习">linux 常见命令学习</span>
+            <span class="post-date" title="2020-06-17 22:33:28">2020/06/17</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="机器学习经典算法">机器学习经典算法</span>
+            <span class="post-date" title="2020-06-16 10:36:50">2020/06/16</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/tensorflow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tensorflow 学习笔记">tensorflow 学习笔记</span>
+            <span class="post-date" title="2020-06-05 01:49:53">2020/06/05</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/%E6%B7%B1%E5%BA%A6%E7%90%86%E8%A7%A3%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="深度理解卷积神经网络工作原理">深度理解卷积神经网络工作原理</span>
+            <span class="post-date" title="2020-06-04 13:24:45">2020/06/04</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E7%88%AC%E8%99%AB%E7%9A%84%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫的定时执行">爬虫的定时执行</span>
+            <span class="post-date" title="2020-04-06 22:44:47">2020/04/06</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/Token-%EF%BC%8CCookie%E5%92%8CSession%E7%9A%84%E5%8C%BA%E5%88%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Token ，Cookie 和 Session 的区别">Token ，Cookie 和 Session 的区别</span>
+            <span class="post-date" title="2020-04-03 10:46:54">2020/04/03</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E5%9C%A8python%E4%B8%AD%E8%BF%9B%E8%A1%8C%E8%A7%86%E9%A2%91-%E9%9F%B3%E9%A2%91%E5%A4%84%E7%90%86%E5%8F%8A%E5%90%88%E5%B9%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="在 python 中进行视频 - 音频处理及合并">在 python 中进行视频 - 音频处理及合并</span>
+            <span class="post-date" title="2020-03-29 10:56:44">2020/03/29</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8BJS%E8%A7%A3%E5%AF%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之 JS 解密">反反爬虫之 JS 解密</span>
+            <span class="post-date" title="2020-03-24 10:04:43">2020/03/24</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E7%90%86%E8%A7%A3python%E4%B8%AD%E7%9A%84%E9%97%AD%E5%8C%85%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="理解 python 中的闭包与装饰器">理解 python 中的闭包与装饰器</span>
+            <span class="post-date" title="2020-03-21 17:34:45">2020/03/21</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Mongodb%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Mongodb 数据库入门">Mongodb 数据库入门</span>
+            <span class="post-date" title="2020-03-17 22:50:33">2020/03/17</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%8A%A0%E4%B8%AA%E7%A9%BA%E6%A0%BC%E5%91%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="为什么不加个空格呢">为什么不加个空格呢</span>
+            <span class="post-date" title="2020-03-14 13:53:44">2020/03/14</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8/"
+           data-tag="yield"
+           data-author="" >
+            <span class="post-title" title="迭代器与生成器">迭代器与生成器</span>
+            <span class="post-date" title="2020-03-13 21:58:25">2020/03/13</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E6%BB%91%E5%9D%97%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之滑块验证码">反反爬虫之滑块验证码</span>
+            <span class="post-date" title="2020-03-08 21:00:17">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E5%9B%BE%E7%89%87%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之图片验证码">反反爬虫之图片验证码</span>
+            <span class="post-date" title="2020-03-08 16:16:16">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Python%E6%93%8D%E4%BD%9CRedis/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Python 操作 Redis">Python 操作 Redis</span>
+            <span class="post-date" title="2020-03-07 16:15:44">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy-Redis%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Scrapy-Redis 分布式爬虫">Scrapy-Redis 分布式爬虫</span>
+            <span class="post-date" title="2020-03-07 15:35:50">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%ABRequest%E5%8E%BB%E9%87%8D%E5%8F%8A%E8%BF%87%E6%BB%A4%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫 Request 去重及过滤器">爬虫 Request 去重及过滤器</span>
+            <span class="post-date" title="2020-03-07 15:22:23">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Redis%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Redis 数据库">Redis 数据库</span>
+            <span class="post-date" title="2020-03-06 20:30:00">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Pymysql%E4%B8%8EORM%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="pymysql-ORM"
+           data-author="" >
+            <span class="post-title" title="Pymysql 与 ORM 操作数据库">Pymysql 与 ORM 操作数据库</span>
+            <span class="post-date" title="2020-03-06 10:49:03">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/MySql%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Mysql"
+           data-author="" >
+            <span class="post-title" title="MySql 数据库">MySql 数据库</span>
+            <span class="post-date" title="2020-03-04 23:31:02">2020/03/04</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy%E6%A1%86%E6%9E%B6%E7%88%AC%E8%99%AB/"
+           data-tag="Scrapy"
+           data-author="" >
+            <span class="post-title" title="Scrapy 框架爬虫">Scrapy 框架爬虫</span>
+            <span class="post-date" title="2020-03-02 10:44:55">2020/03/02</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="多线程与多进程爬虫">多线程与多进程爬虫</span>
+            <span class="post-date" title="2020-03-01 15:33:08">2020/03/01</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Selenium%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%A8%A1%E6%8B%9F/"
+           data-tag="Selenium"
+           data-author="" >
+            <span class="post-title" title="Selenium 自动化测试模拟">Selenium 自动化测试模拟</span>
+            <span class="post-date" title="2020-02-29 21:29:54">2020/02/29</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96-%E6%96%87%E4%BB%B6%E4%BF%9D%E5%AD%98/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="数据持久化 - 文件保存本地">数据持久化 - 文件保存本地</span>
+            <span class="post-date" title="2020-02-27 22:01:14">2020/02/27</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫基础入门">爬虫基础入门</span>
+            <span class="post-date" title="2020-02-26 20:44:27">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/CSS%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%8EXpath%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96/"
+           data-tag="CSS-Xpath"
+           data-author="" >
+            <span class="post-title" title="CSS 选择器与 Xpath 数据提取">CSS 选择器与 Xpath 数据提取</span>
+            <span class="post-date" title="2020-02-26 19:07:35">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Seaborn-Pygal-Pyecharts%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Seaborn,pygal,Pyecharts"
+           data-author="" >
+            <span class="post-title" title="Seaborn-Pygal-Pyecharts 可视化">Seaborn-Pygal-Pyecharts 可视化</span>
+            <span class="post-date" title="2020-02-22 16:24:55">2020/02/22</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/python%E4%B9%8BMatplotlib%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Matplotlib"
+           data-author="" >
+            <span class="post-title" title="python 之 Matplotlib 可视化">python 之 Matplotlib 可视化</span>
+            <span class="post-date" title="2020-02-20 20:28:44">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%A4%84%E7%90%86%E5%AE%9E%E6%93%8D/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Pandas 数据分析处理实操">Pandas 数据分析处理实操</span>
+            <span class="post-date" title="2020-02-20 10:51:39">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Markdown%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E6%8A%80%E5%B7%A7/"
+           data-tag="Markdown"
+           data-author="" >
+            <span class="post-title" title="Markdown 文本编辑技巧">Markdown 文本编辑技巧</span>
+            <span class="post-date" title="2020-02-18 16:31:40">2020/02/18</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BPandas%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Python 之 Pandas 库从入门到实战">Python 之 Pandas 库从入门到实战</span>
+            <span class="post-date" title="2020-02-15 20:46:52">2020/02/15</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BNumpy%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Numpy"
+           data-author="" >
+            <span class="post-title" title="Python 之 Numpy 库从入门到实战">Python 之 Numpy 库从入门到实战</span>
+            <span class="post-date" title="2020-02-13 23:15:38">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E9%95%9C%E5%83%8F%E6%BA%90%E7%BD%91%E5%9D%80/"
+           data-tag="pip"
+           data-author="" >
+            <span class="post-title" title="python pip 国内镜像大全及库的安装">python pip 国内镜像大全及库的安装</span>
+            <span class="post-date" title="2020-02-13 23:13:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E7%9A%84%E4%B8%89%E7%A7%8D%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 的三种输出格式">python 的三种输出格式</span>
+            <span class="post-date" title="2020-02-13 23:04:49">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E6%97%B6%E9%97%B4%E6%A8%A1%E5%9D%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的时间模块">python 中的时间模块</span>
+            <span class="post-date" title="2020-02-13 23:01:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E6%9F%A5%E7%9C%8B%E4%BB%BB%E4%BD%95%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E7%94%A8%E6%B3%95%E7%9A%84%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 查看任何第三方库的用法的方法">python 查看任何第三方库的用法的方法</span>
+            <span class="post-date" title="2020-02-13 22:57:50">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Anaconda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8Epyinstaller%E7%A8%8B%E5%BA%8F%E6%89%93%E5%8C%85/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Anaconda 环境配置与 pyinstaller 程序打包">Anaconda 环境配置与 pyinstaller 程序打包</span>
+            <span class="post-date" title="2020-02-13 20:01:52">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%BD%BF%E7%94%A8Hexo-Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%85%8D%E8%B4%B9%E5%8D%9A%E5%AE%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="使用 Hexo+Github 搭建个人免费博客">使用 Hexo+Github 搭建个人免费博客</span>
+            <span class="post-date" title="2020-02-13 15:44:02">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E5%85%B3%E4%BA%8Ehexo%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"
+           data-tag="Hexo"
+           data-author="" >
+            <span class="post-title" title="关于 hexo 使用过程中报错问题汇总">关于 hexo 使用过程中报错问题汇总</span>
+            <span class="post-date" title="2020-02-12 23:03:46">2020/02/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-Seaborn-Pygal-Pyecharts可视化" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Seaborn-Pygal-Pyecharts 可视化</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="数据分析">数据分析</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color3">Seaborn</a>
+            
+            <a class="color1">pygal</a>
+            
+            <a class="color5">Pyecharts</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2025-12-13 13:23:10'>2020-02-22 16:24</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:3.4k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-Seaborn-%20%E5%89%8D%E8%A8%80"><span class="toc-text">1.Seaborn 前言</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%20%E5%BF%AB%E9%80%9F%E4%BC%98%E5%8C%96%E5%9B%BE%E5%BD%A2"><span class="toc-text">1.1 快速优化图形</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%20%E5%8E%BB%E6%8E%89%E5%9D%90%E6%A0%87%E8%BD%B4"><span class="toc-text">1.2 去掉坐标轴</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-%20%E4%B8%B4%E6%97%B6%E7%BB%98%E5%9B%BE%E9%A3%8E%E6%A0%BC"><span class="toc-text">1.3 临时绘图风格</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-%20%E7%BC%A9%E6%94%BE%E5%9B%BE%E9%A3%8E%E6%A0%BC"><span class="toc-text">1.4 缩放图风格</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-Seaborn-%20%E7%BB%98%E5%9B%BE%20-API"><span class="toc-text">2. Seaborn 绘图 API</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%20%E5%85%B3%E8%81%94%E5%9B%BE"><span class="toc-text">2.1 关联图 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%20%E7%B1%BB%E5%88%AB%E5%9B%BE"><span class="toc-text">2.2 类别图 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%20%E5%88%86%E5%B8%83%E5%9B%BE"><span class="toc-text">2.3 分布图 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-1-jointplot"><span class="toc-text">2.3.1 jointplot()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-2-pairplot"><span class="toc-text">2.3.2 pairplot()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-3-distplot"><span class="toc-text">2.3.3 distplot()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-4-kdeplot"><span class="toc-text">2.3.4 kdeplot()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%20%E5%9B%9E%E5%BD%92%E5%9B%BE"><span class="toc-text">2.4 回归图 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-%20%E7%9F%A9%E9%98%B5%E5%9B%BE"><span class="toc-text">2.5 矩阵图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-1-heatmap"><span class="toc-text">2.5.1 heatmap()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-2-clustermap"><span class="toc-text">2.5.2 clustermap()</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-pygal%20%E5%BA%93"><span class="toc-text">3. pygal 库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%20%E5%AE%89%E8%A3%85"><span class="toc-text">3.1 安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-%20%E4%BD%BF%E7%94%A8"><span class="toc-text">3.2 使用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-Pyecharts%20%E5%BA%93"><span class="toc-text">4. Pyecharts 库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-%20%E5%88%9D%E8%AF%86%E8%AF%AD%E6%B3%95"><span class="toc-text">4.1 初识语法 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-%20%E4%BC%9A%E7%94%A8%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3"><span class="toc-text">4.2 会用官方文档 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-1-%20%E4%BC%9A%E7%9C%8B%E5%9B%BE%E8%A1%A8%E8%AF%B4%E6%98%8E"><span class="toc-text">4.2.1 会看图表说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-2-%20%E4%BC%9A%E7%94%A8%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE%E9%A1%B9"><span class="toc-text">4.2.2 会用全局配置项 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-3-%20%E9%93%BE%E5%BC%8F%E8%B0%83%E7%94%A8"><span class="toc-text">4.2.3 链式调用 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-4-%20%E8%BE%93%E5%87%BA%E5%9B%BE%E7%89%87"><span class="toc-text">4.2.4 输出图片 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-%20%E8%BF%9B%E9%98%B6%E7%94%A8%E6%B3%95"><span class="toc-text">4.3 进阶用法 </span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-Seaborn- 前言"><a href="#1-Seaborn- 前言" class="headerlink" title="1.Seaborn 前言"></a>1.Seaborn 前言</h1><p><strong>Seaborn 和 Matplotlib 同为 Python 最强大的两个可视化库。Seaborn 是在 matplotlib 的基础上进行了更高级的 API 封装，让你能用更少的代码去调用 matplotlib 的方法，从而使得作图更加容易，在大多数情况下使用 seaborn 就能做出很具有吸引力的图，而使用 matplotlib 就能制作具有更多特色的图。应该把 Seaborn 视为 matplotlib 的补充，而不是替代物。</strong></p>
+<p><strong>Seaborn：作图更容易，图像更漂亮。主要的缺点则是定制化能力会比较差，只能实现固化的一些可视化模板类型</strong>。</p>
+<p><strong>Matplotlib：可以实现高度定制化绘图的，高度定制化可以让你获得最符合心意的可视化输出结果，但也因此需要设置更多的参数，因而代码更加复杂一些。</strong></p>
+<p><font size=5 face="微软雅黑">Seaborn 官方文档</font> <a target="_blank" rel="noopener" href="http://seaborn.pydata.org/tutorial">http://seaborn.pydata.org/tutorial</a></p>
+<p>建议阅读顺序：Plot aesthetics，Plotting functions，Multi-plot grids。</p>
+<h2 id="1-1- 快速优化图形"><a href="#1-1- 快速优化图形" class="headerlink" title="1.1 快速优化图形"></a><strong>1.1 快速优化图形</strong></h2><p>Seaborn 以多变优雅的绘图风格出名，首先热个身：</p>
+<pre><code>import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+def sinplot(flip=1):
+    x = np.linspace(0, 14, 100)
+    for i in range(1, 7):
+        plt.plot(x, np.sin(x + i * .5) * (7 - i) * flip)
+
+sinplot()  // 输出如图 1
+
+sns.set()
+sinplot()  // 输出如图 2</code></pre><p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-22_17-50-16.png" alt=""></p>
+<p>使用 Seaborn 完成图像快速优化的方法非常简单。只需要将 Seaborn 提供的样式声明代码 <code>sns.set()</code> 放置在绘图前即可。</p>
+<p> <strong><code>sns.set()</code>还可进行细致化设置：</strong></p>
+<pre><code>sns.set(context=, style=, palette=, font=, font_scale=, color_codes=, rc=)</code></pre><ul>
+<li><code>context=</code> 参数控制着默认的画幅大小，分别有 <code>&#123;paper, notebook, talk, poster&#125;</code> 四个值。其中，<code>poster &gt; talk &gt; notebook &gt; paper</code>。</li>
+<li><code>style=</code> 参数控制默认样式，分别有 <code>&#123;darkgrid, whitegrid, dark, white, ticks&#125;</code>，你可以自行更改查看它们之间的不同。默认为<code>darkgrid</code>。</li>
+<li><code>palette=</code> 参数为预设的调色板。分别有 <code>&#123;deep, muted, bright, pastel, dark, colorblind&#125;</code> 等，你可以自行更改查看它们之间的不同。</li>
+<li>剩下的 <code>font=</code> 用于设置字体，<code>font_scale=</code> 设置字体大小，<code>color_codes=</code> 不使用调色板而采用先前的 <code>&#39;r&#39;</code> 等色彩缩写。</li>
+</ul>
+<p><strong>另外，还有两个直接控制风格的函数方法：<code>sns.set_style()</code>和<code>sns.axes_style()</code>。</strong></p>
+<p>其包含两个参数<code>style=</code>，可直接设置样式；<code>rc=</code>，字典值，其参数映射将覆盖预设的 seaborn 样式字典中的值。对于<code>sns.axes_style()</code>，如没有进行赋值，则返回当前默认设置，字典格式数据。</p>
+<h2 id="1-2- 去掉坐标轴"><a href="#1-2- 去掉坐标轴" class="headerlink" title="1.2 去掉坐标轴"></a>1.2 去掉坐标轴</h2><pre><code>sns.despine(offset=,trim=,left=)</code></pre><h2 id="1-3- 临时绘图风格"><a href="#1-3- 临时绘图风格" class="headerlink" title="1.3 临时绘图风格"></a>1.3 临时绘图风格</h2><pre><code>with sns.axes_style(&quot;white&quot;):    // 用来切换绘图风格
+    ax = f.add_subplot(gs[0, 0])
+    sinplot1()
+
+sinplot2()          //sinplot1()和 sinplot2() 绘图风格不一样</code></pre><h2 id="1-4- 缩放图风格"><a href="#1-4- 缩放图风格" class="headerlink" title="1.4 缩放图风格"></a>1.4 缩放图风格</h2><pre><code>sns.set()  // 重置函数
+// 包含四个预设，相对大小的顺序，paper，notebook，talk，和 poster</code></pre><pre><code>// 包含四个预设，相对大小的顺序为 paper，notebook，talk，和 poster
+sns.set_context(&quot;paper&quot;)</code></pre><h1 id="2-Seaborn- 绘图 -API"><a href="#2-Seaborn- 绘图 -API" class="headerlink" title="2. Seaborn 绘图 API"></a>2. Seaborn 绘图 API</h1><p>Seaborn 一共拥有 50 多个 API 类，相比于 Matplotlib 数千个的规模，可以算作是短小精悍了。其中，根据图形的适应场景，Seaborn 的绘图方法大致分类 6 类，分别是：</p>
+<p><strong>关联图、类别图、分布图、回归图、矩阵图和组合图。</strong></p>
+<p>而这 6 大类下面又包含不同数量的绘图函数。</p>
+<p>Seaborn 中的 API 分为 Figure-level 和 Axes-level 两种。</p>
+<p>Figure-level 和 Axes-level API 的区别在于，Axes-level 的函数可以实现与 Matplotlib 更灵活和紧密的结合，而 Figure-level 则更像是「懒人函数」，适合于快速应用。</p>
+<h2 id="2-1- 关联图"><a href="#2-1- 关联图" class="headerlink" title="2.1 关联图"></a>2.1 关联图 </h2><p> 关联图的 Figure-level 接口是<a target="_blank" rel="noopener" href="http://seaborn.pydata.org/tutorial/relational.html"><code>relplot</code></a>。【relating plot】</p>
+<p>总函数：<code>sns.relplot()</code>，主要有 <strong> 散点图 </strong> 和<strong>折线图</strong> 2 种样式。</p>
+<p>分函数：<code>sns.scatterplot()</code>，<code>sns.lineplot()</code>。</p>
+<pre><code>sns.relplot(x=, y=, data=,kind=, palette=, ax=, hue=, style=,  *kwargs)</code></pre><ul>
+<li><code>x=, y=</code>：传 <code>data=</code> 中的数字自变量和因变量。</li>
+<li><code>data=</code>：DataFrame 类型的数据表。</li>
+<li><code>kind=</code>：指定绘制的图像类型，选项为 <code>&#39;scatter&#39;</code>和<code>&#39;line&#39;</code>，与分函数对应。默认散点图。</li>
+<li><code>palette=</code>：调色板，可指定内置的样式，色彩丰富。</li>
+<li><code>ax=</code>：指定图标绘画在哪个坐标系。</li>
+<li><code>hue=</code>：指定绘制数据的颜色映射集。</li>
+<li><code>style=</code>：赋予不同类别的散点不同的形状映射集</li>
+<li><code>*kwargs</code>：包含<code>size=</code>，指定图点大小映射集；<code>sizes=</code>，既可以是某个具体数值，也可以是映射集。</li>
+</ul>
+<p>分函数用法与之相同，只是不用指定 kind。</p>
+<p><strong>如想水平绘图，交换 xy 数据就行。</strong></p>
+<h2 id="2-2- 类别图"><a href="#2-2- 类别图" class="headerlink" title="2.2 类别图"></a>2.2 类别图 </h2><p> 与关联图相似，类别图的 Figure-level 接口是 <code>catplot</code>。 【categorical plot】</p>
+<p>总函数：<code>sns.catplot()</code>，主要有 <strong> 分类散点图 </strong>，<strong> 分类分布图 </strong>，<strong> 分类估计图</strong> 3 类样式。</p>
+<pre><code>sns.catplot(x=, y=, kind=, data=, palette=, hue=)   // 参数意义同关联图, 默认 kind=&quot;strip&quot;</code></pre><p><a target="_blank" rel="noopener" href="http://seaborn.pydata.org/tutorial/categorical.html#categorical-scatterplots"><strong>分类散点图：</strong></a></p>
+<p><code>sns.stripplot()</code>(<code>kind=&quot;strip&quot;</code>)：带状散点图，一个类别的所有点都将沿着与分类变量相对应的轴落在同一位置。</p>
+<p><code>sns.swarmplot()</code> (<code>kind=&quot;swarm&quot;</code>)：带状散点图（散点不重叠），使用防止重叠的算法沿分类轴调整点。它仅适用于相对较小的数据集，但它可以更好地表示观测值的分布。</p>
+<p>例：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20201030224405664.png" alt=""></p>
+<p><a target="_blank" rel="noopener" href="http://seaborn.pydata.org/tutorial/categorical.html#distributions-of-observations-within-categories"><strong>分类分布图：</strong></a></p>
+<p><code>sns.boxplot()</code> (<code>kind=&quot;box&quot;</code>)：箱线图</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20201030224446519.png" alt=""></p>
+<p><code>sns.violinplot()(kind=&quot;violin&quot;)</code>：小提琴图</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20201030224536093.png" alt=""></p>
+<p><code>sns.boxenplot()</code> (<code>kind=&quot;boxen&quot;</code>)：增强箱线图</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20201030224607358.png" style="zoom:120%;" />
+
+
+
+<p><a target="_blank" rel="noopener" href="http://seaborn.pydata.org/tutorial/categorical.html#statistical-estimation-within-categories"><strong>分类估计图：</strong></a></p>
+<p><code>sns.pointplot()</code>(<code>kind=&quot;point&quot;</code>)：点线图</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20201030224709044.png" alt=""></p>
+<p><code>sns.barplot()</code>(<code>kind=&quot;bar&quot;</code>)：条形图</p>
+<ul>
+<li>分类图中的条形图只是将点线图中的平均值以条形方框展示而已；置信区间还是以线的形式展示。</li>
+</ul>
+<p><code>sns.countplot()</code> (<code>kind=&quot;count&quot;</code>)：计数条形图</p>
+<h2 id="2-3- 分布图"><a href="#2-3- 分布图" class="headerlink" title="2.3 分布图"></a>2.3 分布图 </h2><p> 分布图主要是用于可视化变量的分布情况，一般分为单变量分布和双变量分布。</p>
+<h3 id="2-3-1-jointplot"><a href="#2-3-1-jointplot" class="headerlink" title="2.3.1 jointplot()"></a>2.3.1 jointplot()</h3><p><a target="_blank" rel="noopener" href="http://seaborn.pydata.org/generated/seaborn.jointplot.html?highlight=jointplot#seaborn.jointplot"><code>sns.jointplot(x=, y=, data=,kind= color=, *kwargs)</code></a></p>
+<p>kind=“scatter” | “reg” | “resid” | “kde” | “hex” </p>
+<p>主要是用于绘制二元变量分布图。散点图，六边形图，核密度估计</p>
+<h3 id="2-3-2-pairplot"><a href="#2-3-2-pairplot" class="headerlink" title="2.3.2 pairplot()"></a>2.3.2 pairplot()</h3><p><a target="_blank" rel="noopener" href="http://seaborn.pydata.org/generated/seaborn.pairplot.html?highlight=pairplot#seaborn.pairplot"><code>sns.pairplot(data=, hue=, vars=， *kwargs)</code></a></p>
+<p>支持一次性将数据集中的特征变量两两对比绘图。默认情况下，对角线上是单变量分布图，而其他则是二元变量分布图。</p>
+<h3 id="2-3-3-distplot"><a href="#2-3-3-distplot" class="headerlink" title="2.3.3 distplot()"></a>2.3.3 distplot()</h3><p><a target="_blank" rel="noopener" href="http://seaborn.pydata.org/generated/seaborn.displot.html?highlight=displot#seaborn.displot"><code>sns.distplot(a, bins=, hist=, kde=, color=, label=, *kwargs)</code></a></p>
+<p>绘制单变量分布。直方图，核密度估计，拟合参数分布</p>
+<h3 id="2-3-4-kdeplot"><a href="#2-3-4-kdeplot" class="headerlink" title="2.3.4 kdeplot()"></a>2.3.4 kdeplot()</h3><p><a target="_blank" rel="noopener" href="http://seaborn.pydata.org/generated/seaborn.kdeplot.html#seaborn.kdeplot"><code>sns.kdeplot(data, shade=, vertical=, *kwargs)</code></a></p>
+<p>绘制二维核密度图</p>
+<h2 id="2-4- 回归图"><a href="#2-4- 回归图" class="headerlink" title="2.4 回归图"></a>2.4 回归图 </h2><p><a target="_blank" rel="noopener" href="http://seaborn.pydata.org/generated/seaborn.lmplot.html?highlight=lmplot#seaborn.lmplot">lmplot()</a> 与<a target="_blank" rel="noopener" href="http://seaborn.pydata.org/generated/seaborn.regplot.html?highlight=regplot#seaborn.regplot">regplot()</a></p>
+<p><code>sns.lmplot(x=, y=, hue=, data=, *kwargs)</code></p>
+<p>同样是用于绘制回归图，但 <code>lmplot</code> 支持引入第三维度进行对比</p>
+<p><code>sns.regplot(x=, y=, data=, *kwargs)</code></p>
+<p>绘制回归图时，只需要指定自变量和因变量即可，<code>regplot</code> 会自动完成线性回归拟合。</p>
+<h2 id="2-5- 矩阵图"><a href="#2-5- 矩阵图" class="headerlink" title="2.5 矩阵图"></a>2.5 矩阵图</h2><h3 id="2-5-1-heatmap"><a href="#2-5-1-heatmap" class="headerlink" title="2.5.1 heatmap()"></a>2.5.1 heatmap()</h3><p><a target="_blank" rel="noopener" href="http://seaborn.pydata.org/generated/seaborn.heatmap.html?highlight=heatmap#seaborn-heatmap"><code>sns.heatmap(data, vmin=, vmax=, cmap=, center=, *kwargs)</code></a></p>
+<p>主要用于绘制热力图。</p>
+<h3 id="2-5-2-clustermap"><a href="#2-5-2-clustermap" class="headerlink" title="2.5.2 clustermap()"></a>2.5.2 clustermap()</h3><p><a target="_blank" rel="noopener" href="http://seaborn.pydata.org/generated/seaborn.clustermap.html?highlight=clustermap#seaborn.clustermap"><code>sns.clustermap(data, method=, metric=, *kwargs)</code></a></p>
+<p>支持绘制层次聚类结构图。</p>
+<h1 id="3-pygal 库"><a href="#3-pygal 库" class="headerlink" title="3. pygal 库"></a>3. pygal 库</h1><p>Pygal 是另一个简单易用的数据图库，它以面向对象的方式来创建各种数据图，而且使用 Pygal 可以非常方便地生成各种格式的数据图，包括 PNG、SVG 等。</p>
+<p>其最大的特点是能够生成 <strong> 矢量图形 </strong>SVG，还可进行点击显示<strong> 交互</strong>。</p>
+<h2 id="3-1- 安装"><a href="#3-1- 安装" class="headerlink" title="3.1 安装"></a>3.1 安装</h2><pre><code class="python">pip install pygal -i https://pypi.tuna.tsinghua.edu.cn/simple</code></pre>
+<h2 id="3-2- 使用"><a href="#3-2- 使用" class="headerlink" title="3.2 使用"></a>3.2 使用</h2><p>pygal 有非常简单清晰的官方文档，需要用时直接查阅就好。</p>
+<p><strong>Pygal 官方文档</strong></p>
+<p><a target="_blank" rel="noopener" href="http://www.pygal.org/en/stable/documentation/index.html">http://www.pygal.org/en/stable/documentation/index.html</a></p>
+<h1 id="4-Pyecharts 库"><a href="#4-Pyecharts 库" class="headerlink" title="4. Pyecharts 库"></a>4. Pyecharts 库</h1><p><a target="_blank" rel="noopener" href="https://github.com/ecomfe/echarts">Echarts</a> 是一个由百度开源的数据可视化，凭借着良好的交互性，精巧的图表设计，得到了众多开发者的认可。而 Python 是一门富有表达力的语言，很适合用于数据处理。</p>
+<p><strong>特点：良好的交互性，支持链式调用，精巧的图表设计</strong></p>
+<p><strong>官方文档是中文滴！</strong><a target="_blank" rel="noopener" href="http://pyecharts.org/#/zh-cn/intro">http://pyecharts.org/#/zh-cn/intro</a></p>
+<p>要想使用直接阅读官方文档即可。其中的【<a target="_blank" rel="noopener" href="http://pyecharts.org/#/zh-cn/quickstart?id=_5- 分钟上手">5 分钟上手</a>】初学者一定要看。</p>
+<p>为了更快的读懂官方文档，在下面会做一些总结。</p>
+<h2 id="4-1- 初识语法"><a href="#4-1- 初识语法" class="headerlink" title="4.1 初识语法"></a>4.1 初识语法 </h2><p> 首先给一段简单代码看看 Pyecharts 是怎么画图的：</p>
+<pre><code class="python">// 条形图绘制
+from pyecharts.charts import Bar
+
+bar1 = Bar()  // 首先创建一个条形图画板
+
+bar1.add_xaxis([&quot; 衬衫 &quot;, &quot; 羊毛衫 &quot;, &quot; 雪纺衫 &quot;, &quot; 裤子 &quot;, &quot; 高跟鞋 &quot;, &quot; 袜子 &quot;])
+bar1.add_yaxis(&quot; 商家 A&quot;, [5, 20, 36, 10, 75, 90])
+bar1.add_yaxis(&quot; 商家 B&quot;, [10, 25, 35, 6, 100, 70])
+
+bar1.render()
+//render 会生成本地 HTML 文件，默认会在当前目录生成 render.html 文件
+// 也可以传入路径参数，如 bar.render(&quot;mycharts.html&quot;)</code></pre>
+<p>打开生成的 render.html 文件如下：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-23_22-17-54.png" alt=""></p>
+<p><strong>要想直接在 jupyter notebook 中直接显示，可采用如下方式：</strong></p>
+<p><code>bar1.render_notebook()</code></p>
+<p>以上画图方法简单吧。下面再看看怎么进行更多的设置。</p>
+<h2 id="4-2- 会用官方文档"><a href="#4-2- 会用官方文档" class="headerlink" title="4.2 会用官方文档"></a><strong>4.2 会用官方文档 </strong></h2><h3 id="4-2-1- 会看图表说明"><a href="#4-2-1- 会看图表说明" class="headerlink" title="4.2.1 会看图表说明"></a>4.2.1 会看图表说明</h3><p> 想要对图表进行进一步的设置，则看官方文档中对应的设置部分，对于条形图 Bar：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-23_22-45-12.png" alt=""></p>
+<p>上述中 <code>def</code> 定义了函数名<code>add_yaxis</code>，调用格式：<code>Bar().add_yaxis()</code>，括号的可以传入的参数和用法即为在画红下划线里的那些。有等于号 = 的通过赋值传参，没有等于号的直接传参。</p>
+<p><strong>举个例子：</strong></p>
+<pre><code>from pyecharts.charts import Line
+
+L=Line()
+L.add_xaxis([&#39;1 月份 &#39;,&#39;2 月份 &#39;,&#39;3 月份 &#39;,&#39;4 月份 &#39;,&#39;5 月份 &#39;,&#39;6 月份 &#39;])
+L.add_yaxis(&quot; 商家 A&quot;, [5, 20, 36, 10, 75, 90])
+L.add_yaxis(&quot; 商家 B&quot;, [10, 25, 35, 6, 100, 70],
+            is_smooth = True,
+            linestyle_opts = opts.LineStyleOpts(type_=&#39;dotted&#39;))  // 给商家 B 搞点不一样
+
+L.render_notebook()</code></pre><p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/can323132132131vvas.png" alt=""></p>
+<p>上述中给商家 B 搞点不一样，就是 <strong> 参照官方文档中的用法进行了设置。查看应用路径如下：</strong></p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-23_23-22-03.png" alt=""></p>
+<p><strong>这下学会怎么看官方文档了吧！！！</strong></p>
+<p><strong>点个赞，快！</strong></p>
+<p>接下来如果想要添加【标题】或者修改【图例】等，需要在 <strong> 全局配置项 </strong> 中添加。</p>
+<h3 id="4-2-2- 会用全局配置项"><a href="#4-2-2- 会用全局配置项" class="headerlink" title="4.2.2 会用全局配置项"></a>4.2.2 会用全局配置项 </h3><p><strong> 全局配置项中可对这些元素进行配置：</strong></p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/57307650-8a4d0280-7117-11e9-921f-69b8e9c5e4aa.png" alt=""></p>
+<blockquote>
+<p><strong>全局配置项可通过 <code>set_global_options</code> 方法设置。</strong></p>
+</blockquote>
+<p>在使用全局变量时，需要再 import 一个方法：</p>
+<pre><code class="python">from pyecharts import options as opts // 使用 options 配置项，在 pyecharts 中，一切皆 Options。</code></pre>
+<p>首先找到全局配置项的那一部分，看目录，如我需要给图表加标题，则找到【TitleOpts：标题配置项】。</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-24_00-00-10.png" alt=""></p>
+<p>如我需要给图表加视觉映射，则找到【VisualMapOpts：视觉映射配置项】。</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-02-24_00-09-06.png" alt=""></p>
+<p>看了这两个例子应该学会举一反三，配置任何全局变量了吧！</p>
+<h3 id="4-2-3- 链式调用"><a href="#4-2-3- 链式调用" class="headerlink" title="4.2.3 链式调用"></a>4.2.3 链式调用 </h3><p><strong> 在使用 Pyecharts 过程中，一般都会采用链式调用的方法去写代码，当然怎么选择可凭个人习惯。</strong></p>
+<p>先看段代码：</p>
+<pre><code class="python">from pyecharts import options as opts
+from pyecharts.charts import Scatter
+
+def scatter_spliteline() -&gt; Scatter:     // 这里是 python 中一种特殊写法，下面会有解释。
+    c = (Scatter()                     // 该函数的方法调用就是链式调用
+        .add_xaxis([&#39;1 月份 &#39;,&#39;2 月份 &#39;,&#39;3 月份 &#39;,&#39;4 月份 &#39;,&#39;5 月份 &#39;,&#39;6 月份 &#39;,])
+        .add_yaxis(&quot; 商家 A&quot;, [80, 55, 35, 10, 100, 70])
+        .set_global_opts(title_opts=opts.TitleOpts(title=&quot;Scatter- 显示分割线 &quot;),
+            xaxis_opts=opts.AxisOpts(splitline_opts=opts.SplitLineOpts(is_show=True)),
+            yaxis_opts=opts.AxisOpts(splitline_opts=opts.SplitLineOpts(is_show=True)),
+        )
+    )
+    return c
+
+scatter_spliteline().render_notebook()</code></pre>
+<p>首先定义一个变量 c，去接收画的图表；括号里传入图表类型函数 Scatter()，代表要绘制散点图，再分别调用 Scatter()里面的 add_xaxis()，add_yaxis()，set_global_opts()三个函数，用点连接，代表方法调用。</p>
+<p><strong>【如何理解链式调用】</strong></p>
+<ul>
+<li><p>所谓链式调用，就是一个函数可以“叠加”使用其中的方法。比如普通类 Car()中定义了三个方法，A，B，C，当使用其中的方法时，只能分别调用，如：</p>
+<pre><code>Car().A()
+Car().B()
+Car().C()</code></pre><p>而链式调用，则可以直接：</p>
+<pre><code class="python">Car().A().B().C()   #同时调用 A，B,C 三个函数
+
+#上面的画图函数就是这样写的：
+Scatter().add_xaxis()
+         .add_xaxis()
+         .set_global_opts()</code></pre>
+<p>当然要实现这样的调用，类函数 Car()中的方法要 return 本身。</p>
+<p>如：</p>
+<pre><code class="python">class Chain():
+
+    def __init__(self,name):
+        self.name=name
+
+    def A(self):
+        print(&#39;%s 正在调用方法 A&#39;%self.name)
+        return self
+
+    def B(self):
+        print(&#39; 正在调用方法 B&#39;)
+        return self
+
+    def C(self):
+        print(&#39; 正在调用方法 C&#39;)
+        return self
+
+chain=Chain(name=&#39;author&#39;)
+chain.A().B().C()
+
+#输出结果为：
+author 正在调用方法 A
+正在调用方法 B
+正在调用方法 C
+
+#以上这就是链式调用</code></pre>
+<p>以上过程可以这样理解：</p>
+<p>第一层：<code>chain.A()</code>调用方法 A，打印出“author 正在调用方法 A”，随后 <code>return</code> 回<code>self</code>（就是 <code>Chain()</code> 本身，即 <code>chain.A()</code> 又相当于<code>Chain()</code>）</p>
+<p>第二层：<code>chain.A().B()</code>等价于<code>chain.B()</code>。依次类推。</p>
+</li>
+</ul>
+<p><strong>【如何理解 python 代码中的箭头<code>—&gt;</code>】</strong></p>
+<ul>
+<li><p>函数参数中的箭头指向是参数的 <code> 类型建议符</code>，以告诉程序员希望传入的实参的类型。是 Python 3.5 新加的功能。</p>
+</li>
+<li><p>值得注意的是，类型建议符并非强制规定和检查，也就是说即使传入的实际参数与建议参数不符，也不会报错。</p>
+</li>
+<li><p>可以把它看成一种注释即可。不编译，不执行。</p>
+<pre><code class="python">def add(x, y) -&gt; int:  # 这里 —&gt; int 表示：告诉程序员这里 x,y 建议输入数据类型为整型
+    return x+y</code></pre>
+</li>
+</ul>
+<h3 id="4-2-4- 输出图片"><a href="#4-2-4- 输出图片" class="headerlink" title="4.2.4 输出图片"></a>4.2.4 输出图片 </h3><p>Pyecharts 默认的输出方式为 html 网页文件，要想输出图片，可参阅官方文档【<a target="_blank" rel="noopener" href="http://pyecharts.org/#/zh-cn/render_images"> 渲染图片</a>】</p>
+<h2 id="4-3- 进阶用法"><a href="#4-3- 进阶用法" class="headerlink" title="4.3 进阶用法"></a>4.3 进阶用法 </h2><p> 等到我需要用到的时候再进行更新吧。</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 欢迎各位看官及技术大佬前来交流指导呀，可以邮件至 jqiange@yeah.net </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2021 Jqiange
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

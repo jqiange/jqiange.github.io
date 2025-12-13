@@ -1,0 +1,4169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>C++ 泛型编程与模板 | jqiange</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="C++ 泛型编程与模板 | jqiange">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="人畜无害的姜小强">
+<meta property="og:url" content="https://jqiange.github.io/about/index.html">
+<meta property="og:site_name" content="jqiange">
+<meta property="og:description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+<meta property="article:published_time" content="2020-02-18T08:21:04.000Z">
+<meta property="article:modified_time" content="2025-12-13T05:23:10.695Z">
+<meta property="article:author" content="姜小强">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+
+
+<link rel="icon" href="/img/jqiange.png">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/jqiange.png"/>
+</a>
+<div class="author">
+    <span>姜小强</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/jqiange"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(58)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(9)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据库">
+                        
+                        数据库
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="每日一学">
+                        
+                        每日一学
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="爬虫">
+                        
+                        爬虫
+                        <small>(10)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="前端">
+                        
+                        前端
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="深度学习">
+                        
+                        深度学习
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据分析">
+                        
+                        数据分析
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="chip">
+                        
+                        chip
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="CPP">
+                        
+                        CPP
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Linux">
+                        
+                        Linux
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="python">
+                        
+                        python
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="58">
+<input type="hidden" id="yelog_site_word_count" value="251.9k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSS-Xpath</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Markdown</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Matplotlib</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Mysql</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Numpy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pandas</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pip</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pyecharts</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pygal</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pymysql-ORM</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>RE</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Redis</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Scrapy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Seaborn</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Selenium</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>yield</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="全部文章 python "
+           href="/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%A6%E8%A7%A3/"
+           data-tag="RE"
+           data-author="" >
+            <span class="post-title" title="正则表达式详解">正则表达式详解</span>
+            <span class="post-date" title="2020-02-26 09:25:46">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/tcl%E4%B8%8Eopc/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 与 opc">tcl 与 opc</span>
+            <span class="post-date" title="2025-09-24 13:36:07">2025/09/24</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/hexo%E6%96%87%E7%AB%A0%E5%8A%A0%E5%AF%86%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="hexo 文章加密方法">hexo 文章加密方法</span>
+            <span class="post-date" title="2025-09-21 22:33:03">2025/09/21</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/tcl%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 语言入门">tcl 语言入门</span>
+            <span class="post-date" title="2025-09-14 22:43:20">2025/09/14</span>
+        </a>
+        
+        <a  class="全部文章 每日一学 "
+           href="/%E6%95%85%E4%BA%8B%E4%BC%9A%E4%B8%8E%E4%BC%81%E4%B8%9A%E8%82%A1%E6%9D%83%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="故事会与企业股权架构设计">故事会与企业股权架构设计</span>
+            <span class="post-date" title="2025-08-30 09:42:43">2025/08/30</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%AE%A1%E7%AE%97%E5%85%89%E5%88%BBOPC%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="计算光刻 OPC 名词解释">计算光刻 OPC 名词解释</span>
+            <span class="post-date" title="2025-08-26 21:44:36">2025/08/26</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%8A%AF%E7%89%87%E5%88%B6%E9%80%A0%E6%B5%81%E7%A8%8B%E4%B8%8E%E5%B7%A5%E8%89%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="芯片制造流程与工艺">芯片制造流程与工艺</span>
+            <span class="post-date" title="2025-06-14 12:13:17">2025/06/14</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E8%81%8C%E5%9C%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入职场">C++ 入职场</span>
+            <span class="post-date" title="2024-06-22 15:52:55">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/Protocol-Buffers-%E5%85%A5%E9%97%A8%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Protocol Buffers 入门使用">Protocol Buffers 入门使用</span>
+            <span class="post-date" title="2024-06-22 15:50:39">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-python%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B-boost/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++python 混合编程 -boost">C++python 混合编程 -boost</span>
+            <span class="post-date" title="2024-06-22 15:36:18">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B%E4%B8%8E%E6%A8%A1%E6%9D%BF/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 泛型编程与模板">C++ 泛型编程与模板</span>
+            <span class="post-date" title="2024-06-22 15:27:49">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入门学习笔记">C++ 入门学习笔记</span>
+            <span class="post-date" title="2024-06-22 14:53:46">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 Linux "
+           href="/shell%E7%BC%96%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="shell 编程">shell 编程</span>
+            <span class="post-date" title="2022-03-07 20:24:24">2022/03/07</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Git 版本控制工具">Git 版本控制工具</span>
+            <span class="post-date" title="2022-03-05 23:23:45">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Hexo%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E4%B8%8E%E5%A4%9A%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hexo 博客迁移与多平台使用">Hexo 博客迁移与多平台使用</span>
+            <span class="post-date" title="2022-03-05 01:26:56">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%B8%8E%E9%87%8D%E9%9A%BE%E7%82%B9%E6%B1%87%E6%80%BB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的基础知识与重难点汇总">python 中的基础知识与重难点汇总</span>
+            <span class="post-date" title="2020-11-17 23:05:15">2020/11/17</span>
+        </a>
+        
+        <a  class="全部文章 前端 "
+           href="/javascript%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="JavaScript 入门">JavaScript 入门</span>
+            <span class="post-date" title="2020-11-09 20:46:08">2020/11/09</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E8%AF%AD%E6%B3%95%E7%B3%96/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的语法糖">python 中的语法糖</span>
+            <span class="post-date" title="2020-11-06 10:53:29">2020/11/06</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E8%BF%9B%E7%A8%8B%EF%BC%8C%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%8D%8F%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的进程，线程与协程">python 中的进程，线程与协程</span>
+            <span class="post-date" title="2020-11-04 21:29:16">2020/11/04</span>
+        </a>
+        
+        <a  class="全部文章 Linux "
+           href="/linux%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="linux 常见命令学习">linux 常见命令学习</span>
+            <span class="post-date" title="2020-06-17 22:33:28">2020/06/17</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="机器学习经典算法">机器学习经典算法</span>
+            <span class="post-date" title="2020-06-16 10:36:50">2020/06/16</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/tensorflow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tensorflow 学习笔记">tensorflow 学习笔记</span>
+            <span class="post-date" title="2020-06-05 01:49:53">2020/06/05</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/%E6%B7%B1%E5%BA%A6%E7%90%86%E8%A7%A3%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="深度理解卷积神经网络工作原理">深度理解卷积神经网络工作原理</span>
+            <span class="post-date" title="2020-06-04 13:24:45">2020/06/04</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E7%88%AC%E8%99%AB%E7%9A%84%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫的定时执行">爬虫的定时执行</span>
+            <span class="post-date" title="2020-04-06 22:44:47">2020/04/06</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/Token-%EF%BC%8CCookie%E5%92%8CSession%E7%9A%84%E5%8C%BA%E5%88%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Token ，Cookie 和 Session 的区别">Token ，Cookie 和 Session 的区别</span>
+            <span class="post-date" title="2020-04-03 10:46:54">2020/04/03</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E5%9C%A8python%E4%B8%AD%E8%BF%9B%E8%A1%8C%E8%A7%86%E9%A2%91-%E9%9F%B3%E9%A2%91%E5%A4%84%E7%90%86%E5%8F%8A%E5%90%88%E5%B9%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="在 python 中进行视频 - 音频处理及合并">在 python 中进行视频 - 音频处理及合并</span>
+            <span class="post-date" title="2020-03-29 10:56:44">2020/03/29</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8BJS%E8%A7%A3%E5%AF%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之 JS 解密">反反爬虫之 JS 解密</span>
+            <span class="post-date" title="2020-03-24 10:04:43">2020/03/24</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E7%90%86%E8%A7%A3python%E4%B8%AD%E7%9A%84%E9%97%AD%E5%8C%85%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="理解 python 中的闭包与装饰器">理解 python 中的闭包与装饰器</span>
+            <span class="post-date" title="2020-03-21 17:34:45">2020/03/21</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Mongodb%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Mongodb 数据库入门">Mongodb 数据库入门</span>
+            <span class="post-date" title="2020-03-17 22:50:33">2020/03/17</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%8A%A0%E4%B8%AA%E7%A9%BA%E6%A0%BC%E5%91%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="为什么不加个空格呢">为什么不加个空格呢</span>
+            <span class="post-date" title="2020-03-14 13:53:44">2020/03/14</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8/"
+           data-tag="yield"
+           data-author="" >
+            <span class="post-title" title="迭代器与生成器">迭代器与生成器</span>
+            <span class="post-date" title="2020-03-13 21:58:25">2020/03/13</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E6%BB%91%E5%9D%97%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之滑块验证码">反反爬虫之滑块验证码</span>
+            <span class="post-date" title="2020-03-08 21:00:17">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E5%9B%BE%E7%89%87%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之图片验证码">反反爬虫之图片验证码</span>
+            <span class="post-date" title="2020-03-08 16:16:16">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Python%E6%93%8D%E4%BD%9CRedis/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Python 操作 Redis">Python 操作 Redis</span>
+            <span class="post-date" title="2020-03-07 16:15:44">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy-Redis%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Scrapy-Redis 分布式爬虫">Scrapy-Redis 分布式爬虫</span>
+            <span class="post-date" title="2020-03-07 15:35:50">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%ABRequest%E5%8E%BB%E9%87%8D%E5%8F%8A%E8%BF%87%E6%BB%A4%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫 Request 去重及过滤器">爬虫 Request 去重及过滤器</span>
+            <span class="post-date" title="2020-03-07 15:22:23">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Redis%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Redis 数据库">Redis 数据库</span>
+            <span class="post-date" title="2020-03-06 20:30:00">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Pymysql%E4%B8%8EORM%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="pymysql-ORM"
+           data-author="" >
+            <span class="post-title" title="Pymysql 与 ORM 操作数据库">Pymysql 与 ORM 操作数据库</span>
+            <span class="post-date" title="2020-03-06 10:49:03">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/MySql%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Mysql"
+           data-author="" >
+            <span class="post-title" title="MySql 数据库">MySql 数据库</span>
+            <span class="post-date" title="2020-03-04 23:31:02">2020/03/04</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy%E6%A1%86%E6%9E%B6%E7%88%AC%E8%99%AB/"
+           data-tag="Scrapy"
+           data-author="" >
+            <span class="post-title" title="Scrapy 框架爬虫">Scrapy 框架爬虫</span>
+            <span class="post-date" title="2020-03-02 10:44:55">2020/03/02</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="多线程与多进程爬虫">多线程与多进程爬虫</span>
+            <span class="post-date" title="2020-03-01 15:33:08">2020/03/01</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Selenium%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%A8%A1%E6%8B%9F/"
+           data-tag="Selenium"
+           data-author="" >
+            <span class="post-title" title="Selenium 自动化测试模拟">Selenium 自动化测试模拟</span>
+            <span class="post-date" title="2020-02-29 21:29:54">2020/02/29</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96-%E6%96%87%E4%BB%B6%E4%BF%9D%E5%AD%98/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="数据持久化 - 文件保存本地">数据持久化 - 文件保存本地</span>
+            <span class="post-date" title="2020-02-27 22:01:14">2020/02/27</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫基础入门">爬虫基础入门</span>
+            <span class="post-date" title="2020-02-26 20:44:27">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/CSS%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%8EXpath%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96/"
+           data-tag="CSS-Xpath"
+           data-author="" >
+            <span class="post-title" title="CSS 选择器与 Xpath 数据提取">CSS 选择器与 Xpath 数据提取</span>
+            <span class="post-date" title="2020-02-26 19:07:35">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Seaborn-Pygal-Pyecharts%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Seaborn,pygal,Pyecharts"
+           data-author="" >
+            <span class="post-title" title="Seaborn-Pygal-Pyecharts 可视化">Seaborn-Pygal-Pyecharts 可视化</span>
+            <span class="post-date" title="2020-02-22 16:24:55">2020/02/22</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/python%E4%B9%8BMatplotlib%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Matplotlib"
+           data-author="" >
+            <span class="post-title" title="python 之 Matplotlib 可视化">python 之 Matplotlib 可视化</span>
+            <span class="post-date" title="2020-02-20 20:28:44">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%A4%84%E7%90%86%E5%AE%9E%E6%93%8D/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Pandas 数据分析处理实操">Pandas 数据分析处理实操</span>
+            <span class="post-date" title="2020-02-20 10:51:39">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Markdown%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E6%8A%80%E5%B7%A7/"
+           data-tag="Markdown"
+           data-author="" >
+            <span class="post-title" title="Markdown 文本编辑技巧">Markdown 文本编辑技巧</span>
+            <span class="post-date" title="2020-02-18 16:31:40">2020/02/18</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BPandas%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Python 之 Pandas 库从入门到实战">Python 之 Pandas 库从入门到实战</span>
+            <span class="post-date" title="2020-02-15 20:46:52">2020/02/15</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BNumpy%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Numpy"
+           data-author="" >
+            <span class="post-title" title="Python 之 Numpy 库从入门到实战">Python 之 Numpy 库从入门到实战</span>
+            <span class="post-date" title="2020-02-13 23:15:38">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E9%95%9C%E5%83%8F%E6%BA%90%E7%BD%91%E5%9D%80/"
+           data-tag="pip"
+           data-author="" >
+            <span class="post-title" title="python pip 国内镜像大全及库的安装">python pip 国内镜像大全及库的安装</span>
+            <span class="post-date" title="2020-02-13 23:13:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E7%9A%84%E4%B8%89%E7%A7%8D%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 的三种输出格式">python 的三种输出格式</span>
+            <span class="post-date" title="2020-02-13 23:04:49">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E6%97%B6%E9%97%B4%E6%A8%A1%E5%9D%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的时间模块">python 中的时间模块</span>
+            <span class="post-date" title="2020-02-13 23:01:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E6%9F%A5%E7%9C%8B%E4%BB%BB%E4%BD%95%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E7%94%A8%E6%B3%95%E7%9A%84%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 查看任何第三方库的用法的方法">python 查看任何第三方库的用法的方法</span>
+            <span class="post-date" title="2020-02-13 22:57:50">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Anaconda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8Epyinstaller%E7%A8%8B%E5%BA%8F%E6%89%93%E5%8C%85/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Anaconda 环境配置与 pyinstaller 程序打包">Anaconda 环境配置与 pyinstaller 程序打包</span>
+            <span class="post-date" title="2020-02-13 20:01:52">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%BD%BF%E7%94%A8Hexo-Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%85%8D%E8%B4%B9%E5%8D%9A%E5%AE%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="使用 Hexo+Github 搭建个人免费博客">使用 Hexo+Github 搭建个人免费博客</span>
+            <span class="post-date" title="2020-02-13 15:44:02">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E5%85%B3%E4%BA%8Ehexo%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"
+           data-tag="Hexo"
+           data-author="" >
+            <span class="post-title" title="关于 hexo 使用过程中报错问题汇总">关于 hexo 使用过程中报错问题汇总</span>
+            <span class="post-date" title="2020-02-12 23:03:46">2020/02/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-C-泛型编程与模板" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">C++ 泛型编程与模板</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="CPP">CPP</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2024-06-22 15:32:10'>2024-06-22 15:27</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:19.1k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81-%20%E6%A8%A1%E6%9D%BF"><span class="toc-text">一、 模板 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%20%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF"><span class="toc-text">1.1 函数模板 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-1-%20%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF%E5%AE%9A%E4%B9%89"><span class="toc-text">1.1.1 函数模板定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-2-%20%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-text">1.1.2 函数模板注意事项 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-3-%20%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF%E6%A1%88%E4%BE%8B"><span class="toc-text">1.1.3 函数模板案例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-4-%20%E6%99%AE%E9%80%9A%E5%87%BD%E6%95%B0%E4%B8%8E%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">1.1.4 普通函数与函数模板的区别 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-5-%20%E6%99%AE%E9%80%9A%E5%87%BD%E6%95%B0%E4%B8%8E%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF%E7%9A%84%E8%B0%83%E7%94%A8%E8%A7%84%E5%88%99"><span class="toc-text">1.1.5 普通函数与函数模板的调用规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-6-%20%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%B1%80%E9%99%90%E6%80%A7%20-%20%E5%85%B7%E4%BD%93%E5%8C%96%E7%9A%84%E6%A8%A1%E6%9D%BF"><span class="toc-text">1.1.6 模板的局限性 &#x2F; 具体化的模板 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%20%E7%B1%BB%E6%A8%A1%E6%9D%BF"><span class="toc-text">1.2 类模板 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-1-%20%E7%B1%BB%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95"><span class="toc-text">1.2.1 类模板语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-2-%20%E7%B1%BB%E6%A8%A1%E6%9D%BF%E4%B8%8E%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF%E5%8C%BA%E5%88%AB"><span class="toc-text">1.2.2 类模板与函数模板区别 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-3-%20%E7%B1%BB%E6%A8%A1%E6%9D%BF%E4%B8%AD%E7%9A%84%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E5%88%9B%E5%BB%BA%E6%97%B6%E6%9C%BA"><span class="toc-text">1.2.3 类模板中的成员函数创建时机 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-4-%20%E7%B1%BB%E6%A8%A1%E6%9D%BF%E5%AF%B9%E8%B1%A1%E5%81%9A%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0"><span class="toc-text">1.2.4 类模板对象做函数参数 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-5-%20%E7%B1%BB%E6%A8%A1%E6%9D%BF%E4%B8%8E%E7%BB%A7%E6%89%BF"><span class="toc-text">1.2.5 类模板与继承 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-6-%20%E7%B1%BB%E6%A8%A1%E6%9D%BF%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E7%B1%BB%E5%A4%96%E5%AE%9E%E7%8E%B0"><span class="toc-text">1.2.6 类模板成员函数类外实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-7-%20%E7%B1%BB%E6%A8%A1%E6%9D%BF%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E7%B1%BB%E5%A4%96%E5%AE%9E%E7%8E%B0"><span class="toc-text">1.2.7 类模板成员函数类外实现 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-8-%20%E7%B1%BB%E6%A8%A1%E6%9D%BF%E4%B8%8E%E5%8F%8B%E5%85%83"><span class="toc-text">1.2.8 类模板与友元 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-9-%20%E7%B1%BB%E6%A8%A1%E6%9D%BF%E6%A1%88%E4%BE%8B"><span class="toc-text">1.2.9 类模板案例 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-%20%E5%86%99%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%9D%91"><span class="toc-text">1.3 写模板的坑 </span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81STL%20%E5%88%9D%E8%AF%86"><span class="toc-text">二、STL 初识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-STL%20%E7%9A%84%E8%AF%9E%E7%94%9F"><span class="toc-text">2.1 STL 的诞生</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-STL%20%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="toc-text">2.2 STL 的介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-STL%20%E5%85%AD%E5%A4%A7%E7%BB%84%E4%BB%B6"><span class="toc-text">2.3 STL 六大组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-STL%20%E4%B8%AD%E7%9A%84%E5%AE%B9%E5%99%A8%E3%80%81%E7%AE%97%E6%B3%95%E3%80%81%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="toc-text">2.4 STL 中的容器、算法、迭代器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-%20%E5%AE%B9%E5%99%A8%E7%AE%97%E6%B3%95%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%88%9D%E8%AF%86"><span class="toc-text">2.5 容器算法迭代器初识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-1-vector-%20%E5%AD%98%E6%94%BE%E5%86%85%E7%BD%AE%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.5.1 vector 存放内置数据类型 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-2-vector%20%E5%AD%98%E6%94%BE%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.5.2 vector 存放自定义数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-3-vector%20%E5%AE%B9%E5%99%A8%E5%B5%8C%E5%A5%97%E5%AE%B9%E5%99%A8"><span class="toc-text">2.5.3 vector 容器嵌套容器</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81STL%20%E5%B8%B8%E7%94%A8%E5%AE%B9%E5%99%A8"><span class="toc-text">三、STL 常用容器 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-string%20%E5%AE%B9%E5%99%A8"><span class="toc-text">3.1 string 容器 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-1-string-%20%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">3.1.1 string 基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-2-string-%20%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-text">3.1.2 string 构造函数 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-3-string-%20%E8%B5%8B%E5%80%BC%E6%93%8D%E4%BD%9C"><span class="toc-text">3.1.3 string 赋值操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-4-string-%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5"><span class="toc-text">3.1.4 string 字符串拼接 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-5-string-%20%E6%9F%A5%E6%89%BE%E5%92%8C%E6%9B%BF%E6%8D%A2"><span class="toc-text">3.1.5 string 查找和替换 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-6-string-%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%AF%94%E8%BE%83"><span class="toc-text">3.1.6 string 字符串比较 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-7-string-%20%E5%AD%97%E7%AC%A6%E5%AD%98%E5%8F%96"><span class="toc-text">3.1.7 string 字符存取</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-8-string-%20%E6%8F%92%E5%85%A5%E5%92%8C%E5%88%A0%E9%99%A4"><span class="toc-text">3.1.8 string 插入和删除 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-9-string-%20%E5%AD%90%E4%B8%B2"><span class="toc-text">3.1.9 string 子串 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-vector-%20%E5%AE%B9%E5%99%A8"><span class="toc-text">3.2 vector 容器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-1-vector%20%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">3.2.1 vector 基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-2-vector%20%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-text">3.2.2 vector 构造函数 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-3-vector%20%E8%B5%8B%E5%80%BC%E6%93%8D%E4%BD%9C"><span class="toc-text">3.2.3 vector 赋值操作 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-4-vector%20%E5%AE%B9%E9%87%8F%E5%92%8C%E5%A4%A7%E5%B0%8F"><span class="toc-text">3.2.4  vector 容量和大小 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-5-vector%20%E6%8F%92%E5%85%A5%E5%92%8C%E5%88%A0%E9%99%A4"><span class="toc-text">3.2.5 vector 插入和删除 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-6-vector%20%E6%95%B0%E6%8D%AE%E5%AD%98%E5%8F%96"><span class="toc-text">3.2.6 vector 数据存取 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-7-vector%20%E4%BA%92%E6%8D%A2%E5%AE%B9%E5%99%A8"><span class="toc-text">3.2.7 vector 互换容器 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-8-vector%20%E9%A2%84%E7%95%99%E7%A9%BA%E9%97%B4"><span class="toc-text">3.2.8 vector 预留空间 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-Deque%20%E5%AE%B9%E5%99%A8"><span class="toc-text">3.3 Deque 容器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-1-deque%20%E5%AE%B9%E5%99%A8%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">3.3.1 deque 容器基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-2-deque%20%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-text">3.3.2 deque 构造函数 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-3-deque%20%E8%B5%8B%E5%80%BC%E6%93%8D%E4%BD%9C"><span class="toc-text">3.3.3 deque 赋值操作 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-4-deque%20%E5%A4%A7%E5%B0%8F%E6%93%8D%E4%BD%9C"><span class="toc-text">3.3.4 deque 大小操作 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-5-deque-%20%E6%8F%92%E5%85%A5%E5%92%8C%E5%88%A0%E9%99%A4"><span class="toc-text">3.3.5 deque 插入和删除 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-6-deque-%20%E6%95%B0%E6%8D%AE%E5%AD%98%E5%8F%96"><span class="toc-text">3.3.6 deque 数据存取 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-7-deque-%20%E6%8E%92%E5%BA%8F"><span class="toc-text">3.3.7  deque 排序 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-%20%E6%A1%88%E4%BE%8B%20-%20%E8%AF%84%E5%A7%94%E6%89%93%E5%88%86"><span class="toc-text">3.4 案例 - 评委打分 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-1-%20%E6%A1%88%E4%BE%8B%E6%8F%8F%E8%BF%B0"><span class="toc-text">3.4.1 案例描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-2-%20%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-text">3.4.2 代码实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-stack%20%E5%AE%B9%E5%99%A8"><span class="toc-text">3.5 stack 容器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-1-%20%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">3.5.1 基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-2-stack%20%E5%B8%B8%E7%94%A8%E6%8E%A5%E5%8F%A3"><span class="toc-text">3.5.2 stack 常用接口 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-6-queue%20%E5%AE%B9%E5%99%A8"><span class="toc-text">3.6 queue 容器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-1-%20%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">3.6.1 基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-2-%20%E5%B8%B8%E7%94%A8%E6%8E%A5%E5%8F%A3"><span class="toc-text">3.6.2 常用接口 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-7-list%20%E5%AE%B9%E5%99%A8"><span class="toc-text">3.7 list 容器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-7-1-%20%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">3.7.1 基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-7-2-list%20%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-text">3.7.2  list 构造函数 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-7-3-list-%20%E8%B5%8B%E5%80%BC%E5%92%8C%E4%BA%A4%E6%8D%A2"><span class="toc-text">3.7.3 list 赋值和交换 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-7-4-list-%20%E5%A4%A7%E5%B0%8F%E6%93%8D%E4%BD%9C"><span class="toc-text">3.7.4 list 大小操作 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-7-5-list-%20%E6%8F%92%E5%85%A5%E5%92%8C%E5%88%A0%E9%99%A4"><span class="toc-text">3.7.5 list 插入和删除 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-7-6-list-%20%E6%95%B0%E6%8D%AE%E5%AD%98%E5%8F%96"><span class="toc-text">3.7.6 list 数据存取 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-7-7-list-%20%E5%8F%8D%E8%BD%AC%E5%92%8C%E6%8E%92%E5%BA%8F"><span class="toc-text">3.7.7 list 反转和排序 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-7-8-%20%E6%8E%92%E5%BA%8F%E6%A1%88%E4%BE%8B"><span class="toc-text">3.7.8 排序案例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-8-set-multiset%20%E5%AE%B9%E5%99%A8"><span class="toc-text">3.8 set&#x2F;multiset 容器 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-8-1-%20%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">3.8.1 基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-8-2-set%20%E5%A4%A7%E5%B0%8F%E5%92%8C%E4%BA%A4%E6%8D%A2"><span class="toc-text">3.8.2 set 大小和交换 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-8-3-set%20%E6%8F%92%E5%85%A5%E5%92%8C%E5%88%A0%E9%99%A4"><span class="toc-text">3.8.3 set 插入和删除 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-8-5-set%20%E6%9F%A5%E6%89%BE%E5%92%8C%E7%BB%9F%E8%AE%A1"><span class="toc-text">3.8.5 set 查找和统计 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-8-6-set%20%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="toc-text">3.8.6 set 返回值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-8-7-pair%20%E5%AF%B9%E7%BB%84%E5%88%9B%E5%BB%BA"><span class="toc-text">3.8.7 pair 对组创建 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-8-8-set%20%E5%AE%B9%E5%99%A8%E6%8E%92%E5%BA%8F"><span class="toc-text">3.8.8 set 容器排序 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-9-map-multimap%20%E5%AE%B9%E5%99%A8"><span class="toc-text">3.9 map&#x2F;multimap 容器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-9-1-map%20%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">3.9.1 map 基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-9-2-map%20%E6%9E%84%E9%80%A0%E5%92%8C%E8%B5%8B%E5%80%BC"><span class="toc-text">3.9.2  map 构造和赋值 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-9-3-map%20%E5%A4%A7%E5%B0%8F%E5%92%8C%E4%BA%A4%E6%8D%A2"><span class="toc-text">3.9.3 map 大小和交换 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-9-4-map%20%E6%8F%92%E5%85%A5%E5%92%8C%E5%88%A0%E9%99%A4"><span class="toc-text">3.9.4 map 插入和删除 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-9-5-map%20%E6%9F%A5%E6%89%BE%E5%92%8C%E7%BB%9F%E8%AE%A1"><span class="toc-text">3.9.5 map 查找和统计 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-9-6-map%20%E5%AE%B9%E5%99%A8%E6%8E%92%E5%BA%8F"><span class="toc-text">3.9.6 map 容器排序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-10-%20%E6%A1%88%E4%BE%8B%20-%20%E5%91%98%E5%B7%A5%E5%88%86%E7%BB%84"><span class="toc-text">3.10 案例 - 员工分组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-10-1-%20%E6%A1%88%E4%BE%8B%E6%8F%8F%E8%BF%B0"><span class="toc-text">3.10.1 案例描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-10-2-%20%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-text">3.10.2 代码实现</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81STL-%20%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1"><span class="toc-text">四、STL- 函数对象 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-%20%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1"><span class="toc-text">4.1 函数对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-1-%20%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1%E6%A6%82%E5%BF%B5"><span class="toc-text">4.1.1 函数对象概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-2-%20%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1%E4%BD%BF%E7%94%A8"><span class="toc-text">4.1.2 函数对象使用 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-%20%E8%B0%93%E8%AF%8D%20Pred"><span class="toc-text">4.2 谓词 Pred</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-%20%E5%86%85%E5%BB%BA%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1"><span class="toc-text">4.3 内建函数对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-1-%20%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">4.3.1 基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-2-%20%E7%AE%97%E6%9C%AF%E4%BB%BF%E5%87%BD%E6%95%B0"><span class="toc-text">4.3.2 算术仿函数 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-3-%20%E5%85%B3%E7%B3%BB%E4%BB%BF%E5%87%BD%E6%95%B0"><span class="toc-text">4.3.3 关系仿函数 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-4-%20%E9%80%BB%E8%BE%91%E4%BB%BF%E5%87%BD%E6%95%B0"><span class="toc-text">4.3.4 逻辑仿函数 </span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81STL%20%E5%B8%B8%E7%94%A8%E7%AE%97%E6%B3%95"><span class="toc-text">五、STL 常用算法 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-%20%E5%B8%B8%E7%94%A8%E9%81%8D%E5%8E%86%E7%AE%97%E6%B3%95"><span class="toc-text">5.1 常用遍历算法 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-1-for-each"><span class="toc-text">5.1.1 for_each</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-2-transform"><span class="toc-text">5.1.2 transform</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-%20%E5%B8%B8%E7%94%A8%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95"><span class="toc-text">5.2 常用查找算法 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-3-%20%E5%B8%B8%E7%94%A8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95"><span class="toc-text">5.3 常用排序算法 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-4-%20%E5%B8%B8%E7%94%A8%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%9B%BF%E6%8D%A2%E7%AE%97%E6%B3%95"><span class="toc-text">5.4 常用拷贝和替换算法 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-5-%20%E5%B8%B8%E7%94%A8%E7%AE%97%E6%9C%AF%E7%94%9F%E6%88%90%E7%AE%97%E6%B3%95"><span class="toc-text">5.5 常用算术生成算法 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-6-%20%E5%B8%B8%E7%94%A8%E9%9B%86%E5%90%88%E7%AE%97%E6%B3%95"><span class="toc-text">5.6 常用集合算法 </span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="toc-text">六、异常处理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#6-1-%20%E5%9F%BA%E6%9C%AC%E7%9A%84%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="toc-text">6.1 基本的异常处理 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-2-%20%E5%BC%82%E5%B8%B8%E6%9C%BA%E5%88%B6"><span class="toc-text">6.2 异常机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-3-%20%E6%A1%88%E4%BE%8B"><span class="toc-text">6.3 案例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-4-%20%E5%BC%82%E5%B8%B8%E7%B1%BB%E5%9E%8B"><span class="toc-text">6.4 异常类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-1-%20%E6%A0%87%E5%87%86%E5%BC%82%E5%B8%B8"><span class="toc-text">6.4.1 标准异常</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-2-%20%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%82%E5%B8%B8"><span class="toc-text">6.4.2 自定义异常 </span></a></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本阶段主要针对 C++<strong>泛型编程 </strong> 和<strong>STD</strong>技术做详细学习，探讨 C++ 更深层次的使用。</p>
+<h1 id="一、- 模板"><a href="# 一、- 模板" class="headerlink" title="一、 模板"></a>一、 模板 </h1><p> 模板就是建立通用的模具，大大提高复用性。<strong>学习模板是为了会用别人提供的模板</strong>。</p>
+<ul>
+<li>C++ 另一种编程思想称为泛型编程，主要利用的技术就是模板</li>
+<li>C++ 提高两种模板机制：函数模板和类模板</li>
+</ul>
+<h2 id="1-1- 函数模板"><a href="#1-1- 函数模板" class="headerlink" title="1.1 函数模板"></a>1.1 函数模板 </h2><h3 id="1-1-1- 函数模板定义"><a href="#1-1-1- 函数模板定义" class="headerlink" title="1.1.1 函数模板定义"></a>1.1.1 函数模板定义</h3><p> 函数模板：建立一个通用函数，其函数返回类型和形参类型可以不具体制定，用一个虚拟的类型来代表</p>
+<p>语法：</p>
+<pre><code class="c++">template&lt;typename T&gt;     // 注意这里没有分号；
+void func(T &amp;a)&#123;...&#125;     // 函数声明或定义</code></pre>
+<p>解释：</p>
+<ul>
+<li>template — 声明创建模板</li>
+<li>typename — 表明其后面的符号是一种数据类型，<strong>可以用 class 代替</strong></li>
+<li>T — 通用的数据类型，名称可以替换，通常为大写字母</li>
+</ul>
+<pre><code class="c++">template&lt;typename T&gt;  // 声明一个模板，告诉编译器 T 为通用数据类型，不要报错
+
+void mySwap(T &amp;a, T &amp;b) &#123;
+    T temp = a;
+    a = b;
+    b = temp;
+&#125;
+
+int main() &#123;
+
+    float a = 1.1;
+    float b = 2.2;
+
+    mySwap(a, b);             // 第一种调用：自动类型推导
+    cout &lt;&lt; a &lt;&lt; endl;
+    cout &lt;&lt; b &lt;&lt; endl;
+
+    int c = 10;
+    int d = 20;
+    mySwap&lt;int&gt;(c, d);       // 第二种调用：显示指定类型
+    cout &lt;&lt; c &lt;&lt; endl;
+    cout &lt;&lt; d &lt;&lt; endl;
+
+    system(&quot;pause&quot;);
+&#125;
+</code></pre>
+<p>总结：</p>
+<ul>
+<li>函数模板用关键字 template</li>
+<li>使用函数模板有两种方式：自动类型推导、显示指定类型</li>
+<li>模板的目的时为了提高函数复用性，将类型参数化。</li>
+</ul>
+<h3 id="1-1-2- 函数模板注意事项"><a href="#1-1-2- 函数模板注意事项" class="headerlink" title="1.1.2 函数模板注意事项"></a>1.1.2 函数模板注意事项 </h3><p> 注意事项：</p>
+<ul>
+<li><p>自动类型推导，必须推导出一致的数据类型 T，才可使用</p>
+</li>
+<li><p>模板必须要确定出 T 的数据类型，才可以使用</p>
+<pre><code class="c++">template&lt;typename T&gt;    // 声明了 T, 紧接着的 test()函数却没有使用
+
+void test() &#123;
+    cout &lt;&lt; &quot;test()调用 &quot; &lt;&lt; endl;
+&#125;
+
+void mySwap(T &amp;a, T &amp;b)&#123;    // 这个会报错 T, 上面的 T 声明仅对 T 声明下面的第一个函数有效
+    cout &lt;&lt; &quot; 交换 &quot; &lt;&lt; endl;
+&#125;
+
+int main() &#123;
+
+    test();  // 这里调用就会报错
+
+    test&lt;int&gt;()  // 这随意指定一个 int，就没问题了
+
+    system(&quot;pause&quot;);
+&#125;</code></pre>
+</li>
+</ul>
+<h3 id="1-1-3- 函数模板案例"><a href="#1-1-3- 函数模板案例" class="headerlink" title="1.1.3 函数模板案例"></a>1.1.3 函数模板案例</h3><p>  案例描述：</p>
+<ul>
+<li>利用函数模板封装一个排序的函数，可以对不同的数据类型数组进行排序</li>
+<li>排序规则从大到小，排序算法为选择排序</li>
+<li>分别利用 char 数组和 int 数组进行测试</li>
+</ul>
+<pre><code class="c++">template&lt;typename T&gt;
+void mySwap(T&amp; a, T&amp; b) &#123;
+    T temp = a;
+    a = b;
+    b = temp;
+&#125;
+
+template&lt;typename T&gt;  
+void mySort(T arr[], int len) &#123;
+    for (int i = 0; i &lt; len; ++i) &#123;
+        int max = i;
+        for (int j = i + 1; j &lt; len; ++j) &#123;
+            if (arr[max] &lt; arr[j]) &#123;
+                max = j;
+            &#125;
+        &#125;
+        if (max != i) &#123;
+            mySwap(arr[max], arr[i]);
+        &#125;
+    &#125;
+&#125;
+
+void test() &#123;
+    char cha[] = &quot;dhsjas&quot;;
+    //int cha[] = &#123; 3,4,2,5,1,6,8,7 &#125;;
+    int len = sizeof(cha) / sizeof(cha[0]);
+    mySort(cha, len);
+    for (int i = 0; i &lt; len; ++i) &#123;
+        cout &lt;&lt; cha[i] &lt;&lt; &quot; &quot;;
+    &#125;
+&#125;
+
+int main() &#123;
+
+    test();
+
+    system(&quot;pause&quot;);
+&#125;</code></pre>
+<h3 id="1-1-4- 普通函数与函数模板的区别"><a href="#1-1-4- 普通函数与函数模板的区别" class="headerlink" title="1.1.4 普通函数与函数模板的区别"></a>1.1.4 普通函数与函数模板的区别 </h3><p> 普通函数与函数模板区别（<strong>主要是是否可以发生隐式类型转换</strong>）：</p>
+<ul>
+<li>普通函数调用时，可以发生自动类型转换（隐式类型转换）</li>
+<li>函数模板调用时，如果利用自动类型推导，不会发生隐式类型转换</li>
+<li>如果利用显示指定类型的方式，可以发生隐式类型转换</li>
+</ul>
+<pre><code class="c++">int addtest1(int a, int b) &#123;
+    return a + b;
+&#125;
+
+template&lt;typename T&gt;
+T addtest2(T a, T b) &#123;
+    return a + b;
+&#125;
+
+int main() &#123;
+    int a = 10;
+    char c = &#39;c&#39;; //(int)c = 99
+
+    cout &lt;&lt; addtest1(a, c) &lt;&lt; endl;
+
+    // 自动类型推导
+    //cout &lt;&lt; addtest2(a, c) &lt;&lt; endl; 报错
+
+    // 显示指定类型
+    cout &lt;&lt; addtest2&lt;int&gt;(a, c) &lt;&lt; endl;
+
+    system(&quot;pause&quot;);
+&#125;
+</code></pre>
+<h3 id="1-1-5- 普通函数与函数模板的调用规则"><a href="#1-1-5- 普通函数与函数模板的调用规则" class="headerlink" title="1.1.5 普通函数与函数模板的调用规则"></a>1.1.5 普通函数与函数模板的调用规则</h3><ul>
+<li>如果函数模板和普通函数都可以实现，优先使用普通函数</li>
+<li>可以通过空模板参数列表来强制调用函数模板</li>
+<li>函数模板也可以发生重载</li>
+<li>如果函数模板可以产生更好的匹配，优先调用函数模板</li>
+</ul>
+<pre><code class="c++">int test1(int a, int b);
+
+template&lt;typename T&gt;
+void test1(T a, T b) &#123;
+    cout &lt;&lt; &quot; 调用模板函数 &quot; &lt;&lt; endl;
+&#125;
+
+int main() &#123;
+    int a = 10;
+    int b = 20;
+
+    // 报错，调用普通函数，然而普通函数只有声明没有实现
+    //test1(a, b);
+
+    // 通过空模板参数列表, 强制调用函数模板
+    test1&lt;&gt;(a, b) ;
+
+    // 函数模板可以产生更好的匹配，优先调用函数模板
+    char c1 = &#39;a&#39;;
+    char c2 = &#39;b&#39;;
+    test1(c1, c2);
+
+    system(&quot;pause&quot;);
+&#125;</code></pre>
+<h3 id="1-1-6- 模板的局限性 - 具体化的模板"><a href="#1-1-6- 模板的局限性 - 具体化的模板" class="headerlink" title="1.1.6 模板的局限性 / 具体化的模板"></a>1.1.6 模板的局限性 / 具体化的模板 </h3><p> 有时候通用模板并不能解决所有问题，这时候可以利用具体化的模板，去解决自定义类型的通用化。</p>
+<pre><code class="c++">class Person &#123;
+public:
+    Person(string name, int age) &#123;
+        this-&gt;m_name = name;
+        this-&gt;m_age = age;
+    &#125;
+
+    string m_name;
+    int m_age;
+&#125;;
+
+template&lt;typename T&gt;
+bool compare(T a, T b) &#123;
+    if (a == b) &#123;
+        return true;
+    &#125;
+    else &#123;
+        return false;
+    &#125;
+&#125;;
+
+// 具体化模板
+template&lt;&gt; bool compare(Person &amp;p1, Person &amp;p2) &#123;
+    if (p1.m_name == p2.m_name &amp;&amp; p1.m_age == p2.m_age) &#123;
+        return true;
+    &#125;
+    else &#123;
+        return false;
+    &#125;
+&#125;
+
+int main() &#123;
+    Person p1(&quot; 张三 &quot;, 25);
+    Person p2(&quot; 张三 &quot;, 21);
+
+    bool ret = compare(p1, p2);
+
+    system(&quot;pause&quot;);
+&#125;</code></pre>
+<h2 id="1-2- 类模板"><a href="#1-2- 类模板" class="headerlink" title="1.2 类模板"></a>1.2 类模板 </h2><h3 id="1-2-1- 类模板语法"><a href="#1-2-1- 类模板语法" class="headerlink" title="1.2.1 类模板语法"></a>1.2.1 类模板语法</h3><p> 类模板作用：建立一个通用类，类中的成员、数据类型可以不具体制定，用一个虚函数类型来代表。</p>
+<p>语法：</p>
+<pre><code class="c++">template&lt;typename T&gt;
+class A&#123;...&#125;                   // 类的声明或定义</code></pre>
+<p>尖括号 <code>&lt;&gt;</code> 里可以定义多个通用数据类型，以逗号隔开。</p>
+<pre><code class="c++">template&lt;class NameType,class AgeType&gt;
+
+class Person &#123;
+public:
+    Person(NameType name, AgeType age) &#123;
+        this-&gt;m_name = name;
+        this-&gt;m_age = age;
+    &#125;
+    void show_Person() &#123;
+        cout &lt;&lt; this-&gt;m_name &lt;&lt; endl;
+        cout &lt;&lt; this-&gt;m_age &lt;&lt; endl;
+    &#125;
+
+    NameType m_name;
+    AgeType m_age;
+&#125;;
+
+void test() &#123;
+    Person&lt;string, int&gt; p1(&quot;Tom&quot;, 23);  //&lt;string，int&gt; 叫模板的参数列表，必须指定
+
+    p1.show_Person();
+&#125;
+
+int main() &#123;
+
+    test();
+
+    system(&quot;pause&quot;);
+&#125;</code></pre>
+<h3 id="1-2-2- 类模板与函数模板区别"><a href="#1-2-2- 类模板与函数模板区别" class="headerlink" title="1.2.2 类模板与函数模板区别"></a>1.2.2 类模板与函数模板区别 </h3><p> 类模板与函数模板区别：</p>
+<ul>
+<li>类模板没有自动类型推导的使用方式。</li>
+<li>类模板在模板参数列表中可以有默认参数。</li>
+</ul>
+<pre><code class="c++">template&lt;class NameType, class AgeType=int&gt;
+class Person &#123;
+public:
+    Person(NameType name, AgeType age) &#123;
+        this-&gt;m_name = name;
+        this-&gt;m_age = age;
+    &#125;
+    NameType m_name;
+    AgeType m_age;
+&#125;;
+
+// 类模板没有自动类型推导的使用方式
+void test1() &#123;
+    Person p1(&quot;Tom&quot;, 23);  // 报错，必须指定类型
+&#125;
+
+// 类模板在模板参数列表中可以有默认参数
+void test2() &#123;
+    Person&lt;string&gt; p2(&quot;Tomo&quot;, 22);  //template 中已经指定了第二个参数的默认类型
+&#125;
+</code></pre>
+<h3 id="1-2-3- 类模板中的成员函数创建时机"><a href="#1-2-3- 类模板中的成员函数创建时机" class="headerlink" title="1.2.3 类模板中的成员函数创建时机"></a>1.2.3 类模板中的成员函数创建时机 </h3><p> 类模板中成员函数和普通类中成员函数创建时机是有区别的：</p>
+<ul>
+<li>普通类中的成员函数一开始就可以创建。</li>
+<li>类模板中的成员函数在调用时才创建。</li>
+</ul>
+<pre><code class="c++">class Person1 &#123;
+public:
+    void show1() &#123;
+        cout &lt;&lt; &quot;Person1 成员函数的调用 &quot; &lt;&lt; endl;
+    &#125;
+&#125;;
+
+class Person2 &#123;
+public:
+    void show2() &#123;
+        cout &lt;&lt; &quot;Person2 成员函数的调用 &quot; &lt;&lt; endl;
+    &#125;
+&#125;;
+
+template&lt;class T&gt; 
+class Person &#123;
+public:
+    T obj;
+
+    // 类模板中的成员函数
+    void func1() &#123;
+        obj.show1();
+    &#125;
+    void func2() &#123;
+        obj.show2();
+    &#125;
+&#125;;
+
+void test() &#123;
+    Person&lt;Person1&gt; p;       
+    p.func1();             // 这里并不会报错，调用 func1()只会创建 func1()
+    p.func2();             // 报错
+&#125;
+
+int main() &#123;
+
+    test();
+
+    system(&quot;pause&quot;);
+&#125;</code></pre>
+<h3 id="1-2-4- 类模板对象做函数参数"><a href="#1-2-4- 类模板对象做函数参数" class="headerlink" title="1.2.4 类模板对象做函数参数"></a>1.2.4 类模板对象做函数参数 </h3><p> 一共有三种传入方式：</p>
+<ol>
+<li>指定传入的类型：直接显示对象的数据类型</li>
+<li>参数模板化：将对象中的参数变为模板进行传递</li>
+<li>整个类模板化：将这个对象类型模板化进行传递</li>
+</ol>
+<pre><code class="c++">template &lt;class T1,class T2&gt;
+class Person &#123;
+public:
+    Person(T1 name, T2 age) &#123;
+        this-&gt;m_name = name;
+        this-&gt;m_age = age;
+    &#125;
+    void show() &#123;
+        cout &lt;&lt; m_name &lt;&lt; endl;
+        cout &lt;&lt; m_age &lt;&lt; endl;
+    &#125;
+    T1 m_name;
+    T2 m_age;
+&#125;;
+
+// 指定传入的类型      
+void test1(Person&lt;string, int&gt;&amp;p) &#123;
+    p.show();
+&#125;
+
+// 参数模板化
+template&lt;class T1, class T2&gt;
+void test2(Person&lt;T1, T2&gt;&amp; p) &#123;
+    p.show();
+&#125;
+
+// 整个类模板化
+template&lt;class T&gt;
+void test3(T &amp;p) &#123;
+    p.show();
+    cout &lt;&lt; typeid(T).name() &lt;&lt; endl;  // 输出
+&#125;
+
+int main() &#123;
+
+    Person&lt;string, int&gt;p(&quot;Tom&quot;, 200);
+    test1(p);
+
+    Person&lt;string, int&gt;p2(&quot;Tomo&quot;, 20);
+    test2(p2);
+
+    Person&lt;string, int&gt;p3(&quot;July&quot;, 50);
+    test3(p3);
+
+    system(&quot;pause&quot;);
+&#125;</code></pre>
+<blockquote>
+<p>使用最广泛的是第一种：指定传入的类型。</p>
+</blockquote>
+<h3 id="1-2-5- 类模板与继承"><a href="#1-2-5- 类模板与继承" class="headerlink" title="1.2.5 类模板与继承"></a>1.2.5 类模板与继承 </h3><p> 当类模板碰到继承时，需要注意以下几点：</p>
+<ul>
+<li>当子类继承的父类是一个类模板时，子类在声明的时候，要指定父类中 T 的类型</li>
+<li>如果不指定，编译器无法给子类分配内存</li>
+<li>如果想灵活指定父类中 T 的类型，子类也需要变为类模板</li>
+</ul>
+<pre><code class="c++">template &lt;class T&gt;
+class Base &#123;
+    T m;
+&#125;;
+
+// 在继承父类时，父类模板必须要指定类型
+class Son1 :public Base&lt;int&gt; &#123;...&#125;;
+
+// 也可以灵活指定，子类也需要变为类模板
+template&lt;class T1,class T2&gt;
+class Son2 :public Base&lt;T1&gt; &#123;  
+public:
+    T2 obj;
+
+    Son2() &#123;
+        cout &lt;&lt; typeid(T1).name() &lt;&lt; endl;
+        cout &lt;&lt; typeid(T2).name() &lt;&lt; endl;
+    &#125;
+&#125;;
+
+void test() &#123;
+    Son1 s1;
+
+    Son2&lt;int, char&gt; s2;
+&#125;
+
+int main() &#123;
+
+    test();
+
+    system(&quot;pause&quot;);
+&#125;</code></pre>
+<h3 id="1-2-6- 类模板成员函数类外实现"><a href="#1-2-6- 类模板成员函数类外实现" class="headerlink" title="1.2.6 类模板成员函数类外实现"></a>1.2.6 类模板成员函数类外实现</h3><pre><code class="c++">template &lt;class T1, class T2&gt;
+class Person &#123;
+public:
+    Person(T1 name, T2 age);
+    void showPerson();
+
+    T1 m_name;
+    T2 m_age;
+&#125;;
+
+// 构造函数类外实现
+template&lt;class T1, class T2&gt;
+Person&lt;T1,T2&gt;::Person(T1 name, T2 age) &#123;
+    this-&gt;m_name = name;
+    this-&gt;m_age = age;
+&#125;
+
+// 成员函数类外实现
+template&lt;class T1, class T2&gt;
+void Person&lt;T1, T2&gt;::showPerson() &#123;
+    cout &lt;&lt; this-&gt;m_name &lt;&lt; endl;
+    cout &lt;&lt; this-&gt;m_age &lt;&lt; endl;
+&#125;</code></pre>
+<h3 id="1-2-7- 类模板成员函数类外实现"><a href="#1-2-7- 类模板成员函数类外实现" class="headerlink" title="1.2.7 类模板成员函数类外实现"></a>1.2.7 类模板成员函数类外实现 </h3><p> 当我们写类模板时，成员函数的调用时机是在调用阶段，导致文件编写时链接不到</p>
+<p>有两种解决方式：</p>
+<ul>
+<li>解决方式 1：直接包含.cpp 源文件</li>
+<li>解决方式 2：将声明和实现写到同一个文件中，并更改后缀名为.hpp。hpp 是约定的名称，并不是强制</li>
+</ul>
+<h3 id="1-2-8- 类模板与友元"><a href="#1-2-8- 类模板与友元" class="headerlink" title="1.2.8 类模板与友元"></a>1.2.8 类模板与友元 </h3><p> 全局函数类内实现：直接在类内声明友元即可。</p>
+<p>全局函数类外实现：需要提前让编译器知道全局函数的存在。</p>
+<pre><code class="C++">template &lt;class T1, class T2&gt;
+class Person;
+
+// 类外实现
+template &lt;class T1, class T2&gt;
+void showPerson2(Person&lt;T1, T2&gt; p) &#123;
+    cout &lt;&lt; p.m_name &lt;&lt; endl;
+    cout &lt;&lt; p.m_age &lt;&lt; endl;
+&#125;
+
+template &lt;class T1, class T2&gt;
+class Person &#123;
+
+    // 全局函数在类内实现
+    friend void showPerson(Person&lt;T1, T2&gt; p) &#123;
+        cout &lt;&lt; p.m_name &lt;&lt; endl;
+        cout &lt;&lt; p.m_age &lt;&lt; endl;
+    &#125;;
+    // 全局函数类外实现
+    friend void showPerson2&lt;&gt;(Person&lt;T1, T2&gt; p);  // 实现的代码要写在该类的前面
+
+public:
+    Person(T1 name, T2 age) &#123;
+        this-&gt;m_name = name;
+        this-&gt;m_age = age;
+    &#125;;
+
+private:
+    T1 m_name;
+    T2 m_age;
+&#125;;
+
+void test() &#123;
+    Person&lt;string, int&gt; p1(&quot;Tom&quot;, 25);
+    showPerson(p1);   // 全局函数在类内实现
+    showPerson2(p1);  // 全局函数在类外实现
+&#125;
+
+int main() &#123;
+
+    test();
+
+    system(&quot;pause&quot;);
+&#125;</code></pre>
+<p>一般建议全局函数模板类内实现，类外实现太复杂了。</p>
+<h3 id="1-2-9- 类模板案例"><a href="#1-2-9- 类模板案例" class="headerlink" title="1.2.9 类模板案例"></a>1.2.9 类模板案例 </h3><p><strong> 实现一个通用的数组类</strong>，要求如下：</p>
+<ul>
+<li>可以对内置数据类型以及自定义数据类型的数据进行存储</li>
+<li>将数组中的数据存储到堆区</li>
+<li>构造函数中可以传入数组的容量</li>
+<li>提供对应的拷贝构造函数以及 operator= 防止浅拷贝问题</li>
+<li>提供尾插法和尾删法对数组中的数据进行增加和删除</li>
+<li>可以通过下标的方式访问数组中的元素</li>
+<li>可以获取数组中当前元素个数和数组的容量</li>
+</ul>
+<p>首先定义一个数组模板类，文件命名为 Array.hpp：</p>
+<pre><code class="c++">#include&lt;iostream&gt;
+#include&lt;string&gt;
+using namespace std;
+
+template&lt;class T&gt;
+class Array &#123;
+public:
+    // 有参构造函数，用于初始化数组容量
+    Array(int capacity) &#123;
+        this-&gt;mSize = 0;
+        this-&gt;mCapacity = capacity;
+        this-&gt;mAddress = new T[this-&gt;mCapacity];
+    &#125;
+    // 拷贝构造函数
+    Array(const Array&amp; arr) &#123;
+        this-&gt;mCapacity = arr.mCapacity;
+        this-&gt;mSize = arr.mSize;
+        this-&gt;mAddress = new T[this-&gt;mCapacity];
+        for (int i = 0; i &lt; this-&gt;mSize; ++i) &#123;
+            this-&gt;mAddress[i] = arr.mAddress[i];
+        &#125;
+    &#125;
+    // 重载 = 操作符，深拷贝
+    Array&amp; operator=(const Array&amp; arr) &#123;
+        if (this-&gt;mAddress != NULL) &#123;
+            delete[] this-&gt;mAddress;
+            this-&gt;mSize = 0;
+            this-&gt;mCapacity = 0;
+        &#125;
+        this-&gt;mCapacity = arr.mCapacity;
+        this-&gt;mSize = arr.mSize;
+        this-&gt;mAddress = new T[this-&gt;mCapacity];
+        for (int i = 0; i &lt; this-&gt;mSize; ++i) &#123;
+            this-&gt;mAddress[i] = arr.mAddress[i];
+        &#125;
+        return *this;
+    &#125;
+    // 尾部插入数据
+    void Push_Back(const T&amp; val) &#123;
+        if (this-&gt;mCapacity == this-&gt;mSize) &#123;
+            return;
+        &#125;
+        this-&gt;mAddress[this-&gt;mSize] = val;
+        this-&gt;mSize++;
+    &#125;
+    // 从尾部删除数据
+    void Pop_Back() &#123;
+        if (this-&gt;mSize == 0) &#123;
+            return;
+        &#125;
+        this-&gt;mSize--;  // 逻辑删除，让用户访问不到
+    &#125;
+    T&amp; operator[](int index) &#123;
+        return this-&gt;mAddress[index];// 暂未考虑越界的问题
+    &#125;
+    int getCapacity() &#123;
+        return this-&gt;mCapacity;
+    &#125;
+    int getSize() &#123;
+        return this-&gt;mSize;
+    &#125;
+
+    ~Array() &#123;
+        if (this-&gt;mAddress != NULL) &#123;
+            delete[] this-&gt;mAddress;
+            this-&gt;mAddress = NULL;
+            this-&gt;mCapacity = 0;
+            this-&gt;mSize = 0;
+        &#125;
+    &#125;
+
+private:
+    T* mAddress;    // 指针指向堆区开辟的真实数组
+    int mCapacity;  // 数组容量
+    int mSize;      // 数组当前的大小
+&#125;;</code></pre>
+<p>测试案例，命名为 ArrayTest.cpp：</p>
+<pre><code class="c++">#include&lt;iostream&gt;
+#include&lt;string&gt;
+#include&quot;Array.hpp&quot;
+using namespace std;
+
+void printIntArray(Array&lt;int&gt;&amp; arr) &#123;
+    for (int i = 0; i &lt; arr.getSize(); ++i) &#123;
+        cout &lt;&lt; arr[i] &lt;&lt; &quot; &quot;;
+    &#125;
+    cout &lt;&lt; endl;
+&#125;
+// 测试 1
+void test1() &#123;
+
+    Array&lt;int&gt; arr1(6);
+    Array&lt;int&gt; arr3(100);
+
+    arr1 = arr3;
+
+    for (int i = 0; i &lt; 6; ++i) &#123;
+        arr1.Push_Back(i);
+    &#125;
+
+    printIntArray(arr1);
+    cout &lt;&lt; &quot;arr1 的大小：&quot; &lt;&lt; arr1.getSize() &lt;&lt; endl;
+    cout &lt;&lt; &quot;arr1 的容量：&quot; &lt;&lt; arr1.getCapacity() &lt;&lt; endl;
+
+    Array&lt;int&gt; arr2(arr1);
+    printIntArray(arr2);
+    cout &lt;&lt; &quot;arr2 的大小：&quot; &lt;&lt; arr2.getSize() &lt;&lt; endl;
+    cout &lt;&lt; &quot;arr2 的容量：&quot; &lt;&lt; arr2.getCapacity() &lt;&lt; endl;
+
+    arr2.Pop_Back();
+    printIntArray(arr2);
+    cout &lt;&lt; &quot;arr2 的大小：&quot; &lt;&lt; arr2.getSize() &lt;&lt; endl;
+    cout &lt;&lt; &quot;arr2 的容量：&quot; &lt;&lt; arr2.getCapacity() &lt;&lt; endl;
+
+&#125;
+
+// 测试自定义数据类型
+class Person &#123;
+public:
+    Person() &#123;&#125;;
+    Person(string name, int age) &#123;
+        this-&gt;m_name = name;
+        this-&gt;m_age = age;
+    &#125;
+    string m_name;
+    int m_age;
+&#125;;
+
+void printPersonArray(Array&lt;Person&gt;&amp; arr) &#123;
+    for (int i = 0; i &lt; arr.getSize(); ++i) &#123;
+        cout &lt;&lt; arr[i].m_name + &quot; &quot; &lt;&lt; arr[i].m_age &lt;&lt; endl;
+    &#125;
+    cout &lt;&lt; endl;
+&#125;
+
+// 测试自定义的数据类型
+void test2() &#123;
+
+    cout &lt;&lt; &quot;\n--------------test2------------&quot; &lt;&lt; endl;
+    Array&lt;Person&gt; arr(10);
+
+    Person p1(&quot; 孙悟空 &quot;, 999);
+    Person p2(&quot; 韩信 &quot;, 24);
+    Person p3(&quot; 妲己 &quot;, 23);
+    Person p4(&quot; 赵云 &quot;, 26);
+    Person p5(&quot; 鲁班 &quot;, 12);
+
+    arr.Push_Back(p1);
+    arr.Push_Back(p2);
+    arr.Push_Back(p3);
+    arr.Push_Back(p4);
+    arr.Push_Back(p5);
+
+    printPersonArray(arr);
+    cout &lt;&lt; &quot;arr 的大小：&quot; &lt;&lt; arr.getSize() &lt;&lt; endl;
+    cout &lt;&lt; &quot;arr 的容量：&quot; &lt;&lt; arr.getCapacity() &lt;&lt; endl;
+&#125;
+
+int main() &#123;
+
+    test1();
+    test2();
+
+    system(&quot;pause&quot;);
+&#125; </code></pre>
+<h2 id="1-3- 写模板的坑"><a href="#1-3- 写模板的坑" class="headerlink" title="1.3 写模板的坑"></a>1.3 写模板的坑 </h2><p><strong> 推荐把模板的实现和声明都写在头文件！</strong>否则编译会报错。</p>
+<p>还有一种方式，可以分离声明与实现：</p>
+<p>h 头文件：</p>
+<pre><code class="c++">template &lt;typename T&gt;
+T add(const T &amp;a, const T &amp;b);</code></pre>
+<p>cpp 实现：</p>
+<pre><code class="c++">#include &quot;add.h&quot;
+template &lt;typename T&gt;
+T add(const T &amp;a, const T &amp;b)
+&#123;
+    return a + b;
+&#125;
+template int add(const int &amp;a, const int &amp;b);</code></pre>
+<p>最后一行要指定模板的实际类型。</p>
+<h1 id="二、STL 初识"><a href="# 二、STL 初识" class="headerlink" title="二、STL 初识"></a>二、STL 初识</h1><h2 id="2-1-STL 的诞生"><a href="#2-1-STL 的诞生" class="headerlink" title="2.1 STL 的诞生"></a>2.1 STL 的诞生</h2><ul>
+<li>长久以来，人们一直希望建立一种可以重复利用的东西</li>
+<li>C++ 面向对象编程和泛型编程思想，目的就是复用性的提升</li>
+<li>大多情况下，数据结构和算法都未有一套标准，导致被迫从事大量重复工作</li>
+<li>为了建立数据结构和算法的一套标准，诞生了 STL(Standard Template Library, 标准模板库)</li>
+</ul>
+<h2 id="2-2-STL 的介绍"><a href="#2-2-STL 的介绍" class="headerlink" title="2.2 STL 的介绍"></a>2.2 STL 的介绍</h2><ul>
+<li>STL 从广义上分为：<strong>容器 </strong>（container），<strong> 算法 </strong>（algorithm），<strong> 迭代器</strong>（iterator）</li>
+<li><strong>容器 </strong> 和<strong>算法 </strong> 之间通过 <strong> 迭代器 </strong> 进行无缝链接</li>
+<li>STL 几乎所有的代码都采用了模板类或者模板函数</li>
+</ul>
+<h2 id="2-3-STL 六大组件"><a href="#2-3-STL 六大组件" class="headerlink" title="2.3 STL 六大组件"></a>2.3 STL 六大组件</h2><p>STL 大体分为六大组件，分别是容器，算法，迭代器，仿函数，适配器（配接器），空间配置器</p>
+<ol>
+<li>容器：各种数据结构，如 vector, list, deque, set, map 等，用来存放数据</li>
+<li>算法：各种常用的算法，如 sort, find, copy, for_each 等。</li>
+<li>迭代器：扮演了容器与算法之间的胶合剂</li>
+<li>仿函数，行为类似函数，可作为算法的某种策略</li>
+<li>适配器：一种用来修饰容器或者仿函数或迭代器接口的东西</li>
+<li>空间配置器：负责用来空间的配置与管理</li>
+</ol>
+<h2 id="2-4-STL 中的容器、算法、迭代器"><a href="#2-4-STL 中的容器、算法、迭代器" class="headerlink" title="2.4 STL 中的容器、算法、迭代器"></a>2.4 STL 中的容器、算法、迭代器</h2><blockquote>
+<p>容器：置物之所也。</p>
+</blockquote>
+<p>STL 容器就是将运用最广泛的一些数据结构实现出来，常用的数据结构：数组，链表，树，栈，队列，集合，映射表等。</p>
+<p>这些容器分为序列式容器和关联式容器两种：</p>
+<ul>
+<li>序列式容器：强调值的排序，序列式容器中的每个元素均有固定的位置。</li>
+<li>关联式容器：二叉树结构，各元素之间没有严格的物理意义上的顺序关系。<strong>只能一步步偏移取值，不能跳转</strong>。</li>
+</ul>
+<blockquote>
+<p>算法：问题值解法也。</p>
+</blockquote>
+<p>有限的步骤，解决逻辑或数学上的问题，这一门学科我们叫做算法（Algorithms）。</p>
+<p>算法分为：质变算法和非质变算法。</p>
+<ul>
+<li>质变算法：是指运算过程中，会更改区间元素的内容，例如拷贝，替换，删除等。</li>
+<li>非质变算法：是指运算过程中，不会更改区间内的元素内容，例如查找，计数，遍历，寻找极值等等。</li>
+</ul>
+<blockquote>
+<p>迭代器：容器和算法之间的粘合剂</p>
+</blockquote>
+<p>提供一种方法，使之能够依序寻访某个容器所含的各个元素，而又无需暴露该容器的内部表示方式。</p>
+<p>每个容器都有自己专属的迭代器。</p>
+<p>迭代器使用非常类似于指针，初学阶段我们可以先理解迭代器为指针。</p>
+<p>迭代器种类：</p>
+<table>
+<thead>
+<tr>
+<th>种类</th>
+<th>功能</th>
+<th>支持运算</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>输入迭代器</td>
+<td>对数据的只读访问</td>
+<td>只读，支持 ++，==，！=</td>
+</tr>
+<tr>
+<td>输出迭代器</td>
+<td>对数据的只写访问</td>
+<td>只写，支持 ++</td>
+</tr>
+<tr>
+<td>前向迭代器</td>
+<td>读写操作，并能向前推进迭代器</td>
+<td>读写，支持 ++，==，！=</td>
+</tr>
+<tr>
+<td>双向迭代器</td>
+<td>读写操作，并能向前向后操作</td>
+<td>读写，支持 ++，–</td>
+</tr>
+<tr>
+<td>随机访问迭代器</td>
+<td>读写操作，可以以跳跃的方式访问任意数据，功能最强的迭代器</td>
+<td>读写，支持 ++，–，[n]，-n，&lt;，&lt;=， &gt;，&gt;=</td>
+</tr>
+</tbody></table>
+<p>常用的容器迭代器种类为 <strong> 双向迭代器 </strong> 和<strong>随机访问迭代器</strong></p>
+<h2 id="2-5- 容器算法迭代器初识"><a href="#2-5- 容器算法迭代器初识" class="headerlink" title="2.5 容器算法迭代器初识"></a>2.5 容器算法迭代器初识</h2><p>STL 中最常用的容器为 Vector，可以理解为数组。</p>
+<h3 id="2-5-1-vector- 存放内置数据类型"><a href="#2-5-1-vector- 存放内置数据类型" class="headerlink" title="2.5.1 vector 存放内置数据类型"></a>2.5.1 vector 存放内置数据类型 </h3><p> 容器：<code>vector</code></p>
+<p>算法：<code>for_each</code></p>
+<p>迭代器：<code>vector&lt;int&gt;::interator</code></p>
+<pre><code class="c++">#include&lt;iostream&gt;
+#include&lt;vector&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+
+void Mprint(int val) &#123;
+    cout &lt;&lt; val &lt;&lt; endl;
+&#125;
+
+void test() &#123;
+    vector&lt;int&gt; v;    
+    v.push_back(10);  // 插入数据
+    v.push_back(20);
+    v.push_back(30);
+    v.push_back(40);
+
+    // 通过迭代器访问容器中的数据
+    vector&lt;int&gt;::iterator itBegin = v.begin();  // 起始迭代器，指向容器的第一个元素
+    vector&lt;int&gt;::iterator itEnd = v.end();  // 起始迭代器，指向容器的最后一个元素的下一个位置
+
+    // 第一种遍历方式
+    while (itBegin != itEnd) &#123;
+        cout &lt;&lt; *itBegin &lt;&lt; endl;  // 迭代器是一个指针
+        itBegin++;
+    &#125;
+
+    // 第二种遍历方式
+    for (vector&lt;int&gt;::iterator it = v.begin(); it != v.end(); ++it) &#123;
+        cout &lt;&lt; *it &lt;&lt; endl;
+    &#125;
+
+    // 第三种遍历方式，利用 STL 提供的遍历算法
+    for_each(v.begin(), v.end(), Mprint);
+
+&#125;
+
+int main() &#123;
+
+    test();
+
+    system(&quot;pause&quot;);
+&#125;</code></pre>
+<h3 id="2-5-2-vector 存放自定义数据类型"><a href="#2-5-2-vector 存放自定义数据类型" class="headerlink" title="2.5.2 vector 存放自定义数据类型"></a>2.5.2 vector 存放自定义数据类型</h3><pre><code class="c++">#include&lt;iostream&gt;
+#include&lt;vector&gt;
+#include&lt;algorithm&gt;
+#include&lt;string&gt;
+using namespace std;
+
+class Person &#123;
+public:
+    Person(string name, int age) &#123;
+        this-&gt;m_name = name;
+        this-&gt;m_age = age;
+    &#125;
+    string m_name;
+    int m_age;
+&#125;;
+
+// 传入自定义的数据类型
+void test1() &#123;
+
+    vector&lt;Person&gt; v;
+
+    Person p1(&quot;Tom&quot;, 23);
+    Person p2(&quot;Jack&quot;, 18);
+    Person p3(&quot;Judy&quot;, 23);
+    Person p4(&quot;Mark&quot;, 23);
+
+    v.push_back(p1);
+    v.push_back(p2);
+    v.push_back(p3);
+    v.push_back(p4);
+
+    for (vector&lt;Person&gt;::iterator it = v.begin(); it != v.end(); ++it) &#123;
+
+        //cout &lt;&lt; (*it).m_name &lt;&lt; &quot; &quot; &lt;&lt; (*it).m_age &lt;&lt; endl;  // *it 是 Perosn 类型的数据
+
+        cout &lt;&lt; it-&gt;m_name &lt;&lt; &quot; &quot; &lt;&lt; it-&gt;m_age &lt;&lt; endl; // 推荐这种
+    &#125;
+&#125;
+
+// 传入自定义的数据类型的指针
+void test2() &#123;
+
+    vector&lt;Person*&gt; v;   //v 用来储存指针（指针指向 person 类型）
+
+    Person p1(&quot;Tom&quot;, 23);
+    Person p2(&quot;Jack&quot;, 18);
+    Person p3(&quot;Judy&quot;, 23);
+    Person p4(&quot;Mark&quot;, 23);
+
+    v.push_back(&amp;p1);
+    v.push_back(&amp;p2);
+    v.push_back(&amp;p3);
+    v.push_back(&amp;p4);
+
+    for (vector&lt;Person*&gt;::iterator it = v.begin(); it != v.end(); ++it) &#123;
+
+        cout &lt;&lt; (*it)-&gt;m_name &lt;&lt; &quot; &quot; &lt;&lt; (*it)-&gt;m_age &lt;&lt; endl;  // *it 是 Perosn 类型的数据    
+    &#125;
+&#125;
+
+int main() &#123;
+    test1();
+    test2();
+    system(&quot;pause&quot;);
+&#125;</code></pre>
+<h3 id="2-5-3-vector 容器嵌套容器"><a href="#2-5-3-vector 容器嵌套容器" class="headerlink" title="2.5.3 vector 容器嵌套容器"></a>2.5.3 vector 容器嵌套容器</h3><pre><code class="c++">#include&lt;iostream&gt;
+#include&lt;vector&gt;
+#include&lt;algorithm&gt;
+#include&lt;string&gt;
+using namespace std;
+
+void test1() &#123;
+
+    vector&lt;vector&lt;int&gt;&gt; v;
+
+    // 创建小容器
+    vector&lt;int&gt; v1;
+    vector&lt;int&gt; v2;
+    vector&lt;int&gt; v3;
+
+    // 向小容器添加数据
+    for (int i = 0; i &lt; 3; ++i) &#123;
+        v1.push_back(i + 1);
+        v2.push_back(i + 2);
+        v3.push_back(i + 3);
+    &#125;
+    // 将小容器插入到大容器中
+    v.push_back(v1);
+    v.push_back(v2);
+    v.push_back(v3);
+
+    // 通过大容器，把所有数据遍历一遍
+    for (vector&lt;vector&lt;int&gt;&gt;::iterator it = v.begin(); it != v.end(); ++it) &#123;
+        for (vector&lt;int&gt;::iterator jt = (*it).begin(); jt != (*it).end(); ++jt) &#123;
+            cout &lt;&lt; *jt &lt;&lt; &quot; &quot;;
+        &#125;
+        cout &lt;&lt; endl;
+    &#125;
+&#125;
+
+int main() &#123;
+    test1();
+    system(&quot;pause&quot;);
+&#125;</code></pre>
+<h1 id="三、STL 常用容器"><a href="# 三、STL 常用容器" class="headerlink" title="三、STL 常用容器"></a>三、STL 常用容器 </h1><p>STL 中<code>list</code>、<code>vector</code>、<code>map</code> 是三个最常被使用的容器。</p>
+<p>STL 中，所有容器拷贝均为 <strong> 深拷贝</strong>。没有浅拷贝的概念。</p>
+<h2 id="3-1-string 容器"><a href="#3-1-string 容器" class="headerlink" title="3.1 string 容器"></a>3.1 string 容器 </h2><h3 id="3-1-1-string- 基本概念"><a href="#3-1-1-string- 基本概念" class="headerlink" title="3.1.1 string 基本概念"></a>3.1.1 string 基本概念</h3><p> 本质：string 是 C++ 风格的字符串，而 string 本质是一个类</p>
+<p>string 和 char 区别：</p>
+<ul>
+<li>char * 是一个指针</li>
+<li>string 是一个类，类内部封装了 <code>char*</code>，管理这个字符串，是一个<code>char*</code> 类型的容量</li>
+</ul>
+<p>特点：</p>
+<ul>
+<li>string 类内部封装了很多成员方法，如查找 find，拷贝 copy，删除 delete，替换 replace，插入 insert</li>
+<li>string 管理 <code>char*</code> 所分配的内存，不用担心复制越界和取值越界等，由类内部进行负责</li>
+</ul>
+<h3 id="3-1-2-string- 构造函数"><a href="#3-1-2-string- 构造函数" class="headerlink" title="3.1.2 string 构造函数"></a>3.1.2 string 构造函数 </h3><p> 构造函数原型：</p>
+<ul>
+<li><code>string();</code>                                         // 创建一个空的字符串，例如 string str;</li>
+<li><code>string(const char* s);</code>              // 使用字符串 s 初始化</li>
+<li><code>string(const string&amp; str);</code>     // 使用一个 string 对象初始化另一个 string 对象</li>
+<li><code>string(int n, char c);</code>             // 使用 n 个字符 c 初始化</li>
+</ul>
+<h3 id="3-1-3-string- 赋值操作"><a href="#3-1-3-string- 赋值操作" class="headerlink" title="3.1.3 string 赋值操作"></a>3.1.3 string 赋值操作</h3><p>string 赋值操作：即给 string 字符串进行赋值</p>
+<p>赋值的函数原型：</p>
+<ul>
+<li><code>string&amp; operator=(const char* s);</code>              //char* 类型字符串，赋值给当前的字符串</li>
+<li><code>string&amp; operator=(const string&amp; s);</code>         // 把字符串 s 赋值给当前的字符串</li>
+<li><code>string&amp; operator=(char  s);</code>                          // 把字符赋值给当前的字符串</li>
+<li><code>string&amp; assign(const char* s);</code>                    // 把字符串 s 赋值给当前的字符串</li>
+<li><code>string&amp; assign(const char* s, int n);</code>     // 把字符串 s 的前 n 个字符赋值给当前的字符串</li>
+<li><code>string&amp; assign(const string&amp; s);</code>               // 把字符串 s 赋值给当前的字符串</li>
+<li><code>string&amp; assign(int n, char s);</code>                 // 用 n 个字符 s 赋值给当前的字符串</li>
+</ul>
+<h3 id="3-1-4-string- 字符串拼接"><a href="#3-1-4-string- 字符串拼接" class="headerlink" title="3.1.4 string 字符串拼接"></a>3.1.4 string 字符串拼接 </h3><p> 在字符串末尾拼接字符串</p>
+<p><strong>函数原型：</strong></p>
+<ul>
+<li><code>string&amp; operator+=(const char* str);</code>                   // 重载 += 操作符</li>
+<li><code>string&amp; operator+=(const char c);</code>                         // 重载 += 操作符</li>
+<li><code>string&amp; operator+=(const string&amp; str);</code>                // 重载 += 操作符</li>
+<li><code>string&amp; append(const char *s);</code>                               // 把字符串 s 连接到当前字符串结尾</li>
+<li><code>string&amp; append(const char *s, int n);</code>                 // 把字符串 s 的前 n 个字符连接到当前字符串结尾</li>
+<li><code>string&amp; append(const string &amp;s);</code>                           // 同 operator+=(const string&amp; str)</li>
+<li><code>string&amp; append(const string &amp;s, int pos, int n);</code>// 字符串 s 中从 pos 开始的 n 个字符连接到字符串结尾</li>
+<li><code>string&amp; append(int n, char c);</code>                                   // 在字符串结尾拼接 n 个 c</li>
+</ul>
+<pre><code class="c++">// 字符串拼接
+void test01()&#123;
+    string str1 = &quot; 我 &quot;;
+    // += 拼接
+    str1 += &quot; 爱玩游戏 &quot;;
+    cout &lt;&lt; &quot;str1 = &quot; &lt;&lt; str1 &lt;&lt; endl;
+
+    string str2 = &quot;LOL DNF&quot;;
+    str1 += str2;
+    cout &lt;&lt; &quot;str1 = &quot; &lt;&lt; str1 &lt;&lt; endl;
+
+
+    string str3 = &quot;I&quot;;
+     // append 拼接
+    str3.append(&quot; love &quot;);
+    str3.append(&quot;game abcde&quot;, 4);
+
+    //append 指定位置拼接
+    str3.append(str2, 4, 3); // 从下标 4 位置开始 ，截取 3 个字符，拼接到字符串末尾
+    cout &lt;&lt; &quot;str3 = &quot; &lt;&lt; str3 &lt;&lt; endl;
+&#125;
+</code></pre>
+<h3 id="3-1-5-string- 查找和替换"><a href="#3-1-5-string- 查找和替换" class="headerlink" title="3.1.5 string 查找和替换"></a>3.1.5 string 查找和替换 </h3><p><strong> 功能描述：</strong></p>
+<ul>
+<li>查找：查找指定字符串是否存在</li>
+<li>替换：在指定的位置替换字符串</li>
+</ul>
+<p><strong>函数原型：</strong></p>
+<ul>
+<li><code>int find(const string&amp; str, int pos = 0) const;</code>              // 查找 str 第一次出现位置, 从 pos 开始查找</li>
+<li><code>int find(const char* s, int pos = 0) const;</code>                     // 查找 s 第一次出现位置, 从 pos 开始查找</li>
+<li><code>int find(const char* s, int pos, int n) const;</code>               // 从 pos 位置查找 s 的前 n 个字符第一次位置</li>
+<li><code>int find(const char c, int pos = 0) const;</code>                       // 查找字符 c 第一次出现位置</li>
+<li><code>int rfind(const string&amp; str, int pos = npos) const;</code>      // 查找 str 最后一次位置, 从 pos 开始查找</li>
+<li><code>int rfind(const char* s, int pos = npos) const;</code>              // 查找 s 最后一次出现位置, 从 pos 开始查找</li>
+<li><code>int rfind(const char* s, int pos, int n) const;</code>              // 从 pos 查找 s 的前 n 个字符最后一次位置</li>
+<li><code>int rfind(const char c, int pos = 0) const;</code>                      // 查找字符 c 最后一次出现位置</li>
+<li><code>string&amp; replace(int pos, int n, const string&amp; str);</code>       // 替换从 pos 开始 n 个字符为字符串 str</li>
+<li><code>string&amp; replace(int pos, int n,const char* s);</code>                 // 替换从 pos 开始的 n 个字符为字符串 s</li>
+</ul>
+<pre><code class="c++">// 查找
+void test01()&#123;
+
+    string str1 = &quot;abcdefgde&quot;;
+    //find 找第一次出现的位置
+    int pos = str1.find(&quot;de&quot;);
+    if (pos == -1)&#123;
+        cout &lt;&lt; &quot; 未找到 &quot; &lt;&lt; endl;
+    &#125;
+    else&#123;
+        cout &lt;&lt; &quot;pos = &quot; &lt;&lt; pos &lt;&lt; endl;
+    &#125;
+    //rfind 找最后一次出现的位置
+    pos = str1.rfind(&quot;de&quot;);
+    cout &lt;&lt; &quot;pos = &quot; &lt;&lt; pos &lt;&lt; endl;
+&#125;
+
+// 替换
+void test02()&#123;
+    string str1 = &quot;abcdefgde&quot;;
+    str1.replace(1, 3, &quot;1111&quot;);    // 从位置 1 开始的共 3 个字符替换为 1111        
+    cout &lt;&lt; &quot;str1 = &quot; &lt;&lt; str1 &lt;&lt; endl;
+&#125;</code></pre>
+<h3 id="3-1-6-string- 字符串比较"><a href="#3-1-6-string- 字符串比较" class="headerlink" title="3.1.6 string 字符串比较"></a>3.1.6 string 字符串比较 </h3><p><strong> 功能描述：</strong></p>
+<ul>
+<li>字符串之间的比较</li>
+</ul>
+<p><strong>比较方式：</strong></p>
+<ul>
+<li>字符串比较是按字符的 ASCII 码进行对比</li>
+</ul>
+<p>= 返回   0</p>
+<p>&gt; 返回   1 </p>
+<p>&lt; 返回  -1</p>
+<p><strong>函数原型：</strong></p>
+<ul>
+<li><code>int compare(const string &amp;s) const;</code>  // 与字符串 s 比较</li>
+<li><code>int compare(const char *s) const;</code>      // 与字符串 s 比较</li>
+</ul>
+<pre><code class="c++">void test01()&#123;
+
+    string s1 = &quot;hello&quot;;
+    string s2 = &quot;aello&quot;;
+
+    int ret = s1.compare(s2);
+
+    if (ret == 0) &#123;
+        cout &lt;&lt; &quot;s1 等于 s2&quot; &lt;&lt; endl;
+    &#125;
+    else if (ret &gt; 0)
+    &#123;
+        cout &lt;&lt; &quot;s1 大于 s2&quot; &lt;&lt; endl;
+    &#125;
+    else
+    &#123;
+        cout &lt;&lt; &quot;s1 小于 s2&quot; &lt;&lt; endl;
+    &#125;
+&#125;</code></pre>
+<h3 id="3-1-7-string- 字符存取"><a href="#3-1-7-string- 字符存取" class="headerlink" title="3.1.7 string 字符存取"></a>3.1.7 string 字符存取</h3><p>string 中单个字符存取方式有两种</p>
+<ul>
+<li><code>char&amp; operator[](int n);</code>     // 通过 [] 方式取字符</li>
+<li><code>char&amp; at(int n);</code>                    // 通过 at 方法获取字符</li>
+</ul>
+<pre><code class="c++">void test01()&#123;
+    string str = &quot;hello world&quot;;
+
+    // 获取字符
+    for (int i = 0; i &lt; str.size(); i++)
+    &#123;
+        cout &lt;&lt; str[i] &lt;&lt; &quot; &quot;;
+    &#125;
+    cout &lt;&lt; endl;
+
+    for (int i = 0; i &lt; str.size(); i++)
+    &#123;
+        cout &lt;&lt; str.at(i) &lt;&lt; &quot; &quot;;
+    &#125;
+    cout &lt;&lt; endl;
+
+    // 字符修改
+    str[0] = &#39;x&#39;;
+    str.at(1) = &#39;x&#39;;
+    cout &lt;&lt; str &lt;&lt; endl;
+&#125;</code></pre>
+<blockquote>
+<p>[]：下标操作符 [] 在使用时不检查索引的有效性，如果下标超出字符的长度范围，会示导致未定义行为。</p>
+<p>at：函数 at() 在使用时会检查下标是否有效。如果给定的下标超出字符的长度范围，系统会抛出 out_of_range 异常。</p>
+</blockquote>
+<h3 id="3-1-8-string- 插入和删除"><a href="#3-1-8-string- 插入和删除" class="headerlink" title="3.1.8 string 插入和删除"></a>3.1.8 string 插入和删除 </h3><p><strong> 功能描述：</strong></p>
+<ul>
+<li>对 string 字符串进行插入和删除字符操作</li>
+</ul>
+<p><strong>函数原型：</strong></p>
+<ul>
+<li><code>string&amp; insert(int pos, const char* s);</code>                // 插入字符串</li>
+<li><code>string&amp; insert(int pos, const string&amp; str);</code>        // 插入字符串</li>
+<li><code>string&amp; insert(int pos, int n, char c);</code>                // 在指定位置插入 n 个字符 c</li>
+<li><code>string&amp; erase(int pos, int n = npos);</code>                    // 删除从 Pos 开始的 n 个字符 </li>
+</ul>
+<pre><code class="c++">// 字符串插入和删除
+void test01()
+&#123;
+    string str = &quot;hello&quot;;
+
+    //insert 插入
+    str.insert(1, &quot;111&quot;);
+    cout &lt;&lt; str &lt;&lt; endl;    //
+
+    //erase 删除
+    str.erase(1, 3);  // 从 1 号位置开始 3 个字符， 第二个数字可以不写，意为删除从第 1 个到最后一个
+    cout &lt;&lt; str &lt;&lt; endl;
+&#125;</code></pre>
+<h3 id="3-1-9-string- 子串"><a href="#3-1-9-string- 子串" class="headerlink" title="3.1.9 string 子串"></a>3.1.9 string 子串 </h3><p><strong> 功能描述：</strong></p>
+<ul>
+<li>从字符串中获取想要的子串</li>
+</ul>
+<p><strong>函数原型：</strong></p>
+<ul>
+<li><code>string substr(int pos = 0, int n = npos) const;</code>   // 返回由 pos 开始的 n 个字符组成的字符串</li>
+</ul>
+<pre><code class="c++">void test01()&#123;
+    string str = &quot;abcdefg&quot;;
+
+    // 获取子串
+    string subStr = str.substr(1, 3);       // 若第二个数字可以不写，意为取从第 1 个到最后一个
+    cout &lt;&lt; &quot;subStr = &quot; &lt;&lt; subStr &lt;&lt; endl;
+
+    string email = &quot;hello@sina.com&quot;;
+    int pos = email.find(&quot;@&quot;);
+    string username = email.substr(0, pos);
+    cout &lt;&lt; &quot;username: &quot; &lt;&lt; username &lt;&lt; endl;
+&#125;</code></pre>
+<h2 id="3-2-vector- 容器"><a href="#3-2-vector- 容器" class="headerlink" title="3.2 vector 容器"></a>3.2 vector 容器</h2><h3 id="3-2-1-vector 基本概念"><a href="#3-2-1-vector 基本概念" class="headerlink" title="3.2.1 vector 基本概念"></a>3.2.1 vector 基本概念</h3><p>vector 数据结构和数组非常相似，也称为单端数组。</p>
+<p>vector 与普通数组区别：<strong>数组是静态空间，而 vector 可以动态扩展</strong>。数组 array 在定义时必须显式或隐式指定其 size；vector 则不用。</p>
+<p>动态扩展：并不是在原空间之后续接新空间，而是找更大的内存空间，然后将原数据拷贝至新空间，释放原空间。</p>
+<p>vector 容器的迭代器是支持随机访问的迭代器。</p>
+<h3 id="3-2-2-vector 构造函数"><a href="#3-2-2-vector 构造函数" class="headerlink" title="3.2.2 vector 构造函数"></a>3.2.2 vector 构造函数 </h3><p><strong> 函数原型：</strong></p>
+<ul>
+<li><code>vector&lt;T&gt; v;</code>                            // 采用模板实现类实现，默认构造函数</li>
+<li><code>vector(v.begin(), v.end());</code>       // 将 v[begin(), end()]区间中的元素拷贝给本身。</li>
+<li><code>vector(n, elem);</code>                            // 构造函数将 n 个 elem 拷贝给本身。</li>
+<li><code>vector(const vector &amp;vec);</code>         // 拷贝构造函数。</li>
+</ul>
+<pre><code class="c++">#include &lt;vector&gt;
+
+void printVector(vector&lt;int&gt;&amp; v) &#123;
+
+    for (vector&lt;int&gt;::iterator it = v.begin(); it != v.end(); it++) &#123;
+        cout &lt;&lt; *it &lt;&lt; &quot; &quot;;
+    &#125;
+    cout &lt;&lt; endl;
+&#125;
+
+void test01()&#123;
+
+    vector&lt;int&gt; v1; // 无参构造
+    for (int i = 0; i &lt; 10; i++)
+    &#123;
+        v1.push_back(i);
+    &#125;
+    printVector(v1);
+
+    vector&lt;int&gt; v2(v1.begin(), v1.end());  // 将 v1 的所有数据传给 v2
+    printVector(v2);
+
+    vector&lt;int&gt; v3(10, 100);   // 传入 10 个 100 给 V3
+    printVector(v3);
+
+    vector&lt;int&gt; v4(v3);  // 拷贝构造
+    printVector(v4);
+&#125;</code></pre>
+<p><strong>vector 数组快速声明与初始化：</strong></p>
+<pre><code class="c++">// 初始化数组长度
+vector&lt;int&gt; v1(10);
+
+// 初始化数组大小和值
+vector&lt;int&gt; v2(10, 100);
+
+// 直接赋值
+vector&lt;int&gt; v3 = &#123;1,2,3,4,5&#125;;
+
+// 使用数组初始化
+int arr[] = &#123;1,2,3,4&#125;;
+vector&lt;int&gt; v4(arr, arr+4);
+vector&lt;int&gt; v5(std::begin(arr), std::end(arr));</code></pre>
+<h3 id="3-2-3-vector 赋值操作"><a href="#3-2-3-vector 赋值操作" class="headerlink" title="3.2.3 vector 赋值操作"></a>3.2.3 vector 赋值操作 </h3><p><strong> 函数原型：</strong></p>
+<ul>
+<li><code>vector&amp; operator=(const vector &amp;vec);</code>// 重载等号操作符</li>
+</ul>
+<ul>
+<li><code>assign(beg, end);</code>       // 将 [beg, end) 区间中的数据拷贝赋值给本身。</li>
+<li><code>assign(n, elem);</code>        // 将 n 个 elem 拷贝赋值给本身。</li>
+</ul>
+<pre><code class="c++">#include &lt;vector&gt;
+
+void printVector(vector&lt;int&gt;&amp; v) &#123;
+
+    for (vector&lt;int&gt;::iterator it = v.begin(); it != v.end(); it++) &#123;
+        cout &lt;&lt; *it &lt;&lt; &quot; &quot;;
+    &#125;
+    cout &lt;&lt; endl;
+&#125;
+
+void test01()
+&#123;
+    vector&lt;int&gt; v1; 
+    for (int i = 0; i &lt; 10; i++)
+    &#123;
+        v1.push_back(i);
+    &#125;
+    printVector(v1);
+
+    vector&lt;int&gt;v2;
+    v2 = v1;                 // = 号赋值
+    printVector(v2);
+
+    vector&lt;int&gt;v3;
+    v3.assign(v1.begin(), v1.end());    //assign 赋值
+    printVector(v3);
+
+    vector&lt;int&gt;v4;
+    v4.assign(10, 100);      //assign 赋数值
+    printVector(v4);
+&#125;</code></pre>
+<h3 id="3-2-4-vector 容量和大小"><a href="#3-2-4-vector 容量和大小" class="headerlink" title="3.2.4  vector 容量和大小"></a>3.2.4  vector 容量和大小 </h3><p><strong> 函数原型：</strong></p>
+<ul>
+<li><p><code>empty();</code>                            // 判断容器是否为空</p>
+</li>
+<li><p><code>capacity();</code>                      // 容器的 <strong> 容量</strong></p>
+</li>
+<li><p><code>size();</code>                              // 返回容器中 <strong> 元素的个数</strong></p>
+</li>
+<li><p><code>resize(int num);</code>             // 重新指定容器的长度为 num，若容器变长，则以默认值 0 填充新位置。</p>
+<p>​                                                // 如果容器变短，则末尾超出容器长度的元素被删除。</p>
+</li>
+<li><p><code>resize(int num, elem);</code>  // 重新指定容器的长度为 num，若容器变长，则以 elem 值填充新位置。</p>
+<p>​                                                  // 如果容器变短，则末尾超出容器长度的元素被删除</p>
+</li>
+</ul>
+<pre><code class="c++">void test01()
+&#123;
+    vector&lt;int&gt; v1;
+    for (int i = 0; i &lt; 10; i++)
+    &#123;
+        v1.push_back(i);
+    &#125;
+    //printVector(v1);
+
+    //empty 使用
+    if (v1.empty())
+    &#123;
+        cout &lt;&lt; &quot;v1 为空 &quot; &lt;&lt; endl;
+    &#125;
+    else
+    &#123;
+        cout &lt;&lt; &quot;v1 不为空 &quot; &lt;&lt; endl;
+        cout &lt;&lt; &quot;v1 的容量 = &quot; &lt;&lt; v1.capacity() &lt;&lt; endl;
+        cout &lt;&lt; &quot;v1 的大小 = &quot; &lt;&lt; v1.size() &lt;&lt; endl;
+    &#125;
+
+    //resize 重新指定大小为 15，用 10 补齐
+    v1.resize(15, 10);
+    //printVector(v1);
+
+    //resize 重新指定大小，超出 5 个元素部分删除
+    v1.resize(5);
+    //printVector(v1);
+&#125;</code></pre>
+<h3 id="3-2-5-vector 插入和删除"><a href="#3-2-5-vector 插入和删除" class="headerlink" title="3.2.5 vector 插入和删除"></a>3.2.5 vector 插入和删除 </h3><p><strong> 函数原型：</strong></p>
+<ul>
+<li><code>push_back(ele);</code>                                         // 尾部插入元素 ele</li>
+<li><code>pop_back();</code>                                                // 删除最后一个元素</li>
+<li><code>insert(const_iterator pos, ele);</code>        // 迭代器指向位置 pos 插入元素 ele</li>
+<li><code>insert(const_iterator pos, int count,ele);</code>// 迭代器指向位置 pos 插入 count 个元素 ele</li>
+<li><code>erase(const_iterator pos);</code>                     // 删除迭代器指向的元素</li>
+<li><code>erase(const_iterator start, const_iterator end);</code>// 删除迭代器从 start 到 end 之间的元素</li>
+<li><code>clear();</code>                                                        // 删除容器中所有元素</li>
+</ul>
+<pre><code class="c++">#include &lt;vector&gt;
+
+void test01()
+&#123;
+    vector&lt;int&gt; v1;
+    // 尾插
+    v1.push_back(10);
+    v1.push_back(20);
+    v1.push_back(30);
+    v1.push_back(40);
+    v1.push_back(50);
+    //printVector(v1);
+
+    // 尾删
+    v1.pop_back();
+    //printVector(v1);
+
+    // 插入
+    v1.insert(v1.begin(), 100);  
+    //printVector(v1);               //100 10 20 30 40 50
+
+    v1.insert(v1.begin(), 2, 1000);
+    //printVector(v1);
+
+    // 删除
+    v1.erase(v1.begin());
+    printVector(v1);
+
+    // 清空
+    v1.erase(v1.begin(), v1.end());
+    v1.clear();
+    //printVector(v1);
+&#125;</code></pre>
+<p>当 vector 容器为空时，必须采用 push_back()方法来插入元素。但如果 vector 容器初始化有值，可以用随机访问的方法重新赋值：</p>
+<pre><code class="c++">void test() &#123;
+    vector&lt;int&gt; m(10,0);        // 初始化 m 容器为 10 个 0
+
+    // 修改元素
+    for (int i = 0; i &lt; 10; ++i) &#123;
+        m[i] = i;
+    &#125;
+
+    // 查看元素
+    for (int num : m) &#123;
+        cout &lt;&lt; num;
+    &#125;
+&#125;</code></pre>
+<h3 id="3-2-6-vector 数据存取"><a href="#3-2-6-vector 数据存取" class="headerlink" title="3.2.6 vector 数据存取"></a>3.2.6 vector 数据存取 </h3><p><strong> 函数原型：</strong></p>
+<ul>
+<li><code>at(int idx);</code>     // 返回索引 idx 所指的数据</li>
+<li><code>operator[idx];</code>       // 返回索引 idx 所指的数据</li>
+<li><code>front();</code>            // 返回容器中第一个数据元素</li>
+<li><code>back();</code>              // 返回容器中最后一个数据元素</li>
+</ul>
+<pre><code class="c++">#include &lt;vector&gt;
+
+void test01()
+&#123;
+    vector&lt;int&gt;v1;
+    for (int i = 0; i &lt; 10; i++)
+    &#123;
+        v1.push_back(i);
+    &#125;
+
+    for (int i = 0; i &lt; v1.size(); i++)
+    &#123;
+        cout &lt;&lt; v1[i] &lt;&lt; &quot; &quot;;
+    &#125;
+    cout &lt;&lt; endl;
+
+    for (int i = 0; i &lt; v1.size(); i++)
+    &#123;
+        cout &lt;&lt; v1.at(i) &lt;&lt; &quot; &quot;;
+    &#125;
+    cout &lt;&lt; endl;
+
+    cout &lt;&lt; &quot;v1 的第一个元素为： &quot; &lt;&lt; v1.front() &lt;&lt; endl;
+    cout &lt;&lt; &quot;v1 的最后一个元素为： &quot; &lt;&lt; v1.back() &lt;&lt; endl;
+&#125;</code></pre>
+<h3 id="3-2-7-vector 互换容器"><a href="#3-2-7-vector 互换容器" class="headerlink" title="3.2.7 vector 互换容器"></a>3.2.7 vector 互换容器 </h3><p><strong> 函数原型：</strong></p>
+<ul>
+<li><code>swap(vec);</code>  // 将 vec 与本身的元素互换</li>
+</ul>
+<pre><code class="c++">void test01()
+&#123;
+    vector&lt;int&gt;v1;
+    for (int i = 0; i &lt; 10; i++)
+    &#123;
+        v1.push_back(i);
+    &#125;
+    printVector(v1);
+
+    vector&lt;int&gt;v2;
+    for (int i = 10; i &gt; 0; i--)
+    &#123;
+        v2.push_back(i);
+    &#125;
+    printVector(v2);
+
+    // 互换容器
+    cout &lt;&lt; &quot; 互换后 &quot; &lt;&lt; endl;
+    v1.swap(v2);
+    printVector(v1);
+    printVector(v2);
+&#125;</code></pre>
+<p>当然 swap 函数更重要的作用是：<strong>收缩容量，节省空间</strong></p>
+<pre><code class="c++">void test02()
+&#123;
+    vector&lt;int&gt; v;
+    for (int i = 0; i &lt; 10000; i++) &#123;
+        v.push_back(i);
+    &#125;
+
+    cout &lt;&lt; &quot;v 的容量为：&quot; &lt;&lt; v.capacity() &lt;&lt; endl;   // 输出 12138
+    cout &lt;&lt; &quot;v 的大小为：&quot; &lt;&lt; v.size() &lt;&lt; endl;       // 输出 10000
+
+    v.resize(3);
+
+    cout &lt;&lt; &quot;v 的容量为：&quot; &lt;&lt; v.capacity() &lt;&lt; endl;   // 输出 12138
+    cout &lt;&lt; &quot;v 的大小为：&quot; &lt;&lt; v.size() &lt;&lt; endl;       // 输出 3
+
+    // 收缩容量（内存）
+    vector&lt;int&gt;(v).swap(v); //vector&lt;int&gt;(v)匿名对象
+
+    cout &lt;&lt; &quot;v 的容量为：&quot; &lt;&lt; v.capacity() &lt;&lt; endl;   // 输出 3
+    cout &lt;&lt; &quot;v 的大小为：&quot; &lt;&lt; v.size() &lt;&lt; endl;       // 输出 3
+&#125;</code></pre>
+<h3 id="3-2-8-vector 预留空间"><a href="#3-2-8-vector 预留空间" class="headerlink" title="3.2.8 vector 预留空间"></a>3.2.8 vector 预留空间 </h3><p> 减少 vector 在动态扩展容量时的扩展次数。</p>
+<p><strong>函数原型：</strong></p>
+<ul>
+<li><code>reserve(int len);</code>// 容器预留 len 个元素长度，预留位置不初始化，元素不可访问。</li>
+</ul>
+<pre><code class="c++">void test01()
+&#123;
+    vector&lt;int&gt; v;
+
+    // 预留空间
+    v.reserve(100000);  // 加与不加这行，后面计算的 num 有差别
+
+    int num = 0;
+    int* p = NULL;
+    for (int i = 0; i &lt; 100000; i++) &#123;
+        v.push_back(i);
+        if (p != &amp;v[0]) &#123;
+            p = &amp;v[0];
+            num++;
+        &#125;
+    &#125;
+
+    cout &lt;&lt; &quot;num:&quot; &lt;&lt; num &lt;&lt; endl;  // 输出：1
+&#125;</code></pre>
+<h2 id="3-3-Deque 容器"><a href="#3-3-Deque 容器" class="headerlink" title="3.3 Deque 容器"></a>3.3 Deque 容器</h2><h3 id="3-3-1-deque 容器基本概念"><a href="#3-3-1-deque 容器基本概念" class="headerlink" title="3.3.1 deque 容器基本概念"></a>3.3.1 deque 容器基本概念</h3><p>deque（音 /dɛk/）容器是一种双端数组，可以对头部和尾部进行插入删除操作。</p>
+<p>deque 与 vector 区别：</p>
+<ul>
+<li>vector 对于头部的插入和删除效率低下，数据量越大，效率越低</li>
+<li>deque 相对而言，对头部的插入删除速度会比 vector 快</li>
+<li>vector 访问元素时的速度会比 deque 快，这和内部实现有关。</li>
+</ul>
+<p>deque 内部工作原理：</p>
+<p>deuqe 内部有个中控器，维护每段缓冲区中的内容，缓冲区存放真实数据。</p>
+<p>中控器维护的是每个缓冲区的地址，使得使用 deque 时像一片连续的内存空间。</p>
+<p>deque 容器的迭代器是支持随机访问的迭代器。</p>
+<h3 id="3-3-2-deque 构造函数"><a href="#3-3-2-deque 构造函数" class="headerlink" title="3.3.2 deque 构造函数"></a>3.3.2 deque 构造函数 </h3><p><strong> 函数原型：</strong></p>
+<ul>
+<li><code>deque&lt;T&gt;</code> deqT;                        // 默认构造形式</li>
+<li><code>deque(beg, end);</code>                  // 构造函数将 [beg, end) 区间中的元素拷贝给本身。</li>
+<li><code>deque(n, elem);</code>                    // 构造函数将 n 个 elem 拷贝给本身。</li>
+<li><code>deque(const deque &amp;deq);</code>   // 拷贝构造函数</li>
+</ul>
+<pre><code class="c++">void printDeque(const deque&lt;int&gt;&amp; d)
+&#123;
+    for (deque&lt;int&gt;::const_iterator it = d.begin(); it != d.end(); it++) &#123;  // 注意这里的 const_iterator，只读迭代器
+        cout &lt;&lt; *it &lt;&lt; &quot; &quot;;
+
+    &#125;
+    cout &lt;&lt; endl;
+&#125;
+
+void test01() &#123;
+
+    deque&lt;int&gt; d1; 
+    for (int i = 0; i &lt; 10; i++)
+    &#123;
+        d1.push_back(i);
+    &#125;
+    printDeque(d1);
+
+    deque&lt;int&gt; d2(d1.begin(), d1.end());
+    printDeque(d2);
+
+    deque&lt;int&gt;d3(10, 100);
+    printDeque(d3);
+
+    deque&lt;int&gt;d4 = d3;
+    printDeque(d4);
+&#125;</code></pre>
+<p><strong>总结：</strong>deque 容器和 vector 容器的构造方式几乎一致，灵活使用即可</p>
+<h3 id="3-3-3-deque 赋值操作"><a href="#3-3-3-deque 赋值操作" class="headerlink" title="3.3.3 deque 赋值操作"></a>3.3.3 deque 赋值操作 </h3><p><strong> 函数原型：</strong></p>
+<ul>
+<li><code>deque&amp; operator=(const deque &amp;deq);</code>         // 重载等号操作符</li>
+</ul>
+<ul>
+<li><code>assign(beg, end);</code>                                           // 将 [beg, end) 区间中的数据拷贝赋值给本身。</li>
+<li><code>assign(n, elem);</code>                                             // 将 n 个 elem 拷贝赋值给本身。</li>
+</ul>
+<pre><code class="c++">void test01()
+&#123;
+    deque&lt;int&gt; d1;
+    for (int i = 0; i &lt; 10; i++)
+    &#123;
+        d1.push_back(i);
+    &#125;
+    printDeque(d1);
+
+    deque&lt;int&gt;d2;
+    d2 = d1;                //= 号赋值
+    printDeque(d2);
+
+    deque&lt;int&gt;d3;
+    d3.assign(d1.begin(), d1.end());   //assign 赋值
+    printDeque(d3);
+
+    deque&lt;int&gt;d4;
+    d4.assign(10, 100);
+    printDeque(d4);
+&#125;</code></pre>
+<h3 id="3-3-4-deque 大小操作"><a href="#3-3-4-deque 大小操作" class="headerlink" title="3.3.4 deque 大小操作"></a>3.3.4 deque 大小操作 </h3><p><strong> 函数原型：</strong></p>
+<ul>
+<li><p><code>deque.empty();</code>                        // 判断容器是否为空</p>
+</li>
+<li><p><code>deque.size();</code>                          // 返回容器中元素的个数</p>
+</li>
+<li><p><code>deque.resize(num);</code>                // 重新指定容器的长度为 num, 若容器变长，则以默认值填充新位置。</p>
+<p>​                                                      // 如果容器变短，则末尾超出容器长度的元素被删除。</p>
+</li>
+<li><p><code>deque.resize(num, elem);</code>     // 重新指定容器的长度为 num, 若容器变长，则以 elem 值填充新位置。</p>
+<p>​                                                        // 如果容器变短，则末尾超出容器长度的元素被删除。</p>
+</li>
+</ul>
+<p>其用法与 vector 完全一样。</p>
+<h3 id="3-3-5-deque- 插入和删除"><a href="#3-3-5-deque- 插入和删除" class="headerlink" title="3.3.5 deque 插入和删除"></a>3.3.5 deque 插入和删除 </h3><p><strong> 函数原型：</strong></p>
+<p>两端插入操作：</p>
+<ul>
+<li><code>push_back(elem);</code>          // 在容器尾部添加一个数据</li>
+<li><code>push_front(elem);</code>        // 在容器头部插入一个数据</li>
+<li><code>pop_back();</code>                   // 删除容器最后一个数据</li>
+<li><code>pop_front();</code>                 // 删除容器第一个数据</li>
+</ul>
+<p>指定位置操作：</p>
+<ul>
+<li><p><code>insert(pos,elem);</code>         // 在 pos 位置插入一个 elem 元素的拷贝，返回新数据的位置。</p>
+</li>
+<li><p><code>insert(pos,n,elem);</code>     // 在 pos 位置插入 n 个 elem 数据，无返回值。</p>
+</li>
+<li><p><code>insert(pos,beg,end);</code>    // 在 pos 位置插入 [beg,end) 区间的数据，无返回值。</p>
+</li>
+<li><p><code>clear();</code>                           // 清空容器的所有数据</p>
+</li>
+<li><p><code>erase(beg,end);</code>             // 删除 [beg,end) 区间的数据，返回下一个数据的位置。</p>
+</li>
+<li><p><code>erase(pos);</code>                    // 删除 pos 位置的数据，返回下一个数据的位置。</p>
+</li>
+</ul>
+<p>用法类似 vector。比 vector 多的是可以进行头部插入和删除。</p>
+<h3 id="3-3-6-deque- 数据存取"><a href="#3-3-6-deque- 数据存取" class="headerlink" title="3.3.6 deque 数据存取"></a>3.3.6 deque 数据存取 </h3><p><strong> 函数原型：</strong></p>
+<ul>
+<li><code>at(int idx);</code>     // 返回索引 idx 所指的数据</li>
+<li><code>operator[];</code>      // 返回索引 idx 所指的数据</li>
+<li><code>front();</code>            // 返回容器中第一个数据元素</li>
+<li><code>back();</code>              // 返回容器中最后一个数据元素</li>
+</ul>
+<p>其用法与 vector 完全一样。</p>
+<h3 id="3-3-7-deque- 排序"><a href="#3-3-7-deque- 排序" class="headerlink" title="3.3.7  deque 排序"></a>3.3.7  deque 排序 </h3><p><strong> 算法：</strong></p>
+<ul>
+<li><code>sort(iterator beg, iterator end)</code>  // 对 beg 和 end 区间内元素进行排序</li>
+</ul>
+<pre><code class="c++">#include &lt;deque&gt;
+#include &lt;algorithm&gt;   // 标准算法库
+
+void test01()&#123;
+
+    deque&lt;int&gt; d;
+    d.push_back(10);
+    d.push_back(20);
+    d.push_front(100);
+    d.push_front(200);
+
+    printDeque(d);
+
+    // 排序
+    sort(d.begin(), d.end());
+    printDeque(d);
+
+&#125;</code></pre>
+<p>vector 也支持用 sort 进行排序。总结一句话：只要是支持随机访问的迭代器容器都可以用 sort 进行排序。</p>
+<h2 id="3-4- 案例 - 评委打分"><a href="#3-4- 案例 - 评委打分" class="headerlink" title="3.4 案例 - 评委打分"></a>3.4 案例 - 评委打分 </h2><h3 id="3-4-1- 案例描述"><a href="#3-4-1- 案例描述" class="headerlink" title="3.4.1 案例描述"></a>3.4.1 案例描述</h3><p> 有 5 名选手，选手 ABCDE，10 个评委分别对每一位选手打分，去除最高分，去除评委中最低分，取平均分。</p>
+<p>实现步骤：</p>
+<ul>
+<li>创建五名选手，放到 vector 容器中</li>
+<li>遍历 vector 容器，取出来每一位选手，执行 for 循环，可以把 10 个评分打分存到 deque 容器中</li>
+<li>sort 算法对 deque 容器中分数排序，去除最高分和最低分</li>
+<li>deque 容器遍历一遍，累加总分</li>
+<li>获取平均分</li>
+</ul>
+<h3 id="3-4-2- 代码实现"><a href="#3-4-2- 代码实现" class="headerlink" title="3.4.2 代码实现"></a>3.4.2 代码实现</h3><pre><code class="c++">#pragma once
+#include&lt;iostream&gt;
+#include&lt;string&gt;
+using namespace std;
+
+#include&lt;vector&gt;
+#include&lt;algorithm&gt;
+#include &lt;deque&gt;
+
+class Person &#123;
+public:
+    Person(string name, int score) &#123;
+        this-&gt;m_Name = name;
+        this-&gt;m_score = score;
+    &#125;
+    string m_Name;
+    int m_score;
+&#125;;
+
+void creatPerson(vector&lt;Person&gt;&amp; v) &#123;
+    string seed = &quot;ABCDE&quot;;
+
+    for (int i = 0; i &lt; seed.size(); ++i) &#123;
+        string name = &quot; 选手 &quot; ;
+        name += +seed[i];
+        int score = 0;
+        Person p(name, score);
+        v.push_back(p);
+    &#125;
+&#125;
+
+void setScore(vector&lt;Person&gt;&amp; v) &#123;
+
+    for (vector&lt;Person&gt;::iterator it = v.begin(); it != v.end(); ++it) &#123;
+
+        deque&lt;int&gt; d;  // 用来存放 10 个分数
+        for (int i = 0; i &lt; 10; ++i) &#123;
+            int score = rand() % 40 + 61;
+            d.push_back(score);
+        &#125;
+        sort(d.begin(), d.end());
+        d.pop_back();
+        d.pop_front();
+
+        // 计算平均分
+        int sum = 0;
+        for (deque&lt;int&gt;::iterator dit = d.begin(); dit != d.end(); ++dit) &#123;
+            sum += *dit;
+        &#125;
+        int avg = sum / d.size();
+
+        it-&gt;m_score = avg;
+    &#125;
+&#125;
+
+int main() &#123;
+    srand((unsigned int)time(NULL)); // 随机数种子
+
+    vector&lt;Person&gt; v;
+
+    creatPerson(v);
+
+    setScore(v);
+
+    for (vector&lt;Person&gt;::iterator it = v.begin();it!=v.end();++it) &#123;
+        cout &lt;&lt; it-&gt;m_Name &lt;&lt; &quot; &quot; &lt;&lt; it-&gt;m_score &lt;&lt; endl;
+    &#125;
+
+    system(&quot;pause&quot;);
+
+    return 0;
+&#125;</code></pre>
+<h2 id="3-5-stack 容器"><a href="#3-5-stack 容器" class="headerlink" title="3.5 stack 容器"></a>3.5 stack 容器</h2><h3 id="3-5-1- 基本概念"><a href="#3-5-1- 基本概念" class="headerlink" title="3.5.1 基本概念"></a>3.5.1 基本概念</h3><p>stack（栈）容器是一种先进后出的数据结构容器，它只有一个出口。</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20220204205615728.png" alt=""></p>
+<p>栈内元素只有顶端的元素才可以被外界使用，因此栈不允许有遍历行为。</p>
+<p>栈中进入数据称为—入栈<code>push</code></p>
+<p>栈中弹出数据称为—出栈<code>pop</code></p>
+<h3 id="3-5-2-stack 常用接口"><a href="#3-5-2-stack 常用接口" class="headerlink" title="3.5.2 stack 常用接口"></a>3.5.2 stack 常用接口 </h3><p> 构造函数：</p>
+<ul>
+<li><code>stack&lt;T&gt; stk</code>                             // 采用模板类实现，stack 对象的默认构造形式</li>
+<li><code>stack(const stack &amp;stk)</code>      // 拷贝构造函数</li>
+</ul>
+<p>赋值操作：</p>
+<ul>
+<li><code>stack&amp; operator=(const stack &amp;stk)</code>       // 重载等号操作符</li>
+</ul>
+<p>数据存取：</p>
+<ul>
+<li><code>push(elem);</code>        // 向栈顶添加元素</li>
+<li><code>pop();</code>                  // 从栈顶移除元素</li>
+<li><code>top();</code>                  // 返回栈顶元素</li>
+</ul>
+<p>大小操作：</p>
+<ul>
+<li><code>empty();</code>            // 判断栈是否为空</li>
+<li><code>size();</code>              // 返回栈的大小</li>
+</ul>
+<h2 id="3-6-queue 容器"><a href="#3-6-queue 容器" class="headerlink" title="3.6 queue 容器"></a>3.6 queue 容器</h2><h3 id="3-6-1- 基本概念"><a href="#3-6-1- 基本概念" class="headerlink" title="3.6.1 基本概念"></a>3.6.1 基本概念</h3><p>queue 是一种先进先出的数据结构，它有两个出口：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20220204212753063.png" alt=""></p>
+<p>队列容器允许从一端新增元素，从另一端移除元素。<strong>犹如人，嘴巴进，屁股出</strong>。</p>
+<p>队列中只有队头和队尾才可以被外界使用，因此队列不允许有遍历行为</p>
+<p>队列中进数据称为—入队<code>push</code></p>
+<p>队列中出数据称为—出队<code>pop</code></p>
+<h3 id="3-6-2- 常用接口"><a href="#3-6-2- 常用接口" class="headerlink" title="3.6.2 常用接口"></a>3.6.2 常用接口 </h3><p> 构造函数：</p>
+<ul>
+<li><code>queue&lt;T&gt; que;</code>                                  //queue 采用模板类实现，queue 对象默认构造形式</li>
+<li><code>queue(const queue &amp;que);</code>           // 拷贝构造函数</li>
+</ul>
+<p>赋值操作：</p>
+<ul>
+<li><code>queue&amp; operator=(const queue &amp;que);</code>       // 重载等号操作符</li>
+</ul>
+<p>数据存取：</p>
+<ul>
+<li><code>push(elem);</code>               // 往队尾添加元素</li>
+<li><code>pop();</code>                         // 从队头移除第一个元素</li>
+<li><code>back();</code>                      // 返回最后一个元素</li>
+<li><code>front();</code>                    // 返回第一个元素</li>
+</ul>
+<p>大小操作：</p>
+<ul>
+<li><code>empty();</code>                     // 判断容器是否为空</li>
+<li><code>size();</code>                      // 返回容器的大小</li>
+</ul>
+<h2 id="3-7-list 容器"><a href="#3-7-list 容器" class="headerlink" title="3.7 list 容器"></a>3.7 list 容器</h2><h3 id="3-7-1- 基本概念"><a href="#3-7-1- 基本概念" class="headerlink" title="3.7.1 基本概念"></a>3.7.1 基本概念</h3><p>list 容器的存储方式为链式存储。</p>
+<p>链表（list）是一种物理存储单元上非连续的存储结构，数据元素的逻辑顺序是通过链表中的指针链接实现的。</p>
+<p>链表的组成：链表由一系列结点组成。</p>
+<p>结点的组成：一个是存储数据元素的数据域，另一个是储存下一个结点地址的指针域。</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20220205215539070.png" style="zoom: 80%;" />
+
+<p>STL 中的链表是一个 <strong> 双向循环 </strong> 链表。</p>
+<ul>
+<li><strong>双向 </strong> 是指每一个结点有两个指针，一个指针 next 指向下一个结点的地址，一个指针 prev 指向上一个结点的地址；</li>
+<li><strong>循环 </strong> 是指第一个结点 prev 指向最后一个结点的地址，最后一个结点 next 指向第一个结点的地址。</li>
+</ul>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20220205215848416.png" alt=""></p>
+<p>由于链表的存储方式并不是连续的内存空间，因此链表 list 中的迭代器只支持前移和后移，属于 <strong> 双向迭代器</strong>。</p>
+<p>list 的优点：</p>
+<ul>
+<li>采用动态存储分配，不会造成内存浪费和溢出</li>
+<li>链表执行插入和删除操作十分方便，修改指针即可，不需要移动大量元素</li>
+</ul>
+<p>list 的缺点：</p>
+<ul>
+<li>链表灵活，但是空间（指针域）和时间（遍历）额外耗费较大。</li>
+</ul>
+<p>List 有一个重要的性质，插入和删除操作都不会造成原有 list 迭代器的失效，这在 vector 是不成立的。</p>
+<h3 id="3-7-2-list 构造函数"><a href="#3-7-2-list 构造函数" class="headerlink" title="3.7.2  list 构造函数"></a>3.7.2  list 构造函数 </h3><p> 函数原型：</p>
+<ul>
+<li><code>list&lt;T&gt; lst;</code>                                // list 采用采用模板类实现, 对象的默认构造形式：</li>
+<li><code>list(beg,end);</code>                           // 构造函数将 [beg, end) 区间中的元素拷贝给本身。</li>
+<li><code>list(n,elem);</code>                             // 构造函数将 n 个 elem 拷贝给本身。</li>
+<li><code>list(const list &amp;lst);</code>            // 拷贝构造函数。</li>
+</ul>
+<pre><code class="c++">#include&lt;list&gt;
+
+void printList(const list&lt;int&gt;&amp;L) &#123;
+    for (list&lt;int&gt;::const_iterator it = L.begin(); it != L.end(); ++it) &#123;
+        cout &lt;&lt; *it &lt;&lt; &quot; &quot;;
+    &#125;
+    cout &lt;&lt; endl;
+&#125;
+
+void test1() &#123;
+    // 创建 list 容器 --- 默认构造
+    list&lt;int&gt; L1;
+    L1.push_back(10);
+    L1.push_back(20);
+    L1.push_back(30);
+    L1.push_back(40);
+
+    printList(L1);
+
+    // 创建 list 容器 --- 区间方式构造
+    list&lt;int&gt; L2(L1.begin(),L1.end());
+
+    // 创建 list 容器 --- 拷贝构造
+    list&lt;int&gt; L3(L2);
+
+    // 创建 list 容器 ---n 个 elem
+    list&lt;int&gt; L4(10,100);
+    printList(L4);
+
+&#125;
+
+int main() &#123;
+
+    test1();
+
+    system(&quot;pause&quot;);
+
+    return 0;
+&#125;</code></pre>
+<h3 id="3-7-3-list- 赋值和交换"><a href="#3-7-3-list- 赋值和交换" class="headerlink" title="3.7.3 list 赋值和交换"></a>3.7.3 list 赋值和交换 </h3><p><strong> 函数原型：</strong></p>
+<ul>
+<li><code>assign(beg, end);</code>            // 将 [beg, end) 区间中的数据拷贝赋值给本身。</li>
+<li><code>assign(n, elem);</code>              // 将 n 个 elem 拷贝赋值给本身。</li>
+<li><code>list&amp; operator=(const list &amp;lst);</code>         // 重载等号操作符</li>
+<li><code>swap(lst);</code>                         // 将 lst 与本身的元素互换。</li>
+</ul>
+<h3 id="3-7-4-list- 大小操作"><a href="#3-7-4-list- 大小操作" class="headerlink" title="3.7.4 list 大小操作"></a>3.7.4 list 大小操作 </h3><p><strong> 函数原型：</strong></p>
+<ul>
+<li><p><code>size();</code>                              // 返回容器中元素的个数</p>
+</li>
+<li><p><code>empty();</code>                           // 判断容器是否为空</p>
+</li>
+<li><p><code>resize(num);</code>                   // 重新指定容器的长度为 num，若容器变长，则以默认值填充新位置。</p>
+<p>​                                             // 如果容器变短，则末尾超出容器长度的元素被删除。</p>
+</li>
+<li><p><code>resize(num, elem);</code>       // 重新指定容器的长度为 num，若容器变长，则以 elem 值填充新位置。变短则删除。</p>
+</li>
+</ul>
+<h3 id="3-7-5-list- 插入和删除"><a href="#3-7-5-list- 插入和删除" class="headerlink" title="3.7.5 list 插入和删除"></a>3.7.5 list 插入和删除 </h3><p><strong> 函数原型：</strong></p>
+<ul>
+<li><code>push_back(elem);</code>                           // 在容器尾部加入一个元素</li>
+<li><code>pop_back();</code>                                     // 删除容器中最后一个元素</li>
+<li><code>push_front(elem);</code>                         // 在容器开头插入一个元素</li>
+<li><code>pop_front();</code>                                    // 从容器开头移除第一个元素</li>
+<li><code>insert(pos,elem);</code>                         // 在 pos 位置插 elem 元素的拷贝，返回新数据的位置。</li>
+<li><code>insert(pos,n,elem);</code>                     // 在 pos 位置插入 n 个 elem 数据，无返回值。</li>
+<li><code>insert(pos,beg,end);</code>                   // 在 pos 位置插入 [beg,end) 区间的数据，无返回值。</li>
+<li><code>clear();</code>                                           // 移除容器的所有数据</li>
+<li><code>erase(beg,end);</code>                            // 删除 [beg,end) 区间的数据，返回下一个数据的位置。</li>
+<li><code>erase(pos);</code>                                    // 删除 pos 位置的数据，返回下一个数据的位置。</li>
+<li><code>remove(elem);</code>                                // 删除容器中所有与 elem 值匹配的元素。</li>
+</ul>
+<h3 id="3-7-6-list- 数据存取"><a href="#3-7-6-list- 数据存取" class="headerlink" title="3.7.6 list 数据存取"></a>3.7.6 list 数据存取 </h3><p><strong> 函数原型：</strong></p>
+<ul>
+<li><code>front();</code>        // 返回第一个元素。</li>
+<li><code>back();</code>         // 返回最后一个元素。</li>
+</ul>
+<h3 id="3-7-7-list- 反转和排序"><a href="#3-7-7-list- 反转和排序" class="headerlink" title="3.7.7 list 反转和排序"></a>3.7.7 list 反转和排序 </h3><p><strong> 函数原型：</strong></p>
+<ul>
+<li><code>reverse();</code>   // 反转链表</li>
+<li><code>sort();</code>        // 链表排序，升序</li>
+</ul>
+<pre><code class="c++">#include&lt;list&gt;
+
+void printList(const list&lt;int&gt;&amp;L) &#123;
+    for (list&lt;int&gt;::const_iterator it = L.begin(); it != L.end(); ++it) &#123;
+        cout &lt;&lt; *it &lt;&lt; &quot; &quot;;
+    &#125;
+    cout &lt;&lt; endl;
+&#125;
+
+bool myCompare(int v1, int v2) &#123;
+    return v1 &gt; v2;
+&#125;
+
+void test1() &#123;
+
+    list&lt;int&gt; L1;
+    L1.push_back(20);
+    L1.push_back(10);
+    L1.push_back(40);
+    L1.push_back(30);
+
+    L1.sort();  // 默认升序排列
+    printList(L1);
+
+    L1.sort(myCompare);   // 降序排列
+    printList(L1);
+
+&#125;
+
+
+int main() &#123;
+
+    test1();
+
+    system(&quot;pause&quot;);
+
+    return 0;
+&#125;</code></pre>
+<h3 id="3-7-8- 排序案例"><a href="#3-7-8- 排序案例" class="headerlink" title="3.7.8 排序案例"></a>3.7.8 排序案例</h3><pre><code class="c++">#include&lt;list&gt;
+
+class Person &#123;
+
+public:
+    Person(string name, int age, int height) &#123;
+        this-&gt;m_Name = name;
+        this-&gt;m_Age = age;
+        this-&gt;m_Height = height;
+    &#125;
+    string m_Name;
+    int m_Age;
+    int m_Height;
+&#125;;
+
+void printList(const list&lt;Person&gt;&amp;L) &#123;
+    for (list&lt;Person&gt;::const_iterator it = L.begin(); it != L.end(); ++it) &#123;
+        cout &lt;&lt; it-&gt;m_Name &lt;&lt; &quot; &quot;;
+        cout &lt;&lt; it-&gt;m_Age &lt;&lt; &quot; &quot;;
+        cout &lt;&lt; it-&gt;m_Height &lt;&lt; endl;
+    &#125;
+&#125;
+
+bool sortRule(Person &amp;p1, Person &amp;p2) &#123;
+
+    if (p1.m_Age == p2.m_Age) &#123;
+        return p1.m_Height &gt; p2.m_Height;
+    &#125;
+
+    return p1.m_Age &lt; p2.m_Age;
+&#125;
+
+void test1() &#123;
+
+    list&lt;Person&gt; L1;
+
+    Person p1(&quot; 张飞 &quot;, 23, 178);
+    Person p2(&quot; 周瑜 &quot;, 28, 175);
+    Person p3(&quot; 孙权 &quot;, 12, 132);
+    Person p4(&quot; 曹操 &quot;, 34, 175);
+    Person p5(&quot; 关羽 &quot;, 25, 182);
+    Person p6(&quot; 刘备 &quot;, 28, 180);
+
+    L1.push_back(p1);
+    L1.push_back(p2);
+    L1.push_back(p3);
+    L1.push_back(p4);
+    L1.push_back(p5);
+    L1.push_back(p6);
+
+    printList(L1);
+
+    cout &lt;&lt; endl;
+
+    L1.sort(sortRule);
+
+    printList(L1);
+&#125;</code></pre>
+<blockquote>
+<p>对于自定义数据类型，必须要指定排序规则，否则编译器不知道如何进行排序。</p>
+<p>高级排序只是在排序规则上再进行一次逻辑规则制定，并不复杂。</p>
+</blockquote>
+<h2 id="3-8-set-multiset 容器"><a href="#3-8-set-multiset 容器" class="headerlink" title="3.8 set/multiset 容器"></a>3.8 set/multiset 容器 </h2><h3 id="3-8-1- 基本概念"><a href="#3-8-1- 基本概念" class="headerlink" title="3.8.1 基本概念"></a>3.8.1 基本概念</h3><p> 集合容器，所有元素在插入时会自动被排序。set/multiset 属于 <strong> 关联式容器</strong>，底层结构用二叉树实现。</p>
+<p>set 和 multiset 区别：</p>
+<ul>
+<li>set 不允许容器中有重复的元素，multiset 允许容器中有重复的元素</li>
+<li>set 插入数据的同时会返回插入结果，表示插入是否成功；multiset 无返回值</li>
+</ul>
+<p>set 和 multiset 的头文件都是<code>#include&lt;set&gt;</code></p>
+<p><strong>构造函数</strong></p>
+<ul>
+<li><code>set&lt;T&gt; st;</code>                        // 默认构造函数：</li>
+<li><code>set(const set &amp;st);</code>       // 拷贝构造函数</li>
+</ul>
+<p><strong>赋值</strong></p>
+<ul>
+<li><code>set&amp; operator=(const set &amp;st);</code>    // 重载等号操作符</li>
+</ul>
+<h3 id="3-8-2-set 大小和交换"><a href="#3-8-2-set 大小和交换" class="headerlink" title="3.8.2 set 大小和交换"></a>3.8.2 set 大小和交换 </h3><p><strong> 函数原型：</strong></p>
+<ul>
+<li><code>size();</code>          // 返回容器中元素的数目</li>
+<li><code>empty();</code>        // 判断容器是否为空</li>
+<li><code>swap(st);</code>      // 交换两个集合容器</li>
+</ul>
+<h3 id="3-8-3-set 插入和删除"><a href="#3-8-3-set 插入和删除" class="headerlink" title="3.8.3 set 插入和删除"></a>3.8.3 set 插入和删除 </h3><p><strong> 函数原型：</strong></p>
+<ul>
+<li><code>insert(elem);</code>           // 在容器中插入元素。</li>
+<li><code>clear();</code>                    // 清除所有元素</li>
+<li><code>erase(pos);</code>              // 删除 pos 迭代器所指的元素，返回下一个元素的迭代器。</li>
+<li><code>erase(beg, end);</code>    // 删除区间 [beg,end) 的所有元素 ，返回下一个元素的迭代器。</li>
+<li><code>erase(elem);</code>            // 删除容器中值为 elem 的元素。</li>
+</ul>
+<h3 id="3-8-5-set 查找和统计"><a href="#3-8-5-set 查找和统计" class="headerlink" title="3.8.5 set 查找和统计"></a>3.8.5 set 查找和统计 </h3><p><strong> 函数原型：</strong></p>
+<ul>
+<li><code>find(key);</code>                  // 查找 key 是否存在, 若存在，返回该键的元素的迭代器；若不存在，返回 set.end();</li>
+<li><code>count(key);</code>                // 统计 key 的元素个数（整型 int）</li>
+</ul>
+<pre><code class="c++">#include&lt;set&gt;
+
+void test1() &#123;
+
+    set&lt;int&gt; s1;
+
+    s1.insert(20);
+    s1.insert(50);
+    s1.insert(10);
+    s1.insert(40);
+    s1.insert(30);
+
+    set&lt;int&gt;::iterator pos = s1.find(30);
+
+    if (pos != s1.end()) &#123;
+        cout &lt;&lt; &quot; 找到 &quot; &lt;&lt; endl;
+    &#125;
+    else &#123;
+        cout &lt;&lt; &quot; 没找到 &quot; &lt;&lt; endl;
+    &#125;
+
+    int num = s1.count(10);
+&#125;</code></pre>
+<h3 id="3-8-6-set 返回值"><a href="#3-8-6-set 返回值" class="headerlink" title="3.8.6 set 返回值"></a>3.8.6 set 返回值</h3><p>set 插入数据的同时会返回插入结果，表示插入是否成功。返回值是一个 pair 类型的数据</p>
+<pre><code class="c++">#include&lt;set&gt;
+
+void test1() &#123;
+
+    set&lt;int&gt; s1;
+
+    pair&lt;set&lt;int&gt;::iterator, bool&gt; ret = s1.insert(20);
+
+    if (ret.second) &#123;
+        cout &lt;&lt; &quot; 插入成功！&quot; &lt;&lt; endl;
+    &#125;
+    else &#123;
+        cout &lt;&lt; &quot; 插入失败！&quot; &lt;&lt; endl;
+    &#125;
+
+    pair&lt;set&lt;int&gt;::iterator, bool&gt; ret2 = s1.insert(20);
+
+    if (ret2.second) &#123;
+        cout &lt;&lt; &quot; 插入成功！&quot; &lt;&lt; endl;
+    &#125;
+    else &#123;
+        cout &lt;&lt; &quot; 插入失败！&quot; &lt;&lt; endl;
+    &#125;
+&#125;</code></pre>
+<h3 id="3-8-7-pair 对组创建"><a href="#3-8-7-pair 对组创建" class="headerlink" title="3.8.7 pair 对组创建"></a>3.8.7 pair 对组创建 </h3><p> 成对出现的数据，利用对组可以返回两个数据。</p>
+<p><strong>两种创建方式：</strong></p>
+<ul>
+<li><code>pair&lt;type, type&gt; p (value1, value2);</code></li>
+<li><code>pair&lt;type, type&gt; p = make_pair(value1, value2);</code></li>
+</ul>
+<pre><code class="c++">pair&lt;string, int&gt; p(&quot;Tom&quot;, 20);
+cout &lt;&lt; &quot; 姓名： &quot; &lt;&lt;  p.first &lt;&lt; &quot; 年龄： &quot; &lt;&lt; p.second &lt;&lt; endl;</code></pre>
+<h3 id="3-8-8-set 容器排序"><a href="#3-8-8-set 容器排序" class="headerlink" title="3.8.8 set 容器排序"></a>3.8.8 set 容器排序 </h3><p> 学习目标：</p>
+<ul>
+<li>set 容器默认排序规则为从小到大，掌握如何改变排序规则</li>
+</ul>
+<p>主要技术点：</p>
+<ul>
+<li>利用仿函数，可以改变排序规则</li>
+</ul>
+<p><strong>示例一</strong>：内置的数据类型排序</p>
+<pre><code class="c++">#include&lt;set&gt;
+
+class SortRule &#123;
+public:
+    bool operator()(int v1, int v2) const &#123;       // 这里加个 const，不然 vs2019 会报错
+        return v1 &gt; v2;
+    &#125;
+&#125;;
+
+void printSet(set&lt;int, SortRule&gt;&amp;s) &#123;
+    for (set&lt;int, SortRule&gt;::iterator it = s.begin(); it != s.end(); ++it) &#123;
+        cout &lt;&lt; *it &lt;&lt; &quot; &quot;;
+    &#125;
+    cout &lt;&lt; endl;
+&#125;
+
+void test1() &#123;
+
+    set&lt;int, SortRule&gt; s1;
+    s1.insert(20);
+    s1.insert(30);
+    s1.insert(10);
+    s1.insert(50);
+    s1.insert(40);
+
+    printSet(s1);
+
+&#125;</code></pre>
+<p>示例二：自定义数据类型排序</p>
+<pre><code class="c++">#include&lt;set&gt;
+class Person &#123;
+public:
+    Person(string name, int age, int height) &#123;
+        this-&gt;m_Name = name;
+        this-&gt;m_Age = age;
+        this-&gt;m_Height = height;
+    &#125;
+    string m_Name;
+    int m_Age;
+    int m_Height;
+&#125;;
+
+class SortRule &#123;
+public:
+    bool operator()(const Person&amp; p1, const Person&amp; p2) const&#123;
+        return p1.m_Age &gt; p2.m_Age;
+    &#125;
+&#125;;
+
+void printSet(set&lt;Person, SortRule&gt;&amp;s) &#123;
+    for (set&lt;Person, SortRule&gt;::iterator it = s.begin(); it != s.end(); ++it) &#123;
+        cout &lt;&lt; it-&gt;m_Name &lt;&lt; &quot; &quot;;
+        cout &lt;&lt; it-&gt;m_Age &lt;&lt; &quot; &quot;;
+        cout &lt;&lt; it-&gt;m_Height &lt;&lt; endl;
+    &#125;
+&#125;
+
+void test1() &#123;
+
+    set&lt;Person, SortRule&gt; s1;
+
+    Person p1(&quot; 张飞 &quot;, 25, 180);
+    Person p2(&quot; 周瑜 &quot;, 26, 175);
+    Person p3(&quot; 刘备 &quot;, 28, 179);
+    Person p4(&quot; 孙权 &quot;, 16, 158);
+    Person p5(&quot; 关羽 &quot;, 27, 182);
+
+    s1.insert(p1);
+    s1.insert(p2);
+    s1.insert(p3);
+    s1.insert(p4);
+    s1.insert(p5);
+
+    printSet(s1);
+
+&#125;</code></pre>
+<h2 id="3-9-map-multimap 容器"><a href="#3-9-map-multimap 容器" class="headerlink" title="3.9 map/multimap 容器"></a>3.9 map/multimap 容器</h2><h3 id="3-9-1-map 基本概念"><a href="#3-9-1-map 基本概念" class="headerlink" title="3.9.1 map 基本概念"></a>3.9.1 map 基本概念</h3><p>map/multimap 属于关联式容器，底层结构是用二叉树实现。</p>
+<ul>
+<li>map 中所有元素都是 pair</li>
+<li>pair 中第一个元素为 key（键值），起索引作用，第二个元素为 value（实值）</li>
+<li>所有元素都会根据元素的键值自动排序</li>
+</ul>
+<p>优点：</p>
+<ul>
+<li>可以根据 key 值快速找到 value 值</li>
+</ul>
+<p>map/multimap 区别：</p>
+<ul>
+<li>map 不允许容器中有重复 key 值元素。</li>
+<li>multimap 允许容器中有重复 key 值元素。</li>
+</ul>
+<h3 id="3-9-2-map 构造和赋值"><a href="#3-9-2-map 构造和赋值" class="headerlink" title="3.9.2  map 构造和赋值"></a>3.9.2  map 构造和赋值 </h3><p><strong> 函数原型：</strong></p>
+<p><strong>构造：</strong></p>
+<ul>
+<li><code>map&lt;T1, T2&gt; mp;</code>                     //map 默认构造函数: </li>
+<li><code>map(const map &amp;mp);</code>             // 拷贝构造函数</li>
+</ul>
+<p><strong>赋值：</strong></p>
+<ul>
+<li><code>map&amp; operator=(const map &amp;mp);</code>    // 重载等号操作符</li>
+</ul>
+<pre><code class="c++">#include&lt;map&gt;
+
+void printMap(map&lt;int, int&gt;&amp; m) &#123;
+    for (map&lt;int, int&gt;::iterator it = m.begin(); it != m.end(); ++it) &#123;
+        cout &lt;&lt; (*it).first &lt;&lt; &quot; &quot; &lt;&lt; (*it).second &lt;&lt; endl;
+    &#125;
+&#125;
+
+void test1() &#123;
+
+    // 默认构造
+    map&lt;int, int&gt;m;
+    m.insert(pair&lt;int,int&gt;(1, 10));
+    m.insert(pair&lt;int, int&gt;(4, 40));
+    m.insert(pair&lt;int, int&gt;(3, 30));
+    m.insert(pair&lt;int, int&gt;(2, 200));
+
+    printMap(m);
+
+    // 拷贝构造
+    map&lt;int, int&gt;m2(m);
+    printMap(m2);
+
+    // 赋值
+    map&lt;int, int&gt;m3 = m;
+    printMap(m3);
+
+    // 按照 key 取值
+    cout &lt;&lt; m[2] &lt;&lt; endl;  
+
+    // 多层 map
+    map&lt;string, map&lt;int, int&gt;&gt; mm;
+    mm.insert(make_pair(&quot;No1&quot;, m));   //mm[&quot;No1&quot;]=m
+&#125;</code></pre>
+<p>map 取值有三种：[]，find，at</p>
+<ul>
+<li><p>find 有就是有，没有就是没有，需要判断 find 的返回结果，才知道有没有。</p>
+</li>
+<li><p>[] 不管有没有，都是有。因为没有就是 0，字符串就是空。反正就是给它是初始值。如果原先不存在该 key，则插入，如果存在，则覆盖插入。</p>
+</li>
+<li><p>at 用于取值，但它是进行越界检测，这会损失效率。</p>
+<p>相比于 find，能少敲键盘</p>
+<p>相比于[]，更安全</p>
+<p>性能会有损失</p>
+<p>所以常用于待查找的 key 都应该存在的情况，如果查找的 key 不存在，则说明程序有问题了。</p>
+</li>
+</ul>
+<blockquote>
+<p>以上三种虽然都能达到取值的目的，但用法上的些微差别可能导致使用上的 bug，所以一般性的建议如下：</p>
+<p>如果纯粹是查找取值，不要用 [] 操作符，因为它会自动创建不存在的元素 <br> 正因为上面的原因，[]仅用于非 const 的情形下。在 const map 下使用 [] 会导致编译期错误 <br> 如果不确定待查找的值是否存在，且不存在也是合理的，则使用 find，判断返回值是否是 end()<br>如果待查找的值肯定存在，如果不存在就是逻辑上的错误，则使用 at，处理 out_of_range 异常</p>
+</blockquote>
+<p><strong>所以，对 map 根据 key 取值，不要用[]！！！</strong></p>
+<h3 id="3-9-3-map 大小和交换"><a href="#3-9-3-map 大小和交换" class="headerlink" title="3.9.3 map 大小和交换"></a>3.9.3 map 大小和交换 </h3><p> 函数原型：</p>
+<ul>
+<li><code>size();</code>          // 返回容器中元素的数目</li>
+<li><code>empty();</code>        // 判断容器是否为空</li>
+<li><code>swap(st);</code>      // 交换两个集合容器</li>
+</ul>
+<h3 id="3-9-4-map 插入和删除"><a href="#3-9-4-map 插入和删除" class="headerlink" title="3.9.4 map 插入和删除"></a>3.9.4 map 插入和删除 </h3><p><strong> 函数原型：</strong></p>
+<ul>
+<li><code>insert(elem);</code>           // 在容器中插入元素。</li>
+<li><code>clear();</code>                    // 清除所有元素</li>
+<li><code>erase(pos);</code>              // 删除 pos 迭代器所指的元素，返回下一个元素的迭代器。</li>
+<li><code>erase(beg, end);</code>    // 删除区间 [beg,end) 的所有元素 ，返回下一个元素的迭代器。</li>
+<li><code>erase(key);</code>            // 删除容器中值为 key 的元素。</li>
+</ul>
+<h3 id="3-9-5-map 查找和统计"><a href="#3-9-5-map 查找和统计" class="headerlink" title="3.9.5 map 查找和统计"></a>3.9.5 map 查找和统计 </h3><p><strong> 函数原型：</strong></p>
+<ul>
+<li><code>find(key);</code>                  // 查找 key 是否存在，若存在，返回该键的元素的迭代器；若不存在，返回 map.end();</li>
+<li><code>count(key);</code>                // 统计 key 的元素个数，返回 int 整型数据</li>
+</ul>
+<pre><code class="c++">#include&lt;map&gt;
+
+void test1() &#123;
+
+    map&lt;int, int&gt;m;
+    m.insert(make_pair(1, 10));
+    m.insert(make_pair(2, 20));
+    m.insert(make_pair(3, 30));
+    m.insert(make_pair(4, 40));
+
+    map&lt;int, int&gt;::iterator pos = m.find(2);
+    cout &lt;&lt; pos-&gt;second &lt;&lt; endl;
+&#125;</code></pre>
+<h3 id="3-9-6-map 容器排序"><a href="#3-9-6-map 容器排序" class="headerlink" title="3.9.6 map 容器排序"></a>3.9.6 map 容器排序</h3><p>map 排序函数与 set 类似。</p>
+<pre><code class="c++">class SortRule &#123;
+public:
+    bool operator()(int v1, int v2) const &#123;       // 这里加个 const，不然 vs2019 会报错
+        return v1 &gt; v2;
+    &#125;
+&#125;;
+
+void test1() &#123;
+
+    map&lt;int, int, SortRule&gt; m;    //SortRule 指明按照从大到小排列
+
+    m.insert(make_pair(1, 10));
+    m.insert(make_pair(2, 20));
+    m.insert(make_pair(3, 30));
+    m.insert(make_pair(4, 40));
+    m.insert(make_pair(5, 50));
+&#125;</code></pre>
+<h2 id="3-10- 案例 - 员工分组"><a href="#3-10- 案例 - 员工分组" class="headerlink" title="3.10 案例 - 员工分组"></a>3.10 案例 - 员工分组</h2><h3 id="3-10-1- 案例描述"><a href="#3-10-1- 案例描述" class="headerlink" title="3.10.1 案例描述"></a>3.10.1 案例描述</h3><ul>
+<li>公司今天招聘了 10 个员工（ABCDEFGHIJ），10 名员工进入公司之后，需要指派员工在那个部门工作</li>
+<li>员工信息有: 姓名  工资组成；部门分为：策划、美术、研发</li>
+<li>随机给 10 名员工分配部门和工资</li>
+<li>通过 multimap 进行信息的插入  key(部门编号) value(员工)</li>
+<li>分部门显示员工信息</li>
+</ul>
+<h3 id="3-10-2- 代码实现"><a href="#3-10-2- 代码实现" class="headerlink" title="3.10.2 代码实现"></a>3.10.2 代码实现</h3><pre><code class="c++">#include&lt;vector&gt;
+#include&lt;map&gt;
+
+class Worker &#123;
+public:
+    string m_Name;
+    int m_Salary;
+&#125;;
+
+void createWorker(vector&lt;Worker&gt;&amp; v) &#123;
+    string nameseed = &quot;ABCDEFGH&quot;;
+    for (int i = 0; i &lt; nameseed.size(); ++i) &#123;
+        Worker worker;
+        worker.m_Name = &quot; 员工 &quot;;
+        worker.m_Name += nameseed[i];
+        worker.m_Salary = rand() % 10000 + 10000;
+
+        v.push_back(worker);
+    &#125;
+&#125;
+void setGroup(vector&lt;Worker&gt;&amp; v, multimap&lt;int, Worker&gt;&amp; m) &#123;
+
+    for (vector&lt;Worker&gt;::iterator it = v.begin(); it != v.end(); ++it) &#123;
+        int dpart = rand() % 3 + 1;
+        m.insert(pair&lt;int, Worker&gt;(dpart, *it));
+
+    &#125;
+&#125;
+
+void showWorkerByGroup(multimap&lt;int, Worker&gt;&amp; m) &#123;
+
+    for (int i = 1; i &lt; 4; ++i) &#123;
+        switch (i)
+        &#123;
+        case 1:
+            cout &lt;&lt; &quot; 策划部门员工：&quot; &lt;&lt; endl;
+            break;
+        case 2:
+            cout &lt;&lt; &quot; 美术部门员工：&quot; &lt;&lt; endl;
+            break;
+        case 3:
+            cout &lt;&lt; &quot; 研发部门员工：&quot; &lt;&lt; endl;
+            break;
+        default:
+            break;
+        &#125;
+        multimap&lt;int, Worker&gt;::iterator pos = m.find(i);
+        int num = m.count(i);
+        int index = 0;
+        for (; pos != m.end() &amp;&amp; index &lt; num; ++pos, index++) &#123;
+            cout &lt;&lt; pos-&gt;second.m_Name &lt;&lt; &quot; &quot; &lt;&lt; pos-&gt;second.m_Salary &lt;&lt; endl;
+        &#125;
+        cout &lt;&lt; endl;
+    &#125;
+&#125;
+
+void test1() &#123;
+
+    srand((unsigned int)time(NULL));
+
+    vector&lt;Worker&gt; vWorker;
+    createWorker(vWorker);
+
+    multimap&lt;int, Worker&gt;mWorker;
+    setGroup(vWorker, mWorker);
+
+    showWorkerByGroup(mWorker);
+
+    /*for (vector&lt;Worker&gt;::iterator it = vWorker.begin(); it != vWorker.end(); ++it) &#123;
+        cout &lt;&lt; it-&gt;m_Name &lt;&lt; &quot; &quot; &lt;&lt; it-&gt;m_Salary &lt;&lt; endl;
+    &#125;*/    
+&#125;</code></pre>
+<h1 id="四、STL- 函数对象"><a href="# 四、STL- 函数对象" class="headerlink" title="四、STL- 函数对象"></a>四、STL- 函数对象 </h1><h2 id="4-1- 函数对象"><a href="#4-1- 函数对象" class="headerlink" title="4.1 函数对象"></a>4.1 函数对象</h2><h3 id="4-1-1- 函数对象概念"><a href="#4-1-1- 函数对象概念" class="headerlink" title="4.1.1 函数对象概念"></a>4.1.1 函数对象概念</h3><p> 概念：</p>
+<ul>
+<li>重载函数调用操作符的类，其对象常称为函数对象。</li>
+<li>函数对象使用重载的 () 时，行为类似函数调用，也叫仿函数。</li>
+</ul>
+<p>本质：函数对象（仿函数）是一个类，不是一个函数。</p>
+<h3 id="4-1-2- 函数对象使用"><a href="#4-1-2- 函数对象使用" class="headerlink" title="4.1.2 函数对象使用"></a>4.1.2 函数对象使用 </h3><p> 特点：</p>
+<ul>
+<li><p>函数对象在使用时，可以像普通函数那样调用，可以有参数，可以有返回值</p>
+<pre><code class="c++">// 函数对象（仿函数）
+class MyAdd &#123;
+public:
+    int operator()(int v1, int v2) &#123;
+        return v1 + v2;
+    &#125;
+&#125;;
+
+void test1() &#123;
+
+    MyAdd add;
+    int ret = add(10, 20);  // 类对象的调用类似函数
+    cout &lt;&lt; ret &lt;&lt; endl;
+&#125;</code></pre>
+</li>
+<li><p>函数对象超出普通函数的概念，函数对象可以有自己的状态</p>
+<pre><code class="c++">class MyPrint &#123;
+public:
+    MyPrint() &#123;
+        this-&gt;count = 0;
+    &#125;
+    void operator()(string test) &#123;
+        cout &lt;&lt; test &lt;&lt; endl;
+        this-&gt;count++;
+    &#125;
+    int count;
+&#125;;
+
+void test1() &#123;
+
+    MyPrint print;
+    print(&quot;hello world&quot;);
+    print(&quot;hello world&quot;);
+    print(&quot;hello world&quot;);
+
+    cout &lt;&lt; &quot;print 调用次数:&quot; &lt;&lt; print.count &lt;&lt; endl;
+
+&#125;</code></pre>
+<blockquote>
+<p>这里仿函数可以记录自己调用的次数</p>
+</blockquote>
+</li>
+<li><p>函数对象可以作为参数传递</p>
+<pre><code class="c++">class MyPrint &#123;
+public:
+    MyPrint() &#123;
+        this-&gt;count = 0;
+    &#125;
+    void operator()(string test) &#123;
+        cout &lt;&lt; test &lt;&lt; endl;
+        this-&gt;count++;
+    &#125;
+    int count;
+&#125;;
+
+void doPrint(MyPrint&amp; mp, string test) &#123;
+    mp(test);
+&#125;
+void test1() &#123;
+
+    MyPrint print;
+
+    doPrint(print, &quot;Hello C++&quot;);   //here
+
+&#125;</code></pre>
+</li>
+</ul>
+<h2 id="4-2- 谓词 Pred"><a href="#4-2- 谓词 Pred" class="headerlink" title="4.2 谓词 Pred"></a>4.2 谓词 Pred</h2><p>返回 bool 类型的仿函数称为谓词:</p>
+<ul>
+<li>如果 operator()接受一个参数，那么就叫一元谓词</li>
+<li>如果 operator()接受两个参数，那么就叫二元谓词</li>
+</ul>
+<pre><code class="c++">#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+
+//1. 一元谓词
+struct GreaterFive&#123;
+    bool operator()(int val) &#123;
+        return val &gt; 5;
+    &#125;
+&#125;;
+
+void test01() &#123;
+
+    vector&lt;int&gt; v;
+    for (int i = 0; i &lt; 10; i++)
+    &#123;
+        v.push_back(i);
+    &#125;
+
+    // 利用 find_if 标准算法
+    vector&lt;int&gt;::iterator it = find_if(v.begin(), v.end(), GreaterFive());
+    if (it == v.end()) &#123;
+        cout &lt;&lt; &quot; 没找到!&quot; &lt;&lt; endl;
+    &#125;
+    else &#123;
+        cout &lt;&lt; &quot; 找到:&quot; &lt;&lt; *it &lt;&lt; endl;
+    &#125;
+
+&#125;
+
+// 二元谓词
+class MyCompare
+&#123;
+public:
+    bool operator()(int num1, int num2)
+    &#123;
+        return num1 &gt; num2;
+    &#125;
+&#125;;
+void test()&#123;
+    vector&lt;int&gt; v;
+    v.push_back(10);
+    v.push_back(20);
+    sort(v.begin(), v.end(), MyCompare);
+&#125;</code></pre>
+<h2 id="4-3- 内建函数对象"><a href="#4-3- 内建函数对象" class="headerlink" title="4.3 内建函数对象"></a>4.3 内建函数对象</h2><h3 id="4-3-1- 基本概念"><a href="#4-3-1- 基本概念" class="headerlink" title="4.3.1 基本概念"></a>4.3.1 基本概念</h3><p>STL 内建了一些函数对象，其中包括：</p>
+<ul>
+<li>算术仿函数</li>
+<li>关系仿函数</li>
+<li>逻辑仿函数</li>
+</ul>
+<p>用法：</p>
+<ul>
+<li>这些仿函数所产生的对象，用法和一般函数完全相同</li>
+<li>使用内建函数对象，需要引入头文件<code>#include&lt;functional&gt;</code></li>
+</ul>
+<h3 id="4-3-2- 算术仿函数"><a href="#4-3-2- 算术仿函数" class="headerlink" title="4.3.2 算术仿函数"></a>4.3.2 算术仿函数 </h3><p><strong> 功能描述：</strong></p>
+<ul>
+<li>实现四则运算</li>
+<li>其中 negate 是一元运算，其他都是二元运算</li>
+</ul>
+<p><strong>仿函数原型：</strong></p>
+<ul>
+<li><code>template&lt;class T&gt; T plus&lt;T&gt;</code>                // 加法仿函数</li>
+<li><code>template&lt;class T&gt; T minus&lt;T&gt;</code>              // 减法仿函数</li>
+<li><code>template&lt;class T&gt; T multiplies&lt;T&gt;</code>    // 乘法仿函数</li>
+<li><code>template&lt;class T&gt; T divides&lt;T&gt;</code>         // 除法仿函数</li>
+<li><code>template&lt;class T&gt; T modulus&lt;T&gt;</code>         // 取模仿函数</li>
+<li><code>template&lt;class T&gt; T negate&lt;T&gt;</code>           // 取反仿函数</li>
+</ul>
+<pre><code class="c++">#include&lt;functional&gt;
+void test1() &#123;
+
+    negate&lt;int&gt; ne;               // 取反
+    cout &lt;&lt; ne(50) &lt;&lt; endl;
+
+    plus&lt;int&gt; p;                  // 加法
+    cout &lt;&lt; p(10, 20) &lt;&lt; endl;
+&#125;</code></pre>
+<h3 id="4-3-3- 关系仿函数"><a href="#4-3-3- 关系仿函数" class="headerlink" title="4.3.3 关系仿函数"></a>4.3.3 关系仿函数 </h3><p><strong> 功能描述：</strong></p>
+<ul>
+<li>实现关系对比</li>
+</ul>
+<p><strong>仿函数原型：</strong></p>
+<ul>
+<li><code>template&lt;class T&gt; bool equal_to&lt;T&gt;</code>                    // 等于</li>
+<li><code>template&lt;class T&gt; bool not_equal_to&lt;T&gt;</code>            // 不等于</li>
+<li><code>template&lt;class T&gt; bool greater&lt;T&gt;</code>                      // 大于</li>
+<li><code>template&lt;class T&gt; bool greater_equal&lt;T&gt;</code>          // 大于等于</li>
+<li><code>template&lt;class T&gt; bool less&lt;T&gt;</code>                           // 小于</li>
+<li><code>template&lt;class T&gt; bool less_equal&lt;T&gt;</code>               // 小于等于</li>
+</ul>
+<pre><code class="c++">#include&lt;algorithm&gt;
+#include&lt;vector&gt;
+#include&lt;functional&gt;
+
+
+void test1() &#123;
+
+    vector&lt;int&gt; v;
+    v.push_back(10);
+    v.push_back(30);
+    v.push_back(20);
+
+    sort(v.begin(), v.end(), greater&lt;int&gt;());    // 内建的 greater&lt;int&gt;()函数对象，改变默认的排序方式
+
+    for (vector&lt;int&gt;::iterator it = v.begin(); it != v.end(); ++it) &#123;
+        cout &lt;&lt; *it &lt;&lt; endl;
+    &#125;
+&#125;</code></pre>
+<h3 id="4-3-4- 逻辑仿函数"><a href="#4-3-4- 逻辑仿函数" class="headerlink" title="4.3.4 逻辑仿函数"></a>4.3.4 逻辑仿函数 </h3><p><strong> 功能描述：</strong></p>
+<ul>
+<li>实现逻辑运算</li>
+</ul>
+<p><strong>函数原型：</strong></p>
+<ul>
+<li><code>template&lt;class T&gt; bool logical_and&lt;T&gt;</code>              // 逻辑与</li>
+<li><code>template&lt;class T&gt; bool logical_or&lt;T&gt;</code>                // 逻辑或</li>
+<li><code>template&lt;class T&gt; bool logical_not&lt;T&gt;</code>              // 逻辑非</li>
+</ul>
+<pre><code class="c++">#include&lt;algorithm&gt;
+#include&lt;vector&gt;
+#include&lt;functional&gt;
+
+void test1() &#123;
+
+    vector&lt;bool&gt; v;
+    v.push_back(true);
+    v.push_back(false);
+    v.push_back(true);
+
+    // 利用逻辑非，将容器 v 搬运到容器 v2 中，并执行取反操作
+    vector&lt;bool&gt; v2;
+    v2.resize(v.size());
+    transform(v.begin(), v.end(), v2.begin(), logical_not&lt;bool&gt;());
+
+    for (vector&lt;bool&gt;::iterator it = v2.begin(); it != v2.end(); ++it) &#123;
+        cout &lt;&lt; *it &lt;&lt; endl;
+    &#125;
+&#125;</code></pre>
+<blockquote>
+<p>此部分内容仅做了解即可，实际使用较少</p>
+</blockquote>
+<h1 id="五、STL 常用算法"><a href="# 五、STL 常用算法" class="headerlink" title="五、STL 常用算法"></a>五、STL 常用算法 </h1><p><strong> 概述</strong>:</p>
+<ul>
+<li><p>算法主要是由头文件 <code>&lt;algorithm&gt;</code> <code>&lt;functional&gt;</code> <code>&lt;numeric&gt;</code> 组成。</p>
+</li>
+<li><p><code>&lt;algorithm&gt;</code>是所有 STL 头文件中最大的一个，范围涉及到比较、 交换、查找、遍历操作、复制、修改等等</p>
+</li>
+<li><p><code>&lt;numeric&gt;</code>体积很小，只包括几个在序列上面进行简单数学运算的模板函数</p>
+</li>
+<li><p><code>&lt;functional&gt;</code>定义了一些模板类, 用以声明函数对象。</p>
+</li>
+</ul>
+<h2 id="5-1- 常用遍历算法"><a href="#5-1- 常用遍历算法" class="headerlink" title="5.1 常用遍历算法"></a>5.1 常用遍历算法 </h2><p><strong> 算法简介：</strong></p>
+<ul>
+<li><code>for_each</code>     // 遍历容器</li>
+<li><code>transform</code>   // 搬运容器到另一个容器中</li>
+</ul>
+<p>这两个算法包含在 <code>&lt;algorithm&gt;</code> 中。</p>
+<h3 id="5-1-1-for-each"><a href="#5-1-1-for-each" class="headerlink" title="5.1.1 for_each"></a>5.1.1 for_each</h3><p><strong>功能描述：</strong></p>
+<ul>
+<li>实现遍历容器</li>
+</ul>
+<p><strong>函数原型：</strong></p>
+<ul>
+<li><p><code>for_each(iterator_beg, iterator_end, _func);</code></p>
+<p>// 遍历算法 遍历容器元素</p>
+<p>// beg 开始迭代器</p>
+<p>// end 结束迭代器</p>
+<p>// _func 函数或者函数对象</p>
+</li>
+</ul>
+<pre><code class="c++">#include&lt;algorithm&gt;
+#include&lt;vector&gt;
+
+// 普通函数
+void print1(int val) &#123;
+    cout &lt;&lt; val &lt;&lt; &quot; &quot;;
+&#125;
+
+// 仿函数
+class print2 &#123;
+public:
+    void operator()(int val) &#123;
+        cout &lt;&lt; val &lt;&lt; &quot; &quot;;
+    &#125;
+&#125;;
+
+void test1() &#123;
+
+    vector&lt;int&gt; v;
+    v.push_back(10);
+    v.push_back(30);
+    v.push_back(20);
+    v.push_back(40);
+
+    for_each(v.begin(), v.end(), print1);  // 传入普通函数，遍历出每个元素 
+
+    cout &lt;&lt; endl;
+
+    for_each(v.begin(), v.end(), print2());  // 传入仿函数()，遍历出每个元素
+&#125;</code></pre>
+<h3 id="5-1-2-transform"><a href="#5-1-2-transform" class="headerlink" title="5.1.2 transform"></a>5.1.2 transform</h3><p><strong>功能描述：</strong></p>
+<ul>
+<li>搬运容器到另一个容器中</li>
+</ul>
+<p><strong>函数原型：</strong></p>
+<ul>
+<li><code>transform(iterator_beg1, iterator_end1, iterator_beg2, _func);</code></li>
+</ul>
+<p>//beg1 源容器开始迭代器</p>
+<p>//end1 源容器结束迭代器</p>
+<p>//beg2 目标容器开始迭代器</p>
+<p>//_func 函数或者函数对象</p>
+<pre><code class="c++">#include&lt;algorithm&gt;
+#include&lt;vector&gt;
+
+void print1(int val) &#123;
+    cout &lt;&lt; val &lt;&lt; &quot; &quot;;
+&#125;
+
+int trans(int v) &#123;
+    return v;
+&#125;
+
+void test1() &#123;
+
+    vector&lt;int&gt; v;
+    v.push_back(10);
+    v.push_back(30);
+    v.push_back(20);
+    v.push_back(40);
+
+    vector&lt;int&gt; v2;
+    v2.resize(v.size());  // 先要开辟空间
+    transform(v.begin(), v.end(), v2.begin(), trans);
+
+    for_each(v2.begin(), v2.end(), print1);
+&#125;</code></pre>
+<h2 id="5-2- 常用查找算法"><a href="#5-2- 常用查找算法" class="headerlink" title="5.2 常用查找算法"></a>5.2 常用查找算法 </h2><p><strong> 算法简介：</strong></p>
+<ul>
+<li><p><code>find(iterator beg, iterator end, value);</code></p>
+<p>// 按值查找元素，找到返回指定位置迭代器，找不到返回结束迭代器位置</p>
+<p>// beg 开始迭代器</p>
+<p>// end 结束迭代器</p>
+<p>// value 查找的元素</p>
+</li>
+<li><p><code>find_if(iterator beg, iterator end, _Pred);</code></p>
+<p>// 按值查找元素，找到返回指定位置迭代器，找不到返回结束迭代器位置</p>
+<p>// beg 开始迭代器</p>
+<p>// end 结束迭代器</p>
+<p>// _Pred 函数或者谓词（返回 bool 类型的仿函数）</p>
+</li>
+<li><p><code>adjacent_find(iterator beg, iterator end);</code></p>
+<p>// 查找相邻重复元素, 返回相邻元素的第一个位置的迭代器</p>
+<p>// beg 开始迭代器</p>
+<p>// end 结束迭代器</p>
+</li>
+<li><p><code>bool binary_search(iterator beg, iterator end, value);</code></p>
+<p>// 查找指定的元素，查到 返回 true  否则 false</p>
+<p>// 注意: 在 <strong> 无序序列中不可用</strong></p>
+<p>// beg 开始迭代器</p>
+<p>// end 结束迭代器</p>
+<p>// value 查找的元素</p>
+</li>
+<li><p><code>count(iterator beg, iterator end, value);</code></p>
+<p>// 统计元素出现次数，返回 int 类型数据</p>
+<p>// beg 开始迭代器</p>
+<p>// end 结束迭代器</p>
+<p>// value 统计的元素</p>
+</li>
+<li><p><code>count_if(iterator beg, iterator end, _Pred);</code></p>
+<p>// 按条件统计元素出现次数，返回 int 类型数据</p>
+<p>// beg 开始迭代器</p>
+<p>// end 结束迭代器</p>
+<p>// _Pred 谓词</p>
+</li>
+</ul>
+<p>一个 <code>find_if</code> 的例子：</p>
+<pre><code class="c++">class Greater30 &#123;
+public:
+    bool operator()(int val) &#123;
+        return val &gt; 30;
+    &#125;
+&#125;;
+
+void test1() &#123;
+
+    vector&lt;int&gt; v;
+    v.push_back(10);
+    v.push_back(30);
+    v.push_back(20);
+    v.push_back(40);
+
+    vector&lt;int&gt;::iterator it=find_if(v.begin(), v.end(), Greater30());
+    if (it == v.end()) &#123;
+        cout &lt;&lt; &quot; 没找到 &quot; &lt;&lt; endl;
+    &#125;
+    else &#123;
+        cout &lt;&lt; &quot; 找到 &quot; &lt;&lt; endl;
+    &#125;
+    cout &lt;&lt; *it &lt;&lt; endl;  // 输出 30，找到第一个满足条件的即停止查找
+&#125;</code></pre>
+<h2 id="5-3- 常用排序算法"><a href="#5-3- 常用排序算法" class="headerlink" title="5.3 常用排序算法"></a>5.3 常用排序算法 </h2><p><strong> 算法简介：</strong></p>
+<ul>
+<li><p><code>sort(iterator beg, iterator end, _Pred);</code></p>
+<p>// 排序</p>
+<p>//  beg    开始迭代器</p>
+<p>//  end    结束迭代器</p>
+<p>// _Pred  谓词</p>
+</li>
+<li><p><code>random_shuffle(iterator beg, iterator end);</code></p>
+<p>// 指定范围内的元素随机调整次序</p>
+<p>// beg 开始迭代器</p>
+<p>// end 结束迭代器</p>
+</li>
+<li><p><code>merge(iterator beg1, iterator end1, iterator beg2, iterator end2, iterator dest);</code></p>
+<p>// 容器元素合并，并存储到另一容器中</p>
+<p>// 注意: 两个容器必须是 <strong> 有序的</strong></p>
+<p>// beg1   容器 1 开始迭代器<br>// end1   容器 1 结束迭代器<br>// beg2   容器 2 开始迭代器<br>// end2   容器 2 结束迭代器<br>// dest    目标容器开始迭代器</p>
+</li>
+<li><p><code>reverse(iterator beg, iterator end);</code></p>
+<p>// 反转指定范围的元素</p>
+<p>// beg 开始迭代器</p>
+<p>// end 结束迭代器</p>
+</li>
+</ul>
+<h2 id="5-4- 常用拷贝和替换算法"><a href="#5-4- 常用拷贝和替换算法" class="headerlink" title="5.4 常用拷贝和替换算法"></a>5.4 常用拷贝和替换算法 </h2><p><strong> 算法简介：</strong></p>
+<ul>
+<li><p><code>copy(iterator beg, iterator end, iterator dest);</code></p>
+<p>// 按值查找元素，找到返回指定位置迭代器，找不到返回结束迭代器位置</p>
+<p>// beg  开始迭代器</p>
+<p>// end  结束迭代器</p>
+<p>// dest 目标起始迭代器</p>
+</li>
+<li><p><code>replace(iterator beg, iterator end, oldvalue, newvalue);</code></p>
+<p>// 将区间内旧元素 替换成 新元素</p>
+<p>// beg 开始迭代器</p>
+<p>// end 结束迭代器</p>
+<p>// oldvalue 旧元素</p>
+<p>// newvalue 新元素</p>
+</li>
+<li><p><code>replace_if(iterator beg, iterator end, _pred, newvalue);</code></p>
+<p>// 按条件替换元素，满足条件的替换成指定元素</p>
+<p>// beg 开始迭代器</p>
+<p>// end 结束迭代器</p>
+<p>// _pred 谓词</p>
+<p>// newvalue 替换的新元素</p>
+</li>
+<li><p><code>swap(container c1, container c2);</code></p>
+<p>// 互换两个容器的元素</p>
+<p>// c1 容器 1</p>
+<p>// c2 容器 2</p>
+</li>
+</ul>
+<h2 id="5-5- 常用算术生成算法"><a href="#5-5- 常用算术生成算法" class="headerlink" title="5.5 常用算术生成算法"></a>5.5 常用算术生成算法 </h2><p><strong> 注意：</strong></p>
+<ul>
+<li>算术生成算法属于小型算法，使用时包含的头文件为 <code>#include &lt;numeric&gt;</code></li>
+</ul>
+<p><strong>算法简介：</strong></p>
+<ul>
+<li><p><code>accumulate(iterator beg, iterator end, value);</code></p>
+<p>// 计算容器元素累计总和，返回总和</p>
+<p>// beg 开始迭代器</p>
+<p>// end 结束迭代器</p>
+<p>// value 起始值</p>
+</li>
+<li><p><code>fill(iterator beg, iterator end, value);</code></p>
+<p>// 向容器中填充元素</p>
+<p>// beg 开始迭代器</p>
+<p>// end 结束迭代器</p>
+<p>// value 填充的值</p>
+</li>
+</ul>
+<h2 id="5-6- 常用集合算法"><a href="#5-6- 常用集合算法" class="headerlink" title="5.6 常用集合算法"></a>5.6 常用集合算法 </h2><p><strong> 算法简介：</strong></p>
+<ul>
+<li><p><code>set_intersection(iterator beg1, iterator end1, iterator beg2, iterator end2, iterator dest);</code></p>
+<p>// 求两个集合的交集</p>
+<p>// <strong>注意: 两个集合必须是有序序列</strong></p>
+<p>// beg1 容器 1 开始迭代器 <br>// end1 容器 1 结束迭代器<br>// beg2 容器 2 开始迭代器<br>// end2 容器 2 结束迭代器<br>// dest 目标容器开始迭代器，目标容器开辟空间需要从<strong> 两个容器中取小值</strong></p>
+</li>
+<li><p><code>set_union(iterator beg1, iterator end1, iterator beg2, iterator end2, iterator dest);</code></p>
+<p>// 求两个集合的并集</p>
+<p>// <strong>注意: 两个集合必须是有序序列</strong></p>
+<p>// beg1 容器 1 开始迭代器 <br>// end1 容器 1 结束迭代器<br>// beg2 容器 2 开始迭代器<br>// end2 容器 2 结束迭代器<br>// dest 目标容器开始迭代器，目标容器开辟空间需要<strong> 两个容器相加</strong></p>
+</li>
+<li><p><code>set_difference(iterator beg1, iterator end1, iterator beg2, iterator end2, iterator dest);</code></p>
+<p>// 求两个集合的差集</p>
+<p>// <strong>注意: 两个集合必须是有序序列</strong></p>
+<p>// beg1 容器 1 开始迭代器 <br>// end1 容器 1 结束迭代器<br>// beg2 容器 2 开始迭代器<br>// end2 容器 2 结束迭代器<br>// dest 目标容器开始迭代器，目标容器开辟空间需要从<strong> 两个容器取较大值</strong></p>
+</li>
+</ul>
+<h1 id="六、异常处理"><a href="# 六、异常处理" class="headerlink" title="六、异常处理"></a>六、异常处理</h1><p> 程序有时会遇到运行阶段错误，导致程序无法正常地运行下去，C++ 为此提供了异常处理工具。其基本思想是：函数 A 在执行过程中发现异常时可以不加处理，而只是”拋出一个异常”给 A 的调用者，函数 B 可以选择捕获 A 拋出的异常进行处理，也可以选择置之不理。如果置之不理，这个异常就会被拋给 B 的调用者，以此类推。如果一层层的函数都不处理异常，异常最终会被拋给最外层的 main 函数。main 函数应该处理异常。如果 main 函数也不处理异常，那么程序就会立即异常地中止。</p>
+<h2 id="6-1- 基本的异常处理"><a href="#6-1- 基本的异常处理" class="headerlink" title="6.1 基本的异常处理"></a>6.1 基本的异常处理 </h2><p><strong>1、调用 std::abort() 函数</strong></p>
+<pre><code class="c++">using namespace std;
+
+double cal(double a, double b) &#123;
+    if (a == -b) &#123;
+        cout &lt;&lt; &quot; 两数之和不可以等于 0&quot; &lt;&lt; endl;
+        abort();       // 直接调用
+    &#125;
+    else &#123;
+        return 1 / (a + b);
+    &#125;
+&#125;</code></pre>
+<p>当运行到 abort()，程序会终止，避免崩溃。</p>
+<p> <strong>2、返回错误码</strong></p>
+<p>可以使用指针 / 引用参数来将值返回给调用程序，并使用函数的返回值来指出成功还是失败。</p>
+<pre><code class="c++">bool cal(double a, double b, double * ans) &#123;
+    if (a == -b) &#123;
+        *ans = 0.0;
+        return false;
+    &#125;
+    else &#123;
+        *ans = 1 / (a + b);
+        return true;
+    &#125;
+&#125;
+
+void test1() &#123;
+
+    double x, y, ans;
+    cout &lt;&lt; &quot; 请输入 x，y 的值 &quot; &lt;&lt; endl;
+    cin &gt;&gt; x &gt;&gt; y;
+
+    if (cal(x, y, &amp;ans)) &#123;
+        cout &lt;&lt; ans &lt;&lt; endl;
+    &#125;
+    else &#123;
+        cout &lt;&lt; &quot;error code 1&quot; &lt;&lt; endl;
+    &#125;
+&#125;</code></pre>
+<h2 id="6-2- 异常机制"><a href="#6-2- 异常机制" class="headerlink" title="6.2 异常机制"></a>6.2 异常机制</h2><p>C++ 异常是对程序运行过程中发生异常情况的一种响应，对异常的处理分为 3 个组成部分：</p>
+<ul>
+<li>引发异常</li>
+<li>使用处理程序捕获异常</li>
+<li>使用 try 块</li>
+</ul>
+<p>C++ 异常处理涉及到三个关键字：<strong>try、catch、throw</strong>。</p>
+<p>如果有一个块抛出一个异常，捕获异常的方法会使用 <strong>try</strong> 和 <strong>catch</strong> 关键字。try 块中放置可能抛出异常的代码，try 块中的代码被称为保护代码。使用 try/catch 语句的语法如下所示：</p>
+<p><strong>捕获异常</strong></p>
+<pre><code class="c++">// 捕获异常
+
+try &#123;
+   // 保护代码
+&#125;
+catch(ExceptionName e1)
+&#123;
+   // 处理 ExceptionName 异常的代码
+&#125;
+catch(ExceptionName e2)
+&#123;
+   // 处理 ExceptionName 异常的代码
+&#125;</code></pre>
+<p>如果您想让 catch 块能够处理 try 块抛出的任何类型的异常，则必须在异常声明的括号内使用省略号 …，如下所示：</p>
+<pre><code class="c++">try &#123;&#125;
+catch (...)&#123;&#125;  // 捕获任何异常</code></pre>
+<p><strong>抛出异常</strong></p>
+<p>我们可以使用 <strong>throw</strong> 语句在代码块中的任何地方抛出异常。throw 语句的操作数可以是任意的表达式，表达式的结果的类型决定了抛出的异常的类型。</p>
+<pre><code class="c++">double division(int a, int b)
+&#123;
+   if(b == 0)
+   &#123;
+      throw &quot;Division by zero condition!&quot;;  // 抛出异常
+   &#125;
+   return (a/b);
+&#125;</code></pre>
+<h2 id="6-3- 案例"><a href="#6-3- 案例" class="headerlink" title="6.3 案例"></a>6.3 案例</h2><pre><code class="c++">#include &lt;iostream&gt;
+using namespace std;
+
+double division(int a, int b)
+&#123;
+   if(b == 0)
+   &#123;
+      throw &quot;Division by zero condition!&quot;;
+   &#125;
+   return (a/b);
+&#125;
+
+int main ()
+&#123;
+   int x = 50;
+   int y = 0;
+   double z = 0;
+
+   try &#123;
+     z = division(x, y);
+     cout &lt;&lt; z &lt;&lt; endl;
+   &#125;catch (const char* msg) &#123;
+     cerr &lt;&lt; msg &lt;&lt; endl;
+   &#125;
+
+   return 0;
+&#125;</code></pre>
+<p>由于我们抛出了一个类型为字符串数组（”Division by zero condition!”）的异常，因此，当捕获该异常时，我们必须在 catch 块中使用 const char* 接收。</p>
+<h2 id="6-4- 异常类型"><a href="#6-4- 异常类型" class="headerlink" title="6.4 异常类型"></a>6.4 异常类型</h2><h3 id="6-4-1- 标准异常"><a href="#6-4-1- 标准异常" class="headerlink" title="6.4.1 标准异常"></a>6.4.1 标准异常</h3><p>C++ 提供了一系列标准的异常，定义在 <code>&lt;exception&gt;</code> 中。</p>
+<p>我们可以在程序中使用这些标准的异常。</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20220210163206236.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th align="left">异常</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>std::exception</strong></td>
+<td align="left">该异常是所有标准 C++ 异常的父类。</td>
+</tr>
+<tr>
+<td align="left">std::bad_alloc</td>
+<td align="left">该异常可以通过 <strong>new</strong> 抛出。</td>
+</tr>
+<tr>
+<td align="left">std::bad_cast</td>
+<td align="left">该异常可以通过 <strong>dynamic_cast</strong> 抛出。</td>
+</tr>
+<tr>
+<td align="left">std::bad_exception</td>
+<td align="left">这在处理 C++ 程序中无法预期的异常时非常有用。</td>
+</tr>
+<tr>
+<td align="left">std::bad_typeid</td>
+<td align="left">该异常可以通过 <strong>typeid</strong> 抛出。</td>
+</tr>
+<tr>
+<td align="left"><strong>std::logic_error</strong></td>
+<td align="left">理论上可以通过读取代码来检测到的异常。</td>
+</tr>
+<tr>
+<td align="left">std::domain_error</td>
+<td align="left">当使用了一个无效的数学域时，会抛出该异常。</td>
+</tr>
+<tr>
+<td align="left">std::invalid_argument</td>
+<td align="left">当使用了无效的参数时，会抛出该异常。</td>
+</tr>
+<tr>
+<td align="left">std::length_error</td>
+<td align="left">当创建了太长的 std::string 时，会抛出该异常。</td>
+</tr>
+<tr>
+<td align="left">std::out_of_range</td>
+<td align="left">该异常可以通过方法抛出，例如 std::vector 和 std::bitset&lt;&gt;::operator<a href=""></a>。</td>
+</tr>
+<tr>
+<td align="left"><strong>std::runtime_error</strong></td>
+<td align="left">理论上不可以通过读取代码来检测到的异常。</td>
+</tr>
+<tr>
+<td align="left">std::overflow_error</td>
+<td align="left">当发生数学上溢时，会抛出该异常。</td>
+</tr>
+<tr>
+<td align="left">std::range_error</td>
+<td align="left">当尝试存储超出范围的值时，会抛出该异常。</td>
+</tr>
+<tr>
+<td align="left">std::underflow_error</td>
+<td align="left">当发生数学下溢时，会抛出该异常。</td>
+</tr>
+</tbody></table>
+<p>下面举一个 <code>std::bad_alloc</code> 例子：</p>
+<pre><code class="c++">#include&lt;iostream&gt;
+using namespace std;
+
+int main()
+&#123;
+    try &#123;
+        char* p = new char[0x7fffffff];  // 无法分配这么多空间，会抛出异常
+    &#125;
+    catch (exception&amp; e) &#123;
+        cout &lt;&lt; e.what() &lt;&lt; endl;
+    &#125;
+    catch (bad_alloc&amp; e) &#123;
+        cout &lt;&lt; e.what() &lt;&lt; endl;
+    &#125;
+    return 0;
+&#125;
+// 第 8 行的 catch 捕获到了 bad allocation 输出，第二次 catch 为空（即使就是 bad_alloc 类型的异常）</code></pre>
+<blockquote>
+<p><strong>what()</strong> 是异常类提供的一个公共方法，将返回异常产生的原因</p>
+<p>异常只捕获一次</p>
+</blockquote>
+<h3 id="6-4-2- 自定义异常"><a href="#6-4-2- 自定义异常" class="headerlink" title="6.4.2 自定义异常"></a>6.4.2 自定义异常 </h3><p> 可以通过继承和重载 <strong>exception</strong> 类来定义新的异常。</p>
+<pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;exception&gt;
+using namespace std;
+
+class MyException : public exception
+&#123;
+public:
+    const char* what() const throw ()
+    &#123;
+        return &quot;C++ Exception&quot;;
+    &#125;
+&#125;;
+
+int main()
+&#123;
+    try
+    &#123;
+        throw MyException();
+        cout &lt;&lt; &quot;look here&quot; &lt;&lt; endl;
+    &#125;
+    catch (MyException&amp; e)
+    &#123;
+        cout &lt;&lt; &quot;MyException caught&quot; &lt;&lt; endl;
+        cout &lt;&lt; e.what() &lt;&lt; endl;
+    &#125;
+    catch (exception&amp; e)
+    &#123;
+        // 其他的错误
+    &#125;
+&#125;
+/* 输出
+MyException caught
+C++ Exception
+*/</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 欢迎各位看官及技术大佬前来交流指导呀，可以邮件至 jqiange@yeah.net </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2021 Jqiange
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Scrapy-Redis 分布式爬虫 | jqiange</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="Scrapy-Redis 分布式爬虫 | jqiange">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="人畜无害的姜小强">
+<meta property="og:url" content="https://jqiange.github.io/about/index.html">
+<meta property="og:site_name" content="jqiange">
+<meta property="og:description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+<meta property="article:published_time" content="2020-02-18T08:21:04.000Z">
+<meta property="article:modified_time" content="2025-12-13T05:23:10.695Z">
+<meta property="article:author" content="姜小强">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+
+
+<link rel="icon" href="/img/jqiange.png">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/jqiange.png"/>
+</a>
+<div class="author">
+    <span>姜小强</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/jqiange"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(58)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(9)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据库">
+                        
+                        数据库
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="每日一学">
+                        
+                        每日一学
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="爬虫">
+                        
+                        爬虫
+                        <small>(10)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="前端">
+                        
+                        前端
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="深度学习">
+                        
+                        深度学习
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据分析">
+                        
+                        数据分析
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="chip">
+                        
+                        chip
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="CPP">
+                        
+                        CPP
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Linux">
+                        
+                        Linux
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="python">
+                        
+                        python
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="58">
+<input type="hidden" id="yelog_site_word_count" value="251.9k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSS-Xpath</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Markdown</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Matplotlib</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Mysql</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Numpy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pandas</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pip</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pyecharts</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pygal</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pymysql-ORM</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>RE</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Redis</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Scrapy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Seaborn</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Selenium</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>yield</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="全部文章 python "
+           href="/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%A6%E8%A7%A3/"
+           data-tag="RE"
+           data-author="" >
+            <span class="post-title" title="正则表达式详解">正则表达式详解</span>
+            <span class="post-date" title="2020-02-26 09:25:46">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/tcl%E4%B8%8Eopc/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 与 opc">tcl 与 opc</span>
+            <span class="post-date" title="2025-09-24 13:36:07">2025/09/24</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/hexo%E6%96%87%E7%AB%A0%E5%8A%A0%E5%AF%86%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="hexo 文章加密方法">hexo 文章加密方法</span>
+            <span class="post-date" title="2025-09-21 22:33:03">2025/09/21</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/tcl%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 语言入门">tcl 语言入门</span>
+            <span class="post-date" title="2025-09-14 22:43:20">2025/09/14</span>
+        </a>
+        
+        <a  class="全部文章 每日一学 "
+           href="/%E6%95%85%E4%BA%8B%E4%BC%9A%E4%B8%8E%E4%BC%81%E4%B8%9A%E8%82%A1%E6%9D%83%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="故事会与企业股权架构设计">故事会与企业股权架构设计</span>
+            <span class="post-date" title="2025-08-30 09:42:43">2025/08/30</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%AE%A1%E7%AE%97%E5%85%89%E5%88%BBOPC%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="计算光刻 OPC 名词解释">计算光刻 OPC 名词解释</span>
+            <span class="post-date" title="2025-08-26 21:44:36">2025/08/26</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%8A%AF%E7%89%87%E5%88%B6%E9%80%A0%E6%B5%81%E7%A8%8B%E4%B8%8E%E5%B7%A5%E8%89%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="芯片制造流程与工艺">芯片制造流程与工艺</span>
+            <span class="post-date" title="2025-06-14 12:13:17">2025/06/14</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E8%81%8C%E5%9C%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入职场">C++ 入职场</span>
+            <span class="post-date" title="2024-06-22 15:52:55">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/Protocol-Buffers-%E5%85%A5%E9%97%A8%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Protocol Buffers 入门使用">Protocol Buffers 入门使用</span>
+            <span class="post-date" title="2024-06-22 15:50:39">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-python%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B-boost/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++python 混合编程 -boost">C++python 混合编程 -boost</span>
+            <span class="post-date" title="2024-06-22 15:36:18">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B%E4%B8%8E%E6%A8%A1%E6%9D%BF/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 泛型编程与模板">C++ 泛型编程与模板</span>
+            <span class="post-date" title="2024-06-22 15:27:49">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入门学习笔记">C++ 入门学习笔记</span>
+            <span class="post-date" title="2024-06-22 14:53:46">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 Linux "
+           href="/shell%E7%BC%96%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="shell 编程">shell 编程</span>
+            <span class="post-date" title="2022-03-07 20:24:24">2022/03/07</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Git 版本控制工具">Git 版本控制工具</span>
+            <span class="post-date" title="2022-03-05 23:23:45">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Hexo%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E4%B8%8E%E5%A4%9A%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hexo 博客迁移与多平台使用">Hexo 博客迁移与多平台使用</span>
+            <span class="post-date" title="2022-03-05 01:26:56">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%B8%8E%E9%87%8D%E9%9A%BE%E7%82%B9%E6%B1%87%E6%80%BB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的基础知识与重难点汇总">python 中的基础知识与重难点汇总</span>
+            <span class="post-date" title="2020-11-17 23:05:15">2020/11/17</span>
+        </a>
+        
+        <a  class="全部文章 前端 "
+           href="/javascript%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="JavaScript 入门">JavaScript 入门</span>
+            <span class="post-date" title="2020-11-09 20:46:08">2020/11/09</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E8%AF%AD%E6%B3%95%E7%B3%96/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的语法糖">python 中的语法糖</span>
+            <span class="post-date" title="2020-11-06 10:53:29">2020/11/06</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E8%BF%9B%E7%A8%8B%EF%BC%8C%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%8D%8F%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的进程，线程与协程">python 中的进程，线程与协程</span>
+            <span class="post-date" title="2020-11-04 21:29:16">2020/11/04</span>
+        </a>
+        
+        <a  class="全部文章 Linux "
+           href="/linux%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="linux 常见命令学习">linux 常见命令学习</span>
+            <span class="post-date" title="2020-06-17 22:33:28">2020/06/17</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="机器学习经典算法">机器学习经典算法</span>
+            <span class="post-date" title="2020-06-16 10:36:50">2020/06/16</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/tensorflow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tensorflow 学习笔记">tensorflow 学习笔记</span>
+            <span class="post-date" title="2020-06-05 01:49:53">2020/06/05</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/%E6%B7%B1%E5%BA%A6%E7%90%86%E8%A7%A3%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="深度理解卷积神经网络工作原理">深度理解卷积神经网络工作原理</span>
+            <span class="post-date" title="2020-06-04 13:24:45">2020/06/04</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E7%88%AC%E8%99%AB%E7%9A%84%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫的定时执行">爬虫的定时执行</span>
+            <span class="post-date" title="2020-04-06 22:44:47">2020/04/06</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/Token-%EF%BC%8CCookie%E5%92%8CSession%E7%9A%84%E5%8C%BA%E5%88%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Token ，Cookie 和 Session 的区别">Token ，Cookie 和 Session 的区别</span>
+            <span class="post-date" title="2020-04-03 10:46:54">2020/04/03</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E5%9C%A8python%E4%B8%AD%E8%BF%9B%E8%A1%8C%E8%A7%86%E9%A2%91-%E9%9F%B3%E9%A2%91%E5%A4%84%E7%90%86%E5%8F%8A%E5%90%88%E5%B9%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="在 python 中进行视频 - 音频处理及合并">在 python 中进行视频 - 音频处理及合并</span>
+            <span class="post-date" title="2020-03-29 10:56:44">2020/03/29</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8BJS%E8%A7%A3%E5%AF%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之 JS 解密">反反爬虫之 JS 解密</span>
+            <span class="post-date" title="2020-03-24 10:04:43">2020/03/24</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E7%90%86%E8%A7%A3python%E4%B8%AD%E7%9A%84%E9%97%AD%E5%8C%85%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="理解 python 中的闭包与装饰器">理解 python 中的闭包与装饰器</span>
+            <span class="post-date" title="2020-03-21 17:34:45">2020/03/21</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Mongodb%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Mongodb 数据库入门">Mongodb 数据库入门</span>
+            <span class="post-date" title="2020-03-17 22:50:33">2020/03/17</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%8A%A0%E4%B8%AA%E7%A9%BA%E6%A0%BC%E5%91%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="为什么不加个空格呢">为什么不加个空格呢</span>
+            <span class="post-date" title="2020-03-14 13:53:44">2020/03/14</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8/"
+           data-tag="yield"
+           data-author="" >
+            <span class="post-title" title="迭代器与生成器">迭代器与生成器</span>
+            <span class="post-date" title="2020-03-13 21:58:25">2020/03/13</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E6%BB%91%E5%9D%97%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之滑块验证码">反反爬虫之滑块验证码</span>
+            <span class="post-date" title="2020-03-08 21:00:17">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E5%9B%BE%E7%89%87%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之图片验证码">反反爬虫之图片验证码</span>
+            <span class="post-date" title="2020-03-08 16:16:16">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Python%E6%93%8D%E4%BD%9CRedis/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Python 操作 Redis">Python 操作 Redis</span>
+            <span class="post-date" title="2020-03-07 16:15:44">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy-Redis%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Scrapy-Redis 分布式爬虫">Scrapy-Redis 分布式爬虫</span>
+            <span class="post-date" title="2020-03-07 15:35:50">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%ABRequest%E5%8E%BB%E9%87%8D%E5%8F%8A%E8%BF%87%E6%BB%A4%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫 Request 去重及过滤器">爬虫 Request 去重及过滤器</span>
+            <span class="post-date" title="2020-03-07 15:22:23">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Redis%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Redis 数据库">Redis 数据库</span>
+            <span class="post-date" title="2020-03-06 20:30:00">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Pymysql%E4%B8%8EORM%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="pymysql-ORM"
+           data-author="" >
+            <span class="post-title" title="Pymysql 与 ORM 操作数据库">Pymysql 与 ORM 操作数据库</span>
+            <span class="post-date" title="2020-03-06 10:49:03">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/MySql%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Mysql"
+           data-author="" >
+            <span class="post-title" title="MySql 数据库">MySql 数据库</span>
+            <span class="post-date" title="2020-03-04 23:31:02">2020/03/04</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy%E6%A1%86%E6%9E%B6%E7%88%AC%E8%99%AB/"
+           data-tag="Scrapy"
+           data-author="" >
+            <span class="post-title" title="Scrapy 框架爬虫">Scrapy 框架爬虫</span>
+            <span class="post-date" title="2020-03-02 10:44:55">2020/03/02</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="多线程与多进程爬虫">多线程与多进程爬虫</span>
+            <span class="post-date" title="2020-03-01 15:33:08">2020/03/01</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Selenium%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%A8%A1%E6%8B%9F/"
+           data-tag="Selenium"
+           data-author="" >
+            <span class="post-title" title="Selenium 自动化测试模拟">Selenium 自动化测试模拟</span>
+            <span class="post-date" title="2020-02-29 21:29:54">2020/02/29</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96-%E6%96%87%E4%BB%B6%E4%BF%9D%E5%AD%98/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="数据持久化 - 文件保存本地">数据持久化 - 文件保存本地</span>
+            <span class="post-date" title="2020-02-27 22:01:14">2020/02/27</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫基础入门">爬虫基础入门</span>
+            <span class="post-date" title="2020-02-26 20:44:27">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/CSS%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%8EXpath%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96/"
+           data-tag="CSS-Xpath"
+           data-author="" >
+            <span class="post-title" title="CSS 选择器与 Xpath 数据提取">CSS 选择器与 Xpath 数据提取</span>
+            <span class="post-date" title="2020-02-26 19:07:35">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Seaborn-Pygal-Pyecharts%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Seaborn,pygal,Pyecharts"
+           data-author="" >
+            <span class="post-title" title="Seaborn-Pygal-Pyecharts 可视化">Seaborn-Pygal-Pyecharts 可视化</span>
+            <span class="post-date" title="2020-02-22 16:24:55">2020/02/22</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/python%E4%B9%8BMatplotlib%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Matplotlib"
+           data-author="" >
+            <span class="post-title" title="python 之 Matplotlib 可视化">python 之 Matplotlib 可视化</span>
+            <span class="post-date" title="2020-02-20 20:28:44">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%A4%84%E7%90%86%E5%AE%9E%E6%93%8D/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Pandas 数据分析处理实操">Pandas 数据分析处理实操</span>
+            <span class="post-date" title="2020-02-20 10:51:39">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Markdown%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E6%8A%80%E5%B7%A7/"
+           data-tag="Markdown"
+           data-author="" >
+            <span class="post-title" title="Markdown 文本编辑技巧">Markdown 文本编辑技巧</span>
+            <span class="post-date" title="2020-02-18 16:31:40">2020/02/18</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BPandas%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Python 之 Pandas 库从入门到实战">Python 之 Pandas 库从入门到实战</span>
+            <span class="post-date" title="2020-02-15 20:46:52">2020/02/15</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BNumpy%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Numpy"
+           data-author="" >
+            <span class="post-title" title="Python 之 Numpy 库从入门到实战">Python 之 Numpy 库从入门到实战</span>
+            <span class="post-date" title="2020-02-13 23:15:38">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E9%95%9C%E5%83%8F%E6%BA%90%E7%BD%91%E5%9D%80/"
+           data-tag="pip"
+           data-author="" >
+            <span class="post-title" title="python pip 国内镜像大全及库的安装">python pip 国内镜像大全及库的安装</span>
+            <span class="post-date" title="2020-02-13 23:13:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E7%9A%84%E4%B8%89%E7%A7%8D%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 的三种输出格式">python 的三种输出格式</span>
+            <span class="post-date" title="2020-02-13 23:04:49">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E6%97%B6%E9%97%B4%E6%A8%A1%E5%9D%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的时间模块">python 中的时间模块</span>
+            <span class="post-date" title="2020-02-13 23:01:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E6%9F%A5%E7%9C%8B%E4%BB%BB%E4%BD%95%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E7%94%A8%E6%B3%95%E7%9A%84%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 查看任何第三方库的用法的方法">python 查看任何第三方库的用法的方法</span>
+            <span class="post-date" title="2020-02-13 22:57:50">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Anaconda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8Epyinstaller%E7%A8%8B%E5%BA%8F%E6%89%93%E5%8C%85/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Anaconda 环境配置与 pyinstaller 程序打包">Anaconda 环境配置与 pyinstaller 程序打包</span>
+            <span class="post-date" title="2020-02-13 20:01:52">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%BD%BF%E7%94%A8Hexo-Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%85%8D%E8%B4%B9%E5%8D%9A%E5%AE%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="使用 Hexo+Github 搭建个人免费博客">使用 Hexo+Github 搭建个人免费博客</span>
+            <span class="post-date" title="2020-02-13 15:44:02">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E5%85%B3%E4%BA%8Ehexo%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"
+           data-tag="Hexo"
+           data-author="" >
+            <span class="post-title" title="关于 hexo 使用过程中报错问题汇总">关于 hexo 使用过程中报错问题汇总</span>
+            <span class="post-date" title="2020-02-12 23:03:46">2020/02/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-Scrapy-Redis分布式爬虫" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Scrapy-Redis 分布式爬虫</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="爬虫">爬虫</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2025-12-13 13:23:10'>2020-03-07 15:35</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:5.7k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1%E3%80%81Scrapy-redis%20%E4%BB%8B%E7%BB%8D"><span class="toc-text">1、Scrapy-redis 介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%20%E5%8D%95%E6%9C%BA%E7%88%AC%E8%99%AB"><span class="toc-text">1.1 单机爬虫 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%20%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB"><span class="toc-text">1.2 分布式爬虫 </span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%E3%80%81Scrapy-redis%20%E4%BD%BF%E7%94%A8"><span class="toc-text">2、Scrapy_redis 使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-Scrapy-redis%20%E4%B9%8B%20domz"><span class="toc-text">2.1 Scrapy_redis 之 domz</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-Scrapy-redis%20%E4%B9%8B%20RedisPipeline"><span class="toc-text">2.2 Scrapy_redis 之 RedisPipeline</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-Scrapy-redis%20%E4%B9%8B%20RFPDupeFilter"><span class="toc-text">2.3 Scrapy_redis 之 RFPDupeFilter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-scrapy-redis%20%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95"><span class="toc-text">2.4 scrapy_redis 去重方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-Scrapy-redis%20%E4%B9%8B%20Scheduler"><span class="toc-text">2.5 Scrapy_redis 之 Scheduler</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3%E3%80%81%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E5%8F%96"><span class="toc-text">3、分布式爬取 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%20%E6%90%AD%E5%BB%BA%E7%8E%AF%E5%A2%83"><span class="toc-text">3.1　搭建环境 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-%20%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98"><span class="toc-text">3.2　项目实战 </span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1、Scrapy-redis 介绍"><a href="#1、Scrapy-redis 介绍" class="headerlink" title="1、Scrapy-redis 介绍"></a>1、Scrapy-redis 介绍</h1><p>Scrapy_redis ： Redis-based components for Scrapy.</p>
+<p>Github 地址：<a target="_blank" rel="noopener" href="https://github.com/rmax/scrapy-redis">https://github.com/rmax/scrapy-redis</a></p>
+<p>Scrapy_redis 在 scrapy 的基础上实现了更多，更强大的功能，具体体现在：reqeust 去重，爬虫持久化，和轻松实现分布式</p>
+<p>那么，scrapy_redis 是如何帮助我们抓取数据的呢？</p>
+<h2 id="1-1- 单机爬虫"><a href="#1-1- 单机爬虫" class="headerlink" title="1.1 单机爬虫"></a>1.1 单机爬虫 </h2><p> 默认情况下 Scrapy 是不支持分布式的，需要使用基于 Redis 的 Scrapy-Redis 组件才能实现分布式。</p>
+<p>正常的 Scrapy 单机爬虫：</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1563094178551.png" style="zoom:150%;" />
+
+<p>Scrapy 并不会共享调度队列，也就是说 Scrapy 是不支持分布式的。为了支持分布式，我们需要让 Scrapy 支持共享调度队列，也就是改造成共享调度和去重的功能。</p>
+<h2 id="1-2- 分布式爬虫"><a href="#1-2- 分布式爬虫" class="headerlink" title="1.2 分布式爬虫"></a>1.2 分布式爬虫 </h2><p><strong> 分布式：分而治之</strong></p>
+<p>将一个爬虫代码，分别部署在多台电脑上，共同完成整个爬虫任务。</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1563094209564.png" style="zoom:150%;" />
+
+<p>使用 Redis 服务器来集中处理所有的请求，主要负责请求的去重和调度。通过这种方式，所有电脑端的爬虫共享了一个爬取队列，并且每个电脑端每次得到的请求都是其他爬虫未曾访问的。从而提高了爬虫效率。</p>
+<p>得到一个请求之后，检查一下这个 Request 是否在 Redis 去重，如果在就证明其它的 spider 采集过啦！如果不在就添加进调度队列，等待别人获取。</p>
+<p>Scrapy 是一个通用的爬虫框架，但是不支持分布式，Scrapy-redis 是为了更方便地实现 Scrapy 分布式爬取，而提供了一些以 redis 为基础的组件。</p>
+<p>安装如下：<code>pip install scrapy-redis</code></p>
+<p>Scrapy-redis 提供了下面四种组件（components）：(四种组件意味着这四个模块都要做相应的修改) </p>
+<ol>
+<li>Scheduler（调度器）</li>
+<li>Duplication Filter（去重）</li>
+<li>Item Pipeline（管道）</li>
+<li>Base Spider（爬虫类）</li>
+</ol>
+<p><strong>（1）Scheduler（调度器）</strong></p>
+<p>Scrapy 改造了 Python 本来的 collection.deque(双向队列)形成了自己的 Scrapy queue，但是 Scrapy 多个 spider 不能共享待爬取队列 Scrapy queue， 即 Scrapy 本身不支持爬虫分布式，scrapy-redis 的解决是把这个 Scrapy queue 换成 redis 数据库（也是指 redis 队列），便能让多个 spider 去同一个数据库里读取，这样实现共享爬取队列。</p>
+<p>Redis 支持多种数据结构，这些数据结构可以很方便的实现这样的需求：</p>
+<ul>
+<li><p>列表有 lpush()，lpop()，rpush()，rpop()，这些方法可以实现先进先出，或者先进后出式的爬取队列。</p>
+</li>
+<li><p>集合元素是无序且不重复的，可以很方便的实现随机排序且不重复的爬取队列。</p>
+</li>
+<li><p>Scrapy 的 Request 带有优先级控制，Redis 中的集合也是带有分数表示的，可以用这个功能实现带有优先级调度的爬取队列。</p>
+<p>Scrapy 把待爬队列按照优先级建立了一个字典结构，比如：</p>
+</li>
+</ul>
+<pre><code class="json">&#123;
+    优先级 0 : 队列 0
+    优先级 1 : 队列 1
+    优先级 2 : 队列 2
+&#125;</code></pre>
+<p>然后根据 request 中的优先级，来决定该入哪个队列，出列时则按优先级较小的优先出列。由于 Scrapy 原来的 Scheduler 只能处理 Scrapy 自身的队列，不能处理 Redis 中的队列，所以原来的 Scheduler 已经无法使用，应该使用 Scrapy-Redis 的 Scheduler 组件。</p>
+<p><strong>（2）Duplication Filter（去重）</strong></p>
+<p>Scrapy 自带去重模块，该模块使用的是 Python 中的集合类型。该集合会记录每个请求的指纹，指纹也就是 Request 的散列值。指纹的计算采用的是 hashlib 的 sha1()方法。计算的字段包含了，请求的 Method，URL，Body，Header 这几个内容，这些字符串里面只要里面有一点不同，那么计算出来的指纹就是不一样的。也就是说，计算的结果是加密后的字符串，这就是请求指纹。通过加密后的字符串，使得每个请求都是唯一的，也就是指纹是惟一的。并且指纹是一个字符串，在判断字符串的时候，要比判断整个请求对象容易。所以采用了指纹作为判断去重的依据。</p>
+<p>Scrapy-Redis 要想实现分布式爬虫的去重功能，也是需要更新指纹集合的，但是不能每个爬虫维护自己的单独的指纹集合。利用 Redis 集合的数据结构类型，可以轻松实现分布式爬虫的指纹判重。也就是说：每台主机得到 Request 的指纹去和 Redis 中的集合进行对比，如果指纹存在，说明是重复的，也就不会再去发送请求，如果不曾存在于 Redis 中的指纹集合，就会发送请求，并且将该指纹加入 Redis 的集合中。这样就实现了分布式爬虫的指纹集合的共享。</p>
+<p><strong>（3）Item Pipeline</strong></p>
+<p>引擎将 (Spider 返回的) 爬取到的 Item 给 Item Pipeline，scrapy-redis 的 Item Pipeline 将爬取到的 Item 存⼊redis 的 items queue。修改过 Item Pipeline 可以很方便的根据 key 从 items queue 提取 item，从⽽实现 items processes 集群。</p>
+<p><strong>（4）Base Spider</strong></p>
+<p>不再使用 scrapy 原有的 Spider 类，重写的 RedisSpider 继承了 Spider 和 RedisMixin 这两个类，RedisMixin 是用来从 redis 读取 url 的类。当我们生成一个 Spider 继承 RedisSpider 时，调用 setup_redis 函数，这个函数会去连接 redis 数据库，然后会设置 signals(信号)：</p>
+<p>当 spider 空闲时候的 signal，会调用 spider_idle 函数，这个函数调用 schedule_next_request 函数，保证 spider 是一直活着的状态，并且抛出 DontCloseSpider 异常。</p>
+<p>当抓到一个 item 时的 signal，会调用 item_scraped 函数，这个函数会调用 schedule_next_request 函数，获取下一个 request。</p>
+<h1 id="2、Scrapy-redis 使用"><a href="#2、Scrapy-redis 使用" class="headerlink" title="2、Scrapy_redis 使用"></a>2、Scrapy_redis 使用</h1><p>1、clone github scrapy-redis 源码文件<br>    git clone <a target="_blank" rel="noopener" href="https://github.com/rolando/scrapy-redis.git">https://github.com/rolando/scrapy-redis.git</a><br>2、研究项目自带的三个 demo<br>    mv scrapy-redis/example-project ~/scrapyredis-project</p>
+<h2 id="2-1-Scrapy-redis 之 domz"><a href="#2-1-Scrapy-redis 之 domz" class="headerlink" title="2.1 Scrapy_redis 之 domz"></a>2.1 Scrapy_redis 之 domz</h2><p><strong>首先看看 Spider 文件：</strong></p>
+<pre><code class="python">// filename(spider):domz.py
+from scrapy.linkextractors import LinkExtractor
+from scrapy.spiders import CrawlSpider, Rule
+
+class DmozSpider(CrawlSpider):
+    &quot;&quot;&quot;Follow categories and extract links.&quot;&quot;&quot;
+    name = &#39;dmoz&#39;
+    allowed_domains = [&#39;dmoztools.net&#39;]
+    start_urls = [&#39;http://dmoztools.net/&#39;]
+
+    rules = [
+        # 定义一个 url 提取规则，满足条件的 url 交给 callback 函数处理
+        Rule(LinkExtractor(restrict_css=(&#39;.top-cat&#39;, &#39;.sub-cat&#39;, &#39;.cat-item&#39;)
+        ), callback=&#39;parse_directory&#39;, follow=True),
+    ]
+
+    def parse_directory(self, response):
+        for div in response.css(&#39;.title-and-desc&#39;):
+            # 将结果返回给引擎
+            yield &#123;
+                &#39;name&#39;: div.css(&#39;.site-title::text&#39;).extract_first(),
+                &#39;description&#39;: div.css(&#39;.site-descr::text&#39;).extract_first().strip(),
+                &#39;link&#39;: div.css(&#39;a::attr(href)&#39;).extract_first(),
+            &#125;</code></pre>
+<p>domz.py 这个部分与我们自己写的 crawlspider 没有任何区别。</p>
+<p><strong>下一步再看对应的 Settings.py 文件，里面新增内容如下</strong></p>
+<pre><code class="python">//filename:settings.py
+# Scrapy settings for example project
+# For simplicity, this file contains only the most important settings by
+# default. All the other settings are documented here:
+#
+#     http://doc.scrapy.org/topics/settings.html
+
+SPIDER_MODULES = [&#39;example.spiders&#39;]
+NEWSPIDER_MODULE = &#39;example.spiders&#39;  
+// 上两个是自动生成的，不用设置。意思是爬虫位于 example 项目的 spiders 文件夹下
+
+USER_AGENT = &#39;scrapy-redis (+https://github.com/rolando/scrapy-redis)&#39;
+// 根据需要看是否设置
+
+// 重点 1 指定去重方法
+DUPEFILTER_CLASS = &quot;scrapy_redis.dupefilter.RFPDupeFilter&quot;
+// 重点 2 指定调度器
+SCHEDULER = &quot;scrapy_redis.scheduler.Scheduler&quot;
+// 重点 3 指定队列中的内容是否持久保存，为 False 的时候在关闭爬虫时清空 redis 数据
+SCHEDULER_PERSIST = True
+
+#SCHEDULER_QUEUE_CLASS = &quot;scrapy_redis.queue.SpiderPriorityQueue&quot;
+#SCHEDULER_QUEUE_CLASS = &quot;scrapy_redis.queue.SpiderQueue&quot;
+#SCHEDULER_QUEUE_CLASS = &quot;scrapy_redis.queue.SpiderStack&quot;
+
+ITEM_PIPELINES = &#123;
+    &#39;example.pipelines.ExamplePipeline&#39;: 300,
+    &#39;scrapy_redis.pipelines.RedisPipeline&#39;: 400,
+&#125;
+// 利用 scrapy_redis 里的 pipelines 实现数据保存
+
+LOG_LEVEL = &#39;DEBUG&#39;
+
+# Introduce an artifical delay to make use of parallelism. to speed up the crawl.
+DOWNLOAD_DELAY = 1
+// 默认为 3s，这里设置为 1s
+
+// 重点 4 配置数据库连接
+REDIS_URL = &quot;redis://127.0.0.1:6379&quot;
+&#39;&#39;&#39;
+redis 的地址可以写成如下形式
+REDIS_HOST = &quot;127.0.0.1&quot;  // 服务器 ip, 若为本地，则为 &#39;localhost&#39;
+REDIS_PORT = 6379        // 指定端口
+&#39;&#39;&#39;</code></pre>
+<p>我们执行 domz.py 的爬虫，会发现 redis 数据库中多了一下三个键。我们可以尝试在 setting 中关闭 redispipeline，</p>
+<p>观察 redis 中三个键的存储数据量的变化</p>
+<p>变化结果：<br>    dmoz:requests 有变化(变多或者变少或者不变)<br>    dmoz:dupefilter 变多<br>    dmoz:items 不变</p>
+<p>变化结果分析:<br>    redispipeline 中仅仅实现了 item 数据存储到 redis 的过程，我们可以新建一个 pipeline（或者修改默认的 ExamplePipeline），让数据存储到任意地方</p>
+<p>那么问题来了：以上的这些功能 scrapy_redis 都是如何实现的呢？</p>
+<h2 id="2-2-Scrapy-redis 之 RedisPipeline"><a href="#2-2-Scrapy-redis 之 RedisPipeline" class="headerlink" title="2.2 Scrapy_redis 之 RedisPipeline"></a>2.2 Scrapy_redis 之 RedisPipeline</h2><pre><code class="python">class RedisPipeline(object):
+
+    # 使用 process_item 的方法，实现数据保存
+    def process_item(self, item, spider):
+        return deferToThread(self._process_item, item, spider)
+
+    def _process_item(self, item, spider):
+        key = self.item_key(item, spider)
+        data = self.serialize(item)
+        # 向 dmoz:item 中添加 item
+        self.server.rpush(key, data)
+        return item
+
+    def item_key(self, item, spider):
+        return self.key % &#123;&#39;spider&#39;: spider.name&#125;</code></pre>
+<h2 id="2-3-Scrapy-redis 之 RFPDupeFilter"><a href="#2-3-Scrapy-redis 之 RFPDupeFilter" class="headerlink" title="2.3 Scrapy_redis 之 RFPDupeFilter"></a>2.3 Scrapy_redis 之 RFPDupeFilter</h2><pre><code class="python"># filename:scrapy_redis/dupeFilter.py
+import logging
+import time
+
+from scrapy.dupefilters import BaseDupeFilter
+from scrapy.utils.request import request_fingerprint
+
+
+class RFPDupeFilter(BaseDupeFilter):
+
+
+    def request_seen(self, request):
+        &quot;&quot;&quot; 判断 request 对象是否已经存在 &quot;&quot;&quot;
+        fp = self.request_fingerprint(request)
+        # 添加到 dupefilter 中，返回 0 表示数据已经存在
+        added = self.server.sadd(self.key, fp)
+        return added == 0
+
+    def request_fingerprint(self, request):
+        return request_fingerprint(request)</code></pre>
+<pre><code class="python"># filename:scrapy/utils/request.py
+def request_fingerprint(request, include_headers=None):
+
+    if include_headers:
+        include_headers = tuple(to_bytes(h.lower())
+                                 for h in sorted(include_headers))
+    cache = _fingerprint_cache.setdefault(request, &#123;&#125;)
+    if include_headers not in cache:
+        # sha1 加密
+        fp = hashlib.sha1()
+        fp.update(to_bytes(request.method))
+        fp.update(to_bytes(canonicalize_url(request.url)))
+        fp.update(request.body or b&#39;&#39;)
+        # 添加请求头，默认不加请求头（因为 headers 的 cookies 中含有 session_id, 这在不同的网站中是随机的，会给 sha1 带来误差）
+        if include_headers:
+            for hdr in include_headers:
+                if hdr in request.headers:
+                    fp.update(hdr)
+                    for v in request.headers.getlist(hdr):
+                        fp.update(v)
+        # 返回加密之后的 16 进制
+        cache[include_headers] = fp.hexdigest()
+    return cache[include_headers]
+</code></pre>
+<h2 id="2-4-scrapy-redis 去重方法"><a href="#2-4-scrapy-redis 去重方法" class="headerlink" title="2.4 scrapy_redis 去重方法"></a>2.4 scrapy_redis 去重方法</h2><ul>
+<li>使用 sha1 加密 request 得到指纹</li>
+<li>把指纹存在 redis 的集合中</li>
+<li>下一次新来一个 request，同样的方式生成指纹，判断指纹是否存在 reids 的集合中</li>
+</ul>
+<p><strong>生成指纹</strong></p>
+<pre><code class="python">fp = hashlib.sha1()
+fp.update(to_bytes(request.method))  #请求方法
+fp.update(to_bytes(canonicalize_url(request.url))) #url
+fp.update(request.body or b&#39;&#39;)  #请求体
+return fp.hexdigest()</code></pre>
+<h2 id="2-5-Scrapy-redis 之 Scheduler"><a href="#2-5-Scrapy-redis 之 Scheduler" class="headerlink" title="2.5 Scrapy_redis 之 Scheduler"></a>2.5 Scrapy_redis 之 Scheduler</h2><pre><code class="python"># filename:scrapy_redis/dupeFilter.py
+class Scheduler(object):
+
+
+    def close(self, reason):
+        # 如果在 settings 中设置不持久，那么在退出时候就会清空
+        if not self.persist:
+            self.flush()
+
+    def flush(self):
+        # 存放 dupefilter 的 redis
+        self.df.clear()
+        # 存放 request 的 redis
+        self.queue.clear()
+
+    def enqueue_request(self, request):
+        # 不能加入带爬取队列的条件，当 url 需要经过 allow_domain 过滤并且 request 不存在 dp 的时候
+        if not request.dont_filter and self.df.request_seen(request):
+            self.df.log(request, self.spider)
+            return False
+        if self.stats:
+            self.stats.inc_value(&#39;scheduler/enqueued/redis&#39;, spider=self.spider)
+        self.queue.push(request)
+        return True
+</code></pre>
+<p><strong>request 对象什么时候入队</strong></p>
+<ul>
+<li>dont_filter = True , 构造请求的时候，把 dont_filter 置为 True，该 url 会被反复抓取（url 地址对应的内容会更新的情况）</li>
+<li>一个全新的 url 地址被抓到的时候，构造 request 请求</li>
+<li>url 地址在 start_urls 中的时候，会入队，不管之前是否请求过<ul>
+<li>构造 start_url 地址的请求时候，dont_filter = True</li>
+</ul>
+</li>
+</ul>
+<pre><code class="python">def enqueue_request(self, request):
+    if not request.dont_filter and self.df.request_seen(request):
+        # dont_filter=False Ture  True request 指纹已经存在  #不会入队
+        # dont_filter=False Ture  False  request 指纹已经存在 全新的 url  #会入队
+        # dont_filter=Ture False  #会入队
+        self.df.log(request, self.spider)
+        return False
+    self.queue.push(request) #入队
+    return True</code></pre>
+<p>通过以上知识点的学习，我们会发现：<br>    domz 相比于之前的 spider 多了持久化和 request 去重的功能<br>    在之后的爬虫中，我们可以模仿 domz 的用法，使用 scrapy_redis 实现相同的功能</p>
+<p>注意：setting 中的配置都是可以自己设定的，意味着我们的可以重写去重和调度器的方法，包括是否要把数据存储到 redis(pipeline)</p>
+<p>配置文件：</p>
+<pre><code># 修改调度器
+SCHEDULER = &quot;scrapy_redis.scheduler.Scheduler&quot;
+# 修改去重工具
+DUPEFILTER_CLASS = &quot;scrapy_redis.dupefilter.RFPDupeFilter&quot;
+# 开启数据持久化
+SCHEDULER_PERSIST = True
+REDIS_HOST = &#39;127.0.0.1&#39;
+REDIS_PORT = 6379
+# 验证数据库密码
+REDIS_PARAMS = &#123;
+    &#39;password&#39;: &#39;123456&#39;,
+&#125;</code></pre><h1 id="3、分布式爬取"><a href="#3、分布式爬取" class="headerlink" title="3、分布式爬取"></a>3、分布式爬取 </h1><p> 了解了 scrapy-redis 的原理后，我们学习使用 scrapy + scrapy-redis 进行分布式爬取。</p>
+<h2 id="3-1- 搭建环境"><a href="#3-1- 搭建环境" class="headerlink" title="3.1　搭建环境"></a>3.1　搭建环境 </h2><p> 首先搭建 scrapy-redis 分布式爬虫环境，当前我们有 3 台 Linux 主机。</p>
+<p>云服务器（A）：116.29.35.201 (Redis Server)</p>
+<p>云服务器（B）：123.59.45.155</p>
+<p>本机（C）：1.13.41.127</p>
+<p>在 3 台主机上安装 scrapy 和 scrapy-redis：</p>
+<pre><code>$ pip install scrapy
+$ pip install scrapy-redis</code></pre><p>选择其中一台云服务器搭建供所有爬虫使用的 Redis 数据库，步骤如下：</p>
+<p><strong>[步骤　01]</strong>　在云服务器上安装 redis-server。</p>
+<p><strong>[步骤　02]</strong>　在 Redis 配置文件中修改服务器的绑定地址（确保数据库可被所有爬虫访问）。</p>
+<p><strong>[步骤　03]</strong>　启动／重启 Redis 服务器。</p>
+<p>登录云服务器（A），在 bash 中完成上述步骤：</p>
+<pre><code>116.29.35.201$ sudo apt-get install redis-server
+116.29.35.201$ sudo vi /etc/redis/redis.conf
+...
+# bind 127.0.0.1
+bind 0.0.0.0
+...
+116.29.35.201$ sudo service redis-server restart</code></pre><p>最后，在 3 台主机上测试能否访问云服务器（A）上的 Redis 数据库：</p>
+<pre><code>$ redis-cli -a 123456 -h 116.29.35.201 ping     
+PONG</code></pre><p>-a 后面接 redis 的密码（若有），-h 后面接目标 ip 地址。</p>
+<p>到此，Scrapy 分布式爬虫环境搭建完毕。</p>
+<h2 id="3-2- 项目实战"><a href="#3-2- 项目实战" class="headerlink" title="3.2　项目实战"></a>3.2　项目实战 </h2><p> 本章的核心知识点是分布式爬取，因此本项目不再对分析页面、编写 Spider 等大家熟知的技术进行展示。我们可以任意挑选一个在之前章节中做过的项目，将其改为分布式爬取的版本，这里以第 8 章的 toscrape_book 项目（爬取 books.toscrape.com 中的书籍信息）为例进行讲解。</p>
+<p>复制 toscrape_book 项目，得到新项目 toscrape_book_distributed：</p>
+<pre><code>$ cp -r toscrape_book toscrape_book_distributed     
+$ cd toscrape_book_distributed</code></pre><p>在配置文件 settings.py 中添加 scrapy-redis 的相关配置：</p>
+<pre><code># 必选项
+# ==================================================================
+# 指定爬虫所使用的 Redis 数据库（在云服务器 116.29.35.201 上）
+REDIS_URL = &#39;redis://116.29.35.201:6379&#39;
+
+
+# 使用 scrapy_redis 的调度器替代 Scrapy 原版调度器
+SCHEDULER = &quot;scrapy_redis.scheduler.Scheduler&quot;
+
+
+# 使用 scrapy_redis 的 RFPDupeFilter 作为去重过滤器
+DUPEFILTER_CLASS = &quot;scrapy_redis.dupefilter.RFPDupeFilter&quot;
+# 启用 scrapy_redis 的 RedisPipeline 将爬取到的数据汇总到 Redis 数据库
+ITEM_PIPELINES = &#123;
+&#39;scrapy_redis.pipelines.RedisPipeline&#39;: 300,
+&#125;
+# 可选项
+# ==================================================================
+#爬虫停止后，保留／清理 Redis 中的请求队列以及去重集合
+# True：保留，False：清理，默认为 False
+SCHEDULER_PERSIST = True</code></pre><p>将单机版本的 Spider 改为分布式版本的 Spider，只需做如下简单改动：</p>
+<pre><code>from scrapy_redis.spiders import RedisSpider
+
+
+     # 1. 更改基类
+     # class BooksSpider(spider.Spider):
+class BooksSpider(RedisSpider):
+        ...
+        # 2. 注释 start_urls
+        #start_urls = [&#39;http://books.toscrape.com/&#39;]
+        ...</code></pre><p>上述改动针对“如何为多个爬虫设置起始爬取点”这个问题，解释如下：</p>
+<p>●　在分布式爬取时，所有主机上的代码是相同的，如果使用之前单机版本的 Spider 代码，那么每一台主机上的 Spider 都通过 start_urls 属性定义了起始爬取点，在构造起始爬取点的 Request 对象时，dont_filter 参数设置为了 True，即忽略去重过滤器的过滤。因此多个（数量等于爬虫数量）重复请求将强行进入 Redis 中的请求队列，这可能导致爬取到重复数据。</p>
+<p>●　为了解决上述问题，scrapy-redis 提供了一个新的 Spider 基类 RedisSpider，RedisSpider 重写了 start_requests 方法，它尝试从 Redis 数据库的某个特定列表中获取起始爬取点，并构造 Request 对象（dont_filter=False），该列表的键可通过配置文件设置（REDIS_START_URLS_KEY），默认为<spider_name>:start_urls。在分布式爬取时，用户运行所有爬虫后，需手动使用 Redis 命令向该列表添加起始爬取点，之后只有其中一个爬虫能获取到起始爬取点，因此对应的请求也就只有一个，从而避免了重复。</p>
+<p>到此，分布式版本的项目代码已经完成了，分发到各个主机：</p>
+<pre><code>     $ scp -r toscrape_book_distributed liushuo@116.29.35.201:～/scrapy_book     
+     $ scp -r toscrape_book_distributed liushuo@123.59.45.155:～/scrapy_book</code></pre><p>分别在 3 台主机使用相同命令运行爬虫：</p>
+<pre><code>$ scrapy crawl books         
+2017-05-14 17:56:42 [scrapy.utils.log] INFO: Scrapy 1.3.3 started (bot: toscrape_book)         2017-05-14 17:56:42 [scrapy.utils.log] INFO: Overridden settings: &#123;&#39;DUPEFILTER_CLASS&#39;:     &#39;scrapy_redis.dupefilter.RFPDupeFilter&#39;, &#39;FEED_EXPORT_FIELDS&#39;: [&#39;upc&#39;, &#39;name&#39;, &#39;price&#39;, &#39;stock&#39;,     &#39;review_rating&#39;, &#39;review_num&#39;], &#39;SCHEDULER&#39;: &#39;scrapy_redis.scheduler.Scheduler&#39;, &#39;BOT_NAME&#39;:     &#39;toscrape_book&#39;, &#39;ROBOTSTXT_OBEY&#39;: True, &#39;NEWSPIDER_MODULE&#39;: &#39;toscrape_book.spiders&#39;,     &#39;SPIDER_MODULES&#39;: [&#39;toscrape_book.spiders&#39;]&#125;         2017-05-14 17:56:42 [scrapy.middleware] INFO: Enabled extensions:         [&#39;scrapy.extensions.logstats.LogStats&#39;,          &#39;scrapy.extensions.telnet.TelnetConsole&#39;,          &#39;scrapy.extensions.corestats.CoreStats&#39;]         2017-05-14 17:56:42 [books] INFO: Reading start URLs from redis key &#39;books:start_urls&#39; (batch size:     16, encoding: utf-8         2017-05-14 17:56:42 [scrapy.middleware] INFO: Enabled downloader middlewares:         [&#39;scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware&#39;,          &#39;scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware&#39;,          &#39;scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware&#39;,          &#39;scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware&#39;,          &#39;scrapy.downloadermiddlewares.useragent.UserAgentMiddleware&#39;,          &#39;scrapy.downloadermiddlewares.retry.RetryMiddleware&#39;,          &#39;scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware&#39;,          &#39;scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware&#39;,          &#39;scrapy.downloadermiddlewares.redirect.RedirectMiddleware&#39;,          &#39;scrapy.downloadermiddlewares.cookies.CookiesMiddleware&#39;,          &#39;scrapy.downloadermiddlewares.stats.DownloaderStats&#39;]         2017-05-14 17:56:42 [scrapy.middleware] INFO: Enabled spider middlewares:         [&#39;scrapy.spidermiddlewares.httperror.HttpErrorMiddleware&#39;,          &#39;scrapy.spidermiddlewares.offsite.OffsiteMiddleware&#39;,          &#39;scrapy.spidermiddlewares.referer.RefererMiddleware&#39;,          &#39;scrapy.spidermiddlewares.urllength.UrlLengthMiddleware&#39;,          &#39;scrapy.spidermiddlewares.depth.DepthMiddleware&#39;]         2017-05-14 17:56:42 [scrapy.middleware] INFO: Enabled item pipelines:          [&#39;scrapy_redis.pipelines.RedisPipeline&#39;]          2017-05-14 17:56:42 [scrapy.core.engine] INFO: Spider opened          2017-05-14 17:56:42 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0     items (at 0 items/min)          2017-05-14 17:56:42 [scrapy.extensions.telnet] DEBUG: Telnet console listening on 127.0.0.1:6023          ... 阻塞在此处...</code></pre><p>运行后，由于 Redis 中的起始爬取点列表和请求队列都是空的，3 个爬虫都进入了暂停等待的状态，因此在任意主机上使用 Redis 客户端设置起始爬取点：</p>
+<pre><code>$ redis-cli -h 116.29.35.201     116.29.35.201:6379&gt; lpush books:start_urls &#39;http://books.toscrape.com/&#39;     (integer) 1</code></pre><p>随后，其中一个爬虫（本实验中是云服务器 A）从起始爬取点列表中获取到了 url，在其 log 中观察到如下信息：</p>
+<pre><code>2017-05-14 17:57:18 [books] DEBUG: Read 1 requests from &#39;books:start_urls&#39;</code></pre><p>该爬虫用起始爬取点 url 构造的 Request 对象最终被添加到 Redis 中的请求队列之后。各个爬虫相继开始工作了，可在各爬虫的 log 中观察到类似于如下的信息：</p>
+<pre><code>2017-05-14 18:00:42 [scrapy.core.scraper] DEBUG: Scraped from &lt;200     http://books.toscrape.com/catalogue/arena_587/index.html&gt;          &#123;&#39;name&#39;: &#39;Arena&#39;,           &#39;price&#39;: &#39;￡21.36&#39;,           &#39;review_num&#39;: &#39;0&#39;,           &#39;review_rating&#39;: &#39;Four&#39;,           &#39;stock&#39;: &#39;11&#39;,           &#39;upc&#39;: &#39;2c34f9432069b52b&#39;&#125;          2017-05-14 18:00:42 [scrapy.core.engine] DEBUG: Crawled (200)  (referer:     http://books.toscrape.com/catalogue/page-21.html)          2017-05-14 18:00:42 [scrapy.core.scraper] DEBUG: Scraped from &lt;200     http://books.toscrape.com/catalogue/adultery_586/index.html&gt;          &#123;&#39;name&#39;: &#39;Adultery&#39;,           &#39;price&#39;: &#39;￡20.88&#39;,           &#39;review_num&#39;: &#39;0&#39;,           &#39;review_rating&#39;: &#39;Five&#39;,           &#39;stock&#39;: &#39;11&#39;,           &#39;upc&#39;: &#39;bb967277222e689c&#39;&#125;          2017-05-14 18:00:42 [scrapy.core.engine] DEBUG: Crawled (200)  (referer:     http://books.toscrape.com/catalogue/page-21.html)          2017-05-14 18:00:42 [scrapy.core.scraper] DEBUG: Scraped from &lt;200     http://books.toscrape.com/catalogue/a-mothers-reckoning-living-in-the-aftermath-of-tragedy_585/index.htm     l&gt;          &#123;&#39;name&#39;: &quot;A Mother&#39;s Reckoning: Living in the Aftermath of Tragedy&quot;,           &#39;price&#39;: &#39;￡19.53&#39;,           &#39;review_num&#39;: &#39;0&#39;,           &#39;review_rating&#39;: &#39;Three&#39;,           &#39;stock&#39;: &#39;11&#39;,           &#39;upc&#39;: &#39;2b69dec0193511d9&#39;&#125;          2017-05-14 18:00:43 [scrapy.core.scraper] DEBUG: Scraped from &lt;200     http://books.toscrape.com/catalogue/112263_583/index.html&gt;          &#123;&#39;name&#39;: &#39;11/22/63&#39;,           &#39;price&#39;: &#39;￡48.48&#39;,           &#39;review_num&#39;: &#39;0&#39;,           &#39;review_rating&#39;: &#39;Three&#39;,           &#39;stock&#39;: &#39;11&#39;,           &#39;upc&#39;: &#39;a9d7b75461084a26&#39;&#125;          2017-05-14 18:00:43 [scrapy.core.engine] DEBUG: Crawled (200)  (referer:     http://books.toscrape.com/catalogue/page-21.html)          2017-05-14 18:00:43 [scrapy.core.scraper] DEBUG: Scraped from &lt;200     http://books.toscrape.com/catalogue/10-happier-how-i-tamed-the-voice-in-my-head-reduced-stress-without-     losing-my-edge-and-found-self-help-that-actually-works_582/index.html&gt;          &#123;&#39;name&#39;: &#39;10% Happier: How I Tamed the Voice in My Head, Reduced Stress &#39;                  &#39;Without Losing My Edge, and Found Self-Help That Actually Works&#39;,           &#39;price&#39;: &#39;￡24.57&#39;,           &#39;review_num&#39;: &#39;0&#39;,           &#39;review_rating&#39;: &#39;Two&#39;,           &#39;stock&#39;: &#39;10&#39;,           &#39;upc&#39;: &#39;34669b2e9d407d3a&#39;&#125;</code></pre><p>等待全部爬取完成后，在 Redis 中查看爬取到的数据：</p>
+<pre><code>116.29.35.201:6379&gt; keys *     1) &quot;books:items&quot;     2) &quot;books:dupefilter&quot;     116.29.35.201:6379&gt; llen books:items     (integer) 1000     116.29.35.201:6379&gt; LRANGE books:items 0 4          1) &quot;&#123;\&quot;stock\&quot;: \&quot;22\&quot;, \&quot;review_num\&quot;: \&quot;0\&quot;, \&quot;upc\&quot;: \&quot;a897fe39b1053632\&quot;, \&quot;name\&quot;: \&quot;A Light in     the Attic\&quot;, \&quot;review_rating\&quot;: \&quot;Three\&quot;, \&quot;price\&quot;: \&quot;\\u00a351.77\&quot;&#125;&quot;          2) &quot;&#123;\&quot;stock\&quot;: \&quot;20\&quot;, \&quot;review_num\&quot;: \&quot;0\&quot;, \&quot;upc\&quot;: \&quot;e00eb4fd7b871a48\&quot;, \&quot;name\&quot;: \&quot;Sharp     Objects\&quot;, \&quot;review_rating\&quot;: \&quot;Four\&quot;, \&quot;price\&quot;: \&quot;\\u00a347.82\&quot;&#125;&quot;          3) &quot;&#123;\&quot;stock\&quot;: \&quot;20\&quot;, \&quot;review_num\&quot;: \&quot;0\&quot;, \&quot;upc\&quot;: \&quot;90fa61229261140a\&quot;, \&quot;name\&quot;: \&quot;Tipping the     Velvet\&quot;, \&quot;review_rating\&quot;: \&quot;One\&quot;, \&quot;price\&quot;: \&quot;\\u00a353.74\&quot;&#125;&quot;          4) &quot;&#123;\&quot;stock\&quot;: \&quot;20\&quot;, \&quot;review_num\&quot;: \&quot;0\&quot;, \&quot;upc\&quot;: \&quot;6957f44c3847a760\&quot;, \&quot;name\&quot;:     \&quot;Soumission\&quot;, \&quot;review_rating\&quot;: \&quot;One\&quot;, \&quot;price\&quot;: \&quot;\\u00a350.10\&quot;&#125;&quot;          5) &quot;&#123;\&quot;stock\&quot;: \&quot;19\&quot;, \&quot;review_num\&quot;: \&quot;0\&quot;, \&quot;upc\&quot;: \&quot;2597b5a345f45e1b\&quot;, \&quot;name\&quot;: \&quot;The Dirty     Little Secrets of Getting Your Dream Job\&quot;, \&quot;review_rating\&quot;: \&quot;Four\&quot;, \&quot;price\&quot;: \&quot;\\u00a333.34\&quot;&#125;&quot;          116.29.35.201:6379&gt; LRANGE books:items -5 -1          1) &quot;&#123;\&quot;name\&quot;: \&quot;Shameless\&quot;, \&quot;price\&quot;: \&quot;\\u00a358.35\&quot;, \&quot;review_rating\&quot;: \&quot;Three\&quot;, \&quot;upc\&quot;:     \&quot;c068c013d6921fea\&quot;, \&quot;review_num\&quot;: \&quot;0\&quot;, \&quot;stock\&quot;: \&quot;1\&quot;&#125;&quot;          2) &quot;&#123;\&quot;stock\&quot;: \&quot;1\&quot;, \&quot;review_num\&quot;: \&quot;0\&quot;, \&quot;upc\&quot;: \&quot;19fec36a1dfb4c16\&quot;, \&quot;name\&quot;: \&quot;A Spy&#39;s     Devotion (The Regency Spies of London ##1)\&quot;, \&quot;review_rating\&quot;: \&quot;Five\&quot;, \&quot;price\&quot;: \&quot;\\u00a316.97\&quot;&#125;&quot;          3) &quot;&#123;\&quot;stock\&quot;: \&quot;1\&quot;, \&quot;review_num\&quot;: \&quot;0\&quot;, \&quot;upc\&quot;: \&quot;f684a82adc49f011\&quot;, \&quot;name\&quot;: \&quot;1st to Die     (Women&#39;s Murder Club ##1)\&quot;, \&quot;review_rating\&quot;: \&quot;One\&quot;, \&quot;price\&quot;: \&quot;\\u00a353.98\&quot;&#125;&quot;          4) &quot;&#123;\&quot;stock\&quot;: \&quot;1\&quot;, \&quot;review_num\&quot;: \&quot;0\&quot;, \&quot;upc\&quot;: \&quot;228ba5e7577e1d49\&quot;, \&quot;name\&quot;: \&quot;1,000 Places     to See Before You Die\&quot;, \&quot;review_rating\&quot;: \&quot;Five\&quot;, \&quot;price\&quot;: \&quot;\\u00a326.08\&quot;&#125;&quot;          5) &quot;&#123;\&quot;name\&quot;: \&quot;Girl in the Blue Coat\&quot;, \&quot;price\&quot;: \&quot;\\u00a346.83\&quot;, \&quot;review_rating\&quot;: \&quot;Two\&quot;,     \&quot;upc\&quot;: \&quot;41fc5dce044f16f5\&quot;, \&quot;review_num\&quot;: \&quot;0\&quot;, \&quot;stock\&quot;: \&quot;3\&quot;&#125;&quot;</code></pre><p>如上所示，我们成功地爬取到了 1000 项数据（由各爬虫最后的 log 信息得知，爬虫 A:514 项，爬虫 B:123 项，爬虫 C:363 项）。每一项数据以 json 形式存储在 Redis 的列表中，需要使用这些数据时，可以编写 Python 程序将它们从 Redis 中读出，代码框架如下：</p>
+<pre><code class="python">import redis
+import json
+
+ITEM_KEY = &#39;books:items&#39;
+
+def process_item(item):
+        # 添加处理数据的代码
+        &#39;&#39;&#39;...&#39;&#39;&#39;
+
+def main():
+        r = redis.StrictRedis(host=&#39;116.29.35.201&#39;, port=6379)
+        for _ in range(r.llen(ITEM_KEY)):
+            data = r.lpop(ITEM_KEY)
+            item = json.loads(data.decode(&#39;utf8&#39;))
+            process_item(item)
+
+
+if __name__ == &#39;__main__&#39;:
+        main()</code></pre>
+<p>到此，我们完成了分布式爬取的项目。</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 欢迎各位看官及技术大佬前来交流指导呀，可以邮件至 jqiange@yeah.net </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2021 Jqiange
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

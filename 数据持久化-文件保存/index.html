@@ -1,0 +1,1623 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>数据持久化 - 文件保存本地 | jqiange</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="数据持久化 - 文件保存本地 | jqiange">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="人畜无害的姜小强">
+<meta property="og:url" content="https://jqiange.github.io/about/index.html">
+<meta property="og:site_name" content="jqiange">
+<meta property="og:description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+<meta property="article:published_time" content="2020-02-18T08:21:04.000Z">
+<meta property="article:modified_time" content="2025-12-13T05:23:10.695Z">
+<meta property="article:author" content="姜小强">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+
+
+<link rel="icon" href="/img/jqiange.png">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/jqiange.png"/>
+</a>
+<div class="author">
+    <span>姜小强</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/jqiange"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(58)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(9)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据库">
+                        
+                        数据库
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="每日一学">
+                        
+                        每日一学
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="爬虫">
+                        
+                        爬虫
+                        <small>(10)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="前端">
+                        
+                        前端
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="深度学习">
+                        
+                        深度学习
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据分析">
+                        
+                        数据分析
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="chip">
+                        
+                        chip
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="CPP">
+                        
+                        CPP
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Linux">
+                        
+                        Linux
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="python">
+                        
+                        python
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="58">
+<input type="hidden" id="yelog_site_word_count" value="251.9k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSS-Xpath</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Markdown</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Matplotlib</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Mysql</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Numpy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pandas</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pip</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pyecharts</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pygal</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pymysql-ORM</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>RE</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Redis</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Scrapy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Seaborn</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Selenium</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>yield</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="全部文章 python "
+           href="/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%A6%E8%A7%A3/"
+           data-tag="RE"
+           data-author="" >
+            <span class="post-title" title="正则表达式详解">正则表达式详解</span>
+            <span class="post-date" title="2020-02-26 09:25:46">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/tcl%E4%B8%8Eopc/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 与 opc">tcl 与 opc</span>
+            <span class="post-date" title="2025-09-24 13:36:07">2025/09/24</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/hexo%E6%96%87%E7%AB%A0%E5%8A%A0%E5%AF%86%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="hexo 文章加密方法">hexo 文章加密方法</span>
+            <span class="post-date" title="2025-09-21 22:33:03">2025/09/21</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/tcl%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 语言入门">tcl 语言入门</span>
+            <span class="post-date" title="2025-09-14 22:43:20">2025/09/14</span>
+        </a>
+        
+        <a  class="全部文章 每日一学 "
+           href="/%E6%95%85%E4%BA%8B%E4%BC%9A%E4%B8%8E%E4%BC%81%E4%B8%9A%E8%82%A1%E6%9D%83%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="故事会与企业股权架构设计">故事会与企业股权架构设计</span>
+            <span class="post-date" title="2025-08-30 09:42:43">2025/08/30</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%AE%A1%E7%AE%97%E5%85%89%E5%88%BBOPC%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="计算光刻 OPC 名词解释">计算光刻 OPC 名词解释</span>
+            <span class="post-date" title="2025-08-26 21:44:36">2025/08/26</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%8A%AF%E7%89%87%E5%88%B6%E9%80%A0%E6%B5%81%E7%A8%8B%E4%B8%8E%E5%B7%A5%E8%89%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="芯片制造流程与工艺">芯片制造流程与工艺</span>
+            <span class="post-date" title="2025-06-14 12:13:17">2025/06/14</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E8%81%8C%E5%9C%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入职场">C++ 入职场</span>
+            <span class="post-date" title="2024-06-22 15:52:55">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/Protocol-Buffers-%E5%85%A5%E9%97%A8%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Protocol Buffers 入门使用">Protocol Buffers 入门使用</span>
+            <span class="post-date" title="2024-06-22 15:50:39">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-python%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B-boost/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++python 混合编程 -boost">C++python 混合编程 -boost</span>
+            <span class="post-date" title="2024-06-22 15:36:18">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B%E4%B8%8E%E6%A8%A1%E6%9D%BF/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 泛型编程与模板">C++ 泛型编程与模板</span>
+            <span class="post-date" title="2024-06-22 15:27:49">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入门学习笔记">C++ 入门学习笔记</span>
+            <span class="post-date" title="2024-06-22 14:53:46">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 Linux "
+           href="/shell%E7%BC%96%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="shell 编程">shell 编程</span>
+            <span class="post-date" title="2022-03-07 20:24:24">2022/03/07</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Git 版本控制工具">Git 版本控制工具</span>
+            <span class="post-date" title="2022-03-05 23:23:45">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Hexo%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E4%B8%8E%E5%A4%9A%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hexo 博客迁移与多平台使用">Hexo 博客迁移与多平台使用</span>
+            <span class="post-date" title="2022-03-05 01:26:56">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%B8%8E%E9%87%8D%E9%9A%BE%E7%82%B9%E6%B1%87%E6%80%BB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的基础知识与重难点汇总">python 中的基础知识与重难点汇总</span>
+            <span class="post-date" title="2020-11-17 23:05:15">2020/11/17</span>
+        </a>
+        
+        <a  class="全部文章 前端 "
+           href="/javascript%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="JavaScript 入门">JavaScript 入门</span>
+            <span class="post-date" title="2020-11-09 20:46:08">2020/11/09</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E8%AF%AD%E6%B3%95%E7%B3%96/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的语法糖">python 中的语法糖</span>
+            <span class="post-date" title="2020-11-06 10:53:29">2020/11/06</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E8%BF%9B%E7%A8%8B%EF%BC%8C%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%8D%8F%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的进程，线程与协程">python 中的进程，线程与协程</span>
+            <span class="post-date" title="2020-11-04 21:29:16">2020/11/04</span>
+        </a>
+        
+        <a  class="全部文章 Linux "
+           href="/linux%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="linux 常见命令学习">linux 常见命令学习</span>
+            <span class="post-date" title="2020-06-17 22:33:28">2020/06/17</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="机器学习经典算法">机器学习经典算法</span>
+            <span class="post-date" title="2020-06-16 10:36:50">2020/06/16</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/tensorflow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tensorflow 学习笔记">tensorflow 学习笔记</span>
+            <span class="post-date" title="2020-06-05 01:49:53">2020/06/05</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/%E6%B7%B1%E5%BA%A6%E7%90%86%E8%A7%A3%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="深度理解卷积神经网络工作原理">深度理解卷积神经网络工作原理</span>
+            <span class="post-date" title="2020-06-04 13:24:45">2020/06/04</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E7%88%AC%E8%99%AB%E7%9A%84%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫的定时执行">爬虫的定时执行</span>
+            <span class="post-date" title="2020-04-06 22:44:47">2020/04/06</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/Token-%EF%BC%8CCookie%E5%92%8CSession%E7%9A%84%E5%8C%BA%E5%88%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Token ，Cookie 和 Session 的区别">Token ，Cookie 和 Session 的区别</span>
+            <span class="post-date" title="2020-04-03 10:46:54">2020/04/03</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E5%9C%A8python%E4%B8%AD%E8%BF%9B%E8%A1%8C%E8%A7%86%E9%A2%91-%E9%9F%B3%E9%A2%91%E5%A4%84%E7%90%86%E5%8F%8A%E5%90%88%E5%B9%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="在 python 中进行视频 - 音频处理及合并">在 python 中进行视频 - 音频处理及合并</span>
+            <span class="post-date" title="2020-03-29 10:56:44">2020/03/29</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8BJS%E8%A7%A3%E5%AF%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之 JS 解密">反反爬虫之 JS 解密</span>
+            <span class="post-date" title="2020-03-24 10:04:43">2020/03/24</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E7%90%86%E8%A7%A3python%E4%B8%AD%E7%9A%84%E9%97%AD%E5%8C%85%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="理解 python 中的闭包与装饰器">理解 python 中的闭包与装饰器</span>
+            <span class="post-date" title="2020-03-21 17:34:45">2020/03/21</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Mongodb%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Mongodb 数据库入门">Mongodb 数据库入门</span>
+            <span class="post-date" title="2020-03-17 22:50:33">2020/03/17</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%8A%A0%E4%B8%AA%E7%A9%BA%E6%A0%BC%E5%91%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="为什么不加个空格呢">为什么不加个空格呢</span>
+            <span class="post-date" title="2020-03-14 13:53:44">2020/03/14</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8/"
+           data-tag="yield"
+           data-author="" >
+            <span class="post-title" title="迭代器与生成器">迭代器与生成器</span>
+            <span class="post-date" title="2020-03-13 21:58:25">2020/03/13</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E6%BB%91%E5%9D%97%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之滑块验证码">反反爬虫之滑块验证码</span>
+            <span class="post-date" title="2020-03-08 21:00:17">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E5%9B%BE%E7%89%87%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之图片验证码">反反爬虫之图片验证码</span>
+            <span class="post-date" title="2020-03-08 16:16:16">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Python%E6%93%8D%E4%BD%9CRedis/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Python 操作 Redis">Python 操作 Redis</span>
+            <span class="post-date" title="2020-03-07 16:15:44">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy-Redis%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Scrapy-Redis 分布式爬虫">Scrapy-Redis 分布式爬虫</span>
+            <span class="post-date" title="2020-03-07 15:35:50">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%ABRequest%E5%8E%BB%E9%87%8D%E5%8F%8A%E8%BF%87%E6%BB%A4%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫 Request 去重及过滤器">爬虫 Request 去重及过滤器</span>
+            <span class="post-date" title="2020-03-07 15:22:23">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Redis%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Redis 数据库">Redis 数据库</span>
+            <span class="post-date" title="2020-03-06 20:30:00">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Pymysql%E4%B8%8EORM%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="pymysql-ORM"
+           data-author="" >
+            <span class="post-title" title="Pymysql 与 ORM 操作数据库">Pymysql 与 ORM 操作数据库</span>
+            <span class="post-date" title="2020-03-06 10:49:03">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/MySql%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Mysql"
+           data-author="" >
+            <span class="post-title" title="MySql 数据库">MySql 数据库</span>
+            <span class="post-date" title="2020-03-04 23:31:02">2020/03/04</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy%E6%A1%86%E6%9E%B6%E7%88%AC%E8%99%AB/"
+           data-tag="Scrapy"
+           data-author="" >
+            <span class="post-title" title="Scrapy 框架爬虫">Scrapy 框架爬虫</span>
+            <span class="post-date" title="2020-03-02 10:44:55">2020/03/02</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="多线程与多进程爬虫">多线程与多进程爬虫</span>
+            <span class="post-date" title="2020-03-01 15:33:08">2020/03/01</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Selenium%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%A8%A1%E6%8B%9F/"
+           data-tag="Selenium"
+           data-author="" >
+            <span class="post-title" title="Selenium 自动化测试模拟">Selenium 自动化测试模拟</span>
+            <span class="post-date" title="2020-02-29 21:29:54">2020/02/29</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96-%E6%96%87%E4%BB%B6%E4%BF%9D%E5%AD%98/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="数据持久化 - 文件保存本地">数据持久化 - 文件保存本地</span>
+            <span class="post-date" title="2020-02-27 22:01:14">2020/02/27</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫基础入门">爬虫基础入门</span>
+            <span class="post-date" title="2020-02-26 20:44:27">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/CSS%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%8EXpath%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96/"
+           data-tag="CSS-Xpath"
+           data-author="" >
+            <span class="post-title" title="CSS 选择器与 Xpath 数据提取">CSS 选择器与 Xpath 数据提取</span>
+            <span class="post-date" title="2020-02-26 19:07:35">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Seaborn-Pygal-Pyecharts%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Seaborn,pygal,Pyecharts"
+           data-author="" >
+            <span class="post-title" title="Seaborn-Pygal-Pyecharts 可视化">Seaborn-Pygal-Pyecharts 可视化</span>
+            <span class="post-date" title="2020-02-22 16:24:55">2020/02/22</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/python%E4%B9%8BMatplotlib%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Matplotlib"
+           data-author="" >
+            <span class="post-title" title="python 之 Matplotlib 可视化">python 之 Matplotlib 可视化</span>
+            <span class="post-date" title="2020-02-20 20:28:44">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%A4%84%E7%90%86%E5%AE%9E%E6%93%8D/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Pandas 数据分析处理实操">Pandas 数据分析处理实操</span>
+            <span class="post-date" title="2020-02-20 10:51:39">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Markdown%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E6%8A%80%E5%B7%A7/"
+           data-tag="Markdown"
+           data-author="" >
+            <span class="post-title" title="Markdown 文本编辑技巧">Markdown 文本编辑技巧</span>
+            <span class="post-date" title="2020-02-18 16:31:40">2020/02/18</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BPandas%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Python 之 Pandas 库从入门到实战">Python 之 Pandas 库从入门到实战</span>
+            <span class="post-date" title="2020-02-15 20:46:52">2020/02/15</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BNumpy%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Numpy"
+           data-author="" >
+            <span class="post-title" title="Python 之 Numpy 库从入门到实战">Python 之 Numpy 库从入门到实战</span>
+            <span class="post-date" title="2020-02-13 23:15:38">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E9%95%9C%E5%83%8F%E6%BA%90%E7%BD%91%E5%9D%80/"
+           data-tag="pip"
+           data-author="" >
+            <span class="post-title" title="python pip 国内镜像大全及库的安装">python pip 国内镜像大全及库的安装</span>
+            <span class="post-date" title="2020-02-13 23:13:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E7%9A%84%E4%B8%89%E7%A7%8D%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 的三种输出格式">python 的三种输出格式</span>
+            <span class="post-date" title="2020-02-13 23:04:49">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E6%97%B6%E9%97%B4%E6%A8%A1%E5%9D%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的时间模块">python 中的时间模块</span>
+            <span class="post-date" title="2020-02-13 23:01:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E6%9F%A5%E7%9C%8B%E4%BB%BB%E4%BD%95%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E7%94%A8%E6%B3%95%E7%9A%84%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 查看任何第三方库的用法的方法">python 查看任何第三方库的用法的方法</span>
+            <span class="post-date" title="2020-02-13 22:57:50">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Anaconda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8Epyinstaller%E7%A8%8B%E5%BA%8F%E6%89%93%E5%8C%85/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Anaconda 环境配置与 pyinstaller 程序打包">Anaconda 环境配置与 pyinstaller 程序打包</span>
+            <span class="post-date" title="2020-02-13 20:01:52">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%BD%BF%E7%94%A8Hexo-Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%85%8D%E8%B4%B9%E5%8D%9A%E5%AE%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="使用 Hexo+Github 搭建个人免费博客">使用 Hexo+Github 搭建个人免费博客</span>
+            <span class="post-date" title="2020-02-13 15:44:02">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E5%85%B3%E4%BA%8Ehexo%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"
+           data-tag="Hexo"
+           data-author="" >
+            <span class="post-title" title="关于 hexo 使用过程中报错问题汇总">关于 hexo 使用过程中报错问题汇总</span>
+            <span class="post-date" title="2020-02-12 23:03:46">2020/02/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-数据持久化-文件保存" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">数据持久化 - 文件保存本地</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="python">python</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2025-12-13 13:23:10'>2020-02-27 22:01</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:3.8k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96"><span class="toc-text">数据持久化 </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%20%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="toc-text">1. 文件操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%20%E6%96%87%E4%BB%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-text">1.1 文件的基本操作 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-1-%20%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6"><span class="toc-text">1.1.1 读取文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-2-%20%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="toc-text">1.1.2 打开文件的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-3-%20%E6%8C%89%E8%A1%8C%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="toc-text">1.1.3 按行读取文件内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-4-with-open"><span class="toc-text">1.1.4 with open</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%20%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C"><span class="toc-text">1.2 目录操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-1-%20%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C"><span class="toc-text">1.2.1 系统操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-2-%20%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="toc-text">1.2.2 文件操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-3-%20%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C"><span class="toc-text">1.2.3 目录操作</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-excel"><span class="toc-text">2. excel</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%20%E5%88%9B%E5%BB%BA%E5%B7%A5%E4%BD%9C%E7%B0%BF"><span class="toc-text">2.1 创建工作簿 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%20%E5%86%99%E5%85%A5%E6%93%8D%E4%BD%9C"><span class="toc-text">2.2 写入操作 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%20%E6%A1%88%E4%BE%8B"><span class="toc-text">2.3 案例:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%20%E8%AF%BB%E8%A1%A8%E6%93%8D%E4%BD%9C"><span class="toc-text">2.4 读表操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-%20%E6%93%8D%E4%BD%9C%E5%AE%9E%E4%BE%8B"><span class="toc-text">2.5 操作实例 </span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-json"><span class="toc-text">3. json</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%20%E4%B8%A4%E4%B8%AA%E4%B8%BB%E8%A6%81%E6%96%B9%E6%B3%95"><span class="toc-text">3.1 两个主要方法 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-1-json-loads"><span class="toc-text">3.1.1 json.loads()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-2-json-dumps"><span class="toc-text">3.1.2 json.dumps()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-%20%E4%BF%9D%E5%AD%98%E4%B8%BA%20Json"><span class="toc-text">3.2 保存为 Json</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-CSV%20%E6%A8%A1%E5%9D%97%E7%AE%80%E4%BB%8B"><span class="toc-text">4. CSV 模块简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-%20%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6"><span class="toc-text">4.1 写入文件 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-%20%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6"><span class="toc-text">4.2 读取文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-%20%E5%86%99%E5%85%A5%E4%B8%8E%E8%AF%BB%E5%8F%96%E5%AD%97%E5%85%B8"><span class="toc-text">4.3 写入与读取字典</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>斜杠 <code>/</code> 不需要转义，反斜杠 <code>\\</code> 才需要。</p>
+<h1 id="数据持久化"><a href="# 数据持久化" class="headerlink" title="数据持久化"></a>数据持久化 </h1><h1 id="1- 文件操作"><a href="#1- 文件操作" class="headerlink" title="1. 文件操作"></a>1. 文件操作</h1><p> 计算机的 文件，就是存储在某种 长期储存设备 上的一段 数据</p>
+<p>长期存储设备包括：硬盘、U 盘、移动硬盘、光盘…</p>
+<p><strong>文本文件和二进制文件</strong> </p>
+<ul>
+<li>文本文件<ul>
+<li>可以使用 文本编辑软件 查看</li>
+<li>本质上还是二进制文件</li>
+<li>例如：python 的源程序</li>
+</ul>
+</li>
+<li>二进制文件<ul>
+<li>保存的内容 不是给人直接阅读的，而是 提供给其他软件使用的</li>
+<li>例如：图片文件、音频文件、视频文件等等</li>
+<li>二进制文件不能使用 文本编辑软件 查看</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-1- 文件的基本操作"><a href="#1-1- 文件的基本操作" class="headerlink" title="1.1 文件的基本操作"></a>1.1 文件的基本操作 </h2><p><strong> 操作文件的函数 / 方法</strong></p>
+<p>在 <code>Python</code> 中要操作文件需要记住 1 个函数和 3 个方法</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>函数 / 方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>打开函数</td>
+<td>open()</td>
+<td>内置方法，打开文件，并且返回文件操作对象</td>
+</tr>
+<tr>
+<td>读取方法</td>
+<td>.read</td>
+<td>将文件内容读取到内存</td>
+</tr>
+<tr>
+<td>写入方法</td>
+<td>.write</td>
+<td>将指定内容写入文件</td>
+</tr>
+<tr>
+<td>关闭方法</td>
+<td>.close</td>
+<td>关闭文件</td>
+</tr>
+</tbody></table>
+<ul>
+<li><code>open</code> 函数负责打开文件，并且返回文件对象</li>
+<li><code>read</code>/<code>write</code>/<code>close</code> 三个方法都需要通过 文件对象 来调用</li>
+</ul>
+<h3 id="1-1-1- 读取文件"><a href="#1-1-1- 读取文件" class="headerlink" title="1.1.1 读取文件"></a>1.1.1 读取文件</h3><pre><code class="python">file = open(&#39;filename&#39;，mode, encoding, newline)  //newline=&#39;\r\n&#39; 可让文件换行写入</code></pre>
+<p>  函数的第一个参数是要打开的文件名（文件名区分大小写）</p>
+<ul>
+<li>如果文件 存在，返回 文件操作对象，以供读写和关闭</li>
+<li>如果文件 不存在，会 抛出异常</li>
+</ul>
+<ul>
+<li><p><code>read()</code> 方法可以一次性 读入 并 返回 文件的 所有内容</p>
+</li>
+<li><p><code>close()</code>方法负责关闭文件</p>
+<ul>
+<li>如果 忘记关闭文件，会造成系统资源消耗，而且会影响到后续对文件的访问</li>
+</ul>
+</li>
+<li><p>注意：<code>read()</code> 方法执行后，会把 文件指针 移动到 文件的末尾</p>
+</li>
+</ul>
+<pre><code class="python"># 1. 打开 - 文件名需要注意大小写
+file = open(&quot;./data.csv&quot;)
+
+# 2. 读取
+text = file.read()
+print(text)
+
+# 3. 关闭
+file.close()</code></pre>
+<h3 id="1-1-2- 打开文件的方式"><a href="#1-1-2- 打开文件的方式" class="headerlink" title="1.1.2 打开文件的方式"></a>1.1.2 打开文件的方式</h3><ul>
+<li><code>open</code> 函数 <strong> 默认 只读方式</strong> 打开文件，并且返回文件对象</li>
+</ul>
+<p>语法如下：</p>
+<pre><code class="python">f = open(&quot; 文件名 &quot;, &quot; 访问方式 &quot;)</code></pre>
+<table>
+<thead>
+<tr>
+<th>访问方式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>r</td>
+<td>以只读方式打开文件。文件的指针将会放在文件的开头，这是默认模式。如果文件不存在，抛出异常</td>
+</tr>
+<tr>
+<td>w</td>
+<td>以只写方式打开文件。如果文件存在会被覆盖。如果文件不存在，创建新文件</td>
+</tr>
+<tr>
+<td>a</td>
+<td>以追加方式打开文件。如果该文件已存在，文件指针将会放在文件的结尾。如果文件不存在，创建新文件进行写入</td>
+</tr>
+<tr>
+<td>r+</td>
+<td>以读写方式打开文件。文件的指针将会放在文件的开头。如果文件不存在，抛出异常</td>
+</tr>
+<tr>
+<td>w+</td>
+<td>以读写方式打开文件。如果文件存在会被覆盖。如果文件不存在，创建新文件</td>
+</tr>
+<tr>
+<td>a+</td>
+<td>以读写方式打开文件。如果该文件已存在，文件指针将会放在文件的结尾。如果文件不存在，创建新文件进行写入</td>
+</tr>
+<tr>
+<td>rb</td>
+<td>以二进制格式打开一个文件用于只读。文件指针将会放在文件的开头。这是默认模式。b 是二进制的意思</td>
+</tr>
+<tr>
+<td>wb</td>
+<td>以二进制格式打开一个文件只用于写入。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件</td>
+</tr>
+<tr>
+<td>ab</td>
+<td>以二进制格式打开一个文件用于追加</td>
+</tr>
+</tbody></table>
+<p>提示</p>
+<ul>
+<li>频繁的移动文件指针，会影响文件的读写效率，开发中更多的时候会以 <strong>只读、只写</strong> 的方式来操作文件</li>
+</ul>
+<p>写入文件示例</p>
+<pre><code class="python"># 打开文件
+f = open(&quot;text.txt&quot;, &quot;w&quot;)
+
+f.write(&quot;hello python！\n&quot;)
+f.write(&quot; 今天天气真好 &quot;)
+
+# 关闭文件
+f.close()</code></pre>
+<h3 id="1-1-3- 按行读取文件内容"><a href="#1-1-3- 按行读取文件内容" class="headerlink" title="1.1.3 按行读取文件内容"></a>1.1.3 按行读取文件内容</h3><p><code>read</code> 方法默认会把文件的 所有内容 一次性读取到内存</p>
+<p>如果文件太大，对内存的占用会非常严重</p>
+<p><code>readline</code> 方法</p>
+<p><code>readline</code> 方法可以一次读取一行内容</p>
+<p>方法执行后，会把 文件指针 移动到下一行，准备再次读取</p>
+<p>—&gt; 读取大文件的正确姿势!</p>
+<h3 id="1-1-4-with-open"><a href="#1-1-4-with-open" class="headerlink" title="1.1.4 with open"></a>1.1.4 with open</h3><p>常用三段式的文件操作：open–&gt;read/write–&gt;close。这个我们操作完文件后必须 close，当然我们也可以这样做：</p>
+<pre><code class="python">with open(&#39;text.txt&#39;, &#39;r&#39;, encoding=&#39;utf-8&#39;) as f:
+    for line in f.readlines():
+        print(line.strip())           # 打印内容，并把行末尾的 &#39;\n&#39; 删掉</code></pre>
+<blockquote>
+<p>这样就不用调用 close()方法了，可以更为简洁</p>
+</blockquote>
+<h2 id="1-2- 目录操作"><a href="#1-2- 目录操作" class="headerlink" title="1.2 目录操作"></a>1.2 目录操作</h2><ul>
+<li><p>在 终端 / 文件浏览器、 中可以执行常规的 文件 / 目录 管理操作，例如：</p>
+<ul>
+<li>创建、重命名、删除、改变路径、查看目录内容、……</li>
+</ul>
+</li>
+<li><p>在 <code>Python</code> 中，如果希望通过程序实现上述功能，需要导入 <code>os</code> 模块</p>
+</li>
+</ul>
+<h3 id="1-2-1- 系统操作"><a href="#1-2-1- 系统操作" class="headerlink" title="1.2.1 系统操作"></a>1.2.1 系统操作</h3><p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/20180704141230837.png" alt=""></p>
+<h3 id="1-2-2- 文件操作"><a href="#1-2-2- 文件操作" class="headerlink" title="1.2.2 文件操作"></a>1.2.2 文件操作</h3><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>方法名</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>01</td>
+<td>rename</td>
+<td>重命名文件</td>
+<td><code>os.rename(源文件名, 目标文件名)</code></td>
+</tr>
+<tr>
+<td>02</td>
+<td>remove</td>
+<td>删除文件</td>
+<td><code>os.remove(文件名)</code></td>
+</tr>
+</tbody></table>
+<h3 id="1-2-3- 目录操作"><a href="#1-2-3- 目录操作" class="headerlink" title="1.2.3 目录操作"></a>1.2.3 目录操作</h3><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>方法名</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>01</td>
+<td>listdir</td>
+<td>目录列表</td>
+<td><code>os.listdir(目录名)</code></td>
+</tr>
+<tr>
+<td>02</td>
+<td>mkdir</td>
+<td>创建目录</td>
+<td><code>os.mkdir(目录名)</code></td>
+</tr>
+<tr>
+<td>03</td>
+<td>rmdir</td>
+<td>删除目录</td>
+<td><code>os.rmdir(目录名)</code></td>
+</tr>
+<tr>
+<td>04</td>
+<td>chdir</td>
+<td>修改工作目录</td>
+<td><code>os.chdir(目标目录)</code></td>
+</tr>
+<tr>
+<td>05</td>
+<td>makedirs</td>
+<td>生成多层递归目录</td>
+<td><code>os.makedirs(目标目录)</code></td>
+</tr>
+<tr>
+<td>06</td>
+<td>path.isdir</td>
+<td>判断文件或目录是否存在</td>
+<td><code>os.path.isdir(文件路径)</code></td>
+</tr>
+<tr>
+<td>07</td>
+<td>path.exists</td>
+<td>判断文件是否存在</td>
+<td><code>os.path.exists(文件路径)</code></td>
+</tr>
+<tr>
+<td>08</td>
+<td>path.isfile</td>
+<td>判断是否为文件</td>
+<td><code>os.path.isfile(文件路径)</code></td>
+</tr>
+<tr>
+<td>09</td>
+<td>path.join</td>
+<td>连接目录与文件</td>
+<td><code>os.path.join(path,name)</code></td>
+</tr>
+<tr>
+<td>10</td>
+<td>path.getsize</td>
+<td>返回文件大小</td>
+<td><code>os.path.getsize(文件路径)</code></td>
+</tr>
+<tr>
+<td>11</td>
+<td>path.abspath</td>
+<td>返回绝对路径</td>
+<td><code>os.path.abspath(name)</code></td>
+</tr>
+<tr>
+<td>12</td>
+<td>path.dirname</td>
+<td>返回文件路径</td>
+<td><code>os.path.dirname(name)</code></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>提示：文件或者目录操作都支持 相对路径 和 绝对路径</p>
+</blockquote>
+<pre><code class="python">// 判断目录是否存在，存在则删除
+import os
+file_path=&#39;images&#39;
+if  os.path.exists(file_path):
+    os.rmdir(file_path)</code></pre>
+<h1 id="2-excel"><a href="#2-excel" class="headerlink" title="2. excel"></a>2. excel</h1><blockquote>
+<p>openpyxl 是一个 Python 库，用于读取 / 写入 Excel 2010 xlsx / xlsm / xltx / xltm 文件。</p>
+<p>它的诞生是因为缺少可从 Python 本地读取 / 写入 Office Open XML 格式的库。</p>
+</blockquote>
+<p>官方文档：<a target="_blank" rel="noopener" href="https://openpyxl.readthedocs.io/en/stable/usage.html#write-a-workbook">https://openpyxl.readthedocs.io/en/stable/usage.html#write-a-workbook</a></p>
+<p><strong>Excel 文件三个对象</strong></p>
+<pre><code>workbook： 工作簿，一个 excel 文件包含多个 sheet。
+sheet：工作表，一个 workbook 有多个，表名识别，如“sheet1”，“sheet2”等。
+cell： 单元格，存储数据对象</code></pre><p>1、openpyxl 读写单元格时，单元格的坐标位置起始值是（1，1），即下标最小值为 1，否则报错！</p>
+<p>2、openpyxl 支持直接横纵坐标访问，如 A1，B2…</p>
+<h2 id="2-1- 创建工作簿"><a href="#2-1- 创建工作簿" class="headerlink" title="2.1 创建工作簿"></a>2.1 创建工作簿 </h2><p> 只需导入<code>Workbook</code> 对象就可以创建工作簿</p>
+<pre><code>from openpyxl import Workbook
+# 创建工作簿
+wb = Workbook()</code></pre><p>如果想写入数据就需要获取一张表</p>
+<p>表明创建时会自动命名。它们按顺序编号（Sheet，Sheet1，Sheet2 等）。可以随时通过 <code>Worksheet.title</code> 属性更改此名称：</p>
+<pre><code># 创建一张表
+ws = wb.active
+ws.title = &#39; 表 1&#39;
+
+# 创建新表
+ws2 = wb.create_sheet(&#39; 表 2&#39;)
+
+# 通过表名获取表
+ws = wb[&#39; 表 1&#39;]</code></pre><h2 id="2-2- 写入操作"><a href="#2-2- 写入操作" class="headerlink" title="2.2 写入操作"></a>2.2 写入操作 </h2><p> 现在我们知道了如何获取工作表，可以开始修改单元格内容了。单元格可以直接作为工作表的键进行访问：</p>
+<p>这将使单元格返回 A4，如果尚未存在，则创建一个单元格。可以直接分配值：</p>
+<pre><code class="python"># 写入值
+ws[&#39;A1&#39;] = 42</code></pre>
+<p>还有 <code>Worksheet.cell()</code> 方法可以更方便操作。</p>
+<pre><code class="python">ws.cell(row=2, column=5).value = 99
+ws.cell(row=3, column=5, value=100)</code></pre>
+<p><strong>逐行写</strong></p>
+<pre><code class="python"># 行内容可以直接被列表覆盖
+# ws.append(iterable)
+# 添加一行到当前 sheet 的最底部（即逐行追加从第一行开始）
+# iterable 必须是 list,tuple,dict,range,generator 类型的。
+# 1，如果是 list，将 list 从头到尾顺序添加。
+# 2，如果是 dict，按照相应的键添加相应的键值。
+ws.append([&#39;This is A1&#39;， &#39;This is B1&#39;， &#39;This is C1&#39;])
+ws.append(&#123;&#39;A&#39;: &#39;This is A1&#39;， &#39;C&#39;: &#39;This is C1&#39;&#125;)
+ws.append(&#123;1: &#39;This is A1&#39;， 3: &#39;This is C1&#39;&#125;)</code></pre>
+<p><strong>同时可以遍历单元格</strong></p>
+<h2 id="2-3- 案例"><a href="#2-3- 案例" class="headerlink" title="2.3 案例:"></a>2.3 案例:</h2><p>将九九乘法表写入 excel 表</p>
+<pre><code class="python"># 写入九九乘法表
+ws9 = wb.create_sheet(&#39; 九九乘法表 &#39;)
+i = 1
+while i &lt; 10:
+    j = 1
+    while j &lt;= i:
+        # print(&#39;&#123;&#125; * &#123;&#125; = &#123;&#125;&#39;.format(j， i， j * i)， end=&#39;\t&#39;)
+        ws9.cell(row=i， column=j).value = &#39;&#123;&#125; * &#123;&#125; = &#123;&#125;&#39;.format(j， i， j * i)
+        j += 1
+    i += 1 </code></pre>
+<h2 id="2-4- 读表操作"><a href="#2-4- 读表操作" class="headerlink" title="2.4 读表操作"></a>2.4 读表操作</h2><pre><code class="python"># 打开文件：
+from openpyxl import load_workbook
+wb = load_workbook(&#39;sample.xlsx&#39;)
+# 通过表名获取获取 sheet：
+table = wb[&#39; 九九乘法表 &#39;]
+
+# 获取行数和列数：
+rows = table.max_row
+cols = table.max_column
+print(rows, cols)
+
+# 获取单元格值：
+# 获取表格内容, 是从第一行第一列是从 1 开始的, 注意不要丢掉 .value
+Data = table.cell(row=1, column=1).value
+print(Data)
+
+# 获取所有表名
+sheet_names = wb.sheetnames
+print(sheet_names[0])
+ws = wb[(wb.sheetnames[0])]  # index 为 0 为第一张表
+# 活动表表名
+print(wb.active.title)</code></pre>
+<p>逐行读取</p>
+<pre><code class="python"># 逐行读 ws9[&#39;A1:I9&#39;]: 例如(&#39;A1:C4&#39;)
+# 返回一个生成器， 注意取值时要用 value，例如：
+for row in table[&#39;A1:I9&#39;]:
+    for cell in row:
+        print(cell.value)</code></pre>
+<p>显示有多少张表</p>
+<pre><code>print(wb.sheetnames)
+# 显示表名，表行数，表列数
+print(ws9.title)
+print(ws9.max_row)
+print(ws9.max_column)</code></pre><p> 保存文件</p>
+<pre><code>wb.save(&quot;sample1.xlsx&quot;)</code></pre><h2 id="2-5- 操作实例"><a href="#2-5- 操作实例" class="headerlink" title="2.5 操作实例"></a>2.5 操作实例 </h2><p> 将猫眼爬虫的数据保存到 Excel 表。</p>
+<h1 id="3-json"><a href="#3-json" class="headerlink" title="3. json"></a>3. json</h1><p><strong>目的：</strong> 将 Python 对象编码为 JSON 字符串，或将 JSON 字符串解码为 Python 对象。</p>
+<p><code>json</code> 模块提供了 API，将内存中的 Python 对象转换为 JSON 序列。JSON 具有以多种语言（尤其是 JavaScript）实现的优点。它在 REST API 中 Web 服务端和客户端之间的通信被广泛应用，同时对于应用程序间通信需求也很有用。 </p>
+<h2 id="3-1- 两个主要方法"><a href="#3-1- 两个主要方法" class="headerlink" title="3.1 两个主要方法"></a>3.1 两个主要方法 </h2><h3 id="3-1-1-json-loads"><a href="#3-1-1-json-loads" class="headerlink" title="3.1.1 json.loads()"></a>3.1.1 <strong>json.loads()</strong></h3><p> 作用：把 Json 格式字符串解码转换成 Python 字典对象 。<strong>字符串——&gt; 字典</strong> （称之为反序列化）</p>
+<pre><code class="python">import json
+
+json_str=&#39;&#123;&quot;name&quot;: &quot;ACME&quot;,&quot;shares&quot;:&quot;100&quot;,&quot;price&quot; :&quot;542.23&quot;&#125;&#39;   //json 数据
+
+dict_data=json.loads(json_str)
+
+print(type(dict_data),dict_data)
+// 输出结果如下：
+&lt;class &#39;dict&#39;&gt; &#123;&#39;name&#39;: &#39;ACME&#39;, &#39;shares&#39;: &#39;100&#39;, &#39;price&#39;: &#39;542.23&#39;&#125;</code></pre>
+<p><strong>注意：json 中的字符串只能是双引号包围。它也是一种数据格式</strong></p>
+<p>注意区分：json.load()用于从 json 文件中读取数据。以下举例说明：</p>
+<pre><code class="python">import json
+file=open(&#39;novel.json&#39;,mode=&#39;r&#39;,encoding=&#39;utf-8&#39;)
+a=json.load(file)   // 注意这里 file 只能有一行才能读取
+print(type(a))
+// 输出结果如下：
+&lt;class &#39;dict&#39;&gt;</code></pre>
+<blockquote>
+<p>总结，json.loads 读取内存里的数据，json.load 读取文件中的数据。都是把数据反序列化。</p>
+</blockquote>
+<h3 id="3-1-2-json-dumps"><a href="#3-1-2-json-dumps" class="headerlink" title="3.1.2 json.dumps()"></a>3.1.2 <strong>json.dumps()</strong></h3><p>作用：把 Python 字典对象解码转换成 Json 格式字符串。<strong>字典——&gt; 字符串</strong> （称之为序列化）</p>
+<pre><code class="python">import json
+
+dict_data=&#123;&#39;name&#39;: &#39;ACME&#39;,&#39;shares&#39;:100,&#39;price&#39; :542.23&#125;
+
+json_str=json.dumps(dict_data)
+
+print(type(json_str),json_str)
+// 输出结果如下：
+&lt;class &#39;str&#39;&gt; &#123;&quot;name&quot;: &quot;ACME&quot;, &quot;shares&quot;: 100, &quot;price&quot;: 542.23&#125;</code></pre>
+<p>注意区分： json.dump()作用是将 dict 类型的数据转成 str，并写入到 json 文件中，以下举例说明：</p>
+<pre><code class="python">import json
+dict_data=&#123;&#39;name&#39;: &quot; 马克 &quot;,&quot;shares&quot;:100,&quot;price&quot; :542.23&#125;
+
+json.dump(dict_data,open(&#39;file.json&#39;,&#39;w&#39;),ensure_ascii=False)
+// 结果：将 dict_data 写入到本地</code></pre>
+<h2 id="3-2- 保存为 Json"><a href="#3-2- 保存为 Json" class="headerlink" title="3.2 保存为 Json"></a>3.2 保存为 Json</h2><p>以 json 格式保存文件</p>
+<pre><code class="python">import json
+
+data = &#123;
+    &#39;name&#39;: &#39; 青灯 &#39;,
+    &#39;shares&#39;: 100,
+    &#39;price&#39;: 542.23
+&#125;
+
+json_str = json.dumps(data) // 将字典序列化为 json
+
+// 写入 json 数据
+with open(&#39;data.json&#39;, mode=&#39;w&#39;, encoding=&#39;utf-8&#39;) as f:
+    f.write(json_str)</code></pre>
+<p>输出结果如下：</p>
+<pre><code class="python">// 本地的 data.json 文件打开如下
+&#123;&quot;name&quot;: &quot;\u9752\u706f&quot;, &quot;shares&quot;: 100, &quot;price&quot;: 542.23&#125;</code></pre>
+<p>解决办法: <code>json_str = json.dumps(data, ensure_ascii=False)</code></p>
+<h1 id="4-CSV 模块简介"><a href="#4-CSV 模块简介" class="headerlink" title="4. CSV 模块简介"></a>4. CSV 模块简介</h1><p>csv 文件格式是一种通用的电子表格和数据库导入导出格式。最近我调用 RPC 处理服务器数据时，经常需要将数据做个存档便使用了这一方便的格式。</p>
+<p>python 中有一个读写 csv 文件的包，直接 import csv 即可。利用这个 python 包可以很方便对 csv 文件进行操作，一些简单的用法如下。</p>
+<h2 id="4-1- 写入文件"><a href="#4-1- 写入文件" class="headerlink" title="4.1 写入文件"></a>4.1 写入文件 </h2><p> 我们把需要写入的数据放到列表中，写文件时会把列表中的元素写入到 csv 文件中。</p>
+<pre><code class="python">import csv
+
+ll = [[1, 2, 3, 4],
+      [1, 2, 3, 4],
+      [5, 6, 7, 8],
+      [5, 6, 7, 8]]
+
+with open(&#39;example1.csv&#39;, &#39;w&#39;, newline=&#39;&#39;) as csvfile:
+    &quot;&quot;&quot;
+    delimiter: 分割符
+    &quot;&quot;&quot;
+    spamwriter = csv.writer(csvfile, delimiter=&#39;,&#39;)
+    for l in ll:
+        spamwriter.writerow([1, 2, 3, 4])</code></pre>
+<blockquote>
+<p>可能遇到的问题：直接使用这种写法会导致文件每一行后面会多一个空行。使用 <code>newline=&#39;&#39;</code> 解决</p>
+</blockquote>
+<p><strong>使用 open 直接写入</strong></p>
+<pre><code> with open(&#39;example2.csv&#39;, &#39;w&#39;) as csvfile:
+    &quot;&quot;&quot;
+    delimiter: 分割符
+    &quot;&quot;&quot;
+    for l in ll:
+        csvfile.write(&quot;,&quot;.join(map(str, l)))
+        csvfile.write(&#39;\n&#39;)</code></pre><h2 id="4-2- 读取文件"><a href="#4-2- 读取文件" class="headerlink" title="4.2 读取文件"></a>4.2 读取文件</h2><pre><code class="python">import csv
+
+with open(&#39;example.csv&#39;, encoding=&#39;utf-8&#39;) as f:
+    csv_reader = csv.reader(f)
+    for row in csv_reader:
+        print(row)</code></pre>
+<p><code>file:example.csv</code> <code>csv</code> 数据</p>
+<pre><code>[&#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;]
+[&#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;]
+[&#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;]
+[&#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;]</code></pre><p>默认的情况下， 读和写使用逗号做分隔符(delimiter)，当遇到特殊情况是，可以根据需要手动指定字符， 例如:</p>
+<pre><code class="python">with open(&#39;example.csv&#39;, encoding=&#39;utf-8&#39;) as f:
+    reader = csv.reader(f, delimiter=&#39;,&#39;)
+    for row in reader:
+        print(row)</code></pre>
+<p>上述示例指定冒号作为分隔符</p>
+<p>有点需要注意的是，当用 writer 写数据时， <code>None</code> 会被写成空字符串，浮点类型会被调用 <code>repr()</code> 方法转化成字符串。所以非字符串类型的数据会被 <code>str()</code> 成字符串存储。所以当涉及到 <code>unicode</code> 字符串时，可以自己手动编码后存储或者使用 csv 提供的 <code>UnicodeWriter</code>。</p>
+<h2 id="4-3- 写入与读取字典"><a href="#4-3- 写入与读取字典" class="headerlink" title="4.3 写入与读取字典"></a>4.3 写入与读取字典</h2><p><code>csv</code> 还提供了一种类似于字典方式的读写，方式如下:</p>
+<pre><code class="python">class csv.DictReader(csvfile， fieldnames=None， restkey=None， restval=None， dialect=&#39;excel&#39;， *args， **kwds)
+
+class csv.DictWriter(csvfile， fieldnames， restval=&#39;&#39;， extrasaction=&#39;raise&#39;， dialect=&#39;excel&#39;， *args， **kwds)</code></pre>
+<p>其中 fieldnames 指定字典的 key 值，如果 reader 里没有指定那么默认第一行的元素，在 writer 里一定要指定这个。 </p>
+<pre><code class="python"># %% 写
+
+import csv
+
+with open(&#39;names.csv&#39;, &#39;w&#39;) as csvfile:
+    fieldnames = [&#39;first_name&#39;, &#39;last_name&#39;]
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+    writer.writeheader()
+    writer.writerow(&#123;&#39;first_name&#39;: &#39;Baked&#39;, &#39;last_name&#39;: &#39;Beans&#39;&#125;)
+    writer.writerow(&#123;&#39;first_name&#39;: &#39;Lovely&#39;&#125;)
+    writer.writerow(&#123;&#39;first_name&#39;: &#39;Wonderful&#39;, &#39;last_name&#39;: &#39;Spam&#39;&#125;)
+</code></pre>
+<pre><code># %% 读
+import csv
+
+with open(&#39;names.csv&#39;, newline=&#39;&#39;) as csvfile:
+    reader = csv.DictReader(csvfile)
+    for row in reader:
+        print(row[&#39;first_name&#39;], row[&#39;last_name&#39;])</code></pre>
+      
+       <hr><span style="font-style: italic;color: gray;"> 欢迎各位看官及技术大佬前来交流指导呀，可以邮件至 jqiange@yeah.net </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2021 Jqiange
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

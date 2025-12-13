@@ -1,0 +1,2537 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Pymysql 与 ORM 操作数据库 | jqiange</title>
+  <meta name="keywords" content=" pymysql-ORM ">
+  <meta name="description" content="Pymysql 与 ORM 操作数据库 | jqiange">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="人畜无害的姜小强">
+<meta property="og:url" content="https://jqiange.github.io/about/index.html">
+<meta property="og:site_name" content="jqiange">
+<meta property="og:description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+<meta property="article:published_time" content="2020-02-18T08:21:04.000Z">
+<meta property="article:modified_time" content="2025-12-13T05:23:10.695Z">
+<meta property="article:author" content="姜小强">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+
+
+<link rel="icon" href="/img/jqiange.png">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/jqiange.png"/>
+</a>
+<div class="author">
+    <span>姜小强</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/jqiange"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(58)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(9)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据库">
+                        
+                        数据库
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="每日一学">
+                        
+                        每日一学
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="爬虫">
+                        
+                        爬虫
+                        <small>(10)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="前端">
+                        
+                        前端
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="深度学习">
+                        
+                        深度学习
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据分析">
+                        
+                        数据分析
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="chip">
+                        
+                        chip
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="CPP">
+                        
+                        CPP
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Linux">
+                        
+                        Linux
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="python">
+                        
+                        python
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="58">
+<input type="hidden" id="yelog_site_word_count" value="251.9k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSS-Xpath</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Markdown</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Matplotlib</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Mysql</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Numpy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pandas</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pip</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pyecharts</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pygal</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pymysql-ORM</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>RE</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Redis</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Scrapy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Seaborn</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Selenium</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>yield</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="全部文章 python "
+           href="/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%A6%E8%A7%A3/"
+           data-tag="RE"
+           data-author="" >
+            <span class="post-title" title="正则表达式详解">正则表达式详解</span>
+            <span class="post-date" title="2020-02-26 09:25:46">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/tcl%E4%B8%8Eopc/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 与 opc">tcl 与 opc</span>
+            <span class="post-date" title="2025-09-24 13:36:07">2025/09/24</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/hexo%E6%96%87%E7%AB%A0%E5%8A%A0%E5%AF%86%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="hexo 文章加密方法">hexo 文章加密方法</span>
+            <span class="post-date" title="2025-09-21 22:33:03">2025/09/21</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/tcl%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 语言入门">tcl 语言入门</span>
+            <span class="post-date" title="2025-09-14 22:43:20">2025/09/14</span>
+        </a>
+        
+        <a  class="全部文章 每日一学 "
+           href="/%E6%95%85%E4%BA%8B%E4%BC%9A%E4%B8%8E%E4%BC%81%E4%B8%9A%E8%82%A1%E6%9D%83%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="故事会与企业股权架构设计">故事会与企业股权架构设计</span>
+            <span class="post-date" title="2025-08-30 09:42:43">2025/08/30</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%AE%A1%E7%AE%97%E5%85%89%E5%88%BBOPC%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="计算光刻 OPC 名词解释">计算光刻 OPC 名词解释</span>
+            <span class="post-date" title="2025-08-26 21:44:36">2025/08/26</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%8A%AF%E7%89%87%E5%88%B6%E9%80%A0%E6%B5%81%E7%A8%8B%E4%B8%8E%E5%B7%A5%E8%89%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="芯片制造流程与工艺">芯片制造流程与工艺</span>
+            <span class="post-date" title="2025-06-14 12:13:17">2025/06/14</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E8%81%8C%E5%9C%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入职场">C++ 入职场</span>
+            <span class="post-date" title="2024-06-22 15:52:55">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/Protocol-Buffers-%E5%85%A5%E9%97%A8%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Protocol Buffers 入门使用">Protocol Buffers 入门使用</span>
+            <span class="post-date" title="2024-06-22 15:50:39">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-python%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B-boost/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++python 混合编程 -boost">C++python 混合编程 -boost</span>
+            <span class="post-date" title="2024-06-22 15:36:18">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B%E4%B8%8E%E6%A8%A1%E6%9D%BF/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 泛型编程与模板">C++ 泛型编程与模板</span>
+            <span class="post-date" title="2024-06-22 15:27:49">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入门学习笔记">C++ 入门学习笔记</span>
+            <span class="post-date" title="2024-06-22 14:53:46">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 Linux "
+           href="/shell%E7%BC%96%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="shell 编程">shell 编程</span>
+            <span class="post-date" title="2022-03-07 20:24:24">2022/03/07</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Git 版本控制工具">Git 版本控制工具</span>
+            <span class="post-date" title="2022-03-05 23:23:45">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Hexo%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E4%B8%8E%E5%A4%9A%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hexo 博客迁移与多平台使用">Hexo 博客迁移与多平台使用</span>
+            <span class="post-date" title="2022-03-05 01:26:56">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%B8%8E%E9%87%8D%E9%9A%BE%E7%82%B9%E6%B1%87%E6%80%BB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的基础知识与重难点汇总">python 中的基础知识与重难点汇总</span>
+            <span class="post-date" title="2020-11-17 23:05:15">2020/11/17</span>
+        </a>
+        
+        <a  class="全部文章 前端 "
+           href="/javascript%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="JavaScript 入门">JavaScript 入门</span>
+            <span class="post-date" title="2020-11-09 20:46:08">2020/11/09</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E8%AF%AD%E6%B3%95%E7%B3%96/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的语法糖">python 中的语法糖</span>
+            <span class="post-date" title="2020-11-06 10:53:29">2020/11/06</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E8%BF%9B%E7%A8%8B%EF%BC%8C%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%8D%8F%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的进程，线程与协程">python 中的进程，线程与协程</span>
+            <span class="post-date" title="2020-11-04 21:29:16">2020/11/04</span>
+        </a>
+        
+        <a  class="全部文章 Linux "
+           href="/linux%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="linux 常见命令学习">linux 常见命令学习</span>
+            <span class="post-date" title="2020-06-17 22:33:28">2020/06/17</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="机器学习经典算法">机器学习经典算法</span>
+            <span class="post-date" title="2020-06-16 10:36:50">2020/06/16</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/tensorflow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tensorflow 学习笔记">tensorflow 学习笔记</span>
+            <span class="post-date" title="2020-06-05 01:49:53">2020/06/05</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/%E6%B7%B1%E5%BA%A6%E7%90%86%E8%A7%A3%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="深度理解卷积神经网络工作原理">深度理解卷积神经网络工作原理</span>
+            <span class="post-date" title="2020-06-04 13:24:45">2020/06/04</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E7%88%AC%E8%99%AB%E7%9A%84%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫的定时执行">爬虫的定时执行</span>
+            <span class="post-date" title="2020-04-06 22:44:47">2020/04/06</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/Token-%EF%BC%8CCookie%E5%92%8CSession%E7%9A%84%E5%8C%BA%E5%88%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Token ，Cookie 和 Session 的区别">Token ，Cookie 和 Session 的区别</span>
+            <span class="post-date" title="2020-04-03 10:46:54">2020/04/03</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E5%9C%A8python%E4%B8%AD%E8%BF%9B%E8%A1%8C%E8%A7%86%E9%A2%91-%E9%9F%B3%E9%A2%91%E5%A4%84%E7%90%86%E5%8F%8A%E5%90%88%E5%B9%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="在 python 中进行视频 - 音频处理及合并">在 python 中进行视频 - 音频处理及合并</span>
+            <span class="post-date" title="2020-03-29 10:56:44">2020/03/29</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8BJS%E8%A7%A3%E5%AF%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之 JS 解密">反反爬虫之 JS 解密</span>
+            <span class="post-date" title="2020-03-24 10:04:43">2020/03/24</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E7%90%86%E8%A7%A3python%E4%B8%AD%E7%9A%84%E9%97%AD%E5%8C%85%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="理解 python 中的闭包与装饰器">理解 python 中的闭包与装饰器</span>
+            <span class="post-date" title="2020-03-21 17:34:45">2020/03/21</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Mongodb%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Mongodb 数据库入门">Mongodb 数据库入门</span>
+            <span class="post-date" title="2020-03-17 22:50:33">2020/03/17</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%8A%A0%E4%B8%AA%E7%A9%BA%E6%A0%BC%E5%91%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="为什么不加个空格呢">为什么不加个空格呢</span>
+            <span class="post-date" title="2020-03-14 13:53:44">2020/03/14</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8/"
+           data-tag="yield"
+           data-author="" >
+            <span class="post-title" title="迭代器与生成器">迭代器与生成器</span>
+            <span class="post-date" title="2020-03-13 21:58:25">2020/03/13</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E6%BB%91%E5%9D%97%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之滑块验证码">反反爬虫之滑块验证码</span>
+            <span class="post-date" title="2020-03-08 21:00:17">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E5%9B%BE%E7%89%87%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之图片验证码">反反爬虫之图片验证码</span>
+            <span class="post-date" title="2020-03-08 16:16:16">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Python%E6%93%8D%E4%BD%9CRedis/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Python 操作 Redis">Python 操作 Redis</span>
+            <span class="post-date" title="2020-03-07 16:15:44">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy-Redis%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Scrapy-Redis 分布式爬虫">Scrapy-Redis 分布式爬虫</span>
+            <span class="post-date" title="2020-03-07 15:35:50">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%ABRequest%E5%8E%BB%E9%87%8D%E5%8F%8A%E8%BF%87%E6%BB%A4%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫 Request 去重及过滤器">爬虫 Request 去重及过滤器</span>
+            <span class="post-date" title="2020-03-07 15:22:23">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Redis%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Redis 数据库">Redis 数据库</span>
+            <span class="post-date" title="2020-03-06 20:30:00">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Pymysql%E4%B8%8EORM%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="pymysql-ORM"
+           data-author="" >
+            <span class="post-title" title="Pymysql 与 ORM 操作数据库">Pymysql 与 ORM 操作数据库</span>
+            <span class="post-date" title="2020-03-06 10:49:03">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/MySql%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Mysql"
+           data-author="" >
+            <span class="post-title" title="MySql 数据库">MySql 数据库</span>
+            <span class="post-date" title="2020-03-04 23:31:02">2020/03/04</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy%E6%A1%86%E6%9E%B6%E7%88%AC%E8%99%AB/"
+           data-tag="Scrapy"
+           data-author="" >
+            <span class="post-title" title="Scrapy 框架爬虫">Scrapy 框架爬虫</span>
+            <span class="post-date" title="2020-03-02 10:44:55">2020/03/02</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="多线程与多进程爬虫">多线程与多进程爬虫</span>
+            <span class="post-date" title="2020-03-01 15:33:08">2020/03/01</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Selenium%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%A8%A1%E6%8B%9F/"
+           data-tag="Selenium"
+           data-author="" >
+            <span class="post-title" title="Selenium 自动化测试模拟">Selenium 自动化测试模拟</span>
+            <span class="post-date" title="2020-02-29 21:29:54">2020/02/29</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96-%E6%96%87%E4%BB%B6%E4%BF%9D%E5%AD%98/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="数据持久化 - 文件保存本地">数据持久化 - 文件保存本地</span>
+            <span class="post-date" title="2020-02-27 22:01:14">2020/02/27</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫基础入门">爬虫基础入门</span>
+            <span class="post-date" title="2020-02-26 20:44:27">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/CSS%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%8EXpath%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96/"
+           data-tag="CSS-Xpath"
+           data-author="" >
+            <span class="post-title" title="CSS 选择器与 Xpath 数据提取">CSS 选择器与 Xpath 数据提取</span>
+            <span class="post-date" title="2020-02-26 19:07:35">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Seaborn-Pygal-Pyecharts%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Seaborn,pygal,Pyecharts"
+           data-author="" >
+            <span class="post-title" title="Seaborn-Pygal-Pyecharts 可视化">Seaborn-Pygal-Pyecharts 可视化</span>
+            <span class="post-date" title="2020-02-22 16:24:55">2020/02/22</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/python%E4%B9%8BMatplotlib%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Matplotlib"
+           data-author="" >
+            <span class="post-title" title="python 之 Matplotlib 可视化">python 之 Matplotlib 可视化</span>
+            <span class="post-date" title="2020-02-20 20:28:44">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%A4%84%E7%90%86%E5%AE%9E%E6%93%8D/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Pandas 数据分析处理实操">Pandas 数据分析处理实操</span>
+            <span class="post-date" title="2020-02-20 10:51:39">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Markdown%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E6%8A%80%E5%B7%A7/"
+           data-tag="Markdown"
+           data-author="" >
+            <span class="post-title" title="Markdown 文本编辑技巧">Markdown 文本编辑技巧</span>
+            <span class="post-date" title="2020-02-18 16:31:40">2020/02/18</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BPandas%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Python 之 Pandas 库从入门到实战">Python 之 Pandas 库从入门到实战</span>
+            <span class="post-date" title="2020-02-15 20:46:52">2020/02/15</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BNumpy%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Numpy"
+           data-author="" >
+            <span class="post-title" title="Python 之 Numpy 库从入门到实战">Python 之 Numpy 库从入门到实战</span>
+            <span class="post-date" title="2020-02-13 23:15:38">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E9%95%9C%E5%83%8F%E6%BA%90%E7%BD%91%E5%9D%80/"
+           data-tag="pip"
+           data-author="" >
+            <span class="post-title" title="python pip 国内镜像大全及库的安装">python pip 国内镜像大全及库的安装</span>
+            <span class="post-date" title="2020-02-13 23:13:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E7%9A%84%E4%B8%89%E7%A7%8D%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 的三种输出格式">python 的三种输出格式</span>
+            <span class="post-date" title="2020-02-13 23:04:49">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E6%97%B6%E9%97%B4%E6%A8%A1%E5%9D%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的时间模块">python 中的时间模块</span>
+            <span class="post-date" title="2020-02-13 23:01:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E6%9F%A5%E7%9C%8B%E4%BB%BB%E4%BD%95%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E7%94%A8%E6%B3%95%E7%9A%84%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 查看任何第三方库的用法的方法">python 查看任何第三方库的用法的方法</span>
+            <span class="post-date" title="2020-02-13 22:57:50">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Anaconda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8Epyinstaller%E7%A8%8B%E5%BA%8F%E6%89%93%E5%8C%85/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Anaconda 环境配置与 pyinstaller 程序打包">Anaconda 环境配置与 pyinstaller 程序打包</span>
+            <span class="post-date" title="2020-02-13 20:01:52">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%BD%BF%E7%94%A8Hexo-Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%85%8D%E8%B4%B9%E5%8D%9A%E5%AE%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="使用 Hexo+Github 搭建个人免费博客">使用 Hexo+Github 搭建个人免费博客</span>
+            <span class="post-date" title="2020-02-13 15:44:02">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E5%85%B3%E4%BA%8Ehexo%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"
+           data-tag="Hexo"
+           data-author="" >
+            <span class="post-title" title="关于 hexo 使用过程中报错问题汇总">关于 hexo 使用过程中报错问题汇总</span>
+            <span class="post-date" title="2020-02-12 23:03:46">2020/02/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-Pymysql与ORM操作数据库" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Pymysql 与 ORM 操作数据库</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="数据库">数据库</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color2">pymysql-ORM</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2025-12-13 13:23:10'>2020-03-06 10:49</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:10.3k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1%E3%80%81Mysql%20%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">1、Mysql 数据库 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%20%E5%88%9B%E5%BB%BA"><span class="toc-text">1.1 创建 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-1-%20%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">1.1.1 创建数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-2-%20%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E8%A1%A8"><span class="toc-text">1.1.2 创建数据表 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-Pymysql-%20%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">1.2 Pymysql 操作数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-1-%20%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95"><span class="toc-text">1.2.1 数据库操作方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-1-%20%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">1.2.1 连接数据库 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-2-%20%E6%89%A7%E8%A1%8C%20-sql-%20%E5%91%BD%E4%BB%A4"><span class="toc-text">1.2.2 执行 sql 命令 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-3-%20%E6%B8%B8%E6%A0%87%E5%AF%B9%E8%B1%A1"><span class="toc-text">1.2.3 游标对象</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-%20%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-text">1.3 插入数据 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-1-%20%E6%A1%88%E4%BE%8B"><span class="toc-text">1.3.1 案例 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-%20%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE"><span class="toc-text">1.4 查询数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-1-%20%E6%9F%A5%E8%AF%A2%E4%B8%80%E8%A1%8C%E6%95%B0%E6%8D%AE"><span class="toc-text">1.4.1 查询一行数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-2-%20%E6%9F%A5%E8%AF%A2%E5%A4%9A%E8%A1%8C%E6%95%B0%E6%8D%AE"><span class="toc-text">1.4.2 查询多行数据</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-%20%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE"><span class="toc-text">1.5 修改数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-6-%20%E5%8F%82%E6%95%B0%E5%8C%96"><span class="toc-text">1.6 参数化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-7-%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%A3%80%E7%B4%A2%E6%95%B0%E6%8D%AE"><span class="toc-text">1.7 面向对象检索数据</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%E3%80%81ORM"><span class="toc-text">2、ORM</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%20%E5%88%9B%E5%BB%BA%E8%BF%9E%E6%8E%A5"><span class="toc-text">2.1 创建连接 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1-%20%E5%88%9B%E5%BB%BA%E5%BC%95%E6%93%8E"><span class="toc-text">2.1.1 创建引擎</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2-%20%E5%9F%BA%E7%B1%BB"><span class="toc-text">2.1.2 基类 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-3-%20%E4%BC%9A%E8%AF%9D"><span class="toc-text">2.1.3 会话</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%20%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE"><span class="toc-text">2.2 创建数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1-%20%E6%98%A0%E5%B0%84%E7%B1%BB"><span class="toc-text">2.2.1 映射类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2-%20%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E8%A1%A8"><span class="toc-text">2.2.2 创建数据表 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%20%E7%94%9F%E6%88%90%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE"><span class="toc-text">2.3 生成测试数据 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-1-%20%E6%B7%BB%E5%8A%A0%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE"><span class="toc-text">2.3.1 添加测试数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-2-%20%E6%B5%8B%E8%AF%95"><span class="toc-text">2.3.2 测试 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%20%E5%85%B3%E7%B3%BB"><span class="toc-text">2.4 关系 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-1-%20%E4%B8%80%E5%AF%B9%E4%B8%80%E5%85%B3%E7%B3%BB"><span class="toc-text">2.4.1 一对一关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-2-%20%E5%A4%9A%E5%AF%B9%E5%A4%9A%E5%85%B3%E7%B3%BB"><span class="toc-text">2.4.2 多对多关系 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-%20%E5%AE%8C%E5%96%84%E5%88%9B%E5%BB%BA"><span class="toc-text">2.5 完善创建 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-1-%20%E5%A2%9E%E5%8A%A0%E6%95%B0%E6%8D%AE"><span class="toc-text">2.5.1 增加数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-2-%20%E7%BB%99%E8%AF%BE%E7%A8%8B%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%AD%BE"><span class="toc-text">2.5.2 给课程添加标签 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-6-%20%E5%AE%8C%E6%95%B4%E4%BB%A3%E7%A0%81"><span class="toc-text">2.6 完整代码 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-7-%20%E6%9F%A5%E8%AF%A2"><span class="toc-text">2.7 查询 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7-1-%20%E5%9F%BA%E6%9C%AC%E6%9F%A5%E8%AF%A2%E8%AF%AD%E5%8F%A5"><span class="toc-text">2.7.1 基本查询语句 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7-2-%20%E6%9F%A5%E8%AF%A2%E8%BF%87%E6%BB%A4%E5%99%A8"><span class="toc-text">2.7.2 查询过滤器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7-3-%20%E6%9F%A5%E8%AF%A2%E6%89%A7%E8%A1%8C%E5%99%A8"><span class="toc-text">2.7.3 查询执行器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-8-%20%E9%AB%98%E7%BA%A7%E6%9F%A5%E8%AF%A2"><span class="toc-text">2.8 高级查询 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-8-1-%20%E6%8E%92%E5%BA%8F"><span class="toc-text">2.8.1 排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-8-2-%20%E8%AE%BE%E7%BD%AE%E6%9F%A5%E8%AF%A2%E6%95%B0%E9%87%8F"><span class="toc-text">2.8.2 设置查询数量 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-8-3-%20%E8%81%94%E7%BB%93%E6%9F%A5%E8%AF%A2"><span class="toc-text">2.8.3 联结查询 </span></a></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1、Mysql 数据库"><a href="#1、Mysql 数据库" class="headerlink" title="1、Mysql 数据库"></a>1、Mysql 数据库 </h1><p><code>MySQL</code> 是一个 DBMS（数据库管理系统），由瑞典 MySQLAB 公司开发，目前属于 Oracle (甲骨文) 公司，<code>MySQL</code> 是最流行的关系型数据库管理系统（关系数据库，是建立在关系数据库模型基础上的数据库，借助于集合代数等概念和方法来处理数据库中的数据）。由于其体积小、速度快、总体拥有成本低，尤其是开放源码这一特点，一般中小型网站的开发者都选择 <code>MySQL</code> 作为网站数据库。<code>MySQL</code> 使用 <code>SQL</code> 语言进行操作。</p>
+<p>菜鸟教程：<a target="_blank" rel="noopener" href="https://www.runoob.com/mysql/mysql-administration.html">https://www.runoob.com/mysql/mysql-administration.html</a></p>
+<p><strong>概念对比</strong></p>
+<ul>
+<li>DB：数据库，存放数据的容器</li>
+<li>DBMS：数据库管理系统，用于管理 DB</li>
+<li>SQL：结构化查询语言，是关系型数据库的通用语言</li>
+</ul>
+<p><strong>RDBMS 术语</strong></p>
+<p>在我们开始学习 MySQL 数据库前，让我们先了解下 RDBMS 的一些术语：</p>
+<ul>
+<li><strong>数据库:</strong> 数据库是一些关联表的集合。</li>
+<li><strong>数据表:</strong> 表是数据的矩阵。在一个数据库中的表看起来像一个简单的电子表格。</li>
+<li><strong>列:</strong> 一列(数据元素) 包含了相同类型的数据, 例如邮政编码的数据。</li>
+<li><strong>行：</strong>一行（= 元组，或记录）是一组相关的数据，例如一条用户订阅的数据。</li>
+</ul>
+<h2 id="1-1- 创建"><a href="#1-1- 创建" class="headerlink" title="1.1 创建"></a>1.1 创建 </h2><h3 id="1-1-1- 创建数据库"><a href="#1-1-1- 创建数据库" class="headerlink" title="1.1.1 创建数据库"></a>1.1.1 创建数据库</h3><p> 创建一个数据库，给它一个名字，比如 <code>python</code>，以后的几次操作也是对 <code>python</code> 这个数据库进行操作。 语句格式为 <code>CREATE DATABASE &lt; 数据库名字 &gt;;</code>，（注意不要漏掉分号 <code>;</code>），前面的 CREATE DATABASE 也可以使用小写，具体命令为：</p>
+<pre><code>-- create database 数据库名 charset=utf8;
+-- 例：
+create database python charset=utf8;</code></pre><p>接下来的操作，就在刚才创建的 <code>python</code> 中进行，由于一个系统中可能会有多个数据库，要确定当前是对哪一个数据库操作，使用语句 <code>use &lt; 数据库名字 &gt;</code>：</p>
+<pre><code>mysql&gt; use python;</code></pre><h3 id="1-1-2- 创建数据表"><a href="#1-1-2- 创建数据表" class="headerlink" title="1.1.2 创建数据表"></a>1.1.2 创建数据表 </h3><p> 数据表（<code>table</code>）简称表，它是数据库最重要的组成部分之一。数据库只是一个框架，表才是实质内容。</p>
+<p>而一个数据库中一般会有多张表，这些各自独立的表通过建立关系被联接起来，才成为可以交叉查阅、一目了然的数据库。</p>
+<p>如下便是一张表：</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>name</th>
+<th>phone</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>01</td>
+<td>Tom</td>
+<td>110110110</td>
+</tr>
+<tr>
+<td>02</td>
+<td>Jack</td>
+<td>119119119</td>
+</tr>
+<tr>
+<td>03</td>
+<td>Rose</td>
+<td>114114114</td>
+</tr>
+</tbody></table>
+<p>在数据库中新建一张表的语句格式为：</p>
+<pre><code>CREATE TABLE 表的名字 (列名 a 数据类型(数据长度), 列名 b 数据类型(数据长度));</code></pre><p> 我们尝试在 <code>python</code> 中新建一张表 <code>employee</code>，包含姓名，ID 和电话信息，所以语句为：</p>
+<pre><code>mysql&gt; CREATE TABLE employee (id int(10),name char(20),phone int(12));
+Query OK, 0 rows affected (0.00 sec)</code></pre><h2 id="1-2-Pymysql- 操作数据库"><a href="#1-2-Pymysql- 操作数据库" class="headerlink" title="1.2 Pymysql 操作数据库"></a>1.2 Pymysql 操作数据库</h2><p>PymySQL 是在 Python3.x 版本中用于连接 MySQL 服务器的一个库。</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1559376920137.png" alt=""></p>
+<p>使用 <code>pip install pymysql</code> 可以直接安装。</p>
+<h3 id="1-2-1- 数据库操作方法"><a href="#1-2-1- 数据库操作方法" class="headerlink" title="1.2.1 数据库操作方法"></a>1.2.1 数据库操作方法</h3><ul>
+<li><p><code>connect</code>()</p>
+<p>链接数据库</p>
+</li>
+<li><p><code>close</code>()</p>
+<p>发送数据关闭与数据库的链接</p>
+</li>
+<li><p><code>commit</code>()</p>
+<p>提交并保存数据</p>
+</li>
+<li><p><code>cursor</code>(<em>cursor=None</em>)</p>
+<p>创建一个新游标，用于执行 sql 语句并获得结果</p>
+</li>
+<li><p><code>rollback</code>()</p>
+<p>回滚当前事务。</p>
+</li>
+<li><p><code>select_db</code>(<em>db</em>)</p>
+<p>设置当前数据库。</p>
+<p>参数:<strong>db</strong> – 数据库的名称.</p>
+</li>
+</ul>
+<h3 id="1-2-1- 连接数据库"><a href="#1-2-1- 连接数据库" class="headerlink" title="1.2.1 连接数据库"></a>1.2.1 连接数据库 </h3><p> 连接数据库对象：调用 pymysql.connect() 方法</p>
+<pre><code class="python">import pymysql
+
+conn=pymysql.connect(参数列表)</code></pre>
+<p><strong>参数:</strong></p>
+<ul>
+<li><strong>host</strong> - 数据库服务器所在的主机</li>
+<li><strong>user</strong> - 登录的用户名</li>
+<li><strong>password</strong> - 要使用的密码。</li>
+<li><strong>database</strong> - 要使用的数据库，None 不使用特定的数据库。</li>
+<li><strong>port</strong> - 要使用的 MySQL 端口，默认通常都可以。（默认值：3306）</li>
+<li><strong>charset</strong> - 你要使用的 Charset。</li>
+<li><strong>db</strong> - 数据库的别名。（与 MySQLdb 兼容）</li>
+<li><strong>passwd</strong> - 密码的别名。（与 MySQLdb 兼容）</li>
+</ul>
+<pre><code class="python">import pymysql
+
+conn=pymysql.connect(
+    host=&#39;localhost&#39;,
+    port=3306,
+    database=&#39;python&#39;,
+    user=&#39;root&#39;,
+    password=&#39;123456&#39;,
+)
+print(conn)
+// 输出结果如下：
+&lt;pymysql.connections.Connection object at 0x0000018E4F185CF8&gt;  // 表示连接成功
+</code></pre>
+<h3 id="1-2-2- 执行 -sql- 命令"><a href="#1-2-2- 执行 -sql- 命令" class="headerlink" title="1.2.2 执行 sql 命令"></a>1.2.2 执行 sql 命令 </h3><p> 执行 sql 命令，需要调用 Connection 对象的 cursor() 方法创建一个游标（Cursor）对象。</p>
+<p>获取 Cursor 对象：</p>
+<pre><code class="python">cursor = conn.cursor()</code></pre>
+<p>使用 excute 执行查询指令</p>
+<pre><code>sql = &#39; 需要执行的命令 &#39;
+cursor.excute(sql)</code></pre><p>如：</p>
+<pre><code class="python">cursor=conn.cursor()
+tables_count=cursor.execute(&#39;show tables;&#39;)   // 查看有多少数据表</code></pre>
+<h3 id="1-2-3- 游标对象"><a href="#1-2-3- 游标对象" class="headerlink" title="1.2.3 游标对象"></a>1.2.3 游标对象</h3><ul>
+<li><p><code>close</code>()</p>
+<p>关闭游标对象。</p>
+</li>
+<li><p><code>execute</code>(<em>query</em>, <em>args=None</em>)</p>
+<p>执行查询</p>
+<ul>
+<li><p>参数:</p>
+<p><strong>query</strong> (<a target="_blank" rel="noopener" href="https://docs.python.org/3/library/stdtypes.html#str"><em>str</em></a>) – 查询执行。</p>
+<p><strong>args</strong> (<a target="_blank" rel="noopener" href="https://docs.python.org/3/library/stdtypes.html#tuple"><em>tuple</em></a><em>,</em> <a target="_blank" rel="noopener" href="https://docs.python.org/3/library/stdtypes.html#list"><em>list</em></a> <em>or</em> <a target="_blank" rel="noopener" href="https://docs.python.org/3/library/stdtypes.html#dict"><em>dict</em></a>) – 与查询一起使用的参数。 （可选的）</p>
+</li>
+<li><p>Returns(返回内容): 受影响的行数</p>
+</li>
+<li><p><strong>Return type:</strong>  int</p>
+</li>
+</ul>
+<p>返回受影响的行数，主要用于执行 insert、update、delete 语句，也可以执行 create、alter、drop 等语句</p>
+<p>如果 args 是列表或元组，则％s 可以用作查询中的占位符。如果 args 是 dict，则％（name）s 可以用作查询中的占位符。</p>
+</li>
+<li><p><code>executemany</code>(<em>query</em>, <em>args</em>)</p>
+<p>执行多个查询</p>
+<ul>
+<li><p>参数</p>
+<p><strong>query</strong> –查询在服务器上执行</p>
+<p><strong>args</strong> –序列或映射的序列。它用作参数。</p>
+</li>
+</ul>
+<p>此方法可提高多行 INSERT 和 REPLACE 的性能。否则它等同于使用 execute（）循环遍历 args。</p>
+</li>
+<li><p><code>fetchall</code>()</p>
+<p>执行查询时，获取结果集的所有行，一行构成一个元组，再将这些元组装入一个元组返回</p>
+</li>
+<li><p><code>fetchmany</code>(<em>size=None</em>)</p>
+<p>获取几行</p>
+</li>
+<li><p><code>fetchone</code>()</p>
+<p>执行查询语句时，获取查询结果集的第一个行数据，返回一个元组</p>
+</li>
+</ul>
+<h2 id="1-3- 插入数据"><a href="#1-3- 插入数据" class="headerlink" title="1.3 插入数据"></a>1.3 插入数据 </h2><p> 使用游标向数据库插入数据</p>
+<pre><code class="python"># 插入一条数据
+one_data = &quot;insert into goods values(0,&#39;ipad mini 配备 retina 显示屏 &#39;,&#39; 平板电脑 &#39;,&#39; 苹果 &#39;,&#39;2788&#39;,default,default); &quot;
+
+cursor.execute(one_data)</code></pre>
+<p>回滚</p>
+<pre><code class="python">try:
+    # 执行 SQL 语句
+    cursor.execute(&quot;insert into goods values(0,&#39;ipad mini 配备 retina 显示屏 &#39;,&#39; 平板电脑 &#39;,&#39; 苹果 &#39;,&#39;2788&#39;,default,default); &quot;)
+    # 提交事务
+    conn.commit()
+except Exception as e:
+    # 有异常，回滚事务
+    conn.rollback()
+cursor.close()
+conn.close()</code></pre>
+<h3 id="1-3-1- 案例"><a href="#1-3-1- 案例" class="headerlink" title="1.3.1 案例"></a>1.3.1 案例 </h3><p> 事先使用 mysql 在 python 这个数据库里创建一个表，名为“maoyan”，并指定列名。</p>
+<pre><code class="sql">create database python character set utf8;
+use python;
+create table maoyan(moive_name varchar(10) primary key,
+    star varchar(30) ,
+    relasetime varchar(20) ,
+    scores char(3)
+) character set utf8;
+</code></pre>
+<p>然后在代码框操作：</p>
+<pre><code class="sql">import pymysql
+list = [(&#39; 主演：秦岚, 糸井重里, 岛本须美 &#39;, &#39; 龙猫 &#39;, &#39; 上映时间：2018-12-14&#39;, &#39;9.1&#39;),
+          (&#39; 主演：张国荣, 张曼玉, 刘德华 &#39;, &#39; 阿飞正传 &#39;, &#39; 上映时间：2018-06-25&#39;, &#39;8.8&#39;),
+          (&#39; 主演：俞承豪, 金艺芬, 童孝熙 &#39;, &#39; 爱·回家 &#39;, &#39; 上映时间：2002-04-05(韩国)&#39;, &#39;9.0&#39;),
+          (&#39; 主演：雅克·贝汉, 姜文, 兰斯洛特·佩林 &#39;, &#39; 海洋 &#39;, &#39; 上映时间：2011-08-12&#39;, &#39;9.0&#39;),
+          (&#39; 主演：宋在浩, 李顺才, 尹秀晶 &#39;, &#39; 我爱你 &#39;, &#39; 上映时间：2011-02-17(韩国)&#39;, &#39;9.0&#39;),
+          (&#39; 主演：克林特·伊斯特伍德, 李·范·克里夫, 埃里·瓦拉赫 &#39;, &#39; 黄金三镖客 &#39;, &#39; 上映时间：1966-12-23(意大利)&#39;, &#39;8.9&#39;),
+          (&#39; 主演：雅克·贝汉,Philippe Labro&#39;, &#39; 迁徙的鸟 &#39;, &#39; 上映时间：2001-12-12(法国)&#39;, &#39;9.1&#39;),
+          (&#39; 主演：柊瑠美, 周冬雨, 入野自由 &#39;, &#39; 千与千寻 &#39;, &#39; 上映时间：2019-06-21&#39;, &#39;9.3&#39;),
+          (&#39; 主演：蒂姆·罗斯, 比尔·努恩, 普路特·泰勒·文斯 &#39;, &#39; 海上钢琴师 &#39;, &#39; 上映时间：2019-11-15&#39;, &#39;9.3&#39;),
+          (&#39; 主演：菲利浦·诺瓦雷, 赛尔乔·卡斯特利托, 蒂兹亚娜·罗达托 &#39;, &#39; 天堂电影院 &#39;, &#39; 上映时间：2019-06-15&#39;, &#39;9.2&#39;)]
+
+conn=pymysql.connect(
+    host=&#39;localhost&#39;,
+    port=3306,
+    database=&#39;python&#39;,
+    user=&#39;root&#39;,
+    password=&#39;123456&#39;,
+)
+cursor=conn.cursor()
+for i in list:
+    try:
+        sql=&quot;insert into python.maoyan (star,moive_name,relasetime,scores) values (&#39;%s&#39;,&#39;%s&#39;,&#39;%s&#39;,&#39;%s&#39;)&quot; % i
+        cursor.execute(sql)
+    except Exception as e:
+        conn.rollback()
+
+conn.commit()
+cursor.close()
+conn.close()</code></pre>
+<h2 id="1-4- 查询数据"><a href="#1-4- 查询数据" class="headerlink" title="1.4 查询数据"></a>1.4 查询数据</h2><pre><code class="python">cursor.execute(&quot;select * from maoyan&quot;)
+
+one = cursor.fetchone()   // 读取一条数据
+print(one)
+
+all = cursor.fetchall()  // 读取所有数据
+print(all)</code></pre>
+<h3 id="1-4-1- 查询一行数据"><a href="#1-4-1- 查询一行数据" class="headerlink" title="1.4.1 查询一行数据"></a>1.4.1 查询一行数据</h3><pre><code class="python">cs1 = conn.cursor()
+
+count = cs1.execute(&#39;select id,name from goods where id&gt;=4&#39;)
+
+print(&quot; 查询到 %d 条数据:&quot; % count)   # 打印受影响的行数
+
+for i in range(count):
+    result = cs1.fetchone()
+    print(result)
+
+    cs1.close()
+    conn.close()</code></pre>
+<h3 id="1-4-2- 查询多行数据"><a href="#1-4-2- 查询多行数据" class="headerlink" title="1.4.2 查询多行数据"></a>1.4.2 查询多行数据</h3><pre><code class="python">cs1 = conn.cursor()
+
+count = cs1.execute(&#39;select id,name from goods where id&gt;=4&#39;)
+
+print(&quot; 查询到 %d 条数据:&quot; % count)
+
+result = cs1.fetchall()
+print(result)
+
+cs1.close()
+conn.close()</code></pre>
+<h2 id="1-5- 修改数据"><a href="#1-5- 修改数据" class="headerlink" title="1.5 修改数据"></a>1.5 修改数据</h2><pre><code class="python">cs1 = conn.cursor()
+
+count = cs1.execute(&#39;insert into goods_cates(name) values(&quot; 硬盘 &quot;)&#39;)
+print(count)
+
+count = cs1.execute(&#39;insert into goods_cates(name) values(&quot; 光盘 &quot;)&#39;)
+print(count)
+
+conn.commit()
+cs1.close()
+conn.close()</code></pre>
+<h2 id="1-6- 参数化"><a href="#1-6- 参数化" class="headerlink" title="1.6 参数化"></a>1.6 参数化</h2><p>sql 语句的参数化，可以有效防止 sql 注入。</p>
+<p>注意：此处不同于 python 的字符串格式化，全部使用 %s 占位。</p>
+<p><strong>非安全方式：</strong></p>
+<pre><code class="python">from pymysql import *
+
+def main():
+    find_name = input(&quot; 请输入物品名称：&quot;)
+    conn = connect(host=&#39;localhost&#39;,
+              port=3306,user=&#39;root&#39;,
+              password=&#39;mysql&#39;,
+              database=&#39;jing_dong&#39;,
+              charset=&#39;utf8&#39;)
+    cs1 = conn.cursor()
+    sql = &#39;select * from goods where name=&quot;%s&quot;&#39; % find_name
+    result = cs1.execute(sql).fetchone
+    print(rsult)
+
+if __name__ == &#39;__main__&#39;:
+    main()
+
+// 在 `input` 时输入 `&quot; or 1=1 or &quot;`，会查询到所有数据，会造成信息泄露。</code></pre>
+<p><strong>安全的方式：</strong></p>
+<pre><code>params = [find_name]  // 把传入的 find_name 变成这样的
+# 如果要是有多个参数，需要进行参数化
+# 那么 params = [数值 1, 数值 2....]，此时 sql 语句中有多个 %s 即可 
+
+cs1.execute(&#39;select * from goods where name=%s&#39;, params)
+
+result = cs1.fetchone()
+print(result)
+
+cs1.close()
+conn.close()</code></pre><h2 id="1-7- 面向对象检索数据"><a href="#1-7- 面向对象检索数据" class="headerlink" title="1.7 面向对象检索数据"></a>1.7 面向对象检索数据</h2><pre><code class="python">import pymysql
+
+
+class MaoYanDB:
+
+    def __init__(self):
+        pass
+
+    def show_all_info(self):
+        &quot;&quot;&quot; 显示所有商品信息 &quot;&quot;&quot;
+        # 获取连接
+        connection = pymysql.connect(host=&#39;localhost&#39;,
+              port=3306,user=&#39;root&#39;,
+              password=&#39;mysql&#39;,
+              database=&#39;jing_dong&#39;,
+              charset=&#39;utf8&#39;  # 编码
+             )
+        cursor = connection.cursor()
+        &quot;&quot;&quot; 显示所有商品分类 &quot;&quot;&quot;
+        sql = &quot;select * from goods;&quot;
+        cursor.execute(sql)
+        for temp in cursor.fetchall():
+            print(temp)
+        cursor.close()
+        connection.close()
+
+    def show_names(self):
+        &quot;&quot;&quot; 返回所有电影的名字 &quot;&quot;&quot;
+        connection = pymysql.connect(host=&#39;localhost&#39;,
+              port=3306,user=&#39;root&#39;,
+              password=&#39;mysql&#39;,
+              database=&#39;jing_dong&#39;,
+              charset=&#39;utf8&#39;  # 编码
+              )
+        sql = &quot;select movie_name from maoyan;&quot;
+        cursor = connection.cursor()
+        cursor.execute(sql)
+        for temp in cursor.fetchall():
+            print(temp)
+        cursor.close()
+        connection.close()
+
+
+if __name__ == &#39;__main__&#39;:
+    my = MaoYanDB()
+    my.show_names()
+</code></pre>
+<p><strong>封装重构之后</strong></p>
+<pre><code class="python">import pymysql
+
+class MaoYanDB:
+
+    def __init__(self):
+        self.connection = pymysql.connect(host=&#39;localhost&#39;,
+              port=3306,user=&#39;root&#39;,
+              password=&#39;mysql&#39;,
+              database=&#39;jing_dong&#39;,
+              charset=&#39;utf8&#39;  # 编码
+              )
+        self.cursor = self.connection.cursor()
+
+    def show_all_info(self):
+        &quot;&quot;&quot; 显示所有商品信息 &quot;&quot;&quot;
+
+        &quot;&quot;&quot; 显示所有商品分类 &quot;&quot;&quot;
+        sql = &quot;select * from goods;&quot;
+        self.cursor.execute(sql)
+        for temp in self.cursor.fetchall():
+            print(temp)
+        self.cursor.close()
+
+    def show_names(self):
+        &quot;&quot;&quot; 返回所有电影的名字 &quot;&quot;&quot;
+
+        sql = &quot;select movie_name from maoyan;&quot;
+        self.cursor.execute(sql)
+        for temp in self.cursor.fetchall():
+            print(temp)
+
+
+if __name__ == &#39;__main__&#39;:
+    my = MaoYanDB()
+    my.show_names()
+</code></pre>
+<h1 id="2、ORM"><a href="#2、ORM" class="headerlink" title="2、ORM"></a>2、ORM</h1><p>面向对象编程把所有实体看成对象（object），关系型数据库则是采用实体之间的关系（relation）连接数据。很早就有人提出，关系也可以用对象表达，这样的话，就能 <strong> 使用面向对象编程，来操作关系型数据库</strong>。</p>
+<p>ORM 全称 <code>Object Relational Mapping</code>, 翻译过来叫 <code>对象关系映射</code> 。简单的说，ORM 将数据库中的表与面向对象语言中的类建立了一种对应关系。这样，我们要操作数据库，数据库中的表或者表中的一条记录就可以直接通过操作类或者类实例来完成。</p>
+<ul>
+<li>学会用 SQLALchemy 连接数据库(MySQL, SQLite, PostgreSQL)， 创建数据表；</li>
+<li>掌握表数据之间一对一，一对多及多对多的关系并能转化为对应 SQLAlchemy 描述；</li>
+<li>掌握使用 SQLAlchemy 进行 CURD 操作；</li>
+<li>学会使用 Faker 生成测试数据</li>
+</ul>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/1559400744447.png" alt="1559400744447"></p>
+<p>要实现 MySQL 数据表到 Python 类的映射，就需要 ORM 框架的帮助。在 Python 中有多个选择，例如轻量的 SQLobject 框架、Storm 框架、Django 内置的 ORM、著名的 SQLAlchemy 以及基于前者的 flask 插件 flask-SQLAlchemy 等。</p>
+<p>SQLAlchemy 是 Python 社区最知名的 ORM 工具之一，为高效和高性能的数据库访问设计，实现了完整的企业级持久模型。</p>
+<p>接下来我们将学习 SQLAlchemy 的使用。先安装 SQLAlchemy：</p>
+<pre><code>$ sudo pip install sqlalchemy</code></pre><h2 id="2-1- 创建连接"><a href="#2-1- 创建连接" class="headerlink" title="2.1 创建连接"></a>2.1 创建连接 </h2><h3 id="2-1-1- 创建引擎"><a href="#2-1-1- 创建引擎" class="headerlink" title="2.1.1 创建引擎"></a>2.1.1 创建引擎</h3><p> 使用 SQLAlchemy 连接数据库需要引擎，创建引擎使用 create_engine 方法：</p>
+<pre><code class="python">from sqlalchemy import create_engine
+
+engine = create_engine(&#39;mysql+pymysql://windows:123456@192.168.31.206:3306/study?charset=utf8&#39;)</code></pre>
+<p>注意这里创建引擎的格式：</p>
+<p><code>数据库类型 + 驱动:// 用户名: 密码 @主机: 端口号 / 数据库名字?charset= 编码格式</code></p>
+<p><strong>链接其他数据库</strong></p>
+<ul>
+<li>Postgres:</li>
+</ul>
+<pre><code>postgresql://scott:tiger@localhost/mydatabase</code></pre><ul>
+<li>MySQL:</li>
+</ul>
+<pre><code>mysql://scott:tiger@localhost/mydatabase</code></pre><ul>
+<li>Oracle:</li>
+</ul>
+<pre><code>oracle://scott:tiger@127.0.0.1:1521/sidname</code></pre><ul>
+<li>SQLite （注意开头的四个斜线）:</li>
+</ul>
+<pre><code>sqlite:////absolute/path/to/foo.db</code></pre><p>这里不同数据库创建引擎的格式不一样，但是后续创建表和查询模式都一样。</p>
+<p>下面还是回到 Mysql 为例介绍。</p>
+<h3 id="2-1-2- 基类"><a href="#2-1-2- 基类" class="headerlink" title="2.1.2 基类"></a>2.1.2 基类 </h3><p> 创建映射类需要继承声明基类，使用 declarative_base ：</p>
+<pre><code>from sqlalchemy.ext.declarative import declarative_base
+
+Base = declarative_base(engine)</code></pre><h3 id="2-1-3- 会话"><a href="#2-1-3- 会话" class="headerlink" title="2.1.3 会话"></a>2.1.3 会话</h3><pre><code class="python">from sqlalchemy.orm import sessionmaker
+
+session = sessionmaker(engine)()</code></pre>
+<p>当我们创建了 session 实例，就启动了一个操作 MySQL 数据库的会话。对 <strong> 数据库进行了连接。</strong></p>
+<h2 id="2-2- 创建数据"><a href="#2-2- 创建数据" class="headerlink" title="2.2 创建数据"></a>2.2 创建数据</h2><h3 id="2-2-1- 映射类"><a href="#2-2-1- 映射类" class="headerlink" title="2.2.1 映射类"></a>2.2.1 映射类</h3><blockquote>
+<p>一对一对象</p>
+</blockquote>
+<p>首先 <strong> 创建 user 数据表 </strong> 的映射类，此表存放用户数据。</p>
+<pre><code class="python">from sqlalchemy import Column, Integer, String
+
+class User(Base):           // 创建映射类须继承声明基类
+    __tablename__ = &#39;user&#39;  // 设置数据表名字，不可省略
+    id = Column(Integer, primary_key=True)  
+    name = Column(String(64), unique=True, nullable=False)
+    email = Column(String(64), unique=True)
+
+    # 此特殊方法定义实例的打印样式
+    def __repr__(self):
+        return &#39;&lt;User: &#123;&#125;&gt;&#39;.format(self.name)</code></pre>
+<p>在 <code>User</code> 类中，用 <code>__tablename__</code> 指定在 MySQL 中表的名字。我们创建了三个基本字段，类中的每一个 <code>Column</code> 代表数据库中的一列，在 <code>Colunm</code>中，指定该列的一些配置。第一个字段代表类的数据类型，上面我们使用 <code>String</code>, <code>Integer</code> 俩个最常用的类型，其他常用的包括：</p>
+<pre><code>Text
+Boolean
+SmallInteger
+DateTime</code></pre><p>另外定义 <code>__repr__</code> 是为了方便调试，你可以不定义，也可以定义的更详细一些。</p>
+<blockquote>
+<p>一对多对象</p>
+</blockquote>
+<pre><code class="python">from sqlalchemy import ForeignKey
+from sqlalchemy.orm import relationship, backref
+
+class Course(Base):
+    __tablename__ = &#39;course&#39;
+    id = Column(Integer, primary_key=True)
+    name = Column(String(64))
+
+    user_id = Column(Integer, ForeignKey(&#39;user.id&#39;, ondelete=&#39;CASCADE&#39;))
+    //ForeignKey 设置外键关联，第一个参数为字符串，user 为数据表名，id 为字段名
+    // 第二个参数 ondelete 设置删除 User 实例后对关联的 Course 实例的处理规则
+    //&#39;CASCADE&#39; 表示级联删除，删除用户实例后，对应的课程实例也会被连带删除
+
+    user = relationship(&#39;User&#39;, 
+            backref=backref(&#39;course&#39;, cascade=&#39;all, delete-orphan&#39;))
+    //relationship 设置查询接口，以便后期进行数据库查询操作
+    // 第一个参数为位置参数，参数值为外键关联的映射类名，数据类型为字符串
+    // 第二个参数 backref 设置反向查询接口
+    //backref 的第一个参数 &#39;course&#39; 为查询属性，User 实例使用该属性可以获得相关课程实例的列表
+    //backref 的第二个参数 cascade 如此设置即可实现 Python 语句删除用户数据时级联删除课程数据
+
+    def __repr__(self):
+        return &#39;&lt;Course: &#123;&#125;&gt;&#39;.format(self.name)</code></pre>
+<p><strong>定义列时常用参数表：</strong> </p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>primary_key</td>
+<td>如果设为 True，这列就是表的主键</td>
+</tr>
+<tr>
+<td>unique</td>
+<td>默认值为 False，如果设为 True，这列不允许出现重复的值</td>
+</tr>
+<tr>
+<td>index</td>
+<td>如果设为 True，为这列创建索引，提升查询效率</td>
+</tr>
+<tr>
+<td>nullable</td>
+<td>默认值为 True，这列允许使用空值；如果设为 False，这列不允许使用空值</td>
+</tr>
+<tr>
+<td>default</td>
+<td>为这列定义默认值</td>
+</tr>
+</tbody></table>
+<p>常用的 SQLAlchemy 查询关系选项（在 <strong>backref</strong> 中使用）：</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>backref</td>
+<td>在关系的另一个映射类中添加反向引用</td>
+</tr>
+<tr>
+<td>lazy</td>
+<td>指定如何加载查询记录。可选值有 select (首次访问时按需加载)、immediate (源对象加 载后就加载)、joined (加载记录，但使用联结)， noload (永不加载)和 dynamic (不加载记录，但提供加载记录的查询，比较常用)</td>
+</tr>
+<tr>
+<td>cascade</td>
+<td>设置级联删除的方式</td>
+</tr>
+<tr>
+<td>uselist</td>
+<td>如果设为 Fales，查询结果不使用列表，而使用映射类实例（下节课程会用到）</td>
+</tr>
+<tr>
+<td>order_by</td>
+<td>指定查询记录的排序方式</td>
+</tr>
+<tr>
+<td>secondary</td>
+<td>指定多对多关系中关系表的名字（下节课程会用到）</td>
+</tr>
+</tbody></table>
+<h3 id="2-2-2- 创建数据表"><a href="#2-2-2- 创建数据表" class="headerlink" title="2.2.2 创建数据表"></a>2.2.2 创建数据表 </h3><p> 声明基类 Base 在创建之后并不会主动连接数据库，因为它的默认设置为惰性模式。Base 的 metadata 有个 create_all 方法，执行此方法会主动连接数据库并创建全部数据表，完成之后自动断开与数据库的连接：</p>
+<pre><code>Base.metadata.create_all()</code></pre><p><strong>完整代码</strong> </p>
+<p><strong>总结以上内容，写入 db.py 文件：</strong></p>
+<pre><code class="python">from sqlalchemy import create_engine, Column, Integer, String, ForeignKey
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import relationship, backref
+
+engine = create_engine(&#39;mysql://root@localhost/study?charset=utf8&#39;)
+Base = declarative_base(engine)
+
+class User(Base):  
+    __tablename__ = &#39;user&#39;  
+    id = Column(Integer, primary_key=True) 
+    name = Column(String(64), unique=True, nullable=False)
+    email = Column(String(64), unique=True)
+
+    def __repr__(self):
+        return &#39;&lt;User: &#123;&#125;&gt;&#39;.format(self.name)
+
+class Course(Base):
+    __tablename__ = &#39;course&#39;
+    id = Column(Integer, primary_key=True)
+    name = Column(String(64))
+    user_id = Column(Integer, ForeignKey(&#39;user.id&#39;, ondelete=&#39;CASCADE&#39;))
+    user = relationship(&#39;User&#39;,
+            backref=backref(&#39;course&#39;, cascade=&#39;all, delete-orphan&#39;))
+
+    def __repr__(self):
+        return &#39;&lt;Course: &#123;&#125;&gt;&#39;.format(self.name)
+
+if __name__ == &#39;__main__&#39;:
+    Base.metadata.create_all()   // 创建数据表</code></pre>
+<p>运行后就可以看到数据库生成了数据库模型。</p>
+<h2 id="2-3- 生成测试数据"><a href="#2-3- 生成测试数据" class="headerlink" title="2.3 生成测试数据"></a>2.3 生成测试数据 </h2><h3 id="2-3-1- 添加测试数据"><a href="#2-3-1- 添加测试数据" class="headerlink" title="2.3.1 添加测试数据"></a>2.3.1 添加测试数据</h3><p> 测试数据的创建需要用到 Python 的 faker 库，使用 pip 安装先：</p>
+<pre><code class="python">pip install faker</code></pre>
+<p>终端执行 ipython 命令，即可进入命令行交互解释器：</p>
+<pre><code class="python">In [38]: from faker import Faker  # 引入 Faker 类
+
+# 创建实例，添加参数 &#39;zh-cn&#39; 是为了伪造中文数据
+# 该实例叫做工厂对象，它可以使用各种各样的方法伪造数据
+In [39]: fake = Faker(&#39;zh-cn&#39;)       
+
+In [40]: fake.name()     # 伪造姓名
+Out[40]: &#39; 房明 &#39;
+
+In [41]: fake.address()  # 伪造地址
+Out[41]: &#39; 山西省梅市上街董路 Q 座 238175&#39;
+
+In [42]: fake.email()    # 伪造邮箱
+Out[42]: &#39;oqiu@rn.net&#39;
+
+In [43]: fake.url()      # 伪造 URL
+Out[43]: &#39;https://www.yuzhu.cn/&#39;
+
+In [44]: fake.date()     # 伪造日期
+Out[44]: &#39;2012-07-03&#39;
+</code></pre>
+<p><strong>创建实例：</strong></p>
+<p>接下来创建 5 个课程用户，也就是 5 个 User 类的实例，每个用户对应两个课程，共 10 个 Course 类实例。将以下代码写入测试数据的 Python 文件中，文件名为 create_data.py ：</p>
+<pre><code class="python">from sqlalchemy.orm import sessionmaker
+from faker import Faker
+from db import Base, engine, User, Course
+
+session = sessionmaker(engine)()
+fake = Faker(&#39;zh-cn&#39;)
+
+def create_users():
+    for i in range(10):
+        # 创建 10 个 User 类实例，伪造 name 和 email
+        user = User(name=fake.name(), email=fake.email())
+        # 将实例添加到 session 会话中，以备提交到数据库
+        # 注意，此时的 user 对象没有 id 属性值
+        # 映射类的主键字段默认从 1 开始自增，在传入 session 时自动添加该属性值
+        session.add(user)
+
+def create_courses():
+    # session 有个 query 方法用来查询数据，参数为映射类的类名
+    # all 方法表示查询全部，这里也可以省略不写
+    # user 就是上一个函数 create_users 中的 user 对象
+    for user in session.query(User).all():
+        # 两次循环，对每个作者创建两个课程
+        for i in range(2):
+            # 创建课程实例，name 的值为 8 个随机汉字
+            course = Course(name=&#39;&#39;.join(fake.words(4)), user_id=user.id)
+            session.add(course)
+
+def main():
+    # 执行两个创建实例的函数，session 会话内就有了这些实例
+    create_users()
+    create_courses()
+    # 执行 session 的 commit 方法将全部数据提交到对应的数据表中
+    session.commit()
+
+if __name__ == &#39;__main__&#39;:
+    main()
+</code></pre>
+<h3 id="2-3-2- 测试"><a href="#2-3-2- 测试" class="headerlink" title="2.3.2 测试"></a>2.3.2 测试 </h3><p> 完成后，可以在终端执行 python3 create_data.py 来创建数据。为了便于查看代码的执行情况，不这样做，我们在 ipython 中引入这些函数，依次执行它们来查看细节：</p>
+<pre><code class="python"># 引入相关对象
+In [1]: from create_data import User, Course, session, create_users, create_courses
+
+# 执行创建 User 实例的函数
+In [2]: create_users()
+
+# session 查询结果为列表，每个元素就是一个 User 实例
+In [3]: session.query(User).all()
+Out[3]:
+[&lt;User: 安颖 &gt;,
+ &lt;User: 赵琴 &gt;,
+ &lt;User: 李英 &gt;,
+ &lt;User: 邢想 &gt;,
+ &lt;User: 高玲 &gt;,
+ &lt;User: 戴晶 &gt;,
+ &lt;User: 卢建平 &gt;,
+ &lt;User: 陈强 &gt;,
+ &lt;User: 姜帆 &gt;,
+ &lt;User: 包柳 &gt;]
+
+# 将某个 User 实例赋值给 user 变量
+In [4]: user = session.query(User).all()[3]
+
+# 查看属性
+In [5]: user.name
+Out[5]: &#39; 邢想 &#39;
+
+In [6]: user.id
+Out[6]: 4
+
+# 执行创建 Course 实例的函数
+In [7]: create_courses()
+
+# 查看前 4 个 Course 实例的 name 属性
+In [8]: for course in session.query(Course)[:4]:
+   ...:     print(course.name)
+   ...:
+开发中文电子新闻
+怎么发布结果详细
+你的只要非常如果
+次数通过评论等级
+
+# User 实例的 course 属性为查询接口，通过 relationship 设置
+# 属性值为列表，里面是两个课程实例
+In [9]: user.course
+Out[9]: [&lt;Course: 上海这么国际时候 &gt;, &lt;Course: 对于技术两个你们 &gt;]
+
+# 将某个课程实例赋值给 course 变量
+In [10]: course = session.query(Course)[12]
+
+# 课程实例的 user 属性为查询接口，通过 relationship 设置
+In [11]: course.user
+Out[11]: &lt;User: 卢建平 &gt;
+
+# 将全部实例提交到对应的数据表
+In [12]: session.commit()
+
+In [13]:
+</code></pre>
+<p>查看 MySQL 数据库中各表的数据：</p>
+<pre><code class="sql">mysql&gt; SELECT * FROM user;
++----+-----------+----------------------+
+| id | name      | email                |
++----+-----------+----------------------+
+|  1 | 安颖       | fanxiuying@weiyin.cn |
+|  2 | 赵琴       | tao10@hotmail.com    |
+|  3 | 李英       | xia68@gangqiang.cn   |
+|  4 | 邢想       | minyi@yahoo.com      |
+|  5 | 高玲       | maoqiang@pa.cn       |
+|  6 | 戴晶       | xlin@yahoo.com       |
+|  7 | 卢建平     | dqian@yahoo.com      |
+|  8 | 陈强       | yuanjun@guiying.cn   |
+|  9 | 姜帆       | xiayan@tx.cn         |
+| 10 | 包柳       | qiang78@hotmail.com  |
++----+-----------+----------------------+
+10 rows in set (0.00 sec)
+
+mysql&gt; SELECT * FROM course;
++----+--------------------------+---------+
+| id | name                     | user_id |
++----+--------------------------+---------+
+|  1 | 开发中文电子新闻            |       1 |
+|  2 | 怎么发布结果详细            |       1 |
+|  3 | 你的只要非常如果            |       2 |
+|  4 | 次数通过评论等级            |       2 |
+|  5 | 经验方式文件根据            |       3 |
+|  6 | 资料你们各种类别            |       3 |
+|  7 | 上海这么国际时候            |       4 |
+... ...
++----+--------------------------+---------+
+20 rows in set (0.00 sec)
+</code></pre>
+<p>接下来我们在 ipython 中删除 user 实例，验证级联删除功能是否生效：</p>
+<pre><code class="python">In [13]: session.delete(user)
+
+In [14]: session.commit()
+
+In [15]:</code></pre>
+<p>查看数据表的情况，一如预期，user 表中 id 为 4 的行被删除，course 表中 user_id 为 4 的行也被删除：</p>
+<pre><code class="python">mysql&gt; SELECT * FROM user;
++----+-----------+----------------------+
+| id | name      | email                |
++----+-----------+----------------------+
+|  1 | 安颖      | fanxiuying@weiyin.cn |
+|  2 | 赵琴      | tao10@hotmail.com    |
+|  3 | 李英      | xia68@gangqiang.cn   |
+|  5 | 高玲      | maoqiang@pa.cn       |
+|  6 | 戴晶      | xlin@yahoo.com       |
+|  7 | 卢建平    | dqian@yahoo.com      |
+|  8 | 陈强      | yuanjun@guiying.cn   |
+|  9 | 姜帆      | xiayan@tx.cn         |
+| 10 | 包柳      | qiang78@hotmail.com  |
++----+-----------+----------------------+
+9 rows in set (0.00 sec)
+
+mysql&gt; SELECT * FROM course WHERE user_id = 4;
+Empty set (0.00 sec)
+
+mysql&gt;
+</code></pre>
+<h2 id="2-4- 关系"><a href="#2-4- 关系" class="headerlink" title="2.4 关系"></a>2.4 关系 </h2><h3 id="2-4-1- 一对一关系"><a href="#2-4-1- 一对一关系" class="headerlink" title="2.4.1 一对一关系"></a>2.4.1 一对一关系</h3><p> 本节我们来学习创建一对一、多对多关系的数据表。为了方便演示，假设我们的每个课程只有一个实验，我们要创建映射类 Lab 和表 lab，课程和实验就是一对一的关系，如何实现这种关系呢？把 lab 的主键 id 设置为外键关联到 course 的主键 id 即可，因为主键是自带唯一约束的，这样就实现了一对一关系。</p>
+<p>创建映射类 Lab，将以下代码写入 db.py 文件：</p>
+<pre><code class="python">class Lab(Base):
+    tablename = &#39;lab&#39;
+    # 设置主键为外键，关联 course 表的 id 字段
+    # 注意参数顺序，先定义外键，再定义主键
+    id = Column(Integer, ForeignKey(&#39;course.id&#39;), primary_key=True)
+    name = Column(String(128))
+    # 设置查询接口，Lab 实例的 course 属性值为 Course 实例
+    # Course 实例的 lab 属性值默认为列表，列表中有一个 Lab 实例
+    # uselist 参数可以设置 Course 实例的 lab 属性值为 Lab 实例而非列表
+    course = relationship(&#39;Course&#39;, backref=backref(&#39;lab&#39;, uselist=False))
+
+    def __repr__(self):
+        return &#39;&lt;Lab: &#123;&#125;&gt;&#39;.format(self.name)
+</code></pre>
+<p>保存代码后，在终端运行文件即可生成数据表：</p>
+<pre><code>$ python db.py</code></pre><p>查看数据库：</p>
+<pre><code class="sql">mysql&gt; SHOW TABLES;
++-----------------+
+| Tables_in_study |
++-----------------+
+| course          |
+| lab             |
+| user            |
++-----------------+
+3 rows in set (0.00 sec)
+</code></pre>
+<p>接下来创建多对多关系的数据表，然后再一并生成测试数据。</p>
+<h3 id="2-4-2- 多对多关系"><a href="#2-4-2- 多对多关系" class="headerlink" title="2.4.2 多对多关系"></a>2.4.2 多对多关系 </h3><p> 一个课程可以有多个标签，每个标签可以贴在多个课程上，我们需要实现 course 课程表和 tag 标签表的多对多关系。</p>
+<ul>
+<li>一对多关系：一个 User 实例（课程教师）对应多个 Course 实例，一个 Course 实例对应一个 User 实例。</li>
+<li>一对一关系：一个 Course 实例对应一个 Lab 实例，一个 Lab 实例对应一个 Course 实例。</li>
+<li>多对多关系：一个 Course 实例对应多个 Tag 实例，一个 Tag 实例对应多个 Course 实例。</li>
+</ul>
+<p>满足上述需求的多对多关系，需要在创建 Tag 映射类之前，首先创建中间表的映射类，用 Table 这个特殊类创建，此类的实例就是映射类。</p>
+<p>将以下代码写入 db.py 文件中：</p>
+<pre><code class="python"># 引入 Table 类
+from sqlalchemy import Table
+
+# 创建 Table 类的实例，即中间表映射类，赋值给变量 Rela
+# 该类在实例化时，接收 4 个参数：
+# 1、数据表名字 2、Base.metadata
+# 3 和 4、两个 Column（列名，数据类型，外键，主键）
+Rela = Table(&#39;rela&#39;, Base.metadata,
+        Column(&#39;tag_id&#39;, Integer, ForeignKey(&#39;tag.id&#39;), primary_key=True),
+        Column(&#39;course_id&#39;, Integer, ForeignKey(&#39;course.id&#39;), primary_key=True)
+)
+</code></pre>
+<p>有了中间表的映射类，就可以创建 tag 表的映射类 Tag 了，将以下代码写入 db.py 文件中：</p>
+<pre><code class="python">class Tag(Base):
+    __tablename__ = &#39;tag&#39;
+    id = Column(Integer, primary_key=True)
+    name = Column(String(64), unique=True)
+    # 设置查询接口，secondary 指定多对多关系的中间表，注意数据类型不是字符串
+    course = relationship(&#39;Course&#39;, secondary=Rela, backref=&#39;tag&#39;)
+
+    def __repr__(self):
+        return &#39;&lt;Tag: &#123;&#125;&gt;&#39;.format(self.name)
+</code></pre>
+<p>同样地，终端运行文件生成数据表：</p>
+<pre><code class="sql">$ python db.py
+-- 查看数据库中的数据表：
+
+mysql&gt; SHOW TABLES;
++-----------------+
+| Tables_in_study |
++-----------------+
+| course          |
+| lab             |
+| rela            |
+| tag             |
+| user            |
++-----------------+
+5 rows in set (0.00 sec)
+</code></pre>
+<p>注意中间表是真实存在的数据表，它有两个字段，当我们给课程添加标签时，该表会记录相关信息：</p>
+<pre><code class="sql">mysql&gt; DESC rela;
++-----------+---------+------+-----+---------+-------+
+| Field     | Type    | Null | Key | Default | Extra |
++-----------+---------+------+-----+---------+-------+
+| tag_id    | int(11) | NO   | PRI | NULL    |       |
+| course_id | int(11) | NO   | PRI | NULL    |       |
++-----------+---------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+</code></pre>
+<h2 id="2-5- 完善创建"><a href="#2-5- 完善创建" class="headerlink" title="2.5 完善创建"></a>2.5 完善创建 </h2><h3 id="2-5-1- 增加数据"><a href="#2-5-1- 增加数据" class="headerlink" title="2.5.1 增加数据"></a>2.5.1 增加数据</h3><p> 下面对 create_data.py 文件补充一些代码，我们用 10 个随机中文汉字作为 lab 表的 name 字段的值，创建 20 个 Lab 类的实例，10 个 Tag 类的实例，补充代码如下：</p>
+<pre><code class="python">from db import Lab, Tag
+
+def create_labs():
+    for course in session.query(Course):
+        lab = Lab(name=&#39;&#39;.join(fake.words(5)), id=course.id)
+        session.add(lab)
+
+def create_tags():
+    for name in [&#39;python&#39;, &#39;linux&#39;, &#39;java&#39;, &#39;mysql&#39;, &#39;lisp&#39;]:
+        tag = Tag(name=name)
+        session.add(tag)
+</code></pre>
+<p>启动命令行交互解释器 ipython，引入相关对象，执行创建数据的函数：</p>
+<pre><code class="python">In [1]: from create_data import *
+
+In [2]: create_labs()
+
+In [3]: create_tags()
+
+In [4]: session.commit()
+</code></pre>
+<p>查看数据库内数据：</p>
+<pre><code class="python">mysql&gt; SELECT * FROM lab;
++----+--------------------------------+
+| id | name                           |
++----+--------------------------------+
+|  1 | 北京联系其中准备技术           |
+|  2 | 影响一样来源已经有些           |
+|  3 | 建设研究工作那些我的           |
+|  4 | 可是注册显示应该学生           |
+|  5 | 起来决定不要企业资料           |
+|  6 | 国内电子基本类型的人           |
+|  9 | 方式一般的话具有系列           |
+| 10 | 基本当然是否个人政府           |
+| 11 | 其他教育你的类别更新           |
+| 12 | 世界很多之后世界推荐           |
+| 13 | 一直方法完全注意事情           |
+| 14 | 大学不过认为世界应用           |
+| 15 | 这么说明什么文化一个           |
+| 16 | 状态阅读包括资料那么           |
+| 17 | 作者继续作者人员对于           |
+| 18 | 地区原因我的不断评论           |
+| 19 | 基本环境表示我们情况           |
+| 20 | 但是就是根据活动留言           |
++----+--------------------------------+
+18 rows in set (0.00 sec)
+
+mysql&gt; SELECT * FROM tag;
++----+--------+
+| id | name   |
++----+--------+
+|  1 | java   |
+|  2 | linux  |
+|  3 | lisp   |
+|  4 | mysql  |
+|  5 | python |
++----+--------+
+5 rows in set (0.00 sec)
+</code></pre>
+<h3 id="2-5-2- 给课程添加标签"><a href="#2-5-2- 给课程添加标签" class="headerlink" title="2.5.2 给课程添加标签"></a>2.5.2 给课程添加标签 </h3><p> 课程实例有 tag 属性，这是在映射类中设置的查询接口，标签实例也有对应的查询接口 course，它们的属性值均为空列表，如果要给课程添加标签，只需将标签实例添加到 tag 属性的列表中，给标签添加课程同理，举例如下：</p>
+<pre><code class="python">#  通过查询将两个课程实例赋值给变量 c1 c2 ，将两个标签实例赋值给 t1 t2
+In [6]: c1 = session.query(Course)[3]
+
+In [7]: c2 = session.query(Course)[11]
+
+In [8]: t1 = session.query(Tag)[1]
+
+In [9]: t2 = session.query(Tag)[2]
+
+# 课程的 tag 属性默认为空列表
+In [10]: c1.tag
+Out[10]: []
+
+# 将标签实例添加到列表
+In [11]: c1.tag.append(t1)
+
+In [12]: c1.tag.append(t2)
+
+# 标签的 course 属性里就有了对应的课程实例
+In [13]: t1.course
+Out[13]: [&lt;Course: 次数通过评论等级 &gt;]
+
+# 当然了，课程实例的 tag 属性里有了两个标签实例
+In [14]: c1.tag
+Out[14]: [&lt;Tag: linux&gt;, &lt;Tag: lisp&gt;]
+
+In [15]: t2.course.append(c2)
+
+In [16]: c2.tag
+Out[16]: [&lt;Tag: lisp&gt;]
+
+# 执行 session.commit() 即可将它们的关系传入数据库中
+In [17]: session.commit()
+
+In [18]:
+</code></pre>
+<p>查看数据库的中间表，可以看到给课程添加标签后，每组关系都被保存在该表中：</p>
+<pre><code class="python">mysql&gt; SHOW TABLES;
++-----------------+
+| Tables_in_study |
++-----------------+
+| course          |
+| lab             |
+| rela            |
+| tag             |
+| user            |
++-----------------+
+5 rows in set (0.00 sec)
+
+mysql&gt; SELECT * FROM rela;
++--------+-----------+
+| tag_id | course_id |
++--------+-----------+
+|      2 |         4 |
+|      3 |         4 |
+|      3 |        14 |
++--------+-----------+
+3 rows in set (0.00 sec)
+</code></pre>
+<h2 id="2-6- 完整代码"><a href="#2-6- 完整代码" class="headerlink" title="2.6 完整代码"></a>2.6 完整代码 </h2><p> 以上课程中我们写了两个 Python 脚本。在 db.py 中创建了 User、Course、Lab、Tag 4 个映射类 + 1 个中间表的映射类 Rela，其中包含了数据表的一对多、一对一、多对多关系；在 create_data.py 脚本中编写了向数据表中添加测试数据的代码，为了方便演示，并未在终端使用 Python 解释器执行此文件。</p>
+<p>下面是两个 Python 脚本的完整代码，供大家测试使用：</p>
+<pre><code class="python"># File Name: db.py
+
+from sqlalchemy import create_engine, Column, Integer, String, ForeignKey, Table
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import relationship, backref
+
+engine = create_engine(&#39;mysql://root@localhost/study?charset=utf8&#39;)
+Base = declarative_base(engine)
+
+
+class User(Base):
+    __tablename__ = &#39;user&#39;
+    id = Column(Integer, primary_key=True)
+    name = Column(String(64), unique=True, nullable=False)
+    email = Column(String(64), unique=True)
+
+    def __repr__(self):
+        return &#39;&lt;User: &#123;&#125;&gt;&#39;.format(self.name)
+
+// 以下创建四个数据表
+
+class Course(Base):
+    __tablename__ = &#39;course&#39;
+    id = Column(Integer, primary_key=True)
+    name = Column(String(64))
+    user_id = Column(Integer, ForeignKey(&#39;user.id&#39;, ondelete=&#39;CASCADE&#39;))
+    user = relationship(&#39;User&#39;,
+            backref=backref(&#39;course&#39;, cascade=&#39;all, delete-orphan&#39;))
+
+    def __repr__(self):
+        return &#39;&lt;Course: &#123;&#125;&gt;&#39;.format(self.name)
+
+
+class Lab(Base):
+    __tablename__ = &#39;lab&#39;
+    id = Column(Integer, ForeignKey(&#39;course.id&#39;), primary_key=True)
+    name = Column(String(128))
+    course = relationship(&#39;Course&#39;, backref=backref(&#39;lab&#39;, uselist=False))
+
+    def __repr__(self):
+        return &#39;&lt;Lab: &#123;&#125;&gt;&#39;.format(self.name)
+
+
+Rela = Table(&#39;rela&#39;, Base.metadata,
+        Column(&#39;tag_id&#39;, Integer, ForeignKey(&#39;tag.id&#39;), primary_key=True),
+        Column(&#39;course_id&#39;, Integer, ForeignKey(&#39;course.id&#39;), primary_key=True)
+)
+
+
+class Tag(Base):
+    __tablename__ = &#39;tag&#39;
+    id = Column(Integer, primary_key=True)
+    name = Column(String(64), unique=True)
+    course = relationship(&#39;Course&#39;, secondary=Rela, backref=&#39;tag&#39;)
+
+    def __repr__(self):
+        return &#39;&lt;Tag: &#123;&#125;&gt;&#39;.format(self.name)
+
+
+if __name__ == &#39;__main__&#39;:
+    Base.metadata.create_all()</code></pre>
+<pre><code class="python"># File Name: create_data.py
+
+from sqlalchemy.orm import sessionmaker
+from faker import Faker
+from db import engine, User, Course, Lab, Tag
+
+session = sessionmaker(engine)()
+fake = Faker(&#39;zh-cn&#39;)
+
+def create_users():
+    for i in range(10):
+        user = User(name=fake.name(), email=fake.email())
+        session.add(user)
+
+def create_courses():
+    for user in session.query(User).all():
+        for i in range(2):
+            course = Course(name=&#39;&#39;.join(fake.words(4)), user=user)
+            session.add(course)
+
+def create_labs():
+    for course in session.query(Course):
+        lab = Lab(name=&#39;&#39;.join(fake.words(5)), id=course.id)
+        session.add(lab)
+
+def create_tags():
+    for name in [&#39;python&#39;, &#39;linux&#39;, &#39;java&#39;, &#39;mysql&#39;, &#39;lisp&#39;]:
+        tag = Tag(name=name)
+        session.add(tag)
+
+def main():
+    create_users()
+    create_courses()
+    create_labs()
+    create_tags()
+    session.commit()
+
+if __name__ == &#39;__main__&#39;:
+    main()
+</code></pre>
+<p>总结</p>
+<p>本节课程中讲解了一对一、多对多关系的数据表创建流程，并且已经嵌入了 session 增删改查的操作讲解，下面一节课程我们针对“查”进行详细的介绍。</p>
+<h2 id="2-7- 查询"><a href="#2-7- 查询" class="headerlink" title="2.7 查询"></a>2.7 查询 </h2><p> 本节主要讲解 SQLAlchemy 的查询方法，讲解主要基于前两节的数据。通常我们对数据库的使用主要有三步：创建数据表，添加数据，查询数据。前两节完成了前两步的介绍，接下来我们针对查询尤其是过滤查询进行深入探讨。</p>
+<p>首先在 MySQL 客户端中删除数据库 study 并重建：</p>
+<pre><code class="python">mysql&gt; DROP SCHEMA IF EXISTS study;  # SCHEMA 等同于 DATABASE
+Query OK, 5 rows affected (0.23 sec)
+
+mysql&gt; CREATE SCHEMA study CHARACTER SET = UTF8;
+Query OK, 1 row affected, 1 warning (0.06 sec)
+
+mysql&gt;
+</code></pre>
+<p>然后在终端命令行执行 Python 脚本创建数据表、添加数据，脚本代码参见上一节文档：</p>
+<pre><code class="shell">$ python db.py
+$ python create_data.py
+</code></pre>
+<h3 id="2-7-1- 基本查询语句"><a href="#2-7-1- 基本查询语句" class="headerlink" title="2.7.1 基本查询语句"></a>2.7.1 基本查询语句 </h3><p> 我们使用命令行交互解释器 ipython 来学习查询语句：</p>
+<pre><code class="python"># 首先从 create_data.py 中引入所需对象
+In [1]: from create_data import session, User, Course, Lab, Tag
+
+# session 的 query 方法接收类作为参数，.all 表示获取全部实例
+# 不论查询结果是一个还是多个，返回值都是列表，查不到的话返回值是空列表
+# 等同于 MySQL 语句：SELECT * FROM user;
+In [2]: session.query(User).all()
+Out[2]:
+[&lt;User: 王雷 &gt;,
+ &lt;User: 朱华 &gt;,
+ &lt;User: 汪林 &gt;,
+ &lt;User: 夏晶 &gt;,
+ &lt;User: 蒋桂珍 &gt;,
+ &lt;User: 宁兵 &gt;,
+ &lt;User: 梁龙 &gt;,
+ &lt;User: 李博 &gt;,
+ &lt;User: 段欣 &gt;,
+ &lt;User: 刘文 &gt;]
+
+# 查询第一条数据
+In [3]: session.query(User).first()
+Out[3]: &lt;User: 王雷 &gt;
+
+# filter 方法过滤查询
+In [4]: session.query(User).filter(User.name==&#39; 王雷 &#39;).first()
+Out[4]: &lt;User: 王雷 &gt;
+
+# filter_by 方法也是常用的过滤方法，且写法更为简洁
+In [5]: session.query(User).filter_by(name=&#39; 王雷 &#39;).first()
+Out[5]: &lt;User: 王雷 &gt;
+
+# filter 方法支持 &gt;、&gt;=、&lt;、&lt;=、==、!= 等比较符号
+In [6]: session.query(User).filter(User.name!=&#39; 王雷 &#39;).all()
+Out[6]:
+[&lt;User: 朱华 &gt;,
+ &lt;User: 汪林 &gt;,
+ &lt;User: 夏晶 &gt;,
+ &lt;User: 蒋桂珍 &gt;,
+ &lt;User: 宁兵 &gt;,
+ &lt;User: 梁龙 &gt;,
+ &lt;User: 李博 &gt;,
+ &lt;User: 段欣 &gt;,
+ &lt;User: 刘文 &gt;]
+
+In [7]: session.query(User).filter(User.id&gt;=6).all()
+Out[7]: [&lt;User: 宁兵 &gt;, &lt;User: 梁龙 &gt;, &lt;User: 李博 &gt;, &lt;User: 段欣 &gt;, &lt;User: 刘文 &gt;]
+
+# filter_by 方法支持多条件查询
+In [8]: session.query(User).filter_by(name=&#39; 王雷 &#39;, id=1).all()
+Out[8]: [&lt;User: 王雷 &gt;]
+
+# 查询 User 表中全部数据的 name 值
+In [9]: session.query(User.name).all()
+Out[9]:
+[(&#39; 刘文 &#39;),
+ (&#39; 夏晶 &#39;),
+ (&#39; 宁兵 &#39;),
+ (&#39; 朱华 &#39;),
+ (&#39; 李博 &#39;),
+ (&#39; 梁龙 &#39;),
+ (&#39; 段欣 &#39;),
+ (&#39; 汪林 &#39;),
+ (&#39; 王雷 &#39;),
+ (&#39; 蒋桂珍 &#39;)]
+
+# 注意上一个命令的查询结果列表中每个元素的数据类型是 namedtuple
+# 当然也可以理解为元组，取下标为 0 的元素就是 name 值
+In [10]: for i in session.query(User.name).all():
+    ...:     print(i)
+    ...:     print(i.name)
+    ...:
+(&#39; 刘文 &#39;,)
+刘文
+(&#39; 夏晶 &#39;,)
+夏晶
+(&#39; 宁兵 &#39;,)
+宁兵
+(&#39; 朱华 &#39;,)
+朱华
+(&#39; 李博 &#39;,)
+李博
+(&#39; 梁龙 &#39;,)
+梁龙
+(&#39; 段欣 &#39;,)
+段欣
+(&#39; 汪林 &#39;,)
+汪林
+(&#39; 王雷 &#39;,)
+王雷
+(&#39; 蒋桂珍 &#39;,)
+蒋桂珍
+</code></pre>
+<p>like 方法进行模糊查询，% 匹配任意数量的任意字符，_ 匹配单个任意字符：</p>
+<pre><code class="python"># 查询邮箱为谷歌邮箱的 User 实例
+In [12]: session.query(User).filter(User.email.like(&#39;%gmail%&#39;)).all()
+Out[12]: [&lt;User: 王雷 &gt;, &lt;User: 朱华 &gt;, &lt;User: 汪林 &gt;, &lt;User: 段欣 &gt;, &lt;User: 刘文 &gt;]
+
+# 查询邮箱第二个字符为 i 的 User 实例
+In [13]: session.query(User).filter(User.email.like(&#39;_i%&#39;)).all()
+Out[13]: [&lt;User: 王雷 &gt;, &lt;User: 夏晶 &gt;, &lt;User: 宁兵 &gt;, &lt;User: 李博 &gt;]
+</code></pre>
+<p>in_ 方法查询 “某个字段的值属于某个列表” 的数据：</p>
+<pre><code class="python"># 如果列表中的字段在 name 列中查不到，并不会报错
+In [14]: session.query(User).filter(User.name.in_([&#39; 王雷 &#39;, &#39; 夏晶 &#39;, &#39;xxx&#39;])).all()
+Out[14]: [&lt;User: 夏晶 &gt;, &lt;User: 王雷 &gt;]
+</code></pre>
+<p>and_ 方法进行多条件查询，需要引入，等同于上面 filter_by 方法：</p>
+<pre><code class="python">In [15]: from sqlalchemy import and_
+
+# 查询符合全部条件的数据
+In [16]: session.query(User).filter(and_(User.name==&#39; 王雷 &#39;, User.id==1)).all()
+Out[16]: [&lt;User: 王雷 &gt;]
+</code></pre>
+<p>or_ 也是多条件查询，符合任一条件即可，也是需要引入：</p>
+<pre><code class="python">In [24]: from sqlalchemy import or_
+
+# 查询符合任一条件的数据
+In [25]: session.query(User).filter(or_(
+    ...:     User.email==&#39;na55@zhouwan.cn&#39;,
+    ...:     User.id==1
+    ...: )).all()
+Out[25]: [&lt;User: 王雷 &gt;, &lt;User: 梁龙 &gt;]
+</code></pre>
+<h3 id="2-7-2- 查询过滤器"><a href="#2-7-2- 查询过滤器" class="headerlink" title="2.7.2 查询过滤器"></a>2.7.2 查询过滤器</h3><table>
+<thead>
+<tr>
+<th>过滤器</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>filter()</td>
+<td>把过滤器添加到原查询上，返回一个新查询</td>
+</tr>
+<tr>
+<td>filter_by()</td>
+<td>把等值过滤器添加到原查询上，返回一个新查询</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>使用指定的值限定原查询返回的结果</td>
+</tr>
+<tr>
+<td>offset()</td>
+<td>偏移原查询返回的结果，返回一个新查询</td>
+</tr>
+<tr>
+<td>order_by()</td>
+<td>根据指定条件对原查询结果进行排序，返回一个新查询</td>
+</tr>
+<tr>
+<td>group_by()</td>
+<td>根据指定条件对原查询结果进行分组，返回一个新查询</td>
+</tr>
+</tbody></table>
+<h3 id="2-7-3- 查询执行器"><a href="#2-7-3- 查询执行器" class="headerlink" title="2.7.3 查询执行器"></a>2.7.3 查询执行器</h3><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>all()</td>
+<td>以列表形式返回查询的所有结果</td>
+</tr>
+<tr>
+<td>first()</td>
+<td>返回查询的第一个结果，如果未查到，返回 None</td>
+</tr>
+<tr>
+<td>first_or_404()</td>
+<td>返回查询的第一个结果，如果未查到，返回 404</td>
+</tr>
+<tr>
+<td>get()</td>
+<td>返回指定主键对应的行，如不存在，返回 None</td>
+</tr>
+<tr>
+<td>get_or_404()</td>
+<td>返回指定主键对应的行，如不存在，返回 404</td>
+</tr>
+<tr>
+<td>count()</td>
+<td>返回查询结果的数量</td>
+</tr>
+<tr>
+<td>paginate()</td>
+<td>返回一个 Paginate 对象，它包含指定范围内的结果</td>
+</tr>
+</tbody></table>
+<h2 id="2-8- 高级查询"><a href="#2-8- 高级查询" class="headerlink" title="2.8 高级查询"></a>2.8 高级查询 </h2><p> 下面介绍 SQLAlchemy 的排序、设置查询数量、联结查询等操作。</p>
+<h3 id="2-8-1- 排序"><a href="#2-8-1- 排序" class="headerlink" title="2.8.1 排序"></a>2.8.1 排序</h3><pre><code class="python"># 查询全部 User 实例，按实例的 email 值排序
+In [27]: session.query(User).order_by(User.email).all()
+Out[27]:
+[&lt;User: 汪林 &gt;,
+ &lt;User: 刘文 &gt;,
+ &lt;User: 段欣 &gt;,
+ &lt;User: 夏晶 &gt;,
+ &lt;User: 梁龙 &gt;,
+ &lt;User: 王雷 &gt;,
+ &lt;User: 李博 &gt;,
+ &lt;User: 宁兵 &gt;,
+ &lt;User: 蒋桂珍 &gt;,
+ &lt;User: 朱华 &gt;]
+In [28]: for user in session.query(User).order_by(User.email).all():
+    ...:     print(user.email)
+    ...:
+caoli@gmail.com
+fang72@gmail.com
+heyang@gmail.com
+minzhao@meng.cn
+na55@zhouwan.cn
+pingmao@gmail.com
+xiaping@hotmail.com
+xiuying77@hotmail.com
+yang59@hotmail.com
+ytao@gmail.com
+
+# desc 方法进行降序排序，默认为升序
+In [29]: session.query(User).order_by(User.email.desc()).all()
+Out[29]:
+[&lt;User: 朱华 &gt;,
+ &lt;User: 蒋桂珍 &gt;,
+ &lt;User: 宁兵 &gt;,
+ &lt;User: 李博 &gt;,
+ &lt;User: 王雷 &gt;,
+ &lt;User: 梁龙 &gt;,
+ &lt;User: 夏晶 &gt;,
+ &lt;User: 段欣 &gt;,
+ &lt;User: 刘文 &gt;,
+ &lt;User: 汪林 &gt;]
+</code></pre>
+<p>等同于 MySQL 中的 ORDER BY 语句：</p>
+<pre><code class="sql">mysql&gt; SELECT * FROM user ORDER BY email;
++----+-----------+-----------------------+
+| id | name      | email                 |
++----+-----------+-----------------------+
+|  3 | 汪林      | caoli@gmail.com       |
+| 10 | 刘文      | fang72@gmail.com      |
+|  9 | 段欣      | heyang@gmail.com      |
+|  4 | 夏晶      | minzhao@meng.cn       |
+|  7 | 梁龙      | na55@zhouwan.cn       |
+|  1 | 王雷      | pingmao@gmail.com     |
+|  8 | 李博      | xiaping@hotmail.com   |
+|  6 | 宁兵      | xiuying77@hotmail.com |
+|  5 | 蒋桂珍    | yang59@hotmail.com    |
+|  2 | 朱华      | ytao@gmail.com        |
++----+-----------+-----------------------+
+10 rows in set (0.01 sec)
+
+mysql&gt; SELECT email FROM user ORDER BY email;
++-----------------------+
+| email                 |
++-----------------------+
+| caoli@gmail.com       |
+| fang72@gmail.com      |
+| heyang@gmail.com      |
+| minzhao@meng.cn       |
+| na55@zhouwan.cn       |
+| pingmao@gmail.com     |
+| xiaping@hotmail.com   |
+| xiuying77@hotmail.com |
+| yang59@hotmail.com    |
+| ytao@gmail.com        |
++-----------------------+
+10 rows in set (0.00 sec)
+
+mysql&gt; SELECT * FROM user ORDER BY email DESC;
++----+-----------+-----------------------+
+| id | name      | email                 |
++----+-----------+-----------------------+
+|  2 | 朱华      | ytao@gmail.com        |
+|  5 | 蒋桂珍    | yang59@hotmail.com    |
+|  6 | 宁兵      | xiuying77@hotmail.com |
+|  8 | 李博      | xiaping@hotmail.com   |
+|  1 | 王雷      | pingmao@gmail.com     |
+|  7 | 梁龙      | na55@zhouwan.cn       |
+|  4 | 夏晶      | minzhao@meng.cn       |
+|  9 | 段欣      | heyang@gmail.com      |
+| 10 | 刘文      | fang72@gmail.com      |
+|  3 | 汪林      | caoli@gmail.com       |
++----+-----------+-----------------------+
+10 rows in set (0.00 sec)
+</code></pre>
+<h3 id="2-8-2- 设置查询数量"><a href="#2-8-2- 设置查询数量" class="headerlink" title="2.8.2 设置查询数量"></a>2.8.2 设置查询数量 </h3><p> 使用 limit 方法限制查询数量：</p>
+<pre><code class="python"># 按 id 字段降序排序，取前 4 条数据
+In [30]: session.query(User).order_by(User.id.desc()).limit(4).all()
+Out[30]: [&lt;User: 刘文 &gt;, &lt;User: 段欣 &gt;, &lt;User: 李博 &gt;, &lt;User: 梁龙 &gt;]
+
+# 因为查询结果为有序可迭代对象，所以使用列表的切片也是可以的
+# 但 limit 方法更可取，因为后者只查询前 4 条数据，对内存的压力要小很多
+In [31]: session.query(User).order_by(User.id.desc()).all()[:4]
+Out[31]: [&lt;User: 刘文 &gt;, &lt;User: 段欣 &gt;, &lt;User: 李博 &gt;, &lt;User: 梁龙 &gt;]
+</code></pre>
+<p>对应的 MySQL 语句如下：</p>
+<pre><code class="mysql">mysql&gt; SELECT * FROM user ORDER BY id DESC LIMIT 4;
++----+--------+---------------------+
+| id | name   | email               |
++----+--------+---------------------+
+| 10 | 刘文   | fang72@gmail.com    |
+|  9 | 段欣   | heyang@gmail.com    |
+|  8 | 李博   | xiaping@hotmail.com |
+|  7 | 梁龙   | na55@zhouwan.cn     |
++----+--------+---------------------+
+4 rows in set (0.00 sec)
+</code></pre>
+<p>count 方法统计查询数量：</p>
+<pre><code class="python">In [33]: session.query(User).filter(User.email.like(&#39;%gmail%&#39;)).all()
+Out[33]: [&lt;User: 王雷 &gt;, &lt;User: 朱华 &gt;, &lt;User: 汪林 &gt;, &lt;User: 段欣 &gt;, &lt;User: 刘文 &gt;]
+
+# 注意结尾没有 .all() 了
+In [34]: session.query(User).filter(User.email.like(&#39;%gmail%&#39;)).count()
+Out[34]: 5
+</code></pre>
+<p>对应的 MySQL 语句：</p>
+<pre><code class="mysql">mysql&gt; SELECT COUNT(*) AS COUNT FROM user WHERE email LIKE &#39;%gmail%&#39;;
++-------+
+| COUNT |
++-------+
+|     5 |
++-------+
+1 row in set (0.00 sec)
+</code></pre>
+<h3 id="2-8-3- 联结查询"><a href="#2-8-3- 联结查询" class="headerlink" title="2.8.3 联结查询"></a>2.8.3 联结查询 </h3><p> 使用 join 方法进行联结查询：</p>
+<pre><code class="python"># 查询王雷老师的全部课程，即查询 course 表中的数据
+# 条件是 name 值为 &#39; 王雷 &#39; 的 user 表外键关联的 course 表中的数据
+In [26]: session.query(Course).join(User).filter(User.name==&#39; 王雷 &#39;).all()
+Out[26]: [&lt;Course: 不能产品如何经营 &gt;, &lt;Course: 责任标题表示女人 &gt;]
+</code></pre>
+<p>等同于 MySQL 中的 JOIN 语句：</p>
+<pre><code class="mysql">mysql&gt; SELECT course.id, course.name, user_id FROM course
+    -&gt; JOIN user ON user.id = course.user_id 
+    -&gt; WHERE user.name = &#39; 王雷 &#39;;   
++----+--------------------------+---------+
+| id | name                     | user_id |
++----+--------------------------+---------+
+|  1 | 不能产品如何经营            |       1 |
+|  2 | 责任标题表示女人            |       1 |
++----+--------------------------+---------+
+2 rows in set (0.00 sec)
+</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 欢迎各位看官及技术大佬前来交流指导呀，可以邮件至 jqiange@yeah.net </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2021 Jqiange
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

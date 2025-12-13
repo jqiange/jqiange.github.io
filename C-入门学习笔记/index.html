@@ -1,0 +1,5538 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>C++ 入门学习笔记 | jqiange</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="C++ 入门学习笔记 | jqiange">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="人畜无害的姜小强">
+<meta property="og:url" content="https://jqiange.github.io/about/index.html">
+<meta property="og:site_name" content="jqiange">
+<meta property="og:description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+<meta property="article:published_time" content="2020-02-18T08:21:04.000Z">
+<meta property="article:modified_time" content="2025-12-13T05:23:10.695Z">
+<meta property="article:author" content="姜小强">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+
+
+<link rel="icon" href="/img/jqiange.png">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/jqiange.png"/>
+</a>
+<div class="author">
+    <span>姜小强</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/jqiange"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(58)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(9)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据库">
+                        
+                        数据库
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="每日一学">
+                        
+                        每日一学
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="爬虫">
+                        
+                        爬虫
+                        <small>(10)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="前端">
+                        
+                        前端
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="深度学习">
+                        
+                        深度学习
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据分析">
+                        
+                        数据分析
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="chip">
+                        
+                        chip
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="CPP">
+                        
+                        CPP
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Linux">
+                        
+                        Linux
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="python">
+                        
+                        python
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="58">
+<input type="hidden" id="yelog_site_word_count" value="251.9k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSS-Xpath</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Markdown</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Matplotlib</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Mysql</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Numpy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pandas</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pip</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pyecharts</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pygal</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pymysql-ORM</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>RE</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Redis</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Scrapy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Seaborn</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Selenium</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>yield</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="全部文章 python "
+           href="/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%A6%E8%A7%A3/"
+           data-tag="RE"
+           data-author="" >
+            <span class="post-title" title="正则表达式详解">正则表达式详解</span>
+            <span class="post-date" title="2020-02-26 09:25:46">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/tcl%E4%B8%8Eopc/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 与 opc">tcl 与 opc</span>
+            <span class="post-date" title="2025-09-24 13:36:07">2025/09/24</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/hexo%E6%96%87%E7%AB%A0%E5%8A%A0%E5%AF%86%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="hexo 文章加密方法">hexo 文章加密方法</span>
+            <span class="post-date" title="2025-09-21 22:33:03">2025/09/21</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/tcl%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 语言入门">tcl 语言入门</span>
+            <span class="post-date" title="2025-09-14 22:43:20">2025/09/14</span>
+        </a>
+        
+        <a  class="全部文章 每日一学 "
+           href="/%E6%95%85%E4%BA%8B%E4%BC%9A%E4%B8%8E%E4%BC%81%E4%B8%9A%E8%82%A1%E6%9D%83%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="故事会与企业股权架构设计">故事会与企业股权架构设计</span>
+            <span class="post-date" title="2025-08-30 09:42:43">2025/08/30</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%AE%A1%E7%AE%97%E5%85%89%E5%88%BBOPC%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="计算光刻 OPC 名词解释">计算光刻 OPC 名词解释</span>
+            <span class="post-date" title="2025-08-26 21:44:36">2025/08/26</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%8A%AF%E7%89%87%E5%88%B6%E9%80%A0%E6%B5%81%E7%A8%8B%E4%B8%8E%E5%B7%A5%E8%89%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="芯片制造流程与工艺">芯片制造流程与工艺</span>
+            <span class="post-date" title="2025-06-14 12:13:17">2025/06/14</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E8%81%8C%E5%9C%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入职场">C++ 入职场</span>
+            <span class="post-date" title="2024-06-22 15:52:55">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/Protocol-Buffers-%E5%85%A5%E9%97%A8%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Protocol Buffers 入门使用">Protocol Buffers 入门使用</span>
+            <span class="post-date" title="2024-06-22 15:50:39">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-python%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B-boost/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++python 混合编程 -boost">C++python 混合编程 -boost</span>
+            <span class="post-date" title="2024-06-22 15:36:18">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B%E4%B8%8E%E6%A8%A1%E6%9D%BF/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 泛型编程与模板">C++ 泛型编程与模板</span>
+            <span class="post-date" title="2024-06-22 15:27:49">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入门学习笔记">C++ 入门学习笔记</span>
+            <span class="post-date" title="2024-06-22 14:53:46">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 Linux "
+           href="/shell%E7%BC%96%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="shell 编程">shell 编程</span>
+            <span class="post-date" title="2022-03-07 20:24:24">2022/03/07</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Git 版本控制工具">Git 版本控制工具</span>
+            <span class="post-date" title="2022-03-05 23:23:45">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Hexo%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E4%B8%8E%E5%A4%9A%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hexo 博客迁移与多平台使用">Hexo 博客迁移与多平台使用</span>
+            <span class="post-date" title="2022-03-05 01:26:56">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%B8%8E%E9%87%8D%E9%9A%BE%E7%82%B9%E6%B1%87%E6%80%BB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的基础知识与重难点汇总">python 中的基础知识与重难点汇总</span>
+            <span class="post-date" title="2020-11-17 23:05:15">2020/11/17</span>
+        </a>
+        
+        <a  class="全部文章 前端 "
+           href="/javascript%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="JavaScript 入门">JavaScript 入门</span>
+            <span class="post-date" title="2020-11-09 20:46:08">2020/11/09</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E8%AF%AD%E6%B3%95%E7%B3%96/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的语法糖">python 中的语法糖</span>
+            <span class="post-date" title="2020-11-06 10:53:29">2020/11/06</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E8%BF%9B%E7%A8%8B%EF%BC%8C%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%8D%8F%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的进程，线程与协程">python 中的进程，线程与协程</span>
+            <span class="post-date" title="2020-11-04 21:29:16">2020/11/04</span>
+        </a>
+        
+        <a  class="全部文章 Linux "
+           href="/linux%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="linux 常见命令学习">linux 常见命令学习</span>
+            <span class="post-date" title="2020-06-17 22:33:28">2020/06/17</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="机器学习经典算法">机器学习经典算法</span>
+            <span class="post-date" title="2020-06-16 10:36:50">2020/06/16</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/tensorflow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tensorflow 学习笔记">tensorflow 学习笔记</span>
+            <span class="post-date" title="2020-06-05 01:49:53">2020/06/05</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/%E6%B7%B1%E5%BA%A6%E7%90%86%E8%A7%A3%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="深度理解卷积神经网络工作原理">深度理解卷积神经网络工作原理</span>
+            <span class="post-date" title="2020-06-04 13:24:45">2020/06/04</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E7%88%AC%E8%99%AB%E7%9A%84%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫的定时执行">爬虫的定时执行</span>
+            <span class="post-date" title="2020-04-06 22:44:47">2020/04/06</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/Token-%EF%BC%8CCookie%E5%92%8CSession%E7%9A%84%E5%8C%BA%E5%88%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Token ，Cookie 和 Session 的区别">Token ，Cookie 和 Session 的区别</span>
+            <span class="post-date" title="2020-04-03 10:46:54">2020/04/03</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E5%9C%A8python%E4%B8%AD%E8%BF%9B%E8%A1%8C%E8%A7%86%E9%A2%91-%E9%9F%B3%E9%A2%91%E5%A4%84%E7%90%86%E5%8F%8A%E5%90%88%E5%B9%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="在 python 中进行视频 - 音频处理及合并">在 python 中进行视频 - 音频处理及合并</span>
+            <span class="post-date" title="2020-03-29 10:56:44">2020/03/29</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8BJS%E8%A7%A3%E5%AF%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之 JS 解密">反反爬虫之 JS 解密</span>
+            <span class="post-date" title="2020-03-24 10:04:43">2020/03/24</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E7%90%86%E8%A7%A3python%E4%B8%AD%E7%9A%84%E9%97%AD%E5%8C%85%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="理解 python 中的闭包与装饰器">理解 python 中的闭包与装饰器</span>
+            <span class="post-date" title="2020-03-21 17:34:45">2020/03/21</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Mongodb%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Mongodb 数据库入门">Mongodb 数据库入门</span>
+            <span class="post-date" title="2020-03-17 22:50:33">2020/03/17</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%8A%A0%E4%B8%AA%E7%A9%BA%E6%A0%BC%E5%91%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="为什么不加个空格呢">为什么不加个空格呢</span>
+            <span class="post-date" title="2020-03-14 13:53:44">2020/03/14</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8/"
+           data-tag="yield"
+           data-author="" >
+            <span class="post-title" title="迭代器与生成器">迭代器与生成器</span>
+            <span class="post-date" title="2020-03-13 21:58:25">2020/03/13</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E6%BB%91%E5%9D%97%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之滑块验证码">反反爬虫之滑块验证码</span>
+            <span class="post-date" title="2020-03-08 21:00:17">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E5%9B%BE%E7%89%87%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之图片验证码">反反爬虫之图片验证码</span>
+            <span class="post-date" title="2020-03-08 16:16:16">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Python%E6%93%8D%E4%BD%9CRedis/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Python 操作 Redis">Python 操作 Redis</span>
+            <span class="post-date" title="2020-03-07 16:15:44">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy-Redis%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Scrapy-Redis 分布式爬虫">Scrapy-Redis 分布式爬虫</span>
+            <span class="post-date" title="2020-03-07 15:35:50">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%ABRequest%E5%8E%BB%E9%87%8D%E5%8F%8A%E8%BF%87%E6%BB%A4%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫 Request 去重及过滤器">爬虫 Request 去重及过滤器</span>
+            <span class="post-date" title="2020-03-07 15:22:23">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Redis%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Redis 数据库">Redis 数据库</span>
+            <span class="post-date" title="2020-03-06 20:30:00">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Pymysql%E4%B8%8EORM%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="pymysql-ORM"
+           data-author="" >
+            <span class="post-title" title="Pymysql 与 ORM 操作数据库">Pymysql 与 ORM 操作数据库</span>
+            <span class="post-date" title="2020-03-06 10:49:03">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/MySql%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Mysql"
+           data-author="" >
+            <span class="post-title" title="MySql 数据库">MySql 数据库</span>
+            <span class="post-date" title="2020-03-04 23:31:02">2020/03/04</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy%E6%A1%86%E6%9E%B6%E7%88%AC%E8%99%AB/"
+           data-tag="Scrapy"
+           data-author="" >
+            <span class="post-title" title="Scrapy 框架爬虫">Scrapy 框架爬虫</span>
+            <span class="post-date" title="2020-03-02 10:44:55">2020/03/02</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="多线程与多进程爬虫">多线程与多进程爬虫</span>
+            <span class="post-date" title="2020-03-01 15:33:08">2020/03/01</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Selenium%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%A8%A1%E6%8B%9F/"
+           data-tag="Selenium"
+           data-author="" >
+            <span class="post-title" title="Selenium 自动化测试模拟">Selenium 自动化测试模拟</span>
+            <span class="post-date" title="2020-02-29 21:29:54">2020/02/29</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96-%E6%96%87%E4%BB%B6%E4%BF%9D%E5%AD%98/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="数据持久化 - 文件保存本地">数据持久化 - 文件保存本地</span>
+            <span class="post-date" title="2020-02-27 22:01:14">2020/02/27</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫基础入门">爬虫基础入门</span>
+            <span class="post-date" title="2020-02-26 20:44:27">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/CSS%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%8EXpath%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96/"
+           data-tag="CSS-Xpath"
+           data-author="" >
+            <span class="post-title" title="CSS 选择器与 Xpath 数据提取">CSS 选择器与 Xpath 数据提取</span>
+            <span class="post-date" title="2020-02-26 19:07:35">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Seaborn-Pygal-Pyecharts%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Seaborn,pygal,Pyecharts"
+           data-author="" >
+            <span class="post-title" title="Seaborn-Pygal-Pyecharts 可视化">Seaborn-Pygal-Pyecharts 可视化</span>
+            <span class="post-date" title="2020-02-22 16:24:55">2020/02/22</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/python%E4%B9%8BMatplotlib%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Matplotlib"
+           data-author="" >
+            <span class="post-title" title="python 之 Matplotlib 可视化">python 之 Matplotlib 可视化</span>
+            <span class="post-date" title="2020-02-20 20:28:44">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%A4%84%E7%90%86%E5%AE%9E%E6%93%8D/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Pandas 数据分析处理实操">Pandas 数据分析处理实操</span>
+            <span class="post-date" title="2020-02-20 10:51:39">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Markdown%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E6%8A%80%E5%B7%A7/"
+           data-tag="Markdown"
+           data-author="" >
+            <span class="post-title" title="Markdown 文本编辑技巧">Markdown 文本编辑技巧</span>
+            <span class="post-date" title="2020-02-18 16:31:40">2020/02/18</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BPandas%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Python 之 Pandas 库从入门到实战">Python 之 Pandas 库从入门到实战</span>
+            <span class="post-date" title="2020-02-15 20:46:52">2020/02/15</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BNumpy%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Numpy"
+           data-author="" >
+            <span class="post-title" title="Python 之 Numpy 库从入门到实战">Python 之 Numpy 库从入门到实战</span>
+            <span class="post-date" title="2020-02-13 23:15:38">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E9%95%9C%E5%83%8F%E6%BA%90%E7%BD%91%E5%9D%80/"
+           data-tag="pip"
+           data-author="" >
+            <span class="post-title" title="python pip 国内镜像大全及库的安装">python pip 国内镜像大全及库的安装</span>
+            <span class="post-date" title="2020-02-13 23:13:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E7%9A%84%E4%B8%89%E7%A7%8D%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 的三种输出格式">python 的三种输出格式</span>
+            <span class="post-date" title="2020-02-13 23:04:49">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E6%97%B6%E9%97%B4%E6%A8%A1%E5%9D%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的时间模块">python 中的时间模块</span>
+            <span class="post-date" title="2020-02-13 23:01:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E6%9F%A5%E7%9C%8B%E4%BB%BB%E4%BD%95%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E7%94%A8%E6%B3%95%E7%9A%84%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 查看任何第三方库的用法的方法">python 查看任何第三方库的用法的方法</span>
+            <span class="post-date" title="2020-02-13 22:57:50">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Anaconda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8Epyinstaller%E7%A8%8B%E5%BA%8F%E6%89%93%E5%8C%85/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Anaconda 环境配置与 pyinstaller 程序打包">Anaconda 环境配置与 pyinstaller 程序打包</span>
+            <span class="post-date" title="2020-02-13 20:01:52">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%BD%BF%E7%94%A8Hexo-Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%85%8D%E8%B4%B9%E5%8D%9A%E5%AE%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="使用 Hexo+Github 搭建个人免费博客">使用 Hexo+Github 搭建个人免费博客</span>
+            <span class="post-date" title="2020-02-13 15:44:02">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E5%85%B3%E4%BA%8Ehexo%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"
+           data-tag="Hexo"
+           data-author="" >
+            <span class="post-title" title="关于 hexo 使用过程中报错问题汇总">关于 hexo 使用过程中报错问题汇总</span>
+            <span class="post-date" title="2020-02-12 23:03:46">2020/02/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-C-入门学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">C++ 入门学习笔记</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="CPP">CPP</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2024-06-22 15:32:01'>2024-06-22 14:53</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:26.4k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85"><span class="toc-text">一、工具安装 </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8"><span class="toc-text">二、基础入门 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%20%E8%AE%A4%E8%AF%86%20C"><span class="toc-text">2.1 认识 C++</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1-%20%E6%B3%A8%E9%87%8A"><span class="toc-text">2.1.1 注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2-%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F"><span class="toc-text">2.1.2 变量与常量 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-3-%20%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-text">2.1.3 关键字 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-4-%20%E6%A0%87%E8%AF%86%E7%AC%A6%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99"><span class="toc-text">2.1.4 标识符命名规则 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-5-main-%20%E5%87%BD%E6%95%B0"><span class="toc-text">2.1.5 main 函数 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.2 数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1-%20%E6%95%B4%E5%9E%8B"><span class="toc-text">2.2.1 整型 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2-%20%E6%B5%AE%E7%82%B9%E5%9E%8B"><span class="toc-text">2.2.2 浮点型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-3-%20%E5%AD%97%E7%AC%A6%E5%9E%8B"><span class="toc-text">2.2.3 字符型 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-4-%20%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B%20bool"><span class="toc-text">2.2.4 布尔类型 bool</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-5-%20%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6"><span class="toc-text">2.2.5 转义字符 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-6-%20%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">2.2.6 字符串 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-7-%20%E8%BF%9B%E5%88%B6"><span class="toc-text">2.2.7 进制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-8-auto%20%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-text">2.2.8 auto 关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-9-%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-text">2.2.9 数据类型转换 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%20%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97"><span class="toc-text">2.3 算术运算 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-1-%20%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA"><span class="toc-text">2.3.1 输入与输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-2-%20%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">2.3.2 算术运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-3-%20%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">2.3.3 关系运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-4-%20%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">2.3.4 位运算符 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-5-%20%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">2.3.5 赋值运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-6-%20%E6%9D%82%E9%A1%B9%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">2.3.6 杂项运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-7-%20%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-text">2.3.7 类型转换 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%20%E7%A8%8B%E5%BA%8F%E6%B5%81%E7%BB%93%E6%9E%84"><span class="toc-text">2.4 程序流结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-1-%20%E9%80%89%E6%8B%A9%E7%BB%93%E6%9E%84"><span class="toc-text">2.4.1 选择结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-%20%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84"><span class="toc-text">2.5 循环结构 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-1-while%20%E5%BE%AA%E7%8E%AF"><span class="toc-text">2.5.1 while 循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-2-do-while-%20%E5%BE%AA%E7%8E%AF"><span class="toc-text">2.5.2 do while 循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-3-for-%20%E5%BE%AA%E7%8E%AF"><span class="toc-text">2.5.3 for 循环 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-4-%20%E5%B5%8C%E5%A5%97%E5%BE%AA%E7%8E%AF"><span class="toc-text">2.5.4 嵌套循环</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-6-%20%E8%B7%B3%E8%BD%AC%E8%AF%AD%E5%8F%A5"><span class="toc-text">2.6 跳转语句 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-1-break-%20%E8%AF%AD%E5%8F%A5"><span class="toc-text">2.6.1 break 语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-2-continue-%20%E8%AF%AD%E5%8F%A5"><span class="toc-text">2.6.2 continue 语句 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-3-goto-%20%E8%AF%AD%E5%8F%A5"><span class="toc-text">2.6.3 goto 语句 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-7-%20%E6%95%B0%E7%BB%84"><span class="toc-text">2.7 数组 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7-1-%20%E5%88%9B%E5%BB%BA%E6%95%B0%E7%BB%84"><span class="toc-text">2.7.1 创建数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7-2-%20%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="toc-text">2.7.2 一维数组 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7-3-%20%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F"><span class="toc-text">2.7.3 冒泡排序 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7-4-%20%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="toc-text">2.7.4 二维数组 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-8-%20%E5%87%BD%E6%95%B0"><span class="toc-text">2.8 函数 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-8-1-%20%E5%87%BD%E6%95%B0%E6%A6%82%E8%BF%B0"><span class="toc-text">2.8.1 函数概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-8-2-%20%E5%87%BD%E6%95%B0%E7%9A%84%E5%A3%B0%E6%98%8E"><span class="toc-text">2.8.2 函数的声明 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-8-3-%20%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E6%96%87%E4%BB%B6%E7%BC%96%E5%86%99"><span class="toc-text">2.8.3 函数的分文件编写 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-8-4-%20%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F"><span class="toc-text">2.8.4 静态变量 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-9-%20%E6%8C%87%E9%92%88"><span class="toc-text">2.9 指针 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-9-1-%20%E6%8C%87%E9%92%88%E5%8F%98%E9%87%8F%E7%9A%84%E5%AE%9A%E4%B9%89%E5%92%8C%E4%BD%BF%E7%94%A8"><span class="toc-text">2.9.1 指针变量的定义和使用 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-9-2-%20%E7%A9%BA%E6%8C%87%E9%92%88%E4%B8%8E%E9%87%8E%E6%8C%87%E9%92%88"><span class="toc-text">2.9.2 空指针与野指针 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-9-3-const%20%E4%BF%AE%E9%A5%B0%E6%8C%87%E9%92%88"><span class="toc-text">2.9.3 const 修饰指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-9-4-%20%E6%8C%87%E9%92%88%E5%92%8C%E6%95%B0%E7%BB%84"><span class="toc-text">2.9.4 指针和数组 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-9-5-%20%E6%8C%87%E9%92%88%E5%92%8C%E5%87%BD%E6%95%B0"><span class="toc-text">2.9.5 指针和函数 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-9-6-%20%E6%8C%87%E9%92%88%EF%BC%8C%E6%95%B0%E7%BB%84%E5%92%8C%E5%87%BD%E6%95%B0"><span class="toc-text">2.9.6 指针，数组和函数 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-10-%20%E7%BB%93%E6%9E%84%E4%BD%93"><span class="toc-text">2.10 结构体 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-10-1-%20%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">2.10.1 基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-10-2-%20%E7%BB%93%E6%9E%84%E4%BD%93%E6%95%B0%E7%BB%84"><span class="toc-text">2.10.2 结构体数组 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-10-3-%20%E7%BB%93%E6%9E%84%E4%BD%93%E6%8C%87%E9%92%88"><span class="toc-text">2.10.3 结构体指针 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-10-4-%20%E7%BB%93%E6%9E%84%E4%BD%93%E5%B5%8C%E5%A5%97"><span class="toc-text">2.10.4 结构体嵌套 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-10-5-%20%E7%BB%93%E6%9E%84%E4%BD%93%E5%81%9A%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0"><span class="toc-text">2.10.5 结构体做函数参数 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-10-6-%20%E7%BB%93%E6%9E%84%E4%BD%93%E4%B8%AD%20const%20%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">2.10.6 结构体中 const 使用场景 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-10-6-%20%E6%A1%88%E4%BE%8B"><span class="toc-text">2.10.6 案例 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-11-%20%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.11 枚举类型 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-11-1-%20%E5%AE%9A%E4%B9%89%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.11.1 定义枚举类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-11-2-%20%E5%AE%9A%E4%B9%89%E6%9E%9A%E4%B8%BE%E5%8F%98%E9%87%8F"><span class="toc-text">2.11.2 定义枚举变量 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-11-3-%20%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97"><span class="toc-text">2.11.3 关系运算 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-11-4-%20%E6%9E%9A%E4%B8%BE%E7%B1%BB"><span class="toc-text">2.11.4 枚举类</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%AE%9E%E6%88%98%201-%20%E9%80%9A%E8%AE%AF%E5%BD%95%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F"><span class="toc-text">三、实战 1- 通讯录管理系统 </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81C-%20%E6%A0%B8%E5%BF%83%E7%BC%96%E7%A8%8B"><span class="toc-text">四、C++ 核心编程 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-%20%E5%86%85%E5%AD%98%E5%88%86%E5%8C%BA%E6%A8%A1%E5%9E%8B"><span class="toc-text">4.1 内存分区模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-new%20%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="toc-text">4.2 new 操作符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-%20%E5%BC%95%E7%94%A8"><span class="toc-text">4.3 引用 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-1-%20%E5%BC%95%E7%94%A8%E4%BD%9C%E5%87%BD%E6%95%B0%E5%AE%9E%E5%8F%82"><span class="toc-text">4.3.1 引用作函数实参 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-2-%20%E5%BC%95%E7%94%A8%E4%BD%9C%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="toc-text">4.3.2 引用作函数的返回值 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-3-%20%E5%BC%95%E7%94%A8%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="toc-text">4.3.3 引用的本质 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-4-%20%E5%B8%B8%E9%87%8F%E5%BC%95%E7%94%A8"><span class="toc-text">4.3.4 常量引用 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4-%20%E5%87%BD%E6%95%B0%E7%9A%84%E6%8F%90%E9%AB%98"><span class="toc-text">4.4 函数的提高 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-1-%20%E5%87%BD%E6%95%B0%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="toc-text">4.4.1 函数默认值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-2-%20%E5%87%BD%E6%95%B0%E5%8D%A0%E4%BD%8D%E5%8F%82%E6%95%B0"><span class="toc-text">4.4.2 函数占位参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-3-%20%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD"><span class="toc-text">4.4.3 函数重载 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-5-%20%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1"><span class="toc-text">4.5 类和对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-1-%20%E5%B0%81%E8%A3%85"><span class="toc-text">4.5.1 封装 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-2-%20%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E5%92%8C%E6%B8%85%E7%90%86"><span class="toc-text">4.5.2 对象的初始化和清理 </span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-2-1-%20%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%92%8C%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0"><span class="toc-text">4.5.2.1 构造函数和析构函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-2-2-%20%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E7%B1%BB%E5%8F%8A%E8%B0%83%E7%94%A8"><span class="toc-text">4.5.2.2 构造函数的分类及调用 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-2-3-%20%E6%8B%B7%E8%B4%9D%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E6%97%B6%E6%9C%BA"><span class="toc-text">4.5.2.3 拷贝构造函数调用时机</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-2-4-%20%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E8%A7%84%E5%88%99"><span class="toc-text">4.5.2.4 构造函数调用规则 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-2-5-%20%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D"><span class="toc-text">4.5.2.5 深浅拷贝 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-2-6-%20%E5%88%9D%E5%A7%8B%E5%8C%96%E5%88%97%E8%A1%A8"><span class="toc-text">4.5.2.6 初始化列表 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-2-7-%20%E7%B1%BB%E5%AF%B9%E8%B1%A1%E4%BD%9C%E4%B8%BA%E7%B1%BB%E6%88%90%E5%91%98"><span class="toc-text">4.5.2.7 类对象作为类成员 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-2-8-%20%E9%9D%99%E6%80%81%E6%88%90%E5%91%98"><span class="toc-text">4.5.2.8 静态成员 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-2-9-const%20%E6%88%90%E5%91%98"><span class="toc-text">4.5.2.9 const 成员</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-3-C-%20%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B%E5%92%8C%20this%20%E6%8C%87%E9%92%88"><span class="toc-text">4.5.3 C++ 对象模型和 this 指针 </span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-3-1-%20%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E5%92%8C%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E5%88%86%E5%BC%80%E5%82%A8%E5%AD%98"><span class="toc-text">4.5.3.1 成员变量和成员函数分开储存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-3-2-this-%20%E6%8C%87%E9%92%88"><span class="toc-text">4.5.3.2 this 指针 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-3-3-%20%E7%A9%BA%E6%8C%87%E9%92%88%E8%AE%BF%E9%97%AE%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0"><span class="toc-text">4.5.3.3 空指针访问成员函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-3-4-const%20%E4%BF%AE%E9%A5%B0%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0"><span class="toc-text">4.5.3.4 const 修饰成员函数 </span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-4-%20%E5%8F%8B%E5%85%83"><span class="toc-text">4.5.4 友元 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-5-%20%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD"><span class="toc-text">4.5.5 运算符重载 </span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-5-1-%20%E5%8A%A0%E5%8F%B7%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD"><span class="toc-text">4.5.5.1 加号运算符重载 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-5-2-%20%E5%B7%A6%E7%A7%BB%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD"><span class="toc-text">4.5.5.2 左移运算符重载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-5-3-%20%E9%80%92%E5%A2%9E%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD"><span class="toc-text">4.5.5.3 递增运算符重载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-5-4-%20%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD"><span class="toc-text">4.5.5.4 赋值运算符重载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-5-5-%20%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD"><span class="toc-text">4.5.5.5 关系运算符重载 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-5-6-%20%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD"><span class="toc-text">4.5.5.6 函数调用运算符重载</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-6-%20%E7%BB%A7%E6%89%BF"><span class="toc-text">4.5.6 继承 </span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-6-1-%20%E7%BB%A7%E6%89%BF%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="toc-text">4.5.6.1 继承基本语法 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-6-2-%20%E7%BB%A7%E6%89%BF%E6%96%B9%E5%BC%8F"><span class="toc-text">4.5.6.2 继承方式 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-6-3-%20%E7%BB%A7%E6%89%BF%E4%B8%AD%E7%9A%84%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B"><span class="toc-text">4.5.6.3 继承中的对象模型 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-6-4-%20%E7%BB%A7%E6%89%BF%E4%B8%AD%E6%9E%84%E9%80%A0%E5%92%8C%E6%9E%90%E6%9E%84%E9%A1%BA%E5%BA%8F"><span class="toc-text">4.5.6.4 继承中构造和析构顺序 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-6-5-%20%E7%BB%A7%E6%89%BF%E4%B8%AD%E5%90%8C%E5%90%8D%E6%88%90%E5%91%98%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F"><span class="toc-text">4.5.6.5 继承中同名成员处理方式 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-6-6-%20%E7%BB%A7%E6%89%BF%E5%90%8C%E5%90%8D%E9%9D%99%E6%80%81%E6%88%90%E5%91%98%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F"><span class="toc-text">4.5.6.6 继承同名静态成员处理方式 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-6-7-%20%E5%A4%9A%E7%BB%A7%E6%89%BF%E8%AF%AD%E6%B3%95"><span class="toc-text">4.5.6.7 多继承语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-6-8-%20%E8%8F%B1%E5%BD%A2%E7%BB%A7%E6%89%BF"><span class="toc-text">4.5.6.8 菱形继承 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-6-9-%20%E9%93%BE%E5%BC%8F%E7%BB%A7%E6%89%BF"><span class="toc-text">4.5.6.9 链式继承 </span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-7-%20%E5%A4%9A%E6%80%81"><span class="toc-text">4.5.7 多态 </span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-7-1-%20%E5%A4%9A%E6%80%81%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">4.5.7.1 多态的基本概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-7-2-%20%E5%A4%9A%E6%80%81%E6%A1%88%E4%BE%8B"><span class="toc-text">4.5.7.2 多态案例 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-7-3-%20%E7%BA%AF%E8%99%9A%E5%87%BD%E6%95%B0%E5%92%8C%E6%8A%BD%E8%B1%A1%E7%B1%BB"><span class="toc-text">4.5.7.3 纯虚函数和抽象类 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-7-4-%20%E5%A4%9A%E6%80%81%E6%A1%88%E4%BE%8B"><span class="toc-text">4.5.7.4 多态案例 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-7-5-%20%E8%99%9A%E6%9E%90%E6%9E%84%E5%92%8C%E7%BA%AF%E8%99%9A%E6%9E%90%E6%9E%84"><span class="toc-text">4.5.7.5 虚析构和纯虚析构 </span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-6-%20%E7%BB%93%E6%9E%84%E4%BD%93%E4%B8%8E%E7%B1%BB"><span class="toc-text">4.6 结构体与类 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-7-%20%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="toc-text">4.7 文件操作 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-7-1-%20%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6"><span class="toc-text">4.7.1 文本文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-7-1-1-%20%E5%86%99%E6%96%87%E4%BB%B6"><span class="toc-text">4.7.1.1 写文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-7-1-2-%20%E8%AF%BB%E6%96%87%E4%BB%B6"><span class="toc-text">4.7.1.2 读文件 </span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-7-2-%20%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6"><span class="toc-text">4.7.2 二进制文件 </span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-7-2-1-%20%E5%86%99%E6%96%87%E4%BB%B6"><span class="toc-text">4.7.2.1 写文件 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-7-2-2-%20%E8%AF%BB%E6%96%87%E4%BB%B6"><span class="toc-text">4.7.2.2 读文件 </span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%AE%9E%E6%88%98%202-%20%E8%81%8C%E5%B7%A5%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F"><span class="toc-text">五、实战 2- 职工管理系统 </span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、工具安装"><a href="# 一、工具安装" class="headerlink" title="一、工具安装"></a>一、工具安装 </h1><p>Microsoft Visual Studio（简称 VS）是美国<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/ 微软公司"> 微软公司 </a> 的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/ 开发工具 /10464557">开发工具 </a> 包系列产品。VS 是一个基本 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/ 完整 /32785"> 完整 </a> 的开发工具集，它包括了整个 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/ 软件生命周期 /861455"> 软件生命周期 </a> 中所需要的大部分工具，如 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/UML/446747">UML</a> 工具、代码 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/ 管控 /24264804"> 管控 </a> 工具、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/ 集成开发环境 /298524">集成开发环境 </a>(IDE) 等等。</p>
+<p>社区免费版：<a target="_blank" rel="noopener" href="https://visualstudio.microsoft.com/zh-hans/downloads/">https://visualstudio.microsoft.com/zh-hans/downloads/</a></p>
+<p>【编辑器】：纯用来写代码的，如 vim</p>
+<p>【编译器】：将源程序转化为二进制形式的目标程序的工具，如 GCC</p>
+<p>【IDE】：集成了编辑器、编译器以及链接器等众多功能的一个集成开发环境。</p>
+<h1 id="二、基础入门"><a href="# 二、基础入门" class="headerlink" title="二、基础入门"></a>二、基础入门 </h1><h2 id="2-1- 认识 C"><a href="#2-1- 认识 C" class="headerlink" title="2.1 认识 C++"></a>2.1 认识 C++</h2><h3 id="2-1-1- 注释"><a href="#2-1-1- 注释" class="headerlink" title="2.1.1 注释"></a>2.1.1 注释</h3><p> 单行注释：</p>
+<pre><code class="c++">// 注释信息</code></pre>
+<p>多行注释：</p>
+<pre><code class="c++">/*
+多行注释 1
+多行注释 2
+*/</code></pre>
+<h3 id="2-1-2- 变量与常量"><a href="#2-1-2- 变量与常量" class="headerlink" title="2.1.2 变量与常量"></a>2.1.2 变量与常量 </h3><p> 变量：给一段内存起名，方便我们管理内存。</p>
+<pre><code class="c++">// 变量创建   数据类型 变量名 = 变量初始值;
+int a = 10;</code></pre>
+<p>常量：用于记录程序中不可更改的数据。</p>
+<p>C++ 中定义常量的两种方法：</p>
+<ul>
+<li><strong>宏常量</strong>：<code>#define 常量名 常量值</code> 。通常在文件开头定义。</li>
+<li><strong>const 修饰的常量</strong>：<code>const 数据类型 常量名 = 常量值</code></li>
+</ul>
+<pre><code class="c++">#include&lt;iostream&gt;
+using namespace std;
+
+#define Day 7  // 宏常量
+
+int main()&#123;
+    const int a = 10;   //const 修饰的常量
+
+    cout&lt;&lt;Day&lt;&lt;endl;
+    cout&lt;&lt;a&lt;&lt;endl;
+
+    system(&quot;pause&quot;)
+    return 0;
+&#125;</code></pre>
+<h3 id="2-1-3- 关键字"><a href="#2-1-3- 关键字" class="headerlink" title="2.1.3 关键字"></a>2.1.3 关键字 </h3><p> 作用：关键字是 C++ 中保留的单词（标识符），在 C++ 中拥有固定的，预设的含义。因此在定义变量 / 常量的时候，禁止使用关键字。</p>
+<table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>关键字</th>
+<th>关键字</th>
+<th>关键字</th>
+<th>关键字</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>asm</td>
+<td>do</td>
+<td>if</td>
+<td>return</td>
+<td>typedef</td>
+</tr>
+<tr>
+<td>auto</td>
+<td>double</td>
+<td>inline</td>
+<td>short</td>
+<td>typeid</td>
+</tr>
+<tr>
+<td>bool</td>
+<td>dynamic</td>
+<td>int</td>
+<td>signed</td>
+<td>typename</td>
+</tr>
+<tr>
+<td>break</td>
+<td>else</td>
+<td>long</td>
+<td>sizeof</td>
+<td>union</td>
+</tr>
+<tr>
+<td>case</td>
+<td>enum</td>
+<td>mutable</td>
+<td>static</td>
+<td>unsigned</td>
+</tr>
+<tr>
+<td>catch</td>
+<td>explict</td>
+<td>namespace</td>
+<td>static_cast</td>
+<td>using</td>
+</tr>
+<tr>
+<td>char</td>
+<td>export</td>
+<td>new</td>
+<td>struct</td>
+<td>virtual</td>
+</tr>
+<tr>
+<td>class</td>
+<td>extern</td>
+<td>operator</td>
+<td>switch</td>
+<td>void</td>
+</tr>
+<tr>
+<td>const</td>
+<td>false</td>
+<td>private</td>
+<td>template</td>
+<td>volatile</td>
+</tr>
+<tr>
+<td>const_cast</td>
+<td>float</td>
+<td>protected</td>
+<td>this</td>
+<td>wchar_t</td>
+</tr>
+<tr>
+<td>continue</td>
+<td>for</td>
+<td>public</td>
+<td>throw</td>
+<td>while</td>
+</tr>
+<tr>
+<td>default</td>
+<td>friend</td>
+<td>register</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>delete</td>
+<td>goto</td>
+<td>reinterpret_cast</td>
+<td>try</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="2-1-4- 标识符命名规则"><a href="#2-1-4- 标识符命名规则" class="headerlink" title="2.1.4 标识符命名规则"></a>2.1.4 标识符命名规则 </h3><p> 作用：C++ 规定给标识符（变量，常量）命名时，有一套自己的规则</p>
+<ul>
+<li>标识符不能是关键字</li>
+<li>标识符只能由字母，数字，下划线组成</li>
+<li>第一个字符必须为字母或者下划线组成</li>
+<li>标识符中字母区分大小写</li>
+</ul>
+<p>给标识符命名时，尽量做到见名知意，方便阅读。</p>
+<h3 id="2-1-5-main- 函数"><a href="#2-1-5-main- 函数" class="headerlink" title="2.1.5 main 函数"></a>2.1.5 main 函数 </h3><p> 在 C++ 中，main 函数为必须的，C++ 程序自动从 main 函数开始执行。</p>
+<h2 id="2-2- 数据类型"><a href="#2-2- 数据类型" class="headerlink" title="2.2 数据类型"></a>2.2 数据类型</h2><p>C++ 在创建一个变量或者常量时，必须要指定出相应的数据类型，否则无法给变量分配内存。</p>
+<p>可以通过 <code>typeid(变量名).name()</code>查看数据类型。</p>
+<p>C++ 为程序员提供了种类丰富的内置数据类型和用户自定义的数据类型。下表列出了七种基本的 <strong>内置</strong>C++ 数据类型：</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>关键字</th>
+<th>可加修饰符</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>整型</td>
+<td>int</td>
+<td>signed、unsigned、short、long</td>
+</tr>
+<tr>
+<td>单浮点型</td>
+<td>float</td>
+<td>/</td>
+</tr>
+<tr>
+<td>双浮点型</td>
+<td>double</td>
+<td>long</td>
+</tr>
+<tr>
+<td>字符型</td>
+<td>char</td>
+<td>signed、unsigned</td>
+</tr>
+<tr>
+<td>布尔型</td>
+<td>bool</td>
+<td>/</td>
+</tr>
+<tr>
+<td>无类型</td>
+<td>void</td>
+<td>/</td>
+</tr>
+<tr>
+<td>宽字符型</td>
+<td>wchar_t</td>
+<td>/</td>
+</tr>
+</tbody></table>
+<p>其实 wchar_t 是这样来的：</p>
+<pre><code>typedef short int wchar_t;</code></pre><p>C++ 允许使用速记符号来声明 <strong> 无符号短整数 </strong> 或<strong>无符号长整数</strong>。可以不写 int，只写单词 <strong>unsigned、short</strong> 或 <strong>long</strong>，<strong>int</strong> 是隐含的。</p>
+<ul>
+<li>cout 输出时，默认只输出六位有效数字。可使用 cout.precision(10); 更改为 10 位有效数字。</li>
+</ul>
+<h3 id="2-2-1- 整型"><a href="#2-2-1- 整型" class="headerlink" title="2.2.1 整型"></a>2.2.1 整型 </h3><p> 作用：用于表示整数类型的数据。</p>
+<p>整型类型：</p>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>占用空间</th>
+<th>取值范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>short(短整型)</td>
+<td>2 byte(字节)</td>
+<td>-2^15 – 2^15-1 （-32786–32767）</td>
+</tr>
+<tr>
+<td>int(整型)</td>
+<td>4 byte</td>
+<td>-2^31 – 2^31-1</td>
+</tr>
+<tr>
+<td>long(长整型)</td>
+<td>4 byte (window/linux x32); 8 byte(linux x64)</td>
+<td>-2^31 – 2^31-1</td>
+</tr>
+<tr>
+<td>long long (长长整型)</td>
+<td>8 byte</td>
+<td>-2^63 – 2^63-1</td>
+</tr>
+<tr>
+<td>signed int(有符号整型)</td>
+<td>4 byte</td>
+<td>-2^31 – 2^31-1</td>
+</tr>
+<tr>
+<td>unsigned int(无符号整型)</td>
+<td>4 byte</td>
+<td>0 – 2^32-1</td>
+</tr>
+<tr>
+<td>unsigned short（无符号短整型）</td>
+<td>2 byte</td>
+<td>0~65535</td>
+</tr>
+</tbody></table>
+<p>数据类型存在的意义：给变量分配合适的内存空间，避免造成资源浪费。1byte 字节 =8bit 比特，二进制数系统中，每个 0 或 1 就是一个位(bit)</p>
+<p><strong>MB 与 byte 换算：</strong></p>
+<p>1MB = 1048576byte = 262144 int 类型数据</p>
+<pre><code class="c++">// 一个内存溢出造成数据错误的例子：
+
+#include&lt;iostream&gt;
+using namespace std;
+
+#define Day 7
+
+int main() &#123;
+     short a = 33000;
+
+    cout &lt;&lt; a &lt;&lt; endl;
+
+    system(&quot;pause&quot;);
+    return 0;
+&#125;
+
+// 输出 a 的结果：-32536</code></pre>
+<blockquote>
+<p>利用 sizeof 关键字可以统计数据类型所占的内存空间大小</p>
+<p>语法：sizeof(数据类型) 或者 sizeof(变量名字)</p>
+</blockquote>
+<p>注意：<strong>将一个负数强制转成无符号数，并不是取绝对值的关系：</strong></p>
+<pre><code class="c++">int main()
+&#123;
+    int a = -1;
+    cout &lt;&lt; (unsigned)a &lt;&lt; endl; // 输出 4294967295，即 2^32-1
+
+    int b = -10;
+    cout &lt;&lt; (unsigned)b &lt;&lt; endl;  // 输出 4294967286，即 2^32-10
+
+&#125;</code></pre>
+<p><strong>int 类型数据取值范围为什么是 -2^31 – 2^31-1？</strong></p>
+<p>举个例子：</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20220215174024345.png" style="zoom:80%;" />
+
+<p><code>2^(4*8-1)=2^31</code></p>
+<p>因为 0 的源码是:</p>
+<p> 00000000 00000000 00000000 00000000     占了一个位置，所以正整数范围是<code>0-2^31-1</code> 一共是 2^31 个数。</p>
+<p><strong>题外话：</strong></p>
+<p>在计算机中，负数的二进制是用其源码的补码储存的。正数是用其源码直接存储。</p>
+<p>补码：反码加 1 称为补码。</p>
+<p>反码：将二进制源码按位取反。</p>
+<pre><code>111001   源码
+000110   反码
+000111   补码 </code></pre><h3 id="2-2-2- 浮点型"><a href="#2-2-2- 浮点型" class="headerlink" title="2.2.2 浮点型"></a>2.2.2 浮点型</h3><p> 作用：用于表示小数。</p>
+<p>浮点型分为两种：</p>
+<ol>
+<li>单精度 float</li>
+<li>双精度 double</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>占用空间</th>
+<th>有效数字范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>float</td>
+<td>4 byte</td>
+<td>7 位有效数字</td>
+</tr>
+<tr>
+<td>double</td>
+<td>8 byte</td>
+<td>15-16 位有效数字</td>
+</tr>
+<tr>
+<td>long double</td>
+<td>16 byte</td>
+<td>18-19 位有效数字</td>
+</tr>
+</tbody></table>
+<pre><code class="c++">//...
+int main() &#123;
+    float a = 3.14f;
+    double b = 3.141592654;
+
+    cout &lt;&lt; a &lt;&lt; endl;
+    cout &lt;&lt; b &lt;&lt; endl;
+
+    // 科学计数法
+    float c = 2e5； // 2*10^5
+
+    system(&quot;pause&quot;);
+    return 0;
+&#125;
+/* 输出
+ 3.14 
+ 3.14159
+ */</code></pre>
+<p>默认情况下，输出一个小数，最多只能输出 6 位有效数字。</p>
+<h3 id="2-2-3- 字符型"><a href="#2-2-3- 字符型" class="headerlink" title="2.2.3 字符型"></a>2.2.3 字符型 </h3><p> 作用：字符型变量用于显示单个字符</p>
+<p>语法：<code>char ch = &#39;a&#39;</code></p>
+<blockquote>
+<p>在显示字符型变量时，用单引号括起来，不要用双引号。</p>
+<p>单引号内只能有一个字符，不可以是字符串。</p>
+</blockquote>
+<p>C 和 C++ 中，字符型变量只占用 1 个字节</p>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>占用空间</th>
+<th>取值范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>char</td>
+<td>1byte</td>
+<td>-2^7– 2^7-1</td>
+</tr>
+<tr>
+<td>unsigned char</td>
+<td>1byte</td>
+<td>0–2^8-1</td>
+</tr>
+</tbody></table>
+<p>字符型变量并不是把字符本身放到内存中存储，而是将其对应的 ASCII 编码放到存储单元。</p>
+<pre><code class="c++">//...
+int main() &#123;
+    char ch = &#39;a&#39;;
+    char ch2 = &#39;A&#39;;
+    cout &lt;&lt; (int)ch &lt;&lt; endl;    // 输出 97
+    cout &lt;&lt; (int)ch2 &lt;&lt; endl;   // 输出 65
+    system(&quot;pause&quot;);
+    return 0;
+&#125;
+
+// 输出 97  65</code></pre>
+<p>1MB = 1048576byte = 1048576 char 类型数据</p>
+<h3 id="2-2-4- 布尔类型 bool"><a href="#2-2-4- 布尔类型 bool" class="headerlink" title="2.2.4 布尔类型 bool"></a>2.2.4 布尔类型 bool</h3><p>作用：布尔类型代表真或假</p>
+<p>布尔类型只有两个值：</p>
+<ul>
+<li>true — 真（本质是 1）</li>
+<li>false — 假 （本质是 0）</li>
+</ul>
+<p>布尔类似只占用 1 个字节。</p>
+<h3 id="2-2-5- 转义字符"><a href="#2-2-5- 转义字符" class="headerlink" title="2.2.5 转义字符"></a>2.2.5 转义字符 </h3><p> 作用：用于表示一些不能显示出来的 ASCII 字符，如一些表示格式的字符。反斜杠 \</p>
+<p>现阶段我们常用的转义字符<code>\n \\ \t</code>。</p>
+<h3 id="2-2-6- 字符串"><a href="#2-2-6- 字符串" class="headerlink" title="2.2.6 字符串"></a>2.2.6 字符串 </h3><p> 作用：用于表示一串字符</p>
+<p>两种风格：</p>
+<ol>
+<li><p>C 风格字符串：<code>char 变量名[] = &quot;abcd&quot;</code></p>
+<pre><code class="c++">char ch[] = &#123; &#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;\0&#39;&#125;;   // 必须加结尾符 \0
+cout &lt;&lt; ch &lt;&lt; endl;                // 输出 abc，为字符串数组,
+
+char ch2[] = &quot;abc&quot;;
+cout &lt;&lt; ch2 &lt;&lt; endl;       // 输出 abc</code></pre>
+</li>
+<li><p>C++ 风格字符串：<code>string 变量名 = “abcd”</code></p>
+</li>
+</ol>
+<p>如果要使用 C++ 风格字符串，需要加头文件: <code>#include&lt;string&gt;</code></p>
+<p>在 C++ 中，字符串类型本质是一个容器类。</p>
+<p>字符串以 <code>\0</code> 字符结尾。</p>
+<pre><code class="c++">int main()
+&#123;
+
+    char c[] = &#123; &#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;d&#39;,&#39;\0&#39;&#125;;
+    cout &lt;&lt; strlen(c) &lt;&lt; endl;  // 输出 4
+    cout &lt;&lt; sizeof(c) &lt;&lt; endl;  // 输出 5
+
+    string a = &quot;abcd&quot;;
+    cout &lt;&lt; sizeof(a) &lt;&lt; endl;  // 输出 28，字符串 a 本质是一个类
+    cout &lt;&lt; a.length() &lt;&lt; endl;  // 输出 4
+
+&#125;</code></pre>
+<p>为了节省内存和方便，定义字符串的时候，可以采用这种方法：</p>
+<pre><code class="c++">char ch2[] = &quot;abcd&quot;;
+cout &lt;&lt; sizeof(ch2) &lt;&lt; endl;  // 输出 5</code></pre>
+<p>相比 <code>string a = &quot;abcd&quot;;</code> 节省了空间，不过 string 提供很多方法可供使用，后面容器部分会有详细介绍。这里先介绍 C 风格字符串的方法：</p>
+<p><strong>C 风格字符串的方法：</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">函数</th>
+<th align="left">目的</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">strcpy(s1, s2);</td>
+<td align="left">复制字符串 s2 到字符串 s1</td>
+</tr>
+<tr>
+<td align="left">strcat(s1, s2);</td>
+<td align="left">连接字符串 s2 到字符串 s1 的末尾。连接字符串也可以用 <strong>+</strong> 号</td>
+</tr>
+<tr>
+<td align="left">strlen(s1);</td>
+<td align="left">返回字符串 s1 的长度。</td>
+</tr>
+<tr>
+<td align="left">strcmp(s1, s2);</td>
+<td align="left">如果 s1 和 s2 是相同的，则返回 0；如果 s1&lt;s2 则返回值小于 0；如果 s1&gt;s2 则返回值大于 0。</td>
+</tr>
+<tr>
+<td align="left">strchr(s1, ch);</td>
+<td align="left">返回一个指针，指向字符串 s1 中字符 ch 的第一次出现的位置。</td>
+</tr>
+<tr>
+<td align="left">strstr(s1, s2);</td>
+<td align="left">返回一个指针，指向字符串 s1 中字符串 s2 的第一次出现的位置。</td>
+</tr>
+</tbody></table>
+<h3 id="2-2-7- 进制"><a href="#2-2-7- 进制" class="headerlink" title="2.2.7 进制"></a>2.2.7 进制</h3><table>
+<thead>
+<tr>
+<th>进制</th>
+<th>标识符</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>二进制（0 和 1 组成）</td>
+<td>0b 或者 0B</td>
+<td>0b101=5(十进制)</td>
+</tr>
+<tr>
+<td>八进制（0-7 组成）</td>
+<td>0</td>
+<td>0555=365(十进制)</td>
+</tr>
+<tr>
+<td>十六进制（0-9，A-F 组成）</td>
+<td>0x 或者 0X</td>
+<td>0x10F=271(十进制)</td>
+</tr>
+</tbody></table>
+<p>转换成十进制的换算方法：</p>
+<p><code>0555 = 5*8^2 + 5*8^1 + 5*8^0 = 365</code></p>
+<p><code>0x10F = 1*16^2 + 0*16^1 + 15*16^0 = 271</code>    注意：F 代表 15， A 代表 10</p>
+<p>总结 ：第 <strong>i</strong> 位数乘以 <strong> 进制的 (i-1) 次方 </strong> + 第<strong>i-1</strong> 位数乘以 <strong> 进制的 (i-1-1) 次方 </strong> + … + 第 1 位数乘以进制的(1-1) 次方。</p>
+<hr>
+<p><strong>利用计算机程序进行进制转换：</strong></p>
+<pre><code class="c++">#include&lt;iostream&gt;
+#include&lt;bitset&gt;
+
+int main()
+&#123;
+    int a = 60;
+
+    cout &lt;&lt; (bitset&lt;10&gt;)a &lt;&lt; endl;  // 二进制需要用到 bitset 库， 这里的 10 是输出二进制的位数，输出 10 位二进制数
+
+    cout &lt;&lt; oct &lt;&lt; a &lt;&lt; endl;       // 八进制输出
+
+    cout &lt;&lt; hex &lt;&lt; a &lt;&lt; endl;       // 十六进制输出
+
+&#125;
+/*
+0000111100
+74
+3c
+*/</code></pre>
+<h3 id="2-2-8-auto 关键字"><a href="#2-2-8-auto 关键字" class="headerlink" title="2.2.8 auto 关键字"></a>2.2.8 auto 关键字</h3><p>C++11 引入了 auto 和 decltype 关键字实现类型推导，通过这两个关键字不仅能方便地获取复杂的类型，而且还能简化书写，提高编码效率。</p>
+<pre><code>auto x = 5;                      // OK: x 是 int 类型
+auto pi = new auto(1);           // OK: pi 被推导为 int*
+const auto *v = &amp;x, u = 6;       // OK: v 是 const int* 类型，u 是 const int 类型
+static auto y = 0.0;             // OK: y 是 double 类型
+auto int r;                      // error: auto 不再表示存储类型指示符
+auto s;                          // error: auto 无法推导出 s 的类型</code></pre><p>auto 并不能代表一个实际的类型声明，只是一个类型声明的“占位符”。使用 auto 声明的变量必须马上初始化，以让编译器推断出它的实际类型，并在编译时将 auto 占位符替换为真正的类型。</p>
+<p><strong>但是 auto 使用是有限制的：</strong></p>
+<ul>
+<li><p>auto 变量必须在定义时初始化，这类似于 const 关键字。</p>
+</li>
+<li><p>定义在一个 auto 序列的变量必须始终推导成同一类型。</p>
+<pre><code>auto a4 = 10, a5 = 20, a6 = 30;   //a4 a5 a6 必须为同一类型</code></pre></li>
+<li><p>如果初始化表达式是引用，则去除引用语义。</p>
+<pre><code>int a = 10;
+int &amp;b = a;
+
+auto c = b;//c 的类型为 int 而非 int&amp;（去除引用）
+auto &amp;d = b;// 此时 c 的类型才为 int&amp;</code></pre></li>
+<li><p>如果初始化表达式为 const 或 volatile（或者两者兼有），则除去 const/volatile 语义。</p>
+<pre><code>const int a1 = 10;
+auto  b1= a1; //b1 的类型为 int 而非 const int（去除 const）
+const auto c1 = a1;// 此时 c1 的类型为 const int
+b1 = 100;// 合法
+c1 = 100;// 非法</code></pre></li>
+<li><p>如果 auto 关键字带上 &amp; 号，则不去除 const 语意。</p>
+<pre><code>const int a2 = 10;
+auto &amp;b2 = a2;// 因为 auto 带上 &amp;，故不去除 const，b2 类型为 const int
+b2 = 10; // 非法</code></pre></li>
+<li><p>初始化表达式为数组时，auto 关键字推导类型为指针。</p>
+<pre><code>int a3[3] = &#123; 1, 2, 3 &#125;;
+auto b3 = a3;</code></pre></li>
+<li><p>若表达式为数组且 auto 带上 &amp;，则推导类型为数组类型。</p>
+<pre><code>int a7[3] = &#123; 1, 2, 3 &#125;;
+auto &amp; b7 = a7;</code></pre></li>
+<li><p>函数或者模板参数不能被声明为 auto</p>
+<pre><code>void func(auto a)&#123;&#125;  // 错误</code></pre></li>
+<li><p>时刻要注意 auto 并不是一个真正的类型。<br>auto 仅仅是一个占位符，它并不是一个真正的类型，不能使用一些以类型为操作数的操作符，如 sizeof 或者 typeid。</p>
+</li>
+</ul>
+<h3 id="2-2-9- 数据类型转换"><a href="#2-2-9- 数据类型转换" class="headerlink" title="2.2.9 数据类型转换"></a>2.2.9 数据类型转换 </h3><p><strong> 字符串转整型</strong>：比如将“123” 转成 123   –&gt;  <code>std::stoi(str) = intStr</code></p>
+<p>字符串转单精度：比如将“123.22” 转成 123.22   –&gt;    <code>std::stof(str) = floatStr</code></p>
+<p>字符串转双精度：比如将“123.22121” 转成 123.22121   –&gt;    <code>std::stod(str) = doubleStr</code></p>
+<p>数值转字符串：比如将 123.11 转成字符串“123.11”   –&gt;   <code>std::to_string(int) = str</code></p>
+<h2 id="2-3- 算术运算"><a href="#2-3- 算术运算" class="headerlink" title="2.3 算术运算"></a>2.3 算术运算 </h2><h3 id="2-3-1- 输入与输出"><a href="#2-3-1- 输入与输出" class="headerlink" title="2.3.1 输入与输出"></a>2.3.1 输入与输出</h3><p> 关键字：<code>cin</code>输入    <code>cout</code>输出</p>
+<pre><code class="c++">//...
+
+int main() &#123;
+    int a, b;
+    cin &gt;&gt; a &gt;&gt; b;
+
+    cout &lt;&lt; b &lt;&lt; endl;
+    cout &lt;&lt; a &lt;&lt; endl;
+
+    system(&quot;pause&quot;);
+    return 0;
+&#125;</code></pre>
+<p>计算机怎么知道你终端输入是否完成呢？</p>
+<p><strong>cin 以空格为结束符</strong></p>
+<p><strong>cin.getline()</strong> 以换行符（回车键）为结束，但它不保存换行符，在存储字符串时，它用空字符代替换行符（存储换行符为空字符）</p>
+<p><strong>cin.get()</strong> 以换行符（回车键）为结束，它读取到换行符的前一个字符，此时换行符仍在输入队列中。</p>
+<pre><code class="c++">cin.get(name, mSize)  // 读取输入保存 mSize 个字符到 name 中
+cin.get(diss, mSize)  // 第二次调用 cin.get 时首先就看到换行符，故它什么都读取不到就结束了</code></pre>
+<p>cin.get()有另一种变体来处理换行符：</p>
+<pre><code class="c++">cin.get(name, mSize)  
+cin.get()     //  读取下一个字符，包括换行符，可以有返回值
+cin.get(diss, mSize) </code></pre>
+<ul>
+<li>cout 默认输出六位有效数字，可使用 cout.precision(10); 更改为 10 位。</li>
+</ul>
+<h3 id="2-3-2- 算术运算符"><a href="#2-3-2- 算术运算符" class="headerlink" title="2.3.2 算术运算符"></a>2.3.2 算术运算符</h3><table>
+<thead>
+<tr>
+<th align="left">运算符</th>
+<th align="left">描述</th>
+<th align="left">实例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">+</td>
+<td align="left">把两个操作数相加</td>
+<td align="left">10 + 20 将得到 30</td>
+</tr>
+<tr>
+<td align="left">-</td>
+<td align="left">从第一个操作数中减去第二个操作数</td>
+<td align="left">10 - 20  将得到 -10</td>
+</tr>
+<tr>
+<td align="left">*</td>
+<td align="left">把两个操作数相乘</td>
+<td align="left">10 * 20  将得到 200</td>
+</tr>
+<tr>
+<td align="left">/</td>
+<td align="left">除数</td>
+<td align="left">10 / 20.0 将得到 0.5</td>
+</tr>
+<tr>
+<td align="left">%</td>
+<td align="left">取模运算符，整除后的余数</td>
+<td align="left">10 % 20 将得到 10</td>
+</tr>
+<tr>
+<td align="left">++</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cplusplus/cpp-increment-decrement-operators.html">自增运算符</a>，整数值增加 1</td>
+<td align="left">10++ 将得到 11</td>
+</tr>
+<tr>
+<td align="left">–</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cplusplus/cpp-increment-decrement-operators.html">自减运算符</a>，整数值减少 1</td>
+<td align="left">10– 将得到 9</td>
+</tr>
+</tbody></table>
+<h3 id="2-3-3- 关系运算符"><a href="#2-3-3- 关系运算符" class="headerlink" title="2.3.3 关系运算符"></a>2.3.3 关系运算符</h3><table>
+<thead>
+<tr>
+<th align="left">运算符</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">&amp;&amp;</td>
+<td align="left">称为逻辑与运算符。如果两个操作数都 true，则条件为 true。</td>
+</tr>
+<tr>
+<td align="left">||</td>
+<td align="left">称为逻辑或运算符。如果两个操作数中有任意一个 true，则条件为 true。</td>
+</tr>
+<tr>
+<td align="left">!</td>
+<td align="left">称为逻辑非运算符。用来逆转操作数的逻辑状态，如果条件为 true 则逻辑非运算符将使其为 false。</td>
+</tr>
+</tbody></table>
+<h3 id="2-3-4- 位运算符"><a href="#2-3-4- 位运算符" class="headerlink" title="2.3.4 位运算符"></a>2.3.4 位运算符 </h3><p> 位运算符作用于位，并逐位执行操作。对两个数的二进制数的每一位进行位运算。</p>
+<table>
+<thead>
+<tr>
+<th align="left">运算符</th>
+<th align="left">描述</th>
+<th align="left">实例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">&amp;</td>
+<td align="left">按位与操作，按二进制位进行”与”运算。运算规则：<br /><code>0&amp;0=0;    0&amp;1=0;     1&amp;0=0;      1&amp;1=1;</code></td>
+<td align="left">二进制(100&amp; 001) 将得到 000</td>
+</tr>
+<tr>
+<td align="left">|</td>
+<td align="left">按位或运算符，按二进制位进行”或”运算。运算规则：<br />`0</td>
+<td align="left">0=0;    0</td>
+</tr>
+<tr>
+<td align="left">^</td>
+<td align="left">异或运算符，按二进制位进行”异或”运算，相同得 0。运算规则：<br /><code>0^0=0;    0^1=1;    1^0=1;   1^1=0;</code></td>
+<td align="left">二进制(100 ^ 001) 将得到 101</td>
+</tr>
+<tr>
+<td align="left">~</td>
+<td align="left">取反运算符，按二进制位进行”取反”运算。运算规则：<br /><code>~1=0;    ~0=1;</code></td>
+<td align="left">二进制(~000100) 将得到 111011</td>
+</tr>
+<tr>
+<td align="left">&lt;&lt;</td>
+<td align="left">二进制左移运算符。将一个运算对象的各二进制位全部左移若干位（左边的二进制位丢弃，右边补 0）。</td>
+<td align="left">二进制 000101&lt;&lt; 2 将得到 010100</td>
+</tr>
+<tr>
+<td align="left">&gt;&gt;</td>
+<td align="left">二进制右移运算符。将一个数的各二进制位全部右移若干位，正数左补 0，负数左补 1，右边丢弃。</td>
+<td align="left">二进制 000101 &gt;&gt; 2 将得到 000001</td>
+</tr>
+</tbody></table>
+<p><strong>位运算的作用：</strong></p>
+<ul>
+<li><p><strong>&amp; 按位与</strong></p>
+<ul>
+<li><p>快速清零</p>
+<pre><code class="c++">int a=0x0011;
+a&amp;=0;        //a = 0x0011 &amp; 0x0000 = 0x0000</code></pre>
+</li>
+<li><p>判断奇偶</p>
+<p>奇数的二进制末尾一定是 1；偶数的二进制末尾一定是 0。</p>
+<pre><code class="c++">int a = 2;
+int b = 3;
+
+a = a&amp;1;   //a 结果为 0，偶数为 0
+b = b&amp;1;   //b 结果为 1，奇数为 1</code></pre>
+</li>
+</ul>
+</li>
+<li><p><strong>| 按位或</strong></p>
+<ul>
+<li><p>设定指定位的数据</p>
+<pre><code>int a=0x0001;
+int b=0x0010;
+
+int c=a|b;  //c: 0x0011</code></pre></li>
+</ul>
+</li>
+<li><p><strong>^ 按位异或</strong></p>
+<ul>
+<li><p>交换数值</p>
+<pre><code class="c++">int main()
+&#123;
+    int a = 32;
+    int b = 34;
+
+    a = a ^ b;
+    b = b ^ a;
+    a = a ^ b;
+
+    cout &lt;&lt; a &lt;&lt; endl;  // a:34
+    cout &lt;&lt; b &lt;&lt; endl;  // b:32
+
+&#125;</code></pre>
+</li>
+</ul>
+</li>
+<li><p><strong>&lt;&lt; 和 &gt;&gt; 左移和右移</strong></p>
+<ul>
+<li><p><code>m &lt;&lt; n</code> 等于<code>m*2^n</code>。</p>
+<pre><code class="c++">int main()
+&#123;
+    int m = 32;
+    int n = 3;
+
+    if (m &lt;&lt; n == m * pow(2, n)) &#123;
+        cout &lt;&lt; &quot;True&quot; &lt;&lt; endl;
+    &#125;
+
+&#125;
+// 输出 True</code></pre>
+</li>
+<li><p><code>m &gt;&gt; n</code> 等于<code>floor(m/(2^n))</code>。</p>
+<p>当 m 为负数，情况就不一样了</p>
+<pre><code class="c++">int main()
+&#123;
+    int m = -31;
+    int n = 3;
+
+    int c = m &gt;&gt; n;
+    cout &lt;&lt; c &lt;&lt; endl;    // 输出 -4
+
+    double d = m / pow(2, n);   
+    cout &lt;&lt; d &lt;&lt; endl;    // 输出 -3.875  floor(-3.875) = -4
+&#125;</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-3-5- 赋值运算符"><a href="#2-3-5- 赋值运算符" class="headerlink" title="2.3.5 赋值运算符"></a>2.3.5 赋值运算符</h3><table>
+<thead>
+<tr>
+<th align="left">运算符</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">=</td>
+<td align="left">简单的赋值运算符，把右边操作数的值赋给左边操作数</td>
+</tr>
+<tr>
+<td align="left">+=</td>
+<td align="left">加且赋值运算符，把右边操作数加上左边操作数的结果赋值给左边操作数</td>
+</tr>
+<tr>
+<td align="left">-=</td>
+<td align="left">减且赋值运算符，把左边操作数减去右边操作数的结果赋值给左边操作数</td>
+</tr>
+<tr>
+<td align="left">*=</td>
+<td align="left">乘且赋值运算符，把右边操作数乘以左边操作数的结果赋值给左边操作数</td>
+</tr>
+<tr>
+<td align="left">/=</td>
+<td align="left">除且赋值运算符，把左边操作数除以右边操作数的结果赋值给左边操作数</td>
+</tr>
+<tr>
+<td align="left">%=</td>
+<td align="left">求模且赋值运算符，求两个操作数的模赋值给左边操作数</td>
+</tr>
+<tr>
+<td align="left">&lt;&lt;=</td>
+<td align="left">左移且赋值运算符</td>
+</tr>
+<tr>
+<td align="left">&gt;&gt;=</td>
+<td align="left">右移且赋值运算符</td>
+</tr>
+<tr>
+<td align="left">&amp;=</td>
+<td align="left">按位与且赋值运算符</td>
+</tr>
+<tr>
+<td align="left">^=</td>
+<td align="left">按位异或且赋值运算符</td>
+</tr>
+<tr>
+<td align="left">|=</td>
+<td align="left">按位或且赋值运算符</td>
+</tr>
+</tbody></table>
+<h3 id="2-3-6- 杂项运算符"><a href="#2-3-6- 杂项运算符" class="headerlink" title="2.3.6 杂项运算符"></a>2.3.6 杂项运算符</h3><table>
+<thead>
+<tr>
+<th align="left">运算符</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">sizeof</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cplusplus/cpp-sizeof-operator.html">sizeof 运算符 </a> 返回变量所占空间的大小。例如，sizeof(a) 将返回 4，其中 a 是整数 int。</td>
+</tr>
+<tr>
+<td align="left">Condition ? X : Y</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cplusplus/cpp-conditional-operator.html">条件运算符</a>。如果 Condition 为真 ? 则值为 X : 否则值为 Y。</td>
+</tr>
+<tr>
+<td align="left">,</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cplusplus/cpp-comma-operator.html">逗号运算符 </a> 会顺序执行一系列运算。整个逗号表达式的值是以逗号分隔的列表中的最后一个表达式的值。</td>
+</tr>
+<tr>
+<td align="left">.（点）和 -&gt;（箭头）</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cplusplus/cpp-member-operators.html">成员运算符 </a> 用于引用类、结构和共用体的成员。</td>
+</tr>
+<tr>
+<td align="left">Cast</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cplusplus/cpp-casting-operators.html">强制转换运算符 </a> 把一种数据类型转换为另一种数据类型。例如，int(2.2000) 将返回 2。</td>
+</tr>
+<tr>
+<td align="left">&amp;</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cplusplus/cpp-pointer-operators.html">指针运算符 &amp;</a> 返回变量的地址。例如 &a; 将给出变量的实际地址。</td>
+</tr>
+<tr>
+<td align="left">*</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cplusplus/cpp-pointer-operators.html">指针运算符 *</a> 指向一个变量。例如，*var; 将指向变量 var。</td>
+</tr>
+</tbody></table>
+<h3 id="2-3-7- 类型转换"><a href="#2-3-7- 类型转换" class="headerlink" title="2.3.7 类型转换"></a>2.3.7 类型转换 </h3><p> 在 C++ 中，表达式中包含不同的数据类型，C++ 将对其值进行转换。</p>
+<pre><code class="c++">int main()
+&#123;
+    int a = 10;
+    double b = 10.0;
+
+    if (a == b) &#123;
+        cout &lt;&lt; &quot;true&quot; &lt;&lt; endl;
+    &#125;
+    else &#123;
+        cout &lt;&lt; &quot;false&quot; &lt;&lt; endl;
+    &#125;
+&#125;</code></pre>
+<p>上述结果会输出：true</p>
+<p>这里的等于判断，只会判断数值是否相等。不判断数据类型。</p>
+<h2 id="2-4- 程序流结构"><a href="#2-4- 程序流结构" class="headerlink" title="2.4 程序流结构"></a>2.4 程序流结构</h2><p>C/C++ 支持最基本的三种程序运行结构，顺序结构；选择结构；循环结构。</p>
+<ul>
+<li>顺序结构：程序按照顺序执行，不发生跳转</li>
+<li>选择结构：依据条件是否满足，有选择的执行相应功能</li>
+<li>循环结构：依据条件是否满足，循环多次执行某段代码</li>
+</ul>
+<h3 id="2-4-1- 选择结构"><a href="#2-4-1- 选择结构" class="headerlink" title="2.4.1 选择结构"></a>2.4.1 选择结构</h3><ul>
+<li><p>if 语句</p>
+<ul>
+<li><p>单行格式 if 语句</p>
+<pre><code class="c++">if (条件)&#123;
+   // 满足条件代码块
+&#125;;</code></pre>
+</li>
+<li><p>多行格式 if 语句</p>
+<pre><code class="c++">if (条件)&#123;
+   // 满足条件代码块
+&#125;
+else&#123;
+   // 不满足条件代码块
+&#125;</code></pre>
+</li>
+<li><p>多条件的 if 语句</p>
+<pre><code class="c++">if (条件)&#123;
+   // 满足条件代码块
+&#125;
+else if (条件)&#123;
+   // 不满足条件代码块
+&#125;
+else &#123;
+   // 不满足条件代码块
+&#125;</code></pre>
+</li>
+</ul>
+</li>
+<li><p>三目运算符</p>
+<p>语法：<code>表达式 1？表达式 2：表达式 3</code> 。解释：如果表达式 1 为真，则执行表达式 2，否则执行表达式 3</p>
+</li>
+<li><p>switch 语句</p>
+<pre><code class="c++">switch(表达式)&#123;
+  case 结果 1：执行语句 1；break;
+  case 结果 2：执行语句 2；break;
+  case 结果 3：执行语句 3；break;
+  default: 执行语句 3；break;
+&#125;</code></pre>
+</li>
+</ul>
+<h2 id="2-5- 循环结构"><a href="#2-5- 循环结构" class="headerlink" title="2.5 循环结构"></a>2.5 循环结构 </h2><p> 作用：满足条件，反复执行某段代码。</p>
+<h3 id="2-5-1-while 循环"><a href="#2-5-1-while 循环" class="headerlink" title="2.5.1 while 循环"></a>2.5.1 while 循环</h3><pre><code class="c++">while(条件)&#123;
+   // 满足条件执行
+&#125;</code></pre>
+<p>一个猜数字的例子：</p>
+<pre><code class="c++">int main() &#123;
+    srand((unsigned int)time(NULL));  // 随机种子，避免每次都是一样的随机数
+
+    int a = rand() % 100; // 随机生成 0-99 的随机数;
+    int var;
+
+    while (1) &#123;
+        cin &gt;&gt; var;
+        if (var &gt; a) &#123;
+            cout &lt;&lt; &quot; 猜测过大 &quot; &lt;&lt; endl;
+        &#125;
+        else if (var &lt; a) &#123;
+            cout &lt;&lt; &quot; 猜测过小 &quot; &lt;&lt; endl;
+        &#125;
+        else &#123;
+            cout &lt;&lt; &quot; 恭喜猜对了 &quot; &lt;&lt; endl;
+            break;  // 可以利用 break 关键字退出循环
+        &#125;
+    &#125;
+
+    system(&quot;pause&quot;);
+&#125;</code></pre>
+<h3 id="2-5-2-do-while- 循环"><a href="#2-5-2-do-while- 循环" class="headerlink" title="2.5.2 do while 循环"></a>2.5.2 do while 循环</h3><pre><code class="c++">do &#123;
+   // 执行一次
+&#125;
+while (条件)；</code></pre>
+<p>案例—水仙花数：</p>
+<p>水仙花数是指一个 3 位数，它的每个位的数字的 3 次之幂之和等于它本身</p>
+<p>例如：1^3 + 5^3 + 3^3 = 153</p>
+<p>利用 do while 循环，求出所有 3 位数中的水仙花数。</p>
+<pre><code class="c++">int main() &#123;
+    int A = 100;
+    int a, b, c;
+
+    do&#123;
+        a = A / 100;
+        b = (A - a * 100) / 10;
+        c = (A - a * 100 - b * 10);
+
+        if (a*a*a + b*b*b + c*c*c == A) &#123;
+            cout &lt;&lt; A &lt;&lt; endl;
+        &#125;
+
+        A++;
+    &#125; while (A &lt; 1000);
+
+    system(&quot;pause&quot;);
+&#125;
+// 输出 153 370 371 407</code></pre>
+<blockquote>
+<p>注意：C++ 中不能用 ^ 表示幂指数，^ 是位异或的意思。</p>
+</blockquote>
+<h3 id="2-5-3-for- 循环"><a href="#2-5-3-for- 循环" class="headerlink" title="2.5.3 for 循环"></a>2.5.3 for 循环 </h3><p> 作用：满足循环条件，执行循环语句。</p>
+<p>语法：<code>for(起始表达式；条件表达式；末尾循环体)&#123; 循环语句 &#125;</code></p>
+<pre><code class="c++">for(int i=0; i&lt;10; i++)&#123;
+   cout &lt;&lt; i &lt;&lt;endl;
+&#125;</code></pre>
+<p><strong>在 C++ 中，for 循环有了一个新用法</strong>：<code>for(接受数据的变量名：容器)&#123;&#125;</code></p>
+<pre><code class="c++">int arr[] = &#123;0,1,2,3,4,5&#125;;
+
+for (int n : arr) &#123;
+    cout &lt;&lt; n &lt;&lt; &quot; &quot;;         // 输出 1 2 3 4 5 6
+&#125;
+cout &lt;&lt; endl;</code></pre>
+<h3 id="2-5-4- 嵌套循环"><a href="#2-5-4- 嵌套循环" class="headerlink" title="2.5.4 嵌套循环"></a>2.5.4 嵌套循环</h3><pre><code class="C++">int main() &#123;
+
+    for (int i = 0; i &lt; 10; i++) &#123;
+        for (int j = 0; j &lt; 10; j++) &#123;
+            cout &lt;&lt; &quot;* &quot;;
+        &#125;
+        cout &lt;&lt; endl;
+    &#125;
+
+    system(&quot;pause&quot;);
+&#125;</code></pre>
+<h2 id="2-6- 跳转语句"><a href="#2-6- 跳转语句" class="headerlink" title="2.6 跳转语句"></a>2.6 跳转语句 </h2><h3 id="2-6-1-break- 语句"><a href="#2-6-1-break- 语句" class="headerlink" title="2.6.1 break 语句"></a>2.6.1 break 语句</h3><p> 作用：用于跳出选择结构或者循环结构。一碰到 break 关键词就 <strong> 跳出当前循环</strong>。</p>
+<p>break 使用时机：</p>
+<ul>
+<li>出现 switch 条件语句中，作用是终止 case 并跳出 switch</li>
+<li>出现在循环语句中，作用是跳出当前的循环语句</li>
+<li>出现在嵌套循环中，跳出最近的内层循环语句</li>
+</ul>
+<h3 id="2-6-2-continue- 语句"><a href="#2-6-2-continue- 语句" class="headerlink" title="2.6.2 continue 语句"></a>2.6.2 continue 语句 </h3><p> 作用：在循环语句中，跳出本次循环中余下未执行的语句，<strong>继续执行下一次循环</strong>。</p>
+<pre><code class="c++">int main() &#123;
+
+    for (int i = 0; i &lt; 10; i++) &#123;
+        if (i % 2 == 0) &#123;
+
+            continue;  // 可以筛选条件，执行到此后面的 cout i 就不再执行
+
+        &#125;
+        cout &lt;&lt; i &lt;&lt; endl;
+    &#125;
+
+    system(&quot;pause&quot;);
+&#125;
+// 输出 1 3 5 7 9</code></pre>
+<h3 id="2-6-3-goto- 语句"><a href="#2-6-3-goto- 语句" class="headerlink" title="2.6.3 goto 语句"></a>2.6.3 goto 语句 </h3><p> 作用：可以无条件跳转语句。如果标记名词存在，执行到 goto 语句时，会跳转到标记位置。</p>
+<p>语法：<code>goto 标记</code></p>
+<pre><code class="c++">int main() &#123;
+
+    cout &lt;&lt; &quot;1. XXXXX&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;2. XXXXX&quot; &lt;&lt; endl;
+
+    goto FLAG;
+
+    cout &lt;&lt; &quot;3. XXXXX&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;4. XXXXX&quot; &lt;&lt; endl;
+
+    FLAG:
+    cout &lt;&lt; &quot;5. XXXXX&quot; &lt;&lt; endl;
+
+    system(&quot;pause&quot;);
+&#125;
+/* 输出
+1. XXXXX
+2. XXXXX
+5. XXXXX
+*/</code></pre>
+<h2 id="2-7- 数组"><a href="#2-7- 数组" class="headerlink" title="2.7 数组"></a>2.7 数组 </h2><p> 所谓数组，就是几个集合，里面存放了相同类型的数据类型。</p>
+<ul>
+<li>数组中每一个数据元素都是相同的数据类型</li>
+<li>数组是由连续的内存位置组成</li>
+</ul>
+<h3 id="2-7-1- 创建数组"><a href="#2-7-1- 创建数组" class="headerlink" title="2.7.1 创建数组"></a>2.7.1 创建数组</h3><pre><code class="c++">// 第一种定义方式
+int arr[3];  // 声明数组
+arr[0] = 1;  // 赋值
+arr[1] = 2;
+arr[2] = 3;
+
+// 第二种定义方式
+int arr2[5] = &#123; 1,2,3 &#125;;
+for (int i = 0; i &lt; 5; i++) &#123;
+     cout &lt;&lt; arr2[i] &lt;&lt; endl;
+&#125;
+/* 输出 1 2 3 0 0 */ 
+
+// 第三种定义方式
+int arr3[] = &#123; 1,2,3,4 &#125;;</code></pre>
+<h3 id="2-7-2- 一维数组"><a href="#2-7-2- 一维数组" class="headerlink" title="2.7.2 一维数组"></a>2.7.2 一维数组 </h3><p> 一维数组名称的用途：</p>
+<ul>
+<li><p>获取数组的长度</p>
+</li>
+<li><p>获取数组在内存中的首地址</p>
+</li>
+</ul>
+<pre><code class="c++">int arr[] = &#123; 1,2,3,4 &#125;;
+
+cout &lt;&lt; sizeof(arr)/sizeof(arr[0]) &lt;&lt; endl;   // 输出数组长度
+cout &lt;&lt; arr &lt;&lt; endl;  // 输出数组的首地址
+cout &lt;&lt; &amp;arr[0] &lt;&lt; endl;  // 输出数组第一个元素的地址</code></pre>
+<blockquote>
+<p>&amp; 是取址符</p>
+</blockquote>
+<p><strong>练习案例 - 小猪称体重</strong>： 在一个数组中记录了五只小猪的体重，找出并打印最重的小猪的体重。</p>
+<pre><code class="c++">int main() &#123;
+
+    int pigs[] = &#123;250,380,129,566,412&#125;;
+
+    int max = pigs[0];  // 假设第一个值最大
+    for (int i = 1; i &lt; (sizeof(pigs) / sizeof(pigs[0])); i++) &#123;
+        if (pigs[i]&gt;max) &#123;
+            max = pigs[i];        // 逐一比较，更新最大值
+        &#125;
+    &#125;
+    cout &lt;&lt;&quot; 最大的数值为：&quot; &lt;&lt; max &lt;&lt; endl;
+
+
+    system(&quot;pause&quot;);
+&#125;</code></pre>
+<p><strong>练习案例 - 元素逆置</strong>：将一个数组里的元素逆置，并输出逆置后的结果。</p>
+<pre><code class="c++">int main() &#123;
+
+    int a[] = &#123;1,2,3,4,5,6&#125;;
+    int start = 0;
+    int end = sizeof(a) / sizeof(a[0]) -1;
+    int temp;
+
+    while(start &lt; end)&#123;
+            temp = a[start];
+            a[start] = a[end];
+            a[end] = temp;
+            start++;
+            end--;
+        &#125;
+    for (int i = 0; i &lt; sizeof(a) / sizeof(a[0]); i++) &#123;
+        cout &lt;&lt; a[i]&lt;&lt;endl;
+
+    &#125;
+
+    system(&quot;pause&quot;);
+&#125;</code></pre>
+<h3 id="2-7-3- 冒泡排序"><a href="#2-7-3- 冒泡排序" class="headerlink" title="2.7.3 冒泡排序"></a>2.7.3 冒泡排序 </h3><p> 冒泡排序算法是最常用的算法，对数组内元素进行排序</p>
+<ol>
+<li>比较相邻元素，如果第一个比第二个大，就交换它们两个</li>
+<li>对每一对相邻的元素做同样的工作，执行完毕后，找到第一个最大值。</li>
+<li>重复以上的步骤，每次比较次数减一，直到不需要比较。</li>
+</ol>
+<pre><code class="c++">int main() &#123;
+
+    int a[] = &#123;4,2,8,0,5,7,1,3,9&#125;;
+    int len = sizeof(a) / sizeof(a[0]);
+    int temp;
+    // 排序轮数
+    for (int i = 0; i &lt; len-1; i++) &#123;
+        // 每轮对比次数
+        for (int j = 0; j &lt; len-i-1; j++) &#123;
+            if (a[j] &gt; a[j+1]) &#123;
+                temp = a[j+1];
+                a[j+1] = a[j];
+                a[j] = temp;
+            &#125;
+        &#125;
+    &#125;
+    for (int i = 0; i &lt; len; i++) &#123;
+        cout &lt;&lt; a[i] &lt;&lt; endl;
+    &#125;
+
+    system(&quot;pause&quot;);
+&#125;</code></pre>
+<h3 id="2-7-4- 二维数组"><a href="#2-7-4- 二维数组" class="headerlink" title="2.7.4 二维数组"></a>2.7.4 二维数组 </h3><p> 二维数组定义的四种方式：</p>
+<ul>
+<li><code>数据类型 数组名[行数][列数];</code></li>
+<li><code>数据类型 数组名[行数][列数] = &#123;&#123; 数据 1, 数据 2&#125;,&#123; 数据 3, 数据 4&#125;&#125;;</code></li>
+<li><code>数据类型 数组名[行数][列数] = &#123; 数据 1, 数据 2, 数据 3, 数据 4&#125;;</code></li>
+<li><code>数据类型 数组名[][列数] = &#123; 数据 1, 数据 2, 数据 3, 数据 4&#125;;</code></li>
+</ul>
+<blockquote>
+<p>建议采用第二种，更加直观。</p>
+</blockquote>
+<pre><code class="c++">int arr[2][3] = &#123; &#123;1,2,3&#125;, &#123;4,5,6&#125; &#125;;
+
+cout &lt;&lt; sizeof(arr) &lt;&lt; endl;   // 输出数组所占内存空间大小
+cout &lt;&lt; sizeof(arr[0]) &lt;&lt; endl;   // 输出数组第一行所占内存空间大小
+
+int row = sizeof(arr)/sizeof(arr[0]);             // 行数
+int col = sizeof(arr[0])/sizeof(arr[0][0]);       // 列数
+
+cout &lt;&lt; arr &lt;&lt; endl;  // 输出数组的首地址
+cout &lt;&lt; &amp;arr[0][0] &lt;&lt; endl;  // 输出数组第一个元素的地址
+cout &lt;&lt; arr[0]&lt;&lt; endl;  // 输出数组第一行的首地址
+cout &lt;&lt; arr[1]&lt;&lt; endl;  // 输出数组第二行的首地址</code></pre>
+<h2 id="2-8- 函数"><a href="#2-8- 函数" class="headerlink" title="2.8 函数"></a>2.8 函数 </h2><h3 id="2-8-1- 函数概述"><a href="#2-8-1- 函数概述" class="headerlink" title="2.8.1 函数概述"></a>2.8.1 函数概述</h3><p> 作用：将一段经常使用的代码封装起来，减少代码重复</p>
+<p>函数的定义一般主要由 5 个步骤：</p>
+<ol>
+<li>返回值类型</li>
+<li>函数名</li>
+<li>参数列表</li>
+<li>函数体语句</li>
+<li>return 表达式</li>
+</ol>
+<pre><code class="c++">/*
+返回值类型 函数名（参数列表）&#123;
+    // 函数体语句;
+    return 表达式
+&#125;
+*/
+
+void swap(int a, int b) &#123;      // 这里 a,b 均为形参
+    int temp;
+    temp = b;
+    b = a;
+    a = temp;
+&#125;
+
+int main() &#123;
+
+    int a = 10;
+    int b = 20;               
+    swap(a, b);   // 这里 a,b 均为实参
+    cout &lt;&lt; a &lt;&lt; endl;
+    cout &lt;&lt; b &lt;&lt; endl;
+
+    return 0;  // 可省略
+
+    system(&quot;pause&quot;);
+&#125;
+// 输出 a,b 为 10,20</code></pre>
+<blockquote>
+<p>如果函数不需要返回值，声明函数的时候可以写<strong>void</strong>。</p>
+<p>当我们在做值传递的时候，函数的形参发生改变，不会影响实参。</p>
+</blockquote>
+<h3 id="2-8-2- 函数的声明"><a href="#2-8-2- 函数的声明" class="headerlink" title="2.8.2 函数的声明"></a>2.8.2 函数的声明 </h3><p> 由于 C++ 编译器的特点，main 函数一定要位于其调用其他函数的后面。在实际使用过程中，会常将定义的函数在开头做一个声明，从而不用将函数体定义在 main 函数的前面。</p>
+<pre><code class="c++">int get_max(int a, int b);  // 函数的声明，提前告诉编译器有这个函数
+
+int main() &#123;
+
+    int a = 10;
+    int b = 25;
+    cout &lt;&lt; get_max(a, b) &lt;&lt; endl;
+
+    return 0;  // 可省略
+
+    system(&quot;pause&quot;);
+&#125;
+
+// 函数的定义
+int get_max(int a, int b) &#123;     
+    return a &gt; b ? a : b;
+&#125;</code></pre>
+<blockquote>
+<p>函数可以声明写多次，定义只能写一次。</p>
+</blockquote>
+<h3 id="2-8-3- 函数的分文件编写"><a href="#2-8-3- 函数的分文件编写" class="headerlink" title="2.8.3 函数的分文件编写"></a>2.8.3 函数的分文件编写 </h3><p> 作用：让代码结构更加清晰。</p>
+<p>函数分文件编写一般有四个步骤：</p>
+<ol>
+<li>创建后缀名为.h 的头文件</li>
+<li>创建后缀名为.cpp 的源文件</li>
+<li>在头文件中写函数的声明</li>
+<li>在源文件中写函数的定义，并链接头文件 <code>#include &quot; 头文件名 &quot;</code></li>
+</ol>
+<h3 id="2-8-4- 静态变量"><a href="#2-8-4- 静态变量" class="headerlink" title="2.8.4 静态变量"></a>2.8.4 静态变量 </h3><p> 静态变量：加关键词 <code>static</code> 的变量。三个特点：</p>
+<ul>
+<li>作用范围：只本文件中可访问，对其他文件是隐藏的</li>
+<li>创建与释放：程序开始时分配空间，结束时释放空间，数据存放于内存的全局区中</li>
+<li>初始化默认为 0，使用时也可对其重新赋值</li>
+</ul>
+<h2 id="2-9- 指针"><a href="#2-9- 指针" class="headerlink" title="2.9 指针"></a>2.9 指针 </h2><p> 指针的作用：可以通过指针间接访问内存。</p>
+<ul>
+<li>内存编号是从 0 开始记录的，一般用十六进制数字表示</li>
+<li>可以利用指针变量保存地址</li>
+</ul>
+<h3 id="2-9-1- 指针变量的定义和使用"><a href="#2-9-1- 指针变量的定义和使用" class="headerlink" title="2.9.1 指针变量的定义和使用"></a>2.9.1 指针变量的定义和使用 </h3><p> 指针变量定义的语法：<code>数据类型 * 变量名</code></p>
+<pre><code class="c++">int main() &#123;
+
+    int a = 10;
+
+    int* p;   // 定义一个指针 p
+
+    p = &amp;a;   // 将变量 a 的地址赋值给 p，&amp; 是取址符
+
+    int b = *p;  // 指针前加 * 代表解引用，找到指针指向内存的数据
+
+    return 0;  // 可省略
+
+    system(&quot;pause&quot;);
+&#125;
+</code></pre>
+<p><strong>指针所占的内存空间：32 位系统—4byte，64 位系统—8byte，无论什么数据类型的指针。</strong></p>
+<h3 id="2-9-2- 空指针与野指针"><a href="#2-9-2- 空指针与野指针" class="headerlink" title="2.9.2 空指针与野指针"></a>2.9.2 空指针与野指针 </h3><p> 空指针：指针变量指向内存中编号为 0 的空间</p>
+<ul>
+<li><p>用途：初始化指针变量</p>
+</li>
+<li><p>注意：空指针指向的内存是不可以访问的</p>
+</li>
+</ul>
+<p>野指针：指针变量指向非法的内存空间</p>
+<pre><code class="c++">int* p = NULL; // 初始化指针为空
+
+int* p1 = (int*)0x11001  // 指针指向了无访问权限的地址，野指针</code></pre>
+<blockquote>
+<p>总结：空指针和野指针都不是我们申请的空间，因此不要访问。</p>
+</blockquote>
+<h3 id="2-9-3-const 修饰指针"><a href="#2-9-3-const 修饰指针" class="headerlink" title="2.9.3 const 修饰指针"></a>2.9.3 const 修饰指针</h3><p>const 修饰指针有三种情况：</p>
+<ol>
+<li><p>const 修饰指针 — 常量指针：指针的指向可以改，但是指针指向的值不可以改</p>
+<pre><code class="c++">int a=10;
+int b=20;
+
+const int* p = &amp;a;   // 常量指针
+
+*p = 20;  // 错误操作，指针指向的值不可更改
+p = &amp;b;   // 允许操作，指针指向可以改</code></pre>
+<p>可以记忆为“常量的指针”，常量即值不可以修改。</p>
+</li>
+<li><p>const 修饰常量 — 指针常量：指针的指向不可以改，但是指针指向的值可以改</p>
+<pre><code class="c++">int a=10;
+int b=20;
+
+int* const p = &amp;a;   // 指针常量
+
+*p = 20;  // 允许操作，指针指向的值可改
+p = &amp;b;   // 错误操作，指针指向不可以改</code></pre>
+<p>可以记忆为“指针是常量”，指针为常量即指针指向不可以改。</p>
+</li>
+<li><p>const 既修饰指针，又修饰常量：指针的指向不可以改，指针指向的值也不可改</p>
+<pre><code class="c++">int a=10;
+int b=20;
+
+const int* const p = &amp;a;  //
+
+*p = 20;  // 错误操作，指针指向的值不可改
+p = &amp;b;   // 错误操作，指针指向不可改</code></pre>
+</li>
+</ol>
+<h3 id="2-9-4- 指针和数组"><a href="#2-9-4- 指针和数组" class="headerlink" title="2.9.4 指针和数组"></a>2.9.4 指针和数组 </h3><p> 作用：利用指针访问数组中的元素</p>
+<pre><code class="c++">int main() &#123;
+
+    int arr[] = &#123; 1,2,3,4,5,6,7,8,9,10 &#125;;
+    int* p = arr;            // 赋值数组首地址给指针 p
+    cout &lt;&lt; *p &lt;&lt; endl;      // 获取首地址（第一个元素）的值
+    p++;                     // 指针右偏移四个字节
+    cout &lt;&lt; *p &lt;&lt; endl;      // 获取第二个元素的值
+
+    system(&quot;pause&quot;);
+&#125;
+</code></pre>
+<h3 id="2-9-5- 指针和函数"><a href="#2-9-5- 指针和函数" class="headerlink" title="2.9.5 指针和函数"></a>2.9.5 指针和函数 </h3><p> 作用：利用指针作函数参数，可以修改实参的值</p>
+<pre><code class="c++">void swap(int* p1, int* p2) &#123;
+    int temp = *p1;
+    *p1 = *p2;
+    *p2 = temp;
+&#125;
+
+int main() &#123;
+    int a = 1;
+    int b = 2;
+    swap(&amp;a, &amp;b);  // 地址传递
+    cout &lt;&lt; a &lt;&lt; endl;  // 输出 a 为 2
+    cout &lt;&lt; b &lt;&lt; endl;  // 输出 b 为 1
+
+    system(&quot;pause&quot;);
+&#125;
+</code></pre>
+<p>地址传递可以改变实参的值。</p>
+<blockquote>
+<p>如果想改变实参的值，就用地址传递；如果不想改变实参，就用值传递。</p>
+</blockquote>
+<h3 id="2-9-6- 指针，数组和函数"><a href="#2-9-6- 指针，数组和函数" class="headerlink" title="2.9.6 指针，数组和函数"></a>2.9.6 指针，数组和函数 </h3><p> 封装一个函数，利用冒泡排序，实现对整型数组的升序排列。</p>
+<pre><code class="C++">void bubbleSort(int* arr, int len) &#123;
+
+    for (int i = 0; i &lt; len - 1; i++) &#123;
+        for (int j = 0; j &lt; len - i - 1; j++) &#123;
+            if (arr[j + 1] &lt; arr[j]) &#123;
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            &#125;           
+        &#125;
+    &#125;
+&#125;
+
+int main() &#123;
+    int arr[] = &#123; 4,3,6,9,1,2,10,8,7,5 &#125;;
+    int len = sizeof(arr) / sizeof(arr[0]);
+    bubbleSort(arr, len);
+    for (int i = 0; i &lt; len; i++) &#123;
+        cout &lt;&lt; arr[i] &lt;&lt; &quot; &quot;;
+    &#125;
+
+    system(&quot;pause&quot;);
+&#125;</code></pre>
+<h2 id="2-10- 结构体"><a href="#2-10- 结构体" class="headerlink" title="2.10 结构体"></a>2.10 结构体 </h2><h3 id="2-10-1- 基本概念"><a href="#2-10-1- 基本概念" class="headerlink" title="2.10.1 基本概念"></a>2.10.1 基本概念</h3><p> 结构体属于用户自定义的数据类型，允许用户储存不同的数据类型。</p>
+<p>语法：<code>struct 结构体名 &#123; 结构体成员列表 &#125;;</code></p>
+<p>通过结构体创建变量的方式有三种：</p>
+<ul>
+<li>struct 结构体名，变量名</li>
+<li>struct 结构体名 变量名 = {成员 1 值，成员 2 值…}</li>
+<li>定义结构体时顺便创建变量</li>
+</ul>
+<pre><code class="c++">struct student &#123;
+    string name;
+    int age;
+    int scores;
+&#125;s3;                   // 第三种方式：定义结构体时顺便创建变量
+
+int main() &#123;
+
+    // 第一种方式
+    struct student s1;      //struct 关键词可以省略
+    s1.name = &quot;zs&quot;;
+    s1.age = 25;
+    s1.scores = 80;
+
+    // 第二种方式
+    struct student s2 = &#123;&quot;ls&quot;, 27, 90&#125;;          
+
+    s3.name = &quot;we&quot;;
+    s3.age = 20;
+    s3.scores = 52;
+
+    cout &lt;&lt; s1.name &lt;&lt; endl;   // 通过. 点来访问成员
+    cout &lt;&lt; s2.name &lt;&lt; endl;
+    cout &lt;&lt; s3.name &lt;&lt; endl;
+
+    system(&quot;pause&quot;);
+    return 0;
+&#125;
+</code></pre>
+<h3 id="2-10-2- 结构体数组"><a href="#2-10-2- 结构体数组" class="headerlink" title="2.10.2 结构体数组"></a>2.10.2 结构体数组 </h3><p> 作用：将自定义的结构体放入到数组中方便维护</p>
+<p>语法：<code>struct 结构体名 数组名[] = &#123;&#123;&#125;,&#123;&#125;,&#123;&#125;&#125;</code></p>
+<pre><code class="c++">struct student &#123;
+    string name;
+    int age;
+    int scores;
+&#125;;
+
+int main() &#123;
+
+    struct student s1[] = &#123;
+        &#123;&quot;zs&quot;, 19, 68&#125;,
+        &#123;&quot;li&quot;, 25, 70&#125;,
+        &#123;&quot;dw&quot;, 26, 85&#125;,
+    &#125;;
+
+    system(&quot;pause&quot;);
+    return 0;
+&#125;</code></pre>
+<h3 id="2-10-3- 结构体指针"><a href="#2-10-3- 结构体指针" class="headerlink" title="2.10.3 结构体指针"></a>2.10.3 结构体指针 </h3><p> 作用：通过指针访问结构体中的成员</p>
+<ul>
+<li>利用操作符 <code>-&gt;</code> 可以通过结构体指针访问结构体属性。</li>
+</ul>
+<pre><code class="c++">struct student &#123;
+    string name;
+    int age;
+    int scores;
+&#125;;
+
+int main() &#123;
+
+    struct student s1 = &#123; &quot;zs&quot;, 19, 68 &#125;;
+
+    student * p = &amp;s1;  // 创建结构体指针并赋值
+
+    cout &lt;&lt; p-&gt;name &lt;&lt; endl; // 访问属性
+
+    system(&quot;pause&quot;);
+    return 0;
+&#125;</code></pre>
+<h3 id="2-10-4- 结构体嵌套"><a href="#2-10-4- 结构体嵌套" class="headerlink" title="2.10.4 结构体嵌套"></a>2.10.4 结构体嵌套 </h3><p> 在结构体中可以定义另一个结构体作为成员，用来解决实际问题。</p>
+<pre><code class="c++">struct student &#123;
+    string name;
+    int age;
+    int scores;
+&#125;;
+
+struct teacher&#123;
+    string name;
+    int age;
+    string course;
+    struct student stu;  // 嵌套一个 student 结构体
+&#125;;
+
+int main() &#123;
+
+    teacher t1;
+    t1.name = &quot;wteacher&quot;;
+    t1.age = 45;
+    t1.course = &quot;mathematics&quot;;
+    t1.stu.name = &quot;zs&quot;;
+    t1.stu.age = 25;
+    t1.stu.scores = 80;
+
+    system(&quot;pause&quot;);
+    return 0;
+&#125;</code></pre>
+<h3 id="2-10-5- 结构体做函数参数"><a href="#2-10-5- 结构体做函数参数" class="headerlink" title="2.10.5 结构体做函数参数"></a>2.10.5 结构体做函数参数 </h3><p> 作用：将结构体作为参数向函数中传递</p>
+<p>传递方式有两种：</p>
+<ul>
+<li>值传递</li>
+<li>地址传递</li>
+</ul>
+<pre><code class="c++">struct student &#123;
+    string name;
+    int age;
+    int scores;
+&#125;;
+
+// 值传递
+void printstudent1(struct student s) &#123;
+    s.age = 80;
+    cout &lt;&lt; s.name &lt;&lt;&quot; &quot;;
+    cout &lt;&lt; s.age &lt;&lt; &quot; &quot;;
+    cout &lt;&lt; s.scores &lt;&lt;endl;
+
+&#125;;
+
+// 地址传递
+void printstudent2(struct student* s) &#123;
+    s-&gt;age = 100;
+    cout &lt;&lt; s-&gt;name &lt;&lt; &quot; &quot;;
+    cout &lt;&lt; s-&gt;age &lt;&lt; &quot; &quot;;
+    cout &lt;&lt; s-&gt;scores &lt;&lt; endl;
+
+&#125;;
+
+int main() &#123;
+
+    student s1 = &#123; &quot;zs&quot;, 19, 68 &#125;;
+
+    printstudent1(s1);          // 输出 &quot;zs&quot;, 80, 68 
+    cout &lt;&lt; s1.name &lt;&lt; &quot; &quot;;
+    cout &lt;&lt; s1.age &lt;&lt; &quot; &quot;;
+    cout &lt;&lt; s1.scores &lt;&lt; endl;   // 输出 &quot;zs&quot;, 19, 68   不改变原来的值
+
+    printstudent2(&amp;s1);          // 输出 &quot;zs&quot;, 100, 68 
+    cout &lt;&lt; s1.name &lt;&lt; &quot; &quot;;
+    cout &lt;&lt; s1.age &lt;&lt; &quot; &quot;;
+    cout &lt;&lt; s1.scores &lt;&lt; endl;   // 输出 &quot;zs&quot;, 100, 68 改变原来的值
+
+    system(&quot;pause&quot;);
+    return 0;
+&#125;</code></pre>
+<h3 id="2-10-6- 结构体中 const 使用场景"><a href="#2-10-6- 结构体中 const 使用场景" class="headerlink" title="2.10.6 结构体中 const 使用场景"></a>2.10.6 结构体中 const 使用场景 </h3><p> 在实际使用场景中，若使用值传递，相当于又要拷贝一份数据给函数，会显著增加内存资源损耗。使用地址传递就不会存在这个问题，一个指针只占四个字节，会极大的节省空间，但是地址传递在新的函数中处理数据时，会改变原来数据，这时候就可以使用 const 修饰，避免数据篡改。</p>
+<pre><code class="c++">void printstudent1(const struct student* s) &#123;   // 传地址时加 const 限制
+    s-&gt;age = 100;   // 此修改行为不允许
+    cout &lt;&lt; s-&gt;name &lt;&lt; &quot; &quot;;
+    cout &lt;&lt; s-&gt;age &lt;&lt; &quot; &quot;;
+    cout &lt;&lt; s-&gt;scores &lt;&lt; endl;
+
+&#125;;
+
+int main() &#123;
+
+    student s1 = &#123; &quot;zs&quot;, 19, 68 &#125;;
+
+    printstudent1(&amp;s1);
+
+    system(&quot;pause&quot;);
+    return 0;
+&#125;</code></pre>
+<h3 id="2-10-6- 案例"><a href="#2-10-6- 案例" class="headerlink" title="2.10.6 案例"></a>2.10.6 案例 </h3><p> 案例描述：设计一个英雄的结构体，包括成员姓名，性别；创建结构体数组，数组中存放 5 名英雄。</p>
+<p>通过冒泡排序算法，将数组中的英雄按照年龄进行升序排列，最终打印排序后的结果。</p>
+<pre><code class="c++">struct Hero &#123;
+    string name;
+    int age;
+    string sex;
+&#125;;
+
+void bubblesort(struct Hero sanguo[],int len) &#123;
+    for (int i = 0; i &lt; len-1; i++) &#123;
+        for (int j = 0; j &lt; len-1-i; j++) &#123;
+            if (sanguo[j].age &gt; sanguo[j + 1].age) &#123;
+                struct Hero temp = sanguo[j];
+                sanguo[j] = sanguo[j + 1];
+                sanguo[j + 1] = temp;
+            &#125;
+        &#125;
+    &#125;
+&#125;
+
+int main() &#123;
+
+    Hero sanguo[] = &#123;
+        &#123;&quot; 刘备 &quot;,23,&quot; 男 &quot;&#125;,
+        &#123;&quot; 关羽 &quot;,22,&quot; 男 &quot;&#125;,
+        &#123;&quot; 张飞 &quot;,20,&quot; 男 &quot;&#125;,
+        &#123;&quot; 赵云 &quot;,21,&quot; 男 &quot;&#125;,
+        &#123;&quot; 貂蝉 &quot;,19,&quot; 女 &quot;&#125;,
+    &#125;;
+    int len = sizeof(sanguo) / sizeof(sanguo[0]);
+
+    bubblesort(sanguo, len);
+
+    for (int i = 0; i &lt; len - 1; i++) &#123;
+        cout &lt;&lt; sanguo[i].name &lt;&lt; &quot; &quot;;
+        cout &lt;&lt; sanguo[i].age &lt;&lt; &quot; &quot;;
+        cout &lt;&lt; sanguo[i].sex &lt;&lt; endl;
+    &#125;   
+    system(&quot;pause&quot;);
+    return 0;
+&#125;</code></pre>
+<ul>
+<li>结构体变量作函数参数时，函数内的操作不会改变结构体的值，结构体的各成员作为实参传递给了函数的形参，实际操作的是形参，不会影响实参；</li>
+</ul>
+<ul>
+<li><strong>结构体数组作为函数参数时，实际上是将结构体数组的第一个数组成员的地址传递给了形参，用对应的指针或者直接用结构体数组的名称作为实参效果是一样的，操作都直接对结构体数组进行，可以改变其值。</strong></li>
+</ul>
+<h2 id="2-11- 枚举类型"><a href="#2-11- 枚举类型" class="headerlink" title="2.11 枚举类型"></a>2.11 枚举类型 </h2><p> 枚举类型 (enumeration) 是 C++ 中的一种派生 <strong> 数据类型</strong>，它是由用户定义的若干枚举常量的集合。</p>
+<h3 id="2-11-1- 定义枚举类型"><a href="#2-11-1- 定义枚举类型" class="headerlink" title="2.11.1 定义枚举类型"></a>2.11.1 定义枚举类型</h3><pre><code class="c++">enum 数据类型名 &#123; 枚举常量表 &#125;;
+
+# 举例
+enum Week &#123;Mon, Tus, Wed, Thus, Fri, Sat, Sun&#125;</code></pre>
+<blockquote>
+<p>语句将创建一个名为 Week 的数据类型—枚举类型（与整型，浮点型等类似）。</p>
+<p>枚举常量表——由枚举常量构成，以标识符形式表示的整型量，而不能是整型、字符型等文字常量。</p>
+<p>枚举常量代表该枚举类型的变量可能取的值，默认情况下，编译系统为每个枚举常量指定一个整数值，从 0 开始，依次加 1；也可自行指定。</p>
+<p>若自行指定，而指定值之后的枚举常量按依次加 1 的原则取值。 各枚举常量的值可以重复，枚举标识符不能重复。</p>
+</blockquote>
+<pre><code class="c++">enum letter_set &#123;&#39;a&#39;,&#39;d&#39;,&#39;F&#39;,&#39;s&#39;,&#39;T&#39;&#125;;                // 非法
+enum year_set&#123;2000,2001,2002,2003,2004,2005&#125;;         // 非法
+
+enum fruit_set &#123;apple, orange, banana=1, peach, grape&#125;   // 合法
+# apple=1, orange=2, banana=1, peach=2, grape=3</code></pre>
+<h3 id="2-11-2- 定义枚举变量"><a href="#2-11-2- 定义枚举变量" class="headerlink" title="2.11.2 定义枚举变量"></a>2.11.2 定义枚举变量 </h3><p> 定义枚举数据类型后，可以接着使用枚举类型指定枚举变量。</p>
+<pre><code class="c++">// 定义枚举类型
+enum Week &#123;Mon, Tus, Wed, Thus, Fri, Sat, Sun&#125;;
+
+// 定义枚举变量 w1 和 w2, 并赋值 w2
+Week w1, w2 = Tus;</code></pre>
+<p>也可以：类型与变量同时定义（甚至类型名可省）</p>
+<pre><code>enum &#123;Mon, Tus, Wed, Thus, Fri, Sat, Sun&#125; w1, w2;</code></pre><blockquote>
+<p>枚举变量的值只能取：枚举常量表中所列的标识符。虽然枚举常量表中的标识符中的背后代表的是枚举常量，但是枚举变量的值不能取整型常量值，如 1,2 等。</p>
+<p>枚举变量占用内存的大小与整型数相同。不管枚举类型有多少枚举量，枚举数都占 4 bytes.</p>
+<p>枚举变量只能参与 <strong> 赋值 </strong> 和<strong>关系运算 </strong> 以及 <strong> 输出操作</strong>，其中参与运算时用其本身的整数值。</p>
+</blockquote>
+<p>允许的赋值操作如下：</p>
+<pre><code class="c++">enum &#123;Mon, Tus, Wed, Thus, Fri, Sat, Sun&#125; w1, w2;
+
+w1 = Fri;
+w2 = w1;
+int i = w2;
+int j = Sun;</code></pre>
+<p>非法操作：</p>
+<pre><code class="c++">enum &#123;Mon, Tus, Wed, Thus, Fri, Sat, Sun&#125; w1, w2;
+
+w1 = 1;              // 非法
+w2 = FFF;            // 非法</code></pre>
+<h3 id="2-11-3- 关系运算"><a href="#2-11-3- 关系运算" class="headerlink" title="2.11.3 关系运算"></a>2.11.3 关系运算 </h3><p> 可以使用整数值而不是符号名称来测试枚举变量。还可以使用关系运算符来比较两个枚举变量</p>
+<pre><code class="c++">enum &#123; Mon, Tus, Wed, Thus, Fri, Sat, Sun &#125; w1 = Mon, w2 = Fri;
+
+if (w1 == Mon) &#123;
+   cout &lt;&lt; &quot;w1 的枚举变量名是 Mon&quot; &lt;&lt; endl;
+&#125;
+
+if (w1 == 0) &#123;
+    cout &lt;&lt; &quot;w1 的枚举常量是 0&quot; &lt;&lt; endl;
+&#125;
+
+if (w2 &gt; w1) &#123;
+    cout &lt;&lt; &quot;w2 的枚举常量大于 w2&quot; &lt;&lt; endl;
+&#125;</code></pre>
+<h3 id="2-11-4- 枚举类"><a href="#2-11-4- 枚举类" class="headerlink" title="2.11.4 枚举类"></a>2.11.4 枚举类</h3><p>C++11 中新增了枚举类，也称作【限定作用域的枚举类】。关键字为：<code>enum class</code></p>
+<blockquote>
+<p>enum 现在被称为【不限范围】的枚举型别。</p>
+<p>enum class 是【限定作用域】枚举型别，他们仅在枚举型别内可见，且只能通过强制转换转换为其他型别。</p>
+<p>两种枚举都支持底层型别指定，enum class 默认是 int，enum 没有默认底层型别。enum 可以前置声明，但仅在指定默认底层型别的情况下才能前置声明。</p>
+</blockquote>
+<p>枚举类的基本用法和枚举数一致。</p>
+<p>枚举类优势：</p>
+<ul>
+<li><p>降低命名空间污染</p>
+<pre><code class="C++">// 枚举数
+enum Week&#123; Mon, Tus, Wed, Thus, Fri, Sat, Sun &#125; w1 = Mon, w2 = Fri;
+
+int Mon = 100;   // 错误
+
+// 枚举类
+enum class Month &#123; Jan, Feb, Mar, Apr, May &#125; m1 = Month::Jan, m2;
+
+m2 = Month::May;
+
+int Jan = 100;   // 允许</code></pre>
+</li>
+<li><p>避免发生隐式转换</p>
+<pre><code class="c++">// 枚举数
+enum Week&#123; Mon, Tus, Wed, Thus, Fri, Sat, Sun &#125; w1 = Mon;
+
+if (w1 &lt; 7) &#123;&#125;
+
+// 枚举类
+enum class Month &#123; Jan, Feb, Mar, Apr, May &#125; m1 = Month::Jan;
+
+if (m1 &lt; 7) &#123;&#125;   // 不允许</code></pre>
+<p>限定作用域的枚举型别不允许发生任何隐式转换。如果非要转换，按就只能使用 static_cast 进行强制转换。</p>
+</li>
+</ul>
+<ul>
+<li><p>可以前置声明</p>
+<pre><code class="c++">enum Color;          // 非法
+
+enum class Color;    // 合法</code></pre>
+</li>
+</ul>
+<h1 id="三、实战 1- 通讯录管理系统"><a href="# 三、实战 1- 通讯录管理系统" class="headerlink" title="三、实战 1- 通讯录管理系统"></a>三、实战 1- 通讯录管理系统 </h1><p> 通讯录是一个可以记录亲人，好友信息的工具。系统中需要实现的功能如下：</p>
+<ul>
+<li>添加联系人：向通讯录中添加新人，信息包括（姓名，性别，年龄，联系电话，家庭住址），最多记录 100 人</li>
+<li>显示联系人：显示通讯录总所有联系人的信息</li>
+<li>删除联系人：按照姓名进行删除指定联系人</li>
+<li>查找联系人：按照姓名进行查找指定联系人</li>
+<li>修改联系人：按照姓名重新修改指定联系人</li>
+<li>清空联系人：清空通讯录中所有信息</li>
+<li>退出通讯录：退出当前使用的通讯录</li>
+</ul>
+<pre><code class="c++">#include&lt;iostream&gt;
+#include&lt;string&gt;
+using namespace std;
+#define MAX 1000
+
+void showMenu() &#123;
+    cout &lt;&lt; &quot;**************************&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;*****  1. 添加联系人  *****&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;*****  2. 显示联系人  *****  &quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;*****  3. 删除联系人  *****&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;*****  4. 查找联系人  *****&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;*****  5. 修改联系人  *****&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;*****  6. 清空联系人  *****&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;*****  0. 退出通讯录  *****&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;**************************&quot; &lt;&lt; endl;
+&#125;
+
+struct member &#123;
+    string name;
+    int sex;  //1 为男 2 为女
+    int age;
+    string tel;
+    string addr;
+&#125;;
+
+struct addressbooks &#123;
+    struct member memberarr[MAX];  // 通讯录名单
+    int size;                      // 人数
+&#125;;
+
+void addperson(addressbooks * abs) &#123;
+    if (abs-&gt;size == MAX) &#123;
+        cout &lt;&lt; &quot; 联系人已满，请删除不必要的人员再添加 &quot; &lt;&lt; endl;
+        return;
+    &#125;
+    else &#123;
+        string name;
+        int sex=0;  //1 为男 2 为女
+        int age=0;
+        string tel;
+        string addr;
+
+        cout &lt;&lt; &quot; 请输入姓名：&quot; &lt;&lt; endl;
+        cin &gt;&gt; name;
+        abs-&gt;memberarr[abs-&gt;size].name = name;
+        cout &lt;&lt; &quot; 请输入性别：&quot; &lt;&lt; endl;
+        cout &lt;&lt; &quot;1  ---  男 &quot; &lt;&lt; endl;
+        cout &lt;&lt; &quot;2  ---  女 &quot; &lt;&lt; endl;
+        while (true) &#123;
+            cin &gt;&gt; sex;
+            if (sex == 1 || sex == 2) &#123;
+                abs-&gt;memberarr[abs-&gt;size].sex = sex;
+                break;
+            &#125;
+            cout &lt;&lt; &quot; 输入有误，请重新输入！&quot; &lt;&lt; endl;
+
+        &#125;
+
+        cout &lt;&lt; &quot; 请输入年龄：&quot; &lt;&lt; endl;
+        cin &gt;&gt; age;
+        abs-&gt;memberarr[abs-&gt;size].age = age;
+        cout &lt;&lt; &quot; 请输入电话：&quot; &lt;&lt; endl;
+        cin &gt;&gt; tel;
+        abs-&gt;memberarr[abs-&gt;size].tel = tel;
+        cout &lt;&lt; &quot; 请输入地址：&quot; &lt;&lt; endl;
+        cin &gt;&gt; addr;
+        abs-&gt;memberarr[abs-&gt;size].addr = addr;
+
+        abs-&gt;size++;
+        cout &lt;&lt; &quot; 添加成功 &quot; &lt;&lt; endl;
+        system(&quot;pause&quot;);
+        system(&quot;cls&quot;);
+
+    &#125;
+&#125;
+
+void showperson(addressbooks * abs) &#123;
+    if (abs-&gt;size == 0) &#123;
+        cout &lt;&lt; &quot; 通讯录为空 &quot; &lt;&lt; endl;
+    &#125;
+    else &#123;
+        for (int i = 0; i &lt; abs-&gt;size; i++) &#123;
+            cout &lt;&lt; &quot; 姓名: &quot; &lt;&lt; abs-&gt;memberarr[i].name;
+            cout &lt;&lt; &quot;\t 性别: &quot; &lt;&lt; (abs-&gt;memberarr[i].sex==1?&quot; 男 &quot;:&quot; 女 &quot;);
+            cout &lt;&lt; &quot;\t 年龄: &quot; &lt;&lt; abs-&gt;memberarr[i].age;
+            cout &lt;&lt; &quot;\t 电话: &quot; &lt;&lt; abs-&gt;memberarr[i].tel;
+            cout &lt;&lt; &quot;\t 地址: &quot; &lt;&lt; abs-&gt;memberarr[i].addr &lt;&lt; endl;
+        &#125;
+    &#125;
+    system(&quot;pause&quot;);
+    system(&quot;cls&quot;);
+&#125;
+
+int isExist(addressbooks* abs, string name) &#123;
+    for (int i = 0; i &lt; abs-&gt;size; i++) &#123;
+        if (abs-&gt;memberarr[i].name == name) &#123;
+            return i;
+        &#125;
+    &#125;
+    return -1;
+&#125;
+
+void delperson(addressbooks* abs) &#123;
+    cout &lt;&lt; &quot; 请输入删除的联系人：&quot; &lt;&lt; endl;
+    string name;
+    cin &gt;&gt; name;
+    int ret = isExist(abs,name);
+    if (ret != -1) &#123;
+        for (int i = ret; i &lt; abs-&gt;size; i++) &#123;
+            abs-&gt;memberarr[i] = abs-&gt;memberarr[i + 1];
+        &#125;
+        abs-&gt;size--;
+        cout &lt;&lt; &quot; 删除成功 &quot; &lt;&lt; endl;
+    &#125;
+    else &#123;
+        cout &lt;&lt; &quot; 查无此人 &quot; &lt;&lt; endl;
+    &#125;
+    system(&quot;pause&quot;);
+    system(&quot;cls&quot;);
+    &#125;
+
+void findperson(addressbooks* abs) &#123;
+    cout &lt;&lt; &quot; 请输入查找的联系人：&quot; &lt;&lt; endl;
+    string name;
+    cin &gt;&gt; name;
+    int ret= isExist(abs, name);
+    if (ret != -1) &#123;
+        cout &lt;&lt; &quot; 姓名: &quot; &lt;&lt; abs-&gt;memberarr[ret].name &lt;&lt; &quot;\t&quot;;
+        cout &lt;&lt; &quot; 性别: &quot; &lt;&lt; (abs-&gt;memberarr[ret].sex == 1 ? &quot; 男 &quot; : &quot; 女 &quot;) &lt;&lt; &quot;\t&quot;;
+        cout &lt;&lt; &quot; 年龄: &quot; &lt;&lt; abs-&gt;memberarr[ret].age &lt;&lt; &quot;\t&quot;;
+        cout &lt;&lt; &quot; 电话: &quot; &lt;&lt; abs-&gt;memberarr[ret].tel &lt;&lt; &quot;\t&quot;;
+        cout &lt;&lt; &quot; 地址: &quot; &lt;&lt; abs-&gt;memberarr[ret].addr &lt;&lt; endl;
+    &#125;
+    else &#123;
+        cout &lt;&lt; &quot; 查无此人 &quot; &lt;&lt; endl;
+    &#125;
+    system(&quot;pause&quot;);
+    system(&quot;cls&quot;);
+&#125;
+
+void modifyperson(addressbooks* abs) &#123;
+    cout &lt;&lt; &quot; 请输入修改的联系人：&quot; &lt;&lt; endl;
+    string name;
+    cin &gt;&gt; name;
+    int ret = isExist(abs, name);
+    if (ret != -1) &#123;
+        cout &lt;&lt; &quot; 请输入姓名：&quot; &lt;&lt; endl;
+        cin &gt;&gt; name;
+        abs-&gt;memberarr[ret].name = name;
+        cout &lt;&lt; &quot; 请输入性别：&quot; &lt;&lt; endl;
+        cout &lt;&lt; &quot;1  ---  男 &quot; &lt;&lt; endl;
+        cout &lt;&lt; &quot;2  ---  女 &quot; &lt;&lt; endl;
+        while (true) &#123;
+            int sex = 0;
+            cin &gt;&gt; sex;
+            if (sex == 1 || sex == 2) &#123;
+                abs-&gt;memberarr[abs-&gt;size].sex = sex;
+                break;
+            &#125;
+            cout &lt;&lt; &quot; 输入有误，请重新输入！&quot; &lt;&lt; endl;
+        &#125;
+        int age = 0;
+        cout &lt;&lt; &quot; 请输入年龄：&quot; &lt;&lt; endl;
+        cin &gt;&gt; age;
+        abs-&gt;memberarr[ret].age = age;
+        cout &lt;&lt; &quot; 请输入电话：&quot; &lt;&lt; endl;
+        string tel;
+        cin &gt;&gt; tel;
+        abs-&gt;memberarr[ret].tel = tel;
+        cout &lt;&lt; &quot; 请输入地址：&quot; &lt;&lt; endl;
+        string addr;
+        cin &gt;&gt; addr;
+        abs-&gt;memberarr[ret].addr = addr;
+        cout &lt;&lt; &quot; 修改成功 &quot; &lt;&lt; endl;
+
+    &#125;
+    else &#123;
+        cout &lt;&lt; &quot; 查无此人 &quot; &lt;&lt; endl;
+    &#125;
+    system(&quot;pause&quot;);
+    system(&quot;cls&quot;);
+&#125;
+
+void cleanperson(addressbooks* abs) &#123;
+    abs-&gt;size = 0;
+    cout&lt;&lt;&quot; 联系人已全部清空 &quot; &lt;&lt; endl;
+    system(&quot;pause&quot;);
+    system(&quot;cls&quot;);
+&#125;
+
+int main() &#123;
+
+    int select = 0;
+    addressbooks abs;
+    abs.size = 0;
+
+    while (true) &#123;
+        showMenu();
+        cin &gt;&gt; select;
+        switch (select)
+        &#123;
+        case 1:
+            addperson(&amp;abs);
+            break;
+        case 2:
+            showperson(&amp;abs);
+            break;
+        case 3:
+            delperson(&amp;abs);
+            break;
+        case 4:
+            findperson(&amp;abs);
+            break;
+        case 5:
+            modifyperson(&amp;abs);
+            break;
+        case 6:
+            cleanperson(&amp;abs);
+            break;
+        case 0:
+            cout &lt;&lt; &quot; 欢迎下次使用 &quot; &lt;&lt; endl;
+            system(&quot;pause&quot;);
+            return 0 ;
+            break;
+        default:
+            break;
+
+        &#125;        
+    &#125;    
+&#125;</code></pre>
+<h1 id="四、C- 核心编程"><a href="# 四、C- 核心编程" class="headerlink" title="四、C++ 核心编程"></a>四、C++ 核心编程 </h1><p> 本阶段主要针对 C++<strong>面向对象编程 </strong> 技术做详细讲解，探讨 C++ 中的核心和精髓。</p>
+<h2 id="4-1- 内存分区模型"><a href="#4-1- 内存分区模型" class="headerlink" title="4.1 内存分区模型"></a>4.1 内存分区模型</h2><p>C++ 程序在执行时，将内存大方向划分为 4 个区域</p>
+<ul>
+<li>代码区：存放函数体的二进制代码，由操作系统进行管理的</li>
+<li>全局区：存放全局变量和静态变量以及常量</li>
+<li>栈区：由编译器自动分配释放，存放函数的参数值，局部变量等</li>
+<li>堆区：由程序员分配和释放，若程序员不释放，程序结束时，由操作系统回收。</li>
+</ul>
+<p>内存四区的意义：</p>
+<p>不同区域存放的数据，赋予不同的生命周期，给我们更大的灵活编程。</p>
+<p>—————–程序运行前————–</p>
+<p>在程序编译后，生成 exe 可执行程序，未执行该程序前分为两个区域：</p>
+<ol>
+<li>代码区：存放 CPU 执行的机器指令；代码区是共享的，共享的目的是对于频繁被执行的程序，只需要在内存中有一份即可；代码区是只读的，防止程序意外的修改了它的指令。</li>
+<li>全局区：<strong>全局变量 </strong> 和<strong>静态变量 </strong> 存放于此；全局区还包含了 <strong> 常量 </strong> 区，字符串常量和其他常量也存放于此；该区域的数据在程序结束后由操作系统释放。</li>
+</ol>
+<pre><code class="c++">int g_a = 10;   // 全局变量
+
+const int c_g_a = 10; //const 修饰的全局变量
+
+int main()&#123;
+
+    int a = 10;   // 局部变量
+
+    static int s_a = 10; // 静态变量，在普通变量前加 static，属于静态变量
+
+    string str_a = &quot;hello word&quot;;    // 字符串常量
+
+    const int c_a = 10;    //const 修饰的局部变量
+
+    system(&quot;pause&quot;);
+
+&#125;</code></pre>
+<p>—————–程序运行中————–</p>
+<p>栈区：由编译器自动分配释放，存放函数的参数值，局部变量等。注意：不要返回局部变量的地址。</p>
+<p>堆区：由程序员分配释放，若程序员不释放，程序结束时由操作系统回收。在 C++ 中，主要利用 new 关键字在堆区开辟内存。</p>
+<pre><code class="c++">int* func() &#123;
+    int* p = new int(10);   //new 创建的数据，返回指针
+    return p;
+&#125;
+
+int main()&#123;
+
+    int* p = func();
+
+    cout &lt;&lt; *p &lt;&lt; endl;
+    cout &lt;&lt; *p &lt;&lt; endl;
+
+    system(&quot;pause&quot;);
+
+&#125;
+</code></pre>
+<h2 id="4-2-new 操作符"><a href="#4-2-new 操作符" class="headerlink" title="4.2 new 操作符"></a>4.2 new 操作符</h2><p>C++ 中利用 new 操作符在堆区开辟数据.</p>
+<p>堆区开辟的数据，由程序员手动开辟，手动释放，释放利用操作符 delete</p>
+<p>语法：<code>new 数据类型</code></p>
+<p>利用 new 创建的数据，会返回该数据对应的类型的指针。</p>
+<pre><code class="c++">int* func() &#123;
+    int* arr = new int[10];   // 创建一个数组，返回首地址
+
+    arr[0] = 0;
+
+    return arr;
+&#125;
+
+int main()&#123;
+
+    int* p = func();
+
+    cout &lt;&lt; *p &lt;&lt; endl;
+    cout &lt;&lt; *p &lt;&lt; endl;
+
+    delete[] p;  // 释放数组时，要加[]
+
+    system(&quot;pause&quot;);
+
+&#125;</code></pre>
+<h2 id="4-3- 引用"><a href="#4-3- 引用" class="headerlink" title="4.3 引用"></a>4.3 引用 </h2><p> 作用：给变量起别名</p>
+<p>语法：<code>数据类型 &amp; 别名 = 原名</code></p>
+<pre><code class="c++">int main()&#123;
+
+    int a = 10;
+
+    int&amp; b = a;
+    cout &lt;&lt; a &lt;&lt; endl;  // 输出 10
+    cout &lt;&lt; b &lt;&lt; endl;  // 输出 10
+
+    b = 100;
+
+    cout &lt;&lt; a &lt;&lt; endl;  // 输出 100
+    cout &lt;&lt; b &lt;&lt; endl;  // 输出 100
+
+
+    system(&quot;pause&quot;);
+
+&#125;</code></pre>
+<blockquote>
+<p>注意事项：引用必须初始化，且在初始化后不可更改。</p>
+</blockquote>
+<h3 id="4-3-1- 引用作函数实参"><a href="#4-3-1- 引用作函数实参" class="headerlink" title="4.3.1 引用作函数实参"></a>4.3.1 引用作函数实参 </h3><p> 作用：函数传参时，可以利用引用让形参修饰实参</p>
+<p>优点：可以简化指针修改实参</p>
+<pre><code class="c++">void swap(int &amp;a,int &amp;b)&#123;
+    int temp = a;
+    a = b;
+    b = temp;
+&#125;
+
+int main()&#123;
+
+    int a = 10;
+    int b = 20;
+
+    swap(a, b);     // 引用传递，形参也会修饰实参的
+
+    cout &lt;&lt; a &lt;&lt; endl;    // 输出 20
+    cout &lt;&lt; b &lt;&lt; endl;    // 输出 10
+
+    system(&quot;pause&quot;);
+&#125;</code></pre>
+<blockquote>
+<p>总结：通过引用参数产生的效果同按照地址是一样的，引用的语法更加清楚简单。</p>
+</blockquote>
+<h3 id="4-3-2- 引用作函数的返回值"><a href="#4-3-2- 引用作函数的返回值" class="headerlink" title="4.3.2 引用作函数的返回值"></a>4.3.2 引用作函数的返回值 </h3><p> 作用：引用是可以作为函数的返回值存在的。注意：<strong>不要返回局部变量引用</strong></p>
+<p>用法：函数调用作为左值</p>
+<pre><code class="c++">int&amp; test() &#123;
+    static int a = 10;
+    return a;   // 返回静态变量的引用
+&#125;
+
+int main()&#123;
+
+    int&amp; ref = test();   
+
+    cout &lt;&lt; ref &lt;&lt; endl;
+    cout &lt;&lt; ref &lt;&lt; endl;
+
+    // 如果函数作左值，必须返回函数的引用
+    test() = 1000;  
+
+    cout &lt;&lt; ref &lt;&lt; endl;
+    cout &lt;&lt; ref &lt;&lt; endl;
+
+    system(&quot;pause&quot;);
+
+&#125;</code></pre>
+<h3 id="4-3-3- 引用的本质"><a href="#4-3-3- 引用的本质" class="headerlink" title="4.3.3 引用的本质"></a>4.3.3 引用的本质 </h3><p> 本质：引用的本质在 C++ 内部实现的一个指针常量</p>
+<pre><code class="c++">void func(int&amp; ref) &#123;
+    ref = 50;   //ref 是引用，转换为 *ref = 50
+&#125;
+
+int main() &#123;
+
+    int a = 10;
+
+    int&amp; ref = a;  // 自动转换为 int* const ref=&amp;a; 指针常量时指针指向不可改，也说明为什么引用不可更改
+
+    ref = 100; // 内部发现 ref 是引用，自动帮我们转换为 *ref=100;
+
+    func(a);
+
+ &#125;</code></pre>
+<blockquote>
+<p>C++ 推荐使用引用技术，因为语法方便，引用本质是指针常量，但所有的指针操作编译器都帮我们做了。</p>
+</blockquote>
+<h3 id="4-3-4- 常量引用"><a href="#4-3-4- 常量引用" class="headerlink" title="4.3.4 常量引用"></a>4.3.4 常量引用 </h3><p> 作用：常量引用主要用来修饰形参，防止误操作</p>
+<p>在函数形参列表中，可以加 const 修饰形参，防止形参改变实参</p>
+<pre><code class="c++">void func(const int&amp; v) &#123;
+    v = 50;   // 常量引用不可赋值，报错
+    cout &lt;&lt; v &lt;&lt; endl;
+&#125;
+
+int main() &#123;
+
+    //int&amp; ref = 10;  // 报错。常量引用，引用必须引一块合法的内存空间
+
+    const int&amp; ref = 10; 
+    // int temp=10; const int&amp; ref = temp;  // 实际是这样的
+    //ref = 20; 加入 const 之后变为只读，不可以修改
+
+    // 函数中利用常量引用防止误操作修改实参
+    int a = 20;
+
+    func(a);
+
+    system(&quot;pause&quot;);
+
+ &#125;</code></pre>
+<h2 id="4-4- 函数的提高"><a href="#4-4- 函数的提高" class="headerlink" title="4.4 函数的提高"></a>4.4 函数的提高 </h2><h3 id="4-4-1- 函数默认值"><a href="#4-4-1- 函数默认值" class="headerlink" title="4.4.1 函数默认值"></a>4.4.1 函数默认值</h3><p> 在 C++ 中，函数的形参列表中的形参是可以有默认值的</p>
+<p>语法：<code>返回值类型 函数名 （参数 = 默认值）｛｝</code></p>
+<pre><code class="c++">// 定义函数时，可以设置初始默认值
+int func(int a, int b = 20,int c = 30) &#123;
+    return (a + b + c);
+&#125;
+
+int main() &#123;
+
+    cout &lt;&lt; func(10) &lt;&lt; endl;  
+    cout &lt;&lt; func(10, 40) &lt;&lt; endl;      // 如果有传参，就用传的参数，若无，就用默认的值
+    cout &lt;&lt; func(10, 40, 50)&lt;&lt; endl;
+    //cout &lt;&lt; func(, , 50)&lt;&lt; endl;        // 非法调用，不能只默认前两个，改第三个
+
+    system(&quot;pause&quot;);
+ &#125;</code></pre>
+<p>定义函数时，如果某个位置已经有了默认值，那么从这个位置往后，从左到右都必须有默认值。</p>
+<p>函数声明和函数定义，二者只能有一种默认参数，不能函数声明和函数定义都写默认参数。</p>
+<pre><code class="c++">int func(int a, int b = 30,int c = 0)        // 函数声明
+
+int func(int a, int b = 30,int c = 0) &#123;     // 函数定义
+    return (a + b + c);
+&#125;
+
+// 以上的默认值写法是错的，不能同时存在</code></pre>
+<h3 id="4-4-2- 函数占位参数"><a href="#4-4-2- 函数占位参数" class="headerlink" title="4.4.2 函数占位参数"></a>4.4.2 函数占位参数</h3><p>C++ 中函数的形参列表里可以有占位参数，用来做占位，调用函数时必须填补该位置</p>
+<p>语法：<code>返回值类型 函数名 （数据类型）｛｝</code></p>
+<pre><code class="c++">void func(int a, int,int) &#123;    
+    cout &lt;&lt; &quot;this is a test&quot; &lt;&lt; endl;
+&#125;
+
+int main() &#123;
+
+    func(10, 10, 10);
+
+    system(&quot;pause&quot;);
+ &#125;</code></pre>
+<h3 id="4-4-3- 函数重载"><a href="#4-4-3- 函数重载" class="headerlink" title="4.4.3 函数重载"></a>4.4.3 函数重载 </h3><p> 作用：函数名可以相同，提高复用性</p>
+<p>函数重载满足条件：</p>
+<ol>
+<li>同一个作用域下</li>
+<li>函数名相同</li>
+<li>函数参数 <strong> 类型不同 </strong> 或者 <strong> 个数不同 </strong> 或者 <strong> 顺序不同</strong></li>
+</ol>
+<pre><code class="c++">void func() &#123;    
+    cout &lt;&lt; &quot;func()的调用 &quot; &lt;&lt; endl;
+&#125;
+
+void func(int a) &#123;
+    cout &lt;&lt; &quot;func(int a)的调用 &quot; &lt;&lt; endl;
+&#125;
+
+int main() &#123;
+
+    func();        // 输出：func()的调用
+    func(10);      // 输出：func(int a)的调用
+
+    system(&quot;pause&quot;);
+ &#125;</code></pre>
+<blockquote>
+<p>函数的返回值不可以作为函数重载的条件</p>
+<p>函数参数引用可以作为函数重载的条件</p>
+<p>使用函数重载时，尽量不要写默认参数</p>
+</blockquote>
+<pre><code class="c++">void func(int&amp; a) &#123;
+    cout &lt;&lt; &quot;func1 的调用 &quot; &lt;&lt; endl;
+&#125;
+
+void func(const int &amp;a) &#123;
+    cout &lt;&lt; &quot;func2 的调用 &quot; &lt;&lt; endl;
+&#125;
+
+int main() &#123;
+    int a = 10;
+    func(a);                // 输出：func1 的调用
+
+    const int b = 10;
+    func(b);               // 输出：func2 的调用
+
+    system(&quot;pause&quot;);
+
+ &#125;</code></pre>
+<h2 id="4-5- 类和对象"><a href="#4-5- 类和对象" class="headerlink" title="4.5 类和对象"></a>4.5 类和对象</h2><p>C++ 面向对象的三大特性：封装，继承，多态。</p>
+<p>C++ 认为万事万物都皆为对象，对象上有其属性和行为</p>
+<h3 id="4-5-1- 封装"><a href="#4-5-1- 封装" class="headerlink" title="4.5.1 封装"></a>4.5.1 封装 </h3><p> 封装是 C++ 面向对象三大特性之一</p>
+<p>封装的意义一：</p>
+<ul>
+<li>将属性和行为作为一个整体，表现生活中的事物</li>
+<li>将属性和行为加以权限控制</li>
+</ul>
+<p>语法：<code>class 类名 &#123; 访问权限：属性 / 行为 &#125;；</code></p>
+<p>一个圆类：</p>
+<pre><code class="c++">const double PI = 3.14;
+
+class Circle &#123;
+
+public:              // 访问权限：公共权限
+    int m_r;
+
+    double calcul_perimeter() &#123;
+        return 2 * PI * m_r;
+    &#125;
+&#125;;
+
+int main() &#123;
+
+    Circle C1;   // 通过圆类，创建具体的圆（对象），实例化
+
+    C1.m_r = 10;   // 给属性赋值
+
+    cout &lt;&lt; C1.calcul_perimeter() &lt;&lt; endl;  // 输出：62.8
+
+    system(&quot;pause&quot;);
+ &#125;</code></pre>
+<p>类中的属性和行为，我们统一称为成员。</p>
+<p>属性：成员属性、成员变量</p>
+<p>行为：成员函数、成员方法</p>
+<p>封装的意义二：</p>
+<ul>
+<li>类在设计时，可以把属性和行为放在不同的权限下，加以控制</li>
+<li>访问权限有三种<ol>
+<li>public 公共权限：类内可以访问，类外可以访问                           </li>
+<li>protected 保护权限：类内可以访问，类外不可以访问                  </li>
+<li>private 私有权限：类内可以访问，类外不可以访问</li>
+</ol>
+</li>
+</ul>
+<pre><code class="c++">class Person &#123;
+
+public:             
+    string m_name;
+protected:
+    string m_car;
+private:
+    int m_password = 1001;
+
+public:
+    void get_info() &#123;
+        //m_name = &quot;liu wen&quot;;
+        m_car = &quot;BWM&quot;;
+        m_password = 123456;
+        cout &lt;&lt; m_name &lt;&lt; endl;
+        cout &lt;&lt; m_car &lt;&lt; endl;
+        cout &lt;&lt; m_password &lt;&lt; endl;
+    &#125;
+&#125;;
+
+int main() &#123;
+
+    Person p1;  
+    p1.m_name = &quot;li qiang&quot;;
+    p1.get_info();             // 输出：li qiang   BWM   123456
+
+    system(&quot;pause&quot;);
+ &#125;</code></pre>
+<p> struct 和 class 区别：</p>
+<p>在 C++ 中，struct 和 class 唯一的区别就在于默认的访问权限不同。</p>
+<p>区别：</p>
+<ul>
+<li>struct 默认权限为公共 public</li>
+<li>class 默认权限为私有 private</li>
+</ul>
+<p>成员属性设为私有</p>
+<ul>
+<li>将所有成员属性设为私有，可以自己控制读写权限</li>
+<li>对于写权限，我们可以检测数据的有效性</li>
+</ul>
+<p>举一个例子：</p>
+<pre><code class="c++">class Person &#123;
+
+public:             
+    void setname(string name) &#123;
+        m_name = name;
+    &#125;
+    string getname() &#123;
+        return m_name;
+    &#125;
+    string getcar() &#123;
+        string m_car = &quot;BWM&quot;;  // 初始化
+        return m_car;
+    &#125;
+    void setpassword(int password) &#123;
+        m_password = password;
+    &#125;
+
+private:
+    string m_name;   
+    string m_car;   
+    int m_password;  
+
+&#125;;
+
+int main() &#123;
+
+    Person p1;  
+
+    p1.setname(&quot;li qiang&quot;);           // 可写
+    cout &lt;&lt; p1.getname() &lt;&lt; endl;     // 可读
+
+    cout &lt;&lt; p1.getcar() &lt;&lt; endl;     // 只读
+
+    p1.setpassword(456789);            // 只写
+
+    system(&quot;pause&quot;);
+
+ &#125;</code></pre>
+<p>一个正方体的例子：</p>
+<pre><code class="c++">class Cube &#123;
+
+public:             
+    void setL(int L) &#123;
+        m_L = L;
+    &#125;
+    double getL() &#123;
+        return m_L;
+    &#125;
+    void setW(int W) &#123;
+        m_W = W;
+    &#125;
+    double getW() &#123;
+        return m_W;
+    &#125;
+    void setH(int H) &#123;
+        m_H = H;
+    &#125;
+    double getH() &#123;
+        return m_H;
+    &#125;
+    bool isSame(Cube&amp; c) &#123;
+        if (m_L == c.getL() &amp;&amp; m_W == c.getW() &amp;&amp; m_H == c.getH()) &#123;
+            return true;
+        &#125;
+        return false;
+    &#125;
+
+private:
+    double m_L;   
+    double m_W;
+    double m_H;
+&#125;;
+
+bool isSame(Cube&amp; c1, Cube&amp; c2) &#123;
+    if (c1.getL() == c2.getL() &amp;&amp; c1.getW() == c2.getW() &amp;&amp; c1.getH() == c2.getH()) &#123;
+        return true;
+    &#125;
+    return false;
+&#125;
+int main() &#123;
+
+    Cube C1;
+    C1.setL(100);
+    C1.setH(100);
+    C1.setW(100);
+
+    Cube C2;
+    C2.setL(100);
+    C2.setH(100);
+    C2.setW(100);
+
+    // 成员函数判断
+    bool tag = C1.isSame(C2);
+
+    if (tag) &#123;
+        cout &lt;&lt; &quot;C1 和 C2 是相同的 &quot; &lt;&lt; endl;
+    &#125;
+    else &#123;
+        cout &lt;&lt; &quot;C1 和 C2 是不同的 &quot; &lt;&lt; endl;
+    &#125;
+
+    // 全局函数判断
+    isSame(C1, C2);
+
+    system(&quot;pause&quot;);
+
+ &#125;</code></pre>
+<h3 id="4-5-2- 对象的初始化和清理"><a href="#4-5-2- 对象的初始化和清理" class="headerlink" title="4.5.2 对象的初始化和清理"></a>4.5.2 对象的初始化和清理 </h3><h4 id="4-5-2-1- 构造函数和析构函数"><a href="#4-5-2-1- 构造函数和析构函数" class="headerlink" title="4.5.2.1 构造函数和析构函数"></a>4.5.2.1 构造函数和析构函数</h4><p> 对象的初始化和清理也是两个非常重要的安全问题</p>
+<p>一个对象或者变量没有初始状态，对其使用后果是未知的</p>
+<p>同样使用完一个对象或者变量，没有及时清理，也会造成一定的安全问题</p>
+<p>C++ 利用了构造函数和析构函数解决上述问题，这两个函数将会被编译器自动调用，完成对象初始化和清理工作。对象的初始化和清理工作是编译器强制要我们做的事情，因此如果我们不提供构造和析构，编译器会提供编译器提供的构造函数和析构函数是空实现。</p>
+<ul>
+<li>构造函数：主要作用在于创建对象时为对象成员属性赋值，构造函数由编译器自动调用，无须手动调用。<strong>在创建对象时调用</strong>。</li>
+<li>析构函数：主要作用在于对象销毁系统自动调用，执行一些清理工作。<strong>在销毁对象前调用</strong>。</li>
+</ul>
+<p>构造函数语法：<code>类名 （）&#123;&#125;</code></p>
+<ol>
+<li>构造函数，没有返回值也不写 void</li>
+<li>构造函数名称与类名相同</li>
+<li>构造函数可以有参数，因此可以发生重载</li>
+<li>程序在调用对象时会自动调用构造，无须手动调用而且只会调用一次</li>
+</ol>
+<p>析构函数语法：<code>~ 类名（）&#123;&#125;</code></p>
+<ol>
+<li>析构函数，没有返回值也不写 void</li>
+<li>析构函数名称与类名相同，在名称前加上符号~</li>
+<li>析构函数不可以有参数，因此不可以发生重载</li>
+<li>程序在调用对象时会自动调用析构，无须手动调用而且只会调用一次</li>
+</ol>
+<pre><code class="c++">class Person &#123;
+public:
+
+    //Person 类的构造函数
+    Person() &#123;
+        cout &lt;&lt; &quot;Person 构造函数的调用 &quot; &lt;&lt; endl;
+    &#125;
+    //Person 类的析构函数
+    ~Person() &#123;
+        cout &lt;&lt; &quot;Person 析构函数的调用 &quot; &lt;&lt; endl;
+    &#125;
+&#125;;
+
+void test() &#123;
+    Person p;   // 在栈上的数据，函数执行完会被自动释放
+&#125;
+
+int main() &#123;
+
+    test();   // 构造，析构函数均会被调用
+
+    Person p1;   // 这里不会析构，p1 执行完没被释放，按 enter 后才被释放，调用析构
+
+    system(&quot;pause&quot;);
+
+ &#125;</code></pre>
+<h4 id="4-5-2-2- 构造函数的分类及调用"><a href="#4-5-2-2- 构造函数的分类及调用" class="headerlink" title="4.5.2.2 构造函数的分类及调用"></a>4.5.2.2 构造函数的分类及调用 </h4><p> 两种分类方式：</p>
+<ul>
+<li>按参数分：有参构造和无参构造</li>
+<li>按类型分：普通构造和拷贝构造</li>
+</ul>
+<p>三种调用方式：括号法   显示法   隐式转换法</p>
+<pre><code class="c++">class Person &#123;
+public:
+
+    //Person 类的构造函数
+    Person() &#123;
+        cout &lt;&lt; &quot; 默认构造函数的调用 &quot; &lt;&lt; endl;
+    &#125;
+    //Person 类的构造函数的重载 --- 有参构造
+    Person(int a) &#123;
+        age = a;
+        cout &lt;&lt; &quot; 有参构造函数的调用 &quot; &lt;&lt; endl;
+    &#125;
+
+    //Person 类的构造函数的重载 --- 拷贝构造
+    Person(const Person &amp;p) &#123;
+        age = p.age;
+        cout &lt;&lt; &quot; 拷贝构造函数的调用 &quot; &lt;&lt; endl;
+
+    &#125;
+
+    //Person 类的析构函数
+    ~Person() &#123;
+        cout &lt;&lt; &quot;Person 析构函数的调用 &quot; &lt;&lt; endl;
+    &#125;
+
+    int age;
+    int name;
+&#125;;
+
+int main() &#123;
+
+    // 括号调用法
+    Person p1;          // 无参构造调用，注意：无参构造调用不能写括号 p1()
+    //Person p4(); 这种写法会让编译器认为这是函数声明
+
+    Person p2(10);      // 有参构造调用
+    Person p3(p2);      // 拷贝参构造调用
+
+    // 显示法
+    Person p1;
+    Person p2 = Person(10); //Person(10); 匿名对象，执行完系统会立即回收
+    Person p3 = Person(p2);
+
+    // 隐式转换法
+    Person p2 = 10;      // 相当于 Person p2(10)
+    Person p3 = p2;      // 拷贝构造
+
+    system(&quot;pause&quot;);
+
+ &#125;</code></pre>
+<h4 id="4-5-2-3- 拷贝构造函数调用时机"><a href="#4-5-2-3- 拷贝构造函数调用时机" class="headerlink" title="4.5.2.3 拷贝构造函数调用时机"></a>4.5.2.3 拷贝构造函数调用时机</h4><p>C++ 中拷贝构造函数调用时机通常有三种情况：</p>
+<ul>
+<li>使用一个已经创建完毕的对象来初始化一个新对象</li>
+<li>值传递的方式给函数参数传值</li>
+<li>以值方式返回给局部对象</li>
+</ul>
+<pre><code class="c++">class Person &#123;
+public:
+
+    Person() &#123;
+        cout &lt;&lt; &quot; 默认构造函数的调用 &quot; &lt;&lt; endl;
+    &#125;
+    //Person 类的构造函数的重载 --- 拷贝构造
+
+    Person(int a) &#123;
+        age = a;
+        cout&lt;&lt; &quot; 有参构造函数的调用 &quot; &lt;&lt; endl;
+    &#125;
+
+    Person(const Person &amp;p) &#123;
+        age = p.age;
+        cout &lt;&lt; &quot; 拷贝构造函数的调用 &quot; &lt;&lt; endl;
+    &#125;
+
+    //Person 类的析构函数
+    ~Person() &#123;
+        cout &lt;&lt; &quot;Person 析构函数的调用 &quot; &lt;&lt; endl;
+    &#125;
+
+    int age;
+    int name;
+&#125;;
+
+//1、使用一个已经创建完毕的对象来初始化一个新对象
+void test1() &#123;
+    Person p1(20);
+    Person p2(p1);
+    cout &lt;&lt; p2.age &lt;&lt; endl;
+&#125;
+
+//2、值传递的方式给函数参数传值
+void doWork2(Person p) &#123;
+
+&#125;
+void test2() &#123;
+    Person p1;
+    doWork2(p1);
+&#125;
+
+//3、以值方式返回给局部对象
+Person doWork3() &#123;
+    Person p1;
+    cout &lt;&lt; (int*)&amp;p1 &lt;&lt; endl;
+    return p1;
+&#125;
+void test3() &#123;
+    Person p = doWork3();
+    cout &lt;&lt; (int*)&amp;p &lt;&lt; endl;
+&#125;
+
+int main() &#123;
+
+    test1();
+    cout &lt;&lt; &quot;----------&quot; &lt;&lt; endl;
+
+    test2();
+    cout &lt;&lt; &quot;----------&quot; &lt;&lt; endl;
+
+    test3();
+    cout &lt;&lt; &quot;----------&quot; &lt;&lt; endl;
+
+    system(&quot;pause&quot;);
+
+ &#125;</code></pre>
+<h4 id="4-5-2-4- 构造函数调用规则"><a href="#4-5-2-4- 构造函数调用规则" class="headerlink" title="4.5.2.4 构造函数调用规则"></a>4.5.2.4 构造函数调用规则 </h4><p> 默认情况下，C++ 编译器至少给一个类添加 3 个函数</p>
+<ol>
+<li>默认构造函数（无参，函数体为空）</li>
+<li>默认析构函数（无参，函数体为空）</li>
+<li>默认拷贝构造函数，对属性进行值拷贝</li>
+</ol>
+<p>构造函数的调用规则如下：</p>
+<ul>
+<li>如果用户定义有参构造函数，C++ 不再提供默认无参构造，但是会提供默认拷贝构造</li>
+<li>如果用户定义拷贝构造函数，C++ 不会再提供其他构造函数。</li>
+<li><strong>总的来说，必须写拷贝构造函数，有它就行。</strong></li>
+</ul>
+<h4 id="4-5-2-5- 深浅拷贝"><a href="#4-5-2-5- 深浅拷贝" class="headerlink" title="4.5.2.5 深浅拷贝"></a>4.5.2.5 深浅拷贝 </h4><p> 浅拷贝：简单的赋值拷贝操作</p>
+<p>深拷贝：在堆区重新申请空间，进行拷贝操作</p>
+<p>默认采用类的拷贝构造函数—浅拷贝：</p>
+<pre><code class="c++">class Person &#123;
+public:
+
+    Person() &#123;
+        cout &lt;&lt; &quot; 默认构造函数的调用 &quot; &lt;&lt; endl;
+    &#125;
+
+    Person(int a,int b) &#123;
+        age = a;
+        height = new int(b);
+        cout&lt;&lt; &quot; 有参构造函数的调用 &quot; &lt;&lt; endl;
+
+    &#125;
+
+    // 析构函数，将堆区开辟的数据做释放操作
+    ~Person() &#123;
+        if (height != NULL) &#123;
+            delete height;
+            height = NULL;
+        &#125;
+        cout &lt;&lt; &quot;Person 析构函数的调用 &quot; &lt;&lt; endl;
+    &#125;
+
+    int age;
+    int *height;
+&#125;;
+
+void test1() &#123;
+    Person p1(18,160);
+    cout &lt;&lt; p1.age &lt;&lt; endl;
+    cout &lt;&lt; *p1.height &lt;&lt; endl;
+
+    Person p2(p1);         // 默认浅拷贝
+
+    cout &lt;&lt; p2.age &lt;&lt; endl;
+    cout &lt;&lt; *p2.height &lt;&lt; endl;
+&#125;
+
+int main() &#123;
+
+    test1();   // 浅拷贝带来的问题是内存的重复释放，造成程序异常终止
+
+    system(&quot;pause&quot;);
+ &#125;</code></pre>
+<p>自己写类的拷贝构造函数—深拷贝：</p>
+<pre><code class="c++">class Person &#123;
+public:
+
+    Person() &#123;
+        cout &lt;&lt; &quot; 默认构造函数的调用 &quot; &lt;&lt; endl;
+    &#125;
+
+    Person(int a,int b) &#123;
+        age = a;
+        height = new int(b); 
+        cout&lt;&lt; &quot; 有参构造函数的调用 &quot; &lt;&lt; endl;
+
+    &#125;
+    // 自己写拷贝构造函数
+    Person(const Person&amp; p) &#123;
+        age = p.age;
+        //height = p.height; 编译器默认写法
+        height = new int(*p.height);  // 深拷贝
+    &#125;
+
+    // 析构函数，将堆区开辟的数据做释放操作
+    ~Person() &#123;
+        if (height != NULL) &#123;
+            delete height;
+            height = NULL;
+        &#125;
+        cout &lt;&lt; &quot;Person 析构函数的调用 &quot; &lt;&lt; endl;
+    &#125;
+
+    int age;
+    int *height;
+&#125;;
+
+void test1() &#123;...&#125;
+
+int main() &#123;...&#125;</code></pre>
+<blockquote>
+<p>总结：如果属性有在堆区开辟的，一定要自己提供拷贝构造函数，防止浅拷贝带来的问题</p>
+</blockquote>
+<h4 id="4-5-2-6- 初始化列表"><a href="#4-5-2-6- 初始化列表" class="headerlink" title="4.5.2.6 初始化列表"></a>4.5.2.6 初始化列表 </h4><p> 作用：c++ 提供了初始化列表语法，用来初始化属性</p>
+<p>语法：<code>构造函数（）：属性 1（值 1），属性 2（值 2）&#123;&#125;</code></p>
+<pre><code class="c++">class Person &#123;
+public:
+
+    Person() : A(0), B(0), C(1)&#123;   // 初始化默认属性
+        cout &lt;&lt; &quot; 构造函数的调用 &quot; &lt;&lt; endl;
+        cout &lt;&lt; A &lt;&lt; endl;
+        cout &lt;&lt; B &lt;&lt; endl;
+        cout &lt;&lt; C &lt;&lt; endl;
+    &#125;
+
+    Person(int a, int b, int c) : A(a), B(b), C(c)&#123;   // 通过传参初始化属性
+        cout &lt;&lt; &quot; 构造函数的调用 &quot; &lt;&lt; endl;
+        cout &lt;&lt; A &lt;&lt; endl;
+        cout &lt;&lt; B &lt;&lt; endl;
+        cout &lt;&lt; C &lt;&lt; endl;
+    &#125;
+
+    ~Person() &#123;
+        cout &lt;&lt; &quot; 析构函数的调用 &quot; &lt;&lt; endl;
+    &#125;
+private:
+    int A;
+    int B;
+    int C;
+&#125;;
+
+int main() &#123;
+
+    Person p(10,20,30);
+
+    system(&quot;pause&quot;);
+ &#125;</code></pre>
+<h4 id="4-5-2-7- 类对象作为类成员"><a href="#4-5-2-7- 类对象作为类成员" class="headerlink" title="4.5.2.7 类对象作为类成员"></a>4.5.2.7 类对象作为类成员 </h4><p>C++ 类中的成员可以是另一个类的对象，我们称为该成员为<strong> 对象成员</strong></p>
+<pre><code class="c++">class Phone &#123;
+public:
+    string phone_name;
+
+    Phone(string pname) &#123;
+        phone_name = pname;
+    &#125;    
+    ~Phone() &#123;
+        cout &lt;&lt; &quot;Phone 析构函数的调用 &quot; &lt;&lt; endl;
+    &#125;
+&#125;;
+
+class Person &#123;
+public:
+
+    Person(int a,string b) : m_id(a), m_phone(b)
+    &#123;
+        cout &lt;&lt; m_id &lt;&lt; endl;
+        cout &lt;&lt; m_phone.phone_name &lt;&lt; endl;
+    &#125;
+
+    ~Person() &#123;
+        cout &lt;&lt; &quot;Person 析构函数的调用 &quot; &lt;&lt; endl;
+    &#125;
+private:
+    int m_id;
+    Phone m_phone;   // 对象成员
+
+&#125;;
+
+int main() &#123;
+
+    Person p(111, &quot;iphone13&quot;);
+
+    system(&quot;pause&quot;);
+
+ &#125;</code></pre>
+<h4 id="4-5-2-8- 静态成员"><a href="#4-5-2-8- 静态成员" class="headerlink" title="4.5.2.8 静态成员"></a>4.5.2.8 静态成员 </h4><p> 静态成员就是在成员变量和成员函数前加上关键字 static，称为静态成员</p>
+<p>静态成员分为：</p>
+<ul>
+<li>静态成员变量<ul>
+<li>所有对象共享同一份数据</li>
+<li>在编译阶段分配内存</li>
+<li>类内声明，类外初始化</li>
+</ul>
+</li>
+<li>静态成员函数<ul>
+<li>所有对象共享同一个函数</li>
+<li>只能访问静态成员变量</li>
+</ul>
+</li>
+</ul>
+<pre><code class="c++">class Person &#123;
+public:
+    static void func()&#123;
+
+        cout &lt;&lt; &quot; 静态成员函数的调用 &quot; &lt;&lt; endl;
+        cout &lt;&lt; m_A &lt;&lt; endl;
+        //cout &lt;&lt; m_B &lt;&lt; endl;           不能访问 m_B, 静态成员函数只能访问静态成员变量
+
+    &#125;
+
+    static int m_A;  // 类内声明
+    int m_B;
+&#125;;
+
+int Person::m_A = 0;  // 类外初始化
+
+int main() &#123;
+
+    // 通过对象访问
+    Person p;
+    p.func();
+
+    // 通过类名访问
+    Person::func();
+
+    system(&quot;pause&quot;);
+
+ &#125;</code></pre>
+<p>static 在 C++ 中的作用：</p>
+<ul>
+<li>在修饰变量的时候，static 修饰的静态局部变量只执行初始化一次，而且延长了局部变量的生命周期，直到程序运行结束以后才释放。</li>
+<li>static 修饰全局变量的时候，这个全局变量只能在本文件中访问，不能在其它文件中访问，即便是 extern 外部声明也不可以。</li>
+<li>static 修饰一个函数，则这个函数的只能在本文件中调用，不能被其他文件调用。static 修饰的变量存放在全局数据区的静态变量区，包括全局静态变量和局部静态变量，都在全局数据区分配内存。初始化的时候自动初始化为 0。</li>
+<li>不想被释放的时候，可以使用 static 修饰。比如修饰函数中存放在栈空间的数组。如果不想让这个数组在函数调用结束释放可以使用 static 修饰。</li>
+<li>考虑到数据安全性（当程序想要使用全局变量的时候应该先考虑使用 static）。</li>
+</ul>
+<p>引用：<a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/cpp-static-usage.html">C/C++ 中 static 的用法全局变量与局部变量 | 菜鸟教程 (runoob.com)</a></p>
+<h4 id="4-5-2-9-const 成员"><a href="#4-5-2-9-const 成员" class="headerlink" title="4.5.2.9 const 成员"></a>4.5.2.9 const 成员</h4><p><strong>const 对象只能调用 const 成员函数；非 const 对象是可以调用 const 成员函数的。</strong></p>
+<h3 id="4-5-3-C- 对象模型和 this 指针"><a href="#4-5-3-C- 对象模型和 this 指针" class="headerlink" title="4.5.3 C++ 对象模型和 this 指针"></a>4.5.3 C++ 对象模型和 this 指针 </h3><h4 id="4-5-3-1- 成员变量和成员函数分开储存"><a href="#4-5-3-1- 成员变量和成员函数分开储存" class="headerlink" title="4.5.3.1 成员变量和成员函数分开储存"></a>4.5.3.1 成员变量和成员函数分开储存</h4><p> 在 C++ 中，类内的成员变量和成员函数分开储存</p>
+<p>只有非静态成员变量才属于类的对象</p>
+<p>首先举一个简单例子：一个空类占的内存空间</p>
+<pre><code class="c++">class Person &#123;
+
+&#125;;
+
+void test1() &#123;
+    Person p1;
+    cout &lt;&lt; sizeof(p1) &lt;&lt; endl;  // 输出结果 1，C++ 编译器会给每个空对象分配 1 字节空间，是为了区分空对象占内存的位置
+&#125;
+
+int main() &#123;
+
+    test1();
+
+    system(&quot;pause&quot;);
+
+ &#125;</code></pre>
+<p>非空类占的内存空间：非静态成员变量才属于类的对象，按 <strong> 成员变量计算内存空间</strong>；静态变量不属于，不计算内存。</p>
+<pre><code class="c++">class Person &#123;
+public:
+    void func() &#123;                   // 成员函数分开储存
+        cout &lt;&lt; m_A &lt;&lt; endl;
+    &#125;
+
+    int m_A;               // 计算成员变量 内存空间 4
+    static int m_B;        // 不计算
+&#125;;
+
+void test1() &#123;
+    Person p1;
+    cout &lt;&lt; sizeof(p1) &lt;&lt; endl;    // 输出结果 4
+&#125;
+
+int main() &#123;
+
+    test1();
+
+    system(&quot;pause&quot;);
+
+ &#125;</code></pre>
+<h4 id="4-5-3-2-this- 指针"><a href="#4-5-3-2-this- 指针" class="headerlink" title="4.5.3.2 this 指针"></a>4.5.3.2 this 指针 </h4><p> 每一个非静态成员函数只会诞生一份函数实例，也就是多个同类的对象会共用一块代码，那么这一块代码是如何区分每个对象调用自己的呢？</p>
+<p>C++ 通过提供特殊的对象指针，this 指针，解决上述问题，this 指针指向被调用的成员函数所属的对象</p>
+<p>this 指针是隐含每一个非静态成员函数内的一种指针</p>
+<p>this 指针不需要定义，直接使用即可</p>
+<p>this 指针的用途：</p>
+<ul>
+<li>当形参和成员变量同名时，可以用 this 指针来区分</li>
+<li>在类的非静态成员函数中返回对象本身，可使用 return *this</li>
+</ul>
+<pre><code class="c++">class Person &#123;
+public:
+    Person(int age) &#123;
+        this-&gt;age = age;   // 形参 age 和成员变量 age 同名
+    &#125;
+    Person&amp; addAge(Person &amp;p) &#123;
+        this-&gt;age += p.age;
+        return *this;            // 可以链式调用
+    &#125;
+
+    int age;
+&#125;;
+
+void test1() &#123;
+    Person p1(18);
+    cout &lt;&lt; p1.age &lt;&lt; endl;
+&#125;
+
+void test2() &#123;
+    Person p1(10);
+    Person p2(10);
+    p2.addAge(p1).addAge(p1).addAge(p1);
+    cout &lt;&lt; p2.age &lt;&lt; endl;
+&#125;
+
+int main() &#123;
+
+    test1();
+
+    test2();
+
+    system(&quot;pause&quot;);
+ &#125;</code></pre>
+<h4 id="4-5-3-3- 空指针访问成员函数"><a href="#4-5-3-3- 空指针访问成员函数" class="headerlink" title="4.5.3.3 空指针访问成员函数"></a>4.5.3.3 空指针访问成员函数</h4><p>C++ 中空指针也是可以调用成员函数的，但是也要注意有没有用到 this 指针</p>
+<p>如果用到 this 指针，需要加以判断保证代码的健壮性</p>
+<pre><code class="c++">class Person &#123;
+public:
+    void func() &#123;
+        cout &lt;&lt; &quot; 调用成员函数 &quot; &lt;&lt; endl;
+    &#125;
+    void getAge() &#123;
+        cout &lt;&lt; age &lt;&lt; endl;  // 等同于 this-&gt;age，传入的指针为 NULL
+    &#125;
+    void getName() &#123;
+        if (this == NULL) &#123;         // 加个判断，避免传入空指针
+            return;
+        &#125;
+        cout &lt;&lt; name &lt;&lt; endl;
+    &#125;
+
+    int age;
+    string name;
+&#125;;
+
+void test1() &#123;
+    Person* p = NULL;
+
+    p-&gt;func();
+    //p-&gt;getAge(); 报错
+
+    p-&gt;getName();
+&#125;
+
+int main() &#123;
+
+    test1();
+
+    system(&quot;pause&quot;);
+ &#125;</code></pre>
+<h4 id="4-5-3-4-const 修饰成员函数"><a href="#4-5-3-4-const 修饰成员函数" class="headerlink" title="4.5.3.4 const 修饰成员函数"></a>4.5.3.4 const 修饰成员函数 </h4><p> 常函数：</p>
+<ul>
+<li>成员函数后加 const 后我们称之为这个函数为常函数</li>
+<li>常函数内不可以修改成员属性</li>
+<li>成员属性声明时加关键字 mutable 后，在常函数中依然可以修改</li>
+</ul>
+<p>常对象：</p>
+<ul>
+<li>声明对象前加 const 称该对象为常对象</li>
+<li>常对象只能调用常函数</li>
+</ul>
+<pre><code class="c++">class Person &#123;
+public:
+
+    // 在成员函数后面加 const，称为常函数，修饰的是 this 指向，让指针指向的值不可以修改
+    void getAge() const&#123;
+        //this-&gt;age = 100; // 报错
+        this-&gt;name = &quot;ssss&quot;;   //name 是 mutable 属性，可以修改
+
+    &#125;
+
+    void func1() &#123;
+        this = NULL;     // 报错，this 本质是指针常量，不可以修改指针的指向
+    &#125;
+    void func2() &#123;
+        age = 100;
+    &#125;
+
+    int age;
+    mutable string name;  // 特殊变量，即使在常函数中，也可以修改这个值
+&#125;;
+
+void test1() &#123;
+    const Person p;   // 常对象
+    p.age = 100;     // 报错，也不可修改
+    p.name = &quot;sd&quot;;   // 可以修改
+
+    // 常对象只能调用常函数
+    p.getAge();
+    p.func2();   // 报错
+
+&#125;
+
+int main() &#123;
+
+    test1();
+
+    system(&quot;pause&quot;);
+ &#125;</code></pre>
+<h3 id="4-5-4- 友元"><a href="#4-5-4- 友元" class="headerlink" title="4.5.4 友元"></a>4.5.4 友元 </h3><p> 在程序里，有的私有属性也想让一些类外特殊的一些函数或者类进行访问，就需要用到 <strong> 友元 </strong> 的技术</p>
+<p>友元的目的就是让一个函数或者类，访问另一个类中私有属性。一个类中可以有多个友元。</p>
+<p>友元的关键字为<code>friend</code></p>
+<p>友元的三种实现：</p>
+<ul>
+<li>全局函数做友元</li>
+<li>类做友元</li>
+<li>成员函数做友元</li>
+</ul>
+<p><strong>全局函数做友元：</strong></p>
+<pre><code class="c++">class Building &#123;
+
+    friend void Goodgay(Building&amp; b); // 声明该函数为 Building 类的友元, 可以访问 Building 的私有属性
+
+public:
+    Building() &#123;
+        m_sittingroom = &quot; 客厅 &quot;;
+        m_bedgroom = &quot; 卧室 &quot;;
+    &#125;
+
+    string m_sittingroom;
+
+private:
+    string m_bedgroom;
+
+&#125;;
+
+void Goodgay(Building &amp;b) &#123;
+
+    cout &lt;&lt; b.m_sittingroom &lt;&lt; endl;
+    cout &lt;&lt; b.m_bedgroom &lt;&lt; endl;     // 访问 Building 类的私有属性
+
+&#125;
+void test1() &#123;
+    Building b1;
+    Goodgay(b1);
+&#125;
+
+int main() &#123;
+
+    test1();
+
+    system(&quot;pause&quot;);
+ &#125;</code></pre>
+<p><strong>类做友元</strong>：</p>
+<pre><code class="c++">class Building &#123;
+    friend class Goodgay;  // 友元可以访问 Building 的私有成员
+
+public:
+    Building();
+
+    string m_sittingroom;
+
+private:
+    string m_bedroom;
+&#125;;
+
+class Goodgay &#123;
+
+public:
+    Goodgay();
+
+    void visit();
+
+    Building *b;
+&#125;;
+
+// 类外写成员函数
+Building::Building() &#123;
+    m_sittingroom = &quot; 客厅 &quot;;
+    m_bedroom = &quot; 卧室 &quot;;
+&#125;
+Goodgay::Goodgay()&#123;
+    b = new Building;
+&#125;
+void Goodgay::visit() &#123;
+    cout &lt;&lt; b-&gt;m_sittingroom &lt;&lt; endl;
+    cout &lt;&lt; b-&gt;m_bedroom &lt;&lt; endl;
+&#125;
+
+void test1() &#123;
+    Goodgay gg;
+    gg.visit();
+&#125;
+
+int main() &#123;
+
+    test1();
+
+    system(&quot;pause&quot;);
+ &#125;</code></pre>
+<p><strong>成员函数做友元</strong>：</p>
+<pre><code class="c++">class Building;
+
+class Goodgay &#123;
+
+public:
+    Goodgay();
+
+    void visit();
+
+    Building *b;
+&#125;;
+
+class Building &#123;
+    friend void Goodgay::visit();  // 成员函数做友元
+
+public:
+    Building();
+
+    string m_sittingroom;
+
+private:
+    string m_bedroom;
+&#125;;
+
+// 类外写成员函数
+Building::Building() &#123;
+    m_sittingroom = &quot; 客厅 &quot;;
+    m_bedroom = &quot; 卧室 &quot;;
+&#125;
+Goodgay::Goodgay()&#123;
+    b = new Building;
+&#125;
+void Goodgay::visit() &#123;
+    cout &lt;&lt; b-&gt;m_sittingroom &lt;&lt; endl;
+    cout &lt;&lt; b-&gt;m_bedroom &lt;&lt; endl;          // 可以访问私有属性
+&#125;
+void test1() &#123;
+    Goodgay gg;
+    gg.visit();
+&#125;
+
+int main() &#123;
+
+    test1();
+
+    system(&quot;pause&quot;);
+ &#125;</code></pre>
+<blockquote>
+<p>注意 Building 类必须写在 Goodgay 类后面</p>
+</blockquote>
+<p>关于友元，有两点需要说明：</p>
+<ul>
+<li><strong>友元的关系是单向 </strong> 的而不是双向的。如果声明了类 B 是类 A 的友元类，不等于类 A 是类 B 的友元类，类 A 中的成员函数不能访问类 B 中的 private 成员。</li>
+<li><strong>友元的关系不能传递</strong>。如果类 B 是类 A 的友元类，类 C 是类 B 的友元类，不等于类 C 是类 A 的友元类。</li>
+</ul>
+<p>以上的例子中，都是使用 A 类中的成员函数作为 B 类的友元，因此 A 可以访问 B 类的私有属性。其实加友元关键字后，该函数可以变成全局函数，这个全局函数写在类内（声明和实现都写在类内）。可以在其他地方直接调用（无需写作用域）。</p>
+<pre><code class="c++">class Person &#123;
+
+    // 全局函数在类内实现, 加 friend 关键字
+    friend void showPerson(Person &amp;p) &#123;
+        cout &lt;&lt; p.m_name &lt;&lt; endl;
+        cout &lt;&lt; p.m_age &lt;&lt; endl;
+    &#125;;
+
+public:
+    Person(string name, int age) &#123;
+        this-&gt;m_name = name;
+        this-&gt;m_age = age;
+    &#125;;
+
+private:
+    string m_name;
+    int m_age;
+&#125;;
+
+void test() &#123;
+    Person p1(&quot;Tom&quot;, 25);
+    showPerson(p1);     // 这是一个全局函数
+
+&#125;
+
+int main() &#123;
+
+    test();
+
+    system(&quot;pause&quot;);
+&#125;</code></pre>
+<h3 id="4-5-5- 运算符重载"><a href="#4-5-5- 运算符重载" class="headerlink" title="4.5.5 运算符重载"></a>4.5.5 运算符重载 </h3><p> 运算符重载的概念：对已有的运算符进行定义，赋予其另一种功能，以适应不同的数据类型</p>
+<h4 id="4-5-5-1- 加号运算符重载"><a href="#4-5-5-1- 加号运算符重载" class="headerlink" title="4.5.5.1 加号运算符重载"></a>4.5.5.1 加号运算符重载 </h4><p> 作用：实现两个自定义数据类型相加的运算。对于编译器内置的数据类型（如整型，浮点型），编译器知道如何进行加减乘除，但是对于自定义的数据类型，就不管用了。</p>
+<p><strong>成员函数实现 + 号重载</strong></p>
+<pre><code class="c++">class Person &#123;
+public:
+    // 成员函数实现 + 号重载
+    Person operator+(Person&amp; p) &#123;
+        Person temp;
+        temp.m_A = this-&gt;m_A + p.m_A;
+        temp.m_B = this-&gt;m_B + p.m_B;
+        return temp;
+    &#125;
+    int m_A ;
+    int m_B ;
+&#125;;
+
+void test1() &#123;
+    Person p1;
+    p1.m_A = 10;
+    p1.m_B = 20;
+
+    Person p2;
+    p2.m_A = 100;
+    p2.m_B = 200;
+
+    Person p3 = p1 + p2;    //Person 类型的数据进行加号运算
+    cout &lt;&lt; p3.m_A &lt;&lt; endl;
+    cout &lt;&lt; p3.m_B &lt;&lt; endl;
+
+&#125;
+
+int main() &#123;
+
+    test1();
+
+    system(&quot;pause&quot;);
+ &#125;</code></pre>
+<p><strong>全局函数实现 + 号重载</strong></p>
+<pre><code class="c++">class Person &#123;...&#125;;
+
+// 全局函数重载 + 号运算符
+Person operator+(Person&amp; p1, Person&amp; p2) &#123;
+    Person temp;
+    temp.m_A =p1.m_A + p2.m_A;
+    temp.m_B = p1.m_B + p2.m_B;
+    return temp;
+&#125;
+</code></pre>
+<p>运算符重载，也可以发生函数重载</p>
+<pre><code class="c++">class Person &#123;...&#125;;
+
+Person operator+(Person&amp; p1, Person&amp; p2) &#123;
+    Person temp;
+    temp.m_A =p1.m_A + p2.m_A;
+    temp.m_B = p1.m_B + p2.m_B;
+    return temp;
+&#125;
+
+Person operator+(Person&amp; p1, int a) &#123;
+    Person temp;
+    temp.m_A = p1.m_A + a;
+    temp.m_B = p1.m_B + a;
+    return temp;
+&#125;
+
+void test1() &#123;
+    Person p1；
+    Person p2;
+    Person p3 = p1 + p2;    //Person 类型的数据进行加号运算
+    Person p4 = p1 + 10;    //Person 类型的数据与整型数据进行加号运算
+&#125;</code></pre>
+<h4 id="4-5-5-2- 左移运算符重载"><a href="#4-5-5-2- 左移运算符重载" class="headerlink" title="4.5.5.2 左移运算符重载"></a>4.5.5.2 左移运算符重载</h4><pre><code class="c++">class Person &#123;
+public:
+
+    int m_A = 10 ;
+    int m_B = 20 ;
+&#125;;
+
+// 全局函数重载 &lt;&lt; 号运算符
+ostream &amp; operator&lt;&lt;(ostream &amp;out,Person &amp;p) &#123;
+    out &lt;&lt; p.m_A &lt;&lt; endl;
+    out &lt;&lt; p.m_B &lt;&lt; endl;
+    return out;
+&#125;
+
+void test1() &#123;
+    Person p1;
+    cout &lt;&lt; p1 &lt;&lt; endl;   // 重载过的 &lt;&lt; 运算符，可以直接输出 Person 类型的数据
+    cout &lt;&lt; p1.m_A;  // 原有的 int 类型数据也可以照样输出
+&#125;
+
+int main() &#123;
+
+    test1();
+
+    system(&quot;pause&quot;);
+ &#125;</code></pre>
+<blockquote>
+<p>左移运算符只能在全局函数中重载。成员函数中达不到这个效果。</p>
+</blockquote>
+<h4 id="4-5-5-3- 递增运算符重载"><a href="#4-5-5-3- 递增运算符重载" class="headerlink" title="4.5.5.3 递增运算符重载"></a>4.5.5.3 递增运算符重载</h4><pre><code class="c++">class Myinteger &#123;
+
+    friend ostream&amp; operator&lt;&lt;(ostream&amp; out, Myinteger a);
+
+public:
+
+    Myinteger() &#123;
+        m_num = 0;
+    &#125;
+    // 重载 ++ 运算符，前置 ++
+    Myinteger&amp; operator++() &#123;
+        m_num++;
+        return *this;
+    &#125;
+    // 重载 ++ 运算符，后置 ++
+    Myinteger operator++(int) &#123;     //int 是占位参数，区分前置和后置递增
+        Myinteger temp = *this;
+        m_num++;
+        return temp;   // 返回值，不能返回引用，temp 是一个局部（临时）变量
+    &#125;
+private:
+
+    int m_num ;
+
+&#125;;
+
+ostream&amp; operator&lt;&lt;(ostream&amp; out, Myinteger a) &#123;
+    out &lt;&lt; a.m_num;
+    return out;
+&#125;
+void test1() &#123;
+    Myinteger m;
+    cout &lt;&lt; ++m &lt;&lt; endl;  // 结果 1
+    cout &lt;&lt; m &lt;&lt; endl;    // 结果 1
+
+    Myinteger n;
+    cout &lt;&lt; n++ &lt;&lt;endl;  // 结果 0
+    cout &lt;&lt; n &lt;&lt; endl;   // 结果 1
+&#125;
+
+int main() &#123;
+
+    test1();
+
+    system(&quot;pause&quot;);
+ &#125;</code></pre>
+<blockquote>
+<p>重载后置 ++ 时，也可以将 temp 开辟在堆区，就可以返回引用了。</p>
+</blockquote>
+<h4 id="4-5-5-4- 赋值运算符重载"><a href="#4-5-5-4- 赋值运算符重载" class="headerlink" title="4.5.5.4 赋值运算符重载"></a>4.5.5.4 赋值运算符重载</h4><p>C++ 编译器至少给一个类添加 4 个函数</p>
+<ol>
+<li>默认构造函数（无参，函数体为空）</li>
+<li>默认析构函数（无参，函数体为空）</li>
+<li>默认拷贝构造函数，对属性进行值拷贝</li>
+<li>赋值运算符 operator=，对属性进行值拷贝</li>
+</ol>
+<p>如果类中有属性指向堆区，做赋值操作时也会出现深浅拷贝问题。</p>
+<pre><code class="c++">class Person &#123;
+public:
+    Person(int age) &#123;
+        m_A = new int(age);  // 指针 m_A 指向堆区开辟的内存，内存存放 age 的值
+    &#125;
+    ~Person() &#123;
+        if (m_A != NULL) &#123;
+            delete m_A;
+            m_A = NULL;
+        &#125;
+    &#125;
+    // 重载赋值运算符
+    Person &amp;operator=(Person &amp;p) &#123;
+        //m_A = p.m_A; 编译器提供的浅拷贝
+
+        if (m_A != NULL) &#123;   // 先判断是否有属性在堆区，先释放干净，再深拷贝
+            delete m_A;
+            m_A = NULL;
+        &#125;
+        m_A = new int(*p.m_A);   // 深拷贝
+
+        return *this;
+    &#125;
+
+    int* m_A;
+&#125;;
+
+void test1() &#123;
+    Person p1(20);
+    Person p2(18);
+    Person p3(30);
+
+    p2 = p1;     // 采用自写的赋值深拷贝
+
+    p3 = p2 = p1;  // 链式赋值，这就需要重载赋值时 return 本身
+
+    cout &lt;&lt; *p1.m_A &lt;&lt; endl;
+    cout &lt;&lt; *p2.m_A &lt;&lt; endl;
+    cout &lt;&lt; *p3.m_A &lt;&lt; endl;
+&#125;
+
+int main() &#123;
+
+    test1();
+
+    system(&quot;pause&quot;);
+ &#125;</code></pre>
+<h4 id="4-5-5-5- 关系运算符重载"><a href="#4-5-5-5- 关系运算符重载" class="headerlink" title="4.5.5.5 关系运算符重载"></a>4.5.5.5 关系运算符重载 </h4><p> 作用：重载关系运算符，可以让两个自定义类型对象进行对比操作</p>
+<pre><code class="c++">class Person &#123;
+public:
+    Person(string a, int b) &#123;
+        m_Name = a;
+        m_Age = b;
+    &#125;
+
+    bool operator==(Person&amp; p) &#123;
+        if (this-&gt;m_Name == p.m_Name &amp;&amp; this-&gt;m_Age == p.m_Age) &#123;
+            return true;
+        &#125;
+        else &#123;
+            return false;
+        &#125;
+    &#125;
+
+    string m_Name;
+    int m_Age;
+&#125;;
+
+void test1() &#123;
+    Person p1(&quot;Tom&quot;, 25);
+    Person p2(&quot;Tom&quot;, 25);
+
+    if (p1 == p2) &#123;
+        cout &lt;&lt; &quot;the same&quot; &lt;&lt; endl;
+    &#125;
+    else &#123;
+        cout &lt;&lt; &quot;the different&quot; &lt;&lt; endl;
+    &#125;
+&#125;
+
+int main() &#123;
+
+    test1();
+
+    system(&quot;pause&quot;);
+ &#125;</code></pre>
+<h4 id="4-5-5-6- 函数调用运算符重载"><a href="#4-5-5-6- 函数调用运算符重载" class="headerlink" title="4.5.5.6 函数调用运算符重载"></a>4.5.5.6 函数调用运算符重载</h4><ul>
+<li>函数调用运算符（）也可以重载</li>
+<li>由于重载后使用的方式非常像函数的调用，因此称为仿函数</li>
+<li>仿函数没有固定写法，非常灵活</li>
+</ul>
+<pre><code class="c++">void func()&#123;
+
+&#125;
+func()  //func 是函数名，（）是函数调用的意思</code></pre>
+<p>下面就是重载函数调用符括号（）:</p>
+<pre><code class="c++">class Myprint &#123;
+public:
+    void operator()(string test) &#123;
+        cout &lt;&lt; test &lt;&lt; endl;
+    &#125;
+&#125;;
+
+class Myadd &#123;
+public:
+    int operator()(int a, int b) &#123;
+        return a + b;
+    &#125;
+&#125;;
+
+void test1() &#123;
+    Myprint myprint;
+    myprint(&quot;hello world&quot;);
+
+    Myadd add;
+    cout &lt;&lt; add(10, 20) &lt;&lt; endl;
+    cout &lt;&lt; Myadd()(20, 30) &lt;&lt; endl;  // 匿名函数对象
+&#125;
+
+int main() &#123;
+
+    test1();
+
+    system(&quot;pause&quot;);
+ &#125;</code></pre>
+<h3 id="4-5-6- 继承"><a href="#4-5-6- 继承" class="headerlink" title="4.5.6 继承"></a>4.5.6 继承 </h3><p> 继承的面向对象的三大特性之一。</p>
+<p>有些类与类之间存在特殊的关系，下级别的成员除了拥有上一级的共性，还有自己的特性。这个时候我们就可以考虑利用继承的技术，减少重复代码。</p>
+<h4 id="4-5-6-1- 继承基本语法"><a href="#4-5-6-1- 继承基本语法" class="headerlink" title="4.5.6.1 继承基本语法"></a>4.5.6.1 继承基本语法 </h4><p> 语法：<code>class 子类名：继承方式 父类｛｝</code></p>
+<p>子类也叫派生类；父类也叫基类</p>
+<pre><code class="c++">// 定义父类
+class BasePage &#123;
+public:
+    void header() &#123;
+        cout &lt;&lt; &quot; 首页、公开课、登陆、注册……(公共头部)&quot; &lt;&lt; endl;
+    &#125;
+    void footer() &#123;
+        cout &lt;&lt; &quot; 帮助中心、交流合作、站内地图……(公共底部)&quot; &lt;&lt; endl;
+    &#125;
+private:
+    int date;
+&#125;;
+
+// 子类：Java 页面，继承 BasePage 类的属性
+class Java : public BasePage&#123;
+public:
+    void content() &#123;
+        cout &lt;&lt; &quot;JAVA 学科视频 &quot; &lt;&lt; endl;
+    &#125;
+&#125;;
+
+// 子类：CPP 页面，继承 BasePage 类的属性
+class CPP : public BasePage &#123;
+public:
+    void content() &#123;
+        cout &lt;&lt; &quot;CPP 学科视频 &quot; &lt;&lt; endl;
+    &#125;
+&#125;;
+
+void test1() &#123;
+    Java java;
+    java.header();
+    java.footer();
+    java.content();
+
+    CPP cpp;
+    cpp.header();
+    cpp.footer();
+    cpp.content();
+&#125;
+
+int main() &#123;
+
+    test1();
+
+    system(&quot;pause&quot;);
+ &#125;</code></pre>
+<h4 id="4-5-6-2- 继承方式"><a href="#4-5-6-2- 继承方式" class="headerlink" title="4.5.6.2 继承方式"></a>4.5.6.2 继承方式 </h4><p> 继承方式一共有三种：默认为，私有继承（private）。</p>
+<ul>
+<li>公共继承（public）</li>
+<li>保护继承（protected）</li>
+<li>私有继承（private）</li>
+</ul>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20220119164227608.png" alt="继承方式"></p>
+<blockquote>
+<p>基类的私有属性永远都无法通过继承访问。</p>
+<p>只能采用 friend 友元技术访问。</p>
+</blockquote>
+<h4 id="4-5-6-3- 继承中的对象模型"><a href="#4-5-6-3- 继承中的对象模型" class="headerlink" title="4.5.6.3 继承中的对象模型"></a>4.5.6.3 继承中的对象模型 </h4><p> 从父类继承过来的成员，哪些成员继承到子类中了？</p>
+<p>其实，父类中所有的非静态成员属性都会被子类继承下去，只是父类中的私有属性被编译器隐藏了，不可访问，但是确实继承下去了。</p>
+<pre><code class="c++">class BasePage &#123;
+public:
+    int a;
+protected:
+    int b;
+private:
+    int c;
+&#125;;
+
+class Son :public BasePage &#123;
+public:
+    int d;
+&#125;;
+
+void test1() &#123;
+    Son s1;
+    cout &lt;&lt; sizeof(s1) &lt;&lt; endl;  // 输出 16 （4*4）
+&#125;
+
+int main() &#123;
+
+    test1();
+
+    system(&quot;pause&quot;);
+ &#125;</code></pre>
+<h4 id="4-5-6-4- 继承中构造和析构顺序"><a href="#4-5-6-4- 继承中构造和析构顺序" class="headerlink" title="4.5.6.4 继承中构造和析构顺序"></a>4.5.6.4 继承中构造和析构顺序 </h4><p> 子类继承父类后，当创建子类对象，也会调用父类的构造函数。那么父类和子类的构造和析构顺序是谁先谁后？</p>
+<pre><code class="c++">class BasePage &#123;
+public:
+    BasePage() &#123;
+        cout &lt;&lt; &quot; 父类构造函数 &quot; &lt;&lt; endl;
+    &#125;
+    ~BasePage() &#123;
+        cout &lt;&lt; &quot; 父类析构函数 &quot; &lt;&lt; endl;
+    &#125;
+&#125;;
+
+class Son :public BasePage &#123;
+public:
+    Son() &#123;
+        cout &lt;&lt; &quot; 子类构造函数 &quot; &lt;&lt; endl;
+    &#125;
+    ~Son() &#123;
+        cout &lt;&lt; &quot; 子类析造函数 &quot; &lt;&lt; endl;
+    &#125;
+&#125;;
+
+void test1() &#123;
+    Son s1;            
+&#125;
+
+int main() &#123;
+
+    test1();
+
+    system(&quot;pause&quot;);
+ &#125;
+
+/* 输出：
+父类构造函数
+子类构造函数
+子类析造函数
+父类析构函数
+*/</code></pre>
+<h4 id="4-5-6-5- 继承中同名成员处理方式"><a href="#4-5-6-5- 继承中同名成员处理方式" class="headerlink" title="4.5.6.5 继承中同名成员处理方式"></a>4.5.6.5 继承中同名成员处理方式 </h4><p><strong> 继承中允许子类和父类有同名成员，不会覆盖</strong>。当子类与父类出现同名的成员，如何通过子类对象，访问到子类或者父类中同名的数据呢？</p>
+<ul>
+<li>访问子类同名成员，直接访问即可</li>
+<li>访问父类同名成员，需要加作用域</li>
+</ul>
+<pre><code class="c++">class BasePage &#123;
+public:
+    void func() &#123;
+        cout &lt;&lt; &quot; 父类函数的调用 &quot; &lt;&lt; endl;
+    &#125;
+
+    int m_A = 100;
+    int m_B = 200;
+
+&#125;;
+
+class Son :public BasePage &#123;
+public:
+    void func() &#123;
+        cout &lt;&lt; &quot; 子类函数的调用 &quot; &lt;&lt; endl;
+    &#125;
+
+    int m_A = 10;
+&#125;;
+
+void test1() &#123;
+    Son s1;
+    cout &lt;&lt; s1.m_A &lt;&lt; endl;              // 输出子类中自有的数据
+    cout &lt;&lt; s1.BasePage::m_A &lt;&lt; endl;    // 输出父类中同名的数据
+    cout &lt;&lt; s1.m_B &lt;&lt; endl;
+
+    s1.func();                     // 输出子类中自有的函数
+    s1.BasePage::func();           // 输出父类中同名的函数    
+&#125;
+
+int main() &#123;
+
+    test1();
+
+    system(&quot;pause&quot;);
+ &#125;</code></pre>
+<p>总结：</p>
+<ol>
+<li>子类对象可以直接访问到子类中同名成员</li>
+<li>子类对象加作用域可以访问到父类同名成员</li>
+<li>当子类与父类拥有同名的成员函数，子类会隐藏父类中同名成员函数，加作用域可以访问父类中同名函数。</li>
+</ol>
+<h4 id="4-5-6-6- 继承同名静态成员处理方式"><a href="#4-5-6-6- 继承同名静态成员处理方式" class="headerlink" title="4.5.6.6 继承同名静态成员处理方式"></a>4.5.6.6 继承同名静态成员处理方式 </h4><p> 问题：继承中同名的静态成员在子类对象如何进行访问</p>
+<p>静态成员和非静态成员出现同名，处理方式一致</p>
+<ul>
+<li>访问子类同名成员，直接访问即可</li>
+<li>访问父类同名成员，需要加作用域</li>
+</ul>
+<pre><code class="c++">class BasePage &#123;
+public:
+    static void func() &#123;
+        cout &lt;&lt; &quot; 父类函数的调用 &quot; &lt;&lt; endl;
+    &#125;
+
+    static int m_A;
+    int m_B = 200;
+
+&#125;;
+int BasePage::m_A = 100;
+
+
+class Son :public BasePage &#123;
+public:
+    static void func() &#123;
+        cout &lt;&lt; &quot; 子类函数的调用 &quot; &lt;&lt; endl;
+    &#125;
+    static int m_A;
+&#125;;
+
+int Son::m_A = 10;
+
+void test1() &#123;
+    Son s1;
+
+    // 通过对象访问
+    cout &lt;&lt; s1.m_A &lt;&lt; endl;              // 输出子类中自有的数据
+    cout &lt;&lt; s1.BasePage::m_A &lt;&lt; endl;    // 输出父类中同名的数据
+    cout &lt;&lt; s1.m_B &lt;&lt; endl;
+
+    // 通过类名访问
+    cout &lt;&lt; Son::m_A &lt;&lt; endl;            // 访问子类自己的属性
+    cout &lt;&lt; Son::BasePage::m_A &lt;&lt; endl;  // 访问子类的父类属性
+
+&#125;
+
+int main() &#123;
+
+    test1();
+
+    system(&quot;pause&quot;);
+ &#125;</code></pre>
+<h4 id="4-5-6-7- 多继承语法"><a href="#4-5-6-7- 多继承语法" class="headerlink" title="4.5.6.7 多继承语法"></a>4.5.6.7 多继承语法</h4><p>C++ 允许一个类继承多个类。一个类继承了多个父类，称为多继承。</p>
+<p>语法：<code>class 子类 ：继承方式 父类 1，继承方式 父类 2&#123;&#125;</code></p>
+<p>多继承可能会引发父类中有同名成员出现，需要加作用域区分</p>
+<blockquote>
+<p>C++ 实际开发中不建议用多继承</p>
+</blockquote>
+<pre><code class="c++">class Base1 &#123;
+public:
+    void func() &#123;
+        cout &lt;&lt; &quot; 父类 1 函数的调用 &quot; &lt;&lt; endl;
+    &#125;
+
+    int m_A = 100;
+    int m_B = 200;
+
+&#125;;
+class Base2 &#123;
+public:
+     void func() &#123;
+        cout &lt;&lt; &quot; 父类 2 函数的调用 &quot; &lt;&lt; endl;
+    &#125;
+
+    int m_A = 10;
+    int m_B = 20;
+    int m_C = 30;
+
+&#125;;
+
+class Son :public Base1,public Base2 &#123;
+public:
+    void func() &#123;
+        cout &lt;&lt; &quot; 子类函数的调用 &quot; &lt;&lt; endl;
+    &#125;
+
+    int m_A = 1;
+    int m_D = 2;
+&#125;;
+
+
+
+void test1() &#123;
+    Son s1;
+    cout &lt;&lt; s1.m_A &lt;&lt; endl;
+    cout &lt;&lt; s1.Base1::m_A &lt;&lt; endl;
+    cout &lt;&lt; s1.Base2::m_A &lt;&lt; endl;
+    cout &lt;&lt; s1.Base1::m_B &lt;&lt; endl;
+    cout &lt;&lt; s1.m_C &lt;&lt; endl;
+
+&#125;
+
+int main() &#123;
+
+    test1();
+
+    system(&quot;pause&quot;);
+ &#125;</code></pre>
+<h4 id="4-5-6-8- 菱形继承"><a href="#4-5-6-8- 菱形继承" class="headerlink" title="4.5.6.8 菱形继承"></a>4.5.6.8 菱形继承 </h4><p> 菱形继承（钻石）概念：</p>
+<ol>
+<li>两个派生类（B，C）继承同一个基类（A）</li>
+<li>又有某个类（D）同时继承两个派生类</li>
+</ol>
+<p>菱形继承的问题：D 类同时通过从 B/C 类继承了 A 的数据，也就是 D 类有两份 A 的数据，其实我们只需要一份就可以。</p>
+<p>这就需要用到虚继承了，关键字 <code>virtual</code>，解决内存浪费的问题。</p>
+<pre><code class="c++">class Animal &#123;
+public:
+    int m_A;
+&#125;;
+class Yang: virtual public Animal &#123;&#125;;
+class Tuo: virtual public Animal &#123;&#125;;
+class Son :public Yang,public Tuo &#123;&#125;;
+
+void test1() &#123;
+    Son s1;
+    s1.Yang::m_A = 100;
+    s1.Tuo::m_A = 10;
+    cout &lt;&lt; s1.Yang::m_A &lt;&lt; endl;  // 输出 10
+    cout &lt;&lt; s1.Tuo::m_A &lt;&lt; endl;   // 输出 10
+    cout &lt;&lt; s1.m_A &lt;&lt; endl;       // 输出 10
+
+&#125;
+
+int main() &#123;
+
+    test1();
+
+    system(&quot;pause&quot;);
+ &#125;</code></pre>
+<p>若上述两个类 <code>Yang</code> 和<code>Tuo</code>在继承 <code>Animal</code> 时不加 <code>virtual</code> 关键字，<code>Son</code>类就会继承两份 <code>m_A</code>，且不可用<code>s1.m_A</code> 访问到 m_A 数据。</p>
+<p><strong>函数在基类中被声明为 <code>virtual</code> 后，它在派生类中将自动成为虚方法。此时我们在派生类中将此方法声明不声明为 <code>virtual</code> 都没关系了，但是最好是声明出来好标记哪些方法是虚的。</strong></p>
+<h4 id="4-5-6-9- 链式继承"><a href="#4-5-6-9- 链式继承" class="headerlink" title="4.5.6.9 链式继承"></a>4.5.6.9 链式继承 </h4><p> 链式继承：C 继承自 B，B 继承自 A…</p>
+<pre><code class="c++">class Father &#123;
+
+public:
+    void printA() &#123;
+        cout &lt;&lt; &quot; 父类中的方法 &quot; &lt;&lt; endl;
+    &#125;
+&#125;;
+
+class Son:public Father&#123;
+
+public:
+    void printB() &#123;
+        cout &lt;&lt; &quot; 子类中的方法 &quot; &lt;&lt; endl;
+    &#125;
+&#125;;
+
+class GrandSon:public Son &#123;
+
+public:
+    void printC() &#123;
+        cout &lt;&lt; &quot; 孙类中的方法 &quot; &lt;&lt; endl;
+    &#125;
+&#125;;
+
+int main() &#123;
+
+    GrandSon gs;
+
+    gs.printA();    // 输出“父类中的方法”
+
+    system(&quot;pause&quot;);
+&#125;</code></pre>
+<h3 id="4-5-7- 多态"><a href="#4-5-7- 多态" class="headerlink" title="4.5.7 多态"></a>4.5.7 多态 </h3><h4 id="4-5-7-1- 多态的基本概念"><a href="#4-5-7-1- 多态的基本概念" class="headerlink" title="4.5.7.1 多态的基本概念"></a>4.5.7.1 多态的基本概念</h4><p> 多态是 C++ 面向对象三大特性之一，多态分为两类：</p>
+<ul>
+<li>静态多态：函数重载和运算符重载属于静态，复用函数名</li>
+<li>动态多态：派生类和虚函数实现运行时多态</li>
+</ul>
+<p>静态多态和动态多态区别：</p>
+<ul>
+<li>静态多态的函数地址早绑定—编译阶段确定函数地址</li>
+<li>动态多态的函数地址晚绑定—运行阶段确定函数地址</li>
+</ul>
+<p><strong>静态多态：</strong></p>
+<pre><code class="c++">class Animal &#123;
+public:
+    void speak() &#123;
+        cout &lt;&lt; &quot; 动物在说话 &quot; &lt;&lt; endl;
+    &#125;
+&#125;;
+
+class Cat:public Animal &#123;
+public:
+    void speak() &#123;
+        cout &lt;&lt; &quot; 小猫在说话 &quot; &lt;&lt; endl;
+    &#125;
+&#125;;
+
+// 地址早绑定，在编译阶段就确定函数的地址，传的是 animal 对象
+void doSpeak(Animal &amp;animal) &#123;
+    animal.speak();    
+&#125;
+
+int main() &#123;
+
+    Cat cat;
+
+    doSpeak(cat);  // 输出动物说话
+
+    system(&quot;pause&quot;);
+ &#125;</code></pre>
+<p><strong>动态多态：</strong></p>
+<p>动态多态满足条件：</p>
+<ul>
+<li><p><strong>得有继承关系</strong></p>
+</li>
+<li><p><strong>子类要重写父类中的虚函数</strong></p>
+<blockquote>
+<p>重写：函数返回值，函数名称，参数列表完全相同</p>
+<p>子类重写时，也可以是虚函数</p>
+</blockquote>
+</li>
+</ul>
+<pre><code class="c++">class Animal &#123;
+public:    
+    virtual void speak() &#123;                  // 虚函数
+        cout &lt;&lt; &quot; 动物在说话 &quot; &lt;&lt; endl;
+    &#125;
+&#125;;
+
+class Cat:public Animal &#123;
+public:
+    void speak() &#123;                         // 普通成员函数
+        cout &lt;&lt; &quot; 小猫在说话 &quot; &lt;&lt; endl;
+    &#125;
+&#125;;
+
+void doSpeak(Animal &amp;animal) &#123;
+    animal.speak();       //animal 的 speak 函数定义为虚函数，地址晚绑定
+&#125;
+
+int main() &#123;
+
+    Cat cat;
+    doSpeak(cat);  // 输出小猫说话
+
+    Animal animal;
+    animal.speak(&quot;woo&quot;);   // 父类虚函数也可以直接调用
+
+    system(&quot;pause&quot;);
+ &#125;</code></pre>
+<p>动态多态的使用：</p>
+<ul>
+<li><strong>父类的指针或者引用，执行子类对象 </strong>。如上例中，doSpeak() 传入的父类的引用，然后调用的时候，传的是子类对象。</li>
+</ul>
+<p>再举一个链式继承中多态的例子：</p>
+<pre><code class="c++">class Father &#123;
+public:
+    virtual void print() &#123;cout &lt;&lt; &quot; 父类中的方法 &quot; &lt;&lt; endl;&#125;
+&#125;;
+
+class Son:public Father&#123;
+public:
+    virtual void print() &#123;cout &lt;&lt; &quot; 子类中的方法 &quot; &lt;&lt; endl;&#125;
+&#125;;
+
+class GrandSon:public Son &#123;
+public:
+    virtual void print() &#123;cout &lt;&lt; &quot; 孙类中的方法 &quot; &lt;&lt; endl;&#125;
+&#125;;
+
+int main() &#123;
+
+    Son son;
+
+    Father *fa=&amp;son;
+
+    fa-&gt;print();
+
+    GrandSon gs;
+
+    Father* faa = &amp;gs;
+
+    faa-&gt;print();
+
+    system(&quot;pause&quot;);
+&#125;</code></pre>
+<h4 id="4-5-7-2- 多态案例"><a href="#4-5-7-2- 多态案例" class="headerlink" title="4.5.7.2 多态案例"></a>4.5.7.2 多态案例 </h4><p> 分别利用普通写法和多态技术，设计实现两个操作数进行运算的计算器类</p>
+<p>多态的优点：</p>
+<ol>
+<li>代码组织结构清晰</li>
+<li>可读性强</li>
+<li>利于前期和后期的扩展以及维护</li>
+</ol>
+<pre><code class="c++">//--------- 普通类实现 -----------------
+class Calculator &#123;
+public:
+
+    int getResult(string oper) &#123;
+        if (oper == &quot;+&quot;) &#123;
+            return m_num1 + m_num2;
+        &#125;
+        else if (oper == &quot;-&quot;) &#123;
+            return m_num1 - m_num2;
+        &#125;
+        else if (oper == &quot;*&quot;) &#123;
+            return m_num1 * m_num2;
+        &#125;
+        // 这个函数里，如果想扩展新功能（如加入开方运算），需要修改源码
+        // 在真实开发环境中，提倡开闭原则
+        // 开闭原则：对扩展进行开发，对修改进行关闭
+    &#125;
+
+    int m_num1;
+    int m_num2;
+&#125;;
+
+void test() &#123;
+    Calculator cal;
+    cal.m_num1 = 10;
+    cal.m_num2 = 5;
+    cout &lt;&lt; cal.getResult(&quot;*&quot;) &lt;&lt; endl;
+&#125;
+
+//---------- 利用多态实现 ----------------
+class AbstractCalculator &#123;
+public:
+    virtual int getResult() &#123;
+        return 0;
+    &#125;
+    void doOther() &#123;
+        cout &lt;&lt; &quot;some free&quot; &lt;&lt; endl;
+    &#125;
+    int m_A;    // 这两个必须是 public, 否则子类对象不可访问
+    int m_B;  
+&#125;;
+
+class AddCalculator:public AbstractCalculator &#123;
+public:
+    int getResult() &#123;
+        return m_A + m_B;
+    &#125;
+&#125;;
+
+class SubCalculator :public AbstractCalculator &#123;
+public:
+    int getResult() &#123;
+        return m_A - m_B;
+    &#125;
+&#125;;
+
+class MultiCalculator:public AbstractCalculator &#123;
+public:
+    int getResult() &#123;
+        return m_A * m_B;
+    &#125;
+&#125;;
+
+void test2() &#123;
+    // 多态的使用条件：父类指针或者引用指向子类对象
+    AbstractCalculator* abs = new AddCalculator;   // 多态的调用
+    abs-&gt;m_A = 10;
+    abs-&gt;m_B = 5;
+    cout &lt;&lt; abs-&gt;getResult() &lt;&lt; endl;
+    delete abs;
+
+    abs = new SubCalculator;
+    abs-&gt;m_A = 20;
+    abs-&gt;m_B = 10;
+    cout &lt;&lt; abs-&gt;getResult() &lt;&lt; endl;
+&#125;
+// 多态好处：组织结构清晰，可读性强，对于前期和后期扩展以及维护性高
+
+int main() &#123;
+
+    //test();
+
+    test2();
+
+    system(&quot;pause&quot;);
+ &#125;</code></pre>
+<h4 id="4-5-7-3- 纯虚函数和抽象类"><a href="#4-5-7-3- 纯虚函数和抽象类" class="headerlink" title="4.5.7.3 纯虚函数和抽象类"></a>4.5.7.3 纯虚函数和抽象类 </h4><p> 在多态中，通常父类中虚函数的实现是毫无意义的，主要都是调用子类重写的内容。抽象类是类族的公共接口。</p>
+<p>因此可以将虚函数改为纯虚函数</p>
+<p>纯虚函数语法：<code>virtual 返回类型 函数名（参数列表）= 0；</code></p>
+<blockquote>
+<p>这样不是纯虚函数：<code>virtual 返回类型 函数名（参数列表）&#123;return 0;&#125;</code></p>
+</blockquote>
+<p>当类中有了纯虚函数，这个类就称为抽象类。只要有一个纯虚函数就行，就是抽象类，就满足抽象类的特点。</p>
+<p><strong>抽象类特点：</strong></p>
+<ul>
+<li><p><strong>无法实例化对象</strong></p>
+</li>
+<li><p><strong>子类必须重写抽象类中的纯虚函数，否则也属于抽象类</strong></p>
+</li>
+</ul>
+<pre><code class="c++">//Base 为抽象类
+class Base &#123;
+public:
+    virtual void func() = 0;  // 纯虚函数
+
+    void doOther() &#123;
+        cout &lt;&lt; &quot;free&quot; &lt;&lt; endl;
+    &#125;
+&#125;;
+
+class Son :public Base &#123;
+public:
+    void func() &#123;                                // 重写父类中的抽象类
+        cout &lt;&lt; &quot; 子类函数的调用 &quot; &lt;&lt; endl;
+    &#125;
+&#125;;
+
+void test() &#123;
+    //Base b1; 无法实例化，因为 Base 是抽象类
+    Base* base = new Son;  // 父类指针或者引用指向子类对象
+    base-&gt;func();
+&#125;
+
+int main() &#123;
+
+    test();
+
+    system(&quot;pause&quot;);
+ &#125;</code></pre>
+<blockquote>
+<p>在父类中写纯虚函数，就是为了在子类中重写这个函数。</p>
+</blockquote>
+<h4 id="4-5-7-4- 多态案例"><a href="#4-5-7-4- 多态案例" class="headerlink" title="4.5.7.4 多态案例"></a>4.5.7.4 多态案例 </h4><p> 案例描述：制作饮品的大致流程为：煮水—冲泡—倒入杯中—加入辅料</p>
+<p>利用多态技术实现本案例，提供抽象制作饮品基类，提供子类制作咖啡和茶叶</p>
+<p>咖啡制作：煮水—冲泡咖啡—倒入杯中—加糖和牛奶</p>
+<p>茶水制作：煮水—冲泡茶叶—倒入杯中—加柠檬</p>
+<pre><code class="c++">class AbstractDrinking &#123;
+public:
+    virtual void Boil() = 0;  // 煮水
+    virtual void Brew() = 0;  // 冲泡
+    virtual void PourInCup() = 0;  // 倒入杯中
+    virtual void PutSomething() = 0;  // 加入辅料
+
+    void makeDrinking() &#123;
+        Boil(); 
+        Brew(); 
+        PourInCup(); 
+        PutSomething() ;
+    &#125;
+&#125;;
+
+class MakeCoffee :public AbstractDrinking &#123;
+public:
+    void Boil() &#123;
+        cout &lt;&lt; &quot; 煮纯净水 &quot; &lt;&lt; endl;
+    &#125;
+    void Brew() &#123;
+        cout &lt;&lt; &quot; 冲泡咖啡 &quot; &lt;&lt; endl;
+    &#125;
+    void PourInCup() &#123;
+        cout &lt;&lt; &quot; 将咖啡水倒入杯中 &quot; &lt;&lt; endl;
+    &#125;
+    void PutSomething() &#123;
+        cout &lt;&lt; &quot; 加糖和牛奶 &quot; &lt;&lt; endl;
+    &#125;
+&#125;;
+
+class MakeTea :public AbstractDrinking &#123;
+public:
+    void Boil() &#123;
+        cout &lt;&lt; &quot; 煮山泉水 &quot; &lt;&lt; endl;
+    &#125;
+    void Brew() &#123;
+        cout &lt;&lt; &quot; 冲泡茶叶 &quot; &lt;&lt; endl;
+    &#125;
+    void PourInCup() &#123;
+        cout &lt;&lt; &quot; 将茶水水倒入杯中 &quot; &lt;&lt; endl;
+    &#125;
+    void PutSomething() &#123;
+        cout &lt;&lt; &quot; 加柠檬 &quot; &lt;&lt; endl;
+    &#125;
+&#125;;
+
+void test() &#123;
+    AbstractDrinking* abs = new MakeCoffee;
+    abs-&gt;makeDrinking();
+    delete abs;
+    cout &lt;&lt; &quot;----------&quot; &lt;&lt; endl;
+
+    abs = new MakeTea;
+    abs-&gt;makeDrinking();
+&#125;
+
+int main() &#123;
+
+    test();
+
+    system(&quot;pause&quot;);
+ &#125;</code></pre>
+<h4 id="4-5-7-5- 虚析构和纯虚析构"><a href="#4-5-7-5- 虚析构和纯虚析构" class="headerlink" title="4.5.7.5 虚析构和纯虚析构"></a>4.5.7.5 虚析构和纯虚析构 </h4><p> 多态使用时，如果子类中有属性开辟到堆区，那么父类指针在释放时无法调用到子类的析构代码</p>
+<p>解决方式：将父类中的析构函数改为虚析构或者纯虚析构</p>
+<p>虚析构和纯虚析构共性：</p>
+<ul>
+<li>可以解决父类指针释放子类对象</li>
+<li>都需要有具体的函数实现</li>
+</ul>
+<p>虚析构和纯虚析构区别：</p>
+<ul>
+<li>如果是纯虚析构，该类属于抽象类，无法实例化对象</li>
+</ul>
+<p>虚析构语法：<code>virtual ~ 类名()&#123;&#125;</code></p>
+<p>纯虚析构语法：</p>
+<ul>
+<li><code>virtual ~ 类名()=0</code>  在类中定义纯虚析构</li>
+<li><code>类名::~ 类名()&#123;&#125;</code> 在全局中定义具体的实现 </li>
+</ul>
+<pre><code class="c++">class Animal &#123;
+public:
+    Animal() &#123;
+        cout &lt;&lt; &quot; 父类的构造函数的调用 &quot; &lt;&lt; endl;
+    &#125;
+    // 利用虚析构可以解决 父类指针释放子类对象不干净的问题
+    virtual ~Animal() &#123;
+        cout &lt;&lt; &quot; 父类的析构函数的调用 &quot; &lt;&lt; endl;
+    &#125;
+    virtual void Speak() = 0;
+&#125;;
+
+class Cat: public Animal &#123;
+public:
+
+    Cat(string name) &#123;
+        cout &lt;&lt; &quot; 子类构造函数的调用 &quot; &lt;&lt; endl;
+        m_Name = new string(name);             // 堆区开辟内存
+    &#125;
+    ~Cat() &#123;
+        if (m_Name != NULL) &#123;
+            delete m_Name;
+            m_Name = NULL;
+            cout &lt;&lt; &quot; 子类析构函数的调用 &quot; &lt;&lt; endl;
+        &#125;
+    &#125;
+    void Speak() &#123;
+        cout &lt;&lt; *m_Name &lt;&lt; &quot; 小猫在说话 &quot; &lt;&lt; endl;
+    &#125;
+    string* m_Name;
+&#125;;
+
+void test() &#123;
+    Animal* animal = new Cat(&quot;Tom&quot;);   // 子类 Cat 开辟在堆区
+    animal-&gt;Speak();  
+    delete animal;  // 释放父类指针，父类含有虚析构，就可以走子类的析构
+&#125;
+
+int main() &#123;
+
+    test();
+
+    system(&quot;pause&quot;);
+ &#125;</code></pre>
+<p>总结：</p>
+<ol>
+<li>虚析构或纯虚构就是用来解决通过父类指针释放子类对象</li>
+<li>如果子类中没有堆区数据，可以不写为虚析构或纯虚析构。</li>
+<li>拥有纯虚析构函数的类也属于抽象类</li>
+</ol>
+<h2 id="4-6- 结构体与类"><a href="#4-6- 结构体与类" class="headerlink" title="4.6 结构体与类"></a>4.6 结构体与类 </h2><p> 在<code>C++</code>中，<strong>结构体 </strong> 和<strong>类 </strong> 它们都是有构造函数、析构函数和成员函数的，他们两者的根本区别就是：</p>
+<ul>
+<li><p>结构体中访问控制默认是 <code>public</code> 的</p>
+</li>
+<li><p>而类中默认的访问控制是 <code>private</code> 的。</p>
+</li>
+</ul>
+<p>示例一：</p>
+<pre><code class="c++">struct Mt &#123;
+    int A ;
+    int B ;
+
+    int get_a() &#123;
+        return A;
+    &#125;
+&#125;;
+
+struct Mm :public Mt &#123;int C = 5;&#125;;
+
+int main() &#123;
+
+    Mm mm;
+    mm.A = 10;
+
+    cout &lt;&lt; mm.A &lt;&lt; endl;   
+    cout &lt;&lt; mm.C &lt;&lt; endl; 
+&#125;</code></pre>
+<blockquote>
+<p>结构体成员函数也用 <strong> 点.</strong> 获取。</p>
+</blockquote>
+<p>示例二：</p>
+<pre><code class="c++">class Mt &#123;
+    int A ;
+    int B ;
+
+    int get_a() &#123;
+        return A;
+    &#125;
+&#125;;
+
+struct Mm :public Mt &#123;int C = 5;&#125;;
+
+int main() &#123;
+
+    Mm mm;
+    mm.A = 10;   // 报错，无法访问，Mm 无法继承 Mt 的私有属性（默认私有）
+&#125;</code></pre>
+<blockquote>
+<p>类和结构体无明显区别，大多数情况下可以看成是一种东西。除了上述提到的默认访问控制问题。</p>
+</blockquote>
+<h2 id="4-7- 文件操作"><a href="#4-7- 文件操作" class="headerlink" title="4.7 文件操作"></a>4.7 文件操作 </h2><p> 通过文件操作将数据持久化</p>
+<p>C++ 中对文件操作需要包含头文件<code>&lt;fstream&gt;</code></p>
+<p>文件类型分为两种：</p>
+<ol>
+<li>文本文件  — 文件以文本 ASCII 码形式存储在计算机中</li>
+<li>二进制文件 — 文件以文本的二进制形式存储在计算机中，用户一般不能直接读懂它们</li>
+</ol>
+<p>操作文件的三大类：</p>
+<ol>
+<li>ofstream：写操作，将 <strong> 程序 </strong> 数据输出到文件中</li>
+<li>ifstream：读操作，将文件中数据输入到 <strong> 程序 </strong> 中</li>
+<li>fstream：读写操作</li>
+</ol>
+<h3 id="4-7-1- 文本文件"><a href="#4-7-1- 文本文件" class="headerlink" title="4.7.1 文本文件"></a>4.7.1 文本文件</h3><h4 id="4-7-1-1- 写文件"><a href="#4-7-1-1- 写文件" class="headerlink" title="4.7.1.1 写文件"></a>4.7.1.1 写文件</h4><ol>
+<li>包含头文件 <code>#&lt;fstream&gt;</code></li>
+<li>创建流对象  <code>ofstream ofs;</code></li>
+<li>打开文件  <code>ofs.open(&#39;file_path&#39;, open_mode);</code></li>
+<li>写数据  <code>ofs&lt;&lt;&#39;write txt&#39;;</code></li>
+<li>关闭文件  <code>ofs.close();</code></li>
+</ol>
+<p>文件打开方式 open_mode:</p>
+<table>
+<thead>
+<tr>
+<th>打开方式</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ios::in</td>
+<td>为读文件而打开文件</td>
+</tr>
+<tr>
+<td>ios::out</td>
+<td>为写而打开文件</td>
+</tr>
+<tr>
+<td>ios::ate</td>
+<td>初始位置：文件尾</td>
+</tr>
+<tr>
+<td>ios::app</td>
+<td>追加方式写文件</td>
+</tr>
+<tr>
+<td>ios::trunc</td>
+<td>如果文件存在先删除，再创建</td>
+</tr>
+<tr>
+<td>ios::binary</td>
+<td>二进制方式</td>
+</tr>
+</tbody></table>
+<p>注意：文件打开方式可以配合使用，利用 | 操作符</p>
+<p>如：<code>ios::binary | ios::out</code></p>
+<pre><code class="c++"># include&lt;iostream&gt;
+# include&lt;string&gt;
+using namespace std;
+# include&lt;fstream&gt;
+
+
+void main()&#123;
+    ofstream ofs;
+    ofs.open(&quot;test.txt&quot;, ios::out);
+    ofs &lt;&lt; &quot;xxxxxxx&quot; &lt;&lt; endl;
+    ofs &lt;&lt; &quot;yyyyyyy&quot; &lt;&lt; endl;
+    ofs.close();
+
+&#125;</code></pre>
+<h4 id="4-7-1-2- 读文件"><a href="#4-7-1-2- 读文件" class="headerlink" title="4.7.1.2 读文件"></a>4.7.1.2 读文件 </h4><p> 读文件步骤如下：</p>
+<ol>
+<li>包含头文件 <code>#&lt;fstream&gt;</code></li>
+<li>创建流对象  <code>ifstream ifs;</code></li>
+<li>打开文件并判断文件是否打开成功 <code>ifs.open(&#39;file_path&#39;, open_mode);</code></li>
+<li>读数据</li>
+<li>关闭文件   <code>ofs.close();</code></li>
+</ol>
+<pre><code class="c++"># include&lt;iostream&gt;
+# include&lt;string&gt;
+using namespace std;
+# include&lt;fstream&gt;
+
+void main() &#123;
+    ifstream ifs;
+    ifs.open(&quot;test.txt&quot;, ios::in);
+
+    if (ifs.is_open()) &#123;
+        // 读数据
+        /* 方法 1
+        char buf[1024] = &#123; 0 &#125;;    // 初始化一个数组
+        while (ifs &gt;&gt; buf) &#123;
+            cout &lt;&lt; buf &lt;&lt; endl;
+        &#125;
+        */
+
+        /* 方法 2
+        char buf2[1024] = &#123; 0 &#125;;    // 初始化一个数组
+        while (ifs.getline(buf2, sizeof(buf2))) &#123;
+            cout &lt;&lt; buf2 &lt;&lt; endl;
+        &#125;;
+        */
+
+        // 方法 3
+        string buf3;
+        while (getline(ifs, buf3)) &#123;
+            cout &lt;&lt; buf3 &lt;&lt; endl;
+        &#125;
+
+        /* 方法 4
+        char buf4;
+        while ((buf4 = ifs.get()) != EOF)&#123;
+            cout &lt;&lt; buf4 &lt;&lt; endl;
+&#125;
+        */
+        ifs.close();
+    &#125;
+    else &#123;
+        cout &lt;&lt; &quot; 文件打开失败 &quot; &lt;&lt; endl;
+    &#125;
+&#125;</code></pre>
+<h3 id="4-7-2- 二进制文件"><a href="#4-7-2- 二进制文件" class="headerlink" title="4.7.2 二进制文件"></a>4.7.2 二进制文件 </h3><p> 以二进制的方式对文件进行读写操作</p>
+<p>打开方式要指定为 ios::binary</p>
+<h4 id="4-7-2-1- 写文件"><a href="#4-7-2-1- 写文件" class="headerlink" title="4.7.2.1 写文件"></a>4.7.2.1 写文件 </h4><p> 二进制方式写文件主要利用流对象调用成员函数 write</p>
+<p>函数原型：<code>ostream&amp; write(const char* buffer, int len);</code></p>
+<p>参数解释：字符型指针 buffer 指向内存中一段存储空间，len 是读写的字节数</p>
+<h4 id="4-7-2-2- 读文件"><a href="#4-7-2-2- 读文件" class="headerlink" title="4.7.2.2 读文件"></a>4.7.2.2 读文件 </h4><p> 二进制方式读文件主要利用流对象调用成员函数 read</p>
+<p>函数原型：<code>istream&amp; read(char* buffer, int len);</code></p>
+<p>参数解释：字符型指针 buffer 指向内存中一段存储空间，len 是读写的字节数</p>
+<pre><code class="c++"># include&lt;iostream&gt;
+# include&lt;string&gt;
+using namespace std;
+# include&lt;fstream&gt;
+
+class Person &#123;
+public:
+    char m_name[64];
+    int age;
+&#125;;
+
+// 二进制文件的写入
+void write() &#123;
+    ofstream ofs(&quot;person.txt&quot;, ios::binary | ios::out);;
+    Person p = &#123; &quot; 张三 &quot;, 18 &#125;;
+    ofs.write((const char*)&amp;p, sizeof(Person));        //(const char*)强制转换成字符常量指针
+    ofs.close();
+&#125;
+
+// 二进制文件的读取
+void read() &#123;
+    ifstream ifs(&quot;person.txt&quot;, ios::binary | ios::in);
+    if (ifs.is_open()) &#123;
+        Person p;
+        ifs.read((char*)&amp;p, sizeof(Person));
+        cout &lt;&lt; p.m_name &lt;&lt; endl;
+        cout &lt;&lt; p.age &lt;&lt; endl;
+        ifs.close();
+    &#125;
+&#125;
+
+int main() &#123;
+
+    write();
+
+    read();
+
+&#125;</code></pre>
+<h1 id="五、实战 2- 职工管理系统"><a href="# 五、实战 2- 职工管理系统" class="headerlink" title="五、实战 2- 职工管理系统"></a>五、实战 2- 职工管理系统 </h1><p> 需求：职工管理系统可以用来管理公司内鄋员工的信息</p>
+<p>本案例主要利用 C++ 来实现一个基于多态的职工管理系统</p>
+<p>公司中职工分为三种，普通员工、经理、老板。显示信息时，需要显示职工编号，职工姓名、职工岗位、以及职责</p>
+<p>普通员工职责：完成经理交给的任务</p>
+<p>经理职责：完成老板交给的任务，并下发任务给员工</p>
+<p>老板职责：管理公司所有事务</p>
+<p>管理系统中需要实现的功能如下：</p>
+<ul>
+<li>退出管理程序：退出当前管理系统</li>
+<li>增加职工信息：实现批量添加职工功能，将信息录入到文件中，职工信息为：职工编号，姓名、部门编号</li>
+<li>显示职工信息：显示公司内部所有职工的信息</li>
+<li>删除离职员工：按照编号删除指定的职工</li>
+<li>修改职工信息：按照编号修改职工个人信息</li>
+<li>查找职工信息：按照编号或者姓名进行查找相关的人员信息</li>
+<li>按照编号排序：按照职工编号，进行排序，排序规则由用户指定</li>
+<li>清空所有文档：清空文件中所有职工信息（清空前需要再次确认，防止误删）</li>
+</ul>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 欢迎各位看官及技术大佬前来交流指导呀，可以邮件至 jqiange@yeah.net </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2021 Jqiange
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

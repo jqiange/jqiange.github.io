@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>反反爬虫之 JS 解密 | jqiange</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="反反爬虫之 JS 解密 | jqiange">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="人畜无害的姜小强">
+<meta property="og:url" content="https://jqiange.github.io/about/index.html">
+<meta property="og:site_name" content="jqiange">
+<meta property="og:description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+<meta property="article:published_time" content="2020-02-18T08:21:04.000Z">
+<meta property="article:modified_time" content="2025-12-13T05:23:10.695Z">
+<meta property="article:author" content="姜小强">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+
+
+<link rel="icon" href="/img/jqiange.png">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/jqiange.png"/>
+</a>
+<div class="author">
+    <span>姜小强</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/jqiange"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(58)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(9)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据库">
+                        
+                        数据库
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="每日一学">
+                        
+                        每日一学
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="爬虫">
+                        
+                        爬虫
+                        <small>(10)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="前端">
+                        
+                        前端
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="深度学习">
+                        
+                        深度学习
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据分析">
+                        
+                        数据分析
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="chip">
+                        
+                        chip
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="CPP">
+                        
+                        CPP
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Linux">
+                        
+                        Linux
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="python">
+                        
+                        python
+                        <small>(14)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="58">
+<input type="hidden" id="yelog_site_word_count" value="251.9k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSS-Xpath</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Markdown</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Matplotlib</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Mysql</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Numpy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pandas</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pip</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pyecharts</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pygal</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pymysql-ORM</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>RE</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Redis</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Scrapy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Seaborn</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Selenium</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>yield</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="全部文章 python "
+           href="/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%A6%E8%A7%A3/"
+           data-tag="RE"
+           data-author="" >
+            <span class="post-title" title="正则表达式详解">正则表达式详解</span>
+            <span class="post-date" title="2020-02-26 09:25:46">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/tcl%E4%B8%8Eopc/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 与 opc">tcl 与 opc</span>
+            <span class="post-date" title="2025-09-24 13:36:07">2025/09/24</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/hexo%E6%96%87%E7%AB%A0%E5%8A%A0%E5%AF%86%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="hexo 文章加密方法">hexo 文章加密方法</span>
+            <span class="post-date" title="2025-09-21 22:33:03">2025/09/21</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/tcl%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 语言入门">tcl 语言入门</span>
+            <span class="post-date" title="2025-09-14 22:43:20">2025/09/14</span>
+        </a>
+        
+        <a  class="全部文章 每日一学 "
+           href="/%E6%95%85%E4%BA%8B%E4%BC%9A%E4%B8%8E%E4%BC%81%E4%B8%9A%E8%82%A1%E6%9D%83%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="故事会与企业股权架构设计">故事会与企业股权架构设计</span>
+            <span class="post-date" title="2025-08-30 09:42:43">2025/08/30</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%AE%A1%E7%AE%97%E5%85%89%E5%88%BBOPC%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="计算光刻 OPC 名词解释">计算光刻 OPC 名词解释</span>
+            <span class="post-date" title="2025-08-26 21:44:36">2025/08/26</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%8A%AF%E7%89%87%E5%88%B6%E9%80%A0%E6%B5%81%E7%A8%8B%E4%B8%8E%E5%B7%A5%E8%89%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="芯片制造流程与工艺">芯片制造流程与工艺</span>
+            <span class="post-date" title="2025-06-14 12:13:17">2025/06/14</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E8%81%8C%E5%9C%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入职场">C++ 入职场</span>
+            <span class="post-date" title="2024-06-22 15:52:55">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/Protocol-Buffers-%E5%85%A5%E9%97%A8%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Protocol Buffers 入门使用">Protocol Buffers 入门使用</span>
+            <span class="post-date" title="2024-06-22 15:50:39">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-python%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B-boost/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++python 混合编程 -boost">C++python 混合编程 -boost</span>
+            <span class="post-date" title="2024-06-22 15:36:18">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B%E4%B8%8E%E6%A8%A1%E6%9D%BF/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 泛型编程与模板">C++ 泛型编程与模板</span>
+            <span class="post-date" title="2024-06-22 15:27:49">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入门学习笔记">C++ 入门学习笔记</span>
+            <span class="post-date" title="2024-06-22 14:53:46">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 Linux "
+           href="/shell%E7%BC%96%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="shell 编程">shell 编程</span>
+            <span class="post-date" title="2022-03-07 20:24:24">2022/03/07</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Git 版本控制工具">Git 版本控制工具</span>
+            <span class="post-date" title="2022-03-05 23:23:45">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Hexo%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E4%B8%8E%E5%A4%9A%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hexo 博客迁移与多平台使用">Hexo 博客迁移与多平台使用</span>
+            <span class="post-date" title="2022-03-05 01:26:56">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%B8%8E%E9%87%8D%E9%9A%BE%E7%82%B9%E6%B1%87%E6%80%BB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的基础知识与重难点汇总">python 中的基础知识与重难点汇总</span>
+            <span class="post-date" title="2020-11-17 23:05:15">2020/11/17</span>
+        </a>
+        
+        <a  class="全部文章 前端 "
+           href="/javascript%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="JavaScript 入门">JavaScript 入门</span>
+            <span class="post-date" title="2020-11-09 20:46:08">2020/11/09</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E8%AF%AD%E6%B3%95%E7%B3%96/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的语法糖">python 中的语法糖</span>
+            <span class="post-date" title="2020-11-06 10:53:29">2020/11/06</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E8%BF%9B%E7%A8%8B%EF%BC%8C%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%8D%8F%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的进程，线程与协程">python 中的进程，线程与协程</span>
+            <span class="post-date" title="2020-11-04 21:29:16">2020/11/04</span>
+        </a>
+        
+        <a  class="全部文章 Linux "
+           href="/linux%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="linux 常见命令学习">linux 常见命令学习</span>
+            <span class="post-date" title="2020-06-17 22:33:28">2020/06/17</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="机器学习经典算法">机器学习经典算法</span>
+            <span class="post-date" title="2020-06-16 10:36:50">2020/06/16</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/tensorflow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tensorflow 学习笔记">tensorflow 学习笔记</span>
+            <span class="post-date" title="2020-06-05 01:49:53">2020/06/05</span>
+        </a>
+        
+        <a  class="全部文章 深度学习 "
+           href="/%E6%B7%B1%E5%BA%A6%E7%90%86%E8%A7%A3%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="深度理解卷积神经网络工作原理">深度理解卷积神经网络工作原理</span>
+            <span class="post-date" title="2020-06-04 13:24:45">2020/06/04</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E7%88%AC%E8%99%AB%E7%9A%84%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫的定时执行">爬虫的定时执行</span>
+            <span class="post-date" title="2020-04-06 22:44:47">2020/04/06</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/Token-%EF%BC%8CCookie%E5%92%8CSession%E7%9A%84%E5%8C%BA%E5%88%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Token ，Cookie 和 Session 的区别">Token ，Cookie 和 Session 的区别</span>
+            <span class="post-date" title="2020-04-03 10:46:54">2020/04/03</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E5%9C%A8python%E4%B8%AD%E8%BF%9B%E8%A1%8C%E8%A7%86%E9%A2%91-%E9%9F%B3%E9%A2%91%E5%A4%84%E7%90%86%E5%8F%8A%E5%90%88%E5%B9%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="在 python 中进行视频 - 音频处理及合并">在 python 中进行视频 - 音频处理及合并</span>
+            <span class="post-date" title="2020-03-29 10:56:44">2020/03/29</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8BJS%E8%A7%A3%E5%AF%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之 JS 解密">反反爬虫之 JS 解密</span>
+            <span class="post-date" title="2020-03-24 10:04:43">2020/03/24</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E7%90%86%E8%A7%A3python%E4%B8%AD%E7%9A%84%E9%97%AD%E5%8C%85%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="理解 python 中的闭包与装饰器">理解 python 中的闭包与装饰器</span>
+            <span class="post-date" title="2020-03-21 17:34:45">2020/03/21</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Mongodb%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Mongodb 数据库入门">Mongodb 数据库入门</span>
+            <span class="post-date" title="2020-03-17 22:50:33">2020/03/17</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%8A%A0%E4%B8%AA%E7%A9%BA%E6%A0%BC%E5%91%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="为什么不加个空格呢">为什么不加个空格呢</span>
+            <span class="post-date" title="2020-03-14 13:53:44">2020/03/14</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8/"
+           data-tag="yield"
+           data-author="" >
+            <span class="post-title" title="迭代器与生成器">迭代器与生成器</span>
+            <span class="post-date" title="2020-03-13 21:58:25">2020/03/13</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E6%BB%91%E5%9D%97%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之滑块验证码">反反爬虫之滑块验证码</span>
+            <span class="post-date" title="2020-03-08 21:00:17">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E5%9B%BE%E7%89%87%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之图片验证码">反反爬虫之图片验证码</span>
+            <span class="post-date" title="2020-03-08 16:16:16">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Python%E6%93%8D%E4%BD%9CRedis/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Python 操作 Redis">Python 操作 Redis</span>
+            <span class="post-date" title="2020-03-07 16:15:44">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy-Redis%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Scrapy-Redis 分布式爬虫">Scrapy-Redis 分布式爬虫</span>
+            <span class="post-date" title="2020-03-07 15:35:50">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%ABRequest%E5%8E%BB%E9%87%8D%E5%8F%8A%E8%BF%87%E6%BB%A4%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫 Request 去重及过滤器">爬虫 Request 去重及过滤器</span>
+            <span class="post-date" title="2020-03-07 15:22:23">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Redis%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Redis 数据库">Redis 数据库</span>
+            <span class="post-date" title="2020-03-06 20:30:00">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Pymysql%E4%B8%8EORM%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="pymysql-ORM"
+           data-author="" >
+            <span class="post-title" title="Pymysql 与 ORM 操作数据库">Pymysql 与 ORM 操作数据库</span>
+            <span class="post-date" title="2020-03-06 10:49:03">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/MySql%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Mysql"
+           data-author="" >
+            <span class="post-title" title="MySql 数据库">MySql 数据库</span>
+            <span class="post-date" title="2020-03-04 23:31:02">2020/03/04</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy%E6%A1%86%E6%9E%B6%E7%88%AC%E8%99%AB/"
+           data-tag="Scrapy"
+           data-author="" >
+            <span class="post-title" title="Scrapy 框架爬虫">Scrapy 框架爬虫</span>
+            <span class="post-date" title="2020-03-02 10:44:55">2020/03/02</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="多线程与多进程爬虫">多线程与多进程爬虫</span>
+            <span class="post-date" title="2020-03-01 15:33:08">2020/03/01</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Selenium%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%A8%A1%E6%8B%9F/"
+           data-tag="Selenium"
+           data-author="" >
+            <span class="post-title" title="Selenium 自动化测试模拟">Selenium 自动化测试模拟</span>
+            <span class="post-date" title="2020-02-29 21:29:54">2020/02/29</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96-%E6%96%87%E4%BB%B6%E4%BF%9D%E5%AD%98/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="数据持久化 - 文件保存本地">数据持久化 - 文件保存本地</span>
+            <span class="post-date" title="2020-02-27 22:01:14">2020/02/27</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫基础入门">爬虫基础入门</span>
+            <span class="post-date" title="2020-02-26 20:44:27">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/CSS%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%8EXpath%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96/"
+           data-tag="CSS-Xpath"
+           data-author="" >
+            <span class="post-title" title="CSS 选择器与 Xpath 数据提取">CSS 选择器与 Xpath 数据提取</span>
+            <span class="post-date" title="2020-02-26 19:07:35">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Seaborn-Pygal-Pyecharts%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Seaborn,pygal,Pyecharts"
+           data-author="" >
+            <span class="post-title" title="Seaborn-Pygal-Pyecharts 可视化">Seaborn-Pygal-Pyecharts 可视化</span>
+            <span class="post-date" title="2020-02-22 16:24:55">2020/02/22</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/python%E4%B9%8BMatplotlib%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Matplotlib"
+           data-author="" >
+            <span class="post-title" title="python 之 Matplotlib 可视化">python 之 Matplotlib 可视化</span>
+            <span class="post-date" title="2020-02-20 20:28:44">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%A4%84%E7%90%86%E5%AE%9E%E6%93%8D/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Pandas 数据分析处理实操">Pandas 数据分析处理实操</span>
+            <span class="post-date" title="2020-02-20 10:51:39">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Markdown%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E6%8A%80%E5%B7%A7/"
+           data-tag="Markdown"
+           data-author="" >
+            <span class="post-title" title="Markdown 文本编辑技巧">Markdown 文本编辑技巧</span>
+            <span class="post-date" title="2020-02-18 16:31:40">2020/02/18</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BPandas%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Python 之 Pandas 库从入门到实战">Python 之 Pandas 库从入门到实战</span>
+            <span class="post-date" title="2020-02-15 20:46:52">2020/02/15</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BNumpy%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Numpy"
+           data-author="" >
+            <span class="post-title" title="Python 之 Numpy 库从入门到实战">Python 之 Numpy 库从入门到实战</span>
+            <span class="post-date" title="2020-02-13 23:15:38">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E9%95%9C%E5%83%8F%E6%BA%90%E7%BD%91%E5%9D%80/"
+           data-tag="pip"
+           data-author="" >
+            <span class="post-title" title="python pip 国内镜像大全及库的安装">python pip 国内镜像大全及库的安装</span>
+            <span class="post-date" title="2020-02-13 23:13:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E7%9A%84%E4%B8%89%E7%A7%8D%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 的三种输出格式">python 的三种输出格式</span>
+            <span class="post-date" title="2020-02-13 23:04:49">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E4%B8%AD%E7%9A%84%E6%97%B6%E9%97%B4%E6%A8%A1%E5%9D%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的时间模块">python 中的时间模块</span>
+            <span class="post-date" title="2020-02-13 23:01:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/python%E6%9F%A5%E7%9C%8B%E4%BB%BB%E4%BD%95%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E7%94%A8%E6%B3%95%E7%9A%84%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 查看任何第三方库的用法的方法">python 查看任何第三方库的用法的方法</span>
+            <span class="post-date" title="2020-02-13 22:57:50">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Anaconda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8Epyinstaller%E7%A8%8B%E5%BA%8F%E6%89%93%E5%8C%85/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Anaconda 环境配置与 pyinstaller 程序打包">Anaconda 环境配置与 pyinstaller 程序打包</span>
+            <span class="post-date" title="2020-02-13 20:01:52">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%BD%BF%E7%94%A8Hexo-Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%85%8D%E8%B4%B9%E5%8D%9A%E5%AE%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="使用 Hexo+Github 搭建个人免费博客">使用 Hexo+Github 搭建个人免费博客</span>
+            <span class="post-date" title="2020-02-13 15:44:02">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E5%85%B3%E4%BA%8Ehexo%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"
+           data-tag="Hexo"
+           data-author="" >
+            <span class="post-title" title="关于 hexo 使用过程中报错问题汇总">关于 hexo 使用过程中报错问题汇总</span>
+            <span class="post-date" title="2020-02-12 23:03:46">2020/02/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-反反爬虫之JS解密" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">反反爬虫之 JS 解密</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="爬虫">爬虫</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2025-12-13 13:23:10'>2020-03-24 10:04</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:4.8k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%89%8B%E5%8A%A8%E7%A0%B4%E8%A7%A3"><span class="toc-text">一、手动破解 </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81JavaScript%20%E7%A0%B4%E8%A7%A3"><span class="toc-text">二、JavaScript 破解 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%20%E6%90%AD%E5%BB%BA%E7%8E%AF%E5%A2%83"><span class="toc-text">2.1 搭建环境 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%20%E9%85%8D%E7%BD%AE%20Pycharm"><span class="toc-text">2.2 配置 Pycharm</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%20%E5%A4%8D%E5%88%B6%20JS%20%E4%BB%A3%E7%A0%81"><span class="toc-text">2.3 复制 JS 代码 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%20%E5%9C%A8%20python%20%E8%B0%83%E7%94%A8%20Js%20%E4%BB%A3%E7%A0%81"><span class="toc-text">2.4 在 python 调用 Js 代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81JS%20%E6%B7%B7%E6%B7%86"><span class="toc-text">三、JS 混淆 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%20%E5%88%A9%E4%B8%8E%E5%BC%8A"><span class="toc-text">3.1 利与弊</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-%20%E6%B7%B7%E6%B7%86%E4%B8%8E%E5%8F%8D%E6%B7%B7%E6%B7%86"><span class="toc-text">3.2 混淆与反混淆</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-1-JS%20%E5%8E%8B%E7%BC%A9"><span class="toc-text">3.2.1 JS 压缩</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-2-eval%20%E5%8A%A0%E5%AF%86"><span class="toc-text">3.2.2 eval 加密</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-3-%20%E5%85%AC%E9%92%A5%E5%8A%A0%E5%AF%86%E5%85%B3%E9%94%AE%E5%AD%97%E6%AE%B5"><span class="toc-text">3.2.3 公钥加密关键字段 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-4-%20%E5%8F%98%E9%87%8F%E5%90%8D%E6%B7%B7%E6%B7%86"><span class="toc-text">3.2.4 变量名混淆 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-5-%20%E6%8E%A7%E5%88%B6%E6%B5%81%E5%B9%B3%E5%9D%A6%E5%8C%96"><span class="toc-text">3.2.5 控制流平坦化 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-6-%20%E4%BD%BF%E7%94%A8%E7%89%B9%E5%AE%9A%E7%AC%A6%E5%8F%B7%E7%BC%96%E5%86%99%20js%20%E8%84%9A%E6%9C%AC"><span class="toc-text">3.2.6 使用特定符号编写 js 脚本 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-7-%20%E7%89%B9%E6%AE%8A%E8%BD%AC%E5%8C%96%E8%A7%84%E5%88%99"><span class="toc-text">3.2.7 特殊转化规则 </span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E7%BB%83%E6%89%8B%E9%A1%B9%E7%9B%AE"><span class="toc-text">四、练手项目</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>对传输的数据进行 JS 加密是网站常用的加密方式，以防止爬虫的爬取，以下对有道翻译进行破解示例。</p>
+<h1 id="一、手动破解"><a href="# 一、手动破解" class="headerlink" title="一、手动破解"></a>一、手动破解 </h1><p> 打开有道翻译：<a target="_blank" rel="noopener" href="http://fanyi.youdao.com/">http://fanyi.youdao.com/</a></p>
+<p>输入翻译内容：你好，世界</p>
+<p>打开开发者调试工具：</p>
+<p>【Network】—刷新—重新输入需要翻译的内容</p>
+<p>在【XHR】过滤后，可看到【Js】传来的数据：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_10-20-51.png" alt=""></p>
+<p>在【Headers】里可以看到请求的【url，请求方式】：<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_10-23-37.png" alt=""></p>
+<p>再往下翻，可以看到发送的表单数据：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_10-25-34.png" alt=""></p>
+<p>这里面是重点！</p>
+<p>重新输入翻译内容，再对比看看两份表单数据：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_10-28-53.png" alt=""></p>
+<p>以上红框里四个参数是关键，需要搞清楚它是怎么产生的。</p>
+<p>【ctrl+f】打开搜索框，搜索【salt】参数</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_10-37-46.png" alt=""></p>
+<p>搜到了【fanyi.min.js】，这就说明【salt】【sign】【ts】【bv】可能是在这里面产生的。</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_10-43-48.png" alt=""></p>
+<p>显示内容：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_10-45-38.png" alt=""></p>
+<p>为了便于分析查找，将【fanyi.min.js】数据复制到 pycharm 里。</p>
+<p>在 pycharm 里新建【JavaScript file】，命名为【fanyi.min.js】，把数据复制进去。</p>
+<p>【ctrl+f】打开搜索框，搜索【translate_o】关键词</p>
+<p>因为这是数据传输的 url：【Request URL: ==<a target="_blank" rel="noopener" href="http://fanyi.youdao.com/translate_o?smartresult=dict&amp;smartresult=rule==】">http://fanyi.youdao.com/translate_o?smartresult=dict&amp;smartresult=rule==】</a></p>
+<p>找到：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_10-55-15.png" alt=""></p>
+<p>这里面的（data: e）中的 e 是指查询或者说翻译参数，用户需要翻译的值。这个数据在函数 c(e,t)里处理，故先 ctrl+ 鼠标左键，点击函数名 c 进入：</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_11-08-55.png" style="zoom:80%;" />
+
+<p>可以看到我们需要的参数【salt】【sign】【ts】【bv】这些参数都跟 r 有关，ctrl+ 鼠标左键，点击 r 进入：</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_11-11-39.png" style="zoom:80%;" />
+
+<p>可以看到，r 是由 v.generateSaltSign(n)产生的，ctrl+ 鼠标左键，点击进入：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_11-14-25.png" alt=""></p>
+<p>可以看到，generateSaltSign 是由 r 产生的，ctrl+ 鼠标左键，点击 r 进入：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_11-16-45.png" alt=""></p>
+<p>由此终于可以看到【ts】【bv】【sign】【salt】是怎么来的了。</p>
+<p>【ts】与时间有关，再结合 ts 在表单数据里的值【ts: 1585016297455】，很容易知道它就是个时间戳，只不过是个 13 位数的时间戳。python 里面可以得到：</p>
+<pre><code class="python">ts=str(int(time.time()*1000))</code></pre>
+<p>【bv】是由(navigator.appVersion）进行 md5 加密而来，(navigator.appVersion）其实就是 User-Agent。</p>
+<p>【sign】是由 (“fanyideskweb” + e + i + “Nw(nmmbP%A-r6U3EUn]Aj”) 进行 md5 加密而来，这里的 e 是翻译的查询参数，比如这里翻译的内容是”你好，世界”，e 就是”你好，世界”；i 就是 salt。</p>
+<p>【salt】是 i，与 r(即时间戳有关)，再结合 salt 在表单数据里的值【salt: 15850162974555】，很明显就知道 salt 是在 ts 时间戳后面再加了一位随机数。</p>
+<pre><code class="python">salt=ts+str(random.randint(0,9))  // 字符串拼接</code></pre>
+<p>剩下的就是在 python 里面实现 md5 加密。</p>
+<pre><code class="python">import hashlib
+def make_md5(string):
+    string=string.encode(&#39;utf-8&#39;)
+    md5=hashlib.md5(string).hexdigest()
+    return md5
+
+bv=make_md5(&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36&quot;)
+sign=make_md5(&quot;fanyideskweb&quot; + &quot; 你好，世界 &quot; + str(salt) + &quot;Nw(nmmbP%A-r6U3EUn]Aj&quot;)</code></pre>
+<p>整个程序：</p>
+<pre><code class="python">import requests
+import time
+import random
+import hashlib
+
+def make_md5(string):
+    string=string.encode(&#39;utf-8&#39;)
+    md5=hashlib.md5(string).hexdigest()
+    return md5
+
+def translate(e):
+    #特征值破解
+    ts=str(int(time.time()*1000))
+    salt=ts+str(random.randint(0,9))
+    bv=make_md5(&#39;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36&#39;)
+    sign=make_md5(&quot;fanyideskweb&quot; + e + salt + &quot;n%A-rKaT5fb[Gy?;N5@Tj&quot;)
+
+    formdata=&#123;
+        &quot;i&quot;: str(e),
+        &quot;from&quot;: &#39;AUTO&#39;,
+         &quot;to&quot;: &quot;AUTO&quot;,
+        &quot;smartresult&quot;: &quot;dict&quot;,
+        &quot;client&quot;: &quot;fanyideskweb&quot;,
+        &quot;salt&quot;: salt,
+        &quot;sign&quot;: sign,
+        &quot;ts&quot;: ts,
+        &quot;bv&quot;: bv,
+        &quot;doctype&quot;: &quot;json&quot;,
+        &quot;version&quot;: &quot;2.1&quot;,
+        &quot;keyfrom&quot;: &quot;fanyi.web&quot;,
+        &quot;action&quot;: &quot;FY_BY_REALTlME&quot;
+    &#125;
+    headers=&#123;
+        &#39;Accept&#39;: &#39;application/json, text/javascript, */*; q=0.01&#39;,
+        &#39;Accept-Encoding&#39;: &#39;gzip, deflate&#39;,
+        &#39;Accept-Language&#39;: &#39;zh-CN,zh;q=0.9&#39;,
+        &#39;Connection&#39;: &#39;keep-alive&#39;,
+        &#39;Content-Length&#39;: &#39;251&#39;,
+        &#39;Content-Type&#39;: &#39;application/x-www-form-urlencoded; charset=UTF-8&#39;,
+        &#39;Cookie&#39;: &#39;OUTFOX_SEARCH_USER_ID=289052185@10.108.160.18; OUTFOX_SEARCH_USER_ID_NCOO=469089922.02312773; DICT_UGC=be3af0da19b5c5e6aa4e17bd8d90b28a|; JSESSIONID=abczzcxuVriBO6I1nFq0w; ___rl__test__cookies=1567939951177&#39;,
+        &#39;Host&#39;: &#39;fanyi.youdao.com&#39;,
+        &#39;Origin&#39;: &#39;http://fanyi.youdao.com&#39;,
+        &#39;Referer&#39;: &#39;http://fanyi.youdao.com/&#39;,
+        &#39;User-Agent&#39;: &#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36&#39;,
+        &#39;X-Requested-With&#39;:&#39;XMLHttpRequest&#39;,
+    &#125;
+    res=requests.post(&quot;http://fanyi.youdao.com/translate_o?smartresult=dict&amp;smartresult=rule&quot;,data=formdata,headers=headers).json()
+    text=res[&#39;translateResult&#39;][0][0][&#39;tgt&#39;]
+    return text
+
+if __name__==&#39;__main__&#39;:
+    e=input(&#39; 请输入需要翻译的词或句子：&#39;)
+    result=translate(e)
+    print(result)</code></pre>
+<h1 id="二、JavaScript 破解"><a href="# 二、JavaScript 破解" class="headerlink" title="二、JavaScript 破解"></a>二、JavaScript 破解 </h1><p> 原理：直接在网页调试工具中将实现 JS 加密的 JavaScript 代码整个赋值下来，在 python 中执行，这样就无需人为去破解。</p>
+<h2 id="2-1- 搭建环境"><a href="#2-1- 搭建环境" class="headerlink" title="2.1 搭建环境"></a>2.1 搭建环境 </h2><p> 如果想用 python 代码直接调用 js 的代码，则需要搭建 js 环境，并安装相关的库直接调用 JS 代码。</p>
+<p><a target="_blank" rel="noopener" href="https://pypi.org/project/PyExecJS/">PyExecJS</a> ，就是其中一个比较好的库。可以使用 python 运行 JavaScript 代码。</p>
+<p>需要注意的是：这个库已经不再维护了，如果因为版本更新所导致的一些错误是无法修复的。</p>
+<p><code>PyExecJS</code> 的优点是不需要关心 JavaScript 环境。 特别是它可以在 Windows 环境下工作，而不需要安装额外的库。</p>
+<p>缺点之一是性能。 通过文本传递 JavaScript 运行时，速度很慢。 另一个缺点是它不完全支持运行时特定的特性。</p>
+<p>首先下载安装 Node.js：<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/">https://nodejs.org/zh-cn/</a></p>
+<p>然后安装 python 库：</p>
+<pre><code>pip install PyExecJS</code></pre><h2 id="2-2- 配置 Pycharm"><a href="#2-2- 配置 Pycharm" class="headerlink" title="2.2 配置 Pycharm"></a>2.2 配置 Pycharm</h2><p>目的：在 pycharm 中运行 js 代码。</p>
+<p>在 pycharm 中安装插件 Node.js：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_13-29-37.png" alt=""></p>
+<p>尝试运行：</p>
+<pre><code>// 新建文件 youdao.js，并输入以下代码
+console.log(&#39;hello&#39;)
+// 运行输出
+hello</code></pre><p>如果提示没有编译器，则按下面配置：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_13-37-20.png" alt=""></p>
+<h2 id="2-3- 复制 JS 代码"><a href="#2-3- 复制 JS 代码" class="headerlink" title="2.3 复制 JS 代码"></a>2.3 复制 JS 代码 </h2><p> 上面已经找到了关键数据的加密方式，直接复制过来：</p>
+<p>在 pycharm 里新建【JavaScript file】，命名为【fanyi.js】，把数据复制进去。</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_13-46-28.png" alt=""></p>
+<p>这里面用到了 n.md5 函数，ctrl+ 鼠标左键，点击函数名找到位置：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_13-56-54.png" alt=""></p>
+<p>找到 md5 之后，发现里面的还有 h(e),f(e)等函数，不可直接复制 md5 函数里的内容，应该向上找，找到包含 md5 的完整函数。</p>
+<p>按缩进判断函数体：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_14-00-27.png" alt=""></p>
+<p>然后将断点之间的代码都复制到【fanyi.js】：</p>
+<p>并删掉引用：e(“./jquery-1.7”).extend({</p>
+<pre><code class="javascript">var n = function (e, t) &#123;
+        return e &lt;&lt; t | e &gt;&gt;&gt; 32 - t
+    &#125;, r = function (e, t) &#123;
+        var n, r, i, a, o;
+        return i = 2147483648 &amp; e, a = 2147483648 &amp; t, n = 1073741824 &amp; e, r = 1073741824 &amp; t, o = (1073741823 &amp; e) + (1073741823 &amp; t), n &amp; r ? 2147483648 ^ o ^ i ^ a : n | r ? 1073741824 &amp; o ? 3221225472 ^ o ^ i ^ a : 1073741824 ^ o ^ i ^ a : o ^ i ^ a
+    &#125;, i = function (e, t, n) &#123;
+        return e &amp; t | ~e &amp; n
+    &#125;, a = function (e, t, n) &#123;
+        return e &amp; n | t &amp; ~n
+    &#125;, o = function (e, t, n) &#123;
+        return e ^ t ^ n
+    &#125;, s = function (e, t, n) &#123;
+        return t ^ (e | ~n)
+    &#125;, l = function (e, t, a, o, s, l, c) &#123;
+        return e = r(e, r(r(i(t, a, o), s), c)), r(n(e, l), t)
+    &#125;, c = function (e, t, i, o, s, l, c) &#123;
+        return e = r(e, r(r(a(t, i, o), s), c)), r(n(e, l), t)
+    &#125;, u = function (e, t, i, a, s, l, c) &#123;
+        return e = r(e, r(r(o(t, i, a), s), c)), r(n(e, l), t)
+    &#125;, d = function (e, t, i, a, o, l, c) &#123;
+        return e = r(e, r(r(s(t, i, a), o), c)), r(n(e, l), t)
+    &#125;, f = function (e) &#123;
+        for (var t, n = e.length, r = n + 8, i = 16 * ((r - r % 64) / 64 + 1), a = Array(i - 1), o = 0, s = 0; s &lt; n;) o = s % 4 * 8, a[t = (s - s % 4) / 4] = a[t] | e.charCodeAt(s) &lt;&lt; o, s++;
+        return t = (s - s % 4) / 4, o = s % 4 * 8, a[t] = a[t] | 128 &lt;&lt; o, a[i - 2] = n &lt;&lt; 3, a[i - 1] = n &gt;&gt;&gt; 29, a
+    &#125;, p = function (e) &#123;
+        var t, n = &quot;&quot;, r = &quot;&quot;;
+        for (t = 0; t &lt;= 3; t++) n += (r = &quot;0&quot; + (e &gt;&gt;&gt; 8 * t &amp; 255).toString(16)).substr(r.length - 2, 2);
+        return n
+    &#125;, h = function (e) &#123;
+        e = e.replace(/\x0d\x0a/g, &quot;\n&quot;);
+        for (var t = &quot;&quot;, n = 0; n &lt; e.length; n++) &#123;
+            var r = e.charCodeAt(n);
+            if (r &lt; 128) t += String.fromCharCode(r); else if (r &gt; 127 &amp;&amp; r &lt; 2048) t += String.fromCharCode(r &gt;&gt; 6 | 192), t += String.fromCharCode(63 &amp; r | 128); else if (r &gt;= 55296 &amp;&amp; r &lt;= 56319) &#123;
+                if (n + 1 &lt; e.length) &#123;
+                    var i = e.charCodeAt(n + 1);
+                    if (i &gt;= 56320 &amp;&amp; i &lt;= 57343) &#123;
+                        var a = 1024 * (r - 55296) + (i - 56320) + 65536;
+                        t += String.fromCharCode(240 | a &gt;&gt; 18 &amp; 7), t += String.fromCharCode(128 | a &gt;&gt; 12 &amp; 63), t += String.fromCharCode(128 | a &gt;&gt; 6 &amp; 63), t += String.fromCharCode(128 | 63 &amp; a), n++
+                    &#125;
+                &#125;
+            &#125; else t += String.fromCharCode(r &gt;&gt; 12 | 224), t += String.fromCharCode(r &gt;&gt; 6 &amp; 63 | 128), t += String.fromCharCode(63 &amp; r | 128)
+        &#125;
+        return t
+    &#125;;
+      md5=function (e) &#123;
+            var t, n, i, a, o, s, m, g, v, y = Array();
+            for (e = h(e), y = f(e), s = 1732584193, m = 4023233417, g = 2562383102, v = 271733878, t = 0; t &lt; y.length; t += 16) n = s, i = m, a = g, o = v, s = l(s, m, g, v, y[t + 0], 7, 3614090360), v = l(v, s, m, g, y[t + 1], 12, 3905402710), g = l(g, v, s, m, y[t + 2], 17, 606105819), m = l(m, g, v, s, y[t + 3], 22, 3250441966), s = l(s, m, g, v, y[t + 4], 7, 4118548399), v = l(v, s, m, g, y[t + 5], 12, 1200080426), g = l(g, v, s, m, y[t + 6], 17, 2821735955), m = l(m, g, v, s, y[t + 7], 22, 4249261313), s = l(s, m, g, v, y[t + 8], 7, 1770035416), v = l(v, s, m, g, y[t + 9], 12, 2336552879), g = l(g, v, s, m, y[t + 10], 17, 4294925233), m = l(m, g, v, s, y[t + 11], 22, 2304563134), s = l(s, m, g, v, y[t + 12], 7, 1804603682), v = l(v, s, m, g, y[t + 13], 12, 4254626195), g = l(g, v, s, m, y[t + 14], 17, 2792965006), m = l(m, g, v, s, y[t + 15], 22, 1236535329), s = c(s, m, g, v, y[t + 1], 5, 4129170786), v = c(v, s, m, g, y[t + 6], 9, 3225465664), g = c(g, v, s, m, y[t + 11], 14, 643717713), m = c(m, g, v, s, y[t + 0], 20, 3921069994), s = c(s, m, g, v, y[t + 5], 5, 3593408605), v = c(v, s, m, g, y[t + 10], 9, 38016083), g = c(g, v, s, m, y[t + 15], 14, 3634488961), m = c(m, g, v, s, y[t + 4], 20, 3889429448), s = c(s, m, g, v, y[t + 9], 5, 568446438), v = c(v, s, m, g, y[t + 14], 9, 3275163606), g = c(g, v, s, m, y[t + 3], 14, 4107603335), m = c(m, g, v, s, y[t + 8], 20, 1163531501), s = c(s, m, g, v, y[t + 13], 5, 2850285829), v = c(v, s, m, g, y[t + 2], 9, 4243563512), g = c(g, v, s, m, y[t + 7], 14, 1735328473), m = c(m, g, v, s, y[t + 12], 20, 2368359562), s = u(s, m, g, v, y[t + 5], 4, 4294588738), v = u(v, s, m, g, y[t + 8], 11, 2272392833), g = u(g, v, s, m, y[t + 11], 16, 1839030562), m = u(m, g, v, s, y[t + 14], 23, 4259657740), s = u(s, m, g, v, y[t + 1], 4, 2763975236), v = u(v, s, m, g, y[t + 4], 11, 1272893353), g = u(g, v, s, m, y[t + 7], 16, 4139469664), m = u(m, g, v, s, y[t + 10], 23, 3200236656), s = u(s, m, g, v, y[t + 13], 4, 681279174), v = u(v, s, m, g, y[t + 0], 11, 3936430074), g = u(g, v, s, m, y[t + 3], 16, 3572445317), m = u(m, g, v, s, y[t + 6], 23, 76029189), s = u(s, m, g, v, y[t + 9], 4, 3654602809), v = u(v, s, m, g, y[t + 12], 11, 3873151461), g = u(g, v, s, m, y[t + 15], 16, 530742520), m = u(m, g, v, s, y[t + 2], 23, 3299628645), s = d(s, m, g, v, y[t + 0], 6, 4096336452), v = d(v, s, m, g, y[t + 7], 10, 1126891415), g = d(g, v, s, m, y[t + 14], 15, 2878612391), m = d(m, g, v, s, y[t + 5], 21, 4237533241), s = d(s, m, g, v, y[t + 12], 6, 1700485571), v = d(v, s, m, g, y[t + 3], 10, 2399980690), g = d(g, v, s, m, y[t + 10], 15, 4293915773), m = d(m, g, v, s, y[t + 1], 21, 2240044497), s = d(s, m, g, v, y[t + 8], 6, 1873313359), v = d(v, s, m, g, y[t + 15], 10, 4264355552), g = d(g, v, s, m, y[t + 6], 15, 2734768916), m = d(m, g, v, s, y[t + 13], 21, 1309151649), s = d(s, m, g, v, y[t + 4], 6, 4149444226), v = d(v, s, m, g, y[t + 11], 10, 3174756917), g = d(g, v, s, m, y[t + 2], 15, 718787259), m = d(m, g, v, s, y[t + 9], 21, 3951481745), s = r(s, n), m = r(m, i), g = r(g, a), v = r(v, o);
+            return (p(s) + p(m) + p(g) + p(v)).toLowerCase()
+        &#125;
+
+var r = function (e) &#123;
+        var t = md5(navigator.appVersion), r = &quot;&quot; + (new Date).getTime(), i = r + parseInt(10 * Math.random(), 10);
+        return &#123;ts: r, bv: t, salt: i, sign: md5(&quot;fanyideskweb&quot; + e + i + &quot;Nw(nmmbP%A-r6U3EUn]Aj&quot;)&#125;
+    &#125;;
+
+console.log(r(&#39; 你好世界 &#39;))
+// 输出如下：
+var t = md5(navigator.appVersion), r = &quot;&quot; + (new Date).getTime(), i = r + parseInt(10 * Math.random(), 10);
+                    ^
+
+ReferenceError: navigator is not defined</code></pre>
+<p>说明这里还有    navigator    这个参数还未定义。</p>
+<p>在 console 中输入 navigator，可得到数据：</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_14-25-13.png" alt=""></p>
+<p>将 navigator 的参数以字典的形式添加到到代码中（其实只是需要键名为 appVersion 的值，即浏览器的 UA）再运行：</p>
+<p>提示以下错误：</p>
+<pre><code> e = e.replace(/\x0d\x0a/g, &quot;\n&quot;);
+              ^
+RangeError: Maximum call stack size exceeded
+at String.replace (&lt;anonymous&gt;)</code></pre><p>这是因为：</p>
+<pre><code class="javascript">var r = function (e) &#123;……&#125;;</code></pre>
+<p>变量名 r 与之前的重复了，改掉就好。</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/Snipaste_2020-03-24_14-32-47.png" alt=""></p>
+<pre><code>&#123;
+  ts: &#39;1585031532017&#39;,
+  bv: &#39;901200199a98c590144a961dac532964&#39;,
+  salt: &#39;15850315320171&#39;,
+  sign: &#39;e04455ff433514e20647a2a96c759bd0&#39;
+&#125;
+</code></pre><p>终于得到了想要的数据！</p>
+<h2 id="2-4- 在 python 调用 Js 代码"><a href="#2-4- 在 python 调用 Js 代码" class="headerlink" title="2.4 在 python 调用 Js 代码"></a>2.4 在 python 调用 Js 代码</h2><pre><code class="python">import execjs
+
+with open(&#39;fanyi.min.js&#39;,&#39;r&#39;,encoding=&#39;utf-8&#39;) as f:
+    js_code=f.read()
+
+// 使用 compile 加载 JavaScript 代码
+ctx=execjs.compile(js_code)
+// 使用 call 调用对象
+result=ctx.call(&#39;youdao&#39;,&#39; 你好世界 &#39;)
+print(result)
+// 输出结果如下
+&#123;&#39;ts&#39;: &#39;1585032669319&#39;, &#39;bv&#39;: &#39;901200199a98c590144a961dac532964&#39;, &#39;salt&#39;: &#39;15850326693199&#39;, &#39;sign&#39;: &#39;7b5bd55eb8c7c5f3c9ea99f9632109e4&#39;&#125;</code></pre>
+<h1 id="三、JS 混淆"><a href="# 三、JS 混淆" class="headerlink" title="三、JS 混淆"></a>三、JS 混淆 </h1><h2 id="3-1- 利与弊"><a href="#3-1- 利与弊" class="headerlink" title="3.1 利与弊"></a>3.1 利与弊</h2><p><strong> 站在网站开发者的角度</strong></p>
+<p>1、是为了保护我们的前端代码逻辑<br>2、精简代码、加快传输</p>
+<p><strong>站在爬虫者的角度</strong></p>
+<p>1、增加了获取数据的难度<br>2、增加了获取数据的难度</p>
+<h2 id="3-2- 混淆与反混淆"><a href="#3-2- 混淆与反混淆" class="headerlink" title="3.2 混淆与反混淆"></a>3.2 混淆与反混淆</h2><h3 id="3-2-1-JS 压缩"><a href="#3-2-1-JS 压缩" class="headerlink" title="3.2.1 JS 压缩"></a>3.2.1 JS 压缩</h3><p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20191225190455160.png" alt=""></p>
+<p>特点：把 JS 代码写在一起。让你难以阅读，难以破解</p>
+<p>削减是一个从源代码中删除不必要的字符的技术使它看起来简单而整洁。这种技术也被称为代码压缩和最小化。</p>
+<p>常用压缩工具：<br><a target="_blank" rel="noopener" href="https://javascript-minifier.com/">https://javascript-minifier.com/</a></p>
+<p>破解方法 - 代码格式化：<br><a target="_blank" rel="noopener" href="http://tool.oschina.net/codeformat/js/">http://tool.oschina.net/codeformat/js/</a></p>
+<h3 id="3-2-2-eval 加密"><a href="#3-2-2-eval 加密" class="headerlink" title="3.2.2 eval 加密"></a>3.2.2 eval 加密</h3><p>js 中的 eval() 方法就是一个 js 语言的执行器，它能把其中的参数按照 JavaScript 语法进行解析并执行，简单来说就是把原本的 js 代码变成了 eval 的参数，变成参数后代码就成了字符串，其中的一些字符就会被按照特定格式“编码”。</p>
+<p><strong>特征：</strong></p>
+<p>最明显的特征是生成的代码以 <code>eval(function(p,a,c,k,e,r))</code> 开头。</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20191225190543248.png" style="zoom:100%;" />
+
+<p><strong>原理：</strong></p>
+<p>这类混淆的关键思想在于将需要执行的代码进行一次编码，在执行的时候还原出浏览器可执行的合法 的脚本</p>
+<p>破解方法 - 浏览器 <br> 打开 谷歌 或者 火狐 浏览器 <br> 按 F12 打开控制台 <br> 把代码复制进去 <br> 删除开头 eval 这 4 个字母 <br> 按回车键</p>
+<p>常用混淆工具：<br><a target="_blank" rel="noopener" href="http://dean.edwards.name/packer/">http://dean.edwards.name/packer/</a></p>
+<h3 id="3-2-3- 公钥加密关键字段"><a href="#3-2-3- 公钥加密关键字段" class="headerlink" title="3.2.3 公钥加密关键字段"></a>3.2.3 公钥加密关键字段 </h3><p><strong> 特征：</strong></p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20191225190622791.png" alt=""></p>
+<p><strong>原理：</strong><br>用户访问客户端，客户端向服务器请求获取一个 RSA 公钥以及键值 key，存储在本地 <br> 用户在本地公钥失效前发起登录请求，则使用已有公钥对用户密码进行加密；若已过期则执行 1 后 再加密 <br> 客户端将密文与 key 一起传回后台 <br> 后台通过 key 找到缓存里面的私钥，对密文进行解密</p>
+<p>常用混淆工具：<br><a target="_blank" rel="noopener" href="http://travistidwell.com/jsencrypt/">http://travistidwell.com/jsencrypt/</a></p>
+<h3 id="3-2-4- 变量名混淆"><a href="#3-2-4- 变量名混淆" class="headerlink" title="3.2.4 变量名混淆"></a>3.2.4 变量名混淆 </h3><p><strong> 特征：</strong></p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20191225190656223.png" alt=""></p>
+<p><strong>原理</strong></p>
+<p>字符串字面量混淆：首先提取全部的字符串，在全局作用域创建一个字符串数组，同时转义字符增大 阅读难度，然后将字符串出现的地方替换成为数组元素的引用 <br> 变量名混淆：不同于压缩器的缩短命名，此处使用了下划线加数字的格式，变量之间区分度很低，相 比单个字母更难以阅读 <br> 成员运算符混淆：将点运算符替换为字符串下标形式，然后对字符串进行混淆 删除多余的空白字符：减小文件体积，这是所有压缩器都会做的事。</p>
+<p>常用混淆工具：<br><a target="_blank" rel="noopener" href="http://javascriptobfuscator.com/Javascript-Obfuscator.aspx">http://javascriptobfuscator.com/Javascript-Obfuscator.aspx</a><br><a target="_blank" rel="noopener" href="http://js.51tools.info/">http://js.51tools.info/</a><br>破解方法 -IDE、解密工具、浏览器：  <a target="_blank" rel="noopener" href="http://jsnice.org/">http://jsnice.org/</a>  <a target="_blank" rel="noopener" href="http://js.51tools.info/">http://js.51tools.info/</a></p>
+<p>（1）把变量名、函数名、参数名等，替换成没有语义，看着又很像的名字。</p>
+<pre><code>_0x21dd83、_0x21dd84、_0x21dd85</code></pre><p>（2）用十六进制文本去表示一个字符串</p>
+<pre><code>\x56\x49\x12\x23</code></pre><p>（3）利用 JS 能识别的编码来做混淆。JS 是 Unicode 编码，本身就能识别这种编码。类似的一些变量名，函数名都可以用这个表示，并且调用。</p>
+<p>  类似： <code>\u6210\u529f</code> 表示中文字符(成功)。</p>
+<p>  类似：<code>\u0053\u0074\u0072\u0069\u006e\u0067.\u0066\u0072\u006f\u006d\u0043\u0068\u0061\u0072\u0043\u006f\u0064\u0065</code>  </p>
+<p>代表 String.fromCharCode</p>
+<p>  类似：</p>
+<p>  <code>(&#39;&#39;)[&#39;\x63\x6f\x6e\x73\x74\x72\x75\x63\x74\x6f\x72&#39;][&#39;\x66\x72\x6f\x6d\x43\x68\x61\x72\x43\x6f\x64\x65&#39;];</code> </p>
+<p>效果等同于 String.fromCharCode</p>
+<p>（4）把一大堆方法名、字符串等存到数组中，这个数组可以是上千个成员。然后调用的时候，取数组成员去用</p>
+<pre><code class="javascript">var arr = [&quot;Date&quot;,&quot;getTime&quot;];
+var time = new window[arr[0]]()[arr[1]]();
+console.log(time);</code></pre>
+<p>（5）字符串加密后发送到前端，然后前端调用对应的函数去解密，得到明文</p>
+<pre><code class="javascript">var arr = [&#39;xxxx&#39;]
+
+// 定义的解密函数
+function dec(str)&#123;
+  return &#39;push&#39;
+&#125;
+test[dec(arr[0])](200);</code></pre>
+<h3 id="3-2-5- 控制流平坦化"><a href="#3-2-5- 控制流平坦化" class="headerlink" title="3.2.5 控制流平坦化"></a>3.2.5 控制流平坦化 </h3><p> 将顺序执行的代码混淆成乱序执行, 并加以混淆</p>
+<p>以下两段代码的执行结果是相同的:</p>
+<pre><code class="javascript">// 正常形态
+function test(a)&#123;
+    var b = a;
+    b += 1;
+    b += 2;
+    b += 3;
+    b += 4;
+    return a + b
+&#125;
+
+// 乱序形态
+//（这里比较简单, 在很多加密网站上 case 后面往往不是数字或字符串, 而是类似 YFp[15][45][4]这样的对象，相当恶心）
+function test1(a)&#123;
+  var arr = [1,2,3,4,5,6]
+  for(var i = 0, i &lt; arr.lenght, i++)&#123;
+    switch (arr[i]) &#123;
+      case 4:
+        b += 3;
+        break;
+      case 2:
+        b += 1;
+      break;
+      case 1:
+        var b = a;
+      break;
+      case 3:
+        b += 2;
+      break;
+      case 6:
+        return a + b
+      case 5:
+        b += 4;
+      break;
+    &#125;
+  &#125;
+&#125;
+// 结果都是 30 但是 test1 看着费劲
+console.log(test1(10));
+console.log(test(10));</code></pre>
+<h3 id="3-2-6- 使用特定符号编写 js 脚本"><a href="#3-2-6- 使用特定符号编写 js 脚本" class="headerlink" title="3.2.6 使用特定符号编写 js 脚本"></a>3.2.6 使用特定符号编写 js 脚本 </h3><p><strong> 特征：</strong></p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20191225190724159.png" alt=""></p>
+<p><strong>原理：</strong><br>jsfuck 源于一门编程语言 brainfuck，其主要的思想就是只使用 8 种特定的符号来编写代码。而 jsfuck<br>也是沿用了这个思想，它仅仅使用 6 种符号来编写代码。它们分别是(、)、+、[、]、!。</p>
+<p>常用混淆工具：<br><a target="_blank" rel="noopener" href="http://www.jsfuck.com/">http://www.jsfuck.com/</a><br>破解方法： 超级难</p>
+<h3 id="3-2-7- 特殊转化规则"><a href="#3-2-7- 特殊转化规则" class="headerlink" title="3.2.7 特殊转化规则"></a>3.2.7 特殊转化规则 </h3><p> 利用一些只能在浏览器中运行的特殊语句进行反扒，这种只能将语法重新进行改写。</p>
+<p>在浏览器中 base64 编码转换使用的是</p>
+<p><code>_0x1c0cdf = _0xcbc80b[&#39;atob&#39;](_0x1c0cdf)</code>,</p>
+<p>但是在 nodejs 调试的时候使用的是</p>
+<pre><code>Buffer.from(_0x1c0cdf,&quot;base64&quot;).toString()</code></pre><h1 id="四、练手项目"><a href="# 四、练手项目" class="headerlink" title="四、练手项目"></a>四、练手项目</h1><p>（1）获取一品威客登录页面，找到密码的加密方式</p>
+<p><a target="_blank" rel="noopener" href="https://www.epwk.com/login.html">https://www.epwk.com/login.html</a></p>
+<p>（2）获取电信官网登录页面，找到密码的加密方式</p>
+<p><a target="_blank" rel="noopener" href="https://login.189.cn/web/login">https://login.189.cn/web/login</a></p>
+<p>（3）梦幻西游装备属性数据的加密方式</p>
+<p>[<a target="_blank" rel="noopener" href="https://xyq.cbg.163.com/equip?s=40&amp;eid=202002011900113-40-NXOJDHZ8TKFX9&amp;o&amp;equip_refer=27&amp;view_loc=reco_sim|%7B%22tag%22%3A%20%22RL_sim2%22%7D]">https://xyq.cbg.163.com/equip?s=40&amp;eid=202002011900113-40-NXOJDHZ8TKFX9&amp;o&amp;equip_refer=27&amp;view_loc=reco_sim|%7B%22tag%22%3A%20%22RL_sim2%22%7D]</a>(<a target="_blank" rel="noopener" href="https://xyq.cbg.163.com/equip?s=40&amp;eid=202002011900113-40-NXOJDHZ8TKFX9&amp;o&amp;equip_refer=27&amp;view_loc=reco_sim|{&quot;tag&quot;%3A">https://xyq.cbg.163.com/equip?s=40&amp;eid=202002011900113-40-NXOJDHZ8TKFX9&amp;o&amp;equip_refer=27&amp;view_loc=reco_sim|{&quot;tag&quot;%3A</a> “RL_sim2”})</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 欢迎各位看官及技术大佬前来交流指导呀，可以邮件至 jqiange@yeah.net </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2021 Jqiange
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

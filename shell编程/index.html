@@ -314,7 +314,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="58">
-<input type="hidden" id="yelog_site_word_count" value="252.2k">
+<input type="hidden" id="yelog_site_word_count" value="252.4k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -936,12 +936,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2025-12-13 14:57:05'>2022-03-07 20:24</time>
+            发布时间 : <time class="date" title='最后更新: 2025-12-15 19:54:56'>2022-03-07 20:24</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:6.5k</span>
+        <span>字数:6.7k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1070,8 +1070,9 @@ exit</code></pre>
 <li><code>$[1+2]</code> 与<code>$((2+1))</code>：进行整数运算，注意这里可以没有空格</li>
 <li><code>[]</code>：条件判断符号，用于条件测试，见 2.5 章节</li>
 <li><code>(())</code>：仅仅用于整型数字的计算与比较</li>
-<li><code>[[]]</code>：双方括号为字符串比较提供高级功能，模式匹配。常见用法见 2.4.2。[[是 bash 程序语言的关键字。<ul>
+<li><code>[[]]</code>：双方括号为字符串比较提供高级功能，可以模式匹配。常见用法见 2.4.2。[[是 bash 程序语言的关键字。<ul>
 <li>下面写法中，有的为了避免 [] 符号在 markdown 格式中的特殊性，使用【】暂代</li>
+<li>建议使用 [[]] 代替[]</li>
 </ul>
 </li>
 <li><code>；</code>分号或换行，一个 / 一句命令的结束</li>
@@ -1131,7 +1132,9 @@ file=$path/xor.txt</code></pre><p>不加引号特点：</p>
 </ul>
 </li>
 <li><p><strong>查找子串</strong>：</p>
-<pre><code>expr index &quot;$str&quot; xy    #查找字符 x 或 y 的位置(哪个字母先出现就计算哪个)</code></pre></li>
+<pre><code>awk -v s=&quot;$str&quot; &#39;BEGIN&#123;print index(s, &quot;xy&quot;)&#125;&#39;  # 子串查找，0 表示未找到
+
+if 【【 $str == *&quot;xy&quot;* 】】 #判断 $str 中是否有“xy”</code></pre></li>
 <li><p><strong>拼接字符串</strong>：<code>&quot;hello, &quot;&quot;$name&quot;</code>，直接写在一块就行。</p>
 </li>
 <li><p><strong>字符串替换</strong>：<code>$&#123;var/pattern/replacement&#125;</code></p>
@@ -1326,7 +1329,7 @@ bb=$[aa+10]
 let bb=aa+10
 bb=`expr $aa + 10`
 
-if 【 &quot;$aa&quot; == 10 】; then  # “10” 加引号也可, 【】实际应为[]
+if ((aa == 10)); then 
     ((aa++))
 fi
 echo $aa   #输出 11</code></pre>
@@ -1363,6 +1366,29 @@ result=`echo &quot;$a + $b&quot; | bc`
 awk &#39;BEGIN &#123; print 3.14 + 2.86 &#125;&#39;
 awk &#39;BEGIN &#123; printf &quot;%.2f&quot;, 10 / 3 &#125;&#39;   # 保留两位小数
 awk -v a=$index -v b=$count &#39;BEGIN &#123; printf &quot;%.2f&quot;, a*b &#125;&#39;</code></pre>
+<p>关于 awk 中的 begin：</p>
+<table>
+<thead>
+<tr>
+<th>写法</th>
+<th>是否需要输入</th>
+<th>执行时机</th>
+<th>适合场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>BEGIN &#123; ... &#125;</code></td>
+<td>不需要</td>
+<td>启动时立即执行</td>
+<td><strong>变量计算、初始化</strong></td>
+</tr>
+<tr>
+<td><code>&#123; ... &#125;</code></td>
+<td>需要至少一行输入</td>
+<td>每读一行执行一次</td>
+<td><strong>处理文本行</strong></td>
+</tr>
+</tbody></table>
 <h3 id="2-4-2- 逻辑运算符"><a href="#2-4-2- 逻辑运算符" class="headerlink" title="2.4.2 逻辑运算符"></a>2.4.2 逻辑运算符</h3><table>
 <thead>
 <tr>
@@ -1374,12 +1400,12 @@ awk -v a=$index -v b=$count &#39;BEGIN &#123; printf &quot;%.2f&quot;, a*b &#125
 <tbody><tr>
 <td>&amp;&amp;</td>
 <td>逻辑 AND</td>
-<td>【【   $a  &gt;  0  &amp;&amp;  $b  &lt;  10 】】</td>
+<td>（（   $a  &gt;  0  &amp;&amp;  $b  &lt;  10 ））</td>
 </tr>
 <tr>
 <td>||</td>
 <td>逻辑 OR</td>
-<td>【【   $a  &gt;= 0  ||  $b  &lt;  10 】】</td>
+<td>（（   $a  &gt;= 0  ||  $b  &lt;  10 ））</td>
 </tr>
 </tbody></table>
 <p>特点：</p>
@@ -1394,17 +1420,17 @@ index=0
 file=&quot;test.txt&quot;
 
 #---- 写法 1
-if 【【 $index == 0 &amp;&amp; -f $file 】】; then
+if ((index == 0)) &amp;&amp; 【【 -f $file 】】; then
     echo &quot;hello&quot; &gt; $file
 fi
 
 #---- 写法 2
-if 【 $index == 0 】 &amp;&amp; 【 -f $file 】; then
+if 【【 $index == &quot;0&quot;  &amp;&amp;  -f $file 】】; then
     echo &quot;hello&quot; &gt; $file
 fi
 
-#---- 写法 3
-if ((index &gt; 0)) &amp;&amp; 【 -f &quot;$file&quot; 】; then
+#--- 写法 3
+if 【 $index -eq 0 】  &amp;&amp; 【 -f $file 】; then
     echo &quot;hello&quot; &gt; $file
 fi</code></pre>
 <blockquote>
@@ -1429,10 +1455,10 @@ fi</code></pre>
 <p>条件测试分为三种用法，但作用是一样的：</p>
 <ul>
 <li><code>test 条件表达式</code></li>
-<li><code>【 条件表达式 】</code></li>
-<li><code>【【 条件表达式 】】</code></li>
+<li><code>【 文件 / 字符串比较 】</code></li>
+<li><code>【【 文件 / 字符串比较 】】</code></li>
+<li><code>((整数比较))</code></li>
 </ul>
-<p>推荐使用第二种。</p>
 <h3 id="2-5-1- 文件测试"><a href="#2-5-1- 文件测试" class="headerlink" title="2.5.1 文件测试"></a>2.5.1 文件测试</h3><p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20220307195210982.png" alt=""></p>
 <p>用法示例：</p>
 <pre><code class="bash">【 ! -d /home/test 】 &amp;&amp; makdir /home/test     #目录不存在就创建
@@ -1447,7 +1473,7 @@ echo $?
 </blockquote>
 <h3 id="2-5-2- 数值比较"><a href="#2-5-2- 数值比较" class="headerlink" title="2.5.2 数值比较"></a>2.5.2 数值比较 </h3><p> 关系运算符只支持 <strong> 整数运算</strong>，不支持字符串，除非字符串的值是数字。</p>
 <ul>
-<li>在 <code>[]</code> 或 <code>test</code> 中同时支持自 <strong> 字母 </strong> 和<strong>符号 </strong> 运算符</li>
+<li>在 <code>[]</code> 或 <code>test</code> 中仅仅支持自 <strong> 字母 </strong> 运算符</li>
 </ul>
 <ul>
 <li>在 <code>(())</code> 仅仅使用<strong> 符号 </strong> 运算符</li>
@@ -1499,14 +1525,14 @@ echo $?
 </tr>
 </tbody></table>
 <p><strong>必须用双引号包裹变量</strong>（防止空值导致语法错误）</p>
-<pre><code class="bash">【 &quot;$count&quot; &gt;= 5 】   # ✅ 安全
-【 $count &gt;= 5 】     # ❌ 若 count 为空，会报错</code></pre>
+<pre><code class="bash">【 &quot;$count&quot; -gt 5 】   # ✅ 安全
+【 $count -gt 5 】     # ❌ 若 count 为空，会报错</code></pre>
 <p><strong>浮点数比较</strong></p>
 <pre><code class="bash">a=3.14
 b=2.71
 
 #---- 比较 a &gt; b ?
-if 【 &quot;$(echo &quot;$a &gt; $b&quot; | bc)&quot; = &quot;1&quot; 】; then
+if 【 &quot;$(echo &quot;$a &gt; $b&quot; | bc)&quot; == &quot;1&quot; 】; then
     echo &quot;a 大于 b&quot;
 fi</code></pre>
 <h3 id="2-5-3- 字符串比较"><a href="#2-5-3- 字符串比较" class="headerlink" title="2.5.3 字符串比较"></a>2.5.3 字符串比较 </h3><p><strong> 字符串变量要使用双引号引起来</strong></p>
@@ -1516,7 +1542,49 @@ fi</code></pre>
 
 if 【 &quot;$cha&quot; == &quot;aa&quot; 】; then
     echo &quot;is aa&quot;
+fi
+
+# [[]]支持通配符，属于 [] 的进阶版
+if 【【 &quot;$file&quot; = *&quot;.jpg&quot; 】】; then   
+   echo &quot;$file is jpg file&quot;
+fi
+
+if 【【 &quot;$str&quot; =~ ^[a-z]+[0-9]+$ 】】; then
+    echo &quot; 匹配字母 + 数字 &quot;
 fi</code></pre>
+<p><strong>[[]]与 [] 比较</strong></p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th><code>[]</code>（test 命令）</th>
+<th><code>[[]]</code>（Bash 扩展）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>标准</strong></td>
+<td>POSIX 标准，所有 shell 兼容（如 <code>/bin/sh</code>）</td>
+<td>Bash / Zsh / Ksh 等支持，<strong>非 POSIX</strong></td>
+</tr>
+<tr>
+<td><strong>是否内置</strong></td>
+<td>多数 shell 内置，但本质是 <code>test</code> 命令</td>
+<td>Bash 内置语法（不是命令）</td>
+</tr>
+<tr>
+<td><strong>安全性</strong></td>
+<td>较弱（需严格引号）</td>
+<td>更强（自动处理空格、通配符等）</td>
+</tr>
+<tr>
+<td><strong>功能</strong></td>
+<td>基础比较</td>
+<td>支持正则、模式匹配、逻辑组合等</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>建议使用 [[]] 代替[]</p>
+</blockquote>
 <h2 id="2-6-shell 语句"><a href="#2-6-shell 语句" class="headerlink" title="2.6 shell 语句"></a>2.6 shell 语句 </h2><h3 id="2-6-1-if 语句"><a href="#2-6-1-if 语句" class="headerlink" title="2.6.1 if 语句"></a>2.6.1 if 语句</h3><p> 格式：</p>
 <pre><code class="bash">if 条件测试 1 ; then
    执行语句 1
@@ -1530,7 +1598,7 @@ fi</code></pre>
 
 VAR=10
 
-if 【 $VAR == 10 】; then
+if ((VAR == 10)); then
     echo &quot;true&quot;
 else
     echo &quot;false&quot;
@@ -1598,7 +1666,7 @@ done</code></pre>
 <h3 id="2-6-7-continue"><a href="#2-6-7-continue" class="headerlink" title="2.6.7 continue"></a>2.6.7 continue</h3><p><code>continue</code> 用来 <strong> 跳过本次循环</strong>，进入下一次循环</p>
 <pre><code class="bash">for VAR in 1 2 3
 do
-    if 【 $VAR == 2 】
+    if  (($VAR == 2))
     then
         continue    
     fi

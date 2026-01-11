@@ -908,12 +908,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2026-01-11 10:41:12'>2020-06-17 22:33</time>
+            发布时间 : <time class="date" title='最后更新: 2026-01-11 10:47:58'>2020-06-17 22:33</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:8.8k</span>
+        <span>字数:8.7k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1377,15 +1377,15 @@ find ./dir -type f -name &quot;filename&quot; -print0 | xargs -0 rm</code></pre>
 </li>
 </ul>
 </li>
-<li><p>*<em>address *</em>：格式：<code>[address]脚本命令</code>    或者   <code>address &#123; 多个脚本命令 &#125;</code>，指定需要文本处理的行数</p>
+<li><p><strong>address</strong>：指定需要文本处理的行或者标记</p>
 <ul>
 <li>单个数字：比如 2，指定第 2 行</li>
 <li>数字逗号数字：比如 1,10，指定第 1-10 行</li>
 <li>数字逗号 $：比如 2,$，指定第 2- 最后一行</li>
-<li>/pattern/：指定 pattern 所在的行，比如 sed ‘/hello/s/w1/w2/rule’ filename，将 hello 所在的行中的 w1 替换为 w2</li>
+<li>/pattern/：指定 pattern 所在的行</li>
 </ul>
 </li>
-<li><p>通配符：<code>^</code>行开始符；<code>$</code>行结尾符。</p>
+<li><p><strong>通配符 </strong>：<code>^</code> 行开始符；<code>$</code>行结尾符。</p>
 </li>
 </ul>
 <h3 id="3-1-2- 替换 -s"><a href="#3-1-2- 替换 -s" class="headerlink" title="3.1.2 替换 s"></a>3.1.2 替换 s</h3><pre><code class="shell">sed -i s/ 旧字符串 / 新字符串 /rule file       #按照 rule 规则，替换 &quot; 旧字符串 &quot; 为 &quot; 新字符串 &quot;</code></pre>

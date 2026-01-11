@@ -6,17 +6,19 @@
   <meta name="keywords" content="">
   <meta name="description" content="linux 常见命令学习 | jqiange">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="本文介绍 calibre 与 tcl 的结合使用。 calibre 内嵌了 tcl 解释器，可以直接调用 tcl 命令完成一些操作，同时 calibre 还开放了一些接口（API）给 tcl 语言调用，学会二者有机结合，可以拥有更多的工具实现特定的功能。 在 calibre 的 calibre designrev reference manual 中（calibr_drv_ref.pdf）中，给出">
-<meta property="og:type" content="article">
-<meta property="og:title" content="tcl 与 opc">
-<meta property="og:url" content="https://jqiange.github.io/tcl%E4%B8%8Eopc/index.html">
+<meta name="description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="人畜无害的姜小强">
+<meta property="og:url" content="https://jqiange.github.io/about/index.html">
 <meta property="og:site_name" content="jqiange">
-<meta property="og:description" content="本文介绍 calibre 与 tcl 的结合使用。 calibre 内嵌了 tcl 解释器，可以直接调用 tcl 命令完成一些操作，同时 calibre 还开放了一些接口（API）给 tcl 语言调用，学会二者有机结合，可以拥有更多的工具实现特定的功能。 在 calibre 的 calibre designrev reference manual 中（calibr_drv_ref.pdf）中，给出">
+<meta property="og:description" content="世人笑我太疯癫，我笑世人看不穿。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-09-24T05:36:07.000Z">
-<meta property="article:modified_time" content="2025-12-29T07:21:38.163Z">
+<meta property="og:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+<meta property="article:published_time" content="2020-02-18T08:21:04.000Z">
+<meta property="article:modified_time" content="2025-12-13T05:23:10.695Z">
 <meta property="article:author" content="姜小强">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
 
 
 <link rel="icon" href="/img/jqiange.png">
@@ -284,7 +286,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="58">
-<input type="hidden" id="yelog_site_word_count" value="254.4k">
+<input type="hidden" id="yelog_site_word_count" value="254.2k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -906,12 +908,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2026-01-07 16:01:59'>2020-06-17 22:33</time>
+            发布时间 : <time class="date" title='最后更新: 2026-01-11 10:41:12'>2020-06-17 22:33</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:8.9k</span>
+        <span>字数:8.8k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -930,7 +932,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1%E3%80%81Linux%20%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4"><span class="toc-text">1、Linux 常见命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-linux%20%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F"><span class="toc-text">1.1 linux 命令格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%20%E6%9F%A5%E7%9C%8B%E5%B8%AE%E5%8A%A9%E4%BF%A1%E6%81%AF"><span class="toc-text">1.2 查看帮助信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-%20%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8"><span class="toc-text">1.3 自动补全 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-%20%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4"><span class="toc-text">1.4 基础命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-%20%E9%80%9A%E9%85%8D%E7%AC%A6"><span class="toc-text">1.5 通配符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-6-%20%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-text">1.6 重定向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-7-%20%E7%AE%A1%E9%81%93"><span class="toc-text">1.7 管道</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-8-%20%E9%93%BE%E6%8E%A5"><span class="toc-text">1.8 链接 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-9-%20%E6%9F%A5%E6%89%BE"><span class="toc-text">1.9 查找</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-9-1-%20%E6%96%87%E6%9C%AC%E6%9F%A5%E6%89%BE"><span class="toc-text">1.9.1 文本查找</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-9-2-%20%E6%96%87%E4%BB%B6%E6%9F%A5%E6%89%BE"><span class="toc-text">1.9.2 文件查找</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-9-3-%20%E6%9F%A5%E6%89%BE%E5%88%A0%E9%99%A4"><span class="toc-text">1.9.3 查找删除</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-10-%20%E7%A7%BB%E5%8A%A8%E4%B8%8E%E6%8B%B7%E8%B4%9D"><span class="toc-text">1.10 移动与拷贝</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-11-%20%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B"><span class="toc-text">1.11 压缩与解压</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-12-which-who"><span class="toc-text">1.12 which&#x2F;who</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-13-%20%E7%BC%96%E8%BE%91%E5%99%A8%20vim"><span class="toc-text">1.13 编辑器 vim</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%E3%80%81%E8%A1%A5%E5%85%85%E5%91%BD%E4%BB%A4"><span class="toc-text">2、补充命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%20%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E7%9B%B8%E5%85%B3"><span class="toc-text">2.1 时间日期相关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%20%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B"><span class="toc-text">2.2 查看进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%20%E5%85%B3%E9%97%AD%E9%87%8D%E5%90%AF"><span class="toc-text">2.3 关闭重启</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%20%E6%8C%82%E8%BD%BD"><span class="toc-text">2.4 挂载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-%20%E6%9F%A5%E7%9C%8B%E6%88%96%E9%85%8D%E7%BD%AE%E7%BD%91%E5%8D%A1"><span class="toc-text">2.5 查看或配置网卡</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-6-%20%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86"><span class="toc-text">2.6 用户权限管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-1-%20%E7%94%A8%E6%88%B7%E5%88%9B%E5%BB%BA%E5%88%87%E6%8D%A2%E5%88%A0%E9%99%A4"><span class="toc-text">2.6.1 用户创建切换删除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-1-%20%E7%94%A8%E6%88%B7%E7%BB%84"><span class="toc-text">2.6.1 用户组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-3-%20%E6%9D%83%E9%99%90"><span class="toc-text">2.6.3 权限</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-7-%20%E4%B8%8B%E8%BD%BD%E6%BA%90"><span class="toc-text">2.7 下载源 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-8-%20%E5%85%B6%E4%BB%96%E5%B8%B8%E8%A7%81%E7%BB%84%E5%90%88%E5%91%BD%E4%BB%A4"><span class="toc-text">2.8 其他常见组合命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-8-1-%20%E6%9F%A5%E6%89%BE%E5%88%A0%E9%99%A4"><span class="toc-text">2.8.1 查找删除</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3%E3%80%81Linux%20%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86"><span class="toc-text">3、Linux 文本处理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-Sed%20%E5%91%BD%E4%BB%A4"><span class="toc-text">3.1  Sed 命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-1-%20%E6%9B%BF%E6%8D%A2%20s"><span class="toc-text">3.1.1 替换 s</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-2-%20%E5%88%A0%E9%99%A4%20d"><span class="toc-text">3.1.2 删除 d</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-3-%20%E6%8F%92%E5%85%A5%20a-i"><span class="toc-text">3.1.3 插入 a&#x2F;i</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-4-%20%E6%9B%BF%E6%8D%A2%E6%95%B4%E8%A1%8C%20c"><span class="toc-text">3.1.4 替换整行 c</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-5-%20%E6%89%93%E5%8D%B0%E8%A1%8C%20p"><span class="toc-text">3.1.5 打印行 p</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-6-%20%E5%86%99%E5%85%A5%20w"><span class="toc-text">3.1.6 写入 w</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-7-%20%E6%96%87%E4%BB%B6%E6%8F%92%E5%85%A5%20r"><span class="toc-text">3.1.7 文件插入 r</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-8-%20%E9%80%80%E5%87%BA%20q"><span class="toc-text">3.1.8 退出 q</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-9-option-f"><span class="toc-text">3.1.9 option -f</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-10-option-e"><span class="toc-text">3.1.10 option -e</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-awk%20%E5%91%BD%E4%BB%A4"><span class="toc-text">3.2 awk 命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-1-%20%E5%88%86%E9%9A%94%E7%AC%A6%20-F"><span class="toc-text">3.2.1 分隔符 -F</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-2-%20%E6%96%87%E4%BB%B6%E5%91%BD%E4%BB%A4%E8%AF%BB%E5%8F%96%20-f"><span class="toc-text">3.2.2 文件命令读取 -f</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-3-%20%E5%8F%98%E9%87%8F%E8%B5%8B%E5%80%BC%20-v"><span class="toc-text">3.3.3 变量赋值 -v</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-4-%20%E5%8C%B9%E9%85%8D%E8%A7%84%E5%88%99%20pattern"><span class="toc-text">3.3.4 匹配规则 pattern</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-5-%20%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4%20-commands"><span class="toc-text">3.3.5 执行命令{commands}</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-Linux%20%E4%B8%8B%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-text">4. Linux 下配置环境变量 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-%20%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95"><span class="toc-text">4.1 环境变量的配置方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-%20%E6%89%A9%E5%B1%95"><span class="toc-text">4.2 扩展 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-1-export%20%E5%91%BD%E4%BB%A4"><span class="toc-text">4.2.1 export 命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-2-%20%E6%9F%A5%E7%9C%8B%E5%8F%98%E9%87%8F"><span class="toc-text">4.2.2 查看变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-3-10%20%E4%B8%AA%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-text">4.2.3 10 个环境变量 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-4-%20%E7%BB%99%E5%91%BD%E4%BB%A4%E5%8F%96%E5%88%AB%E5%90%8D"><span class="toc-text">4.2.4 给命令取别名 </span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5%E3%80%81Linux%20%E4%B8%8B%E8%BF%90%E8%A1%8C%20python"><span class="toc-text">5、Linux 下运行 python</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-%20%E5%AE%89%E8%A3%85%20Anaconda"><span class="toc-text">5.1 安装 Anaconda</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-%20%E6%94%B9%E5%8F%98%20python%20%E6%8C%87%E5%90%91%E7%89%88%E6%9C%AC"><span class="toc-text">5.2 改变 python 指向版本 </span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1%E3%80%81Linux%20%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4"><span class="toc-text">1、Linux 常见命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-linux%20%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F"><span class="toc-text">1.1 linux 命令格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%20%E6%9F%A5%E7%9C%8B%E5%B8%AE%E5%8A%A9%E4%BF%A1%E6%81%AF"><span class="toc-text">1.2 查看帮助信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-%20%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8"><span class="toc-text">1.3 自动补全 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-%20%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4"><span class="toc-text">1.4 基础命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-%20%E9%80%9A%E9%85%8D%E7%AC%A6"><span class="toc-text">1.5 通配符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-6-%20%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-text">1.6 重定向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-7-%20%E7%AE%A1%E9%81%93"><span class="toc-text">1.7 管道</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-8-%20%E9%93%BE%E6%8E%A5"><span class="toc-text">1.8 链接 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-9-%20%E6%9F%A5%E6%89%BE"><span class="toc-text">1.9 查找</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-9-1-%20%E6%96%87%E6%9C%AC%E6%9F%A5%E6%89%BE"><span class="toc-text">1.9.1 文本查找</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-9-2-%20%E6%96%87%E4%BB%B6%E6%9F%A5%E6%89%BE"><span class="toc-text">1.9.2 文件查找</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-9-3-%20%E6%9F%A5%E6%89%BE%E5%88%A0%E9%99%A4"><span class="toc-text">1.9.3 查找删除</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-10-%20%E7%A7%BB%E5%8A%A8%E4%B8%8E%E6%8B%B7%E8%B4%9D"><span class="toc-text">1.10 移动与拷贝</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-11-%20%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B"><span class="toc-text">1.11 压缩与解压</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-12-which-who"><span class="toc-text">1.12 which&#x2F;who</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-13-%20%E7%BC%96%E8%BE%91%E5%99%A8%20vim"><span class="toc-text">1.13 编辑器 vim</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%E3%80%81%E8%A1%A5%E5%85%85%E5%91%BD%E4%BB%A4"><span class="toc-text">2、补充命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%20%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E7%9B%B8%E5%85%B3"><span class="toc-text">2.1 时间日期相关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%20%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B"><span class="toc-text">2.2 查看进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%20%E5%85%B3%E9%97%AD%E9%87%8D%E5%90%AF"><span class="toc-text">2.3 关闭重启</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%20%E6%8C%82%E8%BD%BD"><span class="toc-text">2.4 挂载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-%20%E6%9F%A5%E7%9C%8B%E6%88%96%E9%85%8D%E7%BD%AE%E7%BD%91%E5%8D%A1"><span class="toc-text">2.5 查看或配置网卡</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-6-%20%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86"><span class="toc-text">2.6 用户权限管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-1-%20%E7%94%A8%E6%88%B7%E5%88%9B%E5%BB%BA%E5%88%87%E6%8D%A2%E5%88%A0%E9%99%A4"><span class="toc-text">2.6.1 用户创建切换删除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-1-%20%E7%94%A8%E6%88%B7%E7%BB%84"><span class="toc-text">2.6.1 用户组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-3-%20%E6%9D%83%E9%99%90"><span class="toc-text">2.6.3 权限</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-7-%20%E4%B8%8B%E8%BD%BD%E6%BA%90"><span class="toc-text">2.7 下载源 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-8-%20%E5%85%B6%E4%BB%96%E5%B8%B8%E8%A7%81%E7%BB%84%E5%90%88%E5%91%BD%E4%BB%A4"><span class="toc-text">2.8 其他常见组合命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-8-1-%20%E6%9F%A5%E6%89%BE%E5%88%A0%E9%99%A4"><span class="toc-text">2.8.1 查找删除</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3%E3%80%81Linux%20%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86"><span class="toc-text">3、Linux 文本处理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-Sed%20%E5%91%BD%E4%BB%A4"><span class="toc-text">3.1  Sed 命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-1-%20%E8%AF%AD%E6%B3%95%E6%A0%BC%E5%BC%8F"><span class="toc-text">3.1.1 语法格式 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-2-%20%E6%9B%BF%E6%8D%A2%20-s"><span class="toc-text">3.1.2 替换 s</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-3-%20%E6%8F%92%E5%85%A5%20a-i"><span class="toc-text">3.1.3 插入 a&#x2F;i</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-4-%20%E5%88%A0%E9%99%A4%20d"><span class="toc-text">3.1.4 删除 d</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-5-%20%E6%90%9C%E7%B4%A2%E6%89%93%E5%8D%B0%20p"><span class="toc-text">3.1.5 搜索打印 p</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-6-%20%E6%8C%89%E8%A1%8C%E8%BE%93%E5%87%BA"><span class="toc-text">3.1.6 按行输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-7-option-f"><span class="toc-text">3.1.7 option -f</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-8-option-e"><span class="toc-text">3.1.8 option -e</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-awk%20%E5%91%BD%E4%BB%A4"><span class="toc-text">3.2 awk 命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-1-%20%E8%AF%AD%E6%B3%95%E6%A0%BC%E5%BC%8F"><span class="toc-text">3.2.1 语法格式 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-2-%20%E5%88%86%E9%9A%94%E7%AC%A6%20-F"><span class="toc-text">3.2.2 分隔符 -F</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-3-%20%E6%96%87%E4%BB%B6%E5%91%BD%E4%BB%A4%E8%AF%BB%E5%8F%96%20-f"><span class="toc-text">3.2.3 文件命令读取 -f</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-4-%20%E5%8F%98%E9%87%8F%E8%B5%8B%E5%80%BC%20-v"><span class="toc-text">3.3.4 变量赋值 -v</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-5-%20%E5%8C%B9%E9%85%8D%E8%A7%84%E5%88%99%20pattern"><span class="toc-text">3.3.5 匹配规则 pattern</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-6-%20%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4%20-commands"><span class="toc-text">3.3.6 执行命令{commands}</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-Linux%20%E4%B8%8B%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-text">4. Linux 下配置环境变量 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-%20%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95"><span class="toc-text">4.1 环境变量的配置方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-%20%E6%89%A9%E5%B1%95"><span class="toc-text">4.2 扩展 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-1-export%20%E5%91%BD%E4%BB%A4"><span class="toc-text">4.2.1 export 命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-2-%20%E6%9F%A5%E7%9C%8B%E5%8F%98%E9%87%8F"><span class="toc-text">4.2.2 查看变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-3-10%20%E4%B8%AA%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-text">4.2.3 10 个环境变量 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-4-%20%E7%BB%99%E5%91%BD%E4%BB%A4%E5%8F%96%E5%88%AB%E5%90%8D"><span class="toc-text">4.2.4 给命令取别名 </span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5%E3%80%81Linux%20%E4%B8%8B%E8%BF%90%E8%A1%8C%20python"><span class="toc-text">5、Linux 下运行 python</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-%20%E5%AE%89%E8%A3%85%20Anaconda"><span class="toc-text">5.1 安装 Anaconda</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-%20%E6%94%B9%E5%8F%98%20python%20%E6%8C%87%E5%90%91%E7%89%88%E6%9C%AC"><span class="toc-text">5.2 改变 python 指向版本 </span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1326,112 +1328,68 @@ find ./dir -type f -name &quot;filename&quot; -print0 | xargs -0 rm</code></pre>
 </ul>
 </li>
 </ul>
-<h1 id="3、Linux 文本处理"><a href="#3、Linux 文本处理" class="headerlink" title="3、Linux 文本处理"></a>3、Linux 文本处理</h1><h2 id="3-1-Sed 命令"><a href="#3-1-Sed 命令" class="headerlink" title="3.1  Sed 命令"></a>3.1  Sed 命令</h2><p>sed 是一种流编辑器，是一种面向行的文本处理工具，配合正则使用更强大。每次从文本读入一行，在“保持空间”和“模式空间”进行修改，然后再读入下一行。</p>
-<p>主要用于字符替换、格式化。</p>
-<p>命令格式：</p>
-<pre><code class="shell">sed [options] &#39;command/script&#39; file(s)</code></pre>
-<hr>
-<table>
-<thead>
-<tr>
-<th align="left">options 选项</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">-e</td>
-<td>该选项会将其后跟的脚本命令添加到已有的命令中。默认 -e</td>
-</tr>
-<tr>
-<td align="left">-f</td>
-<td>该选项会将其后文件中的脚本命令添加到已有的命令中。</td>
-</tr>
-<tr>
-<td align="left">-n</td>
-<td>默认情况下，sed 会在所有的脚本指定执行完毕后，会自动输出处理后的内容，而该选项会屏蔽启动输出，需使用 print 命令来完成输出。</td>
-</tr>
-<tr>
-<td align="left">-i</td>
-<td>此选项会直接修改源文件。</td>
-</tr>
-</tbody></table>
-<hr>
-<table>
-<thead>
-<tr>
-<th>command/script 命令字符</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>[address]s/pattern/replacement/rule</td>
-<td>address 表示指定要操作的具体行，pattern 指的是需要替换的内容，replacement 指的是要替换的新内容。</td>
-</tr>
-<tr>
-<td>[address]d</td>
-<td>删除文本中的特定行</td>
-</tr>
-<tr>
-<td>[address]a(或 i)\ 新文本内容</td>
-<td>a 命令表示在指定行的后面附加一行；i 命令表示在指定行的前面插入一行</td>
-</tr>
-<tr>
-<td>[address]c\ 用于替换的新文本</td>
-<td>指定行中的所有内容，替换成该选项后面的字符串</td>
-</tr>
-<tr>
-<td>[address]y/inchars/outchars/</td>
-<td>处理单个字符，对 inchars 和 outchars 值进行一对一的映射，要求二者长度一致</td>
-</tr>
-<tr>
-<td>[address]p</td>
-<td>搜索符号条件的行，并输出该行的内容</td>
-</tr>
-<tr>
-<td>[address]w filename</td>
-<td>将文本 files 中指定行的内容写入文件 filename 中</td>
-</tr>
-<tr>
-<td>[address]r filename</td>
-<td>将一个独立文件 filename 的数据插入到当前数据流 files 的指定位置</td>
-</tr>
-<tr>
-<td>[address]q</td>
-<td>使 sed 命令在第一次匹配任务结束后</td>
-</tr>
-</tbody></table>
-<hr>
-<p><strong>address 介绍：</strong></p>
-<p>格式：<code>[address]脚本命令</code>    或者   <code>address &#123; 多个脚本命令 &#125;</code></p>
-<table>
-<thead>
-<tr>
-<th>address</th>
-<th>例子及含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>2</td>
-<td>sed ‘2s/dog/cat/‘ data.txt，替换第 2 行</td>
-</tr>
-<tr>
-<td>2,8</td>
-<td>sed ‘2,8s/dog/cat/‘ data.txt，替换第 2-8 行</td>
-</tr>
-<tr>
-<td><code>2,$</code></td>
-<td><code>sed &#39;2,$s/dog/cat/&#39;  data.txt</code> 替换第 2- 最后行</td>
-</tr>
-<tr>
-<td>/pattern/</td>
-<td>指定文本模式来过滤出命令要作用的行，sed ‘/line1/s/w1/w2/rule’ filename，将 line1 所在行中的 w1 替换为 w2</td>
-</tr>
-</tbody></table>
-<p>介绍两个通配符：<code>^</code>行开始符；<code>$</code>行结尾符。</p>
-<p>以下做一些常见用法介绍。</p>
-<h3 id="3-1-1- 替换 s"><a href="#3-1-1- 替换 s" class="headerlink" title="3.1.1 替换 s"></a>3.1.1 替换 s</h3><p>格式：</p>
-<pre><code class="shell">sed -i s#old_text#new_text#rule file       #按照 rule 规则，替换 old_text 为 new_text</code></pre>
-<p><code>-i</code>直接修改原文件 file      <code>s</code>代表替换      <code>#</code>是分隔符，也可用 <code>/</code> 符号         </p>
+<h1 id="3、Linux 文本处理"><a href="#3、Linux 文本处理" class="headerlink" title="3、Linux 文本处理"></a>3、Linux 文本处理</h1><h2 id="3-1-Sed 命令"><a href="#3-1-Sed 命令" class="headerlink" title="3.1  Sed 命令"></a>3.1  Sed 命令</h2><p>sed 是一种流编辑器，是一种面向行的文本处理工具，用于对输入流（文件或管道）进行基本的文本转换，比如查找、替换、删除、插入等操作。它常用于 shell 脚本中进行自动化文本处理。</p>
+<ul>
+<li><p>可以配合正则使用</p>
+</li>
+<li><p>每次从文本读入一行，在“保持空间”和“模式空间”进行修改，然后再读入下一行。</p>
+</li>
+</ul>
+<h3 id="3-1-1- 语法格式"><a href="#3-1-1- 语法格式" class="headerlink" title="3.1.1 语法格式"></a>3.1.1 语法格式 </h3><p><strong> 命令格式：</strong></p>
+<pre><code class="shell">sed [options] &#39;command/script&#39; file(s)   #注意这里的引号，一定要加</code></pre>
+<ul>
+<li><p><strong>options</strong></p>
+<ul>
+<li><p><code>e</code> : 添加多个命令</p>
+</li>
+<li><p><code>-n</code>: 只打印经过 <code>sed</code> 处理的行（配合 <code>p</code> 命令使用）。默认输出处理后的全部内容</p>
+</li>
+<li><p><code>-i</code>: 直接修改源文件</p>
+</li>
+<li><p><code>-f script-file</code>: 从文件中读取 sed 命令</p>
+</li>
+</ul>
+</li>
+<li><p><strong>‘command/scripts’</strong>    </p>
+<ul>
+<li>替换功能<ul>
+<li><code>[address]s# 旧字符串 #新字符串#rule</code> 按字符串替换</li>
+<li><code>[address]c\ 新文本 </code> 按行替换</li>
+</ul>
+</li>
+<li>插入功能<ul>
+<li><code>[address]a(或 i)\ 新文本</code> 按行附加文本，a 指定后加一行新文本，i 指定前加一行新文本</li>
+<li><code>[address]r filename</code> 插入文件内容，将 filename 内容插入 sed 的操作文件</li>
+<li><code>[address]w filename</code> 插入文件内容，将 sed 的操作文件内容插入到 filename 里面</li>
+</ul>
+</li>
+<li>删除功能<ul>
+<li><code>[address]d</code> 删除文本中的特定行</li>
+</ul>
+</li>
+<li>搜索功能<ul>
+<li><code>[address]p</code> 搜索符号条件的行，并输出该行的内容</li>
+</ul>
+</li>
+<li>按行输出<ul>
+<li><code>[address]q</code> 输出指定行并退出</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>*<em>address *</em>：格式：<code>[address]脚本命令</code>    或者   <code>address &#123; 多个脚本命令 &#125;</code>，指定需要文本处理的行数</p>
+<ul>
+<li>单个数字：比如 2，指定第 2 行</li>
+<li>数字逗号数字：比如 1,10，指定第 1-10 行</li>
+<li>数字逗号 $：比如 2,$，指定第 2- 最后一行</li>
+<li>/pattern/：指定 pattern 所在的行，比如 sed ‘/hello/s/w1/w2/rule’ filename，将 hello 所在的行中的 w1 替换为 w2</li>
+</ul>
+</li>
+<li><p>通配符：<code>^</code>行开始符；<code>$</code>行结尾符。</p>
+</li>
+</ul>
+<h3 id="3-1-2- 替换 -s"><a href="#3-1-2- 替换 -s" class="headerlink" title="3.1.2 替换 s"></a>3.1.2 替换 s</h3><pre><code class="shell">sed -i s/ 旧字符串 / 新字符串 /rule file       #按照 rule 规则，替换 &quot; 旧字符串 &quot; 为 &quot; 新字符串 &quot;</code></pre>
+<p><code>-i</code>直接修改原文件 file；   <code>s</code>代表替换  ；   <code>/</code>是分隔符，也可用 <code>#</code> 符号         </p>
 <p><code>rule</code>表示替换的规则：</p>
 <ul>
 <li>若不写，只匹配替换第一个 old_text</li>
@@ -1440,41 +1398,56 @@ find ./dir -type f -name &quot;filename&quot; -print0 | xargs -0 rm</code></pre>
 <li>若为<code>m</code>，m 是数字，如果 old_text 的出现次数小于 m，那么替换不生效。</li>
 <li>若为<code>p</code>，打印匹配到的字符所在的行，此标记通常与 -n 选项一起使用。</li>
 </ul>
-<p>举个例子：<code>sed -i s#./prep#/home/prep#g ./*/*.log</code>     也可这样写：<code>sed -i &#39;s#./prep#/home/prep#g&#39; ./*/*.log</code>  </p>
-<p> 还可以这样用：</p>
-<pre><code class="shell">sed -i &#39;#line1#s#old_text#new_text#rule&#39; filename      #按照 rule 规则, 将 line1 所在行中的 old_text 替换为 new_text
-sed -i &#39;2,6s#old_text#new_text#rule&#39; filename          #按照 rule 规则, 将 2,6 行中的 old_text 替换为 new_text
+<p><strong>举例：</strong></p>
+<ul>
+<li><p>文本替换</p>
+<pre><code class="shell">sed -i &#39;2,6s#@hello@#Hi#g&#39; filename  #将 filename 里面的 2-6 行的 hello 替换成 Hi
 
-#举一个使用 p 的例子
-sed -n &#39;s#old_text#new_text#p&#39; filename    #将 old_text 替换为 new_text，并输出替换过的该行</code></pre>
-<blockquote>
-<p>注意：替换类似文件路径的字符串会比较麻烦，需要将路径中的正斜线 <code>/</code> 进行转义：<code>\/</code></p>
-</blockquote>
-<p><strong>批量替换：</strong></p>
-<pre><code class="shell">sed &#39;&#123;
-s/sales/sale/
+sed -i &#39;#MiKe#s#hello#Hi#g&#39; filename   #将 filename 里面的 MiKe 所在的行的 hello 替换成 Hi</code></pre>
+</li>
+<li><p>路径替换：</p>
+<pre><code class="shell">sed -i &#39;s#./prep#/home/prep#g&#39; ./*/*.log   #将路径 &quot;./prep&quot; 替换成 &quot;/home/prep&quot;
+
+sed -n &#39;s#./prep#/home/prep#p&#39; filename    #替换操作，并且打印替换过的行</code></pre>
+</li>
+<li><p>批量替换</p>
+<pre><code class="shell">sed -i &#39;&#123;
+s/sall/sale/
 s/man/woman/
 &#125;&#39; data.txt</code></pre>
-<h3 id="3-1-2- 删除 d"><a href="#3-1-2- 删除 d" class="headerlink" title="3.1.2 删除 d"></a>3.1.2 删除 d</h3><pre><code class="shell">sed -i &#39;2,3d&#39; data.txt    #删除 2-3 行</code></pre>
-<h3 id="3-1-3- 插入 a-i"><a href="#3-1-3- 插入 a-i" class="headerlink" title="3.1.3 插入 a/i"></a>3.1.3 插入 a/i</h3><pre><code class="shell">sed -i &#39;3a\add new line&#39; data.txt            #第 3 行后面加一行文字：add new line
-
-sed -i &#39;3i\add new line&#39; data.txt            #第 3 行前面加一行文字：add new line
-
-# 加多行
-sed -i &#39;3a\
-add one line.\
-add two line.&#39; data.txt           </code></pre>
-<h3 id="3-1-4- 替换整行 c"><a href="#3-1-4- 替换整行 c" class="headerlink" title="3.1.4 替换整行 c"></a>3.1.4 替换整行 c</h3><pre><code class="shell">sed -i &#39;3c\
-add new line&#39; data.txt            #第三行替换成 add new line
+</li>
+<li><p>替换整行</p>
+<pre><code class="shell">sed -i &#39;3c\
+add new line&#39; data.txt            #第三行替换成：add new line
 
 sed -i &#39;/num3/c\
-add new line&#39; data.txt            #将 num3 所在的行全部替换为 add new line</code></pre>
-<h3 id="3-1-5- 打印行 p"><a href="#3-1-5- 打印行 p" class="headerlink" title="3.1.5 打印行 p"></a>3.1.5 打印行 p</h3><pre><code>sed -n &#39;/num3/p&#39; data.txt         #打印 num3 所在的行</code></pre><h3 id="3-1-6- 写入 w"><a href="#3-1-6- 写入 w" class="headerlink" title="3.1.6 写入 w"></a>3.1.6 写入 w</h3><pre><code>sed -i &#39;1,2w test.txt&#39; data.txt    #将 data.txt 的第 1-2 行写入到 test.txt 中</code></pre><h3 id="3-1-7- 文件插入 r"><a href="#3-1-7- 文件插入 r" class="headerlink" title="3.1.7 文件插入 r"></a>3.1.7 文件插入 r</h3><pre><code>sed -i &#39;3r test.txt&#39; data.txt    #将 text.txt 全部插入到 data.txt 的第 3 行的后一行</code></pre><h3 id="3-1-8- 退出 q"><a href="#3-1-8- 退出 q" class="headerlink" title="3.1.8 退出 q"></a>3.1.8 退出 q</h3><pre><code>sed -i &#39;3q&#39; data.txt        #输出前 3 行并退出</code></pre><h3 id="3-1-9-option-f"><a href="#3-1-9-option-f" class="headerlink" title="3.1.9 option -f"></a>3.1.9 option -f</h3><pre><code>sed -f sed.sh data.txt     #-f 后接一个 shell 脚本文件，这个脚本定义了 command/script</code></pre><h3 id="3-1-10-option-e"><a href="#3-1-10-option-e" class="headerlink" title="3.1.10 option -e"></a>3.1.10 option -e</h3><pre><code class="shell"># 利用 -e 可以实现多点编辑
+add new line&#39; data.txt            #将 num3 所在的行全部替换为：add new line</code></pre>
+</li>
+</ul>
+<h3 id="3-1-3- 插入 a-i"><a href="#3-1-3- 插入 a-i" class="headerlink" title="3.1.3 插入 a/i"></a>3.1.3 插入 a/i</h3><pre><code class="shell">### 插入一行
+sed -i &#39;3a\this is a nice day&#39; data.txt      #第 3 行后面加一行文字：this is a nice day
+
+sed -i &#39;3i\this is a nice day&#39; data.txt      #第 3 行前面加一行文字：this is a nice day
+
+### 插入多行
+sed -i &#39;3a\
+add one line.\
+add two line.&#39; data.txt 
+
+### 插入文件
+sed -i &#39;1,2w test.txt&#39; data.txt  #将 data.txt 的第 1-2 行写入到 test.txt 中
+sed -i &#39;3r test.txt&#39; data.txt    #将 text.txt 全部插入到 data.txt 的第 3 行的后一行</code></pre>
+<h3 id="3-1-4- 删除 d"><a href="#3-1-4- 删除 d" class="headerlink" title="3.1.4 删除 d"></a>3.1.4 删除 d</h3><pre><code class="shell">sed -i &#39;2,3d&#39; data.txt    #删除 2-3 行</code></pre>
+<h3 id="3-1-5- 搜索打印 p"><a href="#3-1-5- 搜索打印 p" class="headerlink" title="3.1.5 搜索打印 p"></a>3.1.5 搜索打印 p</h3><pre><code class="shell">sed -n &#39;/num3/p&#39; data.txt         #打印 num3 所在的行</code></pre>
+<h3 id="3-1-6- 按行输出"><a href="#3-1-6- 按行输出" class="headerlink" title="3.1.6 按行输出"></a>3.1.6 按行输出</h3><pre><code class="shell">sed -i &#39;3q&#39; data.txt        #输出前 3 行并退出</code></pre>
+<h3 id="3-1-7-option-f"><a href="#3-1-7-option-f" class="headerlink" title="3.1.7 option -f"></a>3.1.7 option -f</h3><pre><code class="shell">sed -f sed.sh data.txt     #-f 后接一个 shell 脚本文件，这个脚本定义了 command/script</code></pre>
+<h3 id="3-1-8-option-e"><a href="#3-1-8-option-e" class="headerlink" title="3.1.8 option -e"></a>3.1.8 option -e</h3><pre><code class="shell"># 利用 -e 可以实现多点编辑
 
 sed -e &#39;3,$d&#39; -e &#39;s/bash/blueshell/&#39; data.txt  #删除 3- 最后一行，并且替换 bash 为 blueshell</code></pre>
 <h2 id="3-2-awk 命令"><a href="#3-2-awk 命令" class="headerlink" title="3.2 awk 命令"></a>3.2 awk 命令</h2><p>awk 是一种编程语言，用于在 linux/unix 下对文本和数据进行处理。数据可以来自标准输(stdin)、一个或多个文件，或其它命令的输出。它在命令行中使用，但更多是作为脚本来使用。awk 有很多内建的功能，比如数组、函数等，这是它和 C 语言的相同之处，灵活性是 awk 最大的优势。</p>
-<p>语法格式：</p>
-<pre><code>awk [options] &#39;scripts&#39; var=value filename</code></pre><p><strong>options：</strong></p>
+<h3 id="3-2-1- 语法格式"><a href="#3-2-1- 语法格式" class="headerlink" title="3.2.1 语法格式"></a>3.2.1 语法格式 </h3><p> 语法格式：</p>
+<pre><code class="shell">awk [options] &#39;scripts&#39; var=value filename</code></pre>
+<p><strong>options：</strong></p>
 <ul>
 <li>-F  fs：指定分隔符（可以是字符串或正则表达式），默认分隔符为空格或制表符</li>
 <li>-f  file：从脚本文件中读取 awk 命令</li>
@@ -1521,7 +1494,7 @@ line3  zzzz3
 --------------------------
 &gt;&gt;&gt; awk &#39;/line2/&#123;print $2&#125;&#39; data.txt
 yyyy2</code></pre><p>下面开始正式介绍 awk 相关例子。</p>
-<h3 id="3-2-1- 分隔符 -F"><a href="#3-2-1- 分隔符 -F" class="headerlink" title="3.2.1 分隔符 -F"></a>3.2.1 分隔符 -F</h3><p>awk 默认以空格为分隔符，还可以接受指定的分隔符。</p>
+<h3 id="3-2-2- 分隔符 -F"><a href="#3-2-2- 分隔符 -F" class="headerlink" title="3.2.2 分隔符 -F"></a>3.2.2 分隔符 -F</h3><p>awk 默认以空格为分隔符，还可以接受指定的分隔符。</p>
 <ul>
 <li><p><code>-F &#39; &#39;</code> ：以空格为分隔符，单双引号都可</p>
 </li>
@@ -1540,7 +1513,7 @@ yyyy2</code></pre><p>下面开始正式介绍 awk 相关例子。</p>
 </ul>
 <pre><code>举个简单例子
 awk -F &#39;#&#39; &#39;&#123;print $1&#125;&#39; data.txt</code></pre><p>$1 代表文本行中的第 1 个数据字段。后面会介绍 3.3.3—Awk 的变量。</p>
-<h3 id="3-2-2- 文件命令读取 -f"><a href="#3-2-2- 文件命令读取 -f" class="headerlink" title="3.2.2 文件命令读取 -f"></a>3.2.2 文件命令读取 -f</h3><p>awk 允许将脚本命令存储到文件中，然后再在命令行中引用。</p>
+<h3 id="3-2-3- 文件命令读取 -f"><a href="#3-2-3- 文件命令读取 -f" class="headerlink" title="3.2.3 文件命令读取 -f"></a>3.2.3 文件命令读取 -f</h3><p>awk 允许将脚本命令存储到文件中，然后再在命令行中引用。</p>
 <pre><code class="shell">awk -f &#123;awk 脚本 &#125; &#123; 文件名 &#125;
 
 awk -f cal.awk log.txt</code></pre>
@@ -1572,7 +1545,7 @@ END &#123;
 <blockquote>
 <p>awk 即支持 print，也可 printf。差别可自行百度。</p>
 </blockquote>
-<h3 id="3-3-3- 变量赋值 -v"><a href="#3-3-3- 变量赋值 -v" class="headerlink" title="3.3.3 变量赋值 -v"></a>3.3.3 变量赋值 -v</h3><ul>
+<h3 id="3-3-4- 变量赋值 -v"><a href="#3-3-4- 变量赋值 -v" class="headerlink" title="3.3.4 变量赋值 -v"></a>3.3.4 变量赋值 -v</h3><ul>
 <li>接受内部变量</li>
 </ul>
 <pre><code># log.txt
@@ -1607,7 +1580,7 @@ NR   #记录数，就是行号，默认从 1 开始</code></pre>
 <blockquote>
 <p>这些都是比较常用的内置变量，其余的自行百度。</p>
 </blockquote>
-<h3 id="3-3-4- 匹配规则 pattern"><a href="#3-3-4- 匹配规则 pattern" class="headerlink" title="3.3.4 匹配规则 pattern"></a>3.3.4 匹配规则 pattern</h3><ul>
+<h3 id="3-3-5- 匹配规则 pattern"><a href="#3-3-5- 匹配规则 pattern" class="headerlink" title="3.3.5 匹配规则 pattern"></a>3.3.5 匹配规则 pattern</h3><ul>
 <li><p>正则表达式作为 pattern</p>
 <pre><code>/A/            #去匹配含有 A 的字符
 
@@ -1648,7 +1621,7 @@ $         行尾定位符
 x&#123;m&#125;      x 字符重复 m 次
 x&#123;m,&#125;     x 字符至少重复 m 次
 X&#123;m,n&#125;    x 字符至少重复 m 次但不起过 n 次（需指定参数 -posix 或 --re-interval）</code></pre>
-<h3 id="3-3-5- 执行命令 -commands"><a href="#3-3-5- 执行命令 -commands" class="headerlink" title="3.3.5 执行命令{commands}"></a>3.3.5 执行命令{commands}</h3><p>awk 是一种编程语言，故支持运算，文件操作，输入输出，循环语句，数组，内置函数等操作。</p>
+<h3 id="3-3-6- 执行命令 -commands"><a href="#3-3-6- 执行命令 -commands" class="headerlink" title="3.3.6 执行命令{commands}"></a>3.3.6 执行命令{commands}</h3><p>awk 是一种编程语言，故支持运算，文件操作，输入输出，循环语句，数组，内置函数等操作。</p>
 <p>一般高级点的用法我们用不到，这里不做介绍。如有需要，跳转：</p>
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/quincyhu/p/5884390.html">shell 编程之 awk 命令详解 - QuincyHu - 博客园 (cnblogs.com)</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.w3cschool.cn/awk/hs671k8f.html">AWK 概述_w3cschool</a></p>

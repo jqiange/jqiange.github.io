@@ -916,12 +916,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2026-01-18 18:41:54'>2020-06-17 22:33</time>
+            发布时间 : <time class="date" title='最后更新: 2026-01-18 19:57:58'>2020-06-17 22:33</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:9.1k</span>
+        <span>字数:9.2k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1297,7 +1297,7 @@ tmpfs           1.9G     0  1.9G   0% /run/user/1000</code></pre>
 </tr>
 </tbody></table>
 <p>示例：</p>
-<pre><code class="bash">[root@localhost ~]# du -sh *
+<pre><code class="shell">[root@localhost ~]# du -sh *
 4.0K    anaconda-ks.cfg
 1.2G    data/
 256M    logs/
@@ -1314,7 +1314,8 @@ sudo du -h --max-depth=1 2&gt;/dev/null | sort -hr | head -10
 cd /var
 sudo du -h --max-depth=1 2&gt;/dev/null | sort -hr</code></pre>
 <h2 id="2-5- 查看或配置网卡"><a href="#2-5- 查看或配置网卡" class="headerlink" title="2.5 查看或配置网卡"></a>2.5 查看或配置网卡</h2><pre><code class="shell">ifconfig   #查看网卡 ip 信息
-ping 网址 /ip   #测试通信</code></pre>
+ping 网址   #测试通信
+ping ip    #测试通信</code></pre>
 <h2 id="2-6- 用户权限管理"><a href="#2-6- 用户权限管理" class="headerlink" title="2.6 用户权限管理"></a>2.6 用户权限管理</h2><h3 id="2-6-1- 用户创建切换删除"><a href="#2-6-1- 用户创建切换删除" class="headerlink" title="2.6.1 用户创建切换删除"></a>2.6.1 用户创建切换删除</h3><pre><code class="shell">sudo useradd  账户名 -m      #创建一个账户并创建一个 home 目录（-m 的作用）
 sudo passwd 账户名            #设置密码
 su 账户名                     #切换账户
@@ -1340,21 +1341,24 @@ sudo usermod -a -G sudo 用户名</code></pre>
 </ol>
 <pre><code class="shell">chgrp YY 1.py   #切换 1.py 到 YY 用户组
 chown xxx 1.py  #切换 1.py 到 xxx 用户</code></pre>
-<h3 id="2-6-3- 权限"><a href="#2-6-3- 权限" class="headerlink" title="2.6.3 权限"></a>2.6.3 权限</h3><p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20200618231136063.png" alt=""></p>
-<pre><code class="shell">chmod u=rwx 1.py   #修改文件 owner 的权限
-chmod +x 1.py      #给 ower 加执行（x）的权限</code></pre>
+<h3 id="2-6-3- 权限"><a href="#2-6-3- 权限" class="headerlink" title="2.6.3 权限"></a>2.6.3 权限</h3><p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20260118194512773.png" alt=""></p>
+<pre><code class="shell">chmod 751 test.py   #修改文件的权限
+chmod +x  test.py   #给 ower 加执行（x）的权限
+
+chmod -R 751 ./lib  #给 lib 文件夹及其子文件都赋予 751 的权限</code></pre>
+<p>数字 751 代表：</p>
 <ul>
-<li><p><code>g=r-x</code> 用户组</p>
+<li><p>首位 7 代表 Owner 的权限，由 4+2+1 加和而来，4 代表<code>r(可读)</code>，2 代表<code>w(可写)</code>，1 代表<code>x(可执行)</code></p>
 </li>
-<li><p><code>o=---</code> 其他人</p>
+<li><p>第二位 5 代表 group 的权限，由 4+1 加和而来，代表可读可执行</p>
+</li>
+<li><p>第三位 1 代表 others 的权限，代表仅可执行</p>
 </li>
 </ul>
-<p>也可以以数字代表 r,w,x。</p>
-<p>r：4      w：2       x：1       –&gt; 可以数字加和代表 rwx 三者的组合。</p>
-<p>如 u=4，代表的是 r–；如 u=7，代表的是 rwx。依次类推。</p>
-<p><code>chmod 751 1.py</code>等同于<code>chmod u=rwx,g=r-x,o=--x 1.py</code></p>
+<p><code>chmod -R 751 ./lib</code>等同于<code>chmod -R u=rwx,g=r-x,o=--x ./lib</code></p>
 <ul>
-<li>-R <strong>参数以递归方式对子目录和文件进行修改</strong>。</li>
+<li>-R 参数以递归方式对子目录和文件进行修改。</li>
+<li>u, g, o 分别代表 user(owner)，group, others</li>
 </ul>
 <h2 id="2-7- 下载源"><a href="#2-7- 下载源" class="headerlink" title="2.7 下载源"></a>2.7 下载源 </h2><p> 默认 ubuntu 系统使用 apt 命令下载文件，那么到底是在哪下呢？</p>
 <p>  查看下载源： <code>cat /etc/apt/sources.list</code>  </p>

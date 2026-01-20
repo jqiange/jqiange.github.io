@@ -916,7 +916,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2026-01-20 20:43:07'>2022-03-07 20:24</time>
+            发布时间 : <time class="date" title='最后更新: 2026-01-20 21:09:43'>2022-03-07 20:24</time>
         
     </div>
     <div class="article-meta">
@@ -1866,50 +1866,39 @@ done &lt; nums.txt      # 输入重定向
 echo &quot;sum=$sum&quot;</code></pre>
 <h3 id="2-9-3- 输入并分隔"><a href="#2-9-3- 输入并分隔" class="headerlink" title="2.9.3 输入并分隔"></a>2.9.3 输入并分隔 </h3><p> 详解 <code>VAR=value command arguments</code> 结构，以下面为例：</p>
 <pre><code class="shell">IFS=&#39;.&#39; read inlayer intype &lt;&lt;&lt; &quot;199.0&quot; #以点为分隔符，两分割之后的参数分别赋给 inlayer 和 intype</code></pre>
-<p>  解释 <code>&lt;&lt;&lt;</code>：</p>
+<p>解释 <code>&lt;&lt;&lt;</code></p>
 <ul>
-<li><p><code>&lt;&lt;&lt; &quot;$str&quot;</code>是 <strong>Here String</strong> 的写法，是 Bash 独有的一个特性</p>
-</li>
-<li><p>它的作用是将 <code>&quot;$str&quot;</code> 变量的值作为标准输入（stdin）传递给 <code>read</code> 命令</p>
-</li>
-<li><p>这比使用管道 <code>echo &quot;$bbox_layer&quot; | read ...</code> 更高效，因为它避免了启动一个新的子进程来执行 <code>echo</code></p>
+<li><code>&lt;&lt;&lt; &quot;$str&quot;</code>是 <strong>Here String</strong> 的写法，是 Bash 独有的一个特性</li>
+<li>它的作用是将 <code>&quot;$str&quot;</code> 变量的值作为标准输入（stdin）传递给 <code>read</code> 命令</li>
+<li>这比使用管道 <code>echo &quot;$bbox_layer&quot; | read ...</code> 更高效，因为它避免了启动一个新的子进程来执行 <code>echo</code></li>
+</ul>
 <p>解释 <code>read inlayer intype</code></p>
-</li>
-<li><p><code>read</code> 是一个 Bash 内置命令，用于从标准输入读取一行文本，并将其中的内容赋值给指定的变量</p>
-</li>
-<li><p>在这里，它会尝试读取一行文本，并将第一个“单词”赋值给 <code>inlayer</code>，将第二个“单词”赋值给 <code>intype</code></p>
+<ul>
+<li><code>read</code> 是一个 Bash 内置命令，用于从标准输入读取一行文本，并将其中的内容赋值给指定的变量</li>
+<li>在这里，它会尝试读取一行文本，并将第一个“单词”赋值给 <code>inlayer</code>，将第二个“单词”赋值给 <code>intype</code></li>
+</ul>
 <p>解释 <code>IFS=&#39;.&#39;</code></p>
-</li>
-<li><p><code>IFS</code> 是一个特殊的 Bash <strong>环境变量</strong>，全称是 <strong>Internal Field Separator</strong>（内部字段分隔符）</p>
-</li>
-<li><p>它定义了 Bash 在进行单词拆分（word splitting）时使用的分隔符</p>
-</li>
-<li><p>默认情况下，<code>IFS</code> 包含空格、制表符（tab）和换行符</p>
-</li>
-<li><p>在这个命令中，<code>IFS=&#39;.&#39;</code> 临时将 <code>IFS</code> 的值设置为点 <code>.</code>。这意味着 <code>read</code> 命令在处理输入时，会把点 <code>.</code> 当作字段之间的分隔符，而不是默认的空格、tab 等</p>
-</li>
-<li><p><strong>命令执行完毕后，<code>IFS</code> 的值会恢复到它在命令执行之前的状态（因为 <code>IFS=&#39;.&#39;</code> 是作为 <code>read</code> 命令的前缀，它的作用范围仅限于该命令）</strong></p>
+<ul>
+<li><code>IFS</code> 是一个特殊的 Bash <strong>环境变量</strong>，全称是 <strong>Internal Field Separator</strong>（内部字段分隔符）</li>
+<li>它定义了 Bash 在进行单词拆分（word splitting）时使用的分隔符</li>
+<li>默认情况下，<code>IFS</code> 包含空格、制表符（tab）和换行符</li>
+<li>在这个命令中，<code>IFS=&#39;.&#39;</code> 临时将 <code>IFS</code> 的值设置为点 <code>.</code>。这意味着 <code>read</code> 命令在处理输入时，会把点 <code>.</code> 当作字段之间的分隔符，而不是默认的空格、tab 等</li>
+<li><strong>命令执行完毕后，<code>IFS</code> 的值会恢复到它在命令执行之前的状态（因为 <code>IFS=&#39;.&#39;</code> 是作为 <code>read</code> 命令的前缀，它的作用范围仅限于该命令）</strong></li>
+</ul>
 <p>这三部分连用的解释：</p>
-</li>
-<li><p><code>&lt;&lt;&lt; &quot;199.0&quot;</code> 将 <code>&quot;199.0&quot;</code> 作为标准输入传递给 <code>read</code> 命令。</p>
-</li>
-<li><p><code>IFS=&#39;.&#39;</code> 临时将 <code>IFS</code> 设置为 <code>.</code>。</p>
-</li>
-<li><p><code>read inlayer intype</code> 命令开始从标准输入读取 <code>&quot;199.0&quot;</code>。</p>
-</li>
-<li><p><code>read</code> 遇到第一个字段分隔符 <code>.</code> 之前的部分 <code>199</code>，将其赋值给第一个变量 <code>inlayer</code>。</p>
-</li>
-<li><p><code>read</code> 遇到第二个字段分隔符（或者到达行尾）之前的部分 <code>0</code>，将其赋值给第二个变量 <code>intype</code>。</p>
-</li>
-<li><p>命令执行完毕后，<code>IFS</code> 的值会恢复到它在命令执行之前的状态（因为 <code>IFS=&#39;.&#39;</code> 是作为 <code>read</code> 命令的前缀，它的作用范围仅限于该命令）。</p>
+<ul>
+<li><code>&lt;&lt;&lt; &quot;199.0&quot;</code> 将 <code>&quot;199.0&quot;</code> 作为标准输入传递给 <code>read</code> 命令。</li>
+<li><code>IFS=&#39;.&#39;</code> 临时将 <code>IFS</code> 设置为 <code>.</code>。</li>
+<li><code>read inlayer intype</code> 命令开始从标准输入读取 <code>&quot;199.0&quot;</code>。</li>
+<li><code>read</code> 遇到第一个字段分隔符 <code>.</code> 之前的部分 <code>199</code>，将其赋值给第一个变量 <code>inlayer</code>。</li>
+<li><code>read</code> 遇到第二个字段分隔符（或者到达行尾）之前的部分 <code>0</code>，将其赋值给第二个变量 <code>intype</code>。</li>
+<li>命令执行完毕后，<code>IFS</code> 的值会恢复到它在命令执行之前的状态（因为 <code>IFS=&#39;.&#39;</code> 是作为 <code>read</code> 命令的前缀，它的作用范围仅限于该命令）。</li>
+</ul>
 <p>为什么这三部分可以这样连用，这主要涉及到以下几个概念：</p>
-</li>
-<li><p><strong>命令前缀（Command Prefix）</strong>：在 Bash 中，你可以在一个命令前面放置变量赋值，这些赋值只对当前命令有效，而不是全局生效。</p>
-</li>
-<li><p><strong>命令（Command）</strong>：<code>read</code> 是一个 Bash 内置命令。</p>
-</li>
-<li><p><strong>重定向（Redirection）</strong>：<code>&lt;&lt;&lt;</code> 是 Here String 重定向操作符。</p>
-</li>
+<ul>
+<li><strong>命令前缀（Command Prefix）</strong>：在 Bash 中，你可以在一个命令前面放置变量赋值，这些赋值只对当前命令有效，而不是全局生效。</li>
+<li><strong>命令（Command）</strong>：<code>read</code> 是一个 Bash 内置命令。</li>
+<li><strong>重定向（Redirection）</strong>：<code>&lt;&lt;&lt;</code> 是 Here String 重定向操作符。</li>
 </ul>
 <p>当 Bash 看到 <code>VAR=value command arguments</code> 这样的结构时，它会做以下事情：</p>
 <ul>

@@ -286,7 +286,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="59">
-<input type="hidden" id="yelog_site_word_count" value="263.1k">
+<input type="hidden" id="yelog_site_word_count" value="263.4k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -916,12 +916,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2026-01-15 22:12:36'>2020-11-04 21:29</time>
+            发布时间 : <time class="date" title='最后更新: 2026-01-23 18:48:22'>2020-11-04 21:29</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:9.6k</span>
+        <span>字数:9.8k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1264,8 +1264,8 @@ if __name__ == &#39;__main__&#39;:
 <p><strong>multiprocessing.Pool</strong> 是创建进程池的主要工具。<code>pool = multiprocessing.Pool(10)</code></p>
 <p>Pool 类有以下 4 种非常常用提交任务的方法。</p>
 <ul>
-<li><strong>apply(func [, args [, kwargs]])</strong>：阻塞，任务其实是一个一个执行完的。无法实现并行效果。所以这个函数其实没啥用</li>
-<li><strong>map(func, iterable, chunksize=None)</strong>：与上一致。区别是针对多次运行同一个任务，如果只是参数不同，可以把参数做成一个迭代器。</li>
+<li>apply(func [, args [, kwargs]])：阻塞，任务其实是一个一个执行完的。无法实现并行效果。<strong>所以这个函数其实没啥用</strong></li>
+<li>map(func, iterable, chunksize=None)：与上一致。区别是针对多次运行同一个任务，如果只是参数不同，可以把参数做成一个迭代器。<strong>这个函数其实也没啥用</strong></li>
 <li><strong>apply_async(func [, args [, kwargs]], callback)</strong>：非阻塞，且支持结果返回后进行回调</li>
 <li><strong>map_async(func, iterable, chunksize, callback)</strong>：与上一致，区别是针对多次运行同一个任务，如果只是参数不同，可以把参数做成一个迭代器。</li>
 </ul>
@@ -1353,31 +1353,45 @@ import os
 import time
 
 def cpu_bound_task(n):
-    &quot;&quot;&quot; 模拟 CPU 密集型任务 &quot;&quot;&quot;
     pid = os.getpid()
-    print(f&quot; 任务 &#123;n&#125; 在进程 &#123;pid&#125; 中执行 &quot;)
-    total = sum(i * i for i in range(n * 1000000))
-    return f&quot; 任务 &#123;n&#125; 结束，结果为 &#123;total&#125;&quot;
+    start_time = time.time()
+    print(f&quot;[&#123;time.strftime(&#39;%H:%M:%S&#39;)&#125;] 任务 &#123;n&#125; 在进程 &#123;pid&#125; 中开始执行 &quot;)
+
+    total = sum(i * i for i in range(n * 8000000))
+
+    end_time = time.time()
+    duration = end_time - start_time
+    print(f&quot;[&#123;time.strftime(&#39;%H:%M:%S&#39;)&#125;] 任务 &#123;n&#125; 在进程 &#123;pid&#125; 中结束，耗时 &#123;duration:.2f&#125; 秒 &quot;)
+    return f&quot; 任务 &#123;n&#125; 结果: &#123;total&#125;&quot;
 
 if __name__ == &#39;__main__&#39;:
-    with ProcessPoolExecutor(max_workers=3) as executor:
-        # 提交多个任务
-        futures = [executor.submit(cpu_bound_task, i) for i in range(5, 1, -1)]
 
-        # 按完成顺序获取结果（as_completed）
+    with ProcessPoolExecutor(max_workers=3) as executor:
+        # 提交 5 个任务
+        futures = [executor.submit(cpu_bound_task, i) for i in range(5, 0, -1)]  # [5,4,3,2,1]
+
+        # 按完成顺序输出结果
         for future in as_completed(futures):
-            print(future.result())
-# 输出：
-任务 5 在进程 37572 中执行
-任务 4 在进程 23104 中执行
-任务 3 在进程 37072 中执行
-任务 2 在进程 29964 中执行
-任务 2 结束，结果为 2666664666667000000
-任务 3 结束，结果为 8999995500000500000
-任务 4 结束，结果为 21333325333334000000
-任务 5 结束，结果为 41666654166667500000</code></pre>
+            result = future.result()
+            print(f&quot;[&#123;time.strftime(&#39;%H:%M:%S&#39;)&#125;] 收到结果: &#123;result&#125;&quot;)
+#结果输出：
+[18:37:53] 任务 5 在进程 15352 中开始执行
+[18:37:53] 任务 4 在进程 14736 中开始执行
+[18:37:53] 任务 3 在进程 15192 中开始执行
+[18:37:55] 任务 3 在进程 15192 中结束，耗时 2.11 秒
+[18:37:55] 任务 2 在进程 15192 中开始执行
+[18:37:55] 收到结果: 任务 3 结果: 4607999712000004000000
+[18:37:56] 任务 4 在进程 14736 中结束，耗时 2.91 秒
+[18:37:56] 收到结果: 任务 4 结果: 10922666154666672000000
+[18:37:56] 任务 1 在进程 14736 中开始执行
+[18:37:56] 任务 2 在进程 15192 中结束，耗时 1.38 秒
+[18:37:56] 收到结果: 任务 2 结果: 1365333205333336000000
+[18:37:56] 任务 1 在进程 14736 中结束，耗时 0.70 秒
+[18:37:56] 收到结果: 任务 1 结果: 170666634666668000000
+[18:37:56] 任务 5 在进程 15352 中结束，耗时 3.63 秒
+[18:37:56] 收到结果: 任务 5 结果: 21333332533333340000000</code></pre>
 <blockquote>
-<p>根据上面测试，任务 2 在最后提交，但是因为先计算完，所以结果最先输出。</p>
+<p>根据上面测试，看时间，可以看到先提交前三个任务，任务 3 结束后，再加了任务 2，保持占满池子（3 个）</p>
 </blockquote>
 <p>ProcessPoolExecutor 用法和线程池一模一样，接口完全一致。两者都继承自同一个抽象基类 <code>Executor</code>，因此两者用法完全相同</p>
 <p>使用用法可以直接参考 3.4 章节。只需改一行代码即可切换线程 / 进程。</p>

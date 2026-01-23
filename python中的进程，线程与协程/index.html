@@ -916,7 +916,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2026-01-23 22:11:13'>2020-11-04 21:29</time>
+            发布时间 : <time class="date" title='最后更新: 2026-01-23 22:24:53'>2020-11-04 21:29</time>
         
     </div>
     <div class="article-meta">
@@ -1494,7 +1494,7 @@ def run_cpu_intensive_script(script_path):
             text=True,
             check=False,  # 不自动抛异常，手动处理 returncode
             timeout=600   # 10 分钟超时（按需调整）
-        ) # subprocess 是阻塞的
+        ) # subprocess.run 是阻塞的
         return &#123;
             &quot;script&quot;: script_path,
             &quot;returncode&quot;: result.returncode,
@@ -1554,7 +1554,7 @@ def run_cad_task(task_id):
             stderr=subprocess.PIPE,
             text=True,
             preexec_fn=os.setsid  # 创建新进程组（便于后续杀死整个进程树）
-        )
+        )  #subprocess.Popen 是非阻塞的
 
         # 等待完成或超时
         try:

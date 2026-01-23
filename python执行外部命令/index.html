@@ -286,7 +286,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="59">
-<input type="hidden" id="yelog_site_word_count" value="263.4k">
+<input type="hidden" id="yelog_site_word_count" value="263.6k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -916,7 +916,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2026-01-15 22:13:05'>2026-01-15 10:07</time>
+            发布时间 : <time class="date" title='最后更新: 2026-01-23 22:19:17'>2026-01-15 10:07</time>
         
     </div>
     <div class="article-meta">
@@ -1240,7 +1240,7 @@ def run_cad_task(task_id):
         # 启动子进程
         proc = subprocess.Popen([&quot;./run_cad.sh&quot;],
             cwd=WORK_DIR,
-            stdout=subprocess.PIPE,
+            stdout=subprocess.PIPE,  #通过管道将 &quot;./run_cad.sh&quot; 的结果传递给 proc.stdout
             stderr=subprocess.PIPE,
             text=True,
             preexec_fn=os.setsid  # 创建新进程组（便于后续杀死整个进程树）
@@ -1248,7 +1248,8 @@ def run_cad_task(task_id):
 
         # 等待完成或超时
         try:
-            stdout, stderr = proc.communicate(timeout=3600*24)
+            stdout, stderr = proc.communicate(timeout=3600*24) 
+            #communicate 是阻塞的，必须阻塞，否则进程池控制失效
             returncode = proc.returncode
         except subprocess.TimeoutExpired:
             # 超时：杀死整个进程组

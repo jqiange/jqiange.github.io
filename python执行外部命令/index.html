@@ -286,7 +286,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="59">
-<input type="hidden" id="yelog_site_word_count" value="264.9k">
+<input type="hidden" id="yelog_site_word_count" value="265.2k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -916,7 +916,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2026-01-24 15:08:25'>2026-01-15 10:07</time>
+            发布时间 : <time class="date" title='最后更新: 2026-01-24 15:26:34'>2026-01-15 10:07</time>
         
     </div>
     <div class="article-meta">
@@ -1254,8 +1254,8 @@ def run_cad_task(task_id):
         proc = subprocess.Popen([&quot;./run_cad.sh&quot;],
             cwd=WORK_DIR,
             stdout=subprocess.PIPE,  #通过管道将 &quot;./run_cad.sh&quot; 的结果传递给 proc.stdout
-            stderr=subprocess.PIPE,
-            text=True,
+            stderr=subprocess.PIPE,  
+            text=True,   #返回字符串而非字节
             preexec_fn=os.setsid  # 创建新进程组（便于后续杀死整个进程树）
         )
 

@@ -916,7 +916,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2026-01-24 15:29:32'>2020-11-04 21:29</time>
+            发布时间 : <time class="date" title='最后更新: 2026-01-24 15:32:14'>2020-11-04 21:29</time>
         
     </div>
     <div class="article-meta">
@@ -1683,10 +1683,10 @@ if __name__ == &quot;__main__&quot;:
 </li>
 <li><p><code>executor = ThreadPoolExecutor</code> 只要还有工作线程在排队，其就不会被垃圾回收。</p>
 <ul>
-<li>submit 的非阻塞式的，会把所有任务在瞬间提交，无论线程池是否忙碌</li>
+<li>submit 是非阻塞式的，会把所有任务在瞬间提交，无论线程池是否忙碌</li>
 <li>所有任务进入待执行队列。这个队列由 self._work_queue 管理，这个队列是 executor 实例的私有属性。</li>
 <li>只要还有工作线程在运行（因为队列非空），executor 对象就不会被 GC（因为工作线程持有对它的弱引用或队列引用）。</li>
-<li><code>executor</code> 的生命周期由内部任务和线程决定，而非局部变量作用域！</li>
+<li>executor 的生命周期由内部任务和线程决定，而非局部变量作用域！</li>
 </ul>
 </li>
 </ul>

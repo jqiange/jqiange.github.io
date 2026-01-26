@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>pyqt5 简介 | jqiange</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="pyqt5 简介 | jqiange">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="{&quot;content&quot;:&quot;&quot;,&quot;children&quot;:[{&quot;content&quot;:&quot;&amp;#x6838;&amp;#x5fc3;&amp;#x57fa;&amp;#x7840;&amp;#x6a21;&amp;#x5757;&quot;,&quot;children&quot;:[{&quot;content&quot;:&quot;QtCore&amp;#xff1a;&amp;#x6838;&amp;#x5fc3;&amp;#x529f;&amp;#x80fd;&amp;#x652f;&amp;#x6491;&quot;,&quot;children&quot;:[{&quot;con">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pyqt5 简介">
+<meta property="og:url" content="https://jqiange.github.io/pyqt5%E7%AE%80%E4%BB%8B/index.html">
+<meta property="og:site_name" content="jqiange">
+<meta property="og:description" content="{&quot;content&quot;:&quot;&quot;,&quot;children&quot;:[{&quot;content&quot;:&quot;&amp;#x6838;&amp;#x5fc3;&amp;#x57fa;&amp;#x7840;&amp;#x6a21;&amp;#x5757;&quot;,&quot;children&quot;:[{&quot;content&quot;:&quot;QtCore&amp;#xff1a;&amp;#x6838;&amp;#x5fc3;&amp;#x529f;&amp;#x80fd;&amp;#x652f;&amp;#x6491;&quot;,&quot;children&quot;:[{&quot;con">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-01-26T02:50:17.000Z">
+<meta property="article:modified_time" content="2026-01-26T07:24:58.054Z">
+<meta property="article:author" content="姜小强">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/jqiange.png">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/jqiange.png"/>
+</a>
+<div class="author">
+    <span>姜小强</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/jqiange"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(61)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(8)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据库">
+                        
+                        数据库
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="脚本语言">
+                        
+                        脚本语言
+                        <small>(18)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="每日一学">
+                        
+                        每日一学
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="爬虫">
+                        
+                        爬虫
+                        <small>(11)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="其他">
+                        
+                        其他
+                        <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据分析">
+                        
+                        数据分析
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="chip">
+                        
+                        chip
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="CPP">
+                        
+                        CPP
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="python">
+                        
+                        python
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="61">
+<input type="hidden" id="yelog_site_word_count" value="268.4k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSS-Xpath</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Markdown</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Matplotlib</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Mysql</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Numpy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pandas</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pip</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Pyecharts</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pygal</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pymysql-ORM</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>RE</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Redis</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Scrapy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Seaborn</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Selenium</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>yield</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="全部文章 脚本语言 "
+           href="/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%A6%E8%A7%A3/"
+           data-tag="RE"
+           data-author="" >
+            <span class="post-title" title="正则表达式详解">正则表达式详解</span>
+            <span class="post-date" title="2020-02-26 09:25:46">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 python "
+           href="/pyqt5%E7%AE%80%E4%BB%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="pyqt5 简介">pyqt5 简介</span>
+            <span class="post-date" title="2026-01-26 10:50:17">2026/01/26</span>
+        </a>
+        
+        <a  class="全部文章 脚本语言 "
+           href="/Python%E7%B1%BB%E5%9E%8B%E6%B3%A8%E8%A7%A3%E5%B8%B8%E7%94%A8%E7%A4%BA%E4%BE%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 类型注解常用示例">Python 类型注解常用示例</span>
+            <span class="post-date" title="2026-01-24 19:52:53">2026/01/24</span>
+        </a>
+        
+        <a  class="全部文章 脚本语言 "
+           href="/python%E6%89%A7%E8%A1%8C%E5%A4%96%E9%83%A8%E5%91%BD%E4%BB%A4/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 执行外部命令">python 执行外部命令</span>
+            <span class="post-date" title="2026-01-15 10:07:31">2026/01/15</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/tcl%E4%B8%8Eopc/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 与 opc">tcl 与 opc</span>
+            <span class="post-date" title="2025-09-24 13:36:07">2025/09/24</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/hexo%E6%96%87%E7%AB%A0%E5%8A%A0%E5%AF%86%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="hexo 文章加密方法">hexo 文章加密方法</span>
+            <span class="post-date" title="2025-09-21 22:33:03">2025/09/21</span>
+        </a>
+        
+        <a  class="全部文章 脚本语言 "
+           href="/tcl%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tcl 语言入门">tcl 语言入门</span>
+            <span class="post-date" title="2025-09-14 22:43:20">2025/09/14</span>
+        </a>
+        
+        <a  class="全部文章 每日一学 "
+           href="/%E6%95%85%E4%BA%8B%E4%BC%9A%E4%B8%8E%E4%BC%81%E4%B8%9A%E8%82%A1%E6%9D%83%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="故事会与企业股权架构设计">故事会与企业股权架构设计</span>
+            <span class="post-date" title="2025-08-30 09:42:43">2025/08/30</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%AE%A1%E7%AE%97%E5%85%89%E5%88%BBOPC%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="计算光刻 OPC 名词解释">计算光刻 OPC 名词解释</span>
+            <span class="post-date" title="2025-08-26 21:44:36">2025/08/26</span>
+        </a>
+        
+        <a  class="全部文章 chip "
+           href="/%E8%8A%AF%E7%89%87%E5%88%B6%E9%80%A0%E6%B5%81%E7%A8%8B%E4%B8%8E%E5%B7%A5%E8%89%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="芯片制造流程与工艺">芯片制造流程与工艺</span>
+            <span class="post-date" title="2025-06-14 12:13:17">2025/06/14</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E8%81%8C%E5%9C%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入职场">C++ 入职场</span>
+            <span class="post-date" title="2024-06-22 15:52:55">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/Protocol-Buffers-%E5%85%A5%E9%97%A8%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Protocol Buffers 入门使用">Protocol Buffers 入门使用</span>
+            <span class="post-date" title="2024-06-22 15:50:39">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-python%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B-boost/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++python 混合编程 -boost">C++python 混合编程 -boost</span>
+            <span class="post-date" title="2024-06-22 15:36:18">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B%E4%B8%8E%E6%A8%A1%E6%9D%BF/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 泛型编程与模板">C++ 泛型编程与模板</span>
+            <span class="post-date" title="2024-06-22 15:27:49">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/C-%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C++ 入门学习笔记">C++ 入门学习笔记</span>
+            <span class="post-date" title="2024-06-22 14:53:46">2024/06/22</span>
+        </a>
+        
+        <a  class="全部文章 脚本语言 "
+           href="/shell%E7%BC%96%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="shell 编程">shell 编程</span>
+            <span class="post-date" title="2022-03-07 20:24:24">2022/03/07</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Git 版本控制工具">Git 版本控制工具</span>
+            <span class="post-date" title="2022-03-05 23:23:45">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Hexo%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E4%B8%8E%E5%A4%9A%E5%B9%B3%E5%8F%B0%E4%BD%BF%E7%94%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hexo 博客迁移与多平台使用">Hexo 博客迁移与多平台使用</span>
+            <span class="post-date" title="2022-03-05 01:26:56">2022/03/05</span>
+        </a>
+        
+        <a  class="全部文章 脚本语言 "
+           href="/python%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%B8%8E%E9%87%8D%E9%9A%BE%E7%82%B9%E6%B1%87%E6%80%BB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的基础知识与重难点汇总">python 中的基础知识与重难点汇总</span>
+            <span class="post-date" title="2020-11-17 23:05:15">2020/11/17</span>
+        </a>
+        
+        <a  class="全部文章 其他 "
+           href="/javascript%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="JavaScript 入门">JavaScript 入门</span>
+            <span class="post-date" title="2020-11-09 20:46:08">2020/11/09</span>
+        </a>
+        
+        <a  class="全部文章 脚本语言 "
+           href="/python%E4%B8%AD%E7%9A%84%E8%AF%AD%E6%B3%95%E7%B3%96/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的语法糖">python 中的语法糖</span>
+            <span class="post-date" title="2020-11-06 10:53:29">2020/11/06</span>
+        </a>
+        
+        <a  class="全部文章 脚本语言 "
+           href="/python%E4%B8%AD%E7%9A%84%E8%BF%9B%E7%A8%8B%EF%BC%8C%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%8D%8F%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的进程，线程与协程">python 中的进程，线程与协程</span>
+            <span class="post-date" title="2020-11-04 21:29:16">2020/11/04</span>
+        </a>
+        
+        <a  class="全部文章 脚本语言 "
+           href="/linux%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="linux 常见命令学习">linux 常见命令学习</span>
+            <span class="post-date" title="2020-06-17 22:33:28">2020/06/17</span>
+        </a>
+        
+        <a  class="全部文章 其他 "
+           href="/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="机器学习经典算法">机器学习经典算法</span>
+            <span class="post-date" title="2020-06-16 10:36:50">2020/06/16</span>
+        </a>
+        
+        <a  class="全部文章 其他 "
+           href="/tensorflow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="tensorflow 学习笔记">tensorflow 学习笔记</span>
+            <span class="post-date" title="2020-06-05 01:49:53">2020/06/05</span>
+        </a>
+        
+        <a  class="全部文章 其他 "
+           href="/%E6%B7%B1%E5%BA%A6%E7%90%86%E8%A7%A3%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="深度理解卷积神经网络工作原理">深度理解卷积神经网络工作原理</span>
+            <span class="post-date" title="2020-06-04 13:24:45">2020/06/04</span>
+        </a>
+        
+        <a  class="全部文章 脚本语言 "
+           href="/%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="定时执行">定时执行</span>
+            <span class="post-date" title="2020-04-06 22:44:47">2020/04/06</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Token-Cookie%E5%92%8CSession%E7%9A%84%E5%8C%BA%E5%88%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Token、Cookie 和 Session 的区别">Token、Cookie 和 Session 的区别</span>
+            <span class="post-date" title="2020-04-03 10:46:54">2020/04/03</span>
+        </a>
+        
+        <a  class="全部文章 脚本语言 "
+           href="/%E5%9C%A8python%E4%B8%AD%E8%BF%9B%E8%A1%8C%E8%A7%86%E9%A2%91-%E9%9F%B3%E9%A2%91%E5%A4%84%E7%90%86%E5%8F%8A%E5%90%88%E5%B9%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="在 python 中进行视频 - 音频处理及合并">在 python 中进行视频 - 音频处理及合并</span>
+            <span class="post-date" title="2020-03-29 10:56:44">2020/03/29</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8BJS%E8%A7%A3%E5%AF%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之 JS 解密">反反爬虫之 JS 解密</span>
+            <span class="post-date" title="2020-03-24 10:04:43">2020/03/24</span>
+        </a>
+        
+        <a  class="全部文章 脚本语言 "
+           href="/%E7%90%86%E8%A7%A3python%E4%B8%AD%E7%9A%84%E9%97%AD%E5%8C%85%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="理解 python 中的闭包与装饰器">理解 python 中的闭包与装饰器</span>
+            <span class="post-date" title="2020-03-21 17:34:45">2020/03/21</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Mongodb%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Mongodb 数据库入门">Mongodb 数据库入门</span>
+            <span class="post-date" title="2020-03-17 22:50:33">2020/03/17</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%8A%A0%E4%B8%AA%E7%A9%BA%E6%A0%BC%E5%91%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="为什么不加个空格呢">为什么不加个空格呢</span>
+            <span class="post-date" title="2020-03-14 13:53:44">2020/03/14</span>
+        </a>
+        
+        <a  class="全部文章 脚本语言 "
+           href="/%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8/"
+           data-tag="yield"
+           data-author="" >
+            <span class="post-title" title="迭代器与生成器">迭代器与生成器</span>
+            <span class="post-date" title="2020-03-13 21:58:25">2020/03/13</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E6%BB%91%E5%9D%97%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之滑块验证码">反反爬虫之滑块验证码</span>
+            <span class="post-date" title="2020-03-08 21:00:17">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%8F%8D%E5%8F%8D%E7%88%AC%E8%99%AB%E4%B9%8B%E5%9B%BE%E7%89%87%E9%AA%8C%E8%AF%81%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反反爬虫之图片验证码">反反爬虫之图片验证码</span>
+            <span class="post-date" title="2020-03-08 16:16:16">2020/03/08</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Python%E6%93%8D%E4%BD%9CRedis/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Python 操作 Redis">Python 操作 Redis</span>
+            <span class="post-date" title="2020-03-07 16:15:44">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy-Redis%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Scrapy-Redis 分布式爬虫">Scrapy-Redis 分布式爬虫</span>
+            <span class="post-date" title="2020-03-07 15:35:50">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%ABRequest%E5%8E%BB%E9%87%8D%E5%8F%8A%E8%BF%87%E6%BB%A4%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫 Request 去重及过滤器">爬虫 Request 去重及过滤器</span>
+            <span class="post-date" title="2020-03-07 15:22:23">2020/03/07</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Redis%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="Redis 数据库">Redis 数据库</span>
+            <span class="post-date" title="2020-03-06 20:30:00">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/Pymysql%E4%B8%8EORM%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="pymysql-ORM"
+           data-author="" >
+            <span class="post-title" title="Pymysql 与 ORM 操作数据库">Pymysql 与 ORM 操作数据库</span>
+            <span class="post-date" title="2020-03-06 10:49:03">2020/03/06</span>
+        </a>
+        
+        <a  class="全部文章 数据库 "
+           href="/MySql%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="Mysql"
+           data-author="" >
+            <span class="post-title" title="MySql 数据库">MySql 数据库</span>
+            <span class="post-date" title="2020-03-04 23:31:02">2020/03/04</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Scrapy%E6%A1%86%E6%9E%B6%E7%88%AC%E8%99%AB/"
+           data-tag="Scrapy"
+           data-author="" >
+            <span class="post-title" title="Scrapy 框架爬虫">Scrapy 框架爬虫</span>
+            <span class="post-date" title="2020-03-02 10:44:55">2020/03/02</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B%E7%88%AC%E8%99%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="多线程与多进程爬虫">多线程与多进程爬虫</span>
+            <span class="post-date" title="2020-03-01 15:33:08">2020/03/01</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/Selenium%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%A8%A1%E6%8B%9F/"
+           data-tag="Selenium"
+           data-author="" >
+            <span class="post-title" title="Selenium 自动化测试模拟">Selenium 自动化测试模拟</span>
+            <span class="post-date" title="2020-02-29 21:29:54">2020/02/29</span>
+        </a>
+        
+        <a  class="全部文章 脚本语言 "
+           href="/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96-%E6%96%87%E4%BB%B6%E4%BF%9D%E5%AD%98/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="数据持久化 - 文件保存本地">数据持久化 - 文件保存本地</span>
+            <span class="post-date" title="2020-02-27 22:01:14">2020/02/27</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫基础入门">爬虫基础入门</span>
+            <span class="post-date" title="2020-02-26 20:44:27">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 爬虫 "
+           href="/CSS%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%8EXpath%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96/"
+           data-tag="CSS-Xpath"
+           data-author="" >
+            <span class="post-title" title="CSS 选择器与 Xpath 数据提取">CSS 选择器与 Xpath 数据提取</span>
+            <span class="post-date" title="2020-02-26 19:07:35">2020/02/26</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Seaborn-Pygal-Pyecharts%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Seaborn,pygal,Pyecharts"
+           data-author="" >
+            <span class="post-title" title="Seaborn-Pygal-Pyecharts 可视化">Seaborn-Pygal-Pyecharts 可视化</span>
+            <span class="post-date" title="2020-02-22 16:24:55">2020/02/22</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/python%E4%B9%8BMatplotlib%E5%8F%AF%E8%A7%86%E5%8C%96/"
+           data-tag="Matplotlib"
+           data-author="" >
+            <span class="post-title" title="python 之 Matplotlib 可视化">python 之 Matplotlib 可视化</span>
+            <span class="post-date" title="2020-02-20 20:28:44">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%A4%84%E7%90%86%E5%AE%9E%E6%93%8D/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Pandas 数据分析处理实操">Pandas 数据分析处理实操</span>
+            <span class="post-date" title="2020-02-20 10:51:39">2020/02/20</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Markdown%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E6%8A%80%E5%B7%A7/"
+           data-tag="Markdown"
+           data-author="" >
+            <span class="post-title" title="Markdown 文本编辑技巧">Markdown 文本编辑技巧</span>
+            <span class="post-date" title="2020-02-18 16:31:40">2020/02/18</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BPandas%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Pandas"
+           data-author="" >
+            <span class="post-title" title="Python 之 Pandas 库从入门到实战">Python 之 Pandas 库从入门到实战</span>
+            <span class="post-date" title="2020-02-15 20:46:52">2020/02/15</span>
+        </a>
+        
+        <a  class="全部文章 数据分析 "
+           href="/Python%E4%B9%8BNumpy%E5%BA%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/"
+           data-tag="Numpy"
+           data-author="" >
+            <span class="post-title" title="Python 之 Numpy 库从入门到实战">Python 之 Numpy 库从入门到实战</span>
+            <span class="post-date" title="2020-02-13 23:15:38">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 脚本语言 "
+           href="/python%E4%B8%AD%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E9%95%9C%E5%83%8F%E6%BA%90%E7%BD%91%E5%9D%80/"
+           data-tag="pip"
+           data-author="" >
+            <span class="post-title" title="python pip 国内镜像大全及库的安装">python pip 国内镜像大全及库的安装</span>
+            <span class="post-date" title="2020-02-13 23:13:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 脚本语言 "
+           href="/python%E7%9A%84%E4%B8%89%E7%A7%8D%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 的三种输出格式">python 的三种输出格式</span>
+            <span class="post-date" title="2020-02-13 23:04:49">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 脚本语言 "
+           href="/python%E4%B8%AD%E7%9A%84%E6%97%B6%E9%97%B4%E6%A8%A1%E5%9D%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 中的时间模块">python 中的时间模块</span>
+            <span class="post-date" title="2020-02-13 23:01:16">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 脚本语言 "
+           href="/python%E6%9F%A5%E7%9C%8B%E4%BB%BB%E4%BD%95%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E7%94%A8%E6%B3%95%E7%9A%84%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python 查看任何第三方库的用法的方法">python 查看任何第三方库的用法的方法</span>
+            <span class="post-date" title="2020-02-13 22:57:50">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/Anaconda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8Epyinstaller%E7%A8%8B%E5%BA%8F%E6%89%93%E5%8C%85/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Anaconda 环境配置与 pyinstaller 程序打包">Anaconda 环境配置与 pyinstaller 程序打包</span>
+            <span class="post-date" title="2020-02-13 20:01:52">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E4%BD%BF%E7%94%A8Hexo-Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%85%8D%E8%B4%B9%E5%8D%9A%E5%AE%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="使用 Hexo+Github 搭建个人免费博客">使用 Hexo+Github 搭建个人免费博客</span>
+            <span class="post-date" title="2020-02-13 15:44:02">2020/02/13</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/%E5%85%B3%E4%BA%8Ehexo%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"
+           data-tag="Hexo"
+           data-author="" >
+            <span class="post-title" title="关于 hexo 使用过程中报错问题汇总">关于 hexo 使用过程中报错问题汇总</span>
+            <span class="post-date" title="2020-02-12 23:03:46">2020/02/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-pyqt5简介" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">pyqt5 简介</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="python">python</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2026-01-26 15:24:58'>2026-01-26 10:50</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:2.8k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div class="markmap-wrap">
+      <script type="application/json">{"content":"","children":[{"content":"&#x6838;&#x5fc3;&#x57fa;&#x7840;&#x6a21;&#x5757;","children":[{"content":"QtCore&#xff1a;&#x6838;&#x5fc3;&#x529f;&#x80fd;&#x652f;&#x6491;","children":[{"content":"&#x4e8b;&#x4ef6;&#x5faa;&#x73af;/&#x4fe1;&#x53f7;&#x4e0e;&#x69fd;&#x673a;&#x5236;","children":[],"payload":{"tag":"li","lines":"8,9"}},{"content":"&#x6570;&#x636e;&#x7c7b;&#x578b;/&#x65e5;&#x671f;&#x65f6;&#x95f4;&#x5904;&#x7406;","children":[],"payload":{"tag":"li","lines":"9,10"}},{"content":"&#x5b9a;&#x65f6;&#x5668;/&#x7ebf;&#x7a0b;/&#x8fdb;&#x7a0b;&#x7ba1;&#x7406;","children":[],"payload":{"tag":"li","lines":"10,11"}},{"content":"&#x6587;&#x4ef6;IO/URL&#x5904;&#x7406;/&#x5bb9;&#x5668;&#x7c7b;","children":[],"payload":{"tag":"li","lines":"11,12"}},{"content":"&#x6743;&#x9650;&#x63a7;&#x5236;/&#x5e94;&#x7528;&#x914d;&#x7f6e;&#x5b58;&#x50a8;","children":[],"payload":{"tag":"li","lines":"12,13"}}],"payload":{"tag":"li","lines":"7,13"}}],"payload":{"tag":"h2","lines":"6,7"}},{"content":"&#x754c;&#x9762;&#x63a7;&#x4ef6;&#x6a21;&#x5757;","children":[{"content":"QtWidgets&#xff1a;&#x6807;&#x51c6;&#x53ef;&#x89c6;&#x5316;&#x63a7;&#x4ef6;","children":[{"content":"\n<p data-lines=\"15,16\">&#x57fa;&#x7840;&#x7a97;&#x53e3;&#x7c7b;</p>","children":[{"content":"\n<p data-lines=\"17,18\">QMainWindow</p>","children":[{"content":"&#x3010;&#x5e26;&#x6846;&#x67b6;&#x7684;&#x4e3b;&#x7a97;&#x53e3;&#x3011;&#xff0c;&#x81ea;&#x5e26;&#x83dc;&#x5355; / &#x5de5;&#x5177;&#x680f; / &#x72b6;&#x6001;&#x680f;&#xff0c;&#x6838;&#x5fc3;&#x662f;&#x4e2d;&#x592e;&#x5de5;&#x4f5c;&#x533a;&#xff1b;","children":[],"payload":{"tag":"li","lines":"19,20"}},{"content":"&#x793a;&#x4f8b;","children":[{"content":"\n<img src=\"https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20260126115140177.png\" style=\"zoom: 33%;\">","children":[],"payload":{"tag":"li","lines":"21,22"}}],"payload":{"tag":"li","lines":"20,22"}}],"payload":{"tag":"li","lines":"17,22"}},{"content":"\n<p data-lines=\"22,23\">QWidget</p>","children":[{"content":"&#x3010;&#x7a7a;&#x767d;&#x79ef;&#x6728;&#x3011;&#xff0c;&#x662f;&#x6240;&#x6709;&#x63a7;&#x4ef6;&#x7684;&#x7236;&#x7c7b;&#xff0c;&#x53ef;&#x505a;&#x72ec;&#x7acb;&#x7a97;&#x53e3;&#x6216;&#x5bb9;&#x5668;&#xff0c;&#x5b8c;&#x5168;&#x81ea;&#x5b9a;&#x4e49;&#x5e03;&#x5c40;","children":[],"payload":{"tag":"li","lines":"24,25"}},{"content":"&#x793a;&#x4f8b;","children":[{"content":"\n<img src=\"https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20260126120743483.png\" style=\"zoom:33%;\">","children":[],"payload":{"tag":"li","lines":"26,27"}}],"payload":{"tag":"li","lines":"25,27"}}],"payload":{"tag":"li","lines":"22,27"}},{"content":"\n<p data-lines=\"27,28\">QDialog</p>","children":[{"content":"&#x3010;&#x4ea4;&#x4e92;&#x5f39;&#x7a97;&#x3011;&#xff0c;&#x4e3b;&#x6253;&#x4e34;&#x65f6;&#x4ea4;&#x4e92;&#xff0c;&#x901a;&#x5e38;&#x6a21;&#x6001;&#x663e;&#x793a;&#xff0c;&#x963b;&#x585e;&#x7236;&#x7a97;&#x53e3;&#xff0c;&#x65e0;&#x590d;&#x6742;&#x6846;&#x67b6;","children":[],"payload":{"tag":"li","lines":"29,30"}},{"content":"&#x793a;&#x4f8b;","children":[{"content":"\n<img src=\"https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20260126121307694.png\" style=\"zoom:33%;\">","children":[],"payload":{"tag":"li","lines":"31,33"}}],"payload":{"tag":"li","lines":"30,33"}}],"payload":{"tag":"li","lines":"27,33"}}],"payload":{"tag":"li","lines":"15,33"}},{"content":"\n<p data-lines=\"33,34\">&#x5e03;&#x5c40;&#x7ba1;&#x7406;&#x7c7b;</p>","children":[{"content":"\n<p data-lines=\"34,35\">QHBoxLayout</p>","children":[],"payload":{"tag":"li","lines":"34,36"}},{"content":"\n<p data-lines=\"36,37\">QVBoxLayout</p>","children":[],"payload":{"tag":"li","lines":"36,38"}},{"content":"\n<p data-lines=\"38,39\">QGridLayout</p>","children":[],"payload":{"tag":"li","lines":"38,40"}},{"content":"\n<p data-lines=\"40,41\">QFormLayout</p>","children":[],"payload":{"tag":"li","lines":"40,42"}},{"content":"\n<p data-lines=\"42,43\">&#x793a;&#x4f8b;</p>","children":[{"content":"\n<img src=\"https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20260126134422594.png\" alt=\"image-20260126134422594\" style=\"zoom: 33%;\">","children":[],"payload":{"tag":"li","lines":"44,48"}}],"payload":{"tag":"li","lines":"42,48"}}],"payload":{"tag":"li","lines":"33,48"}},{"content":"\n<p data-lines=\"48,49\">&#x6309;&#x94ae;&#x63a7;&#x4ef6;&#x7c7b;</p>","children":[{"content":"QPushButton","children":[],"payload":{"tag":"li","lines":"49,50"}},{"content":"QRadioButton","children":[],"payload":{"tag":"li","lines":"50,51"}},{"content":"QCheckBox","children":[],"payload":{"tag":"li","lines":"51,52"}},{"content":"QToolButton","children":[],"payload":{"tag":"li","lines":"52,53"}},{"content":"QCommandLinkButton","children":[],"payload":{"tag":"li","lines":"53,54"}},{"content":"&#x793a;&#x4f8b;","children":[{"content":"\n<img src=\"https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20260126135206505.png\" alt=\"image-20260126135206505\" style=\"zoom:33%;\">","children":[],"payload":{"tag":"li","lines":"55,57"}}],"payload":{"tag":"li","lines":"54,57"}}],"payload":{"tag":"li","lines":"48,57"}},{"content":"\n<p data-lines=\"57,58\">&#x8f93;&#x5165;&#x63a7;&#x4ef6;&#x7c7b;</p>","children":[{"content":"QLineEdit","children":[],"payload":{"tag":"li","lines":"58,59"}},{"content":"QTextEdit","children":[],"payload":{"tag":"li","lines":"59,60"}},{"content":"QPlainTextEdit","children":[],"payload":{"tag":"li","lines":"60,61"}},{"content":"QComboBox","children":[],"payload":{"tag":"li","lines":"61,62"}},{"content":"QSpinBox","children":[],"payload":{"tag":"li","lines":"62,63"}},{"content":"QDoubleSpinBox","children":[],"payload":{"tag":"li","lines":"63,64"}},{"content":"QDateEdit","children":[],"payload":{"tag":"li","lines":"64,65"}},{"content":"&#x793a;&#x4f8b;","children":[{"content":"\n<img src=\"https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20260126140034042.png\" alt=\"image-20260126140034042\" style=\"zoom:33%;\">","children":[],"payload":{"tag":"li","lines":"66,68"}}],"payload":{"tag":"li","lines":"65,68"}}],"payload":{"tag":"li","lines":"57,68"}},{"content":"\n<p data-lines=\"68,69\">&#x663e;&#x793a;&#x63a7;&#x4ef6;&#x7c7b;</p>","children":[{"content":"QLabel","children":[],"payload":{"tag":"li","lines":"69,70"}},{"content":"QTableWidget","children":[],"payload":{"tag":"li","lines":"70,71"}},{"content":"QTreeWidget","children":[],"payload":{"tag":"li","lines":"71,72"}},{"content":"QListWidget","children":[],"payload":{"tag":"li","lines":"72,73"}},{"content":"QProgressBar","children":[],"payload":{"tag":"li","lines":"73,74"}},{"content":"QStatusBar","children":[],"payload":{"tag":"li","lines":"74,75"}},{"content":"&#x793a;&#x4f8b;","children":[{"content":"\n<img src=\"https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20260126140532302.png\" alt=\"image-20260126140532302\" style=\"zoom:33%;\">","children":[],"payload":{"tag":"li","lines":"76,78"}}],"payload":{"tag":"li","lines":"75,78"}}],"payload":{"tag":"li","lines":"68,78"}},{"content":"\n<p data-lines=\"78,79\">&#x9009;&#x62e9;&#x63a7;&#x4ef6;&#x7c7b;</p>","children":[{"content":"QSlider","children":[],"payload":{"tag":"li","lines":"79,80"}},{"content":"QDial","children":[],"payload":{"tag":"li","lines":"80,81"}},{"content":"QCalendarWidget","children":[],"payload":{"tag":"li","lines":"81,82"}},{"content":"QColorDialog","children":[],"payload":{"tag":"li","lines":"82,83"}},{"content":"&#x793a;&#x4f8b;","children":[{"content":"\n<img src=\"https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20260126140829773.png\" alt=\"image-20260126140829773\" style=\"zoom:33%;\">","children":[],"payload":{"tag":"li","lines":"84,86"}}],"payload":{"tag":"li","lines":"83,86"}}],"payload":{"tag":"li","lines":"78,86"}},{"content":"\n<p data-lines=\"86,87\">&#x5f39;&#x7a97;&#x63a7;&#x4ef6;&#x7c7b;</p>","children":[{"content":"QMessageBox","children":[],"payload":{"tag":"li","lines":"87,88"}},{"content":"QFileDialog","children":[],"payload":{"tag":"li","lines":"88,89"}},{"content":"QFontDialog","children":[],"payload":{"tag":"li","lines":"89,90"}},{"content":"QInputDialog","children":[],"payload":{"tag":"li","lines":"90,91"}},{"content":"&#x793a;&#x4f8b;","children":[{"content":"\n<img src=\"https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20260126141401773.png\" alt=\"image-20260126141401773\" style=\"zoom:33%;\">","children":[],"payload":{"tag":"li","lines":"92,94"}}],"payload":{"tag":"li","lines":"91,94"}}],"payload":{"tag":"li","lines":"86,94"}},{"content":"\n<p data-lines=\"94,95\">&#x5bb9;&#x5668;&#x63a7;&#x4ef6;&#x7c7b;</p>","children":[{"content":"QTabWidget","children":[],"payload":{"tag":"li","lines":"95,96"}},{"content":"QStackedWidget","children":[],"payload":{"tag":"li","lines":"96,97"}},{"content":"QGroupBox","children":[],"payload":{"tag":"li","lines":"97,98"}},{"content":"QScrollArea","children":[],"payload":{"tag":"li","lines":"98,99"}},{"content":"&#x793a;&#x4f8b;","children":[{"content":"\n<img src=\"https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20260126141710579.png\" alt=\"image-20260126141710579\" style=\"zoom:33%;\">","children":[],"payload":{"tag":"li","lines":"100,101"}}],"payload":{"tag":"li","lines":"99,101"}}],"payload":{"tag":"li","lines":"94,101"}}],"payload":{"tag":"li","lines":"14,101"}}],"payload":{"tag":"h2","lines":"13,14"}},{"content":"&#x56fe;&#x5f62;&#x56fe;&#x50cf;&#x6a21;&#x5757;","children":[{"content":"QtGui&#xff1a;&#x56fe;&#x5f62;&#x4e0e;&#x6e32;&#x67d3;&#x76f8;&#x5173;","children":[{"content":"&#x7ed8;&#x56fe;&#x7cfb;&#x7edf;&#xff1a;QPainter/QPen/QBrush/QFont","children":[{"content":"\n<img src=\"https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20260126142813834.png\" alt=\"image-20260126142813834\" style=\"zoom:33%;\">","children":[],"payload":{"tag":"li","lines":"104,105"}}],"payload":{"tag":"li","lines":"103,105"}},{"content":"&#x56fe;&#x50cf;&#x5904;&#x7406;&#xff1a;QImage/QPixmap/QBitmap","children":[{"content":"QImage &#x5185;&#x5b58;&#x4e2d;&#x50cf;&#x7d20;&#x7ea7;&#x56fe;&#x50cf;&#x5904;&#x7406;&#xff08;&#x4fee;&#x6539; / &#x89e3;&#x6790;&#x50cf;&#x7d20;&#xff09;&#xff0c;&#x7528;&#x4e8e;&#x56fe;&#x50cf;&#x7f16;&#x8f91;&#x3001;&#x683c;&#x5f0f;&#x8f6c;&#x6362;&#x3001;&#x50cf;&#x7d20;&#x5206;&#x6790;","children":[],"payload":{"tag":"li","lines":"106,107"}},{"content":"QPixmap &#x5c4f;&#x5e55;&#x9ad8;&#x6548;&#x6e32;&#x67d3;&#xff08;&#x9002;&#x914d;&#x663e;&#x5361; / &#x663e;&#x793a;&#x8bbe;&#x5907;&#xff09;&#xff0c;&#x7528;&#x4e8e;&#x754c;&#x9762;&#x663e;&#x793a;&#x56fe;&#x7247;&#x3001;QLabel &#x5c55;&#x793a;","children":[],"payload":{"tag":"li","lines":"107,108"}},{"content":"QBitmap &#x9ed1;&#x767d;&#x4e8c;&#x503c;&#x4f4d;&#x56fe;&#xff08;&#x4ec5;&#x9ed1; / &#x767d;&#xff0c;&#x65e0;&#x5f69;&#x8272;&#xff09;&#xff0c;&#x7528;&#x4e8e;&#x56fe;&#x6807;&#x8499;&#x7248;&#x3001;&#x906e;&#x7f69;&#x3001;&#x4e8c;&#x503c;&#x8bc6;&#x522b;","children":[],"payload":{"tag":"li","lines":"108,109"}}],"payload":{"tag":"li","lines":"105,109"}},{"content":"&#x989c;&#x8272;&#x7ba1;&#x7406;&#xff1a;QColor/QPalette","children":[],"payload":{"tag":"li","lines":"109,110"}},{"content":"&#x5149;&#x6807;/&#x56fe;&#x6807;&#xff1a;QCursor/QIcon","children":[{"content":"QCursor &#x8bbe;&#x7f6e;&#x63a7;&#x4ef6; / &#x7a97;&#x53e3;&#x7684;&#x9f20;&#x6807;&#x5149;&#x6807;&#x6837;&#x5f0f;&#xff0c;&#x53ef;&#x70b9;&#x51fb;&#x6309;&#x94ae;&#xff08;&#x624b;&#x578b;&#xff09;&#x3001;&#x52a0;&#x8f7d;&#x4e2d;&#xff08;&#x7b49;&#x5f85;&#xff09;&#x3001;&#x7ed8;&#x56fe;&#xff08;&#x5341;&#x5b57;&#xff09;","children":[],"payload":{"tag":"li","lines":"111,112"}},{"content":"QIcon &#x7ed9;&#x63a7;&#x4ef6;&#xff08;&#x6309;&#x94ae; / &#x83dc;&#x5355;&#x7b49;&#xff09;&#x8bbe;&#x7f6e;&#x56fe;&#x6807;&#xff0c;&#x5de5;&#x5177;&#x680f;&#x6309;&#x94ae;&#x3001;&#x529f;&#x80fd;&#x6309;&#x94ae;&#x3001;&#x7a97;&#x53e3;&#x56fe;&#x6807;","children":[],"payload":{"tag":"li","lines":"112,113"}}],"payload":{"tag":"li","lines":"110,113"}},{"content":"&#x6587;&#x672c;&#x6e32;&#x67d3;/&#x526a;&#x8d34;&#x677f;&#x64cd;&#x4f5c;","children":[],"payload":{"tag":"li","lines":"113,114"}},{"content":"&#x6253;&#x5370;&#x529f;&#x80fd;&#xff1a;QPrinter/QPrintDialog","children":[],"payload":{"tag":"li","lines":"114,115"}}],"payload":{"tag":"li","lines":"102,115"}}],"payload":{"tag":"h2","lines":"101,102"}},{"content":"&#x591a;&#x5a92;&#x4f53;&#x6a21;&#x5757;","children":[{"content":"QtMultimedia&#xff1a;&#x97f3;&#x89c6;&#x9891;&#x4e0e;&#x8bbe;&#x5907;","children":[{"content":"&#x97f3;&#x9891;&#x64ad;&#x653e;/&#x5f55;&#x5236;&#xff1a;QMediaPlayer/QAudioInput","children":[],"payload":{"tag":"li","lines":"117,118"}},{"content":"&#x89c6;&#x9891;&#x64ad;&#x653e;/&#x6355;&#x83b7;&#xff1a;QMediaPlaylist/QCamera","children":[{"content":"&#x793a;&#x4f8b; <img src=\"https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20260126145203910.png\" alt=\"image-20260126145203910\" style=\"zoom:33%;\">","children":[],"payload":{"tag":"li","lines":"119,120"}}],"payload":{"tag":"li","lines":"118,120"}},{"content":"&#x5a92;&#x4f53;&#x683c;&#x5f0f;&#x89e3;&#x6790;/&#x7f16;&#x7801;&#x652f;&#x6301;","children":[],"payload":{"tag":"li","lines":"120,121"}},{"content":"&#x97f3;&#x91cf;&#x63a7;&#x5236;/&#x64ad;&#x653e;&#x72b6;&#x6001;&#x7ba1;&#x7406;","children":[],"payload":{"tag":"li","lines":"121,122"}}],"payload":{"tag":"li","lines":"116,122"}}],"payload":{"tag":"h2","lines":"115,116"}},{"content":"&#x7f51;&#x7edc;&#x901a;&#x4fe1;&#x6a21;&#x5757;","children":[{"content":"QtNetwork&#xff1a;&#x7f51;&#x7edc;&#x76f8;&#x5173;&#x529f;&#x80fd;","children":[{"content":"TCP/UDP&#x901a;&#x4fe1;&#xff1a;QTcpSocket/QTcpServer&#x7b49;","children":[],"payload":{"tag":"li","lines":"124,125"}},{"content":"HTTP&#x8bf7;&#x6c42;&#xff1a;QNetworkAccessManager","children":[],"payload":{"tag":"li","lines":"125,126"}},{"content":"&#x7f51;&#x7edc;&#x54cd;&#x5e94;/&#x8bf7;&#x6c42;&#x5934;&#x5904;&#x7406;","children":[],"payload":{"tag":"li","lines":"126,127"}},{"content":"FTP/SFTP&#x534f;&#x8bae;&#x652f;&#x6301;","children":[],"payload":{"tag":"li","lines":"127,128"}},{"content":"&#x7f51;&#x7edc;&#x4ee3;&#x7406;/&#x8d85;&#x65f6;&#x8bbe;&#x7f6e;","children":[],"payload":{"tag":"li","lines":"128,129"}}],"payload":{"tag":"li","lines":"123,129"}}],"payload":{"tag":"h2","lines":"122,123"}},{"content":"&#x6570;&#x636e;&#x5e93;&#x6a21;&#x5757;","children":[{"content":"QtSql&#xff1a;&#x6570;&#x636e;&#x5e93;&#x64cd;&#x4f5c;","children":[{"content":"&#x6570;&#x636e;&#x5e93;&#x8fde;&#x63a5;&#xff1a;QSqlDatabase","children":[],"payload":{"tag":"li","lines":"131,132"}},{"content":"&#x6570;&#x636e;&#x67e5;&#x8be2;&#xff1a;QSqlQuery","children":[],"payload":{"tag":"li","lines":"132,133"}},{"content":"&#x6a21;&#x578b;&#x7ed1;&#x5b9a;&#xff1a;QSqlTableModel&#x7b49;","children":[],"payload":{"tag":"li","lines":"133,134"}},{"content":"&#x652f;&#x6301;MySQL/PostgreSQL/SQLite&#x7b49;","children":[],"payload":{"tag":"li","lines":"134,135"}},{"content":"&#x4e8b;&#x52a1;&#x5904;&#x7406;/&#x9519;&#x8bef;&#x5904;&#x7406;","children":[],"payload":{"tag":"li","lines":"135,136"}}],"payload":{"tag":"li","lines":"130,136"}}],"payload":{"tag":"h2","lines":"129,130"}},{"content":"&#x6837;&#x5f0f;&#x7f8e;&#x5316;&#x6a21;&#x5757;","children":[{"content":"QtStyleSheet&#xff1a;&#x754c;&#x9762;&#x7f8e;&#x5316;","children":[{"content":"&#x7c7b;&#x4f3c;CSS&#x8bed;&#x6cd5;&#x6837;&#x5f0f;&#x8bbe;&#x7f6e;","children":[],"payload":{"tag":"li","lines":"138,139"}},{"content":"&#x63a7;&#x4ef6;&#x6837;&#x5f0f;/&#x72b6;&#x6001;&#x6837;&#x5f0f;&#x5b9a;&#x5236;","children":[],"payload":{"tag":"li","lines":"139,140"}},{"content":"&#x5168;&#x5c40;&#x6837;&#x5f0f;/&#x5c40;&#x90e8;&#x6837;&#x5f0f;&#x5e94;&#x7528;","children":[],"payload":{"tag":"li","lines":"140,141"}},{"content":"&#x52a8;&#x6001;&#x6837;&#x5f0f;&#x5207;&#x6362;&#x652f;&#x6301;","children":[],"payload":{"tag":"li","lines":"141,142"}}],"payload":{"tag":"li","lines":"137,142"}}],"payload":{"tag":"h2","lines":"136,137"}},{"content":"&#x52a8;&#x753b;&#x7279;&#x6548;&#x6a21;&#x5757;","children":[{"content":"QtCore+QtGui &#x52a8;&#x753b;&#x76f8;&#x5173;","children":[{"content":"&#x57fa;&#x7840;&#x52a8;&#x753b;&#xff1a;QPropertyAnimation","children":[],"payload":{"tag":"li","lines":"144,145"}},{"content":"&#x52a8;&#x753b;&#x7ec4;&#xff1a;QParallelAnimationGroup&#x7b49;","children":[],"payload":{"tag":"li","lines":"145,146"}},{"content":"&#x63d2;&#x503c;&#x5668;&#xff1a;&#x63a7;&#x5236;&#x52a8;&#x753b;&#x8fc7;&#x6e21;&#x6548;&#x679c;","children":[],"payload":{"tag":"li","lines":"146,147"}},{"content":"&#x7279;&#x6548;&#xff1a;&#x7a97;&#x53e3;&#x6de1;&#x5165;&#x6de1;&#x51fa;/&#x4f4d;&#x79fb;&#x7f29;&#x653e;","children":[],"payload":{"tag":"li","lines":"147,148"}}],"payload":{"tag":"li","lines":"143,148"}}],"payload":{"tag":"h2","lines":"142,143"}},{"content":"&#x56fd;&#x9645;&#x5316;&#x4e0e;&#x672c;&#x5730;&#x5316;&#x6a21;&#x5757;","children":[{"content":"QtCore &#x56fd;&#x9645;&#x5316;&#x76f8;&#x5173;","children":[{"content":"&#x7ffb;&#x8bd1;&#x652f;&#x6301;&#xff1a;QTranslator","children":[],"payload":{"tag":"li","lines":"150,151"}},{"content":"&#x591a;&#x8bed;&#x8a00;&#x5207;&#x6362;/&#x6587;&#x672c;&#x7ffb;&#x8bd1;","children":[],"payload":{"tag":"li","lines":"151,152"}},{"content":"&#x533a;&#x57df;&#x8bbe;&#x7f6e;&#xff1a;QLocale&#xff08;&#x65e5;&#x671f;/&#x8d27;&#x5e01;&#x683c;&#x5f0f;&#xff09;","children":[],"payload":{"tag":"li","lines":"152,153"}},{"content":"&#x5b57;&#x7b26;&#x7f16;&#x7801;&#x5904;&#x7406;","children":[],"payload":{"tag":"li","lines":"153,154"}}],"payload":{"tag":"li","lines":"149,154"}}],"payload":{"tag":"h2","lines":"148,149"}},{"content":"&#x8f85;&#x52a9;&#x529f;&#x80fd;&#x6a21;&#x5757;","children":[{"content":"QtHelp&#xff1a;&#x5e2e;&#x52a9;&#x6587;&#x6863;&#x96c6;&#x6210;","children":[],"payload":{"tag":"li","lines":"155,156"}},{"content":"QtSvg&#xff1a;SVG&#x77e2;&#x91cf;&#x56fe;&#x652f;&#x6301;","children":[],"payload":{"tag":"li","lines":"156,157"}},{"content":"QtTest&#xff1a;UI&#x81ea;&#x52a8;&#x5316;&#x6d4b;&#x8bd5;","children":[],"payload":{"tag":"li","lines":"157,158"}},{"content":"QtWebEngineWidgets&#xff1a;&#x7f51;&#x9875;&#x96c6;&#x6210;","children":[],"payload":{"tag":"li","lines":"158,159"}}],"payload":{"tag":"h2","lines":"154,155"}},{"content":"&#x9ad8;&#x7ea7;&#x529f;&#x80fd;&#x6a21;&#x5757;","children":[{"content":"QtXml&#xff1a;XML&#x89e3;&#x6790;&#x4e0e;&#x751f;&#x6210;","children":[],"payload":{"tag":"li","lines":"160,161"}},{"content":"QtScript&#xff1a;&#x811a;&#x672c;&#x5f15;&#x64ce;","children":[],"payload":{"tag":"li","lines":"161,162"}},{"content":"QtOpenGL&#xff1a;OpenGL&#x7ed8;&#x56fe;","children":[],"payload":{"tag":"li","lines":"162,163"}}],"payload":{"tag":"h2","lines":"159,160"}}]}</script>
+      <script type="application/json">{"colorFreezeLevel":5,"initialExpandLevel":2}</script>
+    </div>
+
+
+
+
+
+<pre><code>&#123;% markmap %&#125;
+---
+options:
+  colorFreezeLevel: 5
+  initialExpandLevel: 2
+---
+
+## 核心基础模块
+- QtCore：核心功能支撑
+  - 事件循环 / 信号与槽机制
+  - 数据类型 / 日期时间处理
+  - 定时器 / 线程 / 进程管理
+  - 文件 IO/URL 处理 / 容器类
+  - 权限控制 / 应用配置存储
+
+## 界面控件模块
+- QtWidgets：标准可视化控件
+  - 基础窗口类
+    - QMainWindow
+      - 【带框架的主窗口】，自带菜单 / 工具栏 / 状态栏，核心是中央工作区；
+    - QWidget
+      - 【空白积木】，是所有控件的父类，可做独立窗口或容器，完全自定义布局
+    - QDialog
+      - 【交互弹窗】，主打临时交互，通常模态显示，阻塞父窗口，无复杂框架
+  - 布局管理类
+    - QHBoxLayout
+    - QVBoxLayout
+    - QGridLayout
+    - QFormLayout
+  - 按钮控件类
+    - QPushButton
+    - QRadioButton
+    - QCheckBox
+    - QToolButton
+    - QCommandLinkButton
+  - 输入控件类
+    - QLineEdit
+    - QTextEdit
+    - QPlainTextEdit
+    - QComboBox
+    - QSpinBox
+    - QDoubleSpinBox
+    - QDateEdit
+  - 显示控件类
+    - QLabel
+    - QTableWidget
+    - QTreeWidget
+    - QListWidget
+    - QProgressBar
+    - QStatusBar
+  - 选择控件类
+    - QSlider
+    - QDial
+    - QCalendarWidget
+    - QColorDialog
+  - 弹窗控件类
+    - QMessageBox
+    - QFileDialog
+    - QFontDialog
+    - QInputDialog
+  - 容器控件类
+    - QTabWidget
+    - QStackedWidget
+    - QGroupBox
+    - QScrollArea
+## 图形图像模块
+- QtGui：图形与渲染相关
+  - 绘图系统：QPainter/QPen/QBrush/QFont
+  - 图像处理：QImage/QPixmap/QBitmap
+    - QImage 内存中像素级图像处理（修改 / 解析像素），用于图像编辑、格式转换、像素分析
+    - QPixmap 屏幕高效渲染（适配显卡 / 显示设备），用于界面显示图片、QLabel 展示
+    - QBitmap 黑白二值位图（仅黑 / 白，无彩色），用于图标蒙版、遮罩、二值识别
+  - 颜色管理：QColor/QPalette
+  - 光标 / 图标：QCursor/QIcon
+    - QCursor 设置控件 / 窗口的鼠标光标样式，可点击按钮（手型）、加载中（等待）、绘图（十字）
+    - QIcon 给控件（按钮 / 菜单等）设置图标，工具栏按钮、功能按钮、窗口图标
+  - 文本渲染 / 剪贴板操作
+  - 打印功能：QPrinter/QPrintDialog
+
+## 多媒体模块
+- QtMultimedia：音视频与设备
+  - 音频播放 / 录制：QMediaPlayer/QAudioInput
+  - 视频播放 / 捕获：QMediaPlaylist/QCamera
+  - 媒体格式解析 / 编码支持
+  - 音量控制 / 播放状态管理
+
+## 网络通信模块
+- QtNetwork：网络相关功能
+  - TCP/UDP 通信：QTcpSocket/QTcpServer 等
+  - HTTP 请求：QNetworkAccessManager
+  - 网络响应 / 请求头处理
+  - FTP/SFTP 协议支持
+  - 网络代理 / 超时设置
+
+## 数据库模块
+- QtSql：数据库操作
+  - 数据库连接：QSqlDatabase
+  - 数据查询：QSqlQuery
+  - 模型绑定：QSqlTableModel 等
+  - 支持 MySQL/PostgreSQL/SQLite 等
+  - 事务处理 / 错误处理
+
+## 样式美化模块
+- QtStyleSheet：界面美化
+  - 类似 CSS 语法样式设置
+  - 控件样式 / 状态样式定制
+  - 全局样式 / 局部样式应用
+  - 动态样式切换支持
+
+## 动画特效模块
+- QtCore+QtGui 动画相关
+  - 基础动画：QPropertyAnimation
+  - 动画组：QParallelAnimationGroup 等
+  - 插值器：控制动画过渡效果
+  - 特效：窗口淡入淡出 / 位移缩放
+
+## 国际化与本地化模块
+- QtCore 国际化相关
+  - 翻译支持：QTranslator
+  - 多语言切换 / 文本翻译
+  - 区域设置：QLocale（日期 / 货币格式）
+  - 字符编码处理
+
+## 辅助功能模块
+- QtHelp：帮助文档集成
+- QtSvg：SVG 矢量图支持
+- QtTest：UI 自动化测试
+- QtWebEngineWidgets：网页集成
+
+## 高级功能模块
+- QtXml：XML 解析与生成
+- QtScript：脚本引擎
+- QtOpenGL：OpenGL 绘图
+
+&#123;% endmarkmap %&#125;</code></pre><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/css/markmap.css">
+
+<script src="/js/markmap.js"></script>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 欢迎各位看官及技术大佬前来交流指导呀，可以邮件至 jqiange@yeah.net </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2021 Jqiange
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

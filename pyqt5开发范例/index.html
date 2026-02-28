@@ -300,7 +300,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="62">
-<input type="hidden" id="yelog_site_word_count" value="270k">
+<input type="hidden" id="yelog_site_word_count" value="270.2k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -954,12 +954,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2026-02-28 13:26:29'>2026-02-28 10:02</time>
+            发布时间 : <time class="date" title='最后更新: 2026-02-28 13:40:56'>2026-02-28 10:02</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:1.6k</span>
+        <span>字数:1.7k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1202,6 +1202,26 @@ def parse_log(log_cb, folder):
             log_cb(f&quot;grep log: &#123;logfile&#125;&quot;)
             progress = calcuate_progress(logfile)
             return progress</code></pre>
+<p>如果你觉得传一个函数 <code>log_cb</code> 不够优雅，可以传一个 <strong> 轻量级的日志对象 </strong> 给 Model，这个对象内部封装了信号发射。</p>
+<pre><code class="python">class ThreadLogger:
+    def __init__(self, signal_emit_func):
+        self._emit = signal_emit_func
+
+    def info(self, msg): self._emit(msg, &quot;INFO&quot;)
+    def debug(self, msg): self._emit(msg, &quot;DEBUG&quot;)
+    def error(self, msg): self._emit(msg, &quot;ERROR&quot;)
+
+def parse_log(logger: ThreadLogger, folder):
+    if not os.path.exists(folder): return 0
+    logger.info(&quot;search all logs&quot;)
+    logs = [os.path.join(folder, log) for log in os.listdir(folder) if log.endswith(&quot;.log&quot;)]
+    if logs:
+        log_infos = []
+        for logfile in logs:
+            logger.info(f&quot;grep log: &#123;logfile&#125;&quot;)
+            progress = calcuate_progress(logfile)
+            return progress
+</code></pre>
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
 <link rel="stylesheet" href="/css/markmap.css">
 

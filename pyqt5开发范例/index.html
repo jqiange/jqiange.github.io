@@ -954,7 +954,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2026-02-28 13:09:58'>2026-02-28 10:02</time>
+            发布时间 : <time class="date" title='最后更新: 2026-02-28 13:11:35'>2026-02-28 10:02</time>
         
     </div>
     <div class="article-meta">
@@ -1177,6 +1177,7 @@ class WorkThread(Qthread):
 </code></pre>
 <ul>
 <li><strong>在当前的 PyQt5 + QThread 架构下：回调函数（Callback）更好、更稳健、更符合 Qt 生态。</strong></li>
+<li><strong>性能最优</strong>：没有生成器挂起 / 恢复的开销，直接在子线程函数栈中执行。</li>
 </ul>
 <h2 id="2-4-Model 数据 - 逻辑层"><a href="#2-4-Model 数据 - 逻辑层" class="headerlink" title="2.4 Model 数据 / 逻辑层"></a>2.4 Model 数据 / 逻辑层 </h2><p> 这里只写纯业务逻辑层，只有纯 python 计算函数，没有任何 PyQt 依赖，没有信号，没有线程。</p>
 <pre><code class="python"># yield 的例子

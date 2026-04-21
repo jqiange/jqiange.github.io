@@ -6,17 +6,19 @@
   <meta name="keywords" content="">
   <meta name="description" content="芯片制造流程与工艺 | jqiange">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="1. 解耦设计  在使用 pyqt5 开发 gui 时，建议遵从 ”UI 设计“ 与”功能逻辑“解耦的原则。 这不仅是软件工程的通用最佳实践，在 PyQt5 这种基于事件驱动和信号槽机制的框架中尤为重要。将界面代码（View）与业务逻辑（Model&#x2F;Controller）分离，能带来以下核心优势： 1. 为什么要解耦？ 可维护性 (Maintainability) 如果 UI 代码和业务逻辑混在一">
-<meta property="og:type" content="article">
-<meta property="og:title" content="pyqt5 开发范例">
-<meta property="og:url" content="https://jqiange.github.io/pyqt5%E5%BC%80%E5%8F%91%E8%8C%83%E4%BE%8B/index.html">
+<meta name="description" content="世人笑我太疯癫，我笑世人看不穿。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="人畜无害的姜小强">
+<meta property="og:url" content="https://jqiange.github.io/about/index.html">
 <meta property="og:site_name" content="jqiange">
-<meta property="og:description" content="1. 解耦设计  在使用 pyqt5 开发 gui 时，建议遵从 ”UI 设计“ 与”功能逻辑“解耦的原则。 这不仅是软件工程的通用最佳实践，在 PyQt5 这种基于事件驱动和信号槽机制的框架中尤为重要。将界面代码（View）与业务逻辑（Model&#x2F;Controller）分离，能带来以下核心优势： 1. 为什么要解耦？ 可维护性 (Maintainability) 如果 UI 代码和业务逻辑混在一">
+<meta property="og:description" content="世人笑我太疯癫，我笑世人看不穿。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-02-28T02:02:18.000Z">
-<meta property="article:modified_time" content="2026-04-17T14:01:11.364Z">
+<meta property="og:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
+<meta property="article:published_time" content="2020-02-18T08:21:04.000Z">
+<meta property="article:modified_time" content="2025-12-13T05:23:10.695Z">
 <meta property="article:author" content="姜小强">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image--1.oss-cn-shenzhen.aliyuncs.com/zhou.gif">
 
 
 <link rel="icon" href="/img/jqiange.png">
@@ -298,7 +300,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="62">
-<input type="hidden" id="yelog_site_word_count" value="272.7k">
+<input type="hidden" id="yelog_site_word_count" value="272.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -952,12 +954,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2026-04-16 15:32:23'>2025-06-14 12:13</time>
+            发布时间 : <time class="date" title='最后更新: 2026-04-20 21:08:46'>2025-06-14 12:13</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:3.1k</span>
+        <span>字数:3.2k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -976,7 +978,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%8A%AF%E7%89%87%E5%88%B6%E9%80%A0%E6%B5%81%E7%A8%8B%E7%AE%80%E4%BB%8B"><span class="toc-text">一、芯片制造流程简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%20%E7%A1%85%E7%89%87%E5%88%B6%E5%A4%87"><span class="toc-text">1.1 硅片制备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%20%E8%96%84%E8%86%9C%E6%B2%89%E7%A7%AF"><span class="toc-text">1.2 薄膜沉积</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-%20%E5%85%89%E5%88%BB%E5%B7%A5%E8%89%BA"><span class="toc-text">1.3 光刻工艺</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-%20%E5%88%BB%E8%9A%80%E4%B8%8E%E6%8E%BA%E6%9D%82"><span class="toc-text">1.4 刻蚀与掺杂</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-%20%E5%8C%96%E5%AD%A6%E6%9C%BA%E6%A2%B0%E5%B9%B3%E5%9D%A6%E5%8C%96%EF%BC%88CMP%EF%BC%89"><span class="toc-text">1.5 化学机械平坦化（CMP）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-6-%20%E5%A4%9A%E5%B1%82%E4%BA%92%E8%BF%9E%E9%87%8D%E5%A4%8D"><span class="toc-text">1.6 多层互连重复</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-7-%20%E5%B0%81%E8%A3%85%E4%B8%8E%E6%B5%8B%E8%AF%95"><span class="toc-text">1.7 封装与测试</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81Dummy%20%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-text">二、Dummy 的作用 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%20%E4%BB%80%E4%B9%88%E6%98%AF%20dummy"><span class="toc-text">2.1  什么是 dummy</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-dummy%20%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-text">2.2 dummy 的作用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81PTD%20%E5%92%8C%20NTD%20%E5%B7%A5%E8%89%BA"><span class="toc-text">三、PTD 和 NTD 工艺 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%20%E5%85%89%E5%88%BB%E8%83%B6%E7%A7%8D%E7%B1%BB"><span class="toc-text">3.1 光刻胶种类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-PTD%20%E6%AD%A3%E6%98%BE%E5%BD%B1"><span class="toc-text">3.2 PTD 正显影 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-NTD-%20%E8%B4%9F%E6%98%BE%E5%BD%B1"><span class="toc-text">3.3 NTD 负显影 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-%20%E5%9B%BE%E7%A4%BA"><span class="toc-text">3.4 图示</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E9%87%91%E5%B1%9E%E4%BA%92%E8%81%94%E5%B1%82"><span class="toc-text">四、金属互联层 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-%20%E9%93%9C%E4%BA%92%E8%81%94"><span class="toc-text">4.1 铜互联</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-%20%E9%93%9D%E4%BA%92%E8%81%94"><span class="toc-text">4.2 铝互联 </span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%8A%AF%E7%89%87%E5%88%B6%E9%80%A0%E6%B5%81%E7%A8%8B%E7%AE%80%E4%BB%8B"><span class="toc-text">一、芯片制造流程简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%20%E7%A1%85%E7%89%87%E5%88%B6%E5%A4%87"><span class="toc-text">1.1 硅片制备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%20%E8%96%84%E8%86%9C%E6%B2%89%E7%A7%AF"><span class="toc-text">1.2 薄膜沉积</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-%20%E5%85%89%E5%88%BB%E5%B7%A5%E8%89%BA"><span class="toc-text">1.3 光刻工艺</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-%20%E5%88%BB%E8%9A%80%E4%B8%8E%E6%8E%BA%E6%9D%82"><span class="toc-text">1.4 刻蚀与掺杂</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-%20%E5%8C%96%E5%AD%A6%E6%9C%BA%E6%A2%B0%E5%B9%B3%E5%9D%A6%E5%8C%96%EF%BC%88CMP%EF%BC%89"><span class="toc-text">1.5 化学机械平坦化（CMP）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-6-%20%E5%A4%9A%E5%B1%82%E4%BA%92%E8%BF%9E%E9%87%8D%E5%A4%8D"><span class="toc-text">1.6 多层互连重复</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-7-%20%E5%B0%81%E8%A3%85%E4%B8%8E%E6%B5%8B%E8%AF%95"><span class="toc-text">1.7 封装与测试</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81Dummy%20%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-text">二、Dummy 的作用 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%20%E4%BB%80%E4%B9%88%E6%98%AF%20dummy"><span class="toc-text">2.1  什么是 dummy</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-dummy%20%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-text">2.2 dummy 的作用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81PTD%20%E5%92%8C%20NTD%20%E5%B7%A5%E8%89%BA"><span class="toc-text">三、PTD 和 NTD 工艺 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%20%E5%85%89%E5%88%BB%E8%83%B6%E7%A7%8D%E7%B1%BB"><span class="toc-text">3.1 光刻胶种类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-PTD%20%E6%AD%A3%E6%98%BE%E5%BD%B1"><span class="toc-text">3.2 PTD 正显影 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-NTD-%20%E8%B4%9F%E6%98%BE%E5%BD%B1"><span class="toc-text">3.3 NTD 负显影 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-%20%E5%9B%BE%E7%A4%BA"><span class="toc-text">3.4 图示</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E9%87%91%E5%B1%9E%E4%BA%92%E8%81%94%E5%B1%82"><span class="toc-text">四、金属互联层 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-%20%E9%93%9C%E4%BA%92%E8%81%94"><span class="toc-text">4.1 铜互联</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-%20%E9%93%9D%E4%BA%92%E8%81%94"><span class="toc-text">4.2 铝互联 </span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E4%BA%A7%E5%93%81"><span class="toc-text">五、产品</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -992,7 +994,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、芯片制造流程简介"><a href="# 一、芯片制造流程简介" class="headerlink" title="一、芯片制造流程简介"></a>一、芯片制造流程简介</h1><h2 id="1-1- 硅片制备"><a href="#1-1- 硅片制备" class="headerlink" title="1.1 硅片制备"></a>1.1 硅片制备</h2><ul>
+        <h1 id="一、芯片制造流程简介"><a href="# 一、芯片制造流程简介" class="headerlink" title="一、芯片制造流程简介"></a>一、芯片制造流程简介</h1><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20260419094520426.png" style="zoom: 50%;" />
+
+<p>资料参考：[一文读懂中国大陆晶圆制造厂全景图谱](<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/2026267938605279049">一文读懂中国大陆晶圆制造厂全景图谱 - 知乎</a>)</p>
+<h2 id="1-1- 硅片制备"><a href="#1-1- 硅片制备" class="headerlink" title="1.1 硅片制备"></a>1.1 硅片制备</h2><ul>
 <li><strong>原料提纯</strong>：从石英砂中提取高纯度硅，制成单晶硅棒并切割为晶圆片。  </li>
 <li><strong>晶圆清洗</strong>：去除表面杂质，确保后续工艺的洁净度。</li>
 </ul>
@@ -1136,6 +1141,12 @@
 <li><strong>优点</strong>：工艺流程相对简单、成熟，设备成本较低。铝与下方的二氧化硅（SiO₂）绝缘层粘附性好。</li>
 <li><strong>缺点</strong>：当线宽缩小到纳米级别时，刻蚀工艺难以精确控制，容易产生缺陷。更重要的是，铝的电阻率较高，且抗电迁移能力差，在高电流密度下，铝原子会随电子流移动，导致导线断裂或短路，限制了芯片的性能和可靠性。</li>
 </ul>
+<h1 id="五、产品"><a href="# 五、产品" class="headerlink" title="五、产品"></a>五、产品</h1><ul>
+<li><strong>逻辑芯片 Fab</strong>：专注 CPU、GPU、手机 SoC 等高性能计算芯片</li>
+<li><strong>存储芯片 Fab</strong>：专注 DRAM、NAND Flash 等存储产品</li>
+<li><strong>特色工艺 Fab</strong>：专注功率器件、MCU、传感器、模拟芯片等</li>
+</ul>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20260420210718704.png" alt="Fab 简图"></p>
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
 <link rel="stylesheet" href="/css/markmap.css">
 

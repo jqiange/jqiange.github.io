@@ -300,7 +300,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="62">
-<input type="hidden" id="yelog_site_word_count" value="276.6k">
+<input type="hidden" id="yelog_site_word_count" value="277.1k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -954,7 +954,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2026-05-18 19:08:23'>2022-03-07 20:24</time>
+            发布时间 : <time class="date" title='最后更新: 2026-05-31 21:51:32'>2022-03-07 20:24</time>
         
     </div>
     <div class="article-meta">
@@ -2589,7 +2589,13 @@ set len = `echo $paths | wc -w`  # wc -w 以空格为分隔，统计字符串数
 <li><p><strong>子串提取</strong>：无内置方法或命令，可借助 linux 命令<code>awk/cut/sed</code></p>
 <pre><code class="bash">set ss = &quot;abcdef&quot;
 set sub = `echo &quot;$ss&quot; | cut -c2-4`   # 提取第 2 到第 4 字符
-echo $sub   # 输出：bcd</code></pre>
+echo $sub   # 输出：bcd
+
+# 其他方法 1
+set sub = `echo -n &quot;$ss&quot; | tail -c 5`   # 提取最后五个字符
+
+#方法 2
+set sub = `echo $ss | awk &#39;&#123;print substr($0, length($0)-4)&#125;&#39;`  #提取最后五个字符</code></pre>
 </li>
 <li><p><strong>字符串替换</strong>：无内置方法或命令，借助 linux 命令<code>awk/cut/sed</code></p>
 <pre><code class="bash">set var = &quot;/home/ju/test/mingtian_ver_vc01.txt&quot;

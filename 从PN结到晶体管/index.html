@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>pyqt5 开发范例 | jqiange</title>
+  <title>从 PN 结到晶体管 | jqiange</title>
   <meta name="keywords" content="">
-  <meta name="description" content="pyqt5 开发范例 | jqiange">
+  <meta name="description" content="从 PN 结到晶体管 | jqiange">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="世人笑我太疯癫，我笑世人看不穿。">
 <meta property="og:type" content="website">
@@ -942,9 +942,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-pyqt5开发范例" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-从PN结到晶体管" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">pyqt5 开发范例</h1>
+        <h1 class="article-title">从 PN 结到晶体管</h1>
     
     <div class="article-meta">
         
@@ -954,7 +954,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="python">python</a>
+            <a  data-rel="chip">chip</a>
             
         </span>
         
@@ -962,12 +962,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2026-04-17 22:01:11'>2026-02-28 10:02</time>
+            发布时间 : <time class="date" title='最后更新: 2026-06-19 22:12:15'>2026-06-18 16:12</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:2.3k</span>
+        <span>字数:5.2k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -986,7 +986,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%20%E8%A7%A3%E8%80%A6%E8%AE%BE%E8%AE%A1"><span class="toc-text">1. 解耦设计 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%20%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E8%A7%A3%E8%80%A6%EF%BC%9F"><span class="toc-text">1. 为什么要解耦？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%20%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E8%A7%A3%E8%80%A6"><span class="toc-text">2. 如何实现解耦 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E5%88%86%E5%B1%82%E6%9E%B6%E6%9E%84"><span class="toc-text">逻辑分层架构 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%20%E4%BD%95%E6%97%B6%E8%AE%BE%E4%B8%BA%20self-%20%E5%8F%98%E9%87%8F"><span class="toc-text">3. 何时设为 self 变量 </span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%20%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84%E7%A4%BA%E4%BE%8B"><span class="toc-text">2. 代码结构示例 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-view%20%E7%95%8C%E9%9D%A2%E5%B1%82"><span class="toc-text">2.1 view 界面层</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-Controller-%20%E6%A0%B8%E5%BF%83%E8%B0%83%E5%BA%A6%E9%80%BB%E8%BE%91"><span class="toc-text">2.2 Controller 核心调度逻辑 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-Worker%20%E7%BA%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1%E5%B1%82"><span class="toc-text">2.3 Worker 线程任务层 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-Model%20%E6%95%B0%E6%8D%AE%20-%20%E9%80%BB%E8%BE%91%E5%B1%82"><span class="toc-text">2.4 Model 数据 &#x2F; 逻辑层 </span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%20%E4%B8%80%E4%BA%9B%E5%9D%91"><span class="toc-text">3. 一些坑 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%20%E5%87%BD%E6%95%B0%E9%87%8D%E5%A4%8D%E6%89%A7%E8%A1%8C%E5%AF%BC%E8%87%B4%E7%9A%84%E4%BF%A1%E5%8F%B7%E9%87%8D%E5%A4%8D%E7%BB%91%E5%AE%9A"><span class="toc-text">3.1 函数重复执行导致的信号重复绑定</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-1-%20%E6%A0%B9%E6%9C%AC%E5%8E%9F%E5%9B%A0"><span class="toc-text">3.1.1 根本原因 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-2-%20%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-text">3.1.2 解决方案 </span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%8E%20PN%20%E7%BB%93%E5%88%B0%E6%99%B6%E4%BD%93%E7%AE%A1"><span class="toc-text">从 PN 结到晶体管 </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E3%80%81PN%20%E7%BB%93"><span class="toc-text">1 、PN 结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-P%20%E5%9E%8B%E5%AF%BC%E4%BD%93%E5%92%8C%20N%20%E5%9E%8B%E5%8D%8A%E5%AF%BC%E4%BD%93"><span class="toc-text">1.1 P 型导体和 N 型半导体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-PN%20%E7%BB%93%E7%9A%84%E5%BD%A2%E6%88%90"><span class="toc-text">1.2 PN 结的形成 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E6%99%B6%E4%BD%93%E7%AE%A1"><span class="toc-text">2、晶体管</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-MOSFET%20%E6%99%B6%E4%BD%93%E7%AE%A1"><span class="toc-text">2.1 MOSFET 晶体管</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-CMOS"><span class="toc-text">2.2 CMOS</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-1-%20%E7%BB%93%E6%9E%84%E7%A4%BA%E4%BE%8B"><span class="toc-text">2.2.1 结构示例 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-2-CMOS%20%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-text">2.2.2 CMOS 工作原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-2-CMOS%20%E5%BA%94%E7%94%A8"><span class="toc-text">2.2.2 CMOS 应用 </span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%20%E5%85%88%E8%BF%9B%E8%8A%82%E7%82%B9%E7%9A%84%20FET%20%E6%8A%80%E6%9C%AF"><span class="toc-text">2.3 先进节点的 FET 技术 </span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-1-MOSFET%20%E7%9A%84%E7%BC%BA%E9%99%B7"><span class="toc-text">2.3.1 MOSFET 的缺陷</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-2-FinFET%20%E7%BB%93%E6%9E%84"><span class="toc-text">2.3.2 FinFET 结构 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-3-GAAFET%20%E7%BB%93%E6%9E%84"><span class="toc-text">2.3.3 GAAFET 结构 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-4-%20%E4%B8%89%E7%A7%8D%E7%BB%93%E6%9E%84%E6%99%B6%E4%BD%93%E7%AE%A1%E5%AF%B9%E6%AF%94"><span class="toc-text">2.3.4 三种结构晶体管对比 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-5-%20%E6%9F%B1%E7%8A%B6%E7%BB%93%E6%9E%84"><span class="toc-text">2.3.5 柱状结构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E8%B6%85%E5%A4%A7%E8%A7%84%E6%A8%A1%E9%9B%86%E6%88%90%E7%94%B5%E8%B7%AF%E7%89%88%E5%9B%BE"><span class="toc-text">3、超大规模集成电路版图 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%20%E7%89%88%E5%9B%BE%E6%A6%82%E8%BF%B0"><span class="toc-text">3.1 版图概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%20%E7%89%88%E5%9B%BE%E8%AE%BE%E8%AE%A1%E8%A7%84%E5%88%99"><span class="toc-text">3.2 版图设计规则 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%20%E7%89%88%E5%9B%BE%E5%B1%82%E6%AC%A1%E4%B8%8E%E5%8F%8A%E5%85%B6%E5%AF%B9%E5%BA%94%E5%B7%A5%E8%89%BA%E4%BD%9C%E7%94%A8"><span class="toc-text">3.3 版图层次与及其对应工艺作用 </span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-1-WELL%20%E5%B1%82"><span class="toc-text">3.3.1 WELL 层 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-2-AA-%20%E5%B1%82"><span class="toc-text">3.3.2 AA 层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-3-POLY%20%E5%B1%82"><span class="toc-text">3.3.3 POLY 层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-4-Implant-%20%E5%B1%82"><span class="toc-text">3.3.4 Implant 层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-5-CT%20%E5%B1%82"><span class="toc-text">3.3.5 CT 层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-6-Metal%20%E5%B1%82"><span class="toc-text">3.3.6 Metal 层 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-7-Via%20%E5%B1%82"><span class="toc-text">3.3.7 Via 层</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%20%E5%AE%8C%E6%95%B4%E5%A0%86%E5%8F%A0%E9%A1%BA%E5%BA%8F"><span class="toc-text">3.4 完整堆叠顺序 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-CMOS%20%E5%B7%A5%E8%89%BA%E5%9B%BE%E8%A7%A3"><span class="toc-text">3.5 CMOS 工艺图解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-1-CMOS%20%E7%BB%93%E6%9E%84%E7%9A%84%E5%BD%A2%E6%88%90"><span class="toc-text">3.5.1 CMOS 结构的形成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-2-%20%E5%99%A8%E4%BB%B6%E4%BA%92%E8%81%94"><span class="toc-text">3.5.2 器件互联 </span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-%20%E9%80%9F%E6%9F%A5%E8%A1%A8"><span class="toc-text">3.6 速查表 </span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1002,269 +1002,379 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1- 解耦设计"><a href="#1- 解耦设计" class="headerlink" title="1. 解耦设计"></a>1. 解耦设计 </h1><p> 在使用 pyqt5 开发 gui 时，建议遵从 <strong>”UI 设计“</strong> 与<strong>”功能逻辑“</strong>解耦的原则。</p>
-<p>这不仅是软件工程的通用最佳实践，在 PyQt5 这种基于事件驱动和信号槽机制的框架中尤为重要。将界面代码（View）与业务逻辑（Model/Controller）分离，能带来以下核心优势：</p>
-<h2 id="1- 为什么要解耦？"><a href="#1- 为什么要解耦？" class="headerlink" title="1. 为什么要解耦？"></a><strong>1. 为什么要解耦？</strong></h2><ul>
-<li>可维护性 (Maintainability)<ul>
-<li>如果 UI 代码和业务逻辑混在一起（例如在按钮点击事件中直接写数据库查询或复杂计算），代码会变得极其臃肿且难以阅读。</li>
-<li>解耦后，修改界面布局（如调整按钮位置、更换控件）不会影响核心业务逻辑；反之，修改算法或数据处理流程也不需要动界面代码。</li>
-</ul>
-</li>
-<li>可测试性 (Testability)<ul>
-<li><strong>这是最关键的一点</strong>。PyQt5 的 UI 类通常依赖 <code>QApplication</code> 实例和图形环境，难以进行自动化单元测试。</li>
-<li>如果逻辑解耦为独立的普通 Python 类或函数，你可以直接使用 <code>pytest</code> 或 <code>unittest</code> 对其进行测试，而无需启动 GUI 窗口，极大提高了测试效率和覆盖率。</li>
-</ul>
-</li>
-<li>协作开发 (Collaboration)<ul>
-<li>UI 设计师可以使用 Qt Designer (<code>.ui</code> 文件) 专注于界面布局和样式，而开发人员专注于后端逻辑。两者通过明确的接口（信号 / 槽或方法调用）交互，互不干扰。</li>
-</ul>
-</li>
-<li>复用性 (Reusability)<ul>
-<li>解耦后的业务逻辑可以被其他非 GUI 程序（如命令行工具、Web 后端）复用。</li>
-<li>同一套逻辑也可以轻松应用到不同的 UI 框架中（虽然需要重写 View 层，但 Model/Controller 层可以保留）。</li>
-</ul>
-</li>
-</ul>
-<h2 id="2- 如何实现解耦"><a href="#2- 如何实现解耦" class="headerlink" title="2. 如何实现解耦"></a><strong>2. 如何实现解耦 </strong></h2><p> 在 PyQt5 中，最常用的解耦模式是 <strong>MVC (Model-View-Controller)</strong> 或其变体 <strong>MVVM(</strong>Model-View-ViewModel<strong>)</strong>。</p>
-<p>进化版：<strong>Model + Worker + View + Controller</strong>来实现全解耦</p>
-<h3 id="逻辑分层架构"><a href="# 逻辑分层架构" class="headerlink" title="逻辑分层架构"></a><strong>逻辑分层架构 </strong></h3><p> 将代码分为四个主要部分：</p>
-<ol>
-<li>View (界面层)<ul>
-<li>只负责显示数据和接收用户输入。</li>
-<li>不包含复杂的业务判断。</li>
-<li>通过 <strong>Signal (信号)</strong> 发出用户意图（如 <code>login_requested</code>, <code>data_saved</code>）。</li>
-</ul>
-</li>
-<li>Model (数据 / 逻辑层)<ul>
-<li>纯 Python 类，不引用任何 <code>QtWidgets</code> 或 <code>QtGui</code> 模块（除了可能用到 <code>QObject</code> 做信号发射，但最好完全独立）。</li>
-<li>负责数据处理、网络请求、数据库操作、算法计算。</li>
-<li>处理完后，通过回调或信号通知 View 更新。</li>
-</ul>
-</li>
-<li>Controller / Presenter (控制层)<ul>
-<li>作为 View 和 Model 的桥梁。</li>
-<li>连接 View 的信号到 Model 的方法。</li>
-<li>连接 Model 的结果信号到 View 的更新槽函数。</li>
-</ul>
-</li>
-<li>Worker 层<ul>
-<li>线程容器 + 调度器 (有线程，有队列，调用 Model，发射信号)</li>
-</ul>
-</li>
-</ol>
-<h2 id="3- 何时设为 self- 变量"><a href="#3- 何时设为 self- 变量" class="headerlink" title="3. 何时设为 self 变量"></a>3. 何时设为 self 变量 </h2><p> 为了快速使用 GUI 界面的元素，比如按钮，输入框等，建议将其 <strong> 设为 self 变量</strong>，可以在不同的模块里随时调用。</p>
-<h1 id="2- 代码结构示例"><a href="#2- 代码结构示例" class="headerlink" title="2. 代码结构示例"></a>2. 代码结构示例 </h1><h2 id="2-1-view 界面层"><a href="#2-1-view 界面层" class="headerlink" title="2.1 view 界面层"></a>2.1 view 界面层</h2><p><strong> 这部分只写基础 ui 布局，构建用户界面</strong></p>
-<pre><code class="python">class BaseWindow(QMainWindow):
-    def __init__(self):
-        super().__init__()
-        self.initUI()
-        self.setStyleSheet(qss1)
-
-    def initUI():
-        self.setWindowTitle(&quot;GUI 示例 &quot;)
-        self.resize(500, 400)
-
-        #创建主窗口部件
-        main_widget = QWidget()
-        self.setCentralWidget(main_widget)
-        self.main_layout = QVBoxLayout()
-
-        #创建菜单和主体内容
-        self._initMenubar()
-        self._initMainContent()
-
-        main_widget.setLayout(self.main_layout)
-
-    def _initMenubar():
-        #创建菜单栏
-
-    def _initMainContent():
-        grid_layout = QGridLayout()
-        grid_layout.addWidget(self.layout1_group, 0, 0)
-        grid_layout.addWidget(self.layout2_group, 0, 1)
-
-        self.main_layout.addLayout(grid_layout)
-
-    def layout1_group(self):
-        group = QGroupBox(&quot;test&quot;)
-
-        form_layout = QFormLayout()
-        layout1, slef.btn_table1, self.edit_product = self.create_input_field()
-        form_layout.addRow(&quot;table&quot;, layout1)     </code></pre>
-<blockquote>
-<p>注意：在对输入框，按钮等重要元素命名时，建议遵循一定的规律，比如按钮命名 btn_开头，输入框命名 edit_开头</p>
-</blockquote>
-<h2 id="2-2-Controller- 核心调度逻辑"><a href="#2-2-Controller- 核心调度逻辑" class="headerlink" title="2.2 Controller 核心调度逻辑"></a>2.2 Controller 核心调度逻辑 </h2><p> 作为组装与调度核心，这部分代码主要是信号连接工作。常常我们也将初始化界面层，实例化逻辑层，执行任务等工作也放在这里。</p>
-<p>将所有东西在这里组装。</p>
-<p>这部分内容可以自由发挥，有时候我们会创建一个中间类或者直接在正式的 ui 中做这些工作，前面的 view 只作为一个基础 base 类。</p>
-<pre><code class="python">class MainWindow(BaseWindow)：
-    def __init__(self):
-        super().__init__()
-
-        self.active_threads = []
-        self.run_timer = QTimer(self)
-        self.cache_timer = QTimer(self)
-
-        self.btn_table1.click.connect(self.update_table1)
-        self.edit_product.click.connect(self.show_result)
-
-    def _start_task(self, task_func, *args):
-        ithread = WorkThread(task_func, *args)
-        ithread.log_signal.connect(self.log)
-        ithread.finished.signal.connect(lambda: self._remove_thread(ithread)
-        )
-        self.active_threads.append(ithread)
-        return ithread
-
-    def _remove_thread(self, thread):
-        if thread in self.active_threads:
-            self.active_threads.remove(thread)
-
-    def log(self, log:str):
-        if &quot;failed&quot; in log:
-            QMessageBox.critical(self, &quot;error&quot;, log)
-        else:
-            print(log)
-
-    def get_calc_status(self, result_folder):
-        ithread  = self._start_task(parse_log, result_folder)
-        ithread.result_signal.connect(lambda res: self.update_opc_status(res, &quot;ok&quot;)
-        )
-        ithread.start()</code></pre>
-<h2 id="2-3-Worker 线程任务层"><a href="#2-3-Worker 线程任务层" class="headerlink" title="2.3 Worker 线程任务层"></a>2.3 Worker 线程任务层 </h2><p> 为了避免阻塞主界面，我们需要将计算等耗时任务放到子线程执行。然后将计算的结果通过信号的方式传回给主界面显示。</p>
-<pre><code class="python">from PyQt5.QtCore import QThread, pyqtSignal
-from collections.abc import Iterator 
-
-class WorkThread(Qthread):
-
-    #定义信号
-    log_signal = pyqtSignal(str)
-    finish_signal = pyqtSignal()
-    result_signal = pyqtSignal(object)
-
-    def __init__(self, task_func, *args, **kwargs):
-        supper().__init__()
-        self.task_func = task_func
-        self.args = args
-        self.kwargs = kwargs
-
-    def run(self):
-        try:
-            result = None
-            ret = self.task_func(*args, **kwargs)  #我们的函数是通过 yield 回传 log 的
-            if isinstance(ret, Iterator):
-                try:
-                    while True:
-                        log_msg = next(ret)
-                        self.log_signal.emit(str(log_msg))
-                except StopIteration as e:
-                    result = e.value
-                    self.result_signal.emit(result)
-            else:
-               result = e.value
-               self.result_signal.emit(result)
-        except Exception as e:
-            self.log_signal.emit(f&quot;task failed: &#123;str(e)&#125;&quot;)
-        finally:
-            self.finish_signal.emit()
-            self.quit()</code></pre>
-<p>上述示例中，我们是通过 yield 回传 log。</p>
-<p>另一种方法是在 WorkThread 中定义回调函数，并将回调函数传到 model 逻辑层处理。</p>
-<pre><code class="python">def run(self):
-    try:
-        #定义内部回调函数，将 Model 的日志转发为 Qt 信号
-        def log_handler(msg):
-            self.log_signal.emit(msg)
-        ret = self.task_func(log_handler, *args, **kwargs)
-        self.result_signal.emit(ret)
-
-    except Exception as e:
-        self.log_signal.emit(f&quot;task failed: &#123;str(e)&#125;&quot;)
-    finally:
-        self.finish_signal.emit()
-        self.quit()
-</code></pre>
+        <h1 id="从 PN 结到晶体管"><a href="# 从 PN 结到晶体管" class="headerlink" title="从 PN 结到晶体管"></a>从 PN 结到晶体管 </h1><h2 id="1-、PN 结"><a href="#1-、PN 结" class="headerlink" title="1 、PN 结"></a>1 、PN 结</h2><h3 id="1-1-P 型导体和 N 型半导体"><a href="#1-1-P 型导体和 N 型半导体" class="headerlink" title="1.1 P 型导体和 N 型半导体"></a>1.1 P 型导体和 N 型半导体</h3><p> 常见的金属导体，如金、银、铜、铝等，因为他们都拥有大量的自由电子（e-），在没有加电场的时候，自由电子在导体中无规律地自由移动，没有电流形成，而当加上电场后，自由电子由于带负电荷，会沿着电场定向移动形成电流。</p>
+<p>那我们自然可以想到，有没有一种物体，其中有带正电荷的粒子，也可以沿着电场移动，从而导电？</p>
+<p>有的，<strong>半导体 </strong> 就即可以用自由电子（带负电荷）导电，也可以用空穴（带正电荷）导电。</p>
+<p>工艺最成熟的半导体材料就是硅（Si）。纯 Si 是几乎绝缘的，但掺杂可以使得 Si 既可以形成电子导体体，也可以形成空穴导电体。</p>
+<p>掺杂的意思就是，往一块半导体里掺其他元素，即使只掺万分之一，甚至更少数量的其他元素，这个半导体的导电性能，就会发生几万倍甚至更大幅度的变化。</p>
+<p>并且，根据掺杂元素的种类和浓度的不同，它的导电性能和其他特性还会发生有趣的变化。</p>
+<p>掺入Ⅲ族元素的硅是 P（positive，正）型半导体，空穴远多于自由电子，主要以空穴导电；</p>
+<p>掺入Ⅴ族元素的硅是 N（negative，负）型半导体，自由电子远多于空穴，主要以电子导电。</p>
+<p>自由电子和空穴，合称为 <strong> 载流子</strong>。</p>
+<h3 id="1-2-PN 结的形成"><a href="#1-2-PN 结的形成" class="headerlink" title="1.2 PN 结的形成"></a>1.2 PN 结的形成 </h3><p> 既然 P 型半导体中有很多空穴，N 型半导体中有许多许多电子，那么把 P 型半导体和 N 型半导体头对头连在一起，会发生什么？</p>
+<p>P 型半导体和 N 型半导体本身呈现电中性，但是二者接触时，载流子会 <strong> 扩散运动</strong>：</p>
 <ul>
-<li><strong>在当前的 PyQt5 + QThread 架构下：回调函数（Callback）更好、更稳健、更符合 Qt 生态。</strong></li>
-<li><strong>性能最优</strong>：没有生成器挂起 / 恢复的开销，直接在子线程函数栈中执行。</li>
+<li><p>N 区大量电子 → 跨过交界面往 P 区扩散；</p>
+</li>
+<li><p>P 区大量空穴 → 跨过交界面往 N 区扩散。</p>
+</li>
 </ul>
-<h2 id="2-4-Model 数据 - 逻辑层"><a href="#2-4-Model 数据 - 逻辑层" class="headerlink" title="2.4 Model 数据 / 逻辑层"></a>2.4 Model 数据 / 逻辑层 </h2><p> 这里只写纯业务逻辑层，只有纯 python 计算函数，没有任何 PyQt 依赖，没有信号，没有线程。</p>
-<pre><code class="python"># yield 的例子
-def parse_log(folder):
-    if not os.path.exists(folder): return 0
-    yield &quot;search all logs&quot;
-    logs = [os.path.join(folder, log) for log in os.listdir(folder) if log.endswith(&quot;.log&quot;)]
-    if logs:
-        log_infos = []
-        for logfile in logs:
-            yield f&quot;grep log: &#123;logfile&#125;&quot;
-            progress = calcuate_progress(logfile)
-            return progress
-#使用回调函数
-def parse_log(log_cb, folder):
-    if not os.path.exists(folder): return 0
-    log_cb(&quot;search all logs&quot;)
-    logs = [os.path.join(folder, log) for log in os.listdir(folder) if log.endswith(&quot;.log&quot;)]
-    if logs:
-        log_infos = []
-        for logfile in logs:
-            log_cb(f&quot;grep log: &#123;logfile&#125;&quot;)
-            progress = calcuate_progress(logfile)
-            return progress</code></pre>
-<p>如果你觉得传一个函数 <code>log_cb</code> 不够优雅，可以传一个 <strong> 轻量级的日志对象 </strong> 给 Model，这个对象内部封装了信号发射。</p>
-<pre><code class="python">class ThreadLogger:
-    def __init__(self, signal_emit_func):
-        self._emit = signal_emit_func
+<p>扩散后留下不能移动的固定离子：</p>
+<ul>
+<li>N 区电子跑走后，剩下 <strong> 失去电子的杂质正离子</strong>（固定在晶格，动不了）；</li>
+<li>P 区空穴被过来的电子填充后，剩下 <strong> 得到电子的杂质负离子</strong>（固定在晶格，动不了）。</li>
+</ul>
+<p>耗尽层（空间电荷区）电荷分布：</p>
+<ul>
+<li>交界面靠近 N 的一侧：一层 <strong> 固定正离子</strong> → 这一小块区域带正电；</li>
+<li>交界面靠近 P 的一侧：一层 <strong> 固定负离子</strong> → 这一小块区域带负电。</li>
+</ul>
+<p>耗尽区 N 端正、P 端负，电场方向：N→P；</p>
+<p>电场会拖拽载流子反向漂移，抵消扩散，最终平衡：</p>
+<ul>
+<li><p><strong>扩散</strong>：电子 N→P，空穴 P→N</p>
+</li>
+<li><p><strong>漂移</strong>：电场拉电子 P→N，拉空穴 N→P</p>
+</li>
+</ul>
+<p>两者速率相等，扩散停止，耗尽层厚度稳定。PN 结的载流子分布就处于稳定状态。整个 PN 结呈现电中性。</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20260618173409567.png" style="zoom: 67%;" />
 
-    def info(self, msg): self._emit(msg, &quot;INFO&quot;)
-    def debug(self, msg): self._emit(msg, &quot;DEBUG&quot;)
-    def error(self, msg): self._emit(msg, &quot;ERROR&quot;)
+<p><strong>正向导通</strong>：P 型半导体加了正电压，给 N 型半导体加了负电压，也就是【PN 结正偏】，P 型中本来就很多空穴，加了正电压，就是源源不断提供更多了空穴，给 N 型加负电压，就是给 N 型半导体源源不断地提供电子。空穴和电子越多，使得扩散作用大于漂移作用，空穴和电子向对方扩散，形成持续电流。</p>
+<p><strong>反向断电</strong>：给 N 型半导体加正电压，给 P 型半导体加负电压，也就是【PN 结反偏】，在外部电势能作用下，从电子区抽走电子，从空穴区抽走空穴；电子区的电子向外侧移动，空穴区的空穴也向外侧移动，耗尽层的宽度变大。</p>
+<p><strong>反向击穿</strong>：当反向偏压足够大时，内建电场也将相应足够大，大到可以将少子加速到，能把耗尽层中的硅原子直接撞出电子空穴对；而且，新生产的载流子也会在耗层中被加速，继续撞击硅原子，制造出更多的电子空穴对。</p>
+<h2 id="2、晶体管"><a href="#2、晶体管" class="headerlink" title="2、晶体管"></a>2、晶体管</h2><h3 id="2-1-MOSFET 晶体管"><a href="#2-1-MOSFET 晶体管" class="headerlink" title="2.1 MOSFET 晶体管"></a>2.1 MOSFET 晶体管</h3><p>MOS 晶体管全名叫做 MOSFET（Metal oxide semiconductor field effect transistor），金属氧化物半导体场效应晶体管。</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20260618180236534.png" alt=""></p>
+<p>如上图所示 MOS 管的结构图和等效图，最上边的 <strong> 栅极</strong>（Gate）一般都是由金属（Metal）做的，中间的绝缘层一般是由氧化层 SiO2（Oxide）做的，最下边是半导体材料（semiconductor）。至于 FET，场效应，就是电场控制电子的意思。</p>
+<p>首先看左边的结构图，图中下半部分是 P 型半导体（如图中的 P-body），其中含有大量的空穴，而左上角和右上角带颜色的 N+，是重掺杂的 N 型半导体，含有更大量的自由电子。</p>
+<p>当①处加了正电压后，垂直向下加上电场，驱离下方的空穴（正电），形成了一个自由电子可以暂时通过的通道，也就是右边图的【沟道】，然后立马就在③→②之间加上正电压，相当于给自由电子指路，让自由电子赶紧趁着这个时间加速通过有序撤离。</p>
+<p>也就是①处加正电压时，②和③之间，可以通电。而当①处不通电压时，③和②之间就没法通电。这就是场效应晶体管的名字的来源。</p>
+<p>因为这是用栅极的电场控制电流的导通和关断的，对，<strong>MOS 晶体管可以理解为一个开关</strong>！只不过不是人去控制，而是用另外一个电压去控制电路的开关，而且，频率可以做到非常高，可以达到每秒几千次。以上的 MOS 晶体管叫做【增强型 MOS 晶体管】。</p>
+<p>MOS 晶体管不只有这一种，还有许多许多种，比如①不加电压，②和③之间通电，加上电压之后反而不通电了的，这叫做【耗尽型晶体管】。</p>
+<p><strong>nMOS</strong>：<strong>N 沟道 MOS 管</strong></p>
+<ul>
+<li><p>衬底 = <strong>P 型硅衬底</strong></p>
+</li>
+<li><p>在 P 衬底上做两个高掺杂 N 区（源极 S、漏极 D），栅极加正电压，表面感应出电子导电沟道（导电载流子是电子，N 型沟道），故名 nMOS。</p>
+</li>
+</ul>
+<p><strong>pMOS：P 沟道 MOS 管</strong></p>
+<ul>
+<li><p>衬底 = <strong>N 型硅衬底</strong></p>
+</li>
+<li><p>在 N 衬底上做两个高掺杂 P 区（源极 S、漏极 D），栅极加负电压，表面感应出空穴导电沟道（导电载流子是空穴，P 型沟道），故名 pMOS。</p>
+</li>
+</ul>
+<h3 id="2-2-CMOS"><a href="#2-2-CMOS" class="headerlink" title="2.2 CMOS"></a>2.2 CMOS</h3><h4 id="2-2-1- 结构示例"><a href="#2-2-1- 结构示例" class="headerlink" title="2.2.1 结构示例"></a>2.2.1 结构示例 </h4><p>CMOS，全称 Complementary Metal-Oxide-Semiconductor，即<strong> 互补金属氧化物半导体</strong>，是一种制造集成电路的技术。</p>
+<p>MOS 电路系统具有低功耗、高速运行的特点，是现代半导体器件的基本结构。</p>
+<p>其核心原理在于使用两种类型的金属氧化物半导体（MOSFET）：N 型（nMOS）和 P 型（pMOS）。这两种晶体管互补配合，形成一个高效的逻辑门电路。</p>
+<p>下图是 CMOS 的结构示意图：</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20260618202700896.png" style="zoom:50%;" />
 
-def parse_log(logger: ThreadLogger, folder):
-    if not os.path.exists(folder): return 0
-    logger.info(&quot;search all logs&quot;)
-    logs = [os.path.join(folder, log) for log in os.listdir(folder) if log.endswith(&quot;.log&quot;)]
-    if logs:
-        log_infos = []
-        for logfile in logs:
-            logger.info(f&quot;grep log: &#123;logfile&#125;&quot;)
-            progress = calcuate_progress(logfile)
-            return progress
-</code></pre>
-<h1 id="3- 一些坑"><a href="#3- 一些坑" class="headerlink" title="3. 一些坑"></a>3. 一些坑 </h1><h2 id="3-1- 函数重复执行导致的信号重复绑定"><a href="#3-1- 函数重复执行导致的信号重复绑定" class="headerlink" title="3.1 函数重复执行导致的信号重复绑定"></a>3.1 函数重复执行导致的信号重复绑定</h2><p> 当多次点击按钮、多次打开窗口或重复初始化某个组件时，如果代码中包含了 <code>signal.connect(slot)</code> 且没有先断开连接，同一个槽函数（Slot）就会被绑定多次。<br>结果是：信号发射一次，槽函数执行 N 次（N = 绑定次数）。这会导致日志重复打印、数据重复提交、界面卡顿甚至逻辑错误。</p>
-<h3 id="3-1-1- 根本原因"><a href="#3-1-1- 根本原因" class="headerlink" title="3.1.1 根本原因"></a>3.1.1 根本原因 </h3><p>PyQt 的信号槽机制允许<strong> 同一个信号连接同一个槽函数多次</strong>。它不会自动去重。每次调用 <code>.connect()</code> 都会增加一个连接记录。</p>
-<h3 id="3-1-2- 解决方案"><a href="#3-1-2- 解决方案" class="headerlink" title="3.1.2 解决方案"></a>3.1.2 解决方案 </h3><p> 这里有三种推荐的解决策略，按推荐程度排序：</p>
-<p><strong>方案一：连接前断开（最稳健、最常用）</strong></p>
-<p>在调用 <code>connect</code> 之前，先调用 <code>disconnect</code>。即使之前没有连接过，<code>disconnect</code> 也不会报错（只会静默失败），因此这是最安全的写法。</p>
-<pre><code class="python"># 按函数断开
-self.log_bridge.log_signal.disconnect(self.append_log_to_ui)
-self.log_bridge.log_signal.connect(self.append_log_to_ui)
+<h4 id="2-2-2-CMOS 工作原理"><a href="#2-2-2-CMOS 工作原理" class="headerlink" title="2.2.2 CMOS 工作原理"></a>2.2.2 CMOS 工作原理</h4><p>CMOS 的工作原理：</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20260618203413428.png" alt="CMOS 工作原理" style="zoom:50%;" />
 
-#断开所有
-try:
-    self.log_bridge.log_signal.disconnect()
-except:
-    pass
-self.log_bridge.log_signal.connect(self.append_log_to_ui)</code></pre>
-<p><strong>方案二：利用 </strong> <code>sender()</code> <strong> 或上下文管理（高级用法）</strong></p>
-<p>如果你的逻辑非常复杂，经常需要动态切换监听者，可以封装一个 helper 方法。</p>
-<pre><code class="python">def safe_connect(self, signal, slot):
-    &quot;&quot;&quot; 安全连接：先尝试断开，再连接 &quot;&quot;&quot;
-    try:
-        signal.disconnect(slot)
-    except TypeError:
-        # TypeError 通常意味着该连接不存在，忽略即可
-        pass
-    signal.connect(slot)
+<p>对于 CMOS，电流仅在开关期间流动，从而实现低功耗。</p>
+<p>晶体管是极小的元件，但一些 LSI（大规模集成电路）集成了超过 1000 万个晶体管。</p>
+<p>随着 MOSFET 根据“<a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=250014227&content_type=Article&match_order=1&q= 尺度定律 &zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3ODE5NTcyNTQsInEiOiLlsLrluqblrprlvosiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyNTAwMTQyMjcsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.jMFKLjHoR9VxKTjGLMFjVhQJkCy47v26rHp9t1rqHiQ&zhida_source=entity">尺度定律</a>”变得更小，MOSFET 的运行速度和密度也会提高。</p>
+<p>如果将组成 CMOS 的 MOSFET 的尺寸设置为 1/k，则操作速度将提高 k 倍，并且每单位面积的 MOSFET 的数量将为 k^2 。</p>
+<p>随着小型化的进展，CMOS 运算速度不断提高，集成度也不断提高。</p>
+<h4 id="2-2-2-CMOS 应用"><a href="#2-2-2-CMOS 应用" class="headerlink" title="2.2.2 CMOS 应用"></a>2.2.2 CMOS 应用 </h4><p>CMOS 是<strong> 硅基大规模数字 / 数模混合芯片的绝对主流</strong>。</p>
+<ul>
+<li><p>电脑、手机、AI、存储、单片机这类 <strong> 纯数字 / 大规模数模混合芯片</strong>：全是 CMOS；</p>
+</li>
+<li><p>电源芯片、射频功放、高精度运放、电动车功率芯片、毫米波雷达：绝大多数 <strong> 不是纯 CMOS</strong>，采用 Bipolar、BCD、GaN/GaAs 等工艺。</p>
+<ul>
+<li><p>纯双极型 Bipolar 工艺（只有 NPN/PNP 三极管，无 MOS）</p>
+<ul>
+<li><p>代表：高精度运算放大器、低噪声射频放大器、基准源、模拟前端；</p>
+</li>
+<li><p>特点：线性好、噪声低、电流驱动强，但静态功耗大、集成度低；</p>
+</li>
+<li><p>场景：工业仪表、医疗模拟信号、卫星射频接收前端。</p>
+</li>
+</ul>
+</li>
+<li><p>BiCMOS / BCD 工艺（BJT+MOS + 功率管混合，不属于纯 CMOS）</p>
+<ul>
+<li><p>BCD：同时集成 BJT、CMOS、高压 DMOS 功率管；</p>
+</li>
+<li><p>用途：电源管理 PMIC、电动车 BMS、LED 驱动、车载电源芯片；</p>
+</li>
+<li><p>逻辑部分是 CMOS，但功率放大、高压驱动靠 BJT/DMOS，整体不能叫纯 CMOS 电路。</p>
+</li>
+</ul>
+</li>
+<li><p>高速双极逻辑：ECL/TTL（老式数字）</p>
+<ul>
+<li>TTL 是早年 5V 数字逻辑，全部 BJT；ECL 是目前最快硅逻辑，用于超高速时钟、光通信 SerDes，功耗极高，极少用在消费电子。</li>
+</ul>
+</li>
+<li><p>化合物半导体射频 / 功率芯片（无硅 CMOS）</p>
+<p>砷化镓 GaAs、氮化镓 GaN、碳化硅 SiC，<strong>完全没有 MOS/CMOS 结构</strong>：</p>
+<ul>
+<li><p>GaAs：手机射频功放、卫星毫米波雷达；</p>
+</li>
+<li><p>GaN：5G 基站射频、快充电源；</p>
+</li>
+<li><p>SiC：新能源车主逆变器、高压工业电源；</p>
+<p>靠异质结晶体管 HBT/HEMT 工作，和 CMOS 无关。</p>
+</li>
+</ul>
+</li>
+<li><p>特种工艺芯片</p>
+<ul>
+<li>MEMS 传感器（陀螺仪、加速度计）：机械结构 + 少量配套电路，核心传感单元不是 CMOS；</li>
+<li>SOI 射频芯片：硅基但器件结构改良，属于衍生 MOS 工艺，和标准 CMOS 有区别；</li>
+<li>分立功率器件（MOSFET、IGBT）：单管，不叫集成电路 CMOS。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-3- 先进节点的 FET 技术"><a href="#2-3- 先进节点的 FET 技术" class="headerlink" title="2.3 先进节点的 FET 技术"></a>2.3 先进节点的 FET 技术 </h3><h4 id="2-3-1-MOSFET 的缺陷"><a href="#2-3-1-MOSFET 的缺陷" class="headerlink" title="2.3.1 MOSFET 的缺陷"></a>2.3.1 MOSFET 的缺陷</h4><p> 前面介绍的 MOSFET 属于第一代晶体管技术，也称为平面 FET，其工作原理是通过给栅极和源极施加不同的电压，来控制漏极电流的大小，从而改变电路的行为。如果把栅极和漏极比如成一根水管，那么源极就相当于阀门，负责控制水管的通断。</p>
+<p>在早期的集成电路 MOSFET 制程里，沟道长度（可以简单的近似为栅极和源极之间的距离）约在几个微米，栅源之间的电压能很好的控制漏极电流，但随着 MOSFET 制程不断发展，当沟道长度逼近 20nm 时，对电流的控制能力急剧下降，同时漏电流也在升高，传统的平面 MOSFET 走到了尽头。</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/59454fe1e0cc226a4d74b2a6ef7f8fe9.png" style="zoom:67%;" />
 
-# 使用时
-self.safe_connect(self.log_bridge.log_signal, self.append_log_to_ui)</code></pre>
-<p>为了解决”信号重复绑定导致函数多次执行”的问题，请遵循以下黄金法则：</p>
+
+
+<h4 id="2-3-2-FinFET 结构"><a href="#2-3-2-FinFET 结构" class="headerlink" title="2.3.2 FinFET 结构"></a>2.3.2 FinFET 结构 </h4><p> 为了克服上述问题，前台积电首席技术官胡正明及其团队于 1999 年提出了 FinFET 的概念，FinFET 是三维结构，也可称为三栅晶体管，可以在体硅或 SOI 晶片上实现。</p>
+<p><strong>FinFET</strong>结构由衬底上的硅体薄（垂直）翅片组成，栅级围绕通道提供了良好的通道三面控制（上左右三面）。这种结构之所以称为 FinFET，是因为它的源级似于鱼的后鳍。FinFET 技术一路高歌猛进，从 22nm 芯片一直用到 5nm 芯片，成为了市场上的主流，也取得了商业上的巨大成功（另外还有平行发展的<a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=221731623&content_type=Article&match_order=1&q=FD-SOI 技术 &zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3ODE5NjEyNjEsInEiOiJGRC1TT0nmioDmnK8iLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyMjE3MzE2MjMsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.22UO2an4adLDW7dJ0u8SiyyTRpgTuNDzIvS-L_ea50E&zhida_source=entity">FD-SOI 技术</a>）。但随着半导体制造工艺推进到 3nm，静态电流泄漏问题变得越来越严重，MOSFET 遇到的问题再次在 FINFET 上出现。</p>
+<h4 id="2-3-3-GAAFET 结构"><a href="#2-3-3-GAAFET 结构" class="headerlink" title="2.3.3 GAAFET 结构"></a>2.3.3 GAAFET 结构 </h4><p><strong>GAA-FET</strong>，即环绕式栅极 (gate-all-around) 场效晶体管 (FET)，该技术透过降低供电电压以及增加驱动电流能力以提升性能，从而突破 FinFET 的性能限制。简言之，<a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=221731623&content_type=Article&match_order=1&q=GAA 技术 &zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3ODE5NjEyNjEsInEiOiJHQUHmioDmnK8iLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyMjE3MzE2MjMsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.NozFplrJtYINjaOT-1W1I-aN1pr8ech_Cxe51a7AM04&zhida_source=entity">GAA 技术</a> 让晶体管得以承载更多电流，同时晶体管尺寸保持相对较小。</p>
+<p>GAA-FET 比起 FinFET 具有两项独特的优势。首先，GAA 晶体管解决了泄漏电流的挑战，因为 GAA 通道采用水平架构。GAA 技术堆叠了多个水平纳米片或纳米线，并在每一侧面以栅极材料包围这些通道，因而实现了比 FinFET 更高的载流能力。</p>
+<p>其次，GAA 晶体管的四个侧边都被栅极包围着。而 <a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=221731623&content_type=Article&match_order=1&q=FinFET 制程 &zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3ODE5NjEyNjEsInEiOiJGaW5GRVTliLbnqIsiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyMjE3MzE2MjMsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.3yyL-clem8vBT5ZXQgsk9nOcJpvQBgtfb0xbuyRlMaM&zhida_source=entity">FinFET 制程</a> 中为三个侧面，由于让栅极能够接触电晶体的四个侧面，从而改善了晶体管的结构。因此，GAAFET 结构比起 FinFET 制程更能精确地控制电流。</p>
+<p><a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=221731623&content_type=Article&match_order=1&q= 三星 &zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3ODE5NjEyNjEsInEiOiLkuInmmJ8iLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyMjE3MzE2MjMsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.HLSEcnZWqSVAkxxgvm_v-eazWLB4YG9lozCgqcYf-PQ&zhida_source=entity">三星 </a> 在 2022 年宣布其 3 纳米 GAA 架构制程技术芯片已经开始生产。该公司推出的 GAA 架构为多桥通道场效晶体管(Multi-Bridge-Channel FET，MBCFET)。据三星表示，该技术利用具有更宽通道的纳米片(nanosheet)，相较于使用具有更窄通道纳米线（nanowire）的 GAA 技术，MBCFET 可实现更高性能与更高能效。</p>
+<h4 id="2-3-4- 三种结构晶体管对比"><a href="#2-3-4- 三种结构晶体管对比" class="headerlink" title="2.3.4 三种结构晶体管对比"></a>2.3.4 三种结构晶体管对比 </h4><p> 平面 <strong>MOSFET</strong> vs <strong>FinFET</strong> vs <strong>GAAFET</strong> 对比：</p>
+<table>
+<thead>
+<tr>
+<th>结构</th>
+<th>栅极包裹方式</th>
+<th>优点</th>
+<th>适用制程</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>平面 MOSFET</td>
+<td>仅顶部</td>
+<td>制造简单</td>
+<td>90nm~28nm</td>
+</tr>
+<tr>
+<td>FinFET</td>
+<td>三面包裹</td>
+<td>漏电低、性能高</td>
+<td>22nm~3nm</td>
+</tr>
+<tr>
+<td>GAAFET</td>
+<td>全环绕</td>
+<td>控制最强、适合更先进节点</td>
+<td>2nm 及以下</td>
+</tr>
+</tbody></table>
+<h4 id="2-3-5- 柱状结构"><a href="#2-3-5- 柱状结构" class="headerlink" title="2.3.5 柱状结构"></a>2.3.5 柱状结构</h4><p>FinFET 的理想方案：随着器件尺寸的进一步缩小，对栅控能力的要求会进一步加大，FInFET（a）可能会演化成柱状 FET（b）的形状。相比于 FinFET 栅极三面包围沟道，它的栅极包围整个沟道，所以拥有比 FinFET 更好的特性。而且因为没有尖锐的边角，他就不存在 corner effect。单个器件拥有更小的体积，容易获得更高的集成度以进一步提升集成电路性能。但是在一个硅片上制作这种圆柱形的器件并不现实。可能还要寻找其他解决方案。</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20260619100256465.png" alt="FinFET 到柱状演化" style="zoom: 33%;" />
+
+
+
+<h2 id="3、超大规模集成电路版图"><a href="#3、超大规模集成电路版图" class="headerlink" title="3、超大规模集成电路版图"></a>3、超大规模集成电路版图 </h2><h3 id="3-1- 版图概述"><a href="#3-1- 版图概述" class="headerlink" title="3.1 版图概述"></a>3.1 版图概述</h3><p> 版图设计（Layout Design）是集成电路设计（IC Design）的最后阶段，它负责将逻辑设计转化为实际的物理几何图形。GDSII(GDS2 或 GDS)是通用的版图数据格式文件。后来为了提高储存效率，进一步发展了 OASIS 版图格式。</p>
+<p>版图 GDS 数据交给工艺厂家后，根据版图 GDS 数据制造掩模版 (Mask，也称 为“光罩”)。值得注意的是, 在版图设计阶段绘制的各个版图层次并不是最终进行工艺流片时采用的掩模版的层次，流片时采用的掩模版是根据版图层次进行<strong> 布尔运算</strong>（LOTA）形成的集成电路工艺掩模版需要的图形。</p>
+<p>这些版图几何图层包括 N 阱（NWELL）、有源区（AA ）、多晶硅（POLY ）、N 注入（N-imp）、P 注入（P-imp）、接触孔（CT）、金属层（Metal）、通孔（Via）、焊盘（PAD）、开窗区等。</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20260619121705635.png" alt="版图拆分" style="zoom: 50%;" />
+
+<h3 id="3-2- 版图设计规则"><a href="#3-2- 版图设计规则" class="headerlink" title="3.2 版图设计规则"></a>3.2 版图设计规则 </h3><p> 版图设计要遵循特定工艺厂家的版图设计规则。版图设计规则是一套图形设计规则的组合, 如图所示。</p>
+<p>版图设计规则是连接集成电路工艺制造厂家和集成电路设计者的桥 梁。在图所示的范例中，A 与 B 表示不同的图形,，图形之间的关系包括宽度(或长度)、 间距、包围、延伸等图形尺寸规则, 相关描述如表所示：</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20260619131001064.png" alt="基本版图规则关系图示" style="zoom:50%;" />
+
+
+
+<h3 id="3-3- 版图层次与及其对应工艺作用"><a href="#3-3- 版图层次与及其对应工艺作用" class="headerlink" title="3.3 版图层次与及其对应工艺作用"></a>3.3 版图层次与及其对应工艺作用 </h3><p> 下图所示为某工艺的版图层次示例。</p>
+<p><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20260619120500044.png" alt=""></p>
+<h4 id="3-3-1-WELL 层"><a href="#3-3-1-WELL 层" class="headerlink" title="3.3.1 WELL 层"></a>3.3.1 WELL 层 </h4><p> 底层掺杂大区域：WELL 阱层（最底层，衬底级）</p>
 <ol>
-<li><strong>默认习惯</strong>：在调用 <code>.connect()</code> 之前，习惯性先写一行 <code>.disconnect()</code>（配合 <code>try-except</code> 或确认逻辑）。</li>
-<li><strong>生命周期管理</strong>：尽量在 <code>__init__</code> 中完成所有连接，避免在运行时频繁重复连接。</li>
-<li><strong>调试技巧</strong>：如果不确定连接了多少次，可以在槽函数第一行打印 <code>id(self)</code> 或加计数器，观察输出次数。</li>
+<li><p><strong>NWELL（N 阱，NW）</strong></p>
+<ul>
+<li>工艺：P 型硅衬底上注入 N 型杂质，形成大片 N 型区域</li>
+<li>作用：<strong>放置所有 PMOS 晶体管</strong>；NWELL 接 VDD，给 PMOS 提供 N 型衬底，PN 结反偏隔离防漏电</li>
+<li>版图约束：PMOS 的 AA 有源区必须完整落在 NWELL 内部</li>
+</ul>
+</li>
+<li><p><strong>PWELL（P 阱，PW，双阱工艺才有）</strong></p>
+<ul>
+<li>工艺：单独注入形成独立 P 型区块，不和全局 P 衬底共用</li>
+<li>作用：高精度模拟 / 射频芯片专用，NMOS 单独做在 PWELL 里，可独立调节衬底掺杂、降低噪声</li>
+<li>单阱标准 CMOS 无 PWELL，NMOS 直接做在整片 P 衬底上</li>
+</ul>
+</li>
+<li><p><strong>DNW（Deep NWell 深 N 阱）</strong></p>
+<ul>
+<li>深埋在 PWELL 下方的 N 型隔离阱，把 PWELL 完全包裹</li>
+<li>用途：数模混合芯片隔离数字噪声、高压 IO、ESD 器件</li>
+</ul>
+</li>
 </ol>
+<h4 id="3-3-2-AA- 层"><a href="#3-3-2-AA- 层" class="headerlink" title="3.3.2 AA 层"></a>3.3.2 AA 层</h4><p><strong>AA（Active Area，有源区，也叫 OD/Diff）</strong>：</p>
+<p><strong>核心作用</strong>：定义<strong>MOS 管的硅本体区域</strong></p>
+<ul>
+<li><p>只有 AA 内的硅才会做 N+/P + 离子注入，形成晶体管 <strong> 源极 S、漏极 D、导电沟道</strong>；AA 外是 STI 浅沟槽隔离，隔绝不同管子，防止漏电。</p>
+</li>
+<li><p>区分器件：NMOS 做在 P 衬底 AA 里，PMOS 做在 N 阱内的 AA 里。</p>
+</li>
+</ul>
+<h4 id="3-3-3-POLY 层"><a href="#3-3-3-POLY 层" class="headerlink" title="3.3.3 POLY 层"></a>3.3.3 POLY 层</h4><p><strong>POLY（多晶硅栅层，简写 PO/Gate）</strong>：</p>
+<p><strong>核心作用</strong>：MOS 管栅极（最核心）</p>
+<ul>
+<li><p>Poly 条压在 AA 上方，中间夹一层极薄栅氧 SiO₂，构成 MOS 开关的控制极；栅极电压控制沟道导通 / 关断。</p>
+</li>
+<li><p>辅助用途：制作 <strong> 多晶硅电阻</strong>、上层短距离互连（方块电阻大，长走线不用 Poly）、电容上极板。</p>
+</li>
+<li><p>POLY 多晶硅条必须跨在 AA 上，重叠区域就是 MOS 的沟道（沟长 L=POLY 线宽，沟宽 W=AA 垂直 POLY 的长度）。</p>
+</li>
+<li><p>AA 最小宽度、AA 到 STI 隔离区最小间距，由工艺 DRC 规则约束。</p>
+</li>
+<li><p>先进工艺（7nm 及以下 FinFET/GAA）已换成 <strong> 金属栅 MG</strong>，不再用多晶硅，但版图层名仍保留 Poly 逻辑定义。</p>
+</li>
+<li><p>Poly 和 AA 必须有重叠；Poly 最小线宽是芯片最小特征尺寸 CD（工艺代际核心指标）。</p>
+</li>
+</ul>
+<h4 id="3-3-4-Implant- 层"><a href="#3-3-4-Implant- 层" class="headerlink" title="3.3.4 Implant 层"></a>3.3.4 Implant 层</h4><ol>
+<li><p><strong>NIMP（N-Implant，N 型源漏注入）</strong></p>
+<ul>
+<li>重掺砷，覆盖 NMOS 的 AA（Poly 两侧），形成 NMOS 的 N 型源极、漏极</li>
+<li>仅用于 P 衬底 / PWELL 内的 NMOS 有源区</li>
+</ul>
+</li>
+<li><p><strong>PIMP（P-Implant，P 型源漏注入）</strong></p>
+<ul>
+<li>重掺硼，覆盖 NWELL 内 PMOS 的 AA（Poly 两侧），形成 PMOS 的 P 型源极、漏极</li>
+</ul>
+</li>
+<li><p><strong>VT 注入（VTH 调整注入：LVT/HVT/SVT）</strong></p>
+<ul>
+<li>轻掺杂注入，只打在 Poly 下方沟道区域，调节 MOS 开启电压：</li>
+<li>HVT：阈值高、漏电流小，低功耗；LVT：阈值低、速度快，高速逻辑</li>
+</ul>
+</li>
+<li><p><strong>配套隔离注入：CHST（沟道阻断注入）</strong></p>
+<ul>
+<li>STI 隔离区表面注入，防止隔离硅表面产生寄生导电沟道，避免器件漏电</li>
+</ul>
+</li>
+</ol>
+<h4 id="3-3-5-CT 层"><a href="#3-3-5-CT 层" class="headerlink" title="3.3.5 CT 层"></a>3.3.5 CT 层</h4><p><strong>CT（Contact，接触孔）</strong>：</p>
+<p><strong>核心作用 </strong>：唯一负责<strong> 底层硅器件（AA 有源区 / Poly 栅）与第一层金属 M1 之间的垂直连接</strong>，孔洞内填充金属钨（W）导电。</p>
+<ul>
+<li>AA 上打 CT：引出源极 S、漏极 D、衬底 / 阱电位；</li>
+<li>Poly 上打 CT：引出栅极 G。</li>
+<li>NWELL/PWELL 接触：AA + 对应 NIMP/PIMP+CT，给阱接电源 / 地</li>
+<li>CT 必须完全被 AA 或 Poly 包围，同时被 M1 金属覆盖；有最小开孔尺寸、孔间距、包围余量要求。</li>
+</ul>
+<h4 id="3-3-6-Metal 层"><a href="#3-3-6-Metal 层" class="headerlink" title="3.3.6 Metal 层"></a>3.3.6 Metal 层 </h4><p> 多层金属布线，从下往上编号 M1、M2、M3……MT（厚顶层金属，用于电源轨、焊盘）</p>
+<ul>
+<li><p>M1：底层金属，密集细线条，连接晶体管 CT</p>
+</li>
+<li><p>M2~M7：中层通用布线</p>
+</li>
+<li><p>MT/AP：顶层厚金属，大电流供电、IO 焊盘走线</p>
+</li>
+<li><p>材质：先进工艺铜互连，老工艺铝互连</p>
+</li>
+</ul>
+<h4 id="3-3-7-Via 层"><a href="#3-3-7-Via 层" class="headerlink" title="3.3.7 Via 层"></a>3.3.7 Via 层</h4><p><strong>VIA（通孔，分层 VIA1/VIA2/VIA3…）</strong></p>
+<p><strong>核心作用</strong>：多层金属互连的垂直通道，实现上下相邻两层金属的导电连通，填充铜金属。</p>
+<ul>
+<li>VIA1：M1 ↔ M2 之间的通孔</li>
+<li>VIA2：M2 ↔ M3</li>
+<li>VIA3：M3 ↔ M4，以此类推</li>
+</ul>
+<h3 id="3-4- 完整堆叠顺序"><a href="#3-4- 完整堆叠顺序" class="headerlink" title="3.4 完整堆叠顺序"></a>3.4 完整堆叠顺序 </h3><p> 从硅衬底向上，制造流程顺序：</p>
+<ol>
+<li>硅衬底 → 2. NWELL/PWELL/DNW（阱层）</li>
+<li>STI 隔离刻蚀 → 3. AA 有源区成型。STI（Shallow Trench Isolation）- 浅沟槽隔离</li>
+<li>POLY 多晶硅栅沉积刻蚀</li>
+<li>NIMP/PIMP 源漏注入 + VT 阈值注入</li>
+<li>层间介质填充 → 刻 CT 接触孔，填钨</li>
+<li>M1 第一层金属</li>
+<li>VIA1 通孔 → M2 金属 → VIA2 → M3 …… 直到顶层 MT 金属</li>
+</ol>
+<h3 id="3-5-CMOS 工艺图解"><a href="#3-5-CMOS 工艺图解" class="headerlink" title="3.5 CMOS 工艺图解"></a>3.5 CMOS 工艺图解</h3><h4 id="3-5-1-CMOS 结构的形成"><a href="#3-5-1-CMOS 结构的形成" class="headerlink" title="3.5.1 CMOS 结构的形成"></a>3.5.1 CMOS 结构的形成</h4><img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20260619215130164.png" alt="硅衬底形成" style="zoom: 50%;" />
+
+
+
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20260619215229423.png" alt="AA 有源区形成" style="zoom:50%;" />
+
+
+
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20260619215320969.png" alt="POLY 多晶硅形成" style="zoom:50%;" />
+
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20260619215415725.png" alt="PN 离子注入形成 pMOS" style="zoom:50%;" />
+
+<p>至此，pMOS 晶体管就形成了。</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20260619220805805.png" alt="CMOS 平面演示图" style="zoom:50%;" />
+
+
+
+
+
+<h4 id="3-5-2- 器件互联"><a href="#3-5-2- 器件互联" class="headerlink" title="3.5.2 器件互联"></a>3.5.2 器件互联 </h4><p> 下图是器件结构互联的简图：</p>
+<img src="https://image--1.oss-cn-shenzhen.aliyuncs.com/image-20260619220320208.png" alt="器件结构互联" style="zoom: 50%;" />
+
+
+
+<h3 id="3-6- 速查表"><a href="#3-6- 速查表" class="headerlink" title="3.6 速查表"></a>3.6 速查表 </h3><p> 各层核心区别：</p>
+<table>
+<thead>
+<tr>
+<th align="center">图层名称</th>
+<th align="center">连接 / 作用对象</th>
+<th align="center">层级位置</th>
+<th align="center">核心用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">NWELL/PWELL</td>
+<td align="center">整片衬底大区域掺杂</td>
+<td align="center">最底层</td>
+<td align="center">区分 PMOS/NMOS 基底</td>
+</tr>
+<tr>
+<td align="center">AA(Active)</td>
+<td align="center">硅器件本体</td>
+<td align="center">阱层之上</td>
+<td align="center">MOS 源漏沟道硅区域</td>
+</tr>
+<tr>
+<td align="center">POLY</td>
+<td align="center">栅极导电层</td>
+<td align="center">AA 上方</td>
+<td align="center">MOS 控制栅、多晶电阻</td>
+</tr>
+<tr>
+<td align="center">NIMP/PIMP</td>
+<td align="center">AA 局部掺杂</td>
+<td align="center">Poly 两侧 AA</td>
+<td align="center">形成 N/P 型源漏</td>
+</tr>
+<tr>
+<td align="center">CT(Contact)</td>
+<td align="center">AA/Poly ↔ M1</td>
+<td align="center">器件与 M1 之间</td>
+<td align="center">硅到第一层金属</td>
+</tr>
+<tr>
+<td align="center">M1/M2…Metal</td>
+<td align="center">水平布线</td>
+<td align="center">CT 上方多层</td>
+<td align="center">电路信号、电源走线</td>
+</tr>
+<tr>
+<td align="center">VIA1/VIA2…</td>
+<td align="center">Mx ↔ Mx+1</td>
+<td align="center">两层金属中间</td>
+<td align="center">金属层垂直互连</td>
+</tr>
+</tbody></table>
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
 <link rel="stylesheet" href="/css/markmap.css">
 
